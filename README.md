@@ -22,6 +22,8 @@ Open `data/jobs.json` and add a new object to the `entries` array. Copy an exist
 
 Open `docs/index.html` in a browser. No build step required.
 
+A hosted version of the dashboard is coming soon.
+
 ---
 
 ## License
