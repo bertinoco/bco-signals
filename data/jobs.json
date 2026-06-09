@@ -2,8 +2,8 @@
   "meta": {
     "title": "BCO Content Skills Tracker",
     "description": "Tracking how content design, content systems, and language infrastructure skills are evolving across industries.",
-    "lastUpdated": "2026-05-25",
-    "totalEntries": 15
+    "lastUpdated": "2026-06-01",
+    "totalEntries": 13
   },
   "entries": [
     {
@@ -129,45 +129,6 @@
       "compRange": { "min": 105600, "max": 140700, "currency": "USD" },
       "sourceUrl": null,
       "dateAdded": "2026-05-24"
-    },
-    {
-      "id": "ramp-product-designer",
-      "company": "Ramp",
-      "title": "Product Designer",
-      "domain": "Fintech (corporate cards/spend)",
-      "engagement": "Full-time",
-      "location": "Not specified",
-      "remote": null,
-      "coreFrame": "Product design with LLM-first workflow and AI prototyping as stated process steps",
-      "clusters": [
-        "ai-tooling"
-      ],
-      "signals": ["llm-first-process", "process-signal"],
-      "compRange": null,
-      "sourceUrl": null,
-      "dateAdded": "2026-05-24",
-      "tag": "non-content-role"
-    },
-    {
-      "id": "spotify-annotation-manager",
-      "company": "Spotify",
-      "title": "Annotation Manager — Content Platform",
-      "domain": "Media / streaming",
-      "engagement": "Full-time",
-      "location": "London or Stockholm",
-      "remote": false,
-      "coreFrame": "ML data labeling, annotation guidelines, content classification workflows",
-      "clusters": [
-        "ai-tooling",
-        "taxonomy",
-        "enablement",
-        "technical-writing"
-      ],
-      "signals": ["content-adjacent", "classification-for-ml"],
-      "compRange": null,
-      "sourceUrl": null,
-      "dateAdded": "2026-05-24",
-      "tag": "content-adjacent"
     },
     {
       "id": "insurify-editor-ai-content-systems",
