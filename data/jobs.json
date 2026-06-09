@@ -28,26 +28,6 @@
       "dateAdded": "2026-05-24"
     },
     {
-      "id": "eqt-qa-engineer",
-      "company": "EQT",
-      "title": "QA Engineer — Analytics Platform",
-      "domain": "Private equity / data",
-      "engagement": "Full-time",
-      "location": "Not specified",
-      "remote": null,
-      "coreFrame": "Quality assurance, technical writing, and enablement for an AI data agent",
-      "clusters": [
-        "ai-tooling",
-        "ai-content-governance",
-        "enablement",
-        "technical-writing"
-      ],
-      "signals": ["hybrid-role"],
-      "compRange": null,
-      "sourceUrl": null,
-      "dateAdded": "2026-05-24"
-    },
-    {
       "id": "colab-content-systems-architect",
       "company": "CoLab",
       "title": "Content Systems Architect",
@@ -148,6 +128,27 @@
       "compRange": { "min": 65000, "max": 75000, "currency": "USD" },
       "sourceUrl": null,
       "dateAdded": "2026-05-24"
+    },
+    {
+      "id": "spotify-annotation-manager",
+      "company": "Spotify",
+      "title": "Annotation Manager — Content Platform",
+      "domain": "Media / streaming",
+      "engagement": "Full-time",
+      "location": "London or Stockholm",
+      "remote": false,
+      "coreFrame": "ML data labeling, annotation guidelines, content classification workflows",
+      "clusters": [
+        "ai-tooling",
+        "taxonomy",
+        "enablement",
+        "technical-writing"
+      ],
+      "signals": ["content-adjacent", "classification-for-ml"],
+      "compRange": null,
+      "sourceUrl": null,
+      "dateAdded": "2026-05-24",
+      "tag": "content-adjacent"
     },
     {
       "id": "openai-content-designer",
