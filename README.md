@@ -1,8 +1,8 @@
-# BCO Skills Tracker
+# Skills Tracker
 
 A lightweight research tool for tracking how content design, content systems, and language infrastructure skills are evolving across industries.
 
-## What's in here
+## What's in this repo?
 
 - `data/jobs.json` — the source of truth. Each entry is a job description, tagged with skill clusters and signals.
 - `docs/` — a simple HTML dashboard that reads the JSON and surfaces patterns across entries.
@@ -14,7 +14,7 @@ Each entry in `jobs.json` includes a company, title, domain, and two types of ta
 - **Clusters** — skill areas the role covers (e.g. `terminology-governance`, `ai-tooling`, `enablement`)
 - **Signals** — patterns worth noting (e.g. `ai-native-expectation`, `governance-as-value-prop`, `title-dilution`)
 
-## Adding entries
+## Adding job descriptions
 
 Open `data/jobs.json` and add a new object to the `entries` array. Copy an existing entry as a template. Update `meta.totalEntries` and `meta.lastUpdated` when done.
 
