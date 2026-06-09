@@ -1,0 +1,50 @@
+{
+  "manifest_version": 3,
+  "name": "BCO Content Skills Tracker",
+  "version": "1.0.0",
+  "description": "Submit interesting content jobs directly to the tracker repository.",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://*.linkedin.com/*",
+    "https://*.indeed.com/*",
+    "https://*.greenhouse.io/*",
+    "https://*.lever.co/*",
+    "https://careers.google.com/*",
+    "https://careers.microsoft.com/*",
+    "https://careers.github.com/*",
+    "https://*.careers/*",
+    "<all_urls>"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/icon-16.png",
+      "32": "images/icon-32.png",
+      "48": "images/icon-48.png",
+      "128": "images/icon-128.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "options_page": "options.html",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.linkedin.com/*",
+        "https://*.indeed.com/*",
+        "https://*.greenhouse.io/*",
+        "https://*.lever.co/*",
+        "https://careers.google.com/*",
+        "https://careers.microsoft.com/*",
+        "https://*.careers/*",
+        "<all_urls>"
+      ],
+      "js": ["content.js"]
+    }
+  ]
+}

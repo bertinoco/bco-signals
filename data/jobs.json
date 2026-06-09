@@ -1,0 +1,411 @@
+{
+  "meta": {
+    "title": "BCO Content Skills Tracker",
+    "description": "Tracking how content design, content systems, and language infrastructure skills are evolving across industries.",
+    "lastUpdated": "2026-05-25",
+    "totalEntries": 15
+  },
+  "entries": [
+    {
+      "id": "sanna-content-engineer",
+      "company": "Sanna",
+      "title": "Content Engineer",
+      "domain": "Fintech (accounting)",
+      "engagement": "Full-time or part-time",
+      "location": "Oslo",
+      "remote": false,
+      "coreFrame": "Language infrastructure, AI agents, UX writing, brand communication",
+      "clusters": [
+        "terminology-governance",
+        "content-systems-design",
+        "ai-tooling",
+        "localization",
+        "enablement"
+      ],
+      "signals": ["ai-native-expectation", "enabler-not-bottleneck"],
+      "compRange": null,
+      "sourceUrl": null,
+      "dateAdded": "2026-05-24"
+    },
+    {
+      "id": "eqt-qa-engineer",
+      "company": "EQT",
+      "title": "QA Engineer — Analytics Platform",
+      "domain": "Private equity / data",
+      "engagement": "Full-time",
+      "location": "Not specified",
+      "remote": null,
+      "coreFrame": "Quality assurance, technical writing, and enablement for an AI data agent",
+      "clusters": [
+        "ai-tooling",
+        "ai-content-governance",
+        "enablement",
+        "technical-writing"
+      ],
+      "signals": ["hybrid-role"],
+      "compRange": null,
+      "sourceUrl": null,
+      "dateAdded": "2026-05-24"
+    },
+    {
+      "id": "colab-content-systems-architect",
+      "company": "CoLab",
+      "title": "Content Systems Architect",
+      "domain": "B2B SaaS (engineering tools)",
+      "engagement": "Full-time",
+      "location": "Canada",
+      "remote": true,
+      "coreFrame": "AI-powered content production workflows for editorial series",
+      "clusters": [
+        "content-systems-design",
+        "ai-tooling",
+        "enablement"
+      ],
+      "signals": ["ai-native-expectation", "content-marketing-adjacent"],
+      "compRange": null,
+      "sourceUrl": null,
+      "dateAdded": "2026-05-24"
+    },
+    {
+      "id": "wellhub-senior-global-ux-writer",
+      "company": "Wellhub",
+      "title": "Senior Global UX Writer, Content Systems",
+      "domain": "Wellness / marketplace",
+      "engagement": "Full-time",
+      "location": "US (Eastern)",
+      "remote": true,
+      "coreFrame": "Taxonomy, terminology governance, localization architecture, content-as-code",
+      "clusters": [
+        "terminology-governance",
+        "content-systems-design",
+        "taxonomy",
+        "localization",
+        "enablement"
+      ],
+      "signals": ["title-responsibility-gap", "enabler-not-bottleneck"],
+      "compRange": null,
+      "sourceUrl": null,
+      "dateAdded": "2026-05-24"
+    },
+    {
+      "id": "phase2-content-architect",
+      "company": "Phase2",
+      "title": "Content Architect",
+      "domain": "Agency (digital platforms)",
+      "engagement": "Full-time",
+      "location": "US",
+      "remote": true,
+      "coreFrame": "Content modeling, structured data, migrations, governance",
+      "clusters": [
+        "terminology-governance",
+        "content-systems-design",
+        "taxonomy",
+        "localization",
+        "technical-writing"
+      ],
+      "signals": ["geo-seo", "structured-data"],
+      "compRange": { "min": 120000, "max": 142000, "currency": "USD" },
+      "sourceUrl": null,
+      "dateAdded": "2026-05-24"
+    },
+    {
+      "id": "gm-senior-content-designer-language-systems",
+      "company": "GM",
+      "title": "Senior Content Designer, Language Systems",
+      "domain": "Automotive / connected products",
+      "engagement": "Full-time",
+      "location": "US",
+      "remote": true,
+      "coreFrame": "Language governance, AI tool evaluation, design system integration",
+      "clusters": [
+        "terminology-governance",
+        "content-systems-design",
+        "ai-tooling",
+        "taxonomy",
+        "enablement",
+        "technical-writing"
+      ],
+      "signals": ["ai-native-expectation", "enabler-not-bottleneck", "governance-as-value-prop"],
+      "compRange": { "min": 105600, "max": 140700, "currency": "USD" },
+      "sourceUrl": null,
+      "dateAdded": "2026-05-24"
+    },
+    {
+      "id": "ramp-product-designer",
+      "company": "Ramp",
+      "title": "Product Designer",
+      "domain": "Fintech (corporate cards/spend)",
+      "engagement": "Full-time",
+      "location": "Not specified",
+      "remote": null,
+      "coreFrame": "Product design with LLM-first workflow and AI prototyping as stated process steps",
+      "clusters": [
+        "ai-tooling"
+      ],
+      "signals": ["llm-first-process", "process-signal"],
+      "compRange": null,
+      "sourceUrl": null,
+      "dateAdded": "2026-05-24",
+      "tag": "non-content-role"
+    },
+    {
+      "id": "spotify-annotation-manager",
+      "company": "Spotify",
+      "title": "Annotation Manager — Content Platform",
+      "domain": "Media / streaming",
+      "engagement": "Full-time",
+      "location": "London or Stockholm",
+      "remote": false,
+      "coreFrame": "ML data labeling, annotation guidelines, content classification workflows",
+      "clusters": [
+        "ai-tooling",
+        "taxonomy",
+        "enablement",
+        "technical-writing"
+      ],
+      "signals": ["content-adjacent", "classification-for-ml"],
+      "compRange": null,
+      "sourceUrl": null,
+      "dateAdded": "2026-05-24",
+      "tag": "content-adjacent"
+    },
+    {
+      "id": "insurify-editor-ai-content-systems",
+      "company": "Insurify",
+      "title": "Editor, AI Content Systems",
+      "domain": "Fintech (insurance)",
+      "engagement": "Full-time",
+      "location": "Cambridge MA",
+      "remote": false,
+      "coreFrame": "AI editorial QA, prompt workflows, SEO content production",
+      "clusters": [
+        "ai-tooling",
+        "ai-content-governance",
+        "enablement"
+      ],
+      "signals": ["title-dilution"],
+      "compRange": { "min": 65000, "max": 75000, "currency": "USD" },
+      "sourceUrl": null,
+      "dateAdded": "2026-05-24"
+    },
+    {
+      "id": "openai-content-designer",
+      "company": "OpenAI",
+      "title": "Content Designer",
+      "domain": "AI / technology",
+      "engagement": "Full-time",
+      "location": "SF or NYC",
+      "remote": false,
+      "coreFrame": "Product language infrastructure, terminology systems, AI-generated copy standards, content frameworks",
+      "clusters": [
+        "terminology-governance",
+        "content-systems-design",
+        "ai-tooling",
+        "ai-content-governance",
+        "localization",
+        "enablement"
+      ],
+      "signals": ["ai-native-expectation", "governance-as-value-prop", "language-infrastructure"],
+      "compRange": null,
+      "sourceUrl": null,
+      "dateAdded": "2026-05-24"
+    },
+    {
+      "id": "google-senior-ux-content-designer-search",
+      "company": "Google",
+      "title": "Senior UX Content Designer, Search",
+      "domain": "AI / technology",
+      "engagement": "Full-time",
+      "location": "NYC or SF",
+      "remote": false,
+      "coreFrame": "AI model behavior design, conversational response strategy, generative AI search UX",
+      "clusters": [
+        "ai-content-governance",
+        "content-systems-design",
+        "enablement"
+      ],
+      "signals": ["model-behavior-design"],
+      "compRange": { "min": 144000, "max": 209000, "currency": "USD", "note": "+ bonus + equity" },
+      "sourceUrl": null,
+      "dateAdded": "2026-05-24"
+    },
+    {
+      "id": "jpmc-content-design-vp",
+      "company": "JPMorgan Chase",
+      "title": "Content Design, Vice President",
+      "domain": "Financial services (co-brand cards)",
+      "engagement": "Full-time",
+      "location": "New York, NY",
+      "remote": false,
+      "coreFrame": "Modular content systems for multi-partner co-brand card portfolio, content architecture, governance, legal/compliance content standards",
+      "clusters": [
+        "terminology-governance",
+        "content-systems-design",
+        "taxonomy",
+        "enablement",
+        "technical-writing"
+      ],
+      "signals": ["governance-as-value-prop", "enabler-not-bottleneck"],
+      "compRange": { "min": 133000, "max": 190000, "currency": "USD" },
+      "sourceUrl": null,
+      "dateAdded": "2026-05-25"
+    },
+    {
+      "id": "netflix-staff-content-designer-ncxd",
+      "company": "Netflix",
+      "title": "Staff Content Designer, NCXD",
+      "domain": "Media / streaming (new entertainment formats)",
+      "engagement": "Full-time",
+      "location": "US (west or east coast preferred)",
+      "remote": true,
+      "coreFrame": "Language frameworks, terminology systems, multi-platform content design (TV, mobile, web), globalization partnership, 0-to-1 product initiatives",
+      "clusters": [
+        "terminology-governance",
+        "content-systems-design",
+        "localization",
+        "enablement"
+      ],
+      "signals": ["enabler-not-bottleneck", "governance-as-value-prop"],
+      "compRange": { "min": 340000, "max": 480000, "currency": "USD", "note": "salary + stock options, no bonus" },
+      "sourceUrl": null,
+      "dateAdded": "2026-05-25"
+    },
+    {
+      "id": "meta-product-content-engineer",
+      "company": "Meta",
+      "title": "Product Content Engineer",
+      "domain": "Social media (Instagram)",
+      "engagement": "Full-time",
+      "location": "Not specified",
+      "remote": null,
+      "coreFrame": "GenAI content quality standards, editorial guidelines as reusable frameworks, annotation quality control for model training, measurement frameworks",
+      "clusters": [
+        "ai-content-governance",
+        "content-systems-design",
+        "enablement",
+        "ai-tooling"
+      ],
+      "signals": ["ai-native-expectation", "classification-for-ml", "content-adjacent"],
+      "compRange": { "min": 131000, "max": 190000, "currency": "USD", "note": "+ bonus + equity" },
+      "sourceUrl": null,
+      "dateAdded": "2026-05-25",
+      "tag": "content-adjacent"
+    },
+    {
+      "id": "google-senior-ux-writer-chrome",
+      "company": "Google",
+      "title": "Senior UX Writer and Content Designer, Chrome",
+      "domain": "AI / technology (browser)",
+      "engagement": "Full-time",
+      "location": "Mountain View, CA",
+      "remote": false,
+      "coreFrame": "Content design for AI Mode features in Chrome, prompt design, system instructions, writing guidelines and word lists, trust and safety content",
+      "clusters": [
+        "terminology-governance",
+        "content-systems-design",
+        "ai-content-governance",
+        "technical-writing"
+      ],
+      "signals": ["ai-native-expectation", "model-behavior-design"],
+      "compRange": { "min": 144000, "max": 209000, "currency": "USD", "note": "+ 15% bonus target + equity" },
+      "sourceUrl": null,
+      "dateAdded": "2026-05-25"
+    }
+  ],
+  "clusters": {
+    "terminology-governance": {
+      "label": "Terminology & Language Governance",
+      "description": "Defining canonical terms, controlled vocabularies, and a single source of truth for product language."
+    },
+    "content-systems-design": {
+      "label": "Content Systems Design",
+      "description": "Frameworks, patterns, templates, and reusable structures for consistent content at scale."
+    },
+    "ai-tooling": {
+      "label": "AI Tooling & Automation",
+      "description": "Building, evaluating, or operationalizing AI-powered content workflows."
+    },
+    "ai-content-governance": {
+      "label": "AI-Generated Content Governance",
+      "description": "Standards, quality rubrics, prompt templates, and tone constraints for AI-produced content."
+    },
+    "taxonomy": {
+      "label": "Taxonomy & Information Architecture",
+      "description": "Classification systems, metadata structures, and content models."
+    },
+    "localization": {
+      "label": "Localization & Internationalization",
+      "description": "String structure, variable logic, culturally neutral source copy, and translation-ready frameworks."
+    },
+    "enablement": {
+      "label": "Enablement & Team Upskilling",
+      "description": "Playbooks, guidelines, and tools that help non-writers produce quality content."
+    },
+    "technical-writing": {
+      "label": "Technical Writing & Documentation",
+      "description": "Documentation of complex systems including data models, governance practices, and platform capabilities."
+    }
+  },
+  "signals": {
+    "ai-native-expectation": {
+      "label": "AI fluency expected",
+      "description": "JD states comfort with AI tooling as a requirement or strong preference."
+    },
+    "enabler-not-bottleneck": {
+      "label": "Enabler, not bottleneck",
+      "description": "JD states the role should build systems that let others write well rather than being the sole writer."
+    },
+    "governance-as-value-prop": {
+      "label": "Governance emphasized",
+      "description": "JD frames governance, quality standards, or change management as a primary responsibility."
+    },
+    "llm-first-process": {
+      "label": "LLM-first workflow",
+      "description": "JD prescribes starting work in an LLM as an explicit process step."
+    },
+    "title-dilution": {
+      "label": "Title dilution",
+      "description": "JD uses 'content systems' language for work that is primarily editorial production or content marketing."
+    },
+    "title-responsibility-gap": {
+      "label": "Title ≠ stated responsibilities",
+      "description": "The job title describes a narrower scope than the stated responsibilities cover."
+    },
+    "model-behavior-design": {
+      "label": "Model behavior design",
+      "description": "JD includes designing how an AI model responds conversationally as a stated responsibility."
+    },
+    "language-infrastructure": {
+      "label": "Language as infrastructure",
+      "description": "JD explicitly uses 'infrastructure' framing for language or content work."
+    },
+    "process-signal": {
+      "label": "Process signal",
+      "description": "Role is not a content position but its stated process expectations are relevant to content disciplines."
+    },
+    "content-adjacent": {
+      "label": "Content-adjacent",
+      "description": "Role applies content skills (taxonomy, governance, documentation) in a non-content-design context."
+    },
+    "hybrid-role": {
+      "label": "Hybrid role",
+      "description": "JD combines content responsibilities with QA, engineering, or other disciplines in a single role."
+    },
+    "classification-for-ml": {
+      "label": "Classification for ML",
+      "description": "JD states taxonomy or classification work applied to machine learning training data."
+    },
+    "content-marketing-adjacent": {
+      "label": "Content marketing adjacent",
+      "description": "JD uses systems or architecture language for work that is primarily content marketing."
+    },
+    "geo-seo": {
+      "label": "GEO & SEO",
+      "description": "JD states content architecture responsibilities for search and generative engine discovery."
+    },
+    "structured-data": {
+      "label": "Structured data",
+      "description": "JD states Schema.org, JSON-LD, or entity modeling as a responsibility."
+    }
+  }
+}
