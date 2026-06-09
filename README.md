@@ -19,19 +19,6 @@ Each entry in `jobs.json` includes:
 - `compRange` — compensation data when stated in the JD
 - `tag` — optional, factual classifier (e.g. `non-content-role`, `content-adjacent`)
 
-## Data integrity rules
-
-All entries and contributions must follow these rules:
-
-- Report only what the JD states. Do not infer intent, project trends, or editorialize.
-- Clusters and signals must be grounded in stated responsibilities. If a JD does not explicitly mention a responsibility, do not assign the corresponding cluster.
-- Descriptions must be neutral. Describe what the JD says, not what it implies.
-- If a responsibility is ambiguous, note the ambiguity rather than resolving it.
-- No projections. Do not predict where the market is heading. The data speaks for itself.
-- No value judgments. Do not rank roles, call one "more comprehensive" than another, or label work as "lower-complexity."
-
-These rules apply equally to human contributors and AI-assisted workflows (e.g. Claude Code).
-
 ## Adding job descriptions
 
 Open `data/jobs.json` and add a new object to the `entries` array. Copy an existing entry as a template. Update `meta.totalEntries` and `meta.lastUpdated` when done.
