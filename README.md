@@ -1,6 +1,6 @@
 # Skills Tracker
 
-A lightweight research tool for tracking how content design, content systems, and language infrastructure skills are evolving across industries.
+This is a lightweight research tool for tracking how content design skills and responsibilities are evolving with the help of AI. This is not intended to be an exhaustive study. It's just a curated list of jobs I find interesting.
 
 ## What's in this repo?
 
