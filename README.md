@@ -21,7 +21,7 @@ Each entry in `jobs.json` includes:
 
 ## Adding job descriptions
 
-Open `data/jobs.json` and add a new object to the `entries` array. Copy an existing entry as a template. Update `meta.totalEntries` and `meta.lastUpdated` when done.
+See an interesting, forward-leaning job description? Add it by creating a PR. Open `data/jobs.json` and add a new object to the `entries` array. Copy an existing entry as a template. Update `meta.totalEntries` and `meta.lastUpdated` when done.
 
 ---
 
