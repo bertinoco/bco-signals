@@ -3,7 +3,7 @@
     "title": "BCO Content Skills Tracker",
     "description": "Tracking how content design, content systems, and language infrastructure skills are evolving across industries.",
     "lastUpdated": "2026-06-10",
-    "totalEntries": 14
+    "totalEntries": 15
   },
   "entries": [
     {
@@ -291,6 +291,27 @@
       ],
       "signals": ["ai-native-expectation", "classification-for-ml", "hybrid-role"],
       "compRange": { "min": 193000, "max": 269000, "currency": "USD", "note": "+ bonus + equity" },
+      "sourceUrl": null,
+      "dateAdded": "2026-06-10"
+    },
+    {
+      "id": "figma-ux-writer-ai",
+      "company": "Figma",
+      "title": "UX Writer, AI",
+      "domain": "Design tools / SaaS",
+      "engagement": "Full-time",
+      "location": "New York or San Francisco (remote in US)",
+      "remote": true,
+      "coreFrame": "UX writing for AI-powered product features; defining best practices for prompting and interaction patterns; building taxonomies, glossaries, and artifacts for human and agentic ingestion; measuring and evaluating AI-generated language quality",
+      "clusters": [
+        "terminology-governance",
+        "content-systems-design",
+        "ai-content-governance",
+        "ai-tooling",
+        "taxonomy"
+      ],
+      "signals": ["ai-native-expectation", "model-behavior-design", "language-infrastructure", "title-responsibility-gap"],
+      "compRange": { "min": 153000, "max": 250000, "currency": "USD", "note": "+ equity + bonus" },
       "sourceUrl": null,
       "dateAdded": "2026-06-10"
     }
