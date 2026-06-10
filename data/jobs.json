@@ -3,7 +3,7 @@
     "title": "BCO Content Skills Tracker",
     "description": "Tracking how content design, content systems, and language infrastructure skills are evolving across industries.",
     "lastUpdated": "2026-06-10",
-    "totalEntries": 16
+    "totalEntries": 17
   },
   "entries": [
     {
@@ -334,6 +334,24 @@
       ],
       "signals": ["ai-native-expectation", "governance-as-value-prop", "geo-seo", "structured-data", "language-infrastructure", "enabler-not-bottleneck"],
       "compRange": { "min": 68300, "max": 157800, "currency": "USD", "note": "Illinois range; varies by location" },
+      "sourceUrl": null,
+      "dateAdded": "2026-06-10"
+    },
+    {
+      "id": "adobe-principal-content-strategist-ai-learning",
+      "company": "Adobe",
+      "title": "Principal Content Strategist, AI Learning",
+      "domain": "Software / SaaS (creative and marketing tools)",
+      "engagement": "Full-time",
+      "location": "San Francisco, CA",
+      "remote": null,
+      "coreFrame": "Content strategy and curriculum architecture for an AI learning program for marketers; micro-learning and workflow-based content at scale; managing contributors and subject matter experts while maintaining instructional quality and brand standards across Adobe Experience League",
+      "clusters": [
+        "content-systems-design",
+        "enablement"
+      ],
+      "signals": ["ai-native-expectation", "enabler-not-bottleneck"],
+      "compRange": { "min": 180300, "max": 261150, "currency": "USD", "note": "California range; varies by location" },
       "sourceUrl": null,
       "dateAdded": "2026-06-10"
     }
