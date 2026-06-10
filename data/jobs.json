@@ -3,7 +3,7 @@
     "title": "BCO Content Skills Tracker",
     "description": "Tracking how content design, content systems, and language infrastructure skills are evolving across industries.",
     "lastUpdated": "2026-06-10",
-    "totalEntries": 15
+    "totalEntries": 16
   },
   "entries": [
     {
@@ -312,6 +312,28 @@
       ],
       "signals": ["ai-native-expectation", "model-behavior-design", "language-infrastructure", "title-responsibility-gap"],
       "compRange": { "min": 153000, "max": 250000, "currency": "USD", "note": "+ equity + bonus" },
+      "sourceUrl": null,
+      "dateAdded": "2026-06-10"
+    },
+    {
+      "id": "accenture-content-strategist-agentic-commerce",
+      "company": "Accenture",
+      "title": "Content Strategist | Agentic Commerce",
+      "domain": "Consulting / agency (retail and consumer goods)",
+      "engagement": "Full-time",
+      "location": "Chicago, IL",
+      "remote": null,
+      "coreFrame": "Content architecture for AI-native commerce ecosystems; taxonomy, ontology, and metadata schema design for agent comprehension and retrieval; GEO/AEO content strategy; modular messaging systems for agent-mediated journeys; content governance with experimentation and performance measurement frameworks",
+      "clusters": [
+        "terminology-governance",
+        "content-systems-design",
+        "taxonomy",
+        "ai-content-governance",
+        "ai-tooling",
+        "enablement"
+      ],
+      "signals": ["ai-native-expectation", "governance-as-value-prop", "geo-seo", "structured-data", "language-infrastructure", "enabler-not-bottleneck"],
+      "compRange": { "min": 68300, "max": 157800, "currency": "USD", "note": "Illinois range; varies by location" },
       "sourceUrl": null,
       "dateAdded": "2026-06-10"
     }
