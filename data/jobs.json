@@ -2,8 +2,8 @@
   "meta": {
     "title": "BCO Content Skills Tracker",
     "description": "Tracking how content design, content systems, and language infrastructure skills are evolving across industries.",
-    "lastUpdated": "2026-06-01",
-    "totalEntries": 13
+    "lastUpdated": "2026-06-10",
+    "totalEntries": 14
   },
   "entries": [
     {
@@ -272,6 +272,27 @@
       "compRange": { "min": 144000, "max": 209000, "currency": "USD", "note": "+ 15% bonus target + equity" },
       "sourceUrl": null,
       "dateAdded": "2026-05-25"
+    },
+    {
+      "id": "meta-lead-product-content-engineering",
+      "company": "Meta",
+      "title": "Lead, Product Content Engineering",
+      "domain": "Social media / technology",
+      "engagement": "Full-time",
+      "location": "New York, NY",
+      "remote": false,
+      "coreFrame": "LLM model evaluation strategy and automation, content engineering for AI-powered product experiences, annotation and dataset quality for model training",
+      "clusters": [
+        "ai-content-governance",
+        "ai-tooling",
+        "content-systems-design",
+        "taxonomy",
+        "enablement"
+      ],
+      "signals": ["ai-native-expectation", "classification-for-ml", "hybrid-role"],
+      "compRange": { "min": 193000, "max": 269000, "currency": "USD", "note": "+ bonus + equity" },
+      "sourceUrl": null,
+      "dateAdded": "2026-06-10"
     }
   ],
   "clusters": {
