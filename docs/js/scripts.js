@@ -1,5 +1,5 @@
 // Data path for GitHub Pages with `docs/` at repo root
-const DATA_PATH = '../data/jobs.json';
+const DATA_PATH = 'data/jobs.json';
 const SIGNAL_THRESHOLD = 2; // show signals with at least this many entries
 
 async function loadData() {

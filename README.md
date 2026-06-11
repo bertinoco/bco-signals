@@ -5,8 +5,8 @@ This is a lightweight research tool for tracking how content design skills and r
 ## Structure
 
 ```
-data/jobs.json     — Structured entries for each tracked role
-docs/index.html    — Dashboard (hosted version coming soon)
+docs/data/jobs.json   — Structured entries for each tracked role
+docs/index.html       — Dashboard at skills.bertino.co
 ```
 
 ## Data schema
@@ -21,7 +21,7 @@ Each entry in `jobs.json` includes:
 
 ## Adding job descriptions
 
-See an interesting, forward-leaning job description? Add it by creating a PR. Open `data/jobs.json` and add a new object to the `entries` array. Copy an existing entry as a template. Update `meta.totalEntries` and `meta.lastUpdated` when done.
+See an interesting, forward-leaning job description? Add it by creating a PR. Open `docs/data/jobs.json` and add a new object to the `entries` array. Copy an existing entry as a template. Update `meta.totalEntries` and `meta.lastUpdated` when done.
 
 ---
 
