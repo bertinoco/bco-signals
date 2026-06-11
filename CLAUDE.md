@@ -2,7 +2,7 @@
 
 ## Data integrity rules
 
-When adding or reviewing entries in `data/jobs.json`, follow these rules without exception:
+When adding or reviewing entries in `docs/data/jobs.json`, follow these rules without exception:
 
 - Report only what the JD states. Do not infer intent, project trends, or editorialize.
 - Clusters and signals must be grounded in stated responsibilities. If a JD does not explicitly mention a responsibility, do not assign the corresponding cluster.

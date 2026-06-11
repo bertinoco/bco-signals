@@ -14,8 +14,8 @@ docs/index.html       — Dashboard at skills.bertino.co
 Each entry in `jobs.json` includes:
 
 - `company` / `title` / `domain` — basics
-- `clusters` — which responsibility areas the role covers, based on stated responsibilities
-- `signals` — observable characteristics of the JD (e.g. title uses systems language, JD prescribes LLM workflow)
+- `clusters` — responsibility clusters the role covers, based on stated responsibilities (displayed as "Responsibility Clusters")
+- `signals` — emerging skills and observable patterns in the JD (displayed as "Emerging Skills")
 - `compRange` — compensation data when stated in the JD
 - `tag` — optional, factual classifier (e.g. `non-content-role`, `content-adjacent`)
 
