@@ -39,15 +39,11 @@ function renderClusters(data) {
 
   grid.innerHTML = clusterKeys.map(key => {
     const cluster = data.clusters[key];
-    const companies = [...new Set(clusterMap[key])];
+    const count = [...new Set(clusterMap[key])].length;
     return `
       <div class="cluster-card">
-        <div class="cluster-count">${companies.length} role${companies.length !== 1 ? 's' : ''}</div>
         <h3>${cluster.label}</h3>
         <p class="cluster-desc">${cluster.description}</p>
-        <div class="cluster-companies">
-          ${companies.map(c => `<span class="company-tag">${c}</span>`).join('')}
-        </div>
       </div>
     `;
   }).join('');
@@ -102,14 +98,11 @@ function renderSignals(data) {
 
   list.innerHTML = relevantSignals.map(key => {
     const signal = data.signals[key];
-    const companies = [...new Set(signalMap[key])];
+    const count = [...new Set(signalMap[key])].length;
     return `
       <div class="signal-card">
         <div class="signal-label">${signal.label}</div>
         <p class="signal-desc">${signal.description}</p>
-        <div class="signal-companies">
-          ${companies.map(c => `<span class="company-tag">${c}</span>`).join('')}
-        </div>
       </div>
     `;
   }).join('');
