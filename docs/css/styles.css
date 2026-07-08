@@ -304,17 +304,16 @@ body {
 }
 
 .signal-label {
-  font-size: var(--font-xs);
+  font-size: var(--font-base);
   font-weight: var(--weight-semibold);
-  letter-spacing: var(--tracking-wide);
-  text-transform: uppercase;
-  color: var(--color-accent);
+  line-height: var(--leading-snug);
+  color: var(--color-text);
   margin-bottom: 6px;
 }
 
 .signal-desc {
   font-size: var(--font-sm);
-  color: var(--color-text);
+  color: var(--color-text-secondary);
   line-height: var(--leading-normal);
   margin-bottom: var(--space-2);
 }
