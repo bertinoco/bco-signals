@@ -16,7 +16,9 @@ async function loadData() {
 function renderMeta(data) {
   const el = document.getElementById('meta-line');
   const dateEl = document.getElementById('footer-date');
-  el.innerHTML = `<span>${data.meta.totalEntries} roles tracked</span><span>Last updated ${data.meta.lastUpdated}</span>`;
+  const clusterCount = Object.keys(data.clusters).length;
+  const signalCount = Object.keys(data.signals).length;
+  el.innerHTML = `<span>${data.meta.totalEntries} roles tracked</span><span>${clusterCount} responsibilities</span><span>${signalCount} skills</span>`;
   dateEl.textContent = data.meta.lastUpdated;
 }
 
