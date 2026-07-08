@@ -2,8 +2,8 @@
   "meta": {
     "title": "BCO Content Skills Tracker",
     "description": "A curated skills tracker for the content design community.",
-    "lastUpdated": "2026-06-10",
-    "totalEntries": 16
+    "lastUpdated": "2026-07-08",
+    "totalEntries": 19
   },
   "entries": [
     {
@@ -336,6 +336,67 @@
       "compRange": { "min": 68300, "max": 157800, "currency": "USD", "note": "Illinois range; varies by location" },
       "sourceUrl": null,
       "dateAdded": "2026-06-10"
+    },
+    {
+      "id": "youtube-staff-ux-content-designer-creators",
+      "company": "YouTube",
+      "title": "Staff UX Content Designer, YouTube Creators Monetization",
+      "domain": "Media / advertising (creator monetization)",
+      "engagement": "Full-time",
+      "location": "New York, NY",
+      "remote": false,
+      "coreFrame": "UX writing and content design processes, systems, frameworks, and patterns across multiple teams and products",
+      "clusters": [
+        "content-systems-design",
+        "enablement"
+      ],
+      "signals": [],
+      "compRange": { "min": 171000, "max": 248000, "currency": "USD", "note": "+ 20% bonus target + equity" },
+      "sourceUrl": null,
+      "dateAdded": "2026-05-25"
+    },
+    {
+      "id": "notion-cx-knowledge-architect",
+      "company": "Notion",
+      "title": "CX Knowledge Architect",
+      "domain": "SaaS / productivity (AI workspace)",
+      "engagement": "Full-time",
+      "location": "New York, NY",
+      "remote": false,
+      "coreFrame": "End-to-end CX knowledge system ownership, information architecture, governance, modular reusable content, AI-assisted content QA, taxonomy and tagging",
+      "clusters": [
+        "content-systems-design",
+        "taxonomy",
+        "ai-tooling",
+        "ai-content-governance",
+        "enablement",
+        "technical-writing"
+      ],
+      "signals": ["governance-as-value-prop", "content-adjacent"],
+      "compRange": { "min": 136000, "max": 160000, "currency": "USD" },
+      "sourceUrl": null,
+      "dateAdded": "2026-05-25",
+      "tag": "content-adjacent"
+    },
+    {
+      "id": "spotify-senior-conversation-designer",
+      "company": "Spotify",
+      "title": "Senior Conversation Designer — Experience Content Design",
+      "domain": "Media / streaming (AI products)",
+      "engagement": "Full-time",
+      "location": "London or Stockholm",
+      "remote": false,
+      "coreFrame": "Conversational experience design, prompt engineering, model behavior guardrails, evaluation frameworks, LLM prototyping, shared patterns and documentation",
+      "clusters": [
+        "ai-content-governance",
+        "content-systems-design",
+        "ai-tooling",
+        "enablement"
+      ],
+      "signals": ["model-behavior-design", "ai-native-expectation"],
+      "compRange": null,
+      "sourceUrl": null,
+      "dateAdded": "2026-05-25"
     }
   ],
   "clusters": {
