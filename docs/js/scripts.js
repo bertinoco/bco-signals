@@ -17,11 +17,7 @@ async function loadData() {
 }
 
 function renderMeta(data) {
-  const el = document.getElementById('meta-line');
   const dateEl = document.getElementById('footer-date');
-  const clusterCount = Object.keys(data.clusters).length;
-  const signalCount = Object.keys(data.signals).length;
-  el.innerHTML = `<span>${data.meta.totalEntries} roles</span><span>${clusterCount} responsibilities</span><span>${signalCount} skills</span>`;
   dateEl.textContent = data.meta.lastUpdated;
 }
 
@@ -144,35 +140,44 @@ function renderSignals(data) {
   }).join('');
 }
 
-// Accessible tab behavior (click + arrow keys)
-const tabs = Array.from(document.querySelectorAll('.tab'));
-const tablist = document.querySelector('.tabs');
+// ── Badge nav (click + arrow keys) ──────────────────────────
+const badges = Array.from(document.querySelectorAll('.badge-btn'));
+const badgeNav = document.querySelector('.badge-nav');
 
-tabs.forEach(tab => {
-  tab.addEventListener('click', () => {
-    tabs.forEach(t => {
-      t.classList.remove('active');
-      t.setAttribute('aria-selected', 'false');
-    });
-    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-
-    tab.classList.add('active');
-    tab.setAttribute('aria-selected', 'true');
-    document.getElementById(tab.dataset.section).classList.add('active');
-    tab.blur(); // prevent focus ring showing on mouse click
+function activateBadge(badge) {
+  badges.forEach(b => {
+    b.classList.remove('active');
+    b.setAttribute('aria-selected', 'false');
   });
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  badge.classList.add('active');
+  badge.setAttribute('aria-selected', 'true');
+  document.getElementById(badge.dataset.section).classList.add('active');
+  badge.blur();
+}
+
+badges.forEach(badge => {
+  badge.addEventListener('click', () => activateBadge(badge));
 });
 
-tablist.addEventListener('keydown', (e) => {
+badgeNav.addEventListener('keydown', (e) => {
   if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
   e.preventDefault();
-  const idx = tabs.indexOf(document.activeElement);
-  let next = idx;
-  if (e.key === 'ArrowRight') next = (idx + 1) % tabs.length;
-  if (e.key === 'ArrowLeft') next = (idx - 1 + tabs.length) % tabs.length;
-  tabs[next].focus();
-  tabs[next].click();
+  const idx = badges.indexOf(document.activeElement);
+  const next = e.key === 'ArrowRight'
+    ? (idx + 1) % badges.length
+    : (idx - 1 + badges.length) % badges.length;
+  badges[next].focus();
+  activateBadge(badges[next]);
 });
+
+// ── Sticky header collapse ───────────────────────────────────
+const siteHeader = document.getElementById('site-header');
+const COLLAPSE_THRESHOLD = 80;
+
+window.addEventListener('scroll', () => {
+  siteHeader.classList.toggle('is-sticky', window.scrollY > COLLAPSE_THRESHOLD);
+}, { passive: true });
 
 // Show more
 const showMoreEl = document.getElementById('titles-show-more');

@@ -106,9 +106,38 @@ body {
 
 /* ── Header ───────────────────────────────────────────────── */
 .site-header {
-  padding: var(--space-12) 0 var(--space-6);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--color-bg);
   border-bottom: 1px solid var(--color-border-subtle);
-  margin-bottom: var(--space-2);
+  transition: padding var(--duration-base) var(--ease-out);
+  padding: var(--space-12) 0 var(--space-3);
+  text-align: center;
+}
+
+.site-header.is-sticky {
+  padding: var(--space-2) 0;
+}
+
+.header-title-wrapper {
+  display: grid;
+  grid-template-rows: 1fr;
+  opacity: 1;
+  transition: grid-template-rows var(--duration-base) var(--ease-out),
+              opacity var(--duration-base) var(--ease-out),
+              margin var(--duration-base) var(--ease-out);
+  margin-bottom: var(--space-3);
+}
+
+.site-header.is-sticky .header-title-wrapper {
+  grid-template-rows: 0fr;
+  opacity: 0;
+  margin-bottom: 0;
+}
+
+.header-title {
+  overflow: hidden;
 }
 
 .site-header h1 {
@@ -129,87 +158,53 @@ body {
   margin: 0 auto;
 }
 
-.meta-line {
+/* ── Badge nav ────────────────────────────────────────────── */
+.badge-nav {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
   gap: var(--space-1);
-  margin-top: var(--space-3);
+  flex-wrap: wrap;
 }
 
-.meta-line span {
+.badge-btn {
+  font-family: var(--font-sans);
   font-size: var(--font-xs);
   font-weight: var(--weight-semibold);
-  color: var(--color-text-secondary);
   letter-spacing: var(--tracking-wide);
   text-transform: uppercase;
+  color: var(--color-text-secondary);
+  background: none;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-full);
-  padding: 4px 12px;
-}
-
-/* ── Tabs ─────────────────────────────────────────────────── */
-.tabs {
-  display: flex;
-  justify-content: center;
-  gap: var(--space-3);
-  margin-bottom: var(--space-4);
-  position: sticky;
-  top: 0;
-  background: var(--color-bg);
-  z-index: 10;
-  padding: var(--space-3) 0;
-}
-
-.tab {
-  padding: 0 0 6px;
-  font-family: var(--font-sans);
-  font-size: var(--font-sm);
-  font-weight: var(--weight-medium);
-  color: var(--color-text-muted);
-  background: none;
-  border: none;
-  border-radius: 0;
+  padding: 5px 14px;
   cursor: pointer;
-  letter-spacing: 0.01em;
-  position: relative;
-  transition: color var(--duration-fast) ease;
+  transition: color var(--duration-fast) ease,
+              background var(--duration-fast) ease,
+              border-color var(--duration-fast) ease;
   outline: none;
 }
 
-.tab:focus-visible {
+.badge-btn:hover {
+  border-color: var(--color-text-muted);
+  color: var(--color-text);
+}
+
+.badge-btn.active {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: #ffffff;
+}
+
+.badge-btn:focus-visible {
   outline: 2px solid var(--color-accent);
-  outline-offset: 4px;
-  border-radius: 2px;
-}
-
-.tab::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 2px;
-  background-color: var(--color-accent);
-  transform: scaleX(0);
-  transform-origin: left center;
-  transition: transform var(--duration-base) var(--ease-out);
-}
-
-.tab:hover {
-  color: var(--color-text-secondary);
-}
-
-.tab.active {
-  color: var(--color-accent);
-  font-weight: var(--weight-semibold);
-}
-
-.tab.active::after {
-  transform: scaleX(1);
+  outline-offset: 3px;
 }
 
 /* ── Sections ─────────────────────────────────────────────── */
+#main {
+  padding-top: var(--space-6);
+}
+
 .section {
   display: none;
   padding-bottom: var(--space-12);

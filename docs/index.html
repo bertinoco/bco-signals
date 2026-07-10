@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Skills Tracker — A Bertino Consulting Side Project</title>
+  <title>Future of Content Design — Bertino Consulting</title>
   <meta name="description" content="A curated skills tracker for the content design community.">
 
   <!-- Favicon -->
@@ -12,32 +12,36 @@
   <!-- OpenGraph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://skills.bertino.co/">
-  <meta property="og:title" content="Skills Tracker — A Bertino Consulting Side Project">
+  <meta property="og:title" content="Future of Content Design — Bertino Consulting">
   <meta property="og:description" content="A curated skills tracker for the content design community.">
   <meta property="og:image" content="https://skills.bertino.co/images/og-image.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=2">
+  <link rel="stylesheet" href="css/styles.css?v=3">
 </head>
 <body>
 
   <a class="skip-link" href="#main">Skip to content</a>
 
+  <header class="site-header" id="site-header">
+    <div class="container">
+      <div class="header-title-wrapper">
+        <div class="header-title">
+          <h1>Future of Content Design</h1>
+          <p>A curated skills tracker for the content design community.</p>
+        </div>
+      </div>
+      <nav class="badge-nav" role="tablist" aria-label="Content sections">
+        <button class="badge-btn active" role="tab" data-section="clusters" aria-selected="true" aria-controls="clusters">Responsibilities</button>
+        <button class="badge-btn" role="tab" data-section="signals" aria-selected="false" aria-controls="signals">Skills</button>
+        <button class="badge-btn" role="tab" data-section="titles" aria-selected="false" aria-controls="titles">Roles</button>
+      </nav>
+    </div>
+  </header>
+
   <div class="container">
-    <header class="site-header">
-      <h1>Future of Content Design</h1>
-      <p>A curated skills tracker for the content design community.</p>
-      <div class="meta-line" id="meta-line"></div>
-    </header>
-
-    <nav class="tabs" role="tablist">
-      <button class="tab active" role="tab" data-section="clusters" aria-selected="true" aria-controls="clusters">Responsibility Clusters</button>
-      <button class="tab" role="tab" data-section="signals" aria-selected="false" aria-controls="signals">Emerging Skills & Patterns</button>
-      <button class="tab" role="tab" data-section="titles" aria-selected="false" aria-controls="titles">All Job Descriptions</button>
-    </nav>
-
     <main id="main">
       <section class="section active" id="clusters" role="tabpanel">
         <p class="section-intro">Stated responsibilities across tracked roles, grouped by area. Each card shows which roles include that responsibility cluster.</p>
