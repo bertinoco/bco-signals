@@ -1,6 +1,9 @@
 // Data path for GitHub Pages with `docs/` at repo root
 const DATA_PATH = 'data/jobs.json';
-const SIGNAL_THRESHOLD = 2; // show signals with at least this many entries
+const SIGNAL_THRESHOLD = 2;
+const TITLES_LIMIT = 12;
+let showAllTitles = false;
+let globalData = null;
 
 async function loadData() {
   try {
@@ -53,8 +56,20 @@ function renderClusters(data) {
 
 function renderTitles(data) {
   const list = document.getElementById('title-list');
+  const showMore = document.getElementById('titles-show-more');
+  const showMoreBtn = showMore ? showMore.querySelector('.show-more-btn') : null;
+  const entries = showAllTitles ? data.entries : data.entries.slice(0, TITLES_LIMIT);
 
-  list.innerHTML = data.entries.map(entry => {
+  if (showMore) {
+    if (!showAllTitles && data.entries.length > TITLES_LIMIT) {
+      showMore.style.display = 'block';
+      showMoreBtn.textContent = `View all ${data.entries.length} job descriptions`;
+    } else {
+      showMore.style.display = 'none';
+    }
+  }
+
+  list.innerHTML = entries.map(entry => {
     const fmt = (n) => '$' + n.toLocaleString('en-US');
     const compHtml = entry.compRange
       ? `<div class="title-comp">${fmt(entry.compRange.min)}–${fmt(entry.compRange.max)} ${entry.compRange.currency}${entry.compRange.note ? ' ' + entry.compRange.note : ''}</div>`
@@ -159,6 +174,15 @@ tablist.addEventListener('keydown', (e) => {
   tabs[next].click();
 });
 
+// Show more
+const showMoreEl = document.getElementById('titles-show-more');
+if (showMoreEl) {
+  showMoreEl.querySelector('.show-more-btn').addEventListener('click', () => {
+    showAllTitles = true;
+    if (globalData) renderTitles(globalData);
+  });
+}
+
 // Init
 loadData().then(data => {
   if (!data) {
@@ -169,6 +193,7 @@ loadData().then(data => {
     });
     return;
   }
+  globalData = data;
   renderMeta(data);
   renderClusters(data);
   renderTitles(data);
