@@ -18,7 +18,7 @@ function renderMeta(data) {
   const dateEl = document.getElementById('footer-date');
   const clusterCount = Object.keys(data.clusters).length;
   const signalCount = Object.keys(data.signals).length;
-  el.innerHTML = `<span>${data.meta.totalEntries} roles tracked</span><span>${clusterCount} responsibilities</span><span>${signalCount} skills</span>`;
+  el.innerHTML = `<span>${data.meta.totalEntries} roles</span><span>${clusterCount} responsibilities</span><span>${signalCount} skills</span>`;
   dateEl.textContent = data.meta.lastUpdated;
 }
 
@@ -55,28 +55,47 @@ function renderTitles(data) {
   const list = document.getElementById('title-list');
 
   list.innerHTML = data.entries.map(entry => {
-    let compHtml = '';
-    if (entry.compRange) {
-      const fmt = (n) => '$' + n.toLocaleString('en-US');
-      compHtml = `<div class="title-comp">${fmt(entry.compRange.min)}–${fmt(entry.compRange.max)} ${entry.compRange.currency}${entry.compRange.note ? ' ' + entry.compRange.note : ''}</div>`;
-    }
-
-    let noteHtml = entry.note ? `<div class="title-note">${entry.note}</div>` : '';
+    const fmt = (n) => '$' + n.toLocaleString('en-US');
+    const compHtml = entry.compRange
+      ? `<div class="title-comp">${fmt(entry.compRange.min)}–${fmt(entry.compRange.max)} ${entry.compRange.currency}${entry.compRange.note ? ' ' + entry.compRange.note : ''}</div>`
+      : '';
+    const noteHtml = entry.note ? `<div class="title-note">${entry.note}</div>` : '';
+    const hasQuote = !!entry.quote;
+    const quoteHtml = hasQuote
+      ? `<div class="title-quote"><blockquote>${entry.quote}</blockquote></div>`
+      : '';
+    const expandBtn = hasQuote
+      ? `<button class="title-expand" aria-expanded="false" aria-label="Show quote">+</button>`
+      : '';
 
     return `
-      <div class="title-entry">
-        <div>
+      <div class="title-entry${hasQuote ? ' has-quote' : ''}">
+        <div class="title-meta">
           <div class="title-company">${entry.company}</div>
           <div class="title-domain">${entry.domain}</div>
         </div>
-        <div>
-          <div class="title-name">${entry.title}</div>
+        <div class="title-body">
+          <div class="title-header">
+            <div class="title-name">${entry.title}</div>
+            ${expandBtn}
+          </div>
           ${compHtml}
           ${noteHtml}
+          ${quoteHtml}
         </div>
       </div>
     `;
   }).join('');
+
+  // Expand/collapse on click
+  list.querySelectorAll('.title-expand').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const entry = btn.closest('.title-entry');
+      const isOpen = entry.classList.toggle('is-expanded');
+      btn.setAttribute('aria-expanded', String(isOpen));
+      btn.textContent = isOpen ? '×' : '+';
+    });
+  });
 }
 
 function renderSignals(data) {

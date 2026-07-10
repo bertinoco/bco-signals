@@ -22,10 +22,14 @@
         "localization",
         "enablement"
       ],
-      "signals": ["ai-native-expectation", "enabler-not-bottleneck"],
+      "signals": [
+        "ai-native-expectation",
+        "enabler-not-bottleneck"
+      ],
       "compRange": null,
       "sourceUrl": null,
-      "dateAdded": "2026-05-24"
+      "dateAdded": "2026-05-24",
+      "quote": "This isn’t a traditional content role. We’re looking for someone who operates at the edge of tech and language – someone who can design systems, build agents, and orchestrate tooling that scales quality."
     },
     {
       "id": "colab-content-systems-architect",
@@ -41,10 +45,14 @@
         "ai-tooling",
         "enablement"
       ],
-      "signals": ["ai-native-expectation", "content-marketing-adjacent"],
+      "signals": [
+        "ai-native-expectation",
+        "content-marketing-adjacent"
+      ],
       "compRange": null,
       "sourceUrl": null,
-      "dateAdded": "2026-05-24"
+      "dateAdded": "2026-05-24",
+      "quote": "As Content Systems Architect, your job is to own the execution and growth of those series — not by writing content yourself, but by building AI-powered systems."
     },
     {
       "id": "wellhub-senior-global-ux-writer",
@@ -62,10 +70,14 @@
         "localization",
         "enablement"
       ],
-      "signals": ["title-responsibility-gap", "enabler-not-bottleneck"],
+      "signals": [
+        "title-responsibility-gap",
+        "enabler-not-bottleneck"
+      ],
       "compRange": null,
       "sourceUrl": null,
-      "dateAdded": "2026-05-24"
+      "dateAdded": "2026-05-24",
+      "quote": "You design content as a scalable system, not isolated screens — shaping taxonomy, terminology, and information architecture to create intuitive and future-proof products."
     },
     {
       "id": "phase2-content-architect",
@@ -83,10 +95,18 @@
         "localization",
         "technical-writing"
       ],
-      "signals": ["geo-seo", "structured-data"],
-      "compRange": { "min": 120000, "max": 142000, "currency": "USD" },
+      "signals": [
+        "geo-seo",
+        "structured-data"
+      ],
+      "compRange": {
+        "min": 120000,
+        "max": 142000,
+        "currency": "USD"
+      },
       "sourceUrl": null,
-      "dateAdded": "2026-05-24"
+      "dateAdded": "2026-05-24",
+      "quote": "By architecting content for both human users and machine learning systems, this role ensures clients capture opportunities across traditional search, generative engine optimization (GEO), and AI-powered experiences."
     },
     {
       "id": "gm-senior-content-designer-language-systems",
@@ -105,10 +125,19 @@
         "enablement",
         "technical-writing"
       ],
-      "signals": ["ai-native-expectation", "enabler-not-bottleneck", "governance-as-value-prop"],
-      "compRange": { "min": 105600, "max": 140700, "currency": "USD" },
+      "signals": [
+        "ai-native-expectation",
+        "enabler-not-bottleneck",
+        "governance-as-value-prop"
+      ],
+      "compRange": {
+        "min": 105600,
+        "max": 140700,
+        "currency": "USD"
+      },
       "sourceUrl": null,
-      "dateAdded": "2026-05-24"
+      "dateAdded": "2026-05-24",
+      "quote": "Build and evolve governance models — including workflows, decision frameworks, review practices, and change-management processes — that scale content quality across teams."
     },
     {
       "id": "insurify-editor-ai-content-systems",
@@ -124,10 +153,17 @@
         "ai-content-governance",
         "enablement"
       ],
-      "signals": ["title-dilution"],
-      "compRange": { "min": 65000, "max": 75000, "currency": "USD" },
+      "signals": [
+        "title-dilution"
+      ],
+      "compRange": {
+        "min": 65000,
+        "max": 75000,
+        "currency": "USD"
+      },
       "sourceUrl": null,
-      "dateAdded": "2026-05-24"
+      "dateAdded": "2026-05-24",
+      "quote": "Take the lead on designing, testing, and refining AI workflows and model configurations that produce engaging, accurate editorial content tailored to our brand’s unique voice."
     },
     {
       "id": "spotify-annotation-manager",
@@ -144,11 +180,15 @@
         "enablement",
         "technical-writing"
       ],
-      "signals": ["content-adjacent", "classification-for-ml"],
+      "signals": [
+        "content-adjacent",
+        "classification-for-ml"
+      ],
       "compRange": null,
       "sourceUrl": null,
       "dateAdded": "2026-05-24",
-      "tag": "content-adjacent"
+      "tag": "content-adjacent",
+      "quote": "Translate requirements into clear annotation guidelines, collaborating with content policy experts and updating guidance based on results."
     },
     {
       "id": "openai-content-designer",
@@ -167,10 +207,15 @@
         "localization",
         "enablement"
       ],
-      "signals": ["ai-native-expectation", "governance-as-value-prop", "language-infrastructure"],
+      "signals": [
+        "ai-native-expectation",
+        "governance-as-value-prop",
+        "language-infrastructure"
+      ],
       "compRange": null,
       "sourceUrl": null,
-      "dateAdded": "2026-05-24"
+      "dateAdded": "2026-05-24",
+      "quote": "Contribute to product language infrastructure, including glossaries, pattern libraries, review pathways, evaluation rubrics, prompt libraries, and quality guidance."
     },
     {
       "id": "google-senior-ux-content-designer-search",
@@ -186,10 +231,18 @@
         "content-systems-design",
         "enablement"
       ],
-      "signals": ["model-behavior-design"],
-      "compRange": { "min": 144000, "max": 209000, "currency": "USD", "note": "+ bonus + equity" },
+      "signals": [
+        "model-behavior-design"
+      ],
+      "compRange": {
+        "min": 144000,
+        "max": 209000,
+        "currency": "USD",
+        "note": "+ bonus + equity"
+      },
       "sourceUrl": null,
-      "dateAdded": "2026-05-24"
+      "dateAdded": "2026-05-24",
+      "quote": "In this role, you will drive model behavior design efforts to shape the future of Google’s generative AI experiences."
     },
     {
       "id": "jpmc-content-design-vp",
@@ -207,10 +260,18 @@
         "enablement",
         "technical-writing"
       ],
-      "signals": ["governance-as-value-prop", "enabler-not-bottleneck"],
-      "compRange": { "min": 133000, "max": 190000, "currency": "USD" },
+      "signals": [
+        "governance-as-value-prop",
+        "enabler-not-bottleneck"
+      ],
+      "compRange": {
+        "min": 133000,
+        "max": 190000,
+        "currency": "USD"
+      },
       "sourceUrl": null,
-      "dateAdded": "2026-05-25"
+      "dateAdded": "2026-05-25",
+      "quote": "You will architect and deliver modular, scalable content systems for the Co-Brand portfolio — creating reusable frameworks, templates, and governance that scale across multiple partners and cards while tailoring variants to each partner’s brand, legal requirements, and customer needs."
     },
     {
       "id": "netflix-staff-content-designer-ncxd",
@@ -227,10 +288,19 @@
         "localization",
         "enablement"
       ],
-      "signals": ["enabler-not-bottleneck", "governance-as-value-prop"],
-      "compRange": { "min": 340000, "max": 480000, "currency": "USD", "note": "salary + stock options, no bonus" },
+      "signals": [
+        "enabler-not-bottleneck",
+        "governance-as-value-prop"
+      ],
+      "compRange": {
+        "min": 340000,
+        "max": 480000,
+        "currency": "USD",
+        "note": "salary + stock options, no bonus"
+      },
       "sourceUrl": null,
-      "dateAdded": "2026-05-25"
+      "dateAdded": "2026-05-25",
+      "quote": "Known for developing language frameworks and strategies for discovery and engagement across multiple UI platforms, such as TV, mobile and web."
     },
     {
       "id": "meta-product-content-engineer",
@@ -247,11 +317,21 @@
         "enablement",
         "ai-tooling"
       ],
-      "signals": ["ai-native-expectation", "classification-for-ml", "content-adjacent"],
-      "compRange": { "min": 131000, "max": 190000, "currency": "USD", "note": "+ bonus + equity" },
+      "signals": [
+        "ai-native-expectation",
+        "classification-for-ml",
+        "content-adjacent"
+      ],
+      "compRange": {
+        "min": 131000,
+        "max": 190000,
+        "currency": "USD",
+        "note": "+ bonus + equity"
+      },
       "sourceUrl": null,
       "dateAdded": "2026-05-25",
-      "tag": "content-adjacent"
+      "tag": "content-adjacent",
+      "quote": "Strong editorial judgment and creative problem-solving skills, ability to document judgement logic into reusable frameworks to scale across teams."
     },
     {
       "id": "google-senior-ux-writer-chrome",
@@ -268,10 +348,19 @@
         "ai-content-governance",
         "technical-writing"
       ],
-      "signals": ["ai-native-expectation", "model-behavior-design"],
-      "compRange": { "min": 144000, "max": 209000, "currency": "USD", "note": "+ 15% bonus target + equity" },
+      "signals": [
+        "ai-native-expectation",
+        "model-behavior-design"
+      ],
+      "compRange": {
+        "min": 144000,
+        "max": 209000,
+        "currency": "USD",
+        "note": "+ 15% bonus target + equity"
+      },
       "sourceUrl": null,
-      "dateAdded": "2026-05-25"
+      "dateAdded": "2026-05-25",
+      "quote": "Consider the user experience, including AI-specific elements like prompt design and system instructions."
     },
     {
       "id": "meta-lead-product-content-engineering",
@@ -289,8 +378,17 @@
         "taxonomy",
         "enablement"
       ],
-      "signals": ["ai-native-expectation", "classification-for-ml", "hybrid-role"],
-      "compRange": { "min": 193000, "max": 269000, "currency": "USD", "note": "+ bonus + equity" },
+      "signals": [
+        "ai-native-expectation",
+        "classification-for-ml",
+        "hybrid-role"
+      ],
+      "compRange": {
+        "min": 193000,
+        "max": 269000,
+        "currency": "USD",
+        "note": "+ bonus + equity"
+      },
       "sourceUrl": null,
       "dateAdded": "2026-06-10"
     },
@@ -310,8 +408,18 @@
         "ai-tooling",
         "taxonomy"
       ],
-      "signals": ["ai-native-expectation", "model-behavior-design", "language-infrastructure", "title-responsibility-gap"],
-      "compRange": { "min": 153000, "max": 250000, "currency": "USD", "note": "+ equity + bonus" },
+      "signals": [
+        "ai-native-expectation",
+        "model-behavior-design",
+        "language-infrastructure",
+        "title-responsibility-gap"
+      ],
+      "compRange": {
+        "min": 153000,
+        "max": 250000,
+        "currency": "USD",
+        "note": "+ equity + bonus"
+      },
       "sourceUrl": null,
       "dateAdded": "2026-06-10"
     },
@@ -332,8 +440,20 @@
         "ai-tooling",
         "enablement"
       ],
-      "signals": ["ai-native-expectation", "governance-as-value-prop", "geo-seo", "structured-data", "language-infrastructure", "enabler-not-bottleneck"],
-      "compRange": { "min": 68300, "max": 157800, "currency": "USD", "note": "Illinois range; varies by location" },
+      "signals": [
+        "ai-native-expectation",
+        "governance-as-value-prop",
+        "geo-seo",
+        "structured-data",
+        "language-infrastructure",
+        "enabler-not-bottleneck"
+      ],
+      "compRange": {
+        "min": 68300,
+        "max": 157800,
+        "currency": "USD",
+        "note": "Illinois range; varies by location"
+      },
       "sourceUrl": null,
       "dateAdded": "2026-06-10"
     },
@@ -351,9 +471,15 @@
         "enablement"
       ],
       "signals": [],
-      "compRange": { "min": 171000, "max": 248000, "currency": "USD", "note": "+ 20% bonus target + equity" },
+      "compRange": {
+        "min": 171000,
+        "max": 248000,
+        "currency": "USD",
+        "note": "+ 20% bonus target + equity"
+      },
       "sourceUrl": null,
-      "dateAdded": "2026-05-25"
+      "dateAdded": "2026-05-25",
+      "quote": "Lead the establishment and improvement of holistic UX writing and content design processes, systems, frameworks or patterns across multiple teams or products."
     },
     {
       "id": "notion-cx-knowledge-architect",
@@ -372,11 +498,19 @@
         "enablement",
         "technical-writing"
       ],
-      "signals": ["governance-as-value-prop", "content-adjacent"],
-      "compRange": { "min": 136000, "max": 160000, "currency": "USD" },
+      "signals": [
+        "governance-as-value-prop",
+        "content-adjacent"
+      ],
+      "compRange": {
+        "min": 136000,
+        "max": 160000,
+        "currency": "USD"
+      },
       "sourceUrl": null,
       "dateAdded": "2026-05-25",
-      "tag": "content-adjacent"
+      "tag": "content-adjacent",
+      "quote": "You’ll use Notion as customer zero, building a living system of record structured for both humans and AI — so the right people (and the right agents) can retrieve the right information at the right time."
     },
     {
       "id": "spotify-senior-conversation-designer",
@@ -393,10 +527,14 @@
         "ai-tooling",
         "enablement"
       ],
-      "signals": ["model-behavior-design", "ai-native-expectation"],
+      "signals": [
+        "model-behavior-design",
+        "ai-native-expectation"
+      ],
       "compRange": null,
       "sourceUrl": null,
-      "dateAdded": "2026-05-25"
+      "dateAdded": "2026-05-25",
+      "quote": "This role sits at the intersection of writing and system design. You’ll bring sharp editorial instincts and real writing chops, but you’ll spend your time designing how conversations work — not producing UI copy."
     }
   ],
   "clusters": {
