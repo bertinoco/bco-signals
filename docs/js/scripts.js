@@ -144,6 +144,7 @@ tabs.forEach(tab => {
     tab.classList.add('active');
     tab.setAttribute('aria-selected', 'true');
     document.getElementById(tab.dataset.section).classList.add('active');
+    tab.blur(); // prevent focus ring showing on mouse click
   });
 });
 
