@@ -152,49 +152,53 @@ body {
 .tabs {
   display: flex;
   justify-content: center;
-  gap: 4px;
+  gap: var(--space-3);
   margin-bottom: var(--space-6);
   position: sticky;
   top: 0;
   background: var(--color-bg);
   z-index: 10;
-  padding: var(--space-2) 0;
+  padding: var(--space-3) 0;
+  border-bottom: 1px solid var(--color-border-subtle);
 }
 
 .tab {
-  padding: 7px var(--space-2);
+  padding: 0 0 6px;
   font-family: var(--font-sans);
   font-size: var(--font-sm);
   font-weight: var(--weight-medium);
   color: var(--color-text-muted);
   background: none;
   border: none;
-  border-radius: var(--radius-sm);
+  border-radius: 0;
   cursor: pointer;
-  transition: color var(--duration-fast) ease;
   letter-spacing: 0.01em;
   position: relative;
-  clip-path: inset(0 0 -4px);
+  transition: color var(--duration-fast) ease;
+  outline: none;
+}
+
+.tab:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
+  border-radius: 2px;
 }
 
 .tab::after {
   content: '';
   position: absolute;
-  left: var(--space-2);
-  right: var(--space-2);
+  left: 0;
+  right: 0;
   bottom: 0;
   height: 2px;
-  background-color: var(--color-text-secondary);
-  transform: translateX(-110%);
+  background-color: var(--color-accent);
+  transform: scaleX(0);
+  transform-origin: left center;
   transition: transform var(--duration-base) var(--ease-out);
 }
 
 .tab:hover {
   color: var(--color-text-secondary);
-}
-
-.tab:hover::after {
-  transform: translateX(0);
 }
 
 .tab.active {
@@ -203,8 +207,7 @@ body {
 }
 
 .tab.active::after {
-  background-color: var(--color-accent);
-  transform: translateX(0);
+  transform: scaleX(1);
 }
 
 /* ── Sections ─────────────────────────────────────────────── */
@@ -221,8 +224,10 @@ body {
   font-size: var(--font-sm);
   color: var(--color-text-secondary);
   line-height: var(--leading-relaxed);
-  margin: 0 auto var(--space-4);
+  margin-bottom: var(--space-4);
   max-width: 560px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* ── Responsibility Clusters ──────────────────────────────── */
