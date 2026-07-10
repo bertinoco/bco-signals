@@ -1,23 +1,23 @@
 /* ============================================================
-   BCO SKILLS TRACKER — Dark Editorial
+   BCO SKILLS TRACKER — Light Editorial
    ============================================================ */
 
 /* ── Custom properties ────────────────────────────────────── */
 :root {
-  /* Colors */
-  --color-bg:              #141414;
-  --color-surface:         #1E1E1E;
-  --color-surface-raised:  #252525;
-  --color-border:          #2C2C2C;
-  --color-border-subtle:   #222222;
-  --color-text:            #F0EDE8;
-  --color-text-secondary:  #8A8780;  /* 5.14:1 — passes AA */
-  --color-text-muted:      #4A4845;  /* decorative only */
+  /* Colors — inverted from dark editorial */
+  --color-bg:              #F0EDE8;
+  --color-surface:         #E8E2DC;
+  --color-surface-raised:  #DDD7D0;
+  --color-border:          #CCC6BF;
+  --color-border-subtle:   #D8D2CB;
+  --color-text:            #141414;
+  --color-text-secondary:  #4A4845;  /* 6.76:1 — passes AA */
+  --color-text-muted:      #8A8780;  /* decorative only */
   --color-accent:          #F2614A;
-  --color-accent-dim:      rgba(242, 97, 74, 0.12);
+  --color-accent-dim:      rgba(242, 97, 74, 0.10);
 
   /* Typography */
-  --font-serif:   'Fraunces', Georgia, serif;
+  --font-serif:   'Playfair Display', Georgia, serif;
   --font-sans:    'Inter', system-ui, -apple-system, sans-serif;
 
   --font-xs:    0.6875rem;
@@ -76,7 +76,7 @@
 
 /* ── Base ─────────────────────────────────────────────────── */
 html {
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 body {
@@ -425,7 +425,7 @@ body {
 
 /* ── Footer ───────────────────────────────────────────────── */
 .site-footer {
-  background: #0D0D0D;
+  background: #141414;
   border-top: 1px solid var(--color-border-subtle);
   padding: var(--space-6) 0;
   margin-top: var(--space-12);
