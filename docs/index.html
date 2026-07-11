@@ -19,38 +19,39 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=3">
+  <link rel="stylesheet" href="css/styles.css?v=14">
 </head>
 <body>
 
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <header class="site-header" id="site-header">
+  <header class="site-header">
     <div class="container">
-      <div class="header-title-wrapper">
-        <div class="header-title">
-          <h1>What Content Design Jobs Want</h1>
-          <p>A curated schema that turns real job postings into a living map of responsibilities and emerging skills.</p>
-        </div>
-      </div>
-      <nav class="badge-nav" role="tablist" aria-label="Content sections">
-        <button class="badge-btn active" role="tab" data-section="clusters" aria-selected="true" aria-controls="clusters">Responsibilities</button>
-        <button class="badge-btn" role="tab" data-section="signals" aria-selected="false" aria-controls="signals">Skills</button>
-        <button class="badge-btn" role="tab" data-section="titles" aria-selected="false" aria-controls="titles">Roles</button>
-      </nav>
+      <h1>What Content Design Jobs Want</h1>
+      <p>A curated schema that turns real job postings into a living map of responsibilities and emerging skills.</p>
     </div>
   </header>
 
+  <div class="nav-bar" id="nav-bar">
+    <div class="container">
+      <nav class="badge-nav" role="tablist" aria-label="Content sections">
+        <button class="badge-btn active" id="tab-clusters" role="tab" data-section="clusters" aria-selected="true" aria-controls="clusters">Responsibilities</button>
+        <button class="badge-btn" id="tab-signals" role="tab" data-section="signals" aria-selected="false" aria-controls="signals">Skills</button>
+        <button class="badge-btn" id="tab-titles" role="tab" data-section="titles" aria-selected="false" aria-controls="titles">Roles</button>
+      </nav>
+    </div>
+  </div>
+
   <div class="container">
     <main id="main">
-      <section class="section active" id="clusters" role="tabpanel">
+      <section class="section active" id="clusters" role="tabpanel" aria-labelledby="tab-clusters">
         <p class="section-intro">Stated responsibilities across tracked roles and grouped by area.</p>
         <div class="cluster-grid" id="cluster-grid">
           <p class="loading">Loading data…</p>
         </div>
       </section>
 
-      <section class="section" id="titles" role="tabpanel">
+      <section class="section" id="titles" role="tabpanel" aria-labelledby="tab-titles">
         <p class="section-intro">Job titles used across tracked roles. Source URLs are not included because job postings are taken down once a role is filled.</p>
         <div class="title-list" id="title-list">
           <p class="loading">Loading data…</p>
@@ -60,7 +61,7 @@
         </div>
       </section>
 
-      <section class="section" id="signals" role="tabpanel">
+      <section class="section" id="signals" role="tabpanel" aria-labelledby="tab-signals">
         <p class="section-intro">Emerging skills and observable patterns based on what each JD explicitly states.</p>
         <div class="signal-list" id="signal-list">
           <p class="loading">Loading data…</p>
@@ -78,6 +79,6 @@
     </div>
   </footer>
 
-  <script src="js/scripts.js"></script>
+  <script src="js/scripts.js?v=2"></script>
 </body>
 </html>

@@ -140,6 +140,27 @@ function renderSignals(data) {
   }).join('');
 }
 
+function renderNavCounts(data) {
+  const signalCount = Object.keys(data.signals).filter(key => {
+    return data.entries.filter(e => e.signals.includes(key)).length >= SIGNAL_THRESHOLD;
+  }).length;
+
+  const counts = {
+    clusters: Object.keys(data.clusters).length,
+    signals: signalCount,
+    titles: data.entries.length,
+  };
+
+  document.querySelectorAll('.badge-btn').forEach(btn => {
+    const count = counts[btn.dataset.section];
+    if (count === undefined) return;
+    const span = document.createElement('span');
+    span.className = 'badge-count';
+    span.textContent = count;
+    btn.insertBefore(span, btn.firstChild);
+  });
+}
+
 // ── Badge nav (click + arrow keys) ──────────────────────────
 const badges = Array.from(document.querySelectorAll('.badge-btn'));
 const badgeNav = document.querySelector('.badge-nav');
@@ -171,14 +192,6 @@ badgeNav.addEventListener('keydown', (e) => {
   activateBadge(badges[next]);
 });
 
-// ── Sticky header collapse ───────────────────────────────────
-const siteHeader = document.getElementById('site-header');
-const COLLAPSE_THRESHOLD = 80;
-
-window.addEventListener('scroll', () => {
-  siteHeader.classList.toggle('is-sticky', window.scrollY > COLLAPSE_THRESHOLD);
-}, { passive: true });
-
 // Show more
 const showMoreEl = document.getElementById('titles-show-more');
 if (showMoreEl) {
@@ -200,6 +213,7 @@ loadData().then(data => {
   }
   globalData = data;
   renderMeta(data);
+  renderNavCounts(data);
   renderClusters(data);
   renderTitles(data);
   renderSignals(data);
