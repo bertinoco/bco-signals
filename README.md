@@ -1,12 +1,16 @@
-# Skills Tracker
+# Content Design Signals
 
-This is a lightweight research tool for tracking how content design skills and responsibilities are evolving with the help of AI. This is not intended to be an exhaustive study. It's just a curated list of jobs I find interesting.
+Content design is evolving. Teams are shrinking. Roles and responsibilities are expanding. The skills needed to succeed in the future are starting to appear.
+
+To monitor this shift, and content design's unique position in the "context is king" era, I've started to track interesting, ambitious, or forward leaning job postings. These are mostly senior-level IC roles where the description is signaling change.
+
+I began parsing this data using a curated schema (json) and rendering content in html. The output is a living map of core responsibilities, grouped by focus area, as well as a number of required skills — which reflect emerging patterns in the content design hiring process.
 
 ## Structure
 
 ```
 docs/data/jobs.json   — Structured entries for each tracked role
-docs/index.html       — Dashboard at skills.bertino.co
+docs/index.html       — Dashboard at signals.bertino.co
 ```
 
 ## Data schema
@@ -14,8 +18,8 @@ docs/index.html       — Dashboard at skills.bertino.co
 Each entry in `jobs.json` includes:
 
 - `company` / `title` / `domain` — basics
-- `clusters` — responsibility clusters the role covers, based on stated responsibilities (displayed as "Responsibility Clusters")
-- `signals` — emerging skills and observable patterns in the JD (displayed as "Emerging Skills")
+- `clusters` — responsibility areas the role covers, based on stated responsibilities
+- `signals` — skills and observable patterns explicit in the JD
 - `compRange` — compensation data when stated in the JD
 - `tag` — optional, factual classifier (e.g. `non-content-role`, `content-adjacent`)
 
