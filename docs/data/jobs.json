@@ -539,35 +539,35 @@
   ],
   "clusters": {
     "terminology-governance": {
-      "label": "Terminology & Language Governance",
+      "label": "Terminology & language governance",
       "description": "Defining canonical terms, controlled vocabularies, and a single source of truth for product language."
     },
     "content-systems-design": {
-      "label": "Content Systems Design",
+      "label": "Content systems design",
       "description": "Frameworks, patterns, templates, and reusable structures for consistent content at scale."
     },
     "ai-tooling": {
-      "label": "AI Tooling & Automation",
+      "label": "AI tooling & automation",
       "description": "Building, evaluating, or operationalizing AI-powered content workflows."
     },
     "ai-content-governance": {
-      "label": "AI-Generated Content Governance",
+      "label": "AI-generated content governance",
       "description": "Standards, quality rubrics, prompt templates, and tone constraints for AI-produced content."
     },
     "taxonomy": {
-      "label": "Taxonomy & Information Architecture",
+      "label": "Taxonomy & information architecture",
       "description": "Classification systems, metadata structures, and content models."
     },
     "localization": {
-      "label": "Localization & Internationalization",
+      "label": "Localization & internationalization",
       "description": "String structure, variable logic, culturally neutral source copy, and translation-ready frameworks."
     },
     "enablement": {
-      "label": "Enablement & Team Upskilling",
+      "label": "Enablement & team upskilling",
       "description": "Playbooks, guidelines, and tools that help non-writers produce quality content."
     },
     "technical-writing": {
-      "label": "Technical Writing & Documentation",
+      "label": "Technical writing & documentation",
       "description": "Documentation of complex systems including data models, governance practices, and platform capabilities."
     }
   },
