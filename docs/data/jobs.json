@@ -2,8 +2,8 @@
   "meta": {
     "title": "BCO Content Skills Tracker",
     "description": "A curated skills tracker for the content design community.",
-    "lastUpdated": "2026-07-08",
-    "totalEntries": 19
+    "lastUpdated": "2026-07-13",
+    "totalEntries": 21
   },
   "entries": [
     {
@@ -535,6 +535,51 @@
       "sourceUrl": null,
       "dateAdded": "2026-05-25",
       "quote": "This role sits at the intersection of writing and system design. You’ll bring sharp editorial instincts and real writing chops, but you’ll spend your time designing how conversations work — not producing UI copy."
+    },
+    {
+      "id": "ride-platform-content-systems-specialist",
+      "company": "The Ride Platform",
+      "title": "AI-Powered Content Systems Specialist",
+      "domain": "Marketplace / mobility (RV and vehicle rental)",
+      "engagement": "Full-time",
+      "location": "Austin, TX",
+      "remote": false,
+      "coreFrame": "Content strategy as system design, AI-powered content workflows via Jasper, modular templates, AI content standards and guardrails, GEO, marketing enablement",
+      "clusters": [
+        "content-systems-design",
+        "ai-tooling",
+        "ai-content-governance",
+        "enablement"
+      ],
+      "signals": [
+        "content-marketing-adjacent",
+        "ai-native-expectation",
+        "geo-seo"
+      ],
+      "compRange": { "min": 110000, "max": 160000, "currency": "USD" },
+      "sourceUrl": null,
+      "dateAdded": "2026-07-13",
+      "quote": "Establish standards for AI-generated content including prompts, templates, tone, guardrails, and quality thresholds."
+    },
+    {
+      "id": "atria-ux-writer",
+      "company": "Atria",
+      "title": "UX Writer",
+      "domain": "Healthcare / longevity (membership-based practice)",
+      "engagement": "Full-time",
+      "location": "New York, NY",
+      "remote": false,
+      "coreFrame": "UX microcopy, voice and tone frameworks, content patterns, AI-assisted output guardrails in healthcare context",
+      "clusters": [
+        "content-systems-design",
+        "ai-content-governance",
+        "enablement"
+      ],
+      "signals": [],
+      "compRange": { "min": 120000, "max": 180000, "currency": "USD" },
+      "sourceUrl": null,
+      "dateAdded": "2026-07-13",
+      "quote": "You understand that UX writing is not copywriting with less space. You think in systems, you know why consistency matters, and you’re comfortable pushing back when a design choice undercuts the experience."
     }
   ],
   "clusters": {
