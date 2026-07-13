@@ -572,8 +572,7 @@
       "coreFrame": "UX microcopy, voice and tone frameworks, content patterns, AI-assisted output guardrails in healthcare context",
       "clusters": [
         "content-systems-design",
-        "ai-content-governance",
-        "enablement"
+        "ai-content-governance"
       ],
       "signals": [],
       "compRange": { "min": 120000, "max": 180000, "currency": "USD" },
