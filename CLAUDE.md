@@ -11,6 +11,28 @@ When adding or reviewing entries in `docs/data/jobs.json`, follow these rules wi
 - No projections. Do not predict where the market is heading. The data speaks for itself.
 - No value judgments. Do not rank roles, call one "more comprehensive" than another, or label work as "lower-complexity."
 
+## Entry eligibility
+
+Before auditing a new JD, evaluate whether it should be included at all. The default is to exclude unless all required criteria are met and at least one signal test passes. Flag concerns rather than silently adding borderline entries.
+
+**Required — all must be true**
+- The role is primarily in content design, UX writing, content strategy, or a technical content discipline (content engineering, content architecture, language systems)
+- The JD is specific enough to extract at least two distinct cluster assignments from stated responsibilities
+- The JD's stated responsibilities are primarily about craft, systems, or discipline-building — not headcount management, budget ownership, or executive alignment
+
+**Signal test — at least one must be true**
+- The JD introduces a responsibility or framing not common in traditional content roles
+- The JD explicitly references AI tooling, governance, or model behavior as part of the work
+- The title, scope, or team placement signals a structural shift in how content work is valued or positioned
+
+**Exclusion flags — any one disqualifies**
+- The role is primarily content marketing or editorial production, even if it uses systems language
+- The role has no meaningful connection to product, platform, or language infrastructure
+- The JD is too generic to yield distinct cluster or signal assignments
+
+**Note on seniority**
+Level is not a hard gate — seniority varies significantly across companies and the same title can mean different things. Flag (don't auto-exclude) roles where people management is listed but craft responsibilities are still substantive and specific. Push back on roles where management, headcount, or executive stakeholder navigation dominate the stated responsibilities.
+
 ## Entry audit process
 
 When a new JD is submitted for addition, always perform an independent audit before writing to `jobs.json`. Do not trust pre-assigned clusters or signals — derive them from the JD text directly.
