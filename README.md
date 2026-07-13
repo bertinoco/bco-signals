@@ -25,10 +25,6 @@ Each entry in `jobs.json` includes:
 - `note` — optional factual note about the role or posting
 - `tag` — optional, factual classifier (e.g. `non-content-role`, `content-adjacent`)
 
-## Adding job descriptions
-
-See an interesting, forward-leaning job description? Add it by creating a PR. Open `docs/data/jobs.json` and add a new object to the `entries` array. Copy an existing entry as a template. Update `meta.totalEntries` and `meta.lastUpdated` when done.
-
 ---
 
 ## License
