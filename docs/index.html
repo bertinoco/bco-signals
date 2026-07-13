@@ -19,7 +19,87 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=14">
+  <link rel="stylesheet" href="css/styles.css?v=15">
+
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": "https://signals.bertino.co/#website",
+      "name": "Content Design Signals",
+      "url": "https://signals.bertino.co/",
+      "description": "A curated dataset tracking hiring patterns in content design, UX writing, and content systems — maintained by Bertino Consulting.",
+      "creator": {
+        "@id": "https://bertino.co/#joe"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Dataset",
+      "@id": "https://signals.bertino.co/#dataset",
+      "name": "Content Design Signals Dataset",
+      "url": "https://signals.bertino.co/",
+      "description": "A structured dataset of senior-level job descriptions in content design, UX writing, content strategy, and content systems. Each entry is mapped against a fixed taxonomy of responsibility clusters and skill signals derived directly from stated JD responsibilities.",
+      "keywords": [
+        "content design",
+        "UX writing",
+        "content systems",
+        "language infrastructure",
+        "content strategy",
+        "content operations",
+        "AI in content design",
+        "hiring trends",
+        "content design skills"
+      ],
+      "creator": {
+        "@id": "https://bertino.co/#joe"
+      },
+      "license": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "dateModified": "2026-07-13",
+      "about": [
+        { "@type": "Thing", "name": "Content design hiring trends" },
+        { "@type": "Thing", "name": "UX writing skills and responsibilities" },
+        { "@type": "Thing", "name": "Content systems design" },
+        { "@type": "Thing", "name": "Language infrastructure" },
+        { "@type": "Thing", "name": "AI tooling in content design" }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "@id": "https://bertino.co/#joe",
+      "name": "Joe Bertino",
+      "jobTitle": "Content Design Consultant",
+      "description": "Joe Bertino is a content design consultant specializing in content systems, language infrastructure, UX writing at scale, and AI in content design. He operates as Bertino Consulting AB and has worked with organizations including Klarna, Minecraft, Tink, and Trustly.",
+      "url": "https://bertino.co",
+      "email": "joe@bertino.co",
+      "knowsAbout": [
+        "content design",
+        "content systems",
+        "language infrastructure",
+        "UX writing",
+        "content strategy",
+        "content operations",
+        "AI in content design",
+        "content architecture",
+        "design systems",
+        "content design hiring trends"
+      ],
+      "sameAs": [
+        "https://www.linkedin.com/in/jjbert/",
+        "https://x.com/jjbert",
+        "https://github.com/bertinoco"
+      ],
+      "worksFor": {
+        "@type": "Organization",
+        "@id": "https://bertino.co/#org",
+        "name": "Bertino Consulting",
+        "url": "https://bertino.co"
+      }
+    }
+  ]
+  </script>
 </head>
 <body>
 
@@ -28,7 +108,8 @@
   <header class="site-header">
     <div class="container">
       <h1>Content Design Signals</h1>
-      <p>A curated schema that turns mostly senior-level job postings into a living map of hiring patterns.</p>
+      <p>A structured dataset of what senior content design, UX writing, and content systems roles are asking for — and what it signals about where the discipline is heading.</p>
+      <p class="site-byline">Curated by <a href="https://bertino.co">Joe Bertino</a> · Bertino Consulting</p>
     </div>
   </header>
 
@@ -45,14 +126,14 @@
   <div class="container">
     <main id="main">
       <section class="section active" id="clusters" role="tabpanel" aria-labelledby="tab-clusters">
-        <p class="section-intro">Responsibility clusters across tracked roles.</p>
+        <p class="section-intro">The responsibilities that appear most often across tracked senior content design roles, grouped by focus area.</p>
         <div class="cluster-grid" id="cluster-grid">
           <p class="loading">Loading data…</p>
         </div>
       </section>
 
       <section class="section" id="titles" role="tabpanel" aria-labelledby="tab-titles">
-        <p class="section-intro">Titles and other metadata found across tracked roles. Source URLs aren't included since job postings expire quickly.</p>
+        <p class="section-intro">The roles in this dataset — titles, companies, and comp ranges where stated. Source URLs are omitted since postings expire.</p>
         <div class="title-list" id="title-list">
           <p class="loading">Loading data…</p>
         </div>
@@ -62,7 +143,7 @@
       </section>
 
       <section class="section" id="signals" role="tabpanel" aria-labelledby="tab-signals">
-        <p class="section-intro">Emerging skills and observable patterns across tracked roles.</p>
+        <p class="section-intro">Skills and patterns that appear across multiple job postings — each one a signal of where content design expertise is expanding.</p>
         <div class="signal-list" id="signal-list">
           <p class="loading">Loading data…</p>
         </div>
@@ -74,7 +155,7 @@
     <div class="container">
       <div class="footer-inner">
         <div class="footer-brand">A side project by <a href="https://bertino.co">Bertino Consulting</a></div>
-        <div class="footer-meta">Last updated <span id="footer-date">—</span></div>
+        <div class="footer-meta">Last updated <span id="footer-date"><time datetime="2026-07-13">July 13, 2026</time></span></div>
       </div>
     </div>
   </footer>

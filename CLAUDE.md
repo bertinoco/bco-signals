@@ -52,6 +52,14 @@ Before proposing a new cluster or signal key, scan all existing entries to see i
 **Step 5 — Report the audit**
 Before writing the entry, summarize: which clusters and signals were assigned and why, and whether anything was flagged as a potential new addition. Wait for confirmation if a new key is being proposed.
 
+**Step 6 — Update metadata and sitemap after writing**
+After writing the entry to `jobs.json`, always update all three of the following in the same pass:
+- `meta.totalEntries` in `jobs.json`
+- `meta.lastUpdated` in `jobs.json`
+- `<lastmod>` in `docs/sitemap.xml`
+
+All three must stay in sync. Never write an entry without completing this step.
+
 ## Quote field
 
 Each entry may include an optional `quote` field — a direct excerpt from the JD that anchors the cluster and signal assignments. Rules:
