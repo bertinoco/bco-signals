@@ -584,97 +584,97 @@
   "clusters": {
     "terminology-governance": {
       "label": "Terminology & language governance",
-      "description": "Defining canonical terms, controlled vocabularies, and a single source of truth for product language."
+      "description": "Companies are asking content designers to own the language layer, building glossaries, controlled vocabularies, and a single source of truth for product language. This shows up at a consistent rate across the dataset, across industries."
     },
     "content-systems-design": {
       "label": "Content systems design",
-      "description": "Frameworks, patterns, templates, and reusable structures for consistent content at scale."
+      "description": "The most common cluster in the dataset. Companies want someone who designs content as a system, building frameworks, patterns, and reusable templates rather than writing one screen at a time."
     },
     "ai-tooling": {
       "label": "AI tooling & automation",
-      "description": "Building, evaluating, or operationalizing AI-powered content workflows."
+      "description": "Building and operationalizing AI-powered workflows is now a stated expectation in most roles we're tracking. This goes beyond using AI tools. Companies want someone who can evaluate, configure, and own the workflow end to end."
     },
     "ai-content-governance": {
       "label": "AI-generated content governance",
-      "description": "Standards, quality rubrics, prompt templates, and tone constraints for AI-produced content."
+      "description": "As AI-generated content scales, someone has to own the quality standards. Rubrics, prompt guidelines, tone constraints, guardrails. This responsibility is growing fast in the dataset."
     },
     "taxonomy": {
       "label": "Taxonomy & information architecture",
-      "description": "Classification systems, metadata structures, and content models."
+      "description": "Classification and information architecture are showing up in content design roles that didn't ask for them a few years ago. Content designers who can build and maintain structured content models are increasingly valuable, especially where AI needs clean inputs."
     },
     "localization": {
       "label": "Localization & internationalization",
-      "description": "String structure, variable logic, culturally neutral source copy, and translation-ready frameworks."
+      "description": "Writing for localization is a consistent ask in global product roles. Structuring strings, managing variables, keeping source copy translation-ready. Not new, but a clear differentiator when you can demonstrate it."
     },
     "enablement": {
       "label": "Enablement & team upskilling",
-      "description": "Playbooks, guidelines, and tools that help non-writers produce quality content."
+      "description": "Content design teams are shrinking, and it's increasingly common to be a one-person centralized resource. The roles we're tracking are hiring for the ability to build playbooks, guidelines, and tools that scale content quality across teams — not to write everything yourself."
     },
     "technical-writing": {
       "label": "Technical writing & documentation",
-      "description": "Documentation of complex systems including data models, governance practices, and platform capabilities."
+      "description": "Documenting complex systems is appearing in content roles that wouldn't have asked for it before. Governance models, data structures, platform logic. A signal that content designers are being pulled closer to the technical layer."
     }
   },
   "signals": {
     "ai-native-expectation": {
       "label": "AI fluency expected",
-      "description": "JD states comfort with AI tooling as a requirement or strong preference."
+      "description": "AI fluency isn't a bonus — it's listed as a baseline in most roles we're tracking. If you're not actively working with AI tools, this is the most urgent gap the data is pointing to."
     },
     "enabler-not-bottleneck": {
       "label": "Enabler, not bottleneck",
-      "description": "JD states the role should build systems that let others write well rather than being the sole writer."
+      "description": "These roles aren't hiring someone to write everything — they're hiring someone to build systems that let others write well. A consistent signal that the solo-writer model is losing ground."
     },
     "governance-as-value-prop": {
       "label": "Governance emphasized",
-      "description": "JD frames governance, quality standards, or change management as a primary responsibility."
+      "description": "Governance isn't a background process in these roles — it's the primary deliverable. Companies are hiring for the ability to set standards and make them stick across teams."
     },
     "llm-first-process": {
       "label": "LLM-first workflow",
-      "description": "JD prescribes starting work in an LLM as an explicit process step."
+      "description": "Some roles are now prescribing LLMs as a starting point in the content workflow, not as optional or experimental tools. Early signal, but directional."
     },
     "title-dilution": {
       "label": "Title dilution",
-      "description": "JD uses 'content systems' language for work that is primarily editorial production or content marketing."
+      "description": "Not every 'content systems' role is a content systems role. Some use the language to describe what is fundamentally editorial or marketing work. The title alone isn't a reliable signal here. Read the responsibilities."
     },
     "title-responsibility-gap": {
       "label": "Title ≠ stated responsibilities",
-      "description": "The job title describes a narrower scope than the stated responsibilities cover."
+      "description": "The title undersells what the role actually requires. If you're screening on title alone, you may be missing roles where the scope and seniority exceed what the name suggests."
     },
     "model-behavior-design": {
       "label": "Model behavior design",
-      "description": "JD includes designing how an AI model responds conversationally as a stated responsibility."
+      "description": "A growing number of roles are asking content designers to shape how AI models actually respond, not just write around them. An emerging space where content design and machine learning overlap directly."
     },
     "language-infrastructure": {
       "label": "Language as infrastructure",
-      "description": "JD explicitly uses 'infrastructure' framing for language or content work."
+      "description": "When a JD frames language work as 'infrastructure,' it signals the company sees content as a foundational system rather than a production task. These roles tend to sit closer to platform and engineering teams."
     },
     "process-signal": {
       "label": "Process signal",
-      "description": "Role is not a content position but its stated process expectations are relevant to content disciplines."
+      "description": "This isn't a content role, but the process expectations it describes are ones content designers are increasingly being asked to meet. Worth tracking as a leading indicator."
     },
     "content-adjacent": {
       "label": "Content-adjacent",
-      "description": "Role applies content skills (taxonomy, governance, documentation) in a non-content-design context."
+      "description": "Content skills like taxonomy, governance, and documentation are being applied in roles that don't carry a content title. The demand is there even when the label isn't."
     },
     "hybrid-role": {
       "label": "Hybrid role",
-      "description": "JD combines content responsibilities with QA, engineering, or other disciplines in a single role."
+      "description": "These roles ask one person to hold content responsibilities alongside QA, engineering, or data work. It signals that content expertise is being pulled closer to technical disciplines. Whether that's an opportunity depends on where you want to go."
     },
     "classification-for-ml": {
       "label": "Classification for ML",
-      "description": "JD states taxonomy or classification work applied to machine learning training data."
+      "description": "Taxonomy and classification skills are showing up in roles that feed machine learning systems. Content designers who've built tagging schemas or content models have transferable value in AI-adjacent contexts."
     },
     "content-marketing-adjacent": {
       "label": "Content marketing adjacent",
-      "description": "JD uses systems or architecture language for work that is primarily content marketing."
+      "description": "Systems and architecture language is being used to describe what is fundamentally content marketing work. The framing is more sophisticated but the core responsibilities haven't shifted. Read carefully."
     },
     "geo-seo": {
       "label": "GEO & SEO",
-      "description": "JD states content architecture responsibilities for search and generative engine discovery."
+      "description": "Content architecture for generative engine optimization is showing up as an explicit responsibility. GEO is newer than SEO. It's about structuring content so AI systems can find and cite it, not just humans."
     },
     "structured-data": {
       "label": "Structured data",
-      "description": "JD states Schema.org, JSON-LD, or entity modeling as a responsibility."
+      "description": "A small number of roles are asking content designers to work with Schema.org, JSON-LD, or entity modeling. Early signal, but it points toward content designers owning more of the technical stack."
     }
   }
 }

@@ -60,6 +60,34 @@ After writing the entry to `jobs.json`, always update all three of the following
 
 All three must stay in sync. Never write an entry without completing this step.
 
+## Voice & copy decisions
+
+These rules apply to all user-facing copy on signals.bertino.co: card descriptions, section intros, header copy, and any editorial text rendered in the browser.
+
+**Who we're writing for**
+Content designers, UX writers, and content strategists who want to understand where the discipline is heading. They read closely and notice when copy hedges or generalizes.
+
+**Voice**
+Direct. Grounded in data. Lightly opinionated only when the evidence supports it. We're not cheerleading the future of content design — we're reporting what we see and noting what it implies. We speak to the reader as "you." We use "we" when describing our observations or the dataset. Never "I."
+
+**Card description structure**
+Signal + implication. State what the data shows, then note what it means for the reader. Two to three sentences is the target. Fragments are acceptable when they add punch.
+
+**Punctuation**
+- Em dashes: use sparingly — only when the contrast is sharp enough that a period or comma would soften it too much. Do not use to introduce lists or as a substitute for a period.
+- Colons: only when introducing a list. Not as a pivot or lead-in to a clause.
+- Fragments: acceptable, especially to land a specific example after a declarative sentence.
+
+**What to avoid**
+- Hedging language: "opportunities for improvement," "may suggest," "could indicate"
+- Generic consulting tone: "actionable insights," "drive alignment," "at scale" used without specifics
+- Overpromising: don't imply the site offers career advice or preparation guidance it doesn't provide
+- Value judgments: don't rank roles or label responsibilities as basic or advanced
+- Projections: don't predict where the market is heading beyond what the data shows
+
+**Reporting vs. editorializing**
+Card descriptions are the one place we editorialize lightly — stating an implication based on evidence. Everywhere else (cluster/signal assignments, JD entries, quotes) stays neutral and reportorial.
+
 ## Quote field
 
 Each entry may include an optional `quote` field — a direct excerpt from the JD that anchors the cluster and signal assignments. Rules:
