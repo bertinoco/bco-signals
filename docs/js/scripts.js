@@ -50,11 +50,17 @@ function renderClusters(data) {
   }).join('');
 }
 
+function formatDate(iso) {
+  const [y, m, d] = iso.split('-').map(Number);
+  return new Date(y, m - 1, d).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+}
+
 function renderTitles(data) {
   const list = document.getElementById('title-list');
   const showMore = document.getElementById('titles-show-more');
   const showMoreBtn = showMore ? showMore.querySelector('.show-more-btn') : null;
-  const entries = showAllTitles ? data.entries : data.entries.slice(0, TITLES_LIMIT);
+  const sorted = [...data.entries].sort((a, b) => new Date(b.dateAdded) - new Date(a.dateAdded));
+  const entries = showAllTitles ? sorted : sorted.slice(0, TITLES_LIMIT);
 
   if (showMore) {
     if (!showAllTitles && data.entries.length > TITLES_LIMIT) {
@@ -70,7 +76,7 @@ function renderTitles(data) {
     const compHtml = entry.compRange
       ? `<div class="title-comp">${fmt(entry.compRange.min)}–${fmt(entry.compRange.max)} ${entry.compRange.currency}${entry.compRange.note ? ' ' + entry.compRange.note : ''}</div>`
       : '';
-    const noteHtml = entry.note ? `<div class="title-note">${entry.note}</div>` : '';
+    const noteHtml = '';
     const hasQuote = !!entry.quote;
     const quoteHtml = hasQuote
       ? `<div class="title-quote"><blockquote>${entry.quote}</blockquote></div>`
@@ -78,12 +84,16 @@ function renderTitles(data) {
     const expandBtn = hasQuote
       ? `<button class="title-expand" aria-expanded="false" aria-label="Show quote">+</button>`
       : '';
+    const dateHtml = entry.dateAdded
+      ? `<div class="title-domain">${formatDate(entry.dateAdded)}</div>`
+      : '';
 
     return `
       <div class="title-entry${hasQuote ? ' has-quote' : ''}">
         <div class="title-meta">
           <div class="title-company">${entry.company}</div>
           <div class="title-domain">${entry.domain}</div>
+          ${dateHtml}
         </div>
         <div class="title-body">
           <div class="title-header">
@@ -105,6 +115,7 @@ function renderTitles(data) {
       const isOpen = entry.classList.toggle('is-expanded');
       btn.setAttribute('aria-expanded', String(isOpen));
       btn.textContent = isOpen ? '×' : '+';
+      btn.blur();
     });
   });
 }

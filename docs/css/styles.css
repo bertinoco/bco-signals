@@ -334,12 +334,15 @@ body {
   margin-top: var(--space-2);
   padding-left: var(--space-2);
   border-left: 2px solid var(--color-accent);
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: var(--font-sm);
-  font-style: italic;
+  font-style: normal;
   color: var(--color-text-secondary);
   line-height: var(--leading-relaxed);
 }
+
+.title-quote blockquote::before { content: '\201C'; }
+.title-quote blockquote::after  { content: '\201D'; }
 
 .title-company {
   font-size: var(--font-sm);
@@ -352,7 +355,12 @@ body {
   color: var(--color-text-secondary);
   margin-top: var(--space-1);
   letter-spacing: 0.01em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
 }
+
 
 .title-name {
   font-family: var(--font-serif);
