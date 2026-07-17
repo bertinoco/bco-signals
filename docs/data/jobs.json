@@ -2,8 +2,8 @@
   "meta": {
     "title": "BCO Content Skills Tracker",
     "description": "A curated skills tracker for the content design community.",
-    "lastUpdated": "2026-07-13",
-    "totalEntries": 21
+    "lastUpdated": "2026-07-17",
+    "totalEntries": 22
   },
   "entries": [
     {
@@ -560,6 +560,30 @@
       "sourceUrl": null,
       "dateAdded": "2026-07-13",
       "quote": "Establish standards for AI-generated content including prompts, templates, tone, guardrails, and quality thresholds."
+    },
+    {
+      "id": "wealthsimple-staff-content-designer-investing",
+      "company": "Wealthsimple",
+      "title": "Staff Content Designer, Investing",
+      "domain": "Fintech / investing",
+      "engagement": "Full-time",
+      "location": "Remote (Canada / US)",
+      "remote": true,
+      "coreFrame": "AI-first content design for complex financial products, content systems and standards, team enablement",
+      "clusters": [
+        "content-systems-design",
+        "ai-tooling",
+        "enablement"
+      ],
+      "signals": [
+        "ai-native-expectation",
+        "enabler-not-bottleneck"
+      ],
+      "compRange": null,
+      "sourceUrl": null,
+      "dateAdded": "2026-07-17",
+      "quote": "Work AI-first. From shipping your own code changes to prototyping and research — you'll use AI to increase your impact in every part of the product lifecycle.",
+      "note": "JD explicitly expects content designers to ship their own code changes via AI — a pattern not yet seen elsewhere in the dataset. Potential future signal: autonomous code shipping as part of the content design workflow."
     },
     {
       "id": "atria-ux-writer",
