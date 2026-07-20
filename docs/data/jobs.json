@@ -2,8 +2,8 @@
   "meta": {
     "title": "BCO Content Skills Tracker",
     "description": "A curated skills tracker for the content design community.",
-    "lastUpdated": "2026-07-17",
-    "totalEntries": 22
+    "lastUpdated": "2026-07-20",
+    "totalEntries": 23
   },
   "entries": [
     {
@@ -611,6 +611,36 @@
       "sourceUrl": null,
       "dateAdded": "2026-07-13",
       "quote": "You understand that UX writing is not copywriting with less space. You think in systems, you know why consistency matters, and you’re comfortable pushing back when a design choice undercuts the experience."
+    },
+    {
+      "id": "linkedin-staff-content-architect",
+      "company": "LinkedIn",
+      "title": "Staff Content Architect",
+      "domain": "Social media",
+      "engagement": "Full-time",
+      "location": "New York, Sunnyvale, San Francisco, Mountain View, or Chicago",
+      "remote": false,
+      "coreFrame": "DITA content model ownership, governance frameworks, metadata and taxonomy alignment, content architecture for AI pipelines and knowledge management systems",
+      "clusters": [
+        "content-systems-design",
+        "taxonomy",
+        "technical-writing",
+        "enablement"
+      ],
+      "signals": [
+        "governance-as-value-prop",
+        "structured-data"
+      ],
+      "compRange": {
+        "min": 115000,
+        "max": 186000,
+        "currency": "USD",
+        "note": "+ bonus + equity"
+      },
+      "sourceUrl": null,
+      "dateAdded": "2026-07-20",
+      "quote": "Serve as the single accountable owner for the KMS DITA content model, driving design, governance, and ongoing evolution to ensure scalability, reuse, and long-term system integrity.",
+      "note": "JD frames the role as reducing 'long-term risk and reliance on external consultants' via internal governance frameworks, and sits in a Knowledge Management Solutions team under 'Department: GBO' rather than a product/design org — a placement pattern not yet seen elsewhere in the dataset."
     }
   ],
   "clusters": {
