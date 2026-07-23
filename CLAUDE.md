@@ -60,6 +60,9 @@ After writing the entry to `jobs.json`, always update all three of the following
 
 All three must stay in sync. Never write an entry without completing this step.
 
+**Step 7 — Commit, push, and merge**
+Once the user confirms the audit (including any new cluster/signal/domain proposal), that confirmation also counts as approval to merge directly to `main` — no separate merge confirmation is needed for JD entry additions specifically. Commit the entry on the working branch, push it, then merge directly to `main` and push. This does not extend to other kinds of changes (site code, design, CLAUDE.md itself, etc.) — those still follow normal confirm-before-merge practice.
+
 ## Voice & copy decisions
 
 These rules apply to all user-facing copy on signals.bertino.co: card descriptions, section intros, header copy, and any editorial text rendered in the browser.
@@ -106,6 +109,7 @@ The `domain` field describes the broad industry or sector the company operates i
 | `AI / technology` | OpenAI, Google |
 | `Automotive / connected products` | GM |
 | `B2B SaaS` | CoLab |
+| `Computer & Electronics` | Apple |
 | `Consulting / agency` | Accenture |
 | `Design tools / SaaS` | Figma |
 | `Financial services` | JPMorgan Chase |
@@ -115,7 +119,7 @@ The `domain` field describes the broad industry or sector the company operates i
 | `Media / advertising` | YouTube |
 | `Media / streaming` | Spotify, Netflix |
 | `SaaS / productivity` | Notion |
-| `Social media` | Meta |
+| `Social media` | Meta, LinkedIn |
 | `Wellness / marketplace` | Wellhub |
 
 If a new company doesn't fit any existing value, propose the new domain before writing the entry. New domains should be broad enough to accommodate at least two companies.
