@@ -2,8 +2,8 @@
   "meta": {
     "title": "BCO Content Skills Tracker",
     "description": "A curated skills tracker for the content design community.",
-    "lastUpdated": "2026-07-20",
-    "totalEntries": 23
+    "lastUpdated": "2026-07-23",
+    "totalEntries": 24
   },
   "entries": [
     {
@@ -641,6 +641,39 @@
       "dateAdded": "2026-07-20",
       "quote": "Serve as the single accountable owner for the KMS DITA content model, driving design, governance, and ongoing evolution to ensure scalability, reuse, and long-term system integrity.",
       "note": "JD frames the role as reducing 'long-term risk and reliance on external consultants' via internal governance frameworks, and sits in a Knowledge Management Solutions team under 'Department: GBO' rather than a product/design org — a placement pattern not yet seen elsewhere in the dataset."
+    },
+    {
+      "id": "apple-ux-writer-systems",
+      "company": "Apple",
+      "title": "UX Writer, Systems",
+      "domain": "Computer & Electronics",
+      "engagement": "Full-time",
+      "location": "Cupertino, CA",
+      "remote": false,
+      "coreFrame": "Writing systems governance, design system integration, writing standards codification, AI-leveraged UX writing, guidelines for generated content",
+      "clusters": [
+        "content-systems-design",
+        "terminology-governance",
+        "taxonomy",
+        "localization",
+        "enablement",
+        "ai-tooling",
+        "ai-content-governance"
+      ],
+      "signals": [
+        "ai-native-expectation",
+        "governance-as-value-prop"
+      ],
+      "compRange": {
+        "min": 216200,
+        "max": 324800,
+        "currency": "USD",
+        "note": "+ bonus + equity"
+      },
+      "sourceUrl": null,
+      "dateAdded": "2026-07-23",
+      "quote": "Experience using large language models, and an ability to see how they can be leveraged in writing systems.",
+      "note": "JD explicitly ties accessibility work to UX writing ('Partnering with design on accessibility initiatives'; 'writing optimized for accessibility'). No existing cluster/signal covers this — a second instance of the pattern (after the rejected WhatsApp JD), worth watching for a third before creating a new key."
     }
   ],
   "clusters": {
