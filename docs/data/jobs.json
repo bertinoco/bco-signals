@@ -2,8 +2,8 @@
   "meta": {
     "title": "BCO Content Skills Tracker",
     "description": "A curated skills tracker for the content design community.",
-    "lastUpdated": "2026-07-23",
-    "totalEntries": 24
+    "lastUpdated": "2026-07-24",
+    "totalEntries": 25
   },
   "entries": [
     {
@@ -662,7 +662,8 @@
       ],
       "signals": [
         "ai-native-expectation",
-        "governance-as-value-prop"
+        "governance-as-value-prop",
+        "accessibility-as-constraint"
       ],
       "compRange": {
         "min": 216200,
@@ -673,7 +674,43 @@
       "sourceUrl": null,
       "dateAdded": "2026-07-23",
       "quote": "Experience using large language models, and an ability to see how they can be leveraged in writing systems.",
-      "note": "JD explicitly ties accessibility work to UX writing ('Partnering with design on accessibility initiatives'; 'writing optimized for accessibility'). No existing cluster/signal covers this — a second instance of the pattern (after the rejected WhatsApp JD), worth watching for a third before creating a new key."
+      "note": "JD explicitly ties accessibility work to UX writing ('Partnering with design on accessibility initiatives'; 'writing optimized for accessibility'). First instance of the accessibility-as-constraint pattern (after the rejected WhatsApp JD); signal created once the Netflix Staff Systems Designer, Language entry showed it a second time."
+    },
+    {
+      "id": "netflix-staff-systems-designer-language",
+      "company": "Netflix",
+      "title": "Staff Systems Designer, Language",
+      "domain": "Media / streaming",
+      "engagement": "Full-time",
+      "location": "US",
+      "remote": true,
+      "coreFrame": "Language standards encoded into the design system, taxonomy and terminology schemas, AI agent-facing content rules, localization and accessibility as structural constraints",
+      "clusters": [
+        "terminology-governance",
+        "content-systems-design",
+        "taxonomy",
+        "localization",
+        "technical-writing",
+        "enablement",
+        "ai-content-governance",
+        "ai-tooling"
+      ],
+      "signals": [
+        "governance-as-value-prop",
+        "language-infrastructure",
+        "ai-native-expectation",
+        "structured-data",
+        "accessibility-as-constraint"
+      ],
+      "compRange": {
+        "min": 460000,
+        "max": 710000,
+        "currency": "USD",
+        "note": "salary + stock options, no bonus"
+      },
+      "sourceUrl": null,
+      "dateAdded": "2026-07-24",
+      "quote": "We're moving beyond buttons and static strings to build the underlying scaffolding that lets AI agents and product experiences communicate safely, naturally, and distinctively across every Netflix surface, in every language, for every audience."
     }
   ],
   "clusters": {
@@ -770,6 +807,10 @@
     "structured-data": {
       "label": "Structured data",
       "description": "A small number of roles are asking content designers to work with Schema.org, JSON-LD, or entity modeling. Early signal, but it points toward content designers owning more of the technical stack."
+    },
+    "accessibility-as-constraint": {
+      "label": "Accessibility as structural constraint",
+      "description": "Accessibility is showing up alongside localization as a structural requirement the content architecture has to support, not a late-stage copy pass. A small but recurring pattern worth watching."
     }
   }
 }
