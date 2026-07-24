@@ -51,8 +51,7 @@ function renderClusters(data) {
 }
 
 function formatDate(iso) {
-  const [y, m, d] = iso.split('-').map(Number);
-  return new Date(y, m - 1, d).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+  return iso;
 }
 
 function renderTitles(data) {
@@ -84,16 +83,13 @@ function renderTitles(data) {
     const expandBtn = hasQuote
       ? `<button class="title-expand" aria-expanded="false" aria-label="Show quote">+</button>`
       : '';
-    const dateHtml = entry.dateAdded
-      ? `<div class="title-domain">${formatDate(entry.dateAdded)}</div>`
-      : '';
+    const domainDateHtml = `<div class="title-domain">${entry.domain}${entry.dateAdded ? ` <span class="title-date-group"><span class="title-dot">·</span> ${formatDate(entry.dateAdded)}</span>` : ''}</div>`;
 
     return `
       <div class="title-entry${hasQuote ? ' has-quote' : ''}">
         <div class="title-meta">
           <div class="title-company">${entry.company}</div>
-          <div class="title-domain">${entry.domain}</div>
-          ${dateHtml}
+          ${domainDateHtml}
         </div>
         <div class="title-body">
           <div class="title-header">

@@ -357,6 +357,14 @@ body {
   letter-spacing: 0.01em;
 }
 
+.title-dot {
+  opacity: 0.5;
+}
+
+.title-date-group {
+  white-space: nowrap;
+}
+
 
 .title-name {
   font-family: var(--font-serif);
