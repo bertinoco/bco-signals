@@ -137,7 +137,7 @@
       },
       "sourceUrl": null,
       "dateAdded": "2026-05-24",
-      "quote": "Build and evolve governance models — including workflows, decision frameworks, review practices, and change-management processes — that scale content quality across teams."
+      "quote": "Build and evolve governance models — including workflows, decision frameworks, review practices, and change‑management processes — that scale content quality across teams."
     },
     {
       "id": "insurify-editor-ai-content-systems",
@@ -154,7 +154,8 @@
         "enablement"
       ],
       "signals": [
-        "title-dilution"
+        "title-dilution",
+        "content-marketing-adjacent"
       ],
       "compRange": {
         "min": 65000,
@@ -163,7 +164,7 @@
       },
       "sourceUrl": null,
       "dateAdded": "2026-05-24",
-      "quote": "Take the lead on designing, testing, and refining AI workflows and model configurations that produce engaging, accurate editorial content tailored to our brand’s unique voice."
+      "quote": "Take the lead on designing, testing, and refining AI workflows and model configurations that produce engaging, accurate editorial content tailored to our brand's unique voice."
     },
     {
       "id": "spotify-annotation-manager",
@@ -242,7 +243,7 @@
       },
       "sourceUrl": null,
       "dateAdded": "2026-05-24",
-      "quote": "In this role, you will drive model behavior design efforts to shape the future of Google’s generative AI experiences."
+      "quote": "In this role, you will drive model behavior design efforts to shape the future of Google's generative AI experiences."
     },
     {
       "id": "jpmc-content-design-vp",
