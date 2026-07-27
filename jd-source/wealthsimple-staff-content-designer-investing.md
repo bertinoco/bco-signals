@@ -3,6 +3,7 @@ id: wealthsimple-staff-content-designer-investing
 company: Wealthsimple
 title: Staff Content Designer, Investing
 sourceUrl: null
+sourcePlatform: company-site
 dateAdded: 2026-07-17
 captured: 2026-07-27
 captureMethod: pasted-from-claude-chat
