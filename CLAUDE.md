@@ -53,12 +53,15 @@ Before proposing a new cluster or signal key, scan all existing entries to see i
 Before writing the entry, summarize: which clusters and signals were assigned and why, and whether anything was flagged as a potential new addition. Wait for confirmation if a new key is being proposed.
 
 **Step 6 — Update metadata and sitemap after writing**
-After writing the entry to `jobs.json`, always update all three of the following in the same pass:
+After writing the entry to `jobs.json`, always update all five of the following in the same pass:
 - `meta.totalEntries` in `jobs.json`
 - `meta.lastUpdated` in `jobs.json`
 - `<lastmod>` in `docs/sitemap.xml`
+- the entry count and date in the "What this dataset tracks" section of `docs/llms.txt`
+- the citation date in the "How to cite this work" section of `docs/llms.txt`
 
-All three must stay in sync. Never write an entry without completing this step.
+All five must stay in sync. Never write an entry without completing this step.
+The same applies when an entry is removed, not only when one is added.
 
 **Step 7 — Commit, push, and merge**
 Once the user confirms the audit (including any new cluster/signal/domain proposal), that confirmation also counts as approval to merge directly to `main` — no separate merge confirmation is needed for JD entry additions specifically. Commit the entry on the working branch, push it, then merge directly to `main` and push. This does not extend to other kinds of changes (site code, design, CLAUDE.md itself, etc.) — those still follow normal confirm-before-merge practice.
@@ -128,7 +131,8 @@ If a new company doesn't fit any existing value, propose the new domain before w
 
 Each entry may include an optional `quote` field — a direct excerpt from the JD that anchors the cluster and signal assignments. Rules:
 
-- Must be a verbatim quote from the JD. Do not paraphrase or edit.
+- Must be a verbatim quote from the JD. Do not paraphrase, reword, condense, or change meaning.
+- Two typographic normalizations are permitted when a quote is lifted from mid-sentence: capitalizing the first letter so the excerpt reads as a standalone sentence, and adding spaces around an em dash. Nothing else. Never normalize to make a quote sound stronger, cleaner, or more on-message than the source.
 - Choose the line or sentence that most clearly justifies the clusters and signals assigned.
 - If no single excerpt is definitive, leave the field null rather than stitching sentences together.
 - The field is optional. Omit it (or set to null) if no suitable quote exists.
