@@ -49,6 +49,17 @@ archived here. `captureMethod` records provenance — `pasted-from-claude-chat`,
 `linkedin` or `company-site`. Worth setting when the capture includes platform
 chrome, since that chrome is retained rather than trimmed.
 
+`postedDate` and `reqId` (both optional) record what the listing itself states —
+the date the posting went up, and the employer's requisition or role number.
+Set them only when the source states them; do not derive `postedDate` from a
+relative string like "2 weeks ago", which is ambiguous about when it was read.
+`reqId` is what pins an entry to a specific requisition: employers reuse titles
+across postings, so a same-titled listing is not necessarily the same posting.
+
+`team` (optional) records the product or org the role sits in when that is
+known but not stated in the posting text. Use it only for attribution that
+comes from outside the capture, and say so in `captureNote`.
+
 `captureNote` (optional) records anything a later reader needs to know about
 the capture — retained page chrome, ambiguous dates, sections known to be
 missing. Use it to flag ambiguity rather than resolving it.
