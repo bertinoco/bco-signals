@@ -33,6 +33,17 @@ Before auditing a new JD, evaluate whether it should be included at all. The def
 **Note on seniority**
 Level is not a hard gate — seniority varies significantly across companies and the same title can mean different things. Flag (don't auto-exclude) roles where people management is listed but craft responsibilities are still substantive and specific. Push back on roles where management, headcount, or executive stakeholder navigation dominate the stated responsibilities.
 
+**Note on rejected roles**
+A JD that fails these criteria is still worth archiving. Write it to
+`jd-source/{id}.md` with `excluded` and `excludedReason` set, as described in
+`jd-source/README.md`, so the reasoning survives and the same posting is not
+re-audited from scratch or quietly added later. Nothing is written to
+`jobs.json` for a rejected role.
+
+If a submitted JD has no matching entry in `jobs.json`, do not assume it is
+being added. Say so and ask whether it was rejected and should be archived as
+excluded, or was submitted in error.
+
 ## Entry audit process
 
 When a new JD is submitted for addition, always perform an independent audit before writing to `jobs.json`. Do not trust pre-assigned clusters or signals — derive them from the JD text directly.
@@ -52,16 +63,28 @@ Before proposing a new cluster or signal key, scan all existing entries to see i
 **Step 5 — Report the audit**
 Before writing the entry, summarize: which clusters and signals were assigned and why, and whether anything was flagged as a potential new addition. Wait for confirmation if a new key is being proposed.
 
-**Step 6 — Update metadata and sitemap after writing**
-After writing the entry to `jobs.json`, always update all five of the following in the same pass:
+**Step 6 — Archive the source text and update metadata after writing**
+After writing the entry to `jobs.json`, always complete all six of the following
+in the same pass:
+- write the raw JD text to `jd-source/{id}.md`, following the file format in `jd-source/README.md`
 - `meta.totalEntries` in `jobs.json`
 - `meta.lastUpdated` in `jobs.json`
 - `<lastmod>` in `docs/sitemap.xml`
 - the entry count and date in the "What this dataset tracks" section of `docs/llms.txt`
 - the citation date in the "How to cite this work" section of `docs/llms.txt`
 
-All five must stay in sync. Never write an entry without completing this step.
+All six must stay in sync. Never write an entry without completing this step.
 The same applies when an entry is removed, not only when one is added.
+
+The archive is the JD text as submitted, stored verbatim — no cleanup,
+reformatting, or truncation, including any job-board chrome around the posting.
+It is what Step 1 was read from, and what a later Step 4 backcheck reads when
+scanning for a recurring pattern that has no cluster or signal key yet.
+
+Before committing, confirm the entry's `quote` appears in the archived text.
+A mismatch beyond the two permitted normalizations is a discrepancy to resolve,
+not a formatting detail — the quote is wrong, or the archived text is not the
+posting the entry was audited from.
 
 **Step 7 — Commit, push, and merge**
 Once the user confirms the audit (including any new cluster/signal/domain proposal), that confirmation also counts as approval to merge directly to `main` — no separate merge confirmation is needed for JD entry additions specifically. Commit the entry on the working branch, push it, then merge directly to `main` and push. This does not extend to other kinds of changes (site code, design, CLAUDE.md itself, etc.) — those still follow normal confirm-before-merge practice.
