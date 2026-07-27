@@ -10,8 +10,9 @@ captureMethod: pasted-from-claude-chat
 captureNote: >
   Captured from Notion's own careers listing, so no aggregator chrome is
   present. Includes the full equal-opportunity and AI-policy boilerplate.
-  The entry's stored quote differs cosmetically from this source text —
-  see the corpus README on verbatim handling.
+  The entry's stored quote is lifted from mid-sentence and carries both
+  permitted normalizations — leading capital and spaced em dash. Compliant
+  with the quote rule in CLAUDE.md as amended 2026-07-27.
 ---
 
 CX Knowledge Architect

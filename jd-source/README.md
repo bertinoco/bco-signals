@@ -53,6 +53,18 @@ chrome, since that chrome is retained rather than trimmed.
 the capture — retained page chrome, ambiguous dates, sections known to be
 missing. Use it to flag ambiguity rather than resolving it.
 
+## Excluded roles
+
+A file may outlive its `jobs.json` entry. When a role is removed from the
+dataset — or reviewed and rejected before it was ever added — the source text
+stays here with `excluded` (the date) and `excludedReason` (why) in the front
+matter.
+
+These files have no corresponding entry in `jobs.json`. That is intentional:
+the archive records the reasoning behind an exclusion, so the same JD is not
+re-evaluated from scratch or quietly re-added later. Check for an `excluded`
+field before treating a file as backing a live entry.
+
 ## Rules
 
 - Text is stored **verbatim**. No cleanup, reformatting, summarizing, or

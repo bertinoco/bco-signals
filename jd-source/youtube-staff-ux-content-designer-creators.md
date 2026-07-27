@@ -7,6 +7,14 @@ sourcePlatform: company-site
 dateAdded: 2026-05-25
 captured: 2026-07-27
 captureMethod: pasted-from-claude-chat
+excluded: 2026-07-27
+excludedReason: >
+  Removed from jobs.json after review against the entry eligibility criteria.
+  The JD contains no AI-related language (no occurrence of ai, llm, model,
+  generative, automation, machine learning, agent, or prompt) and uses
+  standard Google UX writer framing, so it does not meet the signal test.
+  The entry carried no signals, only the two clusters. Source text retained
+  as the record of that decision.
 captureNote: >
   Captured from Google's own careers listing. The "About the job" section
   runs the standard Google UX writer boilerplate followed, without a break,
