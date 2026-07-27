@@ -4,6 +4,7 @@ company: Netflix
 title: Staff Content Designer, NCXD
 sourceUrl: null
 sourcePlatform: linkedin
+orgPlacement: null
 dateAdded: 2026-05-25
 captured: 2026-07-27
 captureMethod: pasted-from-claude-chat

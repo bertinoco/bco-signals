@@ -6,6 +6,7 @@ sourceUrl: null
 sourcePlatform: company-site
 postedDate: 2026-07-21
 reqId: 200672377-0836
+orgPlacement: "Product, Design & Marketing team on Apple Services; HI Writing discipline"
 dateAdded: 2026-07-23
 captured: 2026-07-27
 captureNote: >

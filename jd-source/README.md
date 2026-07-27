@@ -60,6 +60,17 @@ across postings, so a same-titled listing is not necessarily the same posting.
 known but not stated in the posting text. Use it only for attribution that
 comes from outside the capture, and say so in `captureNote`.
 
+`orgPlacement` records where the posting says the role sits — the department,
+team, business unit, or reporting line, in the posting's own words. Set it to
+`null` when the posting does not say; that absence is a fact about the posting
+and is worth recording as one.
+
+Record what is stated, not what it implies. Where a posting names a partner or
+reporting relationship instead of a department, say so plainly — "Not stated as
+a department; the role works closely with the CMO" — rather than inferring a
+placement from it. Do not classify: grouping these values into categories is a
+reading of the corpus, and belongs in analysis rather than in the archive.
+
 `captureNote` (optional) records anything a later reader needs to know about
 the capture — retained page chrome, ambiguous dates, sections known to be
 missing. Use it to flag ambiguity rather than resolving it.

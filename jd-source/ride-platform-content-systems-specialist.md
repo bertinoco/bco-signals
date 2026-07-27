@@ -4,6 +4,7 @@ company: The Ride Platform
 title: AI-Powered Content Systems Specialist
 sourceUrl: null
 sourcePlatform: linkedin
+orgPlacement: "Not stated as a department; scoped across marketing, partnering with Product Marketing and Demand Generation"
 dateAdded: 2026-07-13
 captured: 2026-07-27
 captureMethod: pasted-from-claude-chat

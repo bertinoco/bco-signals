@@ -4,6 +4,7 @@ company: OpenAI
 title: Content Designer
 sourceUrl: null
 sourcePlatform: company-site
+orgPlacement: "Product Design"
 dateAdded: 2026-05-24
 captured: 2026-07-27
 captureMethod: pasted-from-claude-chat

@@ -4,6 +4,7 @@ company: Wellhub
 title: Senior Global UX Writer, Content Systems
 sourceUrl: null
 sourcePlatform: company-site
+orgPlacement: "Consumer Digital Experience team"
 dateAdded: 2026-05-24
 captured: 2026-07-27
 captureMethod: pasted-from-claude-chat

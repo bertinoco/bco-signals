@@ -4,6 +4,7 @@ company: Spotify
 title: Senior Conversation Designer — Experience Content Design
 sourceUrl: null
 sourcePlatform: company-site
+orgPlacement: "Design And User Experience - Experience"
 dateAdded: 2026-05-25
 captured: 2026-07-27
 captureMethod: pasted-from-claude-chat

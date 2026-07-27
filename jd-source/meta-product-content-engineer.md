@@ -4,6 +4,7 @@ company: Meta
 title: Product Content Engineer
 sourceUrl: null
 sourcePlatform: unknown
+orgPlacement: "Product Content Engineering, a horizontal function supporting initiatives across Instagram"
 dateAdded: 2026-05-25
 captured: 2026-07-27
 captureMethod: pasted-from-claude-chat

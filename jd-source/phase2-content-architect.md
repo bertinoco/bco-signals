@@ -4,6 +4,7 @@ company: Phase2
 title: Content Architect
 sourceUrl: null
 sourcePlatform: company-site
+orgPlacement: "Reports to: Director, Marketing Services"
 dateAdded: 2026-05-24
 captured: 2026-07-27
 captureMethod: pasted-from-claude-chat

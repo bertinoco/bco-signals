@@ -4,6 +4,7 @@ company: Sanna
 title: Content Engineer
 sourceUrl: null
 sourcePlatform: company-site
+orgPlacement: null
 dateAdded: 2026-05-24
 captured: 2026-07-27
 captureMethod: pasted-from-claude-chat

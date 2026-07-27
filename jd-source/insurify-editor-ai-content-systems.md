@@ -4,6 +4,7 @@ company: Insurify
 title: Editor, AI Content Systems
 sourceUrl: null
 sourcePlatform: company-site
+orgPlacement: "Not stated as a department; partners with the Editor in Chief and editorial leadership"
 dateAdded: 2026-05-24
 captured: 2026-07-27
 captureMethod: pasted-from-claude-chat

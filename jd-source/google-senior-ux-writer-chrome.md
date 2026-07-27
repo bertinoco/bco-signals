@@ -4,6 +4,7 @@ company: Google
 title: Senior UX Writer and Content Designer, Chrome
 sourceUrl: null
 sourcePlatform: company-site
+orgPlacement: null
 dateAdded: 2026-05-25
 captured: 2026-07-27
 captureMethod: pasted-from-claude-chat
