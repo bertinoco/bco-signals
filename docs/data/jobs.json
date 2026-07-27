@@ -24,7 +24,8 @@
       ],
       "signals": [
         "ai-native-expectation",
-        "enabler-not-bottleneck"
+        "enabler-not-bottleneck",
+        "language-infrastructure"
       ],
       "compRange": null,
       "sourceUrl": null,
@@ -72,7 +73,8 @@
       ],
       "signals": [
         "title-responsibility-gap",
-        "enabler-not-bottleneck"
+        "enabler-not-bottleneck",
+        "language-infrastructure"
       ],
       "compRange": null,
       "sourceUrl": null,
@@ -89,15 +91,13 @@
       "remote": true,
       "coreFrame": "Content modeling, structured data, migrations, governance",
       "clusters": [
-        "terminology-governance",
         "content-systems-design",
-        "taxonomy",
-        "localization",
-        "technical-writing"
+        "taxonomy"
       ],
       "signals": [
         "geo-seo",
-        "structured-data"
+        "structured-data",
+        "accessibility-as-constraint"
       ],
       "compRange": {
         "min": 120000,

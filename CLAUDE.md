@@ -26,9 +26,19 @@ Before auditing a new JD, evaluate whether it should be included at all. The def
 - The title, scope, or team placement signals a structural shift in how content work is valued or positioned
 
 **Exclusion flags — any one disqualifies**
-- The role is primarily content marketing or editorial production, even if it uses systems language
+- The role is primarily content marketing or editorial production, and its systems or AI responsibilities are thin — the systems language is doing the work of a title rather than describing the job
 - The role has no meaningful connection to product, platform, or language infrastructure
 - The JD is too generic to yield distinct cluster or signal assignments
+
+**Note on marketing-sited roles**
+Sitting in a marketing or editorial function is not disqualifying on its own.
+Where the JD's systems or AI responsibilities are substantive and specific,
+include the role and assign `content-marketing-adjacent`. Content design and
+content strategy straddle marketing and product, and where that boundary
+falls is one of the things the dataset tracks — excluding every role on the
+marketing side of it would discard the evidence for it. Exclude when the
+systems framing is not backed by stated responsibilities; tag, don't exclude,
+when it is.
 
 **Note on seniority**
 Level is not a hard gate — seniority varies significantly across companies and the same title can mean different things. Flag (don't auto-exclude) roles where people management is listed but craft responsibilities are still substantive and specific. Push back on roles where management, headcount, or executive stakeholder navigation dominate the stated responsibilities.
