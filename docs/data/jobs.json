@@ -154,7 +154,8 @@
         "enablement"
       ],
       "signals": [
-        "title-dilution"
+        "title-dilution",
+        "content-marketing-adjacent"
       ],
       "compRange": {
         "min": 65000,
