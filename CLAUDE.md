@@ -157,5 +157,6 @@ Each entry may include an optional `quote` field — a direct excerpt from the J
 - Must be a verbatim quote from the JD. Do not paraphrase, reword, condense, or change meaning.
 - Two typographic normalizations are permitted when a quote is lifted from mid-sentence: capitalizing the first letter so the excerpt reads as a standalone sentence, and adding spaces around an em dash. Nothing else. Never normalize to make a quote sound stronger, cleaner, or more on-message than the source.
 - Choose the line or sentence that most clearly justifies the clusters and signals assigned.
+- Prefer a line legible to a general content design reader over one dense with employer-specific jargon — acronyms, internal system names, team names. The quote must still ground the assigned clusters and signals; legibility breaks ties among lines that do, it does not override grounding. If the only line that grounds an assignment is unavoidably jargon-heavy, keep it and reconsider whether the assignment is well grounded.
 - If no single excerpt is definitive, leave the field null rather than stitching sentences together.
 - The field is optional. Omit it (or set to null) if no suitable quote exists.
