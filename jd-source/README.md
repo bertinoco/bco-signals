@@ -30,9 +30,12 @@ id: sanna-content-engineer
 company: Sanna
 title: Content Engineer
 sourceUrl: null
+sourcePlatform: linkedin
 dateAdded: 2026-05-24
 captured: 2026-07-27
 captureMethod: pasted-from-claude-chat
+captureNote: >
+  Optional free-text note about the capture itself.
 ---
 
 [raw JD text]
@@ -41,6 +44,14 @@ captureMethod: pasted-from-claude-chat
 `dateAdded` mirrors the `jobs.json` entry. `captured` is when the text was
 archived here. `captureMethod` records provenance — `pasted-from-claude-chat`,
 `pasted-from-source`, or `fetched` with a live `sourceUrl`.
+
+`sourcePlatform` (optional) records where the text was captured from, e.g.
+`linkedin` or `company-site`. Worth setting when the capture includes platform
+chrome, since that chrome is retained rather than trimmed.
+
+`captureNote` (optional) records anything a later reader needs to know about
+the capture — retained page chrome, ambiguous dates, sections known to be
+missing. Use it to flag ambiguity rather than resolving it.
 
 ## Rules
 
