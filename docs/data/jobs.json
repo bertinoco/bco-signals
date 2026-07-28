@@ -3,7 +3,7 @@
     "title": "BCO Content Skills Tracker",
     "description": "A curated skills tracker for the content design community.",
     "lastUpdated": "2026-07-27",
-    "totalEntries": 26
+    "totalEntries": 27
   },
   "entries": [
     {
@@ -211,7 +211,8 @@
       "signals": [
         "ai-native-expectation",
         "governance-as-value-prop",
-        "language-infrastructure"
+        "language-infrastructure",
+        "central-standards-function"
       ],
       "compRange": null,
       "sourceUrl": null,
@@ -263,7 +264,8 @@
       ],
       "signals": [
         "governance-as-value-prop",
-        "enabler-not-bottleneck"
+        "enabler-not-bottleneck",
+        "central-standards-function"
       ],
       "compRange": {
         "min": 133000,
@@ -321,7 +323,8 @@
       "signals": [
         "ai-native-expectation",
         "classification-for-ml",
-        "content-adjacent"
+        "content-adjacent",
+        "central-standards-function"
       ],
       "compRange": {
         "min": 131000,
@@ -606,7 +609,8 @@
       ],
       "signals": [
         "governance-as-value-prop",
-        "structured-data"
+        "structured-data",
+        "central-standards-function"
       ],
       "compRange": {
         "min": 115000,
@@ -677,7 +681,8 @@
         "language-infrastructure",
         "ai-native-expectation",
         "structured-data",
-        "accessibility-as-constraint"
+        "accessibility-as-constraint",
+        "central-standards-function"
       ],
       "compRange": {
         "min": 460000,
@@ -747,6 +752,39 @@
       "dateAdded": "2026-07-27",
       "quote": "Partner with our Insights and Data teams to review and build additional dashboards and tooling to establish more automated governance mechanisms.",
       "note": "AI is referenced as part of the work but not specified — the JD says 'AI solutions' twice without naming tools, workflows, or outputs. Comparable support-content entries (Notion, LinkedIn) state theirs concretely. Included on that basis, at the low end of the signal test."
+    },
+    {
+      "id": "ally-content-architect",
+      "company": "Ally Financial",
+      "title": "Content Architect",
+      "domain": "Financial services",
+      "engagement": "Full-time",
+      "location": "Charlotte, NC",
+      "remote": false,
+      "coreFrame": "Content architecture for AI-first discovery, content models and taxonomies, structured data standards, GEO, cross-functional standards alignment",
+      "clusters": [
+        "content-systems-design",
+        "taxonomy",
+        "enablement"
+      ],
+      "signals": [
+        "geo-seo",
+        "structured-data",
+        "content-marketing-adjacent",
+        "accessibility-as-constraint",
+        "central-standards-function"
+      ],
+      "compRange": {
+        "min": 90000,
+        "max": 150000,
+        "currency": "USD",
+        "note": "+ annual incentive plan"
+      },
+      "sourceUrl": null,
+      "dateAdded": "2026-07-27",
+      "tag": "content-marketing-adjacent",
+      "quote": "Define and govern content models, taxonomies, metadata and structured data standards that enable modular, machine-readable, high-performing content.",
+      "note": "Career area is stated as Marketing, and the role partners with PR and SEO/GEO teams. Included because the stated systems responsibilities — content models, taxonomies, metadata, schema, entity optimization, API integrations — are specific rather than framing. The JD states the placement directly: the role 'sits above channels and formats'."
     }
   ],
   "clusters": {
@@ -847,6 +885,10 @@
     "accessibility-as-constraint": {
       "label": "Accessibility as structural constraint",
       "description": "Accessibility is showing up alongside localization as a structural requirement the content architecture has to support, not a late-stage copy pass. A small but recurring pattern worth watching."
+    },
+    "central-standards-function": {
+      "label": "Central standards function",
+      "description": "Content standards owned by one central or horizontal function, with distributed teams consuming them inside set guardrails. Roles describe sitting above channels, acting as a single accountable owner, or publishing playbooks other teams adapt. It's a structural answer to where content work sits — and the opposite of embedding writers in product teams."
     }
   }
 }
