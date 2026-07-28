@@ -3,7 +3,7 @@
     "title": "BCO Content Skills Tracker",
     "description": "A curated skills tracker for the content design community.",
     "lastUpdated": "2026-07-27",
-    "totalEntries": 24
+    "totalEntries": 25
   },
   "entries": [
     {
@@ -688,6 +688,36 @@
       "sourceUrl": null,
       "dateAdded": "2026-07-24",
       "quote": "We’re moving beyond buttons and static strings to build the underlying scaffolding that lets AI agents and product experiences communicate safely, naturally, and distinctively across every Netflix surface, in every language, for every audience."
+    },
+    {
+      "id": "zoom-ai-information-architect",
+      "company": "Zoom",
+      "title": "AI Information Architect / Content Strategist",
+      "domain": "SaaS / productivity",
+      "engagement": "Full-time",
+      "location": "Remote (US)",
+      "remote": true,
+      "coreFrame": "Information architecture for self-service support, AI content generation strategy, taxonomy and metadata schemas, IA governance documentation",
+      "clusters": [
+        "taxonomy",
+        "content-systems-design",
+        "ai-tooling",
+        "ai-content-governance",
+        "technical-writing"
+      ],
+      "signals": [
+        "ai-native-expectation",
+        "governance-as-value-prop",
+        "geo-seo"
+      ],
+      "compRange": {
+        "min": 76800,
+        "max": 186200,
+        "currency": "USD"
+      },
+      "sourceUrl": null,
+      "dateAdded": "2026-07-27",
+      "quote": "Leading AI content design and generation strategy, leveraging AI models to produce comprehensive, accurate, and scalable support content at speed."
     }
   ],
   "clusters": {
