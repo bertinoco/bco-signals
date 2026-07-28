@@ -3,7 +3,7 @@
     "title": "BCO Content Skills Tracker",
     "description": "A curated skills tracker for the content design community.",
     "lastUpdated": "2026-07-27",
-    "totalEntries": 25
+    "totalEntries": 26
   },
   "entries": [
     {
@@ -718,6 +718,35 @@
       "sourceUrl": null,
       "dateAdded": "2026-07-27",
       "quote": "Leading AI content design and generation strategy, leveraging AI models to produce comprehensive, accurate, and scalable support content at speed."
+    },
+    {
+      "id": "chime-senior-content-strategist",
+      "company": "Chime",
+      "title": "Senior Content Strategist",
+      "domain": "Fintech",
+      "engagement": "Full-time",
+      "location": "Remote (US)",
+      "remote": true,
+      "coreFrame": "Editorial governance for help and support content, content quality metrics, automated governance mechanisms, AI solutions for editorial efficiency",
+      "clusters": [
+        "enablement",
+        "technical-writing",
+        "ai-tooling"
+      ],
+      "signals": [
+        "governance-as-value-prop",
+        "ai-native-expectation"
+      ],
+      "compRange": {
+        "min": 116000,
+        "max": 160000,
+        "currency": "USD",
+        "note": "+ bonus + equity"
+      },
+      "sourceUrl": null,
+      "dateAdded": "2026-07-27",
+      "quote": "Partner with our Insights and Data teams to review and build additional dashboards and tooling to establish more automated governance mechanisms.",
+      "note": "AI is referenced as part of the work but not specified — the JD says 'AI solutions' twice without naming tools, workflows, or outputs. Comparable support-content entries (Notion, LinkedIn) state theirs concretely. Included on that basis, at the low end of the signal test."
     }
   ],
   "clusters": {
