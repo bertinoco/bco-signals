@@ -4,6 +4,7 @@ company: GM
 title: Senior Content Designer, Language Systems
 sourceUrl: null
 sourcePlatform: company-site
+orgPlacement: "Human Interface Design (HID) organization; Language Systems team within HID"
 dateAdded: 2026-05-24
 captured: 2026-07-27
 captureMethod: pasted-from-claude-chat

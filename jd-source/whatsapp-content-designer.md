@@ -5,6 +5,7 @@ title: Content Designer
 team: WhatsApp
 sourceUrl: null
 sourcePlatform: unknown
+orgPlacement: "Meta Content Design team"
 dateAdded: null
 captured: 2026-07-27
 captureMethod: pasted-from-claude-chat

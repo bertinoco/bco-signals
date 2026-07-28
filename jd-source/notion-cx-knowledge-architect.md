@@ -4,6 +4,7 @@ company: Notion
 title: CX Knowledge Architect
 sourceUrl: null
 sourcePlatform: company-site
+orgPlacement: "Department: Customer Experience"
 dateAdded: 2026-05-25
 captured: 2026-07-27
 captureMethod: pasted-from-claude-chat

@@ -4,6 +4,7 @@ company: Atria
 title: UX Writer
 sourceUrl: null
 sourcePlatform: linkedin
+orgPlacement: null
 dateAdded: 2026-07-13
 captured: 2026-07-27
 captureMethod: pasted-from-claude-chat

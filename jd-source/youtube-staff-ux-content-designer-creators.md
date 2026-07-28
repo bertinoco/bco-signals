@@ -4,6 +4,7 @@ company: YouTube
 title: Staff UX Content Designer, YouTube Creators Monetization
 sourceUrl: null
 sourcePlatform: company-site
+orgPlacement: null
 dateAdded: 2026-05-25
 captured: 2026-07-27
 captureMethod: pasted-from-claude-chat
