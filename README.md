@@ -18,9 +18,9 @@ docs/index.html       — Dashboard at signals.bertino.co
 Each entry in `jobs.json` includes:
 
 - `company` / `title` / `domain` — basics
-- `clusters` — responsibility areas the role covers, based on stated responsibilities
-- `signals` — skills and observable patterns explicit in the JD
-- `compRange` — compensation data when stated in the JD
+- `clusters` — responsibility areas the role covers
+- `signals` — skills and observable patterns
+- `compRange` — compensation data
 - `quote` — optional verbatim excerpt from the JD that anchors the cluster and signal assignments
 - `note` — optional factual note about the role or posting
 - `tag` — optional, factual classifier (e.g. `non-content-role`, `content-adjacent`)

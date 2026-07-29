@@ -1,0 +1,81 @@
+---
+id: chime-senior-content-strategist
+company: Chime
+title: Senior Content Strategist
+sourceUrl: null
+sourcePlatform: company-site
+orgPlacement: "Not stated as a department; framed within Chime's member support organization"
+postedDate: null
+reqId: null
+dateAdded: 2026-07-27
+captured: 2026-07-27
+captureMethod: pasted-from-claude-chat
+captureNote: >
+  Captured from Chime's own careers listing. No requisition ID or posting
+  date is stated; the trailing "#LI-MM1 #LI-Remote" are LinkedIn tracking
+  tags rather than a requisition number, so reqId is null.
+
+  The posting uses internal abbreviations — "LOBs" (lines of business) and
+  "SLAs" — in several responsibility lines. These ruled those lines out as
+  quote candidates under the legibility criterion, which is why the stored
+  quote is drawn from the monitoring section rather than the editorial
+  governance one.
+---
+
+Senior Content Strategist
+Remote, USA
+About the role
+
+Chime is building a world-class member support organization, and we believe member support should be built around 3 guiding principles:
+
+Frictionless product: Use member insights to mitigate member issues with a simple,  transparent product
+Self-service: Provide self-service and automated capabilities to help members quickly resolve issues while creating a community for members to support each other
+Excellent support: When members do have to contact us, provide them with excellent service.
+As a Senior Content Strategist, you’ll lead efforts to build and improve content that helps our members and agents quickly get what they need. You’ll partner cross-functionally to shape content that supports our product and support strategies. You’ll work across a variety of content types, including member-facing help articles and internal agent SOPs, partnering with stakeholders to create clear, actionable content that supports our core audiences. You’ll proactively identify opportunities to improve the content experience, shape strategy, and drive measurable improvements in our core support metrics.
+
+This is a high-impact, high-visibility position that interacts with a broad group of internal and external stakeholders. A successful candidate is able to manage multiple projects and meet tight deadlines while maintaining close attention to detail.
+
+The base salary offered for this role and level of experience will begin at $116,000.00 and up to $160,000.00. Full-time employees are also eligible for a bonus, competitive equity package, and benefits. The actual base salary offered may be higher, depending on your location, skills, qualifications, and experience.
+
+In this role, you can expect to
+
+Editorial Governance & Quality Standards:
+
+Inspect Content efficacy using existing metrics across LOBs and establish frameworks to hold ourselves accountable, leaning into AI solutions where valuable
+Own the content strategy for a defined set of LOBs and partner with a team of writers to ensure execution against set standards.
+Own agent feedback on designated content and ensure our process enables the team to meet SLAs and deliver impact through improved articles.
+Inspect our editorial processes and identify ways to enable higher quality content at speed and at scale.
+Monitoring, Reporting & Accountability:
+
+Partner with our Insights and Data teams to review and build additional dashboards and tooling to establish more automated governance mechanisms. 
+Ensure accurate reporting, insights, and actions that drive impact for the agents, our members, and Chime.
+Continuous Improvement & Reinforcement:
+
+Leverage established standards in such a way that the team is unified in their approach to publishing and evaluating efficacy, including agent feedback. Propose, build, and operationalize AI solutions for efficiency and consistency.
+To thrive in this role, you have
+
+Bachelor’s degree required
+5+ years of experience in one or more of these areas: help and support content, product or content operations, or technical writing.
+Experience with Identity and Fraud procedures for FinTech is a bonus
+Strong analytical skills with experience creating and reporting on content quality metrics and performance data
+Strong verbal and written communication skills and a track record of success with internal and external stakeholders.
+Experience defining, tracking, and reporting on content metrics and providing data-driven analysis.
+Ability to balance strategic thinking with hands-on execution in a fast-paced environment
+Experience working with CRM tools (like Zendesk or Salesforce), content management systems, LLMs or generative AI tools, and Google Workspace. 
+Previous experience working with vendors, BPO partners, or writing contractors is a plus.
+Willingness to travel domestically and internationally 2–3 times a year is a plus.
+#LI-MM1 #LI-Remote
+
+A little about us
+
+At Chime, we believe that everyone can achieve financial progress. We created Chime—a financial technology company, not a bank*—on the premise that core banking services should be helpful, easy, and free. Through our user-friendly tools and intuitive platforms, we empower our members to take control of their finances and work towards their goals. Whether it's starting a savings account, purchasing a first car or home, launching a business, or pursuing higher education, we're proud to have helped millions unlock their financial potential.
+
+We're a team of problem solvers, dreamers, and builders with one shared obsession: our members. From day one, Chimers have worked tirelessly to out-hustle and out-execute competitors to bring our mission to life. Their grit and determination inspire us to work harder every day to deliver the very best experience possible. We each bring an owner's mindset to our work, refusing to be outdone and holding ourselves accountable to meet and exceed the highest bars for our teams, our company, and our members.
+
+We believe in being bold, dreaming big, and taking risks, while also working together, embracing our diverse perspectives, and giving each other honest feedback. Our culture remains deeply entrepreneurial, encouraging every Chimer to see themselves as stewards of our mission to help everyday Americans unlock their financial progress. 
+
+We know that to achieve our mission, we must earn and keep people's trust—so we hold ourselves to the highest standards of integrity in everything we do. These aren't just words on a wall—our values are embedded in every aspect of our business, serving as a north star that guides us as we work to help millions achieve their financial potential.
+
+Because if we don't—who will?
+
+*Chime is a financial technology company, not a bank. Banking services provided by The Bancorp Bank, N.A. or Stride Bank, N.A., Members FDIC.

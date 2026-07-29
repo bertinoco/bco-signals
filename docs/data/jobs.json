@@ -2,8 +2,8 @@
   "meta": {
     "title": "BCO Content Skills Tracker",
     "description": "A curated skills tracker for the content design community.",
-    "lastUpdated": "2026-07-24",
-    "totalEntries": 25
+    "lastUpdated": "2026-07-27",
+    "totalEntries": 27
   },
   "entries": [
     {
@@ -24,7 +24,8 @@
       ],
       "signals": [
         "ai-native-expectation",
-        "enabler-not-bottleneck"
+        "enabler-not-bottleneck",
+        "language-infrastructure"
       ],
       "compRange": null,
       "sourceUrl": null,
@@ -72,7 +73,8 @@
       ],
       "signals": [
         "title-responsibility-gap",
-        "enabler-not-bottleneck"
+        "enabler-not-bottleneck",
+        "language-infrastructure"
       ],
       "compRange": null,
       "sourceUrl": null,
@@ -89,15 +91,13 @@
       "remote": true,
       "coreFrame": "Content modeling, structured data, migrations, governance",
       "clusters": [
-        "terminology-governance",
         "content-systems-design",
-        "taxonomy",
-        "localization",
-        "technical-writing"
+        "taxonomy"
       ],
       "signals": [
         "geo-seo",
-        "structured-data"
+        "structured-data",
+        "accessibility-as-constraint"
       ],
       "compRange": {
         "min": 120000,
@@ -137,7 +137,7 @@
       },
       "sourceUrl": null,
       "dateAdded": "2026-05-24",
-      "quote": "Build and evolve governance models — including workflows, decision frameworks, review practices, and change-management processes — that scale content quality across teams."
+      "quote": "Build and evolve governance models — including workflows, decision frameworks, review practices, and change‑management processes — that scale content quality across teams."
     },
     {
       "id": "insurify-editor-ai-content-systems",
@@ -154,7 +154,8 @@
         "enablement"
       ],
       "signals": [
-        "title-dilution"
+        "title-dilution",
+        "content-marketing-adjacent"
       ],
       "compRange": {
         "min": 65000,
@@ -163,7 +164,7 @@
       },
       "sourceUrl": null,
       "dateAdded": "2026-05-24",
-      "quote": "Take the lead on designing, testing, and refining AI workflows and model configurations that produce engaging, accurate editorial content tailored to our brand’s unique voice."
+      "quote": "Take the lead on designing, testing, and refining AI workflows and model configurations that produce engaging, accurate editorial content tailored to our brand's unique voice."
     },
     {
       "id": "spotify-annotation-manager",
@@ -210,7 +211,8 @@
       "signals": [
         "ai-native-expectation",
         "governance-as-value-prop",
-        "language-infrastructure"
+        "language-infrastructure",
+        "central-standards-function"
       ],
       "compRange": null,
       "sourceUrl": null,
@@ -242,7 +244,7 @@
       },
       "sourceUrl": null,
       "dateAdded": "2026-05-24",
-      "quote": "In this role, you will drive model behavior design efforts to shape the future of Google’s generative AI experiences."
+      "quote": "In this role, you will drive model behavior design efforts to shape the future of Google's generative AI experiences."
     },
     {
       "id": "jpmc-content-design-vp",
@@ -262,7 +264,8 @@
       ],
       "signals": [
         "governance-as-value-prop",
-        "enabler-not-bottleneck"
+        "enabler-not-bottleneck",
+        "central-standards-function"
       ],
       "compRange": {
         "min": 133000,
@@ -320,7 +323,8 @@
       "signals": [
         "ai-native-expectation",
         "classification-for-ml",
-        "content-adjacent"
+        "content-adjacent",
+        "central-standards-function"
       ],
       "compRange": {
         "min": 131000,
@@ -458,30 +462,6 @@
       "dateAdded": "2026-06-10"
     },
     {
-      "id": "youtube-staff-ux-content-designer-creators",
-      "company": "YouTube",
-      "title": "Staff UX Content Designer, YouTube Creators Monetization",
-      "domain": "Media / advertising",
-      "engagement": "Full-time",
-      "location": "New York, NY",
-      "remote": false,
-      "coreFrame": "UX writing and content design processes, systems, frameworks, and patterns across multiple teams and products",
-      "clusters": [
-        "content-systems-design",
-        "enablement"
-      ],
-      "signals": [],
-      "compRange": {
-        "min": 171000,
-        "max": 248000,
-        "currency": "USD",
-        "note": "+ 20% bonus target + equity"
-      },
-      "sourceUrl": null,
-      "dateAdded": "2026-05-25",
-      "quote": "Lead the establishment and improvement of holistic UX writing and content design processes, systems, frameworks or patterns across multiple teams or products."
-    },
-    {
       "id": "notion-cx-knowledge-architect",
       "company": "Notion",
       "title": "CX Knowledge Architect",
@@ -534,7 +514,7 @@
       "compRange": null,
       "sourceUrl": null,
       "dateAdded": "2026-05-25",
-      "quote": "This role sits at the intersection of writing and system design. You’ll bring sharp editorial instincts and real writing chops, but you’ll spend your time designing how conversations work — not producing UI copy."
+      "quote": "This role sits at the intersection of writing and system design. You'll bring sharp editorial instincts and real writing chops, but you'll spend your time designing how conversations work — not producing UI copy."
     },
     {
       "id": "ride-platform-content-systems-specialist",
@@ -586,7 +566,7 @@
       "compRange": null,
       "sourceUrl": null,
       "dateAdded": "2026-07-17",
-      "quote": "Work AI-first. From shipping your own code changes to prototyping and research — you'll use AI to increase your impact in every part of the product lifecycle.",
+      "quote": "Work AI-first. From shipping your own code changes to prototyping and research — you’ll use AI to increase your impact in every part of the product lifecycle.",
       "note": "JD explicitly expects content designers to ship their own code changes via AI — a pattern not yet seen elsewhere in the dataset. Potential future signal: autonomous code shipping as part of the content design workflow."
     },
     {
@@ -610,7 +590,7 @@
       },
       "sourceUrl": null,
       "dateAdded": "2026-07-13",
-      "quote": "You understand that UX writing is not copywriting with less space. You think in systems, you know why consistency matters, and you’re comfortable pushing back when a design choice undercuts the experience."
+      "quote": "You understand that UX writing is not copywriting with less space. You think in systems, you know why consistency matters, and you're comfortable pushing back when a design choice undercuts the experience."
     },
     {
       "id": "linkedin-staff-content-architect",
@@ -629,7 +609,8 @@
       ],
       "signals": [
         "governance-as-value-prop",
-        "structured-data"
+        "structured-data",
+        "central-standards-function"
       ],
       "compRange": {
         "min": 115000,
@@ -639,7 +620,7 @@
       },
       "sourceUrl": null,
       "dateAdded": "2026-07-20",
-      "quote": "Partner with Product, Content Strategy, and Engineering to ensure content architecture decisions enable intuitive, efficient authoring experiences and reduce reliance on manual workarounds.",
+      "quote": "Establish and enforce governance frameworks, review mechanisms, and escalation paths to prevent structural drift, duplication, and deviation from defined standards across internal and external contributors.",
       "note": "JD frames the role as reducing 'long-term risk and reliance on external consultants' via internal governance frameworks, and sits in a Knowledge Management Solutions team under 'Department: GBO' rather than a product/design org — a placement pattern not yet seen elsewhere in the dataset."
     },
     {
@@ -700,7 +681,8 @@
         "language-infrastructure",
         "ai-native-expectation",
         "structured-data",
-        "accessibility-as-constraint"
+        "accessibility-as-constraint",
+        "central-standards-function"
       ],
       "compRange": {
         "min": 460000,
@@ -710,7 +692,99 @@
       },
       "sourceUrl": null,
       "dateAdded": "2026-07-24",
-      "quote": "We're moving beyond buttons and static strings to build the underlying scaffolding that lets AI agents and product experiences communicate safely, naturally, and distinctively across every Netflix surface, in every language, for every audience."
+      "quote": "We’re moving beyond buttons and static strings to build the underlying scaffolding that lets AI agents and product experiences communicate safely, naturally, and distinctively across every Netflix surface, in every language, for every audience."
+    },
+    {
+      "id": "zoom-ai-information-architect",
+      "company": "Zoom",
+      "title": "AI Information Architect / Content Strategist",
+      "domain": "SaaS / productivity",
+      "engagement": "Full-time",
+      "location": "Remote (US)",
+      "remote": true,
+      "coreFrame": "Information architecture for self-service support, AI content generation strategy, taxonomy and metadata schemas, IA governance documentation",
+      "clusters": [
+        "taxonomy",
+        "content-systems-design",
+        "ai-tooling",
+        "ai-content-governance",
+        "technical-writing"
+      ],
+      "signals": [
+        "ai-native-expectation",
+        "governance-as-value-prop",
+        "geo-seo"
+      ],
+      "compRange": {
+        "min": 76800,
+        "max": 186200,
+        "currency": "USD"
+      },
+      "sourceUrl": null,
+      "dateAdded": "2026-07-27",
+      "quote": "Leading AI content design and generation strategy, leveraging AI models to produce comprehensive, accurate, and scalable support content at speed."
+    },
+    {
+      "id": "chime-senior-content-strategist",
+      "company": "Chime",
+      "title": "Senior Content Strategist",
+      "domain": "Fintech",
+      "engagement": "Full-time",
+      "location": "Remote (US)",
+      "remote": true,
+      "coreFrame": "Editorial governance for help and support content, content quality metrics, automated governance mechanisms, AI solutions for editorial efficiency",
+      "clusters": [
+        "enablement",
+        "technical-writing",
+        "ai-tooling"
+      ],
+      "signals": [
+        "governance-as-value-prop",
+        "ai-native-expectation"
+      ],
+      "compRange": {
+        "min": 116000,
+        "max": 160000,
+        "currency": "USD",
+        "note": "+ bonus + equity"
+      },
+      "sourceUrl": null,
+      "dateAdded": "2026-07-27",
+      "quote": "Partner with our Insights and Data teams to review and build additional dashboards and tooling to establish more automated governance mechanisms.",
+      "note": "AI is referenced as part of the work but not specified — the JD says 'AI solutions' twice without naming tools, workflows, or outputs. Comparable support-content entries (Notion, LinkedIn) state theirs concretely. Included on that basis, at the low end of the signal test."
+    },
+    {
+      "id": "ally-content-architect",
+      "company": "Ally Financial",
+      "title": "Content Architect",
+      "domain": "Financial services",
+      "engagement": "Full-time",
+      "location": "Charlotte, NC",
+      "remote": false,
+      "coreFrame": "Content architecture for AI-first discovery, content models and taxonomies, structured data standards, GEO, cross-functional standards alignment",
+      "clusters": [
+        "content-systems-design",
+        "taxonomy",
+        "enablement"
+      ],
+      "signals": [
+        "geo-seo",
+        "structured-data",
+        "content-marketing-adjacent",
+        "accessibility-as-constraint",
+        "central-standards-function"
+      ],
+      "compRange": {
+        "min": 90000,
+        "max": 150000,
+        "currency": "USD",
+        "note": "+ annual incentive plan"
+      },
+      "sourceUrl": null,
+      "dateAdded": "2026-07-27",
+      "tag": "content-marketing-adjacent",
+      "quote": "Define and govern content models, taxonomies, metadata and structured data standards that enable modular, machine-readable, high-performing content.",
+      "note": "Career area is stated as Marketing, and the role partners with PR and SEO/GEO teams. Included because the stated systems responsibilities — content models, taxonomies, metadata, schema, entity optimization, API integrations — are specific rather than framing. The JD states the placement directly: the role 'sits above channels and formats'."
     }
   ],
   "clusters": {
@@ -811,6 +885,10 @@
     "accessibility-as-constraint": {
       "label": "Accessibility as structural constraint",
       "description": "Accessibility is showing up alongside localization as a structural requirement the content architecture has to support, not a late-stage copy pass. A small but recurring pattern worth watching."
+    },
+    "central-standards-function": {
+      "label": "Central standards function",
+      "description": "Content standards owned by one central or horizontal function, with distributed teams consuming them inside set guardrails. Roles describe sitting above channels, acting as a single accountable owner, or publishing playbooks other teams adapt. It's a structural answer to where content work sits — and the opposite of embedding writers in product teams."
     }
   }
 }

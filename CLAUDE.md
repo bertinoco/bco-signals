@@ -26,12 +26,33 @@ Before auditing a new JD, evaluate whether it should be included at all. The def
 - The title, scope, or team placement signals a structural shift in how content work is valued or positioned
 
 **Exclusion flags — any one disqualifies**
-- The role is primarily content marketing or editorial production, even if it uses systems language
+- The role is primarily content marketing or editorial production, and its systems or AI responsibilities are thin — the systems language is doing the work of a title rather than describing the job
 - The role has no meaningful connection to product, platform, or language infrastructure
 - The JD is too generic to yield distinct cluster or signal assignments
 
+**Note on marketing-sited roles**
+Sitting in a marketing or editorial function is not disqualifying on its own.
+Where the JD's systems or AI responsibilities are substantive and specific,
+include the role and assign `content-marketing-adjacent`. Content design and
+content strategy straddle marketing and product, and where that boundary
+falls is one of the things the dataset tracks — excluding every role on the
+marketing side of it would discard the evidence for it. Exclude when the
+systems framing is not backed by stated responsibilities; tag, don't exclude,
+when it is.
+
 **Note on seniority**
 Level is not a hard gate — seniority varies significantly across companies and the same title can mean different things. Flag (don't auto-exclude) roles where people management is listed but craft responsibilities are still substantive and specific. Push back on roles where management, headcount, or executive stakeholder navigation dominate the stated responsibilities.
+
+**Note on rejected roles**
+A JD that fails these criteria is still worth archiving. Write it to
+`jd-source/{id}.md` with `excluded` and `excludedReason` set, as described in
+`jd-source/README.md`, so the reasoning survives and the same posting is not
+re-audited from scratch or quietly added later. Nothing is written to
+`jobs.json` for a rejected role.
+
+If a submitted JD has no matching entry in `jobs.json`, do not assume it is
+being added. Say so and ask whether it was rejected and should be archived as
+excluded, or was submitted in error.
 
 ## Entry audit process
 
@@ -52,13 +73,28 @@ Before proposing a new cluster or signal key, scan all existing entries to see i
 **Step 5 — Report the audit**
 Before writing the entry, summarize: which clusters and signals were assigned and why, and whether anything was flagged as a potential new addition. Wait for confirmation if a new key is being proposed.
 
-**Step 6 — Update metadata and sitemap after writing**
-After writing the entry to `jobs.json`, always update all three of the following in the same pass:
+**Step 6 — Archive the source text and update metadata after writing**
+After writing the entry to `jobs.json`, always complete all six of the following
+in the same pass:
+- write the raw JD text to `jd-source/{id}.md`, following the file format in `jd-source/README.md`
 - `meta.totalEntries` in `jobs.json`
 - `meta.lastUpdated` in `jobs.json`
 - `<lastmod>` in `docs/sitemap.xml`
+- the entry count and date in the "What this dataset tracks" section of `docs/llms.txt`
+- the citation date in the "How to cite this work" section of `docs/llms.txt`
 
-All three must stay in sync. Never write an entry without completing this step.
+All six must stay in sync. Never write an entry without completing this step.
+The same applies when an entry is removed, not only when one is added.
+
+The archive is the JD text as submitted, stored verbatim — no cleanup,
+reformatting, or truncation, including any job-board chrome around the posting.
+It is what Step 1 was read from, and what a later Step 4 backcheck reads when
+scanning for a recurring pattern that has no cluster or signal key yet.
+
+Before committing, confirm the entry's `quote` appears in the archived text.
+A mismatch beyond the two permitted normalizations is a discrepancy to resolve,
+not a formatting detail — the quote is wrong, or the archived text is not the
+posting the entry was audited from.
 
 **Step 7 — Commit, push, and merge**
 Once the user confirms the audit (including any new cluster/signal/domain proposal), that confirmation also counts as approval to merge directly to `main` — no separate merge confirmation is needed for JD entry additions specifically. Commit the entry on the working branch, push it, then merge directly to `main` and push. This does not extend to other kinds of changes (site code, design, CLAUDE.md itself, etc.) — those still follow normal confirm-before-merge practice.
@@ -90,6 +126,11 @@ Signal + implication. State what the data shows, then note what it means for the
 
 **Reporting vs. editorializing**
 Card descriptions are the one place we editorialize lightly — stating an implication based on evidence. Everywhere else (cluster/signal assignments, JD entries, quotes) stays neutral and reportorial.
+
+**Loading, empty, and error states**
+See `copy-patterns.md` for the rules and current copy. Strings live in the `COPY`
+object at the top of `docs/js/scripts.js` — add or change them there, not inline
+in a render function.
 
 ## Domain field
 
@@ -128,7 +169,14 @@ If a new company doesn't fit any existing value, propose the new domain before w
 
 Each entry may include an optional `quote` field — a direct excerpt from the JD that anchors the cluster and signal assignments. Rules:
 
-- Must be a verbatim quote from the JD. Do not paraphrase or edit.
+- Must be a verbatim quote from the JD. Do not paraphrase, reword, condense, or change meaning.
+- Three typographic normalizations are permitted, and nothing else:
+  - capitalizing the first letter, when the excerpt is lifted from mid-sentence and needs to read as a standalone sentence
+  - adding spaces around an em dash
+  - adding a terminal period, when the excerpt is lifted from a list item that carries no terminal punctuation of its own
+
+  Never normalize to make a quote sound stronger, cleaner, or more on-message than the source. These three cannot change what a quote says; anything that can is paraphrase, not normalization.
 - Choose the line or sentence that most clearly justifies the clusters and signals assigned.
+- Prefer a line legible to a general content design reader over one dense with employer-specific jargon — acronyms, internal system names, team names. The quote must still ground the assigned clusters and signals; legibility breaks ties among lines that do, it does not override grounding. If the only line that grounds an assignment is unavoidably jargon-heavy, keep it and reconsider whether the assignment is well grounded.
 - If no single excerpt is definitive, leave the field null rather than stitching sentences together.
 - The field is optional. Omit it (or set to null) if no suitable quote exists.
