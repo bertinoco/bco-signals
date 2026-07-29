@@ -7,8 +7,8 @@ sourcePlatform: company-site
 orgPlacement: "Not stated as a department; the team designs and manages the knowledge base powering customer self-service support"
 postedDate: null
 reqId: R19427
-dateAdded: 2026-07-27
-captured: 2026-07-27
+dateAdded: 2026-07-29
+captured: 2026-07-29
 captureMethod: pasted-from-claude-chat
 captureNote: >
   Captured from Zoom's own careers listing. The company is not named in the

@@ -7,8 +7,8 @@ sourcePlatform: company-site
 orgPlacement: "Career area: Marketing; the role \"sits above channels and formats\", acting as a connective engine between editorial, UX, data, PR and SEO/GEO teams"
 postedDate: 2026-07-23
 reqId: "22799"
-dateAdded: 2026-07-27
-captured: 2026-07-27
+dateAdded: 2026-07-29
+captured: 2026-07-29
 captureMethod: pasted-from-claude-chat
 captureNote: >
   Captured from Ally's own careers listing, which states an explicit posted

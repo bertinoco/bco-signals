@@ -6,7 +6,7 @@ sourceUrl: null
 sourcePlatform: company-site
 orgPlacement: "Department: GBO; Knowledge Management Solutions (KMS) team"
 dateAdded: 2026-07-20
-captured: 2026-07-27
+captured: 2026-07-29
 captureMethod: pasted-from-claude-chat
 captureNote: >
   Capture carries listing fields not usually exposed on aggregators —
