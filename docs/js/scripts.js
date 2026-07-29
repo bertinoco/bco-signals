@@ -207,7 +207,8 @@ function renderTitles(data) {
     const expandBtn = hasQuote
       ? `<button class="title-expand" aria-expanded="false" aria-label="Show quote">+</button>`
       : '';
-    const domainDateHtml = `<div class="title-domain">${entry.domain}${entry.dateAdded ? ` <span class="title-date-group"><span class="title-dot">·</span> ${formatDate(entry.dateAdded)}</span>` : ''}</div>`;
+    const domainDateHtml = `<div class="title-domain">${entry.domain}</div>` +
+      (entry.dateAdded ? `<div class="title-date">${formatDate(entry.dateAdded)}</div>` : '');
 
     return `
       <div class="title-entry${hasQuote ? ' has-quote' : ''}">
