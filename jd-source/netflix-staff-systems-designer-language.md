@@ -8,7 +8,7 @@ postedDate: 2026-07-20
 reqId: JR41713
 orgPlacement: "Teams: Product Design; horizontal function within the Design Systems organization"
 dateAdded: 2026-07-24
-captured: 2026-07-27
+captured: 2026-07-29
 captureMethod: pasted-from-claude-chat
 captureNote: >
   Captured from Netflix's own careers listing, which states an explicit job

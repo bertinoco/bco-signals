@@ -6,7 +6,7 @@ sourceUrl: null
 sourcePlatform: company-site
 orgPlacement: "Human Interface Design (HID) organization; Language Systems team within HID"
 dateAdded: 2026-05-24
-captured: 2026-07-27
+captured: 2026-07-29
 captureMethod: pasted-from-claude-chat
 captureNote: >
   Captured from GM's own careers listing. The source uses non-breaking

@@ -6,9 +6,9 @@ sourceUrl: null
 sourcePlatform: company-site
 orgPlacement: null
 dateAdded: 2026-05-25
-captured: 2026-07-27
+captured: 2026-07-29
 captureMethod: pasted-from-claude-chat
-excluded: 2026-07-27
+excluded: 2026-07-29
 excludedReason: >
   Removed from jobs.json after review against the entry eligibility criteria.
   The JD contains no AI-related language (no occurrence of ai, llm, model,

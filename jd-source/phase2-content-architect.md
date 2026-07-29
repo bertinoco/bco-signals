@@ -6,7 +6,7 @@ sourceUrl: null
 sourcePlatform: company-site
 orgPlacement: "Reports to: Director, Marketing Services"
 dateAdded: 2026-05-24
-captured: 2026-07-27
+captured: 2026-07-29
 captureMethod: pasted-from-claude-chat
 captureNote: >
   Captured from Phase2's own careers listing. Includes the physical and

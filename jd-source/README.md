@@ -32,7 +32,7 @@ title: Content Engineer
 sourceUrl: null
 sourcePlatform: linkedin
 dateAdded: 2026-05-24
-captured: 2026-07-27
+captured: 2026-07-29
 captureMethod: pasted-from-claude-chat
 captureNote: >
   Optional free-text note about the capture itself.

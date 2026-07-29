@@ -6,7 +6,7 @@ sourceUrl: null
 sourcePlatform: company-site
 orgPlacement: "Product Design"
 dateAdded: 2026-05-24
-captured: 2026-07-27
+captured: 2026-07-29
 captureMethod: pasted-from-claude-chat
 captureNote: >
   Captured from OpenAI's own careers listing. The posting states no

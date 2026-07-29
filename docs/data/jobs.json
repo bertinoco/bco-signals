@@ -2,7 +2,7 @@
   "meta": {
     "title": "BCO Content Skills Tracker",
     "description": "A curated skills tracker for the content design community.",
-    "lastUpdated": "2026-07-27",
+    "lastUpdated": "2026-07-29",
     "totalEntries": 28
   },
   "entries": [
@@ -721,7 +721,7 @@
         "currency": "USD"
       },
       "sourceUrl": null,
-      "dateAdded": "2026-07-27",
+      "dateAdded": "2026-07-29",
       "quote": "Leading AI content design and generation strategy, leveraging AI models to produce comprehensive, accurate, and scalable support content at speed."
     },
     {
@@ -749,7 +749,7 @@
         "note": "+ bonus + equity"
       },
       "sourceUrl": null,
-      "dateAdded": "2026-07-27",
+      "dateAdded": "2026-07-29",
       "quote": "Partner with our Insights and Data teams to review and build additional dashboards and tooling to establish more automated governance mechanisms.",
       "note": "AI is referenced as part of the work but not specified — the JD says 'AI solutions' twice without naming tools, workflows, or outputs. Comparable support-content entries (Notion, LinkedIn) state theirs concretely. Included on that basis, at the low end of the signal test."
     },
@@ -781,7 +781,7 @@
         "note": "+ annual incentive plan"
       },
       "sourceUrl": null,
-      "dateAdded": "2026-07-27",
+      "dateAdded": "2026-07-29",
       "tag": "content-marketing-adjacent",
       "quote": "Define and govern content models, taxonomies, metadata and structured data standards that enable modular, machine-readable, high-performing content.",
       "note": "Career area is stated as Marketing, and the role partners with PR and SEO/GEO teams. Included because the stated systems responsibilities — content models, taxonomies, metadata, schema, entity optimization, API integrations — are specific rather than framing. The JD states the placement directly: the role 'sits above channels and formats'."
@@ -813,7 +813,7 @@
         "currency": "CAD"
       },
       "sourceUrl": null,
-      "dateAdded": "2026-07-27",
+      "dateAdded": "2026-07-29",
       "quote": "Active usage of AI as a core part of your daily workflow includes synthesizing user insights, accelerating discovery, building rapid interactive prototypes (using tools like Claude Code, Gemini, or Figma AI), and closing the gap between design and implementation.",
       "note": "The posting files this role under 'Category: Software Engineering' rather than a design, product or marketing function — a placement not seen elsewhere in the dataset. model-behavior-design is assigned on the stated responsibility to shape 'response patterns, interaction flows, and the rhythm of exchanges' for systems customers converse with; the JD also states 'This isn't a chatbot role', and that ambiguity is recorded rather than resolved."
     }
