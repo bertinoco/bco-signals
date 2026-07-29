@@ -92,7 +92,7 @@ It is what Step 1 was read from, and what a later Step 4 backcheck reads when
 scanning for a recurring pattern that has no cluster or signal key yet.
 
 Before committing, confirm the entry's `quote` appears in the archived text.
-A mismatch beyond the two permitted normalizations is a discrepancy to resolve,
+A mismatch beyond the three permitted normalizations is a discrepancy to resolve,
 not a formatting detail — the quote is wrong, or the archived text is not the
 posting the entry was audited from.
 
@@ -167,3 +167,22 @@ Each entry may include an optional `quote` field — a direct excerpt from the J
 - Prefer a line legible to a general content design reader over one dense with employer-specific jargon — acronyms, internal system names, team names. The quote must still ground the assigned clusters and signals; legibility breaks ties among lines that do, it does not override grounding. If the only line that grounds an assignment is unavoidably jargon-heavy, keep it and reconsider whether the assignment is well grounded.
 - If no single excerpt is definitive, leave the field null rather than stitching sentences together.
 - The field is optional. Omit it (or set to null) if no suitable quote exists.
+
+## Site code
+
+`docs/index.html` loads its assets with a query-string cache-buster:
+
+    <link rel="stylesheet" href="css/styles.css?v=22">
+    <script src="js/scripts.js?v=5"></script>
+
+Browsers cache those files against that string. A change to `scripts.js` or
+`styles.css` that does not bump the matching `?v=` number ships to nobody —
+visitors keep running the previously cached version, and the deployed site
+silently disagrees with the repo.
+
+Bump the version in the same commit as the change. Never bump one asset's
+version to publish a change to the other; they are cached independently.
+
+This has already been missed once. `?v=4` was set in `abc7714`, `scripts.js`
+changed afterwards in `f149926`, and the footer went on rendering a date
+format the source had already stopped producing.
