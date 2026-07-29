@@ -416,7 +416,7 @@ body {
 .title-quote blockquote::before { content: '\201C'; }
 .title-quote blockquote::after  { content: '\201D'; }
 
-/* One attribution line under the role: company, domain, date. */
+/* One attribution line under the role: company and date. */
 .title-attrib {
   font-size: var(--font-sm);
   color: hsl(var(--secondary-foreground));
