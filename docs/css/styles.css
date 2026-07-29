@@ -340,19 +340,18 @@ body {
 }
 
 .title-entry {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-1);
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
   padding: var(--space-3) 0;
   border-bottom: 1px solid hsl(var(--muted));
 }
 
-@media (min-width: 768px) {
-  .title-entry {
-    grid-template-columns: 200px 1fr;
-    gap: var(--space-4);
-    align-items: baseline;
-  }
+/* Content holds a reading measure while the rule spans the full width.
+   Without this the quote runs ~140 characters and the expand control
+   strands hundreds of pixels from the role it belongs to. */
+.title-entry > * {
+  max-width: 68ch;
 }
 
 .title-entry:last-child {
@@ -417,37 +416,39 @@ body {
 .title-quote blockquote::before { content: '\201C'; }
 .title-quote blockquote::after  { content: '\201D'; }
 
-.title-company {
+/* One attribution line under the role: company, domain, date. */
+.title-attrib {
   font-size: var(--font-sm);
-  font-weight: var(--weight-semibold);
+  color: hsl(var(--secondary-foreground));
+  line-height: var(--leading-snug);
+}
+
+.title-company {
+  font-weight: var(--weight-medium);
   color: hsl(var(--foreground));
 }
 
-/* Domain, date and comp are data, not prose — all mono. */
-.title-domain {
-  font-family: var(--font-mono);
-  font-size: var(--font-xs);
-  letter-spacing: var(--tracking-wide);
-  text-transform: uppercase;
-  font-variant-numeric: tabular-nums;
+/* --rule is a hairline token and renders too faint as a glyph, especially
+   on the dark ground. The separator carries meaning, so it gets a text colour. */
+.title-sep {
   color: hsl(var(--muted-foreground));
-  margin-top: 6px;
+  padding: 0 6px;
 }
 
+/* The date is the one machine-set value on the attribution line. */
 .title-date {
   font-family: var(--font-mono);
   font-size: var(--font-xs);
   letter-spacing: var(--tracking-wide);
   font-variant-numeric: tabular-nums;
   color: hsl(var(--muted-foreground));
-  margin-top: 3px;
   white-space: nowrap;
 }
 
 .title-name {
   font-family: var(--font-sans);
   font-size: var(--font-md);
-  font-weight: var(--weight-medium);
+  font-weight: var(--weight-semibold);
   letter-spacing: var(--tracking-snug);
   color: hsl(var(--foreground));
   line-height: var(--leading-snug);
@@ -459,7 +460,7 @@ body {
   letter-spacing: var(--tracking-wide);
   font-variant-numeric: tabular-nums;
   color: hsl(var(--muted-foreground));
-  margin-top: 6px;
+  margin-top: 3px;
 }
 
 .title-note {

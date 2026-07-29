@@ -207,23 +207,24 @@ function renderTitles(data) {
     const expandBtn = hasQuote
       ? `<button class="title-expand" aria-expanded="false" aria-label="Show quote">+</button>`
       : '';
-    const domainDateHtml = `<div class="title-domain">${entry.domain}</div>` +
-      (entry.dateAdded ? `<div class="title-date">${formatDate(entry.dateAdded)}</div>` : '');
+    // Company, domain and date share one attribution line under the role.
+    // All three are short, so the separator never strands on a wrap.
+    const sep = '<span class="title-sep">·</span>';
+    const attribHtml = `<div class="title-attrib">`
+      + `<span class="title-company">${entry.company}</span>`
+      + `${sep}${entry.domain}`
+      + (entry.dateAdded ? `${sep}<span class="title-date">${formatDate(entry.dateAdded)}</span>` : '')
+      + `</div>`;
 
     return `
       <div class="title-entry${hasQuote ? ' has-quote' : ''}">
-        <div class="title-meta">
-          <div class="title-company">${entry.company}</div>
-          ${domainDateHtml}
+        <div class="title-header">
+          <div class="title-name">${entry.title}</div>
+          ${expandBtn}
         </div>
-        <div class="title-body">
-          <div class="title-header">
-            <div class="title-name">${entry.title}</div>
-            ${expandBtn}
-          </div>
-          ${compHtml}
-          ${quoteHtml}
-        </div>
+        ${attribHtml}
+        ${compHtml}
+        ${quoteHtml}
       </div>
     `;
   }).join('');
