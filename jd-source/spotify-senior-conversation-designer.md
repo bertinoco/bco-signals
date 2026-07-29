@@ -6,7 +6,7 @@ sourceUrl: null
 sourcePlatform: company-site
 orgPlacement: "Design And User Experience - Experience"
 dateAdded: 2026-05-25
-captured: 2026-07-27
+captured: 2026-07-29
 captureMethod: pasted-from-claude-chat
 captureNote: >
   Captured from Spotify's own careers listing rather than an aggregator, so

@@ -7,9 +7,9 @@ sourceUrl: null
 sourcePlatform: unknown
 orgPlacement: "Meta Content Design team"
 dateAdded: null
-captured: 2026-07-27
+captured: 2026-07-29
 captureMethod: pasted-from-claude-chat
-excluded: 2026-07-27
+excluded: 2026-07-29
 excludedReason: >
   Rejected before being added to jobs.json. The reason recorded at rejection
   time was not preserved, so it is not stated here.

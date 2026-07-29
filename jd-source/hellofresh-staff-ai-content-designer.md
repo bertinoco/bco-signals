@@ -7,8 +7,8 @@ sourcePlatform: company-site
 orgPlacement: "Category: Software Engineering"
 postedDate: null
 reqId: null
-dateAdded: 2026-07-27
-captured: 2026-07-27
+dateAdded: 2026-07-29
+captured: 2026-07-29
 captureMethod: pasted-from-claude-chat
 captureNote: >
   Captured from HelloFresh's own careers listing. No posting date or

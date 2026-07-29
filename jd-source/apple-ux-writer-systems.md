@@ -8,7 +8,7 @@ postedDate: 2026-07-21
 reqId: 200672377-0836
 orgPlacement: "Product, Design & Marketing team on Apple Services; HI Writing discipline"
 dateAdded: 2026-07-23
-captured: 2026-07-27
+captured: 2026-07-29
 captureNote: >
   Captured from Apple's own careers listing, which states an explicit posted
   date and role number — recorded above as postedDate and reqId.

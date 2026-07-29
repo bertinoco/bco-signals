@@ -7,8 +7,8 @@ sourcePlatform: company-site
 orgPlacement: "Not stated as a department; framed within Chime's member support organization"
 postedDate: null
 reqId: null
-dateAdded: 2026-07-27
-captured: 2026-07-27
+dateAdded: 2026-07-29
+captured: 2026-07-29
 captureMethod: pasted-from-claude-chat
 captureNote: >
   Captured from Chime's own careers listing. No requisition ID or posting
