@@ -17,10 +17,25 @@
   <meta property="og:description" content="Content design is evolving. These job postings signal where it's headed.">
   <meta property="og:image" content="https://signals.bertino.co/images/og-image.png">
 
+  <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0D0D0D" media="(prefers-color-scheme: dark)">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=22">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css?v=23">
+
+  <!-- Applies the stored theme before first paint so dark mode never flashes white. -->
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('bco-theme');
+        if (saved === 'dark' || saved === 'light') {
+          document.documentElement.setAttribute('data-theme', saved);
+        }
+      } catch (e) { /* storage unavailable — fall back to prefers-color-scheme */ }
+    })();
+  </script>
 
   <script type="application/ld+json">
   [
@@ -114,12 +129,13 @@
   </header>
 
   <div class="nav-bar" id="nav-bar">
-    <div class="container">
+    <div class="container nav-inner">
       <nav class="badge-nav" role="tablist" aria-label="Content sections">
         <button class="badge-btn active" id="tab-clusters" role="tab" data-section="clusters" aria-selected="true" aria-controls="clusters">Responsibilities</button>
         <button class="badge-btn" id="tab-signals" role="tab" data-section="signals" aria-selected="false" aria-controls="signals">Skills</button>
         <button class="badge-btn" id="tab-titles" role="tab" data-section="titles" aria-selected="false" aria-controls="titles">Roles</button>
       </nav>
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode"></button>
     </div>
   </div>
 
@@ -160,6 +176,6 @@
     </div>
   </footer>
 
-  <script src="js/scripts.js?v=4"></script>
+  <script src="js/scripts.js?v=5"></script>
 </body>
 </html>

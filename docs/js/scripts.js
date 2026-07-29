@@ -83,7 +83,8 @@ function renderTitles(data) {
     const expandBtn = hasQuote
       ? `<button class="title-expand" aria-expanded="false" aria-label="Show quote">+</button>`
       : '';
-    const domainDateHtml = `<div class="title-domain">${entry.domain}${entry.dateAdded ? ` <span class="title-date-group"><span class="title-dot">·</span> ${formatDate(entry.dateAdded)}</span>` : ''}</div>`;
+    const domainDateHtml = `<div class="title-domain">${entry.domain}</div>` +
+      (entry.dateAdded ? `<div class="title-date">${formatDate(entry.dateAdded)}</div>` : '');
 
     return `
       <div class="title-entry${hasQuote ? ' has-quote' : ''}">
@@ -168,6 +169,40 @@ function renderNavCounts(data) {
   });
 }
 
+// ── Theme toggle ────────────────────────────────────────────
+// The pre-paint script in index.html has already applied any stored
+// choice. This only handles switching and remembering it.
+const themeToggle = document.getElementById('theme-toggle');
+
+function currentTheme() {
+  const set = document.documentElement.getAttribute('data-theme');
+  if (set === 'dark' || set === 'light') return set;
+  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+}
+
+function syncThemeLabel() {
+  if (!themeToggle) return;
+  const next = currentTheme() === 'dark' ? 'light' : 'dark';
+  themeToggle.setAttribute('aria-label', `Switch to ${next} mode`);
+}
+
+if (themeToggle) {
+  themeToggle.addEventListener('click', () => {
+    const next = currentTheme() === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    try {
+      localStorage.setItem('bco-theme', next);
+    } catch (e) { /* storage unavailable — choice lasts this session only */ }
+    syncThemeLabel();
+  });
+
+  // Follow the OS while no explicit choice has been stored.
+  window.matchMedia('(prefers-color-scheme: dark)')
+    .addEventListener('change', syncThemeLabel);
+
+  syncThemeLabel();
+}
+
 // ── Badge nav (click + arrow keys) ──────────────────────────
 const badges = Array.from(document.querySelectorAll('.badge-btn'));
 const badgeNav = document.querySelector('.badge-nav');
@@ -214,7 +249,7 @@ loadData().then(data => {
     const ids = ['cluster-grid', 'title-list', 'signal-list'];
     ids.forEach(id => {
       const el = document.getElementById(id);
-      if (el) el.innerHTML = `<p class="loading">Failed to load data. Confirm <code>data/jobs.json</code> exists and you're serving the site from a local or remote HTTP server.</p>`;
+      if (el) el.innerHTML = `<p class="loading is-error">Failed to load data. Confirm <code>data/jobs.json</code> exists and you're serving the site from a local or remote HTTP server.</p>`;
     });
     return;
   }

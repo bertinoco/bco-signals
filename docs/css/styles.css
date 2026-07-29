@@ -1,44 +1,58 @@
 /* ============================================================
-   BCO SKILLS TRACKER — Light Editorial
+   BCO SKILLS TRACKER — Achromatic
+
+   Neutrals carry the interface. Every grey below is a true grey
+   (R = G = B), so nothing in the ground reads as warm or cool.
+   Red is the only chromatic value in the system and is reserved
+   for failure and flagged status — never for emphasis.
    ============================================================ */
 
-/* ── Custom properties ────────────────────────────────────── */
+/* ── Ramp & invariants ────────────────────────────────────── */
 :root {
-  /* Colors — inverted from dark editorial */
-  --color-bg:             #F0EDE8;
-  --color-surface:        #E8E2DC;
-  --color-border:         #CCC6BF;
-  --color-border-subtle:  #D8D2CB;
-  --color-text:           #141414;
-  --color-text-secondary: #4A4845;  /* 6.76:1 — passes AA */
-  --color-text-muted:     #8A8780;  /* decorative only */
-  --color-accent:         #F2614A;
+  /* Achromatic ramp — both themes draw from this, each picking
+     its own steps rather than inverting the other. */
+  --grey-0:    #FFFFFF;
+  --grey-25:   #FAFAFA;
+  --grey-50:   #F7F7F7;
+  --grey-100:  #EDEDED;
+  --grey-200:  #D9D9D9;
+  --grey-300:  #B5B5B5;
+  --grey-400:  #A3A3A3;
+  --grey-500:  #8C8C8C;
+  --grey-600:  #6E6E6E;
+  --grey-700:  #5C5C5C;
+  --grey-800:  #333333;
+  --grey-850:  #262626;
+  --grey-900:  #1C1C1C;
+  --grey-950:  #141414;
+  --grey-1000: #0D0D0D;
 
   /* Typography */
-  --font-serif:   'Playfair Display', Georgia, serif;
-  --font-sans:    'Inter', system-ui, -apple-system, sans-serif;
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace;
 
   --font-xs:   0.6875rem;
   --font-sm:   0.8125rem;
   --font-base: 0.9375rem;
   --font-md:   1.0625rem;
-  --font-lg:   1.25rem;
-  --font-3xl:  2.75rem;
+  --font-lg:   1.1875rem;
+  --font-3xl:  clamp(2rem, 1.35rem + 2.7vw, 2.75rem);
 
   --weight-regular:  400;
   --weight-medium:   500;
   --weight-semibold: 600;
-  --weight-bold:     700;
 
-  --leading-tight:   1.15;
+  --leading-tight:   1.1;
   --leading-snug:    1.3;
   --leading-normal:  1.55;
   --leading-relaxed: 1.7;
 
-  --tracking-tight:  -0.02em;
+  --tracking-tight:  -0.022em;
+  --tracking-snug:   -0.012em;
   --tracking-wide:    0.08em;
+  --tracking-label:   0.11em;
 
-  /* Spacing */
+  /* Spacing — 8px scale */
   --space-1:  8px;
   --space-2:  16px;
   --space-3:  24px;
@@ -47,14 +61,9 @@
   --space-8:  64px;
   --space-12: 96px;
 
-  /* Shape */
-  --radius-sm:   6px;
-  --radius:      10px;
-  --radius-lg:   16px;
-  --radius-full: 9999px;
-
-  /* Shadow */
-  --shadow-sm: 0 1px 4px rgba(0, 0, 0, 0.10);
+  /* Shape — near-square, no fills */
+  --radius-sm: 3px;
+  --radius:    4px;
 
   /* Motion */
   --duration-fast: 140ms;
@@ -63,6 +72,84 @@
 
   /* Layout */
   --max-width: 960px;
+}
+
+/* ── Semantic tokens: light ───────────────────────────────── */
+:root {
+  color-scheme: light;
+
+  --color-bg:             var(--grey-0);
+  --color-surface:        var(--grey-50);
+  --color-border:         var(--grey-200);
+  --color-border-subtle:  var(--grey-100);
+  --color-rule:           var(--grey-300);
+  --color-text:           #121212;              /* 18.73:1 on bg */
+  --color-text-secondary: var(--grey-700);      /*  6.69:1 on bg */
+  --color-text-muted:     var(--grey-600);      /*  5.10:1 on bg */
+
+  --color-invert-bg:      #121212;
+  --color-invert-fg:      var(--grey-25);
+
+  /* The only hue in the system. Failure and flagged status only. */
+  --color-red:            #C8281C;              /*  5.56:1 on bg */
+}
+
+/* ── Semantic tokens: dark ────────────────────────────────── */
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+
+    --color-bg:             var(--grey-1000);
+    --color-surface:        var(--grey-950);
+    --color-border:         var(--grey-850);
+    --color-border-subtle:  var(--grey-900);
+    --color-rule:           var(--grey-800);
+    --color-text:           var(--grey-25);     /* 18.62:1 on bg */
+    --color-text-secondary: var(--grey-400);    /*  7.70:1 on bg */
+    --color-text-muted:     var(--grey-500);    /*  5.78:1 on bg */
+
+    --color-invert-bg:      var(--grey-25);
+    --color-invert-fg:      var(--grey-1000);
+
+    --color-red:            #FF5147;            /*  6.03:1 on bg */
+  }
+}
+
+/* Explicit choice always wins over the OS preference, both ways. */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --color-bg:             var(--grey-1000);
+  --color-surface:        var(--grey-950);
+  --color-border:         var(--grey-850);
+  --color-border-subtle:  var(--grey-900);
+  --color-rule:           var(--grey-800);
+  --color-text:           var(--grey-25);
+  --color-text-secondary: var(--grey-400);
+  --color-text-muted:     var(--grey-500);
+
+  --color-invert-bg:      var(--grey-25);
+  --color-invert-fg:      var(--grey-1000);
+
+  --color-red:            #FF5147;
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+
+  --color-bg:             var(--grey-0);
+  --color-surface:        var(--grey-50);
+  --color-border:         var(--grey-200);
+  --color-border-subtle:  var(--grey-100);
+  --color-rule:           var(--grey-300);
+  --color-text:           #121212;
+  --color-text-secondary: var(--grey-700);
+  --color-text-muted:     var(--grey-600);
+
+  --color-invert-bg:      #121212;
+  --color-invert-fg:      var(--grey-25);
+
+  --color-red:            #C8281C;
 }
 
 /* ── Reset ────────────────────────────────────────────────── */
@@ -75,10 +162,6 @@
 }
 
 /* ── Base ─────────────────────────────────────────────────── */
-html {
-  color-scheme: light;
-}
-
 body {
   font-family: var(--font-sans);
   font-size: var(--font-base);
@@ -87,6 +170,15 @@ body {
   background-color: var(--color-bg);
   -webkit-font-smoothing: antialiased;
   text-align: center;
+}
+
+/* Metadata reads as machine output: mono, uppercase, letter-spaced. */
+.meta-label {
+  font-family: var(--font-mono);
+  font-size: var(--font-xs);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  font-variant-numeric: tabular-nums;
 }
 
 /* ── Layout ───────────────────────────────────────────────── */
@@ -111,11 +203,12 @@ body {
 }
 
 .site-header h1 {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: var(--font-3xl);
-  font-weight: var(--weight-bold);
+  font-weight: var(--weight-semibold);
   line-height: var(--leading-tight);
   letter-spacing: var(--tracking-tight);
+  text-wrap: balance;
   color: var(--color-text);
   margin-bottom: var(--space-2);
 }
@@ -128,24 +221,35 @@ body {
   margin: 0 auto;
 }
 
-
 /* ── Nav bar (sticky) ─────────────────────────────────────── */
 .nav-bar {
   position: sticky;
   top: 0;
   z-index: 10;
   background: var(--color-bg);
-  padding: var(--space-3) 0;
-  text-align: center;
+  border-bottom: 1px solid var(--color-border-subtle);
+  padding: var(--space-2) 0;
 }
+
+/* Three columns keep the nav optically centred with the toggle
+   parked at the right edge. */
+.nav-inner {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.nav-inner .badge-nav { grid-column: 2; }
+.nav-inner .theme-toggle { grid-column: 3; justify-self: end; }
 
 /* ── Segmented nav ────────────────────────────────────────── */
 .badge-nav {
   display: inline-flex;
   background: var(--color-surface);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-full);
-  padding: 4px;
+  border-radius: var(--radius);
+  padding: 3px;
   gap: 2px;
 }
 
@@ -153,17 +257,14 @@ body {
   font-family: var(--font-sans);
   font-size: var(--font-sm);
   font-weight: var(--weight-medium);
-  letter-spacing: 0;
-  text-transform: none;
   color: var(--color-text-secondary);
   background: transparent;
   border: none;
-  border-radius: var(--radius-full);
-  padding: 7px 22px;
+  border-radius: var(--radius-sm);
+  padding: 7px 20px;
   cursor: pointer;
   transition: color var(--duration-fast) ease,
-              background var(--duration-fast) ease,
-              box-shadow var(--duration-fast) ease;
+              background var(--duration-fast) ease;
   outline: none;
   white-space: nowrap;
 }
@@ -172,31 +273,67 @@ body {
   color: var(--color-text);
 }
 
+/* Active state is an inversion, not a colour. */
 .badge-btn.active {
-  background: var(--color-bg);
-  color: var(--color-text);
-  box-shadow: var(--shadow-sm);
+  background: var(--color-invert-bg);
+  color: var(--color-invert-fg);
 }
 
 .badge-btn:focus-visible {
-  outline: 2px solid var(--color-accent);
+  outline: 2px solid var(--color-text);
   outline-offset: 2px;
 }
 
 .badge-count {
+  font-family: var(--font-mono);
   font-size: var(--font-xs);
-  font-weight: var(--weight-regular);
-  opacity: 0.6;
-  margin-right: 5px;
+  font-variant-numeric: tabular-nums;
+  opacity: 0.65;
+  margin-right: 6px;
 }
 
-@media (max-width: 400px) {
-  .badge-btn { padding: 6px 12px; }
+@media (max-width: 480px) {
+  .badge-btn { padding: 6px 11px; }
+  .nav-inner { gap: var(--space-1); }
+}
+
+/* ── Theme toggle ─────────────────────────────────────────── */
+.theme-toggle {
+  width: 30px;
+  height: 30px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  cursor: pointer;
+  padding: 0;
+  transition: border-color var(--duration-fast) ease;
+}
+
+.theme-toggle:hover { border-color: var(--color-text); }
+
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--color-text);
+  outline-offset: 2px;
+}
+
+/* Half-filled disc — the state of the page, drawn rather than iconised. */
+.theme-toggle::after {
+  content: '';
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  border: 1px solid var(--color-text);
+  background: linear-gradient(to right,
+              var(--color-text) 0 50%,
+              transparent 50% 100%);
 }
 
 /* ── Sections ─────────────────────────────────────────────── */
 #main {
-  padding-top: 0;
+  padding-top: var(--space-6);
 }
 
 .section {
@@ -210,7 +347,7 @@ body {
 
 .section-intro {
   font-size: var(--font-sm);
-  font-weight: var(--weight-medium);
+  font-weight: var(--weight-regular);
   color: var(--color-text-secondary);
   line-height: var(--leading-relaxed);
   max-width: 560px;
@@ -242,14 +379,16 @@ body {
 }
 
 .cluster-card:hover {
-  border-color: var(--color-text-muted);
+  border-color: var(--color-text);
 }
 
 .cluster-card h3 {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: var(--font-lg);
-  font-weight: var(--weight-bold);
+  font-weight: var(--weight-semibold);
   line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-snug);
+  text-wrap: balance;
   color: var(--color-text);
   margin-bottom: var(--space-1);
 }
@@ -298,24 +437,25 @@ body {
   flex-shrink: 0;
   width: 22px;
   height: 22px;
+  font-family: var(--font-mono);
   font-size: var(--font-sm);
-  font-weight: var(--weight-semibold);
+  font-weight: var(--weight-medium);
   color: var(--color-text-secondary);
   background: none;
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-sm);
   cursor: pointer;
   line-height: 1;
   transition: color var(--duration-fast) ease, border-color var(--duration-fast) ease;
 }
 
 .title-expand:hover {
-  color: var(--color-text-secondary);
-  border-color: var(--color-text-muted);
+  color: var(--color-text);
+  border-color: var(--color-text);
 }
 
 .title-expand:focus-visible {
-  outline: 2px solid var(--color-accent);
+  outline: 2px solid var(--color-text);
   outline-offset: 2px;
 }
 
@@ -333,7 +473,7 @@ body {
   overflow: hidden;
   margin-top: var(--space-2);
   padding-left: var(--space-2);
-  border-left: 2px solid var(--color-accent);
+  border-left: 2px solid var(--color-text);
   font-family: var(--font-sans);
   font-size: var(--font-sm);
   font-style: normal;
@@ -350,36 +490,43 @@ body {
   color: var(--color-text);
 }
 
+/* Domain, date and comp are data, not prose — all mono. */
 .title-domain {
+  font-family: var(--font-mono);
   font-size: var(--font-xs);
-  color: var(--color-text-secondary);
-  margin-top: var(--space-1);
-  letter-spacing: 0.01em;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-text-muted);
+  margin-top: 6px;
 }
 
-.title-dot {
-  opacity: 0.5;
-}
-
-.title-date-group {
+.title-date {
+  font-family: var(--font-mono);
+  font-size: var(--font-xs);
+  letter-spacing: var(--tracking-wide);
+  font-variant-numeric: tabular-nums;
+  color: var(--color-text-muted);
+  margin-top: 3px;
   white-space: nowrap;
 }
 
-
 .title-name {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: var(--font-md);
-  font-weight: var(--weight-regular);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-snug);
   color: var(--color-text);
   line-height: var(--leading-snug);
 }
 
 .title-comp {
+  font-family: var(--font-mono);
   font-size: var(--font-xs);
-  font-weight: var(--weight-medium);
-  color: var(--color-accent);
-  margin-top: var(--space-1);
-  letter-spacing: 0.01em;
+  letter-spacing: var(--tracking-wide);
+  font-variant-numeric: tabular-nums;
+  color: var(--color-text-muted);
+  margin-top: 6px;
 }
 
 .title-note {
@@ -395,21 +542,27 @@ body {
 }
 
 .show-more-btn {
-  font-family: var(--font-sans);
-  font-size: var(--font-sm);
-  font-weight: var(--weight-medium);
+  font-family: var(--font-mono);
+  font-size: var(--font-xs);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
   color: var(--color-text-secondary);
   background: none;
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-full);
-  padding: 10px var(--space-4);
+  border-radius: var(--radius);
+  padding: 11px var(--space-3);
   cursor: pointer;
   transition: color var(--duration-fast) ease, border-color var(--duration-fast) ease;
 }
 
 .show-more-btn:hover {
   color: var(--color-text);
-  border-color: var(--color-text-muted);
+  border-color: var(--color-text);
+}
+
+.show-more-btn:focus-visible {
+  outline: 2px solid var(--color-text);
+  outline-offset: 2px;
 }
 
 /* ── Emerging Skills & Patterns ───────────────────────────── */
@@ -437,14 +590,16 @@ body {
 }
 
 .signal-card:hover {
-  border-color: var(--color-text-muted);
+  border-color: var(--color-text);
 }
 
 .signal-label {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: var(--font-lg);
-  font-weight: var(--weight-bold);
+  font-weight: var(--weight-semibold);
   line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-snug);
+  text-wrap: balance;
   color: var(--color-text);
   margin-bottom: var(--space-1);
 }
@@ -456,9 +611,10 @@ body {
 }
 
 /* ── Footer ───────────────────────────────────────────────── */
+/* No longer an inverted block — the ground is already dark half
+   the time, so a rule does the separating. */
 .site-footer {
-  background: var(--color-text);
-  border-top: 1px solid var(--color-border-subtle);
+  border-top: 1px solid var(--color-border);
   padding: var(--space-6) 0;
   margin-top: var(--space-12);
 }
@@ -480,34 +636,59 @@ body {
 
 .footer-brand {
   font-size: var(--font-sm);
-  color: var(--color-bg);
+  color: var(--color-text-secondary);
 }
 
 .footer-brand a {
-  color: var(--color-bg);
+  color: var(--color-text);
   text-decoration: underline;
   text-underline-offset: 3px;
-  text-decoration-color: rgba(240, 237, 232, 0.4);
+  text-decoration-thickness: 1px;
+  text-decoration-color: var(--color-rule);
   transition: text-decoration-color var(--duration-base) var(--ease-out);
 }
 
 .footer-brand a:hover {
-  text-decoration-color: var(--color-bg);
+  text-decoration-color: var(--color-text);
+}
+
+.footer-brand a:focus-visible {
+  outline: 2px solid var(--color-text);
+  outline-offset: 2px;
 }
 
 .footer-meta {
+  font-family: var(--font-mono);
   font-size: var(--font-xs);
-  color: var(--color-bg);
-  letter-spacing: var(--tracking-wide);
+  color: var(--color-text-muted);
+  letter-spacing: var(--tracking-label);
   text-transform: uppercase;
+  font-variant-numeric: tabular-nums;
 }
 
 /* ── Utilities ────────────────────────────────────────────── */
 .loading {
   text-align: center;
   padding: var(--space-8) 0;
-  color: var(--color-text-secondary);
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+  font-size: var(--font-xs);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+}
+
+/* The one place colour appears today. */
+.loading.is-error {
+  color: var(--color-red);
+  text-transform: none;
+  letter-spacing: 0;
   font-size: var(--font-sm);
+  line-height: var(--leading-normal);
+}
+
+.loading.is-error code {
+  font-family: var(--font-mono);
+  font-size: var(--font-xs);
 }
 
 .skip-link {
@@ -536,7 +717,9 @@ body {
   .cluster-card,
   .signal-card,
   .title-quote,
-  .title-expand {
+  .title-expand,
+  .show-more-btn,
+  .theme-toggle {
     transition: none;
   }
 }
