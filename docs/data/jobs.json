@@ -3,7 +3,7 @@
     "title": "BCO Content Skills Tracker",
     "description": "A curated skills tracker for the content design community.",
     "lastUpdated": "2026-07-27",
-    "totalEntries": 27
+    "totalEntries": 28
   },
   "entries": [
     {
@@ -785,6 +785,37 @@
       "tag": "content-marketing-adjacent",
       "quote": "Define and govern content models, taxonomies, metadata and structured data standards that enable modular, machine-readable, high-performing content.",
       "note": "Career area is stated as Marketing, and the role partners with PR and SEO/GEO teams. Included because the stated systems responsibilities — content models, taxonomies, metadata, schema, entity optimization, API integrations — are specific rather than framing. The JD states the placement directly: the role 'sits above channels and formats'."
+    },
+    {
+      "id": "hellofresh-staff-ai-content-designer",
+      "company": "HelloFresh",
+      "title": "Staff AI Content Designer",
+      "domain": "E-commerce / subscription",
+      "engagement": "Full-time",
+      "location": "Toronto, ON",
+      "remote": false,
+      "coreFrame": "Adaptive content for AI-powered surfaces, AI-native design workflow, conversation and interaction patterns, content systems and voice standards across a multi-brand portfolio",
+      "clusters": [
+        "content-systems-design",
+        "ai-tooling",
+        "ai-content-governance",
+        "terminology-governance",
+        "enablement"
+      ],
+      "signals": [
+        "ai-native-expectation",
+        "enabler-not-bottleneck",
+        "model-behavior-design"
+      ],
+      "compRange": {
+        "min": 116130,
+        "max": 134000,
+        "currency": "CAD"
+      },
+      "sourceUrl": null,
+      "dateAdded": "2026-07-27",
+      "quote": "Active usage of AI as a core part of your daily workflow includes synthesizing user insights, accelerating discovery, building rapid interactive prototypes (using tools like Claude Code, Gemini, or Figma AI), and closing the gap between design and implementation.",
+      "note": "The posting files this role under 'Category: Software Engineering' rather than a design, product or marketing function — a placement not seen elsewhere in the dataset. model-behavior-design is assigned on the stated responsibility to shape 'response patterns, interaction flows, and the rhythm of exchanges' for systems customers converse with; the JD also states 'This isn't a chatbot role', and that ambiguity is recorded rather than resolved."
     }
   ],
   "clusters": {
