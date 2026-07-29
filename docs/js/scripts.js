@@ -169,10 +169,13 @@ function renderNavCounts(data) {
   });
 }
 
-// ── Theme toggle ────────────────────────────────────────────
+// ── Theme switch ────────────────────────────────────────────
 // The pre-paint script in index.html has already applied any stored
-// choice. This only handles switching and remembering it.
-const themeToggle = document.getElementById('theme-toggle');
+// choice. This reports the current theme and handles changing it.
+const themeSwitch = document.getElementById('theme-switch');
+const themeOptions = themeSwitch
+  ? Array.from(themeSwitch.querySelectorAll('.theme-option'))
+  : [];
 
 function currentTheme() {
   const set = document.documentElement.getAttribute('data-theme');
@@ -180,27 +183,49 @@ function currentTheme() {
   return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
 }
 
-function syncThemeLabel() {
-  if (!themeToggle) return;
-  const next = currentTheme() === 'dark' ? 'light' : 'dark';
-  themeToggle.setAttribute('aria-label', `Switch to ${next} mode`);
+// Roving tabindex: only the selected option is in the tab order, and
+// arrow keys move between them. Standard radiogroup behaviour.
+function syncThemeSwitch() {
+  const active = currentTheme();
+  themeOptions.forEach(btn => {
+    const isActive = btn.dataset.themeValue === active;
+    btn.setAttribute('aria-checked', String(isActive));
+    btn.tabIndex = isActive ? 0 : -1;
+  });
 }
 
-if (themeToggle) {
-  themeToggle.addEventListener('click', () => {
-    const next = currentTheme() === 'dark' ? 'light' : 'dark';
-    document.documentElement.setAttribute('data-theme', next);
-    try {
-      localStorage.setItem('bco-theme', next);
-    } catch (e) { /* storage unavailable — choice lasts this session only */ }
-    syncThemeLabel();
+function applyTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+  try {
+    localStorage.setItem('bco-theme', theme);
+  } catch (e) { /* storage unavailable — choice lasts this session only */ }
+  syncThemeSwitch();
+}
+
+if (themeOptions.length) {
+  themeOptions.forEach(btn => {
+    btn.addEventListener('click', () => applyTheme(btn.dataset.themeValue));
   });
 
-  // Follow the OS while no explicit choice has been stored.
-  window.matchMedia('(prefers-color-scheme: dark)')
-    .addEventListener('change', syncThemeLabel);
+  themeSwitch.addEventListener('keydown', (e) => {
+    const keys = ['ArrowRight', 'ArrowLeft', 'ArrowDown', 'ArrowUp'];
+    if (!keys.includes(e.key)) return;
+    e.preventDefault();
+    const idx = themeOptions.indexOf(document.activeElement);
+    if (idx === -1) return;
+    const forward = e.key === 'ArrowRight' || e.key === 'ArrowDown';
+    const next = forward
+      ? (idx + 1) % themeOptions.length
+      : (idx - 1 + themeOptions.length) % themeOptions.length;
+    applyTheme(themeOptions[next].dataset.themeValue);
+    themeOptions[next].focus();
+  });
 
-  syncThemeLabel();
+  // Track the OS while no explicit choice has been stored.
+  window.matchMedia('(prefers-color-scheme: dark)')
+    .addEventListener('change', syncThemeSwitch);
+
+  syncThemeSwitch();
 }
 
 // ── Badge nav (click + arrow keys) ──────────────────────────
