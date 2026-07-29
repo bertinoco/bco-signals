@@ -416,15 +416,21 @@ body {
 .title-quote blockquote::before { content: '\201C'; }
 .title-quote blockquote::after  { content: '\201D'; }
 
-/* One attribution line under the role: company and date. */
+/* One attribution line under the role: company and date. Mono, because
+   everything on it is dataset metadata rather than prose. Rank is carried
+   by size and colour instead of by a change of face. */
 .title-attrib {
+  font-family: var(--font-mono);
   font-size: var(--font-sm);
   color: hsl(var(--secondary-foreground));
   line-height: var(--leading-snug);
 }
 
+/* Sentence case, never uppercased: HelloFresh, LinkedIn and The Ride
+   Platform carry capitalisation that a text-transform would flatten. */
 .title-company {
   font-weight: var(--weight-medium);
+  letter-spacing: 0.01em;
   color: hsl(var(--foreground));
 }
 
