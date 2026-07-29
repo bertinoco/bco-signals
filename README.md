@@ -31,10 +31,16 @@ Each entry in `jobs.json` includes:
 
 The site runs an achromatic palette: an off-white and a soft black carry the
 whole interface, and red is the only chromatic value in the system — reserved
-for failure and flagged status, never for emphasis. Light and dark modes follow
-the OS by default, with a manual override that persists. Inter carries prose;
-a monospace face carries all metadata — domains, dates, comp ranges, counts —
-so data reads as data.
+for failure and flagged status, never for emphasis. Inter carries prose; a
+monospace face carries all metadata — domains, dates, comp ranges, counts — so
+data reads as data.
+
+Light and dark follow `prefers-color-scheme`, and there is no in-page toggle.
+The OS setting is a deliberate preference the reader has already expressed
+once, for everything they use; asking again per-site adds a control, a stored
+value, and a way for the two answers to disagree. Both themes get the same
+care — each has its own foreground values rather than being an inversion of
+the other.
 
 The token layer is modelled on **[Midday](https://midday.ai)**
 ([midday-ai/midday](https://github.com/midday-ai/midday), AGPL-3.0), whose

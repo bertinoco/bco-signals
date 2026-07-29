@@ -23,19 +23,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=25">
-
-  <!-- Applies the stored theme before first paint so dark mode never flashes white. -->
-  <script>
-    (function () {
-      try {
-        var saved = localStorage.getItem('bco-theme');
-        if (saved === 'dark' || saved === 'light') {
-          document.documentElement.setAttribute('data-theme', saved);
-        }
-      } catch (e) { /* storage unavailable — fall back to prefers-color-scheme */ }
-    })();
-  </script>
+  <link rel="stylesheet" href="css/styles.css?v=26">
 
   <script type="application/ld+json">
   [
@@ -170,15 +158,11 @@
     <div class="container">
       <div class="footer-inner">
         <div class="footer-brand">A side project by <a href="https://bertino.co">Bertino Consulting</a></div>
-        <div class="theme-switch" id="theme-switch" role="radiogroup" aria-label="Colour theme">
-          <button class="theme-option" type="button" role="radio" data-theme-value="light" aria-checked="false" tabindex="-1">Light</button>
-          <button class="theme-option" type="button" role="radio" data-theme-value="dark" aria-checked="false" tabindex="-1">Dark</button>
-        </div>
         <div class="footer-meta">Last updated <span id="footer-date"><time datetime="2026-07-13">July 13, 2026</time></span></div>
       </div>
     </div>
   </footer>
 
-  <script src="js/scripts.js?v=6"></script>
+  <script src="js/scripts.js?v=7"></script>
 </body>
 </html>

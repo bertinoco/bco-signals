@@ -127,51 +127,6 @@
   }
 }
 
-/* Explicit choice always wins over the OS preference, both ways. */
-:root[data-theme="dark"] {
-  color-scheme: dark;
-
-  --background:             0 0% 5.1%;
-  --foreground:             0 0% 98%;
-  --card:                   0 0% 7.8%;
-  --card-foreground:        0 0% 98%;
-  --muted:                  0 0% 11%;
-  --muted-foreground:       0 0% 54.9%;
-  --secondary-foreground:   0 0% 63.9%;
-  --border:                 0 0% 14.9%;
-  --rule:                   0 0% 20%;
-
-  --primary:                0 0% 98%;
-  --primary-foreground:     0 0% 5.1%;
-
-  --ring:                   0 0% 98%;
-
-  --destructive:            3 100% 63.9%;
-  --destructive-foreground: 0 0% 5.1%;
-}
-
-:root[data-theme="light"] {
-  color-scheme: light;
-
-  --background:             0 0% 100%;
-  --foreground:             0 0% 7.1%;
-  --card:                   0 0% 96.9%;
-  --card-foreground:        0 0% 7.1%;
-  --muted:                  0 0% 92.9%;
-  --muted-foreground:       0 0% 43.1%;
-  --secondary-foreground:   0 0% 36.1%;
-  --border:                 0 0% 85.1%;
-  --rule:                   0 0% 71%;
-
-  --primary:                0 0% 7.1%;
-  --primary-foreground:     0 0% 98%;
-
-  --ring:                   0 0% 7.1%;
-
-  --destructive:            4 75% 44.7%;
-  --destructive-foreground: 0 0% 98%;
-}
-
 /* ── Reset ────────────────────────────────────────────────── */
 *,
 *::before,
@@ -596,7 +551,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--space-2);
+  gap: var(--space-1);
 }
 
 @media (min-width: 768px) {
@@ -605,49 +560,6 @@ body {
     justify-content: space-between;
     align-items: center;
   }
-}
-
-/* ── Theme switch ─────────────────────────────────────────── */
-/* Same segmented idiom as the nav, one step smaller. Both states
-   stay visible so the control reports the theme rather than
-   describing an action. */
-.theme-switch {
-  display: inline-flex;
-  background: hsl(var(--card));
-  border: 1px solid hsl(var(--border));
-  border-radius: var(--radius);
-  padding: 3px;
-  gap: 2px;
-}
-
-.theme-option {
-  font-family: var(--font-mono);
-  font-size: var(--font-xs);
-  letter-spacing: var(--tracking-label);
-  text-transform: uppercase;
-  color: hsl(var(--muted-foreground));
-  background: transparent;
-  border: none;
-  border-radius: var(--radius-sm);
-  padding: 5px 13px;
-  cursor: pointer;
-  transition: color var(--duration-fast) ease,
-              background var(--duration-fast) ease;
-}
-
-.theme-option:hover {
-  color: hsl(var(--foreground));
-}
-
-/* Selected state is the same inversion the active tab uses. */
-.theme-option[aria-checked="true"] {
-  background: hsl(var(--primary));
-  color: hsl(var(--primary-foreground));
-}
-
-.theme-option:focus-visible {
-  outline: 2px solid hsl(var(--ring));
-  outline-offset: 2px;
 }
 
 .footer-brand {
@@ -734,8 +646,7 @@ body {
   .signal-card,
   .title-quote,
   .title-expand,
-  .show-more-btn,
-  .theme-option {
+  .show-more-btn {
     transition: none;
   }
 }
