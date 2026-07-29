@@ -30,7 +30,12 @@
 :root {
   /* Typography */
   --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace;
+  /* IBM Plex Mono carries every piece of metadata on the site. IBM's own
+     face, chosen for the lineage: Nothing's NType 82 Mono was drawn from
+     1980s IBM mainframe type, and this reaches that register directly
+     rather than by imitation. System stack follows if it fails to load. */
+  --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, 'SF Mono',
+               Menlo, Consolas, monospace;
 
   --font-xs:   0.6875rem;
   --font-sm:   0.8125rem;
