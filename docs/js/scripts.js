@@ -197,8 +197,17 @@ function renderTitles(data) {
 
   list.innerHTML = entries.map(entry => {
     const fmt = (n) => '$' + n.toLocaleString('en-US');
+
+    // Show the range only. A note that starts with "+" merely lists what sits
+    // on top of it ("+ bonus + equity"), so dropping it leaves the number
+    // accurate. Any other note qualifies what the range itself covers —
+    // Netflix's "salary + stock options, no bonus" means the range is not
+    // salary alone, and Accenture's is scoped to one state — so those are
+    // kept. Dropping them would make the figure say something the JD doesn't.
+    const note = entry.compRange && entry.compRange.note;
+    const qualifiesRange = !!note && !note.trim().startsWith('+');
     const compHtml = entry.compRange
-      ? `<div class="title-comp">${fmt(entry.compRange.min)}–${fmt(entry.compRange.max)} ${entry.compRange.currency}${entry.compRange.note ? ' ' + entry.compRange.note : ''}</div>`
+      ? `<span class="title-comp">${fmt(entry.compRange.min)}–${fmt(entry.compRange.max)} ${entry.compRange.currency}${qualifiesRange ? ' ' + note : ''}</span>`
       : '';
     const hasQuote = !!entry.quote;
     const quoteHtml = hasQuote
@@ -207,15 +216,18 @@ function renderTitles(data) {
     const expandBtn = hasQuote
       ? `<button class="title-expand" aria-expanded="false" aria-label="Show quote">+</button>`
       : '';
-    // Company and date share one attribution line under the role. `domain` is
-    // deliberately not rendered: it largely restates the company beside it, so
-    // it cost a third of the line to say something the reader already had. It
+    // Company and pay share the attribution line; the date drops to its own
+    // line below, being the least useful fact in the entry. `domain` is
+    // deliberately not rendered: it largely restates the company beside it. It
     // stays in jobs.json, where the taxonomy keeps the dataset queryable.
     const sep = '<span class="title-sep">·</span>';
     const attribHtml = `<div class="title-attrib">`
       + `<span class="title-company">${entry.company}</span>`
-      + (entry.dateAdded ? `${sep}<span class="title-date">${formatDate(entry.dateAdded)}</span>` : '')
+      + (compHtml ? `${sep}${compHtml}` : '')
       + `</div>`;
+    const dateHtml = entry.dateAdded
+      ? `<div class="title-date">${formatDate(entry.dateAdded)}</div>`
+      : '';
 
     return `
       <div class="title-entry${hasQuote ? ' has-quote' : ''}">
@@ -224,7 +236,7 @@ function renderTitles(data) {
           ${expandBtn}
         </div>
         ${attribHtml}
-        ${compHtml}
+        ${dateHtml}
         ${quoteHtml}
       </div>
     `;

@@ -421,16 +421,18 @@ body {
    by size and colour instead of by a change of face. */
 .title-attrib {
   font-family: var(--font-mono);
-  font-size: var(--font-sm);
-  color: hsl(var(--secondary-foreground));
+  font-size: var(--font-xs);
+  color: hsl(var(--muted-foreground));
   line-height: var(--leading-snug);
 }
 
-/* Sentence case, never uppercased: HelloFresh, LinkedIn and The Ride
-   Platform carry capitalisation that a text-transform would flatten. */
+/* Uppercase label. Company capitalisation (HelloFresh, LinkedIn) is lost
+   here by choice — the label reading wins, and the source case is preserved
+   in jobs.json. */
 .title-company {
   font-weight: var(--weight-medium);
-  letter-spacing: 0.01em;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
   color: hsl(var(--foreground));
 }
 
@@ -441,7 +443,7 @@ body {
   padding: 0 6px;
 }
 
-/* The date is the one machine-set value on the attribution line. */
+/* Third line, on its own: the date the posting was audited in. */
 .title-date {
   font-family: var(--font-mono);
   font-size: var(--font-xs);
@@ -449,6 +451,7 @@ body {
   font-variant-numeric: tabular-nums;
   color: hsl(var(--muted-foreground));
   white-space: nowrap;
+  margin-top: 2px;
 }
 
 .title-name {
@@ -461,12 +464,9 @@ body {
 }
 
 .title-comp {
-  font-family: var(--font-mono);
-  font-size: var(--font-xs);
   letter-spacing: var(--tracking-wide);
   font-variant-numeric: tabular-nums;
   color: hsl(var(--muted-foreground));
-  margin-top: 3px;
 }
 
 .title-note {
