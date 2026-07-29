@@ -148,6 +148,7 @@ The `domain` field describes the broad industry or sector the company operates i
 | `Computer & Electronics` | Apple |
 | `Consulting / agency` | Accenture |
 | `Design tools / SaaS` | Figma |
+| `E-commerce / subscription` | HelloFresh |
 | `Financial services` | JPMorgan Chase |
 | `Fintech` | Sanna, Insurify, Wealthsimple |
 | `Healthcare / longevity` | Atria |
