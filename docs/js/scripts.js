@@ -131,7 +131,8 @@ function renderMeta(data) {
   // No date in the payload: keep the value rendered in the HTML rather than
   // replacing it with a blank.
   if (!iso) return;
-  dateEl.innerHTML = `<time datetime="${iso}">${formatLongDate(iso)}</time>`;
+  // ISO, matching the dateAdded format on role cards.
+  dateEl.innerHTML = `<time datetime="${iso}">${iso}</time>`;
 }
 
 function renderClusters(data) {
@@ -169,16 +170,6 @@ function renderClusters(data) {
 
 function formatDate(iso) {
   return iso;
-}
-
-// The footer renders a long date in the HTML so the fallback reads the same as
-// the loaded value. Keep the two formats identical.
-function formatLongDate(iso) {
-  const d = new Date(`${iso}T00:00:00Z`);
-  if (Number.isNaN(d.getTime())) return iso;
-  return d.toLocaleDateString('en-US', {
-    year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC',
-  });
 }
 
 function renderTitles(data) {
