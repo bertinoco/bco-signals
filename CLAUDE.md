@@ -127,6 +127,11 @@ Signal + implication. State what the data shows, then note what it means for the
 **Reporting vs. editorializing**
 Card descriptions are the one place we editorialize lightly — stating an implication based on evidence. Everywhere else (cluster/signal assignments, JD entries, quotes) stays neutral and reportorial.
 
+**Loading, empty, and error states**
+See `copy-patterns.md` for the rules and current copy. Strings live in the `COPY`
+object at the top of `docs/js/scripts.js` — add or change them there, not inline
+in a render function.
+
 ## Domain field
 
 The `domain` field describes the broad industry or sector the company operates in. It is a reusable taxonomy value — not a role-specific descriptor.

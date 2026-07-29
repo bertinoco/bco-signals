@@ -2,28 +2,146 @@
 const DATA_PATH = 'data/jobs.json';
 const SIGNAL_THRESHOLD = 2;
 const TITLES_LIMIT = 12;
+const FETCH_TIMEOUT_MS = 10000;
+const SECTION_CONTAINERS = ['cluster-grid', 'signal-list', 'title-list'];
 let showAllTitles = false;
 let globalData = null;
 
+// ── Copy ────────────────────────────────────────────────────
+// All loading, empty, and error copy lives here. See copy-patterns.md
+// for the rules these strings follow and why each one is worded this way.
+const COPY = {
+  loading: {
+    title: 'Loading the dataset…',
+  },
+  empty: {
+    clusters: {
+      title: 'No responsibilities yet.',
+      body: 'Responsibilities appear here once the first job description is audited into the dataset.',
+    },
+    signals: {
+      title: 'No skills have crossed the threshold yet.',
+      body: `Skills appear here once ${SIGNAL_THRESHOLD} or more postings ask for them. One posting is an anecdote.`,
+    },
+    titles: {
+      title: 'No roles yet.',
+      body: 'Roles appear here as job descriptions are audited into the dataset.',
+    },
+  },
+  error: {
+    offline: {
+      title: "You're offline.",
+      body: 'Reconnect and try again.',
+      retry: true,
+    },
+    network: {
+      title: "The dataset didn't load.",
+      body: 'This is on our end. Try again, or come back in a few minutes.',
+      retry: true,
+    },
+    timeout: {
+      title: 'The dataset is taking too long.',
+      body: 'The request timed out before the file came back. Try again.',
+      retry: true,
+    },
+    malformed: {
+      title: "The dataset loaded, but we couldn't read it.",
+      body: 'Retrying won\'t fix this one. Email <a href="mailto:joe@bertino.co">joe@bertino.co</a> and we\'ll take a look.',
+      retry: false,
+    },
+  },
+};
+
+// ── State rendering ─────────────────────────────────────────
+function announce(message) {
+  const region = document.getElementById('a11y-status');
+  if (region) region.textContent = message;
+}
+
+function stateMarkup({ variant, title, body, retry }) {
+  return `
+    <div class="state state--${variant}"${variant === 'error' ? ' role="alert"' : ''}>
+      <p class="state-title">${title}</p>
+      ${body ? `<p class="state-body">${body}</p>` : ''}
+      ${retry ? '<button type="button" class="state-action">Try again</button>' : ''}
+    </div>
+  `;
+}
+
+function renderState(containerId, state) {
+  const el = document.getElementById(containerId);
+  if (el) el.innerHTML = stateMarkup(state);
+}
+
+function renderLoading() {
+  SECTION_CONTAINERS.forEach(id => renderState(id, { variant: 'loading', title: COPY.loading.title }));
+}
+
+function renderError(kind) {
+  const copy = COPY.error[kind] || COPY.error.network;
+  SECTION_CONTAINERS.forEach(id => renderState(id, { variant: 'error', ...copy }));
+
+  // The retry affordance appears in all three panels; only one is visible at a
+  // time, so wire every instance.
+  document.querySelectorAll('.state-action').forEach(btn => {
+    btn.addEventListener('click', () => init({ fromRetry: true }));
+  });
+
+  announce(`${copy.title} ${copy.body.replace(/<[^>]+>/g, '')}`);
+}
+
+// ── Data ────────────────────────────────────────────────────
+function isWellFormed(data) {
+  return !!data
+    && typeof data === 'object'
+    && Array.isArray(data.entries)
+    && !!data.clusters && typeof data.clusters === 'object'
+    && !!data.signals && typeof data.signals === 'object';
+}
+
 async function loadData() {
+  if (navigator.onLine === false) return { error: 'offline' };
+
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), FETCH_TIMEOUT_MS);
+
   try {
-    const res = await fetch(DATA_PATH);
-    if (!res.ok) throw new Error('Failed to load data');
-    return await res.json();
+    const res = await fetch(DATA_PATH, { signal: controller.signal });
+    if (!res.ok) return { error: 'network' };
+
+    const data = await res.json();
+    if (!isWellFormed(data)) return { error: 'malformed' };
+    return { data };
   } catch (err) {
+    if (err.name === 'AbortError') return { error: 'timeout' };
+    // A JSON parse failure means the file came back but isn't readable.
+    if (err instanceof SyntaxError) return { error: 'malformed' };
     console.error(err);
-    return null;
+    return { error: navigator.onLine === false ? 'offline' : 'network' };
+  } finally {
+    clearTimeout(timer);
   }
 }
 
+// ── Render ──────────────────────────────────────────────────
 function renderMeta(data) {
   const dateEl = document.getElementById('footer-date');
-  dateEl.textContent = data.meta.lastUpdated;
+  if (!dateEl) return;
+  const iso = data.meta && data.meta.lastUpdated;
+  // No date in the payload: keep the value rendered in the HTML rather than
+  // replacing it with a blank.
+  if (!iso) return;
+  dateEl.innerHTML = `<time datetime="${iso}">${formatLongDate(iso)}</time>`;
 }
 
 function renderClusters(data) {
   const grid = document.getElementById('cluster-grid');
   const clusterKeys = Object.keys(data.clusters);
+
+  if (clusterKeys.length === 0) {
+    renderState('cluster-grid', { variant: 'empty', ...COPY.empty.clusters });
+    return;
+  }
 
   const clusterMap = {};
   clusterKeys.forEach(key => { clusterMap[key] = []; });
@@ -40,7 +158,6 @@ function renderClusters(data) {
 
   grid.innerHTML = clusterKeys.map(key => {
     const cluster = data.clusters[key];
-    const count = [...new Set(clusterMap[key])].length;
     return `
       <div class="cluster-card">
         <h3>${cluster.label}</h3>
@@ -54,10 +171,27 @@ function formatDate(iso) {
   return iso;
 }
 
+// The footer renders a long date in the HTML so the fallback reads the same as
+// the loaded value. Keep the two formats identical.
+function formatLongDate(iso) {
+  const d = new Date(`${iso}T00:00:00Z`);
+  if (Number.isNaN(d.getTime())) return iso;
+  return d.toLocaleDateString('en-US', {
+    year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC',
+  });
+}
+
 function renderTitles(data) {
   const list = document.getElementById('title-list');
   const showMore = document.getElementById('titles-show-more');
   const showMoreBtn = showMore ? showMore.querySelector('.show-more-btn') : null;
+
+  if (data.entries.length === 0) {
+    if (showMore) showMore.style.display = 'none';
+    renderState('title-list', { variant: 'empty', ...COPY.empty.titles });
+    return;
+  }
+
   const sorted = [...data.entries].sort((a, b) => new Date(b.dateAdded) - new Date(a.dateAdded));
   const entries = showAllTitles ? sorted : sorted.slice(0, TITLES_LIMIT);
 
@@ -75,7 +209,6 @@ function renderTitles(data) {
     const compHtml = entry.compRange
       ? `<div class="title-comp">${fmt(entry.compRange.min)}–${fmt(entry.compRange.max)} ${entry.compRange.currency}${entry.compRange.note ? ' ' + entry.compRange.note : ''}</div>`
       : '';
-    const noteHtml = '';
     const hasQuote = !!entry.quote;
     const quoteHtml = hasQuote
       ? `<div class="title-quote"><blockquote>${entry.quote}</blockquote></div>`
@@ -97,7 +230,6 @@ function renderTitles(data) {
             ${expandBtn}
           </div>
           ${compHtml}
-          ${noteHtml}
           ${quoteHtml}
         </div>
       </div>
@@ -135,9 +267,13 @@ function renderSignals(data) {
     .filter(key => signalMap[key].length >= SIGNAL_THRESHOLD)
     .sort((a, b) => signalMap[b].length - signalMap[a].length);
 
+  if (relevantSignals.length === 0) {
+    renderState('signal-list', { variant: 'empty', ...COPY.empty.signals });
+    return;
+  }
+
   list.innerHTML = relevantSignals.map(key => {
     const signal = data.signals[key];
-    const count = [...new Set(signalMap[key])].length;
     return `
       <div class="signal-card">
         <div class="signal-label">${signal.label}</div>
@@ -159,6 +295,10 @@ function renderNavCounts(data) {
   };
 
   document.querySelectorAll('.badge-btn').forEach(btn => {
+    // Retry re-renders the nav; clear any count from the previous pass.
+    const existing = btn.querySelector('.badge-count');
+    if (existing) existing.remove();
+
     const count = counts[btn.dataset.section];
     if (count === undefined) return;
     const span = document.createElement('span');
@@ -208,22 +348,33 @@ if (showMoreEl) {
   });
 }
 
-// Init
-loadData().then(data => {
-  if (!data) {
-    const ids = ['cluster-grid', 'title-list', 'signal-list'];
-    ids.forEach(id => {
-      const el = document.getElementById(id);
-      if (el) el.innerHTML = `<p class="loading">Failed to load data. Confirm <code>data/jobs.json</code> exists and you're serving the site from a local or remote HTTP server.</p>`;
-    });
+// ── Init ────────────────────────────────────────────────────
+async function init({ fromRetry = false } = {}) {
+  renderLoading();
+
+  const result = await loadData();
+
+  if (result.error) {
+    renderError(result.error);
     return;
   }
-  globalData = data;
-  renderMeta(data);
-  renderNavCounts(data);
-  renderClusters(data);
-  renderTitles(data);
-  renderSignals(data);
-});
+
+  globalData = result.data;
+  renderMeta(globalData);
+  renderNavCounts(globalData);
+  renderClusters(globalData);
+  renderTitles(globalData);
+  renderSignals(globalData);
+  announce(`Dataset loaded. ${globalData.entries.length} roles.`);
+
+  // Retry destroys the button that had focus. Move focus to the panel the
+  // reader was already looking at rather than dropping them back at the top.
+  if (fromRetry) {
+    const panel = document.querySelector('.section.active');
+    if (panel) panel.focus();
+  }
+}
+
+init();
 
 // end scripts

@@ -20,7 +20,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=22">
+  <link rel="stylesheet" href="css/styles.css?v=23">
 
   <script type="application/ld+json">
   [
@@ -106,6 +106,8 @@
 
   <a class="skip-link" href="#main">Skip to content</a>
 
+  <p id="a11y-status" class="visually-hidden" role="status" aria-live="polite"></p>
+
   <header class="site-header">
     <div class="container">
       <h1>Content Design Signals</h1>
@@ -125,27 +127,33 @@
 
   <div class="container">
     <main id="main">
-      <section class="section active" id="clusters" role="tabpanel" aria-labelledby="tab-clusters">
+      <section class="section active" id="clusters" role="tabpanel" tabindex="-1" aria-labelledby="tab-clusters">
         <p class="section-intro">The responsibilities that appear most often across tracked senior content design roles, grouped by focus area.</p>
         <div class="cluster-grid" id="cluster-grid">
-          <p class="loading">Loading data…</p>
+          <div class="state state--loading">
+            <p class="state-title">Loading the dataset…</p>
+          </div>
         </div>
       </section>
 
-      <section class="section" id="titles" role="tabpanel" aria-labelledby="tab-titles">
+      <section class="section" id="titles" role="tabpanel" tabindex="-1" aria-labelledby="tab-titles">
         <p class="section-intro">The roles in this dataset — titles, companies, and comp ranges where stated. Source URLs are omitted since postings expire.</p>
         <div class="title-list" id="title-list">
-          <p class="loading">Loading data…</p>
+          <div class="state state--loading">
+            <p class="state-title">Loading the dataset…</p>
+          </div>
         </div>
         <div id="titles-show-more" style="display:none;">
           <button class="show-more-btn"></button>
         </div>
       </section>
 
-      <section class="section" id="signals" role="tabpanel" aria-labelledby="tab-signals">
+      <section class="section" id="signals" role="tabpanel" tabindex="-1" aria-labelledby="tab-signals">
         <p class="section-intro">Skills and patterns that appear across multiple job postings — each one a signal of where content design expertise is expanding.</p>
         <div class="signal-list" id="signal-list">
-          <p class="loading">Loading data…</p>
+          <div class="state state--loading">
+            <p class="state-title">Loading the dataset…</p>
+          </div>
         </div>
       </section>
     </main>
@@ -155,11 +163,11 @@
     <div class="container">
       <div class="footer-inner">
         <div class="footer-brand">A side project by <a href="https://bertino.co">Bertino Consulting</a></div>
-        <div class="footer-meta">Last updated <span id="footer-date"><time datetime="2026-07-13">July 13, 2026</time></span></div>
+        <div class="footer-meta">Last updated <span id="footer-date"><time datetime="2026-07-27">July 27, 2026</time></span></div>
       </div>
     </div>
   </footer>
 
-  <script src="js/scripts.js?v=4"></script>
+  <script src="js/scripts.js?v=5"></script>
 </body>
 </html>
