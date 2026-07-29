@@ -207,12 +207,13 @@ function renderTitles(data) {
     const expandBtn = hasQuote
       ? `<button class="title-expand" aria-expanded="false" aria-label="Show quote">+</button>`
       : '';
-    // Company, domain and date share one attribution line under the role.
-    // All three are short, so the separator never strands on a wrap.
+    // Company and date share one attribution line under the role. `domain` is
+    // deliberately not rendered: it largely restates the company beside it, so
+    // it cost a third of the line to say something the reader already had. It
+    // stays in jobs.json, where the taxonomy keeps the dataset queryable.
     const sep = '<span class="title-sep">·</span>';
     const attribHtml = `<div class="title-attrib">`
       + `<span class="title-company">${entry.company}</span>`
-      + `${sep}${entry.domain}`
       + (entry.dateAdded ? `${sep}<span class="title-date">${formatDate(entry.dateAdded)}</span>` : '')
       + `</div>`;
 
