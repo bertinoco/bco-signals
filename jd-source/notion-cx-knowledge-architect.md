@@ -6,14 +6,14 @@ sourceUrl: null
 sourcePlatform: company-site
 orgPlacement: "Department: Customer Experience"
 dateAdded: 2026-05-25
-captured: 2026-07-27
+captured: 2026-07-29
 captureMethod: pasted-from-claude-chat
 captureNote: >
   Captured from Notion's own careers listing, so no aggregator chrome is
   present. Includes the full equal-opportunity and AI-policy boilerplate.
   The entry's stored quote is lifted from mid-sentence and carries both
   permitted normalizations — leading capital and spaced em dash. Compliant
-  with the quote rule in CLAUDE.md as amended 2026-07-27.
+  with the quote rule in CLAUDE.md as amended 2026-07-29.
 ---
 
 CX Knowledge Architect

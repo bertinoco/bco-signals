@@ -8,7 +8,7 @@ postedDate: 2026-03-20
 reqId: 210712197
 orgPlacement: "Business Unit: Consumer & Community Banking; Job Category: User Experience Design"
 dateAdded: 2026-05-25
-captured: 2026-07-27
+captured: 2026-07-29
 captureMethod: pasted-from-claude-chat
 captureNote: >
   Captured from JPMorgan Chase's own careers listing, which states an

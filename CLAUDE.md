@@ -92,7 +92,7 @@ It is what Step 1 was read from, and what a later Step 4 backcheck reads when
 scanning for a recurring pattern that has no cluster or signal key yet.
 
 Before committing, confirm the entry's `quote` appears in the archived text.
-A mismatch beyond the two permitted normalizations is a discrepancy to resolve,
+A mismatch beyond the three permitted normalizations is a discrepancy to resolve,
 not a formatting detail — the quote is wrong, or the archived text is not the
 posting the entry was audited from.
 
@@ -127,36 +127,33 @@ Signal + implication. State what the data shows, then note what it means for the
 **Reporting vs. editorializing**
 Card descriptions are the one place we editorialize lightly — stating an implication based on evidence. Everywhere else (cluster/signal assignments, JD entries, quotes) stays neutral and reportorial.
 
+**Loading, empty, and error states**
+See `copy-patterns.md` for the rules and current copy. Strings live in the `COPY`
+object at the top of `docs/js/scripts.js` — add or change them there, not inline
+in a render function.
+
 ## Domain field
 
 The `domain` field describes the broad industry or sector the company operates in. It is a reusable taxonomy value — not a role-specific descriptor.
 
 **Rules**
-- No parentheticals. `Fintech`, not `Fintech (accounting)`.
+- Prefer a single word. No slashes, no parentheticals: `Finance`, not `Financial services / fintech` or `Fintech (accounting)`.
 - Broad enough to apply across related companies and JDs. If a second JD from a similar company would use the same value, that's the right level of specificity.
-- Keep it short — aim for 30 characters or fewer.
+- Err generic. A value that groups several companies is doing its job; a value with one entry usually means the taxonomy is tracking the company rather than the sector.
 - Check existing values before creating a new one. Reuse where the fit is clear.
 
 **Current taxonomy**
 
 | Value | Example companies |
 |---|---|
-| `Agency` | Phase2 |
-| `AI / technology` | OpenAI, Google |
-| `Automotive / connected products` | GM |
-| `B2B SaaS` | CoLab |
-| `Computer & Electronics` | Apple |
-| `Consulting / agency` | Accenture |
-| `Design tools / SaaS` | Figma |
-| `Financial services` | JPMorgan Chase |
-| `Fintech` | Sanna, Insurify, Wealthsimple |
-| `Healthcare / longevity` | Atria |
-| `Marketplace / mobility` | The Ride Platform |
-| `Media / advertising` | YouTube |
-| `Media / streaming` | Spotify, Netflix |
-| `SaaS / productivity` | Notion |
-| `Social media` | Meta, LinkedIn |
-| `Wellness / marketplace` | Wellhub |
+| `Agency` | Phase2, Accenture |
+| `Automotive` | GM |
+| `Big Tech` | Apple, Google, Meta, LinkedIn, OpenAI |
+| `E-commerce` | HelloFresh, Wellhub, The Ride Platform |
+| `Finance` | JPMorgan Chase, Ally, Sanna, Wealthsimple, Chime, Insurify |
+| `Healthcare` | Atria |
+| `Media` | Netflix, Spotify |
+| `SaaS` | Notion, Zoom, Figma, CoLab |
 
 If a new company doesn't fit any existing value, propose the new domain before writing the entry. New domains should be broad enough to accommodate at least two companies.
 
@@ -175,3 +172,22 @@ Each entry may include an optional `quote` field — a direct excerpt from the J
 - Prefer a line legible to a general content design reader over one dense with employer-specific jargon — acronyms, internal system names, team names. The quote must still ground the assigned clusters and signals; legibility breaks ties among lines that do, it does not override grounding. If the only line that grounds an assignment is unavoidably jargon-heavy, keep it and reconsider whether the assignment is well grounded.
 - If no single excerpt is definitive, leave the field null rather than stitching sentences together.
 - The field is optional. Omit it (or set to null) if no suitable quote exists.
+
+## Site code
+
+`docs/index.html` loads its assets with a query-string cache-buster:
+
+    <link rel="stylesheet" href="css/styles.css?v=23">
+    <script src="js/scripts.js?v=6"></script>
+
+Browsers cache those files against that string. A change to `scripts.js` or
+`styles.css` that does not bump the matching `?v=` number ships to nobody —
+visitors keep running the previously cached version, and the deployed site
+silently disagrees with the repo.
+
+Bump the version in the same commit as the change. Never bump one asset's
+version to publish a change to the other; they are cached independently.
+
+This has already been missed once. `?v=4` was set in `abc7714`, `scripts.js`
+changed afterwards in `f149926`, and the footer went on rendering a date
+format the source had already stopped producing.

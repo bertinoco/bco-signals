@@ -6,7 +6,7 @@ sourceUrl: null
 sourcePlatform: unknown
 orgPlacement: "Product Content Engineering, a horizontal function supporting initiatives across Instagram"
 dateAdded: 2026-05-25
-captured: 2026-07-27
+captured: 2026-07-29
 captureMethod: pasted-from-claude-chat
 captureNote: >
   Source platform not determinable from the capture — it opens with an

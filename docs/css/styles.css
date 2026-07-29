@@ -600,28 +600,113 @@ body {
 }
 
 /* ── Utilities ────────────────────────────────────────────── */
-.loading {
-  text-align: center;
-  padding: var(--space-8) 0;
-  color: hsl(var(--muted-foreground));
+/* ── Loading, empty & error states ────────────────────────── */
+/* Structure and copy come from main's state system; restyled onto the
+   achromatic tokens. Red appears here and nowhere else on the site. */
+.state {
+  grid-column: 1 / -1;      /* span the full grid in cluster/signal panels */
+  padding: var(--space-8) var(--space-3);
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.state-title {
+  font-family: var(--font-sans);
+  font-size: var(--font-md);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-snug);
+  line-height: var(--leading-snug);
+  text-wrap: balance;
+  color: hsl(var(--foreground));
+}
+
+.state-body {
+  font-size: var(--font-sm);
+  color: hsl(var(--secondary-foreground));
+  line-height: var(--leading-normal);
+  margin-top: var(--space-1);
+}
+
+.state-body a {
+  color: hsl(var(--foreground));
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  text-decoration-color: hsl(var(--rule));
+  transition: text-decoration-color var(--duration-fast) ease;
+}
+
+.state-body a:hover {
+  text-decoration-color: hsl(var(--foreground));
+}
+
+.state-body a:focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
+}
+
+.state-action {
   font-family: var(--font-mono);
   font-size: var(--font-xs);
   letter-spacing: var(--tracking-label);
   text-transform: uppercase;
+  color: hsl(var(--secondary-foreground));
+  background: none;
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius);
+  padding: 10px var(--space-3);
+  margin-top: var(--space-3);
+  cursor: pointer;
+  transition: color var(--duration-fast) ease, border-color var(--duration-fast) ease;
 }
 
-/* The one place colour appears today. */
-.loading.is-error {
-  color: hsl(var(--destructive));
-  text-transform: none;
-  letter-spacing: 0;
-  font-size: var(--font-sm);
-  line-height: var(--leading-normal);
+.state-action:hover {
+  color: hsl(var(--foreground));
+  border-color: hsl(var(--foreground) / 0.45);
 }
 
-.loading.is-error code {
+.state-action:focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
+}
+
+/* The dataset is a single small file. Hold the loading state back so a fast
+   load never flashes a spinner-equivalent at the reader. */
+.state--loading .state-title {
   font-family: var(--font-mono);
   font-size: var(--font-xs);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  font-weight: var(--weight-regular);
+  color: hsl(var(--muted-foreground));
+  opacity: 0;
+  animation: state-fade-in var(--duration-base) var(--ease-out) 400ms forwards;
+}
+
+/* The one place colour appears. */
+.state--error .state-title {
+  color: hsl(var(--destructive));
+}
+
+@keyframes state-fade-in {
+  to { opacity: 1; }
+}
+
+/* Panels take programmatic focus after a retry; no visible ring for that. */
+.section:focus {
+  outline: none;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 .skip-link {
@@ -651,7 +736,15 @@ body {
   .signal-card,
   .title-quote,
   .title-expand,
-  .show-more-btn {
+  .show-more-btn,
+  .state-action {
     transition: none;
+  }
+
+  /* This one fades in via animation, so it needs the opacity restored —
+     removing the animation alone would leave it permanently invisible. */
+  .state--loading .state-title {
+    animation: none;
+    opacity: 1;
   }
 }

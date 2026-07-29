@@ -6,7 +6,7 @@ sourceUrl: null
 sourcePlatform: linkedin
 orgPlacement: null
 dateAdded: 2026-07-13
-captured: 2026-07-27
+captured: 2026-07-29
 captureMethod: pasted-from-claude-chat
 captureNote: >
   Capture includes LinkedIn page chrome (applicant counts, Premium upsell
