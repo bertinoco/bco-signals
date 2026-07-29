@@ -18,7 +18,15 @@ async function loadData() {
 
 function renderMeta(data) {
   const dateEl = document.getElementById('footer-date');
-  dateEl.textContent = data.meta.lastUpdated;
+  // Update the <time> element in place so the machine-readable datetime
+  // attribute survives; setting textContent on the span would discard it.
+  const timeEl = dateEl.querySelector('time');
+  if (timeEl) {
+    timeEl.setAttribute('datetime', data.meta.lastUpdated);
+    timeEl.textContent = data.meta.lastUpdated;
+  } else {
+    dateEl.textContent = data.meta.lastUpdated;
+  }
 }
 
 function renderClusters(data) {
