@@ -1,32 +1,33 @@
 /* ============================================================
    BCO SKILLS TRACKER — Achromatic
 
-   Neutrals carry the interface. Every grey below is a true grey
-   (R = G = B), so nothing in the ground reads as warm or cool.
-   Red is the only chromatic value in the system and is reserved
-   for failure and flagged status — never for emphasis.
+   Structure follows Midday (midday.ai, AGPL-3.0): channel-triplet
+   HSL composed with hsl(), and a surface/-foreground pairing so
+   every ground carries its own legible text colour. That naming
+   convention originates with shadcn/ui (MIT). Credited in README.
+
+   What we took from Midday is the restraint, not the values.
+   Their light mode is warm-tinted (card 45 18% 96%) and reuses
+   one muted foreground across both themes, which fails AA on
+   their dark ground. Ours is achromatic throughout — every
+   neutral a true grey (0% saturation), so nothing in the ground
+   reads warm or cool — and each theme gets its own foregrounds.
+
+   Red is the only chromatic value, reserved for failure and
+   flagged status. Never for emphasis.
+
+   Ramp             light            dark
+   background       0 0% 100%        0 0% 5.1%
+   card             0 0% 96.9%       0 0% 7.8%
+   muted            0 0% 92.9%       0 0% 11%
+   border           0 0% 85.1%       0 0% 14.9%
+   rule             0 0% 71%         0 0% 20%
+   muted-foreground 0 0% 43.1%       0 0% 54.9%
+   foreground       0 0% 7.1%        0 0% 98%
    ============================================================ */
 
-/* ── Ramp & invariants ────────────────────────────────────── */
+/* ── Invariants ───────────────────────────────────────────── */
 :root {
-  /* Achromatic ramp — both themes draw from this, each picking
-     its own steps rather than inverting the other. */
-  --grey-0:    #FFFFFF;
-  --grey-25:   #FAFAFA;
-  --grey-50:   #F7F7F7;
-  --grey-100:  #EDEDED;
-  --grey-200:  #D9D9D9;
-  --grey-300:  #B5B5B5;
-  --grey-400:  #A3A3A3;
-  --grey-500:  #8C8C8C;
-  --grey-600:  #6E6E6E;
-  --grey-700:  #5C5C5C;
-  --grey-800:  #333333;
-  --grey-850:  #262626;
-  --grey-900:  #1C1C1C;
-  --grey-950:  #141414;
-  --grey-1000: #0D0D0D;
-
   /* Typography */
   --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace;
@@ -75,23 +76,30 @@
 }
 
 /* ── Semantic tokens: light ───────────────────────────────── */
+/* Stored as bare HSL channels so components can compose alpha:
+   hsl(var(--foreground) / 0.4). Ratios are against --background. */
 :root {
   color-scheme: light;
 
-  --color-bg:             var(--grey-0);
-  --color-surface:        var(--grey-50);
-  --color-border:         var(--grey-200);
-  --color-border-subtle:  var(--grey-100);
-  --color-rule:           var(--grey-300);
-  --color-text:           #121212;              /* 18.73:1 on bg */
-  --color-text-secondary: var(--grey-700);      /*  6.69:1 on bg */
-  --color-text-muted:     var(--grey-600);      /*  5.10:1 on bg */
+  --background:             0 0% 100%;
+  --foreground:             0 0% 7.1%;     /* 18.73:1 */
+  --card:                   0 0% 96.9%;
+  --card-foreground:        0 0% 7.1%;
+  --muted:                  0 0% 92.9%;
+  --muted-foreground:       0 0% 43.1%;    /*  5.10:1 */
+  --secondary-foreground:   0 0% 36.1%;    /*  6.69:1 */
+  --border:                 0 0% 85.1%;
+  --rule:                   0 0% 71%;
 
-  --color-invert-bg:      #121212;
-  --color-invert-fg:      var(--grey-25);
+  /* Inversion pair — carries the active nav state. */
+  --primary:                0 0% 7.1%;
+  --primary-foreground:     0 0% 98%;
+
+  --ring:                   0 0% 7.1%;
 
   /* The only hue in the system. Failure and flagged status only. */
-  --color-red:            #C8281C;              /*  5.56:1 on bg */
+  --destructive:            4 75% 44.7%;   /*  5.56:1 */
+  --destructive-foreground: 0 0% 98%;
 }
 
 /* ── Semantic tokens: dark ────────────────────────────────── */
@@ -99,19 +107,23 @@
   :root {
     color-scheme: dark;
 
-    --color-bg:             var(--grey-1000);
-    --color-surface:        var(--grey-950);
-    --color-border:         var(--grey-850);
-    --color-border-subtle:  var(--grey-900);
-    --color-rule:           var(--grey-800);
-    --color-text:           var(--grey-25);     /* 18.62:1 on bg */
-    --color-text-secondary: var(--grey-400);    /*  7.70:1 on bg */
-    --color-text-muted:     var(--grey-500);    /*  5.78:1 on bg */
+    --background:             0 0% 5.1%;
+    --foreground:             0 0% 98%;      /* 18.62:1 */
+    --card:                   0 0% 7.8%;
+    --card-foreground:        0 0% 98%;
+    --muted:                  0 0% 11%;
+    --muted-foreground:       0 0% 54.9%;    /*  5.78:1 */
+    --secondary-foreground:   0 0% 63.9%;    /*  7.70:1 */
+    --border:                 0 0% 14.9%;
+    --rule:                   0 0% 20%;
 
-    --color-invert-bg:      var(--grey-25);
-    --color-invert-fg:      var(--grey-1000);
+    --primary:                0 0% 98%;
+    --primary-foreground:     0 0% 5.1%;
 
-    --color-red:            #FF5147;            /*  6.03:1 on bg */
+    --ring:                   0 0% 98%;
+
+    --destructive:            3 100% 63.9%;  /*  6.03:1 */
+    --destructive-foreground: 0 0% 5.1%;
   }
 }
 
@@ -119,37 +131,45 @@
 :root[data-theme="dark"] {
   color-scheme: dark;
 
-  --color-bg:             var(--grey-1000);
-  --color-surface:        var(--grey-950);
-  --color-border:         var(--grey-850);
-  --color-border-subtle:  var(--grey-900);
-  --color-rule:           var(--grey-800);
-  --color-text:           var(--grey-25);
-  --color-text-secondary: var(--grey-400);
-  --color-text-muted:     var(--grey-500);
+  --background:             0 0% 5.1%;
+  --foreground:             0 0% 98%;
+  --card:                   0 0% 7.8%;
+  --card-foreground:        0 0% 98%;
+  --muted:                  0 0% 11%;
+  --muted-foreground:       0 0% 54.9%;
+  --secondary-foreground:   0 0% 63.9%;
+  --border:                 0 0% 14.9%;
+  --rule:                   0 0% 20%;
 
-  --color-invert-bg:      var(--grey-25);
-  --color-invert-fg:      var(--grey-1000);
+  --primary:                0 0% 98%;
+  --primary-foreground:     0 0% 5.1%;
 
-  --color-red:            #FF5147;
+  --ring:                   0 0% 98%;
+
+  --destructive:            3 100% 63.9%;
+  --destructive-foreground: 0 0% 5.1%;
 }
 
 :root[data-theme="light"] {
   color-scheme: light;
 
-  --color-bg:             var(--grey-0);
-  --color-surface:        var(--grey-50);
-  --color-border:         var(--grey-200);
-  --color-border-subtle:  var(--grey-100);
-  --color-rule:           var(--grey-300);
-  --color-text:           #121212;
-  --color-text-secondary: var(--grey-700);
-  --color-text-muted:     var(--grey-600);
+  --background:             0 0% 100%;
+  --foreground:             0 0% 7.1%;
+  --card:                   0 0% 96.9%;
+  --card-foreground:        0 0% 7.1%;
+  --muted:                  0 0% 92.9%;
+  --muted-foreground:       0 0% 43.1%;
+  --secondary-foreground:   0 0% 36.1%;
+  --border:                 0 0% 85.1%;
+  --rule:                   0 0% 71%;
 
-  --color-invert-bg:      #121212;
-  --color-invert-fg:      var(--grey-25);
+  --primary:                0 0% 7.1%;
+  --primary-foreground:     0 0% 98%;
 
-  --color-red:            #C8281C;
+  --ring:                   0 0% 7.1%;
+
+  --destructive:            4 75% 44.7%;
+  --destructive-foreground: 0 0% 98%;
 }
 
 /* ── Reset ────────────────────────────────────────────────── */
@@ -166,8 +186,8 @@ body {
   font-family: var(--font-sans);
   font-size: var(--font-base);
   line-height: var(--leading-normal);
-  color: var(--color-text);
-  background-color: var(--color-bg);
+  color: hsl(var(--foreground));
+  background-color: hsl(var(--background));
   -webkit-font-smoothing: antialiased;
   text-align: center;
 }
@@ -209,13 +229,13 @@ body {
   line-height: var(--leading-tight);
   letter-spacing: var(--tracking-tight);
   text-wrap: balance;
-  color: var(--color-text);
+  color: hsl(var(--foreground));
   margin-bottom: var(--space-2);
 }
 
 .site-header p {
   font-size: var(--font-md);
-  color: var(--color-text-secondary);
+  color: hsl(var(--secondary-foreground));
   line-height: var(--leading-relaxed);
   max-width: 480px;
   margin: 0 auto;
@@ -226,8 +246,8 @@ body {
   position: sticky;
   top: 0;
   z-index: 10;
-  background: var(--color-bg);
-  border-bottom: 1px solid var(--color-border-subtle);
+  background: hsl(var(--background));
+  border-bottom: 1px solid hsl(var(--muted));
   padding: var(--space-2) 0;
 }
 
@@ -246,8 +266,8 @@ body {
 /* ── Segmented nav ────────────────────────────────────────── */
 .badge-nav {
   display: inline-flex;
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
+  background: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
   border-radius: var(--radius);
   padding: 3px;
   gap: 2px;
@@ -257,7 +277,7 @@ body {
   font-family: var(--font-sans);
   font-size: var(--font-sm);
   font-weight: var(--weight-medium);
-  color: var(--color-text-secondary);
+  color: hsl(var(--secondary-foreground));
   background: transparent;
   border: none;
   border-radius: var(--radius-sm);
@@ -270,17 +290,17 @@ body {
 }
 
 .badge-btn:hover {
-  color: var(--color-text);
+  color: hsl(var(--foreground));
 }
 
 /* Active state is an inversion, not a colour. */
 .badge-btn.active {
-  background: var(--color-invert-bg);
-  color: var(--color-invert-fg);
+  background: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
 }
 
 .badge-btn:focus-visible {
-  outline: 2px solid var(--color-text);
+  outline: 2px solid hsl(var(--ring));
   outline-offset: 2px;
 }
 
@@ -305,17 +325,17 @@ body {
   align-items: center;
   justify-content: center;
   background: transparent;
-  border: 1px solid var(--color-border);
+  border: 1px solid hsl(var(--border));
   border-radius: var(--radius);
   cursor: pointer;
   padding: 0;
   transition: border-color var(--duration-fast) ease;
 }
 
-.theme-toggle:hover { border-color: var(--color-text); }
+.theme-toggle:hover { border-color: hsl(var(--foreground) / 0.45); }
 
 .theme-toggle:focus-visible {
-  outline: 2px solid var(--color-text);
+  outline: 2px solid hsl(var(--ring));
   outline-offset: 2px;
 }
 
@@ -325,9 +345,9 @@ body {
   width: 13px;
   height: 13px;
   border-radius: 50%;
-  border: 1px solid var(--color-text);
+  border: 1px solid hsl(var(--foreground));
   background: linear-gradient(to right,
-              var(--color-text) 0 50%,
+              hsl(var(--foreground)) 0 50%,
               transparent 50% 100%);
 }
 
@@ -348,7 +368,7 @@ body {
 .section-intro {
   font-size: var(--font-sm);
   font-weight: var(--weight-regular);
-  color: var(--color-text-secondary);
+  color: hsl(var(--secondary-foreground));
   line-height: var(--leading-relaxed);
   max-width: 560px;
   margin: 0 auto var(--space-4);
@@ -371,15 +391,15 @@ body {
 }
 
 .cluster-card {
-  background: var(--color-surface);
+  background: hsl(var(--card));
   border-radius: var(--radius);
   padding: var(--space-3);
-  border: 1px solid var(--color-border);
+  border: 1px solid hsl(var(--border));
   transition: border-color var(--duration-fast) ease;
 }
 
 .cluster-card:hover {
-  border-color: var(--color-text);
+  border-color: hsl(var(--foreground) / 0.45);
 }
 
 .cluster-card h3 {
@@ -389,13 +409,13 @@ body {
   line-height: var(--leading-snug);
   letter-spacing: var(--tracking-snug);
   text-wrap: balance;
-  color: var(--color-text);
+  color: hsl(var(--foreground));
   margin-bottom: var(--space-1);
 }
 
 .cluster-desc {
   font-size: var(--font-sm);
-  color: var(--color-text-secondary);
+  color: hsl(var(--secondary-foreground));
   line-height: var(--leading-normal);
 }
 
@@ -411,7 +431,7 @@ body {
   grid-template-columns: 1fr;
   gap: var(--space-1);
   padding: var(--space-3) 0;
-  border-bottom: 1px solid var(--color-border-subtle);
+  border-bottom: 1px solid hsl(var(--muted));
 }
 
 @media (min-width: 768px) {
@@ -440,9 +460,9 @@ body {
   font-family: var(--font-mono);
   font-size: var(--font-sm);
   font-weight: var(--weight-medium);
-  color: var(--color-text-secondary);
+  color: hsl(var(--secondary-foreground));
   background: none;
-  border: 1px solid var(--color-border);
+  border: 1px solid hsl(var(--border));
   border-radius: var(--radius-sm);
   cursor: pointer;
   line-height: 1;
@@ -450,12 +470,12 @@ body {
 }
 
 .title-expand:hover {
-  color: var(--color-text);
-  border-color: var(--color-text);
+  color: hsl(var(--foreground));
+  border-color: hsl(var(--foreground) / 0.45);
 }
 
 .title-expand:focus-visible {
-  outline: 2px solid var(--color-text);
+  outline: 2px solid hsl(var(--ring));
   outline-offset: 2px;
 }
 
@@ -473,11 +493,11 @@ body {
   overflow: hidden;
   margin-top: var(--space-2);
   padding-left: var(--space-2);
-  border-left: 2px solid var(--color-text);
+  border-left: 2px solid hsl(var(--foreground));
   font-family: var(--font-sans);
   font-size: var(--font-sm);
   font-style: normal;
-  color: var(--color-text-secondary);
+  color: hsl(var(--secondary-foreground));
   line-height: var(--leading-relaxed);
 }
 
@@ -487,7 +507,7 @@ body {
 .title-company {
   font-size: var(--font-sm);
   font-weight: var(--weight-semibold);
-  color: var(--color-text);
+  color: hsl(var(--foreground));
 }
 
 /* Domain, date and comp are data, not prose — all mono. */
@@ -497,7 +517,7 @@ body {
   letter-spacing: var(--tracking-wide);
   text-transform: uppercase;
   font-variant-numeric: tabular-nums;
-  color: var(--color-text-muted);
+  color: hsl(var(--muted-foreground));
   margin-top: 6px;
 }
 
@@ -506,7 +526,7 @@ body {
   font-size: var(--font-xs);
   letter-spacing: var(--tracking-wide);
   font-variant-numeric: tabular-nums;
-  color: var(--color-text-muted);
+  color: hsl(var(--muted-foreground));
   margin-top: 3px;
   white-space: nowrap;
 }
@@ -516,7 +536,7 @@ body {
   font-size: var(--font-md);
   font-weight: var(--weight-medium);
   letter-spacing: var(--tracking-snug);
-  color: var(--color-text);
+  color: hsl(var(--foreground));
   line-height: var(--leading-snug);
 }
 
@@ -525,13 +545,13 @@ body {
   font-size: var(--font-xs);
   letter-spacing: var(--tracking-wide);
   font-variant-numeric: tabular-nums;
-  color: var(--color-text-muted);
+  color: hsl(var(--muted-foreground));
   margin-top: 6px;
 }
 
 .title-note {
   font-size: var(--font-sm);
-  color: var(--color-text-secondary);
+  color: hsl(var(--secondary-foreground));
   font-style: italic;
   margin-top: var(--space-1);
 }
@@ -546,9 +566,9 @@ body {
   font-size: var(--font-xs);
   letter-spacing: var(--tracking-label);
   text-transform: uppercase;
-  color: var(--color-text-secondary);
+  color: hsl(var(--secondary-foreground));
   background: none;
-  border: 1px solid var(--color-border);
+  border: 1px solid hsl(var(--border));
   border-radius: var(--radius);
   padding: 11px var(--space-3);
   cursor: pointer;
@@ -556,12 +576,12 @@ body {
 }
 
 .show-more-btn:hover {
-  color: var(--color-text);
-  border-color: var(--color-text);
+  color: hsl(var(--foreground));
+  border-color: hsl(var(--foreground) / 0.45);
 }
 
 .show-more-btn:focus-visible {
-  outline: 2px solid var(--color-text);
+  outline: 2px solid hsl(var(--ring));
   outline-offset: 2px;
 }
 
@@ -582,15 +602,15 @@ body {
 }
 
 .signal-card {
-  background: var(--color-surface);
+  background: hsl(var(--card));
   border-radius: var(--radius);
   padding: var(--space-3);
-  border: 1px solid var(--color-border);
+  border: 1px solid hsl(var(--border));
   transition: border-color var(--duration-fast) ease;
 }
 
 .signal-card:hover {
-  border-color: var(--color-text);
+  border-color: hsl(var(--foreground) / 0.45);
 }
 
 .signal-label {
@@ -600,13 +620,13 @@ body {
   line-height: var(--leading-snug);
   letter-spacing: var(--tracking-snug);
   text-wrap: balance;
-  color: var(--color-text);
+  color: hsl(var(--foreground));
   margin-bottom: var(--space-1);
 }
 
 .signal-desc {
   font-size: var(--font-sm);
-  color: var(--color-text-secondary);
+  color: hsl(var(--secondary-foreground));
   line-height: var(--leading-normal);
 }
 
@@ -614,7 +634,7 @@ body {
 /* No longer an inverted block — the ground is already dark half
    the time, so a rule does the separating. */
 .site-footer {
-  border-top: 1px solid var(--color-border);
+  border-top: 1px solid hsl(var(--border));
   padding: var(--space-6) 0;
   margin-top: var(--space-12);
 }
@@ -636,31 +656,31 @@ body {
 
 .footer-brand {
   font-size: var(--font-sm);
-  color: var(--color-text-secondary);
+  color: hsl(var(--secondary-foreground));
 }
 
 .footer-brand a {
-  color: var(--color-text);
+  color: hsl(var(--foreground));
   text-decoration: underline;
   text-underline-offset: 3px;
   text-decoration-thickness: 1px;
-  text-decoration-color: var(--color-rule);
+  text-decoration-color: hsl(var(--rule));
   transition: text-decoration-color var(--duration-base) var(--ease-out);
 }
 
 .footer-brand a:hover {
-  text-decoration-color: var(--color-text);
+  text-decoration-color: hsl(var(--foreground));
 }
 
 .footer-brand a:focus-visible {
-  outline: 2px solid var(--color-text);
+  outline: 2px solid hsl(var(--ring));
   outline-offset: 2px;
 }
 
 .footer-meta {
   font-family: var(--font-mono);
   font-size: var(--font-xs);
-  color: var(--color-text-muted);
+  color: hsl(var(--muted-foreground));
   letter-spacing: var(--tracking-label);
   text-transform: uppercase;
   font-variant-numeric: tabular-nums;
@@ -670,7 +690,7 @@ body {
 .loading {
   text-align: center;
   padding: var(--space-8) 0;
-  color: var(--color-text-muted);
+  color: hsl(var(--muted-foreground));
   font-family: var(--font-mono);
   font-size: var(--font-xs);
   letter-spacing: var(--tracking-label);
@@ -679,7 +699,7 @@ body {
 
 /* The one place colour appears today. */
 .loading.is-error {
-  color: var(--color-red);
+  color: hsl(var(--destructive));
   text-transform: none;
   letter-spacing: 0;
   font-size: var(--font-sm);
@@ -704,8 +724,8 @@ body {
   position: static;
   width: auto;
   height: auto;
-  background: var(--color-surface);
-  color: var(--color-text);
+  background: hsl(var(--card));
+  color: hsl(var(--foreground));
   padding: 8px 12px;
   border-radius: var(--radius-sm);
 }
