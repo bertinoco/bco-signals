@@ -916,10 +916,6 @@
       "label": "Governance emphasized",
       "description": "Governance isn't a background process in these roles — it's the primary deliverable. Companies are hiring for the ability to set standards and make them stick across teams."
     },
-    "llm-first-process": {
-      "label": "LLM-first workflow",
-      "description": "Some roles are now prescribing LLMs as a starting point in the content workflow, not as optional or experimental tools. Early signal, but directional."
-    },
     "title-dilution": {
       "label": "Title dilution",
       "description": "Not every 'content systems' role is a content systems role. Some use the language to describe what is fundamentally editorial or marketing work. The title alone isn't a reliable signal here. Read the responsibilities."
@@ -935,10 +931,6 @@
     "language-infrastructure": {
       "label": "Language as infrastructure",
       "description": "When a JD frames language work as 'infrastructure,' it signals the company sees content as a foundational system rather than a production task. These roles tend to sit closer to platform and engineering teams."
-    },
-    "process-signal": {
-      "label": "Process signal",
-      "description": "This isn't a content role, but the process expectations it describes are ones content designers are increasingly being asked to meet. Worth tracking as a leading indicator."
     },
     "content-adjacent": {
       "label": "Content-adjacent",
