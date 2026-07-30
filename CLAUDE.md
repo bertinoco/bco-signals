@@ -217,6 +217,35 @@ reader to add it in.
 - Where an entry has no `jd-source` archive, these fields cannot be verified.
   Archive the posting first.
 
+## Title field
+
+`title` is stored verbatim, exactly as the posting words it. It is the field
+that ties an entry back to its `jd-source` archive, so it is never edited to
+tidy it up.
+
+Separators are normalised for display only, in `formatTitle` in
+`docs/js/scripts.js`. The site and `jobs.json` are therefore expected to differ
+on some entries. **Do not "correct" a title in `jobs.json` to match what the
+site renders** — that breaks the link to the archive.
+
+**What normalises**
+
+Em dash and pipe both join a role to its scope, which is what a comma does:
+
+- `Annotation Manager — Content Platform` renders as `Annotation Manager, Content Platform`
+- `Content Strategist | Agentic Commerce` renders as `Content Strategist, Agentic Commerce`
+
+**What does not**
+
+- A forward slash joins two titles naming one role — Zoom's
+  `AI Information Architect / Content Strategist` is both titles for the same
+  job, not a role plus a team. A comma would read as scope, so the slash stays.
+- Unspaced hyphens are compounds, not separators. `AI-Powered Content Systems
+  Specialist` renders unchanged.
+
+If a new posting uses a separator that fits neither case, leave the title
+verbatim and raise it rather than widening the rule.
+
 ## Quote field
 
 Each entry may include an optional `quote` field — a direct excerpt from the JD that anchors the cluster and signal assignments. Rules:
