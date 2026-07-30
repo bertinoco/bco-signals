@@ -157,6 +157,58 @@ The `domain` field describes the broad industry or sector the company operates i
 
 If a new company doesn't fit any existing value, propose the new domain before writing the entry. New domains should be broad enough to accommodate at least two companies.
 
+## Comp range field
+
+`compRange` is optional. When present it carries the stated range plus three
+structured fields. Nothing about the range is inferred from prose at render
+time — the display reads these fields directly, so they must be right.
+
+```json
+"compRange": {
+  "min": 460000,
+  "max": 710000,
+  "currency": "USD",
+  "covers": "total",
+  "scope": null,
+  "extras": null
+}
+```
+
+**`covers`** — what the range measures. One of:
+
+- `"base"` — the JD states this is base salary or base pay.
+- `"total"` — the JD states the range is the whole package. Netflix is the
+  current example: "our compensation structure consists solely of an annual
+  salary; we do not have bonuses. You choose each year how much of your
+  compensation you want in salary versus stock options."
+- `null` — the JD does not say. Use this rather than assuming base. Zoom
+  labels its range "Salary Range or On Target Earnings" and HelloFresh says
+  only "Pay Range"; neither commits, so neither entry does either.
+
+Only `"total"` is displayed, because a total-comp figure is not comparable to
+the base ranges beside it. `"base"` and `null` show nothing — a bare number
+claims no more than the JD did.
+
+**`scope`** — the location the range is tied to, when it is narrower than the
+posting itself: `"New York, NY"`, `"Illinois"`, `"Toronto, ON"`. Use `null`
+when the range applies to the whole posting. A country-wide qualifier like
+"US locations" is not a scope. Displayed when present.
+
+**`extras`** — what sits on top of the range: `"bonus + equity"`,
+`"annual incentive plan"`. Recorded because the JD states it, never displayed.
+It is not part of the number, so showing it beside the number only invites the
+reader to add it in.
+
+**Rules**
+
+- Read all three off the JD text, not off the company's reputation.
+- If the JD does not state whether the range is base or total, `covers` is
+  `null`. Do not resolve the ambiguity.
+- `extras` records what the JD lists as additional, not what the company is
+  assumed to offer. Benefits and health coverage are not extras.
+- Where an entry has no `jd-source` archive, these fields cannot be verified.
+  Archive the posting first.
+
 ## Quote field
 
 Each entry may include an optional `quote` field — a direct excerpt from the JD that anchors the cluster and signal assignments. Rules:

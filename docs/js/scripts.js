@@ -198,16 +198,18 @@ function renderTitles(data) {
   list.innerHTML = entries.map(entry => {
     const fmt = (n) => '$' + n.toLocaleString('en-US');
 
-    // Show the range only. A note that starts with "+" merely lists what sits
-    // on top of it ("+ bonus + equity"), so dropping it leaves the number
-    // accurate. Any other note qualifies what the range itself covers —
-    // Netflix's "salary + stock options, no bonus" means the range is not
-    // salary alone, and Accenture's is scoped to one state — so those are
-    // kept. Dropping them would make the figure say something the JD doesn't.
-    const note = entry.compRange && entry.compRange.note;
-    const qualifiesRange = !!note && !note.trim().startsWith('+');
-    const compHtml = entry.compRange
-      ? `<span class="title-comp">${fmt(entry.compRange.min)}–${fmt(entry.compRange.max)} ${entry.compRange.currency}${qualifiesRange ? ' ' + note : ''}</span>`
+    // Qualifiers are read from structured fields, never parsed out of prose.
+    // `covers: "total"` is shown because a total-comp figure is not comparable
+    // to the base ranges around it; `covers: "base"` and `covers: null` show
+    // nothing, since neither can claim more than the bare number does.
+    // `scope` is shown when the range is tied to one location. `extras` — what
+    // sits on top of the range — is recorded in jobs.json but never rendered.
+    const c = entry.compRange;
+    const qualifiers = c ? [c.covers === 'total' ? 'total comp' : null, c.scope].filter(Boolean) : [];
+    const compHtml = c
+      ? `<span class="title-comp">${fmt(c.min)}–${fmt(c.max)} ${c.currency}`
+        + qualifiers.map(q => ` · ${q}`).join('')
+        + `</span>`
       : '';
     const hasQuote = !!entry.quote;
     const quoteHtml = hasQuote
