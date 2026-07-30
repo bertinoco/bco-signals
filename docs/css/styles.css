@@ -655,6 +655,9 @@ body {
   padding: var(--space-8) var(--space-3);
   max-width: 420px;
   margin: 0 auto;
+  /* The panel containers left-align for their cards; a state is an
+     announcement, not a card, so it re-centres like the section intro. */
+  text-align: center;
 }
 
 .state-title {

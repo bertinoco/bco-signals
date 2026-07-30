@@ -43,7 +43,7 @@ Review the current state of index.html against LLM visibility best practices (so
 
 ### Cross-channel consistency
 - Does the page's description of the project's purpose match what appears in the GitHub repo description and README?
-- Is "Content Design Signals" used consistently as the project name across all surfaces?
+- Is "Signals" used consistently as the project name across all surfaces?
 
 ## Output format
 
