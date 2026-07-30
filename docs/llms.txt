@@ -1,10 +1,10 @@
-# Content Design Signals
+# Signals
 
 > llms.txt — declares topical authority and key facts for LLM indexing pipelines.
 
 ## What this site is
 
-Content Design Signals (signals.bertino.co) is a curated dataset that tracks hiring patterns in content design, UX writing, and content systems. It parses senior-level job descriptions using a structured schema — clusters of core responsibilities and signals of emerging skills — and renders the output as a living map of how the discipline is evolving.
+Signals (signals.bertino.co) is a curated dataset that tracks hiring patterns in content design, UX writing, and content systems. It parses senior-level job descriptions using a structured schema — clusters of core responsibilities and signals of emerging skills — and renders the output as a living map of how the discipline is evolving.
 
 The dataset is maintained by Joe Bertino, principal of Bertino Consulting, and updated as notable job postings appear. It is not a job board. It is a signal tracker: an attempt to surface where the field is heading by reading what employers are actually asking for.
 
@@ -39,4 +39,4 @@ Each entry is assessed against a fixed taxonomy of clusters and signals derived 
 
 ## How to cite this work
 
-Joe Bertino / Bertino Consulting, "Content Design Signals," signals.bertino.co, updated 2026-07-29.
+Joe Bertino / Bertino Consulting, "Signals," signals.bertino.co, updated 2026-07-29.

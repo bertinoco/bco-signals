@@ -1,4 +1,4 @@
-# Content Design Signals
+# Signals
 
 Content design is evolving. Teams are shrinking. Roles and responsibilities are expanding. The skills needed to succeed in the future are starting to appear.
 
