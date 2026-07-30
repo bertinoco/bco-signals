@@ -299,7 +299,7 @@
         "min": 340000,
         "max": 480000,
         "currency": "USD",
-        "note": "salary + stock options, no bonus"
+        "note": "total comp"
       },
       "sourceUrl": null,
       "dateAdded": "2026-05-25",
@@ -456,7 +456,7 @@
         "min": 68300,
         "max": 157800,
         "currency": "USD",
-        "note": "Illinois range; varies by location"
+        "note": "Illinois range"
       },
       "sourceUrl": null,
       "dateAdded": "2026-06-10"
@@ -688,7 +688,7 @@
         "min": 460000,
         "max": 710000,
         "currency": "USD",
-        "note": "salary + stock options, no bonus"
+        "note": "total comp"
       },
       "sourceUrl": null,
       "dateAdded": "2026-07-24",
