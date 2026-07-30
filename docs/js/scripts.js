@@ -175,6 +175,16 @@ function formatDate(iso) {
   return iso;
 }
 
+// Titles are stored verbatim, so they arrive with whatever separator the
+// employer used — em dash, pipe or slash all appear in the dataset. Displaying
+// them as-is makes the list look inconsistent rather than faithful, so the
+// separator is normalised to a comma at render time. Only spaced separators
+// match; hyphenated compounds like "AI-Powered" are left alone. jobs.json keeps
+// the verbatim title, which is what ties an entry to its jd-source archive.
+function formatTitle(title) {
+  return title.replace(/\s+[-—–|/]\s+/g, ', ');
+}
+
 function renderTitles(data) {
   const list = document.getElementById('title-list');
   const showMore = document.getElementById('titles-show-more');
@@ -248,7 +258,7 @@ function renderTitles(data) {
     return `
       <div class="title-entry${hasQuote ? ' has-quote' : ''}">
         <div class="title-header">
-          <div class="title-name">${entry.title}</div>
+          <div class="title-name">${formatTitle(entry.title)}</div>
           ${expandBtn}
         </div>
         ${attribHtml}
@@ -264,7 +274,7 @@ function renderTitles(data) {
       const entry = btn.closest('.title-entry');
       const isOpen = entry.classList.toggle('is-expanded');
       btn.setAttribute('aria-expanded', String(isOpen));
-      btn.textContent = isOpen ? '×' : '+';
+      btn.textContent = isOpen ? '−' : '+';
       btn.blur();
     });
   });
