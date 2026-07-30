@@ -138,6 +138,29 @@ function renderMeta(data) {
   dateEl.innerHTML = `<time datetime="${iso}">${iso}</time>`;
 }
 
+// The Skills tab shows a signal only once SIGNAL_THRESHOLD postings ask for it —
+// one posting is an anecdote. Nav counts and the per-role chips read the same
+// filter from here, so a signal can never appear on a role without also being
+// findable in Skills.
+function signalEntryCounts(data) {
+  const counts = new Map(Object.keys(data.signals).map(k => [k, 0]));
+  data.entries.forEach(entry => {
+    (entry.signals || []).forEach(s => {
+      if (counts.has(s)) counts.set(s, counts.get(s) + 1);
+      else console.warn('Unknown signal key in entry:', s);
+    });
+  });
+  return counts;
+}
+
+function displayedSignalKeys(data) {
+  return new Set(
+    [...signalEntryCounts(data)]
+      .filter(([, n]) => n >= SIGNAL_THRESHOLD)
+      .map(([key]) => key)
+  );
+}
+
 function renderClusters(data) {
   const grid = document.getElementById('cluster-grid');
   const clusterKeys = Object.keys(data.clusters);
@@ -214,6 +237,8 @@ function renderTitles(data) {
     }
   }
 
+  const displayed = displayedSignalKeys(data);
+
   list.innerHTML = entries.map(entry => {
     const fmt = (n) => '$' + n.toLocaleString('en-US');
 
@@ -241,12 +266,29 @@ function renderTitles(data) {
         + qualifiers.map(q => ` · ${q}`).join('')
         + `</span>`
       : '';
-    const hasQuote = !!entry.quote;
-    const quoteHtml = hasQuote
-      ? `<div class="title-quote"><blockquote>${entry.quote}</blockquote></div>`
+    // Chips are filtered to the signals the Skills tab shows, so a reader can
+    // always follow one from a role to its definition. Insurify's "Title
+    // dilution" and Meta's "Hybrid role" sit below the threshold and are held
+    // back here; both remain assigned in jobs.json.
+    const shownSignals = (entry.signals || []).filter(s => displayed.has(s));
+    const signalsHtml = shownSignals.length
+      ? `<ul class="title-signals">`
+        + shownSignals.map(s => `<li class="signal-chip">${data.signals[s].label}</li>`).join('')
+        + `</ul>`
       : '';
-    const expandBtn = hasQuote
-      ? `<button class="title-expand" aria-expanded="false" aria-label="Show quote">+</button>`
+
+    // The control opens whatever the entry has. Three entries carry signals but
+    // no quote, so gating on the quote alone would leave their chips unreachable.
+    const hasQuote = !!entry.quote;
+    const hasDetail = hasQuote || shownSignals.length > 0;
+    const detailHtml = hasDetail
+      ? `<div class="title-detail"><div class="title-detail-inner">`
+        + (hasQuote ? `<blockquote>${entry.quote}</blockquote>` : '')
+        + signalsHtml
+        + `</div></div>`
+      : '';
+    const expandBtn = hasDetail
+      ? `<button class="title-expand" aria-expanded="false" aria-label="Show details">+</button>`
       : '';
     // Company and pay share the attribution line; the date drops to its own
     // line below, being the least useful fact in the entry. `domain` is
@@ -262,14 +304,14 @@ function renderTitles(data) {
       : '';
 
     return `
-      <div class="title-entry${hasQuote ? ' has-quote' : ''}">
+      <div class="title-entry">
         <div class="title-header">
           <div class="title-name">${formatTitle(entry.title)}</div>
           ${expandBtn}
         </div>
         ${attribHtml}
         ${dateHtml}
-        ${quoteHtml}
+        ${detailHtml}
       </div>
     `;
   }).join('');
@@ -288,22 +330,12 @@ function renderTitles(data) {
 
 function renderSignals(data) {
   const list = document.getElementById('signal-list');
-  const signalKeys = Object.keys(data.signals);
 
-  const signalMap = {};
-  signalKeys.forEach(key => { signalMap[key] = []; });
-
-  data.entries.forEach(entry => {
-    entry.signals.forEach(s => {
-      if (signalMap[s]) signalMap[s].push(entry.company);
-      else console.warn('Unknown signal key in entry:', s);
-    });
-  });
-
-  // Sort by number of companies, descending. Filter to signals with SIGNAL_THRESHOLD+ entries.
-  const relevantSignals = signalKeys
-    .filter(key => signalMap[key].length >= SIGNAL_THRESHOLD)
-    .sort((a, b) => signalMap[b].length - signalMap[a].length);
+  // Most-attested first.
+  const relevantSignals = [...signalEntryCounts(data)]
+    .filter(([, n]) => n >= SIGNAL_THRESHOLD)
+    .sort((a, b) => b[1] - a[1])
+    .map(([key]) => key);
 
   if (relevantSignals.length === 0) {
     renderState('signal-list', { variant: 'empty', ...COPY.empty.signals });
@@ -322,9 +354,7 @@ function renderSignals(data) {
 }
 
 function renderNavCounts(data) {
-  const signalCount = Object.keys(data.signals).filter(key => {
-    return data.entries.filter(e => e.signals.includes(key)).length >= SIGNAL_THRESHOLD;
-  }).length;
+  const signalCount = displayedSignalKeys(data).size;
 
   const counts = {
     clusters: Object.keys(data.clusters).length,

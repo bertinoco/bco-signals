@@ -391,18 +391,24 @@ body {
   outline-offset: 2px;
 }
 
-.title-quote {
+/* Collapsible detail: the quote, the signal chips, or both. The 0fr-to-1fr
+   animation needs a single grid child, so the contents sit in an inner wrapper
+   that carries the overflow. */
+.title-detail {
   display: grid;
   grid-template-rows: 0fr;
   transition: grid-template-rows var(--duration-base) var(--ease-out);
 }
 
-.title-entry.is-expanded .title-quote {
+.title-entry.is-expanded .title-detail {
   grid-template-rows: 1fr;
 }
 
-.title-quote blockquote {
+.title-detail-inner {
   overflow: hidden;
+}
+
+.title-detail blockquote {
   margin-top: var(--space-2);
   padding-left: var(--space-2);
   border-left: 2px solid hsl(var(--foreground));
@@ -413,8 +419,8 @@ body {
   line-height: var(--leading-relaxed);
 }
 
-.title-quote blockquote::before { content: '\201C'; }
-.title-quote blockquote::after  { content: '\201D'; }
+.title-detail blockquote::before { content: '\201C'; }
+.title-detail blockquote::after  { content: '\201D'; }
 
 /* One attribution line under the role: company and date. Mono, because
    everything on it is dataset metadata rather than prose. Rank is carried
@@ -429,6 +435,30 @@ body {
 /* Uppercase label. Company capitalisation (HelloFresh, LinkedIn) is lost
    here by choice — the label reading wins, and the source case is preserved
    in jobs.json. */
+/* Signal chips. Outlined rather than filled — they are not interactive, and a
+   fill on either ground reads as a button. Same mono label register as the
+   company name. */
+.title-signals {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: var(--space-2);
+}
+
+.signal-chip {
+  font-family: var(--font-mono);
+  font-size: var(--font-xs);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: hsl(var(--muted-foreground));
+  background: none;
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius);
+  padding: 4px 8px;
+  line-height: 1.35;
+}
+
 .title-company {
   font-weight: var(--weight-medium);
   letter-spacing: var(--tracking-label);
@@ -744,7 +774,7 @@ body {
   .badge-btn,
   .cluster-card,
   .signal-card,
-  .title-quote,
+  .title-detail,
   .title-expand,
   .show-more-btn,
   .state-action {
