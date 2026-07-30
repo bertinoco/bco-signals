@@ -463,8 +463,11 @@ body {
   line-height: var(--leading-snug);
 }
 
+/* Uppercased for the label register the company sets beside it. Digits and
+   currency codes are unaffected; it only reaches the qualifying note. */
 .title-comp {
   letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
   font-variant-numeric: tabular-nums;
   color: hsl(var(--muted-foreground));
 }
