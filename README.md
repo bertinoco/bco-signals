@@ -20,7 +20,7 @@ Each entry in `jobs.json` includes:
 - `company` / `title` / `domain` — basics
 - `clusters` — responsibility areas the role covers
 - `signals` — skills and observable patterns
-- `compRange` — compensation data
+- `compRange` — stated range, plus `covers` (`base` / `total` / `null` when the JD does not say), `scope` (location the range is tied to), and `extras` (what sits on top, recorded but not displayed)
 - `quote` — optional verbatim excerpt from the JD that anchors the cluster and signal assignments
 - `note` — optional factual note about the role or posting
 - `tag` — optional, factual classifier (e.g. `non-content-role`, `content-adjacent`)
