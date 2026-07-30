@@ -191,6 +191,11 @@ body {
   text-wrap: balance;
   color: hsl(var(--foreground));
   margin-bottom: var(--space-2);
+  /* Cap the measure so the headline breaks into even lines rather than one
+     long line and a short one. */
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .site-header p {
@@ -199,6 +204,8 @@ body {
   line-height: var(--leading-relaxed);
   max-width: 480px;
   margin: 0 auto;
+  /* Without this the last line lands as a two-word widow. */
+  text-wrap: balance;
 }
 
 /* ── Nav bar (sticky) ─────────────────────────────────────── */
