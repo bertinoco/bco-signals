@@ -73,6 +73,12 @@ Before proposing a new cluster or signal key, scan all existing entries to see i
 **Step 5 — Report the audit**
 Before writing the entry, summarize: which clusters and signals were assigned and why, and whether anything was flagged as a potential new addition. Wait for confirmation if a new key is being proposed.
 
+Report the title too, quoted exactly as the posting words it. If it carries a
+separator, say which one and what it will render as under the Title field rule —
+`Content Strategist | Agentic Commerce` stored, `Content Strategist, Agentic
+Commerce` rendered. A separator matching neither rule is the user's call, not
+something to settle by widening the rule.
+
 **Step 6 — Archive the source text and update metadata after writing**
 After writing the entry to `jobs.json`, always complete all six of the following
 in the same pass:
@@ -91,10 +97,17 @@ reformatting, or truncation, including any job-board chrome around the posting.
 It is what Step 1 was read from, and what a later Step 4 backcheck reads when
 scanning for a recurring pattern that has no cluster or signal key yet.
 
-Before committing, confirm the entry's `quote` appears in the archived text.
-A mismatch beyond the three permitted normalizations is a discrepancy to resolve,
-not a formatting detail — the quote is wrong, or the archived text is not the
-posting the entry was audited from.
+Before committing, confirm two things against the archived text.
+
+The entry's `quote` appears in it. A mismatch beyond the three permitted
+normalizations is a discrepancy to resolve, not a formatting detail — the quote
+is wrong, or the archived text is not the posting the entry was audited from.
+
+The entry's `title` matches the posting verbatim, separator included. Check the
+stored value, never the rendered one: the site normalizes separators at render,
+so the two are expected to differ and a title that matches the site is the one
+to worry about. The title is what links an entry to its archive, so a tidied
+title breaks that link silently.
 
 **Step 7 — Commit, push, and merge**
 Once the user confirms the audit (including any new cluster/signal/domain proposal), that confirmation also counts as approval to merge directly to `main` — no separate merge confirmation is needed for JD entry additions specifically. Commit the entry on the working branch, push it, then merge directly to `main` and push. This does not extend to other kinds of changes (site code, design, CLAUDE.md itself, etc.) — those still follow normal confirm-before-merge practice.
