@@ -118,6 +118,12 @@ body {
   letter-spacing: var(--tracking-tight);
   color: var(--color-text);
   margin-bottom: var(--space-2);
+  /* Cap the measure so the headline breaks into even lines instead of one
+     long line and one orphan. `balance` refines it where supported. */
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+  text-wrap: balance;
 }
 
 .site-header p {
@@ -126,6 +132,8 @@ body {
   line-height: var(--leading-relaxed);
   max-width: 480px;
   margin: 0 auto;
+  /* Without this the last line lands as a two-word widow. */
+  text-wrap: balance;
 }
 
 
