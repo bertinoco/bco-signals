@@ -36,10 +36,7 @@ it uses — HSL channel triplets, and a surface/`-foreground` pairing so every
 ground carries its own text colour — originates with
 [shadcn/ui](https://ui.shadcn.com) (MIT).
 
-The values here are not Midday's. Their light mode is warm-tinted and their
-muted foreground is shared across both themes, which drops it to 3.14:1 on
-their dark background. This palette is achromatic in both directions and every
-text token clears WCAG AA on its own ground.
+Every text token clears WCAG AA on its own ground.
 
 ---
 
