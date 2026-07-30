@@ -176,13 +176,19 @@ function formatDate(iso) {
 }
 
 // Titles are stored verbatim, so they arrive with whatever separator the
-// employer used — em dash, pipe or slash all appear in the dataset. Displaying
-// them as-is makes the list look inconsistent rather than faithful, so the
-// separator is normalised to a comma at render time. Only spaced separators
-// match; hyphenated compounds like "AI-Powered" are left alone. jobs.json keeps
-// the verbatim title, which is what ties an entry to its jd-source archive.
+// employer used. Em dash and pipe both join a role to its scope — "Annotation
+// Manager — Content Platform", "Content Strategist | Agentic Commerce" — which
+// is what a comma does, so those are normalised.
+//
+// A forward slash is left alone. It joins two titles naming one role, as in
+// Zoom's "AI Information Architect / Content Strategist", and a comma there
+// would read as scope rather than as an alternate title.
+//
+// Only spaced separators match, so hyphenated compounds like "AI-Powered" are
+// untouched. jobs.json keeps the verbatim title either way — that is what ties
+// an entry to its jd-source archive.
 function formatTitle(title) {
-  return title.replace(/\s+[-—–|/]\s+/g, ', ');
+  return title.replace(/\s+[-—–|]\s+/g, ', ');
 }
 
 function renderTitles(data) {
