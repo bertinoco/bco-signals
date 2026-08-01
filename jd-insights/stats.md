@@ -52,6 +52,43 @@ Every figure here is counted from `docs/data/jobs.json`. If you quote one in som
 - USD medians: **$131,000** low, **$186,200** high
 - `covers`: 17 base, 3 unstated, 2 total
 
+## Compensation by signal
+
+USD entries only (21 of 22 stated ranges). Signals carried by at least 3 of them.
+
+| Signal | n | Median low | Median high | vs. all USD |
+|---|---:|---:|---:|---:|
+| **All USD entries** | 21 | $131,000 | $186,200 | — |
+| Language as infrastructure | 4 | $149,650 | $262,150 | +$75,950 |
+| Accessibility as structural constraint | 4 | $168,100 | $237,400 | +$51,200 |
+| Model behavior design | 3 | $144,000 | $209,000 | +$22,800 |
+| AI fluency expected | 12 | $137,500 | $199,500 | +$13,300 |
+| Enabler, not bottleneck | 5 | $133,000 | $190,000 | +$3,800 |
+| Central standards function | 6 | $132,000 | $190,000 | +$3,800 |
+| Governance emphasized | 10 | $124,500 | $186,100 | −$100 |
+| Structured data | 5 | $115,000 | $157,800 | −$28,400 |
+| GEO & SEO | 5 | $90,000 | $157,800 | −$28,400 |
+| Content marketing adjacent | 3 | $90,000 | $150,000 | −$36,200 |
+
+Read the n column before quoting any of these. A median over fewer than roughly eight entries moves substantially when one more lands, so the smaller groups are indicative rather than conclusive.
+
+## Title vocabulary
+
+Words appearing in 3 or more of the 29 stored titles. Counted from `title`, which is stored verbatim — so this reflects what employers wrote, not what the site renders.
+
+| Word | Titles | Share |
+|---|---:|---:|
+| Content | 24 | 83% |
+| Designer | 9 | 31% |
+| Systems | 8 | 28% |
+| Architect | 7 | 24% |
+| UX | 6 | 21% |
+| Senior | 6 | 21% |
+| Staff | 6 | 21% |
+| Writer | 5 | 17% |
+| AI | 5 | 17% |
+| Strategist | 4 | 14% |
+
 ## Domains
 
 | | Entries | Companies |
