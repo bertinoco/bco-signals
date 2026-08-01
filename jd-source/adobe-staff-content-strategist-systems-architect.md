@@ -7,8 +7,8 @@ sourcePlatform: company-site
 orgPlacement: "Job associated with 2 categories: Design; Engineering and Product"
 postedDate: 2026-07-29
 reqId: "R170762"
-dateAdded: 2026-07-29
-captured: 2026-07-29
+dateAdded: 2026-08-01
+captured: 2026-08-01
 captureMethod: pasted-from-claude-chat
 captureNote: >
   Captured from Adobe's own careers listing, which states an explicit posted
