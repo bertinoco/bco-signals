@@ -3,7 +3,7 @@
     "title": "BCO Content Skills Tracker",
     "description": "A curated skills tracker for the content design community.",
     "lastUpdated": "2026-08-01",
-    "totalEntries": 29
+    "totalEntries": 28
   },
   "entries": [
     {
@@ -387,38 +387,6 @@
       "quote": "Consider the user experience, including AI-specific elements like prompt design and system instructions."
     },
     {
-      "id": "meta-lead-product-content-engineering",
-      "company": "Meta",
-      "title": "Lead, Product Content Engineering",
-      "domain": "Big Tech",
-      "engagement": "Full-time",
-      "location": "New York, NY",
-      "remote": false,
-      "coreFrame": "LLM model evaluation strategy and automation, content engineering for AI-powered product experiences, annotation and dataset quality for model training",
-      "clusters": [
-        "ai-content-governance",
-        "ai-tooling",
-        "content-systems-design",
-        "taxonomy",
-        "enablement"
-      ],
-      "signals": [
-        "ai-native-expectation",
-        "classification-for-ml",
-        "hybrid-role"
-      ],
-      "compRange": {
-        "min": 193000,
-        "max": 269000,
-        "currency": "USD",
-        "covers": "base",
-        "scope": null,
-        "extras": "bonus + equity"
-      },
-      "sourceUrl": null,
-      "dateAdded": "2026-06-10"
-    },
-    {
       "id": "figma-ux-writer-ai",
       "company": "Figma",
       "title": "UX Writer, AI",
@@ -449,7 +417,8 @@
         "extras": "equity + bonus"
       },
       "sourceUrl": null,
-      "dateAdded": "2026-06-10"
+      "dateAdded": "2026-06-10",
+      "note": "Source posting not archived. This entry was written from a posting read on 2026-06-10 that was not kept and has not been recovered, so its clusters, signals, and compensation range cannot be checked against source text. It is the only remaining entry in that position. Treat the assignments and the stated range as unverified until the posting resurfaces."
     },
     {
       "id": "accenture-content-strategist-agentic-commerce",
