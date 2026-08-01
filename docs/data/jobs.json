@@ -938,10 +938,6 @@
       "label": "Content-adjacent",
       "description": "Content skills like taxonomy, governance, and documentation are being applied in roles that don't carry a content title. The demand is there even when the label isn't."
     },
-    "hybrid-role": {
-      "label": "Hybrid role",
-      "description": "These roles ask one person to hold content responsibilities alongside QA, engineering, or data work. It signals that content expertise is being pulled closer to technical disciplines. Whether that's an opportunity depends on where you want to go."
-    },
     "classification-for-ml": {
       "label": "Classification for ML",
       "description": "Taxonomy and classification skills are showing up in roles that feed machine learning systems. Content designers who've built tagging schemas or content models have transferable value in AI-adjacent contexts."

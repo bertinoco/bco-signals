@@ -81,8 +81,8 @@ Words appearing in 3 or more of the 28 stored titles. Counted from `title`, whic
 | Designer | 9 | 32% |
 | Systems | 8 | 29% |
 | Architect | 7 | 25% |
-| UX | 6 | 21% |
 | Senior | 6 | 21% |
+| UX | 6 | 21% |
 | Staff | 6 | 21% |
 | Writer | 5 | 18% |
 | AI | 5 | 18% |
