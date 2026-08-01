@@ -2,7 +2,7 @@
   "meta": {
     "title": "BCO Content Skills Tracker",
     "description": "A curated skills tracker for the content design community.",
-    "lastUpdated": "2026-07-29",
+    "lastUpdated": "2026-08-01",
     "totalEntries": 29
   },
   "entries": [
@@ -897,7 +897,7 @@
         "extras": "annual incentive plan"
       },
       "sourceUrl": null,
-      "dateAdded": "2026-07-29",
+      "dateAdded": "2026-08-01",
       "quote": "As Content Systems Architect, you’re responsible for the architecture that turns Adobe’s editorial and AI-generated language standards into working systems.",
       "note": "The posting carries a 'What this role Is not' section that explicitly disclaims editorial standard-setting, AI behavior governance, adoption programs, and product-level copy. Those disclaimers are why terminology-governance, ai-content-governance and governance-as-value-prop are not assigned despite surface language that would otherwise support them. The posting also states a separate California range of $189,400-$274,300; the recorded range is the US one, the role being Florida-remote."
     }
