@@ -3,7 +3,7 @@
     "title": "BCO Content Skills Tracker",
     "description": "A curated skills tracker for the content design community.",
     "lastUpdated": "2026-07-29",
-    "totalEntries": 28
+    "totalEntries": 29
   },
   "entries": [
     {
@@ -867,6 +867,39 @@
       "dateAdded": "2026-07-29",
       "quote": "Active usage of AI as a core part of your daily workflow includes synthesizing user insights, accelerating discovery, building rapid interactive prototypes (using tools like Claude Code, Gemini, or Figma AI), and closing the gap between design and implementation.",
       "note": "The posting files this role under 'Category: Software Engineering' rather than a design, product or marketing function — a placement not seen elsewhere in the dataset. model-behavior-design is assigned on the stated responsibility to shape 'response patterns, interaction flows, and the rhythm of exchanges' for systems customers converse with; the JD also states 'This isn't a chatbot role', and that ambiguity is recorded rather than resolved."
+    },
+    {
+      "id": "adobe-staff-content-strategist-systems-architect",
+      "company": "Adobe",
+      "title": "Staff Content Strategist, Content Systems Architect",
+      "domain": "SaaS",
+      "engagement": "Full-time",
+      "location": "Remote (Florida)",
+      "remote": true,
+      "coreFrame": "Architecture that implements language standards as working systems, agents and skills that apply standards across domains, AI platform integration, standards-to-system traceability",
+      "clusters": [
+        "content-systems-design",
+        "ai-tooling",
+        "enablement"
+      ],
+      "signals": [
+        "ai-native-expectation",
+        "language-infrastructure",
+        "central-standards-function",
+        "enabler-not-bottleneck"
+      ],
+      "compRange": {
+        "min": 146300,
+        "max": 274300,
+        "currency": "USD",
+        "covers": "base",
+        "scope": null,
+        "extras": "annual incentive plan"
+      },
+      "sourceUrl": null,
+      "dateAdded": "2026-07-29",
+      "quote": "As Content Systems Architect, you’re responsible for the architecture that turns Adobe’s editorial and AI-generated language standards into working systems.",
+      "note": "The posting carries a 'What this role Is not' section that explicitly disclaims editorial standard-setting, AI behavior governance, adoption programs, and product-level copy. Those disclaimers are why terminology-governance, ai-content-governance and governance-as-value-prop are not assigned despite surface language that would otherwise support them. The posting also states a separate California range of $189,400-$274,300; the recorded range is the US one, the role being Florida-remote."
     }
   ],
   "clusters": {
