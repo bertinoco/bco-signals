@@ -3,7 +3,7 @@ id: accenture-content-strategist-agentic-commerce
 company: Accenture
 title: Content Strategist | Agentic Commerce
 sourceUrl: null
-sourcePlatform: unknown
+sourcePlatform: linkedin
 orgPlacement: null
 postedDate: null
 reqId: null
@@ -17,25 +17,31 @@ captureNote: >
   introduce errors a paste cannot, so treat any single character here as less
   reliable than elsewhere in the corpus — particularly figures.
 
-  The screenshots were taken from a mobile job viewer whose chrome shows the
-  title, "Accenture · Chicago, IL", a close control and an overflow menu. The
-  platform is not identifiable from that alone, so sourcePlatform is unknown.
-  The title and company/location line at the top of the text below are
-  transcribed from that chrome, not from the posting body — the body itself
-  begins at "Overview". They are retained so the entry's title remains
-  checkable against the archive.
+  Captured from the LinkedIn mobile app. The header screenshot carries the
+  Premium upsell modules, applicant counts and a "People you can reach out to"
+  module, all retained as chrome. The Premium prompts are priced in SEK,
+  reflecting where the screenshots were taken rather than anything about the
+  posting.
 
-  Marked partial. Six of the seven joins between screenshots are clean — four
-  overlap on a repeated line, two continue across a section break. Two are
-  not, and both are marked inline below with [GAP] markers:
+  The header records "Reposted 1 month ago", a relative string that is
+  ambiguous about when it was read, so it is not resolved into postedDate. It
+  also shows "No longer accepting applications" — the posting was already
+  closed when captured, roughly seven weeks after the entry was written.
 
-  1. Between the Washington salary row and the "Requesting an Accommodation"
+  Marked partial. Most joins between screenshots are clean — four overlap on a
+  repeated line, two continue across a section break. Three are not, and each
+  is marked inline below with a [GAP] marker:
+
+  1. Between the "People you can reach out to" module and the "Overview"
+     heading. LinkedIn's "About the job" heading and any modules between the
+     two are not captured.
+  2. Between the Washington salary row and the "Requesting an Accommodation"
      heading. Any further location rows in the salary table are not captured.
-  2. The final screenshot ends mid-sentence, so the tail of the posting is
+  3. The final screenshot ends mid-sentence, so the tail of the posting is
      not captured.
 
-  Neither gap affects the entry. The Illinois row, which is what the entry's
-  compRange and its "Illinois" scope record, is captured in full.
+  None of the three affects the entry. The Illinois row, which is what the
+  entry's compRange and its "Illinois" scope record, is captured in full.
 
   The posting states no requisition number and no posted date. It states a
   close date — "We anticipate this job posting will be posted until
@@ -46,8 +52,37 @@ captureNote: >
   Title field rule in CLAUDE.md. Stored verbatim here and in jobs.json.
 ---
 
+Accenture
+
 Content Strategist | Agentic Commerce
-Accenture · Chicago, IL
+
+Chicago, IL · Reposted 1 month ago · Over 100 people clicked apply
+
+Promoted by hirer · Responses managed off LinkedIn
+
+Full-time
+
+No longer accepting applications
+
+Use AI to assess how you fit
+
+Get AI-powered advice on this job and more exclusive features with Premium. Retry Premium for SEK 0
+
+Show match details
+
+Help me stand out
+
+See how you compare to over 100 others who clicked apply
+
+Access exclusive applicant insights, see jobs where you have the highest chance of hearing back, and more.
+
+Retry Premium for SEK 0
+
+People you can reach out to
+
+Felice and others in your network
+
+[GAP — the screenshots do not cover the text between the "People you can reach out to" module above and the "Overview" heading below. LinkedIn's "About the job" heading and any modules between the two are not captured.]
 
 Overview
 
