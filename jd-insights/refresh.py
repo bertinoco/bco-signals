@@ -28,6 +28,10 @@ BANNER = (
     "     Regenerate with: python3 jd-insights/refresh.py -->\n"
 )
 
+# Smallest group worth reporting in a breakdown. Below this, a count says more
+# about which entries happen to exist than about the field.
+MIN_GROUP = 3
+
 
 def load():
     with open(JOBS) as fh:
@@ -115,6 +119,78 @@ def write_stats(data):
             "- `covers`: "
             + ", ".join(f"{v} {k or 'unstated'}" for k, v in covers.most_common())
         )
+    lines.append("")
+
+    # Compensation by signal — USD only, since mixing currencies would be
+    # meaningless. Groups are small; n is printed so nobody reads a median
+    # over four entries as a market rate.
+    usd = [e for e in entries if e.get("compRange") and e["compRange"]["currency"] == "USD"]
+    if len(usd) >= 8:
+        overall_hi = statistics.median(e["compRange"]["max"] for e in usd)
+        rows = []
+        for key in {k for e in usd for k in e["signals"]}:
+            grp = [e for e in usd if key in e["signals"]]
+            if len(grp) < MIN_GROUP:
+                continue
+            hi = statistics.median(e["compRange"]["max"] for e in grp)
+            lo = statistics.median(e["compRange"]["min"] for e in grp)
+            rows.append((hi - overall_hi, data["signals"][key]["label"], len(grp), lo, hi))
+        rows.sort(reverse=True)
+        lines += [
+            "## Compensation by signal",
+            "",
+            f"USD entries only ({len(usd)} of {len(comps)} stated ranges). Signals "
+            f"carried by at least {MIN_GROUP} of them.",
+            "",
+            "| Signal | n | Median low | Median high | vs. all USD |",
+            "|---|---:|---:|---:|---:|",
+            f"| **All USD entries** | {len(usd)} | "
+            f"${int(statistics.median(e['compRange']['min'] for e in usd)):,} | "
+            f"${int(overall_hi):,} | — |",
+        ]
+        for delta, label, cnt, lo, hi in rows:
+            if delta:
+                diff = f"{'+' if delta > 0 else '−'}${abs(int(delta)):,}"
+            else:
+                diff = "—"
+            lines.append(
+                f"| {label} | {cnt} | ${int(lo):,} | ${int(hi):,} | {diff} |"
+            )
+        lines += [
+            "",
+            "Read the n column before quoting any of these. A median over fewer than "
+            "roughly eight entries moves substantially when one more lands, so the "
+            "smaller groups are indicative rather than conclusive.",
+            "",
+        ]
+
+    # Title vocabulary — tokenised rather than matched against a fixed list, so
+    # words nobody thought to look for still surface.
+    STOP = {"and", "of", "the", "for", "a", "an", "in", "on", "to", "with"}
+    seen_case = {}
+    counts = Counter()
+    for e in entries:
+        tokens = {t for t in re.split(r"[^A-Za-z]+", e["title"]) if t}
+        for t in tokens:
+            low = t.lower()
+            if low in STOP or len(t) < 2:
+                continue
+            counts[low] += 1
+            seen_case.setdefault(low, t)
+    lines += [
+        "## Title vocabulary",
+        "",
+        f"Words appearing in {MIN_GROUP} or more of the {n} stored titles. Counted "
+        "from `title`, which is stored verbatim — so this reflects what employers "
+        "wrote, not what the site renders.",
+        "",
+        "| Word | Titles | Share |",
+        "|---|---:|---:|",
+    ]
+    for low, v in counts.most_common():
+        if v < MIN_GROUP:
+            continue
+        lines.append(f"| {seen_case[low]} | {v} | {pct(v, n)}% |")
     lines.append("")
 
     lines += ["## Domains", "", "| | Entries | Companies |", "|---|---:|---|"]
