@@ -3,7 +3,7 @@
 
 # Quotes
 
-Every stored quote, verbatim from the posting. **26 of 28** entries carry one.
+Every stored quote, verbatim from the posting. **27 of 28** entries carry one.
 
 These are the lines that anchor each entry's cluster and signal assignments, so they are the strongest citable evidence in the dataset. Each is checked against its `jd-source` archive before commit.
 
@@ -42,6 +42,12 @@ These are the lines that anchor each entry's cluster and signal assignments, so 
 > As Content Systems Architect, your job is to own the execution and growth of those series — not by writing content yourself, but by building AI-powered systems.
 
 `colab-content-systems-architect` · added 2026-05-24
+
+### Figma — UX Writer, AI
+
+> While the title of this role is “UX Writer,” you might think of yourself as a content engineer as much as a writer — someone who uses language to shape how people interact with AI, from crafting better inputs to defining clear, consistent outputs.
+
+`figma-ux-writer-ai` · added 2026-06-10
 
 ### GM — Senior Content Designer, Language Systems
 

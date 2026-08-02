@@ -19,8 +19,9 @@ excludedReason: >
   but never archived. It carried five clusters, three signals, and a stated
   compensation range of $193,000–$269,000 with covers set to base — seventeen
   assertions, none of which could be checked once the corpus was built. It was
-  one of only two entries in that position; the other, Figma UX Writer, AI, is
-  retained with a note recording the same limitation.
+  one of only two entries in that position. The other, Figma UX Writer, AI, was
+  recovered from screenshots on 2026-08-02 and verified against its source;
+  this is now the only posting in the corpus with no text behind it.
 
   Nothing here suggests the original audit was wrong. The Accenture entry,
   audited the same day from a posting recovered seven weeks later, held up

@@ -82,17 +82,17 @@ Francesco and others in your network
 
 About the job
 
-Figma is growing our team of passionate creatives and builders on a mission to make design accessible to all. Figma's platform helps teams bring ideas to life—whether you're brainstorming, creating a prototype, translating designs into code, or iterating with AI. From idea to product, Figma empowers teams to streamline workflows, move faster, and work together in real time from anywhere in the world. If you're excited to shape the future of design and collaboration, join us!
+Figma is growing our team of passionate creatives and builders on a mission to make design accessible to all. Figma’s platform helps teams bring ideas to life—whether you're brainstorming, creating a prototype, translating designs into code, or iterating with AI. From idea to product, Figma empowers teams to streamline workflows, move faster, and work together in real time from anywhere in the world. If you're excited to shape the future of design and collaboration, join us!
 
-We're looking to grow Figma's UX Writing team. While the title of this role is "UX Writer," you might think of yourself as a content engineer as much as a writer—someone who uses language to shape how people interact with AI, from crafting better inputs to defining clear, consistent outputs. You'll collaborate deeply in our most forward-looking areas, helping designers move from idea to product, faster and better.
+We’re looking to grow Figma’s UX Writing team. While the title of this role is “UX Writer,” you might think of yourself as a content engineer as much as a writer—someone who uses language to shape how people interact with AI, from crafting better inputs to defining clear, consistent outputs. You’ll collaborate deeply in our most forward-looking areas, helping designers move from idea to product, faster and better.
 
-As a senior member of the UX Writing team, you'll flex across high-priority initiatives, defining new spaces at the intersection of AI, design, and development. If you have an eye for craft, excellent writing chops, and a passion for new technologies, we'd love to hear from you.
+As a senior member of the UX Writing team, you’ll flex across high-priority initiatives, defining new spaces at the intersection of AI, design, and development. If you have an eye for craft, excellent writing chops, and a passion for new technologies, we’d love to hear from you.
 
 This is a full-time role that can be held in our New York or San Francisco hubs, or remotely in the US.
 
-What you'll do at Figma:
+What you’ll do at Figma:
 
-Contribute to overall product strategy around Figma's offerings
+Contribute to overall product strategy around Figma’s offerings
 
 Define best practices for writing in AI-powered products, from prompting to interaction patterns.
 
@@ -118,7 +118,7 @@ Fluent in the behavior and architecture of modern AI products and how they are b
 
 Effectively partners with cross-functional teams and leadership to drive aligned outcomes
 
-While not required, it's an added plus if you also have:
+While not required, it’s an added plus if you also have:
 
 Experience writing system prompts, designing agent behaviors, or creating other AI-powered features
 
@@ -126,15 +126,15 @@ Experience working directly with code, APIs, or other developer tooling.
 
 A track record of leading 0-to-1 initiatives in ambiguous, fast-moving spaces
 
-At Figma, one of our values is Grow as you go. We believe in hiring smart, curious people who are excited to learn and develop their skills. If you're excited about this role but your past experience doesn't align perfectly with the points outlined in the job description, we encourage you to apply anyways. You may be just the right candidate for this or other roles.
+At Figma, one of our values is Grow as you go. We believe in hiring smart, curious people who are excited to learn and develop their skills. If you’re excited about this role but your past experience doesn’t align perfectly with the points outlined in the job description, we encourage you to apply anyways. You may be just the right candidate for this or other roles.
 
 Pay Transparency Disclosure
 
-If based in Figma's San Francisco or New York hub offices, this role has the annual base salary range stated below.
+If based in Figma’s San Francisco or New York hub offices, this role has the annual base salary range stated below.
 
 Job level and actual compensation will be decided based on factors including, but not limited to, individual qualifications objectively assessed during the interview process (including skills and prior relevant experience, potential impact, and scope of role), market demands, and specific work location. The listed range is a guideline, and the range for this role may be modified. For roles that are available to be filled remotely, the pay range is localized according to employee work location by a factor of between 80% and 100% of range. Please discuss your specific work location with your recruiter for more information.
 
-Figma offers equity to employees, as well a competitive package of additional benefits, including health, dental & vision, retirement with company contribution, parental leave & reproductive or family planning support, mental health & wellness benefits, generous PTO, company recharge days, a learning & development stipend, a work from home stipend, and cell phone reimbursement. Figma also offers sales incentive pay for most sales roles and an annual bonus plan for eligible non-sales roles. Figma's compensation and benefits are subject to change and may be modified in the future.
+Figma offers equity to employees, as well a competitive package of additional benefits, including health, dental & vision, retirement with company contribution, parental leave & reproductive or family planning support, mental health & wellness benefits, generous PTO, company recharge days, a learning & development stipend, a work from home stipend, and cell phone reimbursement. Figma also offers sales incentive pay for most sales roles and an annual bonus plan for eligible non-sales roles. Figma’s compensation and benefits are subject to change and may be modified in the future.
 
 Annual Base Salary Range:
 

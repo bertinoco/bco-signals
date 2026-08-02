@@ -35,6 +35,25 @@ says it is not standard-setting. An employer that specific about its own
 boundaries is describing a discipline that has become crowded enough to need
 them.
 
+## A posting that disclaims its own title
+
+Figma's "UX Writer, AI" tells the reader in its second paragraph that the title
+is not the job:
+
+> While the title of this role is “UX Writer,” you might think of yourself as a
+> content engineer as much as a writer—someone who uses language to shape how
+> people interact with AI, from crafting better inputs to defining clear,
+> consistent outputs.
+
+Adjacent to the roles-defined-by-exclusion device above, but not the same move.
+Those postings rule out work the title would imply. This one keeps the work and
+disowns the title, naming the discipline it thinks the role actually belongs to.
+
+Worth recording because the dataset carries a `title-responsibility-gap` signal
+that is otherwise assigned by reading a posting against its own name. Here the
+employer states the gap directly, which makes this the clearest single instance
+of a pattern usually inferred.
+
 ## Boilerplate reuse inside one employer
 
 Google runs the same "As a UX writer, you are an advocate for Google design…"
@@ -119,6 +138,11 @@ Retained deliberately in `jd-source`, since they are facts about the posting:
   into a high-performing business asset").
 - **Google** runs paragraphs together without a break ("...images.Google Ads is
   helping power...").
+- **Figma** mixes typographic and straight apostrophes within single sections —
+  "Figma’s platform" and "whether you're brainstorming" sit in the same
+  sentence, and "We’d love to hear from you" in the body becomes "We'd love to
+  hear from you if you have:" as a heading four paragraphs later. Consistent
+  with a posting assembled from more than one source document.
 
 Six of the stored quotes needed a character corrected to match their source —
 five apostrophes and one hyphen. None was visible on screen.

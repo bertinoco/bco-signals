@@ -3,7 +3,7 @@
 
 # Stats
 
-Dataset state: **28 entries**, `meta.lastUpdated` 2026-08-01. Generated 2026-08-01.
+Dataset state: **28 entries**, `meta.lastUpdated` 2026-08-02. Generated 2026-08-02.
 
 Every figure here is counted from `docs/data/jobs.json`. If you quote one in something published, quote the entry count with it — these move.
 
@@ -18,7 +18,7 @@ Every figure here is counted from `docs/data/jobs.json`. If you quote one in som
 |---|---:|---:|
 | Content systems design | 25 | 89% |
 | Enablement & team upskilling | 23 | 82% |
-| AI tooling & automation | 19 | 68% |
+| AI tooling & automation | 18 | 64% |
 | AI-generated content governance | 15 | 54% |
 | Taxonomy & information architecture | 13 | 46% |
 | Terminology & language governance | 12 | 43% |
@@ -103,7 +103,7 @@ Words appearing in 3 or more of the 28 stored titles. Counted from `title`, whic
 
 ## Stated org placement
 
-Recorded in `jd-source` front matter. **21 of 28** postings say where the role sits; the rest do not, which is itself a fact about the posting.
+Recorded in `jd-source` front matter. **22 of 28** postings say where the role sits; the rest do not, which is itself a fact about the posting.
 
 | Company | Placement as stated |
 |---|---|
@@ -112,6 +112,7 @@ Recorded in `jd-source` front matter. **21 of 28** postings say where the role s
 | Apple | Product, Design & Marketing team on Apple Services; HI Writing discipline |
 | Chime | Not stated as a department; framed within Chime's member support organization |
 | CoLab | Not stated as a department; the role works closely with the CMO |
+| Figma | UX Writing team |
 | GM | Human Interface Design (HID) organization; Language Systems team within HID |
 | HelloFresh | Category: Software Engineering |
 | Insurify | Not stated as a department; partners with the Editor in Chief and editorial leadership |

@@ -2,7 +2,7 @@
   "meta": {
     "title": "BCO Content Skills Tracker",
     "description": "A curated skills tracker for the content design community.",
-    "lastUpdated": "2026-08-01",
+    "lastUpdated": "2026-08-02",
     "totalEntries": 28
   },
   "entries": [
@@ -399,7 +399,6 @@
         "terminology-governance",
         "content-systems-design",
         "ai-content-governance",
-        "ai-tooling",
         "taxonomy"
       ],
       "signals": [
@@ -413,12 +412,12 @@
         "max": 250000,
         "currency": "USD",
         "covers": "base",
-        "scope": null,
+        "scope": "San Francisco or New York hubs",
         "extras": "equity + bonus"
       },
       "sourceUrl": null,
       "dateAdded": "2026-06-10",
-      "note": "Source posting not archived. This entry was written from a posting read on 2026-06-10 that was not kept and has not been recovered, so its clusters, signals, and compensation range cannot be checked against source text. It is the only remaining entry in that position. Treat the assignments and the stated range as unverified until the posting resurfaces."
+      "quote": "While the title of this role is “UX Writer,” you might think of yourself as a content engineer as much as a writer — someone who uses language to shape how people interact with AI, from crafting better inputs to defining clear, consistent outputs."
     },
     {
       "id": "accenture-content-strategist-agentic-commerce",
