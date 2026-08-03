@@ -18,7 +18,7 @@ docs/index.html       — Dashboard at signals.bertino.co
 Each entry in `jobs.json` includes:
 
 - `company` / `domain` — basics
-- `title` — stored verbatim. Em dash and pipe separators are normalized to commas at render, so the site and `jobs.json` differ on some entries by design. A forward slash joining two titles for one role is preserved. Never edit a title to match what the site shows — see "Title field" in `CLAUDE.md`
+- `title` — normalized at render
 - `clusters` — responsibility areas the role covers
 - `signals` — skills and observable patterns
 - `compRange` — stated range, plus `covers` (`base` / `total` / `null` when the JD does not say), `scope` (location the range is tied to), and `extras` (what sits on top, recorded but not displayed)
