@@ -15,41 +15,41 @@ let globalData = null;
 // for the rules these strings follow and why each one is worded this way.
 const COPY = {
   loading: {
-    title: 'Loading the dataset…',
+    title: 'Loading…',
   },
   empty: {
     clusters: {
-      title: 'No responsibilities yet.',
-      body: 'Responsibilities appear here once the first job description is audited into the dataset.',
+      title: 'No responsibilities yet',
+      body: 'Responsibilities appear here once the first job description is audited successfully.',
     },
     signals: {
-      title: 'No skills have crossed the threshold yet.',
-      body: `Skills appear here once ${SIGNAL_THRESHOLD} or more postings ask for them. One posting is an anecdote.`,
+      title: 'No skills yet',
+      body: `Skills appear here once ${SIGNAL_THRESHOLD} or more postings ask for them.`,
     },
     titles: {
-      title: 'No roles yet.',
-      body: 'Roles appear here as job descriptions are audited into the dataset.',
+      title: 'No roles yet',
+      body: 'Roles appear here as job descriptions are added to the dataset.',
     },
   },
   error: {
     offline: {
-      title: "You're offline.",
+      title: "You're offline",
       body: 'Reconnect and try again.',
       retry: true,
     },
     network: {
-      title: "The dataset didn't load.",
+      title: "The dataset didn't load",
       body: 'This is on our end. Try again, or come back in a few minutes.',
       retry: true,
     },
     timeout: {
-      title: 'The dataset is taking too long.',
+      title: 'The dataset is taking too long',
       body: 'The request timed out before the file came back. Try again.',
       retry: true,
     },
     malformed: {
-      title: "The dataset loaded, but we couldn't read it.",
-      body: 'Retrying won\'t fix this one. Email <a href="mailto:joe@bertino.co">joe@bertino.co</a> and we\'ll take a look.',
+      title: "The dataset loaded, but we couldn't read it",
+      body: 'Retrying won\'t fix this one. Email <a href="mailto:joe@bertino.co">joe@bertino.co</a> to take a look.',
       retry: false,
     },
   },
