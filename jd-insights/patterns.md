@@ -124,6 +124,12 @@ A stated range is not a comparable number without knowing what it measures.
 This is what the `covers` field in `compRange` exists to record, and why it is
 left null rather than assumed.
 
+The inverse also occurs. **Nscale**, a London posting held as an excluded
+record, names every component and no figure: "Highly competitive package (base
++ equity + bonus) with reviews every 12 months." Enough structure to look like
+a disclosure, nothing in it to compare. Every posting in the corpus that states
+a number is US or Canadian.
+
 ## Formatting artifacts survive into the archive
 
 Retained deliberately in `jd-source`, since they are facts about the posting:

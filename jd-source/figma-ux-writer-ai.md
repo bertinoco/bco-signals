@@ -8,7 +8,7 @@ orgPlacement: UX Writing team
 postedDate: null
 reqId: null
 dateAdded: 2026-06-10
-captured: 2026-08-02
+captured: 2026-08-03
 captureMethod: transcribed-from-screenshots
 partial: true
 captureNote: >

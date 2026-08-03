@@ -20,7 +20,7 @@ excludedReason: >
   compensation range of $193,000–$269,000 with covers set to base — seventeen
   assertions, none of which could be checked once the corpus was built. It was
   one of only two entries in that position. The other, Figma UX Writer, AI, was
-  recovered from screenshots on 2026-08-02 and verified against its source;
+  recovered from screenshots on 2026-08-03 and verified against its source;
   this is now the only posting in the corpus with no text behind it.
 
   Nothing here suggests the original audit was wrong. The Accenture entry,
