@@ -1,4 +1,4 @@
-# BCO Skills Tracker — Claude Instructions
+# BCO Signals — Claude Instructions
 
 ## Data integrity rules
 
