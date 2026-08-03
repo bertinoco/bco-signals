@@ -17,14 +17,14 @@ alone — that is Step 2 of the audit process and this file does not amend it. I
 a finding here seems to justify an assignment, the finding has drifted from its
 evidence.
 
-Figures below are as of **29 entries, 2026-08-01**. They move. Regenerate
+Figures below are as of **28 entries, 2026-08-03**. They move. Regenerate
 `stats.md` before quoting any of them.
 
 ---
 
 ## Content standards are being pulled into central functions
 
-**What the data shows.** Seven of 29 postings describe content standards owned
+**What the data shows.** Seven of 28 postings describe content standards owned
 by one central or horizontal function, with distributed teams consuming them:
 Adobe, Ally, JPMorgan Chase, LinkedIn, Meta, Netflix, OpenAI. Seven companies,
 six industries. They describe it in their own words rather than a shared
@@ -51,9 +51,9 @@ and the other branch ends somewhere closer to platform engineering.
 
 ## The work has moved from producing content to producing systems
 
-**What the data shows.** Content systems design appears in 26 of 29 postings
-(90%). Enablement — building templates, playbooks, and guidance so other people
-can write — appears in 24 (83%). Both are more common than any craft
+**What the data shows.** Content systems design appears in 25 of 28 postings
+(89%). Enablement — building templates, playbooks, and guidance so other people
+can write — appears in 23 (82%). Both are more common than any craft
 responsibility.
 
 Several postings say outright that writing is not the job. CoLab: "not by
@@ -70,23 +70,45 @@ people who are excellent at the mechanism.
 
 ## AI fluency is a baseline, not a differentiator
 
-**What the data shows.** 18 of 29 postings (62%) expect the candidate to
+**What the data shows.** 17 of 28 postings (61%) expect the candidate to
 already be working with AI tools — not curious about them. HelloFresh names the
 tools: "Active usage of AI as a core part of your daily workflow… building
 rapid interactive prototypes (using tools like Claude Code, Gemini, or Figma
 AI)." Wealthsimple asks for "shipping your own code changes" via AI.
 
+The 11 postings that omit it are not the ones you would guess. Whether a
+content role involves AI does not track whether the employer builds AI. Two
+excluded records are AI companies posting content roles with no AI in the work
+at all: Google's YouTube Staff UX Content Designer, rejected because the JD
+contains no occurrence of *ai, llm, model, generative, automation, machine
+learning, agent* or *prompt*; and Nscale, which sells AI infrastructure and
+posted for website copy, a style guide, and page-level information
+architecture. Inside the dataset, LinkedIn's Staff Content Architect and
+Netflix's Staff Content Designer, NCXD carry no AI cluster or signal either.
+
+It runs the other way too. AI fluency is stated by a carmaker (GM), a meal-kit
+company (HelloFresh), three fintechs (Sanna, Wealthsimple, Chime), a
+consultancy (Accenture) and a rideshare platform (The Ride Platform).
+
 **What I think it means.** The interesting thing is where it sits in the
 postings — alongside portfolio requirements, in minimum qualifications, not in
 a "nice to have" list. Two years ago this would have been a differentiator. It
-now reads the way "proficiency in Figma" reads, and the roles that omit it are
-the more notable ones.
+now reads the way "proficiency in Figma" reads.
+
+The counter-cases say something the headline number hides. AI in a content role
+is a fact about the content function, not about the employer's product. An AI
+infrastructure company can hire a content designer to write landing pages, and
+a meal-kit company can require daily use of Claude Code. So "do they work on
+AI?" is the wrong question to ask about a prospective employer. The one that
+predicts the job is whether the content function has been given a systems
+mandate — and that is visible in the posting, in whether the responsibilities
+describe building mechanisms or producing pages.
 
 ## Nobody agrees what this work is worth
 
 **What the data shows.** Stated ranges run from **$65,000** (Insurify, Editor,
 AI Content Systems) to **$710,000** (Netflix, Staff Systems Designer,
-Language). Both have "Systems" in the title. 22 of 29 postings state a range.
+Language). Both have "Systems" in the title. 21 of 28 postings state a range.
 Adobe alone states two different ranges in one posting depending on location.
 
 **What I think it means.** An order of magnitude between two roles whose titles
@@ -98,7 +120,7 @@ articulate scope precisely in an interview.
 
 ## Content roles are appearing outside design orgs
 
-**What the data shows.** 21 of 29 postings state where the role sits, and the
+**What the data shows.** 22 of 28 postings state where the role sits, and the
 placements do not cluster in design. HelloFresh files its Staff AI Content
 Designer under "Category: Software Engineering". Ally's Content Architect sits
 in "Career area: Marketing". Notion's is in Customer Experience; LinkedIn's in
@@ -142,7 +164,7 @@ Notion's "Optimize the KB for AI retrieval" is internal knowledge retrieval.
 **`ai-native-expectation` label versus description.** The label reads "AI
 fluency expected", broad enough to cover roles that optimize content *for* AI
 consumption. The description narrows it to "actively working with AI tools",
-and all 18 assignments follow the narrow reading. Ally was declined on that
+and all 17 assignments follow the narrow reading. Ally was declined on that
 basis. Left alone deliberately; noted because the gap makes the call look
 arbitrary from the label alone.
 
@@ -158,13 +180,21 @@ positioning. The dataset is filtered *toward* forward-leaning roles by
 construction. It shows what ambitious employers are asking for. It says nothing
 about the median content design job.
 
-**n = 29, over about ten weeks.** Enough to notice a pattern across companies.
+**n = 28, over about ten weeks.** Enough to notice a pattern across companies.
 Not enough for a trend over time, and the entries are unevenly distributed —
-16 landed in a single seeding batch in May.
+15 landed in May, nine of them on a single day.
 
 **`dateAdded` is not a posting date.** Where both are known the gap runs from
 zero to sixty-six days. Any claim about change over time needs `postedDate`,
 which only a minority of postings state.
+
+**Excluded records prove existence, not rate.** The AI fluency finding cites
+two postings that were never admitted to the dataset — YouTube and Nscale — to
+show that AI companies do post content roles with no AI in the work. That is a
+fair use of them: an existence claim needs one instance and survives the
+selection filter, because a rejected posting was still read in full. It does
+not license a rate. Nothing here supports "x% of AI companies do this", since
+excluded postings are archived only when someone happened to submit one.
 
 **Taxonomy keys understate their own frequency.** A key created in July was not
 retroactively applied to entries audited in May unless someone went back —
