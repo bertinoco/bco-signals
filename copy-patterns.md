@@ -33,7 +33,7 @@ below.
 
 ## Loading
 
-One string, everywhere: **Loading the dataset…**
+One string, everywhere: **Loading…**
 
 Decisions:
 
@@ -56,20 +56,22 @@ Two situations that look identical on screen and read differently:
 **Nothing here yet.** The dataset genuinely has no rows of this kind. State that,
 then say what would put something here.
 
-> No roles yet.
-> Roles appear here as job descriptions are audited into the dataset.
+> No roles yet
+> Roles appear here as job descriptions are added to the dataset.
 
 **Nothing cleared the bar.** Rows exist, but a rule filtered them all out. State
-that, then explain the rule — otherwise the reader assumes the page is broken.
+that simply — don't explain the rule to the reader.
 
-> No skills have crossed the threshold yet.
-> Skills appear here once 2 or more postings ask for them. One posting is an anecdote.
+> No skills yet
+> Skills appear here once 2 or more postings ask for them.
 
 Decisions:
 
-- **Name the rule when a rule is doing the filtering.** The signals panel hides
-  anything below the threshold. A reader who can't see the rule can't tell the
-  difference between an empty dataset and a strict filter.
+- **Titles have no trailing punctuation.** State what's missing in three words or
+  fewer. A period makes a fragment look like a sentence that got cut off.
+- **Don't explain the threshold to the reader.** The rule behind the empty state
+  is internal detail. Name what's missing; trust the body to imply that more
+  entries would change it.
 - **No exhortation.** We don't tell the reader to check back soon or follow
   along. The site doesn't have a subscribe button and shouldn't imply one.
 - **Empty is not an error.** No alarm styling, no `role="alert"`, no retry
@@ -81,10 +83,10 @@ Four kinds, because they need four different things from the reader.
 
 | Kind | When | Copy | Action |
 |---|---|---|---|
-| `offline` | `navigator.onLine` is false, or the request fails while offline | **You're offline.** / Reconnect and try again. | Try again |
-| `network` | Non-2xx response, or the request throws | **The dataset didn't load.** / This is on our end. Try again, or come back in a few minutes. | Try again |
-| `timeout` | No response within 10s | **The dataset is taking too long.** / The request timed out before the file came back. Try again. | Try again |
-| `malformed` | The response isn't valid JSON, or is missing `entries`, `clusters`, or `signals` | **The dataset loaded, but we couldn't read it.** / Retrying won't fix this one. Email joe@bertino.co and we'll take a look. | None — email link in the body |
+| `offline` | `navigator.onLine` is false, or the request fails while offline | **You're offline** / Reconnect and try again. | Try again |
+| `network` | Non-2xx response, or the request throws | **The dataset didn't load** / This is on our end. Try again, or come back in a few minutes. | Try again |
+| `timeout` | No response within 10s | **The dataset is taking too long** / The request timed out before the file came back. Try again. | Try again |
+| `malformed` | The response isn't valid JSON, or is missing `entries`, `clusters`, or `signals` | **The dataset loaded, but we couldn't read it** / Retrying won't fix this one. Email joe@bertino.co to take a look. | None — email link in the body |
 
 Decisions:
 
