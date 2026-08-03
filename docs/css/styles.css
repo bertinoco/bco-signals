@@ -365,6 +365,15 @@ body {
   border-bottom: none;
 }
 
+/* The click target is the summary row (header/attrib/date), not the whole
+   entry — the expanded detail below is excluded in JS so its text stays
+   selectable, so the pointer cursor matches that boundary here. */
+.title-entry.is-expandable > .title-header,
+.title-entry.is-expandable > .title-attrib,
+.title-entry.is-expandable > .title-date {
+  cursor: pointer;
+}
+
 /* Exempt from the .title-entry > * reading-measure cap: this row's
    space-between needs the full row width so the expand button lands at
    the true right edge, matching the border-bottom below it. */
