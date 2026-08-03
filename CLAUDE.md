@@ -292,8 +292,12 @@ Each entry may include an optional `quote` field — a direct excerpt from the J
 
 `docs/index.html` loads its assets with a query-string cache-buster:
 
-    <link rel="stylesheet" href="css/styles.css?v=23">
-    <script src="js/scripts.js?v=6"></script>
+    <link rel="stylesheet" href="css/styles.css?v=N">
+    <script src="js/scripts.js?v=N"></script>
+
+Read `index.html` for the current numbers. They are not reproduced here,
+because a version written into this file goes stale the next time an asset
+changes and then reads as the value to restore.
 
 Browsers cache those files against that string. A change to `scripts.js` or
 `styles.css` that does not bump the matching `?v=` number ships to nobody —
@@ -303,9 +307,33 @@ silently disagrees with the repo.
 Bump the version in the same commit as the change. Never bump one asset's
 version to publish a change to the other; they are cached independently.
 
-This has already been missed once. `?v=4` was set in `abc7714`, `scripts.js`
-changed afterwards in `f149926`, and the footer went on rendering a date
-format the source had already stopped producing.
+`index.html` carries no version string of its own, so a change to it is not
+gated behind a bump the way the assets are. Some state copy exists twice — as
+static markup in `index.html` and as a string in the `COPY` object in
+`scripts.js`. Changing one is a reason to check the other, in both directions. A missed bump on a shared string is worse than a
+missed bump elsewhere: instead of shipping nothing, the page paints the new
+copy from the HTML and the cached script replaces it with the old.
+
+To check whether an asset is in sync, compare the commit that last touched it
+against the commit that last set its version:
+
+    git log -1 --format='%h %s' -- docs/js/scripts.js
+    git log -G'scripts\.js\?v=' -1 --format='%h %s' -- docs/index.html
+
+If the first is newer than the second, the change has not shipped. Use `-G`,
+not `-S`: a bump does not change how many times `scripts.js?v=` appears in the
+file, so `-S` matches only the commit that first added the line.
+
+This has now been missed twice.
+
+- `?v=4` was set in `abc7714`, `scripts.js` changed afterwards in `f149926`,
+  and the footer went on rendering a date format the source had already
+  stopped producing.
+- `?v=16` was set in `c1bce75`. `b628392` rewrote all ten strings in the
+  `COPY` object without bumping it, and `c00fd9f` then changed the same
+  loading string in `index.html`. The page painted "Loading…" from the markup
+  and the cached script re-rendered the slot as "Loading the dataset…".
+  Fixed in `d7f9113`.
 
 ## Insights directory
 
