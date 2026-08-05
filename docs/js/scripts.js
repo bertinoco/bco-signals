@@ -304,7 +304,7 @@ function renderTitles(data) {
       : '';
 
     return `
-      <div class="title-entry">
+      <div class="title-entry${hasDetail ? ' is-expandable' : ''}">
         <div class="title-header">
           <div class="title-name">${formatTitle(entry.title)}</div>
           ${expandBtn}
@@ -316,10 +316,14 @@ function renderTitles(data) {
     `;
   }).join('');
 
-  // Expand/collapse on click
-  list.querySelectorAll('.title-expand').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const entry = btn.closest('.title-entry');
+  // Expand/collapse: the whole summary row is the hit target, not just the
+  // icon, so a reader can click anywhere on a line item to open it. Clicks
+  // inside the detail region itself are excluded so selecting the quote text
+  // doesn't collapse the row out from under it.
+  list.querySelectorAll('.title-entry.is-expandable').forEach(entry => {
+    const btn = entry.querySelector('.title-expand');
+    entry.addEventListener('click', (e) => {
+      if (e.target.closest('.title-detail')) return;
       const isOpen = entry.classList.toggle('is-expanded');
       btn.setAttribute('aria-expanded', String(isOpen));
       btn.textContent = isOpen ? '−' : '+';
