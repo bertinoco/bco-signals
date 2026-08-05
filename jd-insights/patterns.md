@@ -12,7 +12,7 @@ Every claim here should name the companies it came from, so a reader can go to
 
 ## Roles defined by what they are not
 
-Four postings define scope by exclusion, and the more senior the role, the more
+Five postings define scope by exclusion, and the more senior the role, the more
 formal the device gets.
 
 **Adobe** goes furthest, with a headed section:
@@ -27,6 +27,12 @@ formal the device gets.
 Three others do it in a sentence: Sanna's "This isn't a traditional content
 role", Wealthsimple's "This isn't a polish-the-copy-at-the-end role",
 HelloFresh's "This isn't a chatbot role."
+
+**Meta**'s AI Content Strategy Lead uses it to fence off authority rather than
+craft: "The role will not directly manage teams or own AI platforms, but will
+influence and align stakeholders across organizations." The other four exclude
+kinds of work. This one excludes the levers for doing it, in a posting that
+also asks the holder to define requirements the platform teams build to.
 
 Worth noticing because it is doing real work. Adobe's disclaimers rule out
 three cluster assignments that its surface language would otherwise support —

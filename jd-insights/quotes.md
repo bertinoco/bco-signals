@@ -3,7 +3,7 @@
 
 # Quotes
 
-Every stored quote, verbatim from the posting. **27 of 28** entries carry one.
+Every stored quote, verbatim from the posting. **28 of 29** entries carry one.
 
 These are the lines that anchor each entry's cluster and signal assignments, so they are the strongest citable evidence in the dataset. Each is checked against its `jd-source` archive before commit.
 
@@ -96,6 +96,12 @@ These are the lines that anchor each entry's cluster and signal assignments, so 
 > Strong editorial judgment and creative problem-solving skills, ability to document judgement logic into reusable frameworks to scale across teams.
 
 `meta-product-content-engineer` · added 2026-05-25
+
+### Meta — AI Content Strategy Lead
+
+> Design the knowledge architecture that structures customer insights, brand voice, audience context, messaging frameworks, and campaign intelligence for real-time access by AI agents and content generation systems.
+
+`meta-ai-content-strategy-lead` · added 2026-08-05
 
 ### Netflix — Staff Content Designer, NCXD
 

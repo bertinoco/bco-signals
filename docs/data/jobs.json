@@ -2,8 +2,8 @@
   "meta": {
     "title": "BCO Content Skills Tracker",
     "description": "A curated skills tracker for the content design community.",
-    "lastUpdated": "2026-08-03",
-    "totalEntries": 28
+    "lastUpdated": "2026-08-05",
+    "totalEntries": 29
   },
   "entries": [
     {
@@ -474,7 +474,8 @@
       ],
       "signals": [
         "governance-as-value-prop",
-        "content-adjacent"
+        "content-adjacent",
+        "agent-retrieval"
       ],
       "compRange": {
         "min": 136000,
@@ -868,6 +869,44 @@
       "dateAdded": "2026-08-01",
       "quote": "As Content Systems Architect, you’re responsible for the architecture that turns Adobe’s editorial and AI-generated language standards into working systems.",
       "note": "The posting carries a 'What this role Is not' section that explicitly disclaims editorial standard-setting, AI behavior governance, adoption programs, and product-level copy. Those disclaimers are why terminology-governance, ai-content-governance and governance-as-value-prop are not assigned despite surface language that would otherwise support them. The posting also states a separate California range of $189,400-$274,300; the recorded range is the US one, the role being Florida-remote."
+    },
+    {
+      "id": "meta-ai-content-strategy-lead",
+      "company": "Meta",
+      "title": "AI Content Strategy Lead",
+      "domain": "Big Tech",
+      "engagement": "Not specified",
+      "location": "Austin, TX (+4 locations)",
+      "remote": null,
+      "coreFrame": "Knowledge architecture structuring marketing expertise for real-time retrieval by AI agents, content strategy requirements informing AI marketing platform capabilities, governance guardrails and evaluation frameworks for AI-generated content, measurement of AI content system impact",
+      "clusters": [
+        "taxonomy",
+        "ai-content-governance",
+        "content-systems-design",
+        "ai-tooling",
+        "enablement"
+      ],
+      "signals": [
+        "ai-native-expectation",
+        "enabler-not-bottleneck",
+        "governance-as-value-prop",
+        "model-behavior-design",
+        "language-infrastructure",
+        "content-marketing-adjacent",
+        "central-standards-function",
+        "agent-retrieval"
+      ],
+      "compRange": {
+        "min": 182000,
+        "max": 252000,
+        "currency": "USD",
+        "covers": "base",
+        "scope": null,
+        "extras": "bonus + equity"
+      },
+      "sourceUrl": null,
+      "dateAdded": "2026-08-05",
+      "quote": "Design the knowledge architecture that structures customer insights, brand voice, audience context, messaging frameworks, and campaign intelligence for real-time access by AI agents and content generation systems."
     }
   ],
   "clusters": {
@@ -960,6 +999,10 @@
     "central-standards-function": {
       "label": "Central standards function",
       "description": "Content standards owned by one central or horizontal function, with distributed teams consuming them inside set guardrails. Roles describe sitting above channels, acting as a single accountable owner, or publishing playbooks other teams adapt. It's a structural answer to where content work sits — and the opposite of embedding writers in product teams."
+    },
+    "agent-retrieval": {
+      "label": "Structured for agent retrieval",
+      "description": "Content structured so AI systems can retrieve and apply it at generation time. Not search optimization and not schema markup — this is the knowledge layer a model reads from before it writes. A small pattern so far, and it places content work upstream of the output rather than after it."
     }
   }
 }

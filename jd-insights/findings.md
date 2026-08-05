@@ -17,17 +17,17 @@ alone — that is Step 2 of the audit process and this file does not amend it. I
 a finding here seems to justify an assignment, the finding has drifted from its
 evidence.
 
-Figures below are as of **28 entries, 2026-08-03**. They move. Regenerate
+Figures below are as of **29 entries, 2026-08-05**. They move. Regenerate
 `stats.md` before quoting any of them.
 
 ---
 
 ## Content standards are being pulled into central functions
 
-**What the data shows.** Seven of 28 postings describe content standards owned
+**What the data shows.** Eight of 29 postings describe content standards owned
 by one central or horizontal function, with distributed teams consuming them:
-Adobe, Ally, JPMorgan Chase, LinkedIn, Meta, Netflix, OpenAI. Seven companies,
-six industries. They describe it in their own words rather than a shared
+Adobe, Ally, JPMorgan Chase, LinkedIn, Meta (twice), Netflix, OpenAI. Seven
+companies, six industries. They describe it in their own words rather than a shared
 vocabulary — Netflix's "centralized authority" over "a decentralized content
 design community", Ally's "sits above channels and formats", LinkedIn's "single
 accountable owner", JPMorgan's "partner playbooks and variation guidelines",
@@ -51,9 +51,9 @@ and the other branch ends somewhere closer to platform engineering.
 
 ## The work has moved from producing content to producing systems
 
-**What the data shows.** Content systems design appears in 25 of 28 postings
-(89%). Enablement — building templates, playbooks, and guidance so other people
-can write — appears in 23 (82%). Both are more common than any craft
+**What the data shows.** Content systems design appears in 26 of 29 postings
+(90%). Enablement — building templates, playbooks, and guidance so other people
+can write — appears in 24 (83%). Both are more common than any craft
 responsibility.
 
 Several postings say outright that writing is not the job. CoLab: "not by
@@ -70,7 +70,7 @@ people who are excellent at the mechanism.
 
 ## AI fluency is a baseline, not a differentiator
 
-**What the data shows.** 17 of 28 postings (61%) expect the candidate to
+**What the data shows.** 18 of 29 postings (62%) expect the candidate to
 already be working with AI tools — not curious about them. HelloFresh names the
 tools: "Active usage of AI as a core part of your daily workflow… building
 rapid interactive prototypes (using tools like Claude Code, Gemini, or Figma
@@ -108,7 +108,7 @@ describe building mechanisms or producing pages.
 
 **What the data shows.** Stated ranges run from **$65,000** (Insurify, Editor,
 AI Content Systems) to **$710,000** (Netflix, Staff Systems Designer,
-Language). Both have "Systems" in the title. 21 of 28 postings state a range.
+Language). Both have "Systems" in the title. 22 of 29 postings state a range.
 Adobe alone states two different ranges in one posting depending on location.
 
 **What I think it means.** An order of magnitude between two roles whose titles
@@ -120,15 +120,16 @@ articulate scope precisely in an interview.
 
 ## Content roles are appearing outside design orgs
 
-**What the data shows.** 22 of 28 postings state where the role sits, and the
+**What the data shows.** 23 of 29 postings state where the role sits, and the
 placements do not cluster in design. HelloFresh files its Staff AI Content
 Designer under "Category: Software Engineering". Ally's Content Architect sits
 in "Career area: Marketing". Notion's is in Customer Experience; LinkedIn's in
 a Knowledge Management Solutions team under a department called GBO. Adobe's is
 tagged to two categories at once — Design, and Engineering and Product.
 
-Four postings sit in marketing or editorial functions while describing
-substantive systems work: CoLab, Insurify, The Ride Platform, Ally.
+Five postings sit in marketing or editorial functions while describing
+substantive systems work: CoLab, Insurify, The Ride Platform, Ally, and Meta's
+AI Content Strategy Lead, which sits in Business Marketing.
 
 **What I think it means.** The discipline is being claimed by several
 functions at once, and none of them has won. This is the most under-discussed
@@ -140,12 +141,14 @@ assume it stays in design. The postings do not.
 # Watching
 
 Patterns with real evidence that have not been given a taxonomy key, recorded
-so they are not rediscovered from scratch. Step 4's bar still applies: a new
+so they are not rediscovered from scratch. Entries stay here after a key is
+created, marked resolved, so the reasoning survives the promotion. Step 4's bar still applies: a new
 instance updates a count, it does not promote a pattern to a finding.
 
-**Measurement and evaluation frameworks — 11 instances.** OpenAI (evals,
+**Measurement and evaluation frameworks — 12 instances.** OpenAI (evals,
 evaluation rubrics), Netflix and Spotify (evaluation frameworks), Meta
-(measurement frameworks), LinkedIn (architecture health metrics), GM and Notion
+(measurement frameworks, twice — the AI Content Strategy Lead states both
+evaluation frameworks and business-impact measurement), LinkedIn (architecture health metrics), GM and Notion
 (content QA), Ride Platform (success metrics), Chime (content quality metrics,
 automated governance dashboards), Ally (success metrics and measurement
 frameworks). The largest un-keyed pattern in the corpus. Held because it
@@ -153,18 +156,39 @@ overlaps `governance-as-value-prop` heavily and cannot yet be separated
 cleanly. *Trigger to revisit: a posting where measurement is the work rather
 than a governance byproduct.*
 
-**Content built for machine consumption — 7 instances.** Ally, Phase2,
-LinkedIn, Netflix, Ride Platform, Notion, Spotify. Held because five of the
-seven are already covered by `geo-seo` or `structured-data`; a new key would
-mostly restate them. The interesting residue is Notion and Spotify, which
-describe optimizing for machine retrieval with no search or schema dimension —
-Notion's "Optimize the KB for AI retrieval" is internal knowledge retrieval.
-*Trigger to revisit: a third instance carrying neither existing key.*
+**Content built for machine consumption — resolved into `agent-retrieval`,
+2026-08-05.** This entry named Notion and Spotify as the residue carrying
+neither `geo-seo` nor `structured-data`, and set the trigger at a third such
+instance. Checking that claim against the entries showed it was wrong: neither
+Spotify posting is a retrieval case. The Annotation Manager is ML training data
+(`classification-for-ml`) and the Conversation Designer is conversation design
+(`model-behavior-design`). The residue was Notion alone.
+
+Meta's AI Content Strategy Lead is therefore the second instance, not the
+third — Notion's "so the right people (and the right agents) can retrieve the
+right information at the right time" beside Meta's "for real-time access by AI
+agents and content generation systems." Two companies, two industries, the same
+structural move: a knowledge substrate a model reads from at generation time,
+distinct from public search, from schema markup, and from training data.
+
+Keyed at two instances rather than three, which is the floor of Step 4's bar
+and not comfortably past it. If a third does not appear, this is the one to
+revisit and consider folding back.
+
+**`content-marketing-adjacent` description versus use.** The description reads
+"systems and architecture language is being used to describe what is
+fundamentally content marketing work… the core responsibilities haven't
+shifted." All five holders contradict it — CoLab, Insurify, Ride Platform, Ally
+and Meta were each admitted *because* their systems responsibilities were
+substantive, and CLAUDE.md's marketing-sited note instructs assigning the key
+on placement rather than on hollowness. The key is doing one job and its
+description claims another. Noted rather than rewritten, because the
+description is user-facing card copy.
 
 **`ai-native-expectation` label versus description.** The label reads "AI
 fluency expected", broad enough to cover roles that optimize content *for* AI
 consumption. The description narrows it to "actively working with AI tools",
-and all 17 assignments follow the narrow reading. Ally was declined on that
+and all 18 assignments follow the narrow reading. Ally was declined on that
 basis. Left alone deliberately; noted because the gap makes the call look
 arbitrary from the label alone.
 
@@ -180,7 +204,7 @@ positioning. The dataset is filtered *toward* forward-leaning roles by
 construction. It shows what ambitious employers are asking for. It says nothing
 about the median content design job.
 
-**n = 28, over about ten weeks.** Enough to notice a pattern across companies.
+**n = 29, over about ten weeks.** Enough to notice a pattern across companies.
 Not enough for a trend over time, and the entries are unevenly distributed —
 15 landed in May, nine of them on a single day.
 
