@@ -198,8 +198,9 @@ not load-bearing.
 *The vocabulary.* The thread's author, working solo across both, splits the
 work into "deterministic UX writing, in close collaboration with product
 designers" and "model design (shaping system instructions and LLJ in the
-codebase with eng/ML teams)". **Deterministic** is the useful word, and this
-repository adopts it. Deterministic content work authors the artifact: you
+codebase with eng/ML teams)". **Deterministic** is the useful word. It and its
+counterpart **generative** are defined under Vocabulary in CLAUDE.md, which is
+where the pairing is maintained. Deterministic content work authors the artifact: you
 write the string, the string ships, the user sees that string every time, and
 review means reading it. Generative content work authors the constraints on a
 generator and the criteria for judging what it emits. The output varies per

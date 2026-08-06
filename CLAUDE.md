@@ -335,6 +335,35 @@ This has now been missed twice.
   and the cached script re-rendered the slot as "Loading the dataset…".
   Fixed in `d7f9113`.
 
+## Vocabulary
+
+Terms the repository has adopted because the dataset needed a word the
+postings do not supply. They are descriptive, not taxonomy: nothing here is a
+cluster or signal, and nothing here is ever assigned to an entry.
+
+**Deterministic**, and its counterpart **generative** — the two sides of what
+a content role authors.
+
+Deterministic content work authors the artifact. You write the string, the
+string ships, the user sees that string every time, and review means reading
+it. Generative content work authors a generator's constraints and the criteria
+for judging what it emits: output varies per invocation and most of it is
+never read by its author. Use the pair together; neither term carries the
+distinction alone.
+
+The term was borrowed from practice, where it appeared as "deterministic UX
+writing" set against "model design". It earns its place because the dataset
+had no word for the non-generative side, which left every description of the
+shift reaching for "AI versus not-AI" — a distinction that turned out not to
+track the work, as the AI fluency finding sets out.
+
+**It describes the work; it never ranks it.** Deterministic is not legacy,
+lesser, or superseded, and the pairing is not a maturity ladder. Most entries
+in the dataset are wholly or partly deterministic. Writing that implies
+otherwise breaks the no-value-judgments rule under Data integrity rules, and
+outruns the evidence besides — the corpus contains almost no postings that
+ask for the generative side by name.
+
 ## Insights directory
 
 `jd-insights/` holds what the dataset adds up to — current stats, every stored
