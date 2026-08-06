@@ -153,8 +153,15 @@ evaluation frameworks and business-impact measurement), LinkedIn (architecture h
 automated governance dashboards), Ally (success metrics and measurement
 frameworks). The largest un-keyed pattern in the corpus. Held because it
 overlaps `governance-as-value-prop` heavily and cannot yet be separated
-cleanly. *Trigger to revisit: a posting where measurement is the work rather
-than a governance byproduct.*
+cleanly.
+
+The entry below suggests the separator: whether the measurement is executable.
+A framework reported on quarterly is governance. An eval suite that runs
+against a model and gates a release is engineering. The postings use the same
+vocabulary for both, which is why the pattern will not split on wording alone.
+*Trigger to revisit: a posting that states measurement running against system
+output on a cadence the system sets — evals, regression suites, automated
+scoring — rather than measurement reported to stakeholders.*
 
 **Content built for machine consumption — resolved into `agent-retrieval`,
 2026-08-05.** This entry named Notion and Spotify as the residue carrying
@@ -174,6 +181,79 @@ distinct from public search, from schema markup, and from training data.
 Keyed at two instances rather than three, which is the floor of Step 4's bar
 and not comfortably past it. If a third does not appear, this is the one to
 revisit and consider folding back.
+
+**Deterministic and generative content work are separating — and only one
+side is visible here.**
+
+*Source note.* This entry draws on practitioner testimony from a public
+professional-network thread, not on postings. It is a reliable industry
+channel and the participants describe roles they hold rather than roles they
+want filled, which makes it more direct than a JD and less checkable: nothing
+in it can be verified the way archived posting text can. It grounds no cluster
+or signal assignment, and it is recorded here because it names a distinction
+the dataset lacks a word for. Participants are not named. One claim in the
+thread — about layoffs at a specific employer — is omitted as unverifiable and
+not load-bearing.
+
+*The vocabulary.* The thread's author, working solo across both, splits the
+work into "deterministic UX writing, in close collaboration with product
+designers" and "model design (shaping system instructions and LLJ in the
+codebase with eng/ML teams)". **Deterministic** is the useful word, and this
+repository adopts it. Deterministic content work authors the artifact: you
+write the string, the string ships, the user sees that string every time, and
+review means reading it. Generative content work authors the constraints on a
+generator and the criteria for judging what it emits. The output varies per
+invocation and most of it is never read by its author.
+
+That reframes the shift. It is not AI versus no-AI, and not upstream versus
+downstream. It is artifact-authoring versus spec-and-test-authoring — and it
+explains why evaluation appears the moment model design does. Once output is
+probabilistic, quality cannot be checked by reading, so measurement stops
+being a governance byproduct and becomes the only available instrument.
+
+*Two moves get conflated.* Both read as "technical content work" and they are
+different jobs.
+
+- **Enforcement.** Content moves into the repository. Strings become YAML or
+  JSON, changes become pull requests, style rules become lint rules that fail
+  a build. Still fully deterministic — the artifact has relocated and gained
+  automated checking. The demanding part is that a rule must become
+  falsifiable: guidance that cannot be expressed as a check is either genuinely
+  contextual or was never a rule.
+- **Specification.** The generator's behavior is authored instead of the
+  output — system instructions, retrieval context, guardrails — and an eval
+  harness with model-graded rubrics reports whether it worked. The rubric is
+  the editorial standard written as a prompt and executed at scale.
+
+*What the corpus can see.* Model behavior shaping is keyed at six entries.
+Evals are named twice: OpenAI's "prompt creation, model-generated content,
+AI-assisted workflows, evals, quality rubrics" and Spotify's "writing and
+running evaluations". Structured formats twice: Spotify's "JSON, YAML, Python"
+and Netflix's "how those rules map to a JSON schema, metadata pipeline, or
+platform component". Working in code three times: Spotify's "comfortable
+working directly with LLMs and code", Wealthsimple's "shipping your own code
+changes", Figma's "design and technical environments, like Figma and GitHub".
+Spotify's Senior Conversation Designer is the only posting spanning nearly the
+whole picture, and it is from May.
+
+*What it cannot.* Lint rules: one near-match, GM's "linting engines", and that
+is adopting a purchased tool rather than authoring rules. LLM-as-judge: zero —
+every "judge" string in the corpus is "judgment". The two artifacts
+practitioners name most specifically are the two no posting asks for.
+
+*What I think it means.* The gap is a fact about the method, not about the
+practice. The testimony describes content designers at a large technology
+employer pivoting into building lint rules and YAML to catch content issues at
+the code source — a role that changed inside an existing org, with no new
+requisition. A dataset built from job postings cannot see role change that
+happens without a hiring event, and this is the clearest instance of that
+limit in the corpus. Expect the postings to lag this by some margin.
+
+*Trigger to revisit: a posting that names an eval harness, model-graded
+rubrics, or authored lint rules as a stated responsibility rather than as tool
+familiarity.* Two would justify separating the practice from
+`model-behavior-design`, which currently covers both writing a system
+instruction and building the harness that tests it.
 
 **`content-marketing-adjacent` description versus use.** The description reads
 "systems and architecture language is being used to describe what is
@@ -211,6 +291,14 @@ Not enough for a trend over time, and the entries are unevenly distributed —
 **`dateAdded` is not a posting date.** Where both are known the gap runs from
 zero to sixty-six days. Any claim about change over time needs `postedDate`,
 which only a minority of postings state.
+
+**It cannot see role change without a hiring event.** Every entry exists
+because someone opened a requisition. Work that arrives by internal pivot —
+an existing team taking on new responsibilities under unchanged titles —
+produces no posting and leaves no trace here. Practitioner testimony says this
+is how at least some codebase-level content work arrived. Treat the absence of
+a responsibility from the corpus as evidence about what employers advertise,
+never as evidence about what practitioners do.
 
 **Excluded records prove existence, not rate.** The AI fluency finding cites
 two postings that were never admitted to the dataset — YouTube and Nscale — to
