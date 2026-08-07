@@ -273,6 +273,18 @@ and all 18 assignments follow the narrow reading. Ally was declined on that
 basis. Left alone deliberately; noted because the gap makes the call look
 arbitrary from the label alone.
 
+**A dedicated single-discipline title for taxonomy work — one instance.**
+15 entries carry the `taxonomy` cluster, and in 14 of them taxonomy is one
+responsibility folded into a broader content-design, architecture, or
+strategy title: Wellhub's "Senior Global UX Writer, Content Systems", LinkedIn's
+"Staff Content Architect", Ally's "Content Architect", and so on. Meta's
+Taxonomist, Content Design is the first title in the corpus that names the
+discipline itself rather than a content role that happens to include it.
+First instance, so it stays here rather than becoming a key or a finding.
+*Trigger to revisit: a second posting titled for the classification
+discipline on its own — Taxonomist, Ontologist, Information Architect — rather
+than for a content role with taxonomy folded in.*
+
 ---
 
 # What this data cannot support

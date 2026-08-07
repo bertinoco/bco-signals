@@ -2,8 +2,8 @@
   "meta": {
     "title": "BCO Content Skills Tracker",
     "description": "A curated skills tracker for the content design community.",
-    "lastUpdated": "2026-08-05",
-    "totalEntries": 29
+    "lastUpdated": "2026-08-07",
+    "totalEntries": 30
   },
   "entries": [
     {
@@ -907,6 +907,39 @@
       "sourceUrl": null,
       "dateAdded": "2026-08-05",
       "quote": "Design the knowledge architecture that structures customer insights, brand voice, audience context, messaging frameworks, and campaign intelligence for real-time access by AI agents and content generation systems."
+    },
+    {
+      "id": "meta-taxonomist-content-design",
+      "company": "Meta",
+      "title": "Taxonomist, Content Design",
+      "domain": "Big Tech",
+      "engagement": "Full-time",
+      "location": "Seattle, WA",
+      "remote": false,
+      "coreFrame": "Taxonomy, ontology, and controlled-vocabulary design across product surfaces; governance standards, naming conventions, and metadata schemas for consistency at scale; cross-functional integration with search, recommendation, and localization systems; data- and research-driven validation of classification systems",
+      "clusters": [
+        "taxonomy",
+        "content-systems-design",
+        "technical-writing",
+        "terminology-governance"
+      ],
+      "signals": [
+        "language-infrastructure",
+        "governance-as-value-prop",
+        "central-standards-function",
+        "enabler-not-bottleneck"
+      ],
+      "compRange": {
+        "min": 120000,
+        "max": 171000,
+        "currency": "USD",
+        "covers": "base",
+        "scope": null,
+        "extras": "bonus + equity"
+      },
+      "sourceUrl": null,
+      "dateAdded": "2026-08-07",
+      "quote": "Design, build, and maintain taxonomies, ontologies, and controlled vocabularies that support content organization and navigation across Meta products and platforms."
     }
   ],
   "clusters": {

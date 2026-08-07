@@ -3,7 +3,7 @@
 
 # Quotes
 
-Every stored quote, verbatim from the posting. **28 of 29** entries carry one.
+Every stored quote, verbatim from the posting. **29 of 30** entries carry one.
 
 These are the lines that anchor each entry's cluster and signal assignments, so they are the strongest citable evidence in the dataset. Each is checked against its `jd-source` archive before commit.
 
@@ -102,6 +102,12 @@ These are the lines that anchor each entry's cluster and signal assignments, so 
 > Design the knowledge architecture that structures customer insights, brand voice, audience context, messaging frameworks, and campaign intelligence for real-time access by AI agents and content generation systems.
 
 `meta-ai-content-strategy-lead` · added 2026-08-05
+
+### Meta — Taxonomist, Content Design
+
+> Design, build, and maintain taxonomies, ontologies, and controlled vocabularies that support content organization and navigation across Meta products and platforms.
+
+`meta-taxonomist-content-design` · added 2026-08-07
 
 ### Netflix — Staff Content Designer, NCXD
 
