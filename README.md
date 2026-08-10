@@ -21,10 +21,10 @@ Each entry in `jobs.json` includes:
 - `title` — normalized at render
 - `clusters` — responsibility areas the role covers
 - `signals` — skills and observable patterns
-- `compRange` — stated range, plus `covers` (`base` / `total` / `null` when the JD does not say), `scope` (location the range is tied to), and `extras` (what sits on top, recorded but not displayed)
-- `quote` — optional verbatim excerpt from the JD that anchors the cluster and signal assignments
-- `note` — optional factual note about the role or posting
-- `tag` — optional, factual classifier (e.g. `non-content-role`, `content-adjacent`)
+- `compRange` — stated range, plus extras
+- `quote` — optional verbatim excerpt
+- `note` — optional factual note
+- `tag` — optional, factual classifier
 
 ---
 
