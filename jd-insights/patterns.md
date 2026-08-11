@@ -66,6 +66,13 @@ Google runs the same "As a UX writer, you are an advocate for Google design…"
 paragraph, and near-identical Responsibilities bullets, across the Search,
 Chrome, and YouTube postings. Only the role-specific middle paragraph differs.
 
+DeepMind's Senior Manager posting is the counter-example, and the only one in
+the corpus. It carries neither the shared "As a UX writer, you are an advocate
+for Google design…" paragraph nor the near-identical Responsibilities list, and
+is role-specific from its first sentence. The template is a default for Google
+product postings, not a rule for everything the company posts — worth knowing
+before treating shared phrasing as proof two postings came from the same team.
+
 The consequence is practical: a quote pulled from the shared section says
 nothing about the role. The quote originally anchoring the YouTube entry —
 "Lead the establishment and improvement of holistic UX writing and content
@@ -158,6 +165,14 @@ Retained deliberately in `jd-source`, since they are facts about the posting:
   into a high-performing business asset").
 - **Google** runs paragraphs together without a break ("...images.Google Ads is
   helping power...").
+- **DeepMind** leaks Material Symbols ligature names into the captured text
+  where the page renders icons — "corporate_fare", "place", "info_outline".
+  The scrape took the icon font's text content rather than the glyph. A reader
+  who does not recognise them may mistake them for field labels; they are
+  neither labels nor posting text.
+- **DeepMind** also leaves a preferred qualification unfinished: "emerging
+  interaction modalities such as voice-driven or platform." The sentence does
+  not complete in the source.
 - **Figma** mixes typographic and straight apostrophes within single sections —
   "Figma’s platform" and "whether you're brainstorming" sit in the same
   sentence, and "We’d love to hear from you" in the body becomes "We'd love to
