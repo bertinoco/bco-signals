@@ -130,6 +130,14 @@ A stated range is not a comparable number without knowing what it measures.
 This is what the `covers` field in `compRange` exists to record, and why it is
 left null rather than assumed.
 
+**Roblox**, also held as an excluded record, states a range and withdraws the
+commitment in the same paragraph: "in some circumstances, the actual salary
+could fall outside of this expected range. This pay range is subject to change
+and may be modified in the future." Every other posting in the corpus states a
+range and stops. This one qualifies the figure into a non-claim, which is a
+different failure from not stating what the range measures — the number is
+there and disowned rather than there and unlabelled.
+
 The inverse also occurs. **Nscale**, a London posting held as an excluded
 record, names every component and no figure: "Highly competitive package (base
 + equity + bonus) with reviews every 12 months." Enough structure to look like
