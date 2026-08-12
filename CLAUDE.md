@@ -242,6 +242,9 @@ reader to add it in.
   assumed to offer. Benefits and health coverage are not extras.
 - Where an entry has no `jd-source` archive, these fields cannot be verified.
   Archive the posting first.
+- When a JD lists separate ranges for multiple co-equal locations with no
+  single primary location, use the range for the largest city among them by
+  population, and set `scope` to that city.
 
 ## Title field
 
