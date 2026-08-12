@@ -151,6 +151,15 @@ record, names every component and no figure: "Highly competitive package (base
 a disclosure, nothing in it to compare. Every posting in the corpus that states
 a number is US or Canadian.
 
+**Capital One** states three ranges rather than one or two, and none is
+marked as primary: McLean, VA ($200,700–$229,100), New York, NY
+($219,000–$249,900), and Richmond, VA ($182,500–$208,300), each labeled "for
+Sr. Manager, Design" with no location called out as the base or the
+exception. Adobe's two-range posting still reads as a primary US figure plus
+a named California premium; this one gives three co-equal locations and lets
+the reader pick. The dataset records the largest-city figure (New York) per
+the comp range rule for co-equal locations with no stated primary.
+
 ## Formatting artifacts survive into the archive
 
 Retained deliberately in `jd-source`, since they are facts about the posting:
