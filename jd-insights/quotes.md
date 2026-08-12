@@ -3,7 +3,7 @@
 
 # Quotes
 
-Every stored quote, verbatim from the posting. **29 of 30** entries carry one.
+Every stored quote, verbatim from the posting. **30 of 31** entries carry one.
 
 These are the lines that anchor each entry's cluster and signal assignments, so they are the strongest citable evidence in the dataset. Each is checked against its `jd-source` archive before commit.
 
@@ -30,6 +30,12 @@ These are the lines that anchor each entry's cluster and signal assignments, so 
 > You understand that UX writing is not copywriting with less space. You think in systems, you know why consistency matters, and you're comfortable pushing back when a design choice undercuts the experience.
 
 `atria-ux-writer` · added 2026-07-13
+
+### Capital One — Senior Manager Content Designer (Individual Contributor)
+
+> Instead of focusing only on isolated product screens, you will focus on building the foundational tools — including content design systems, voice guidelines, and structured prompt libraries — that empower broader product design teams to handle day-to-day writing tasks independently.
+
+`capitalone-senior-manager-content-designer` · added 2026-08-12
 
 ### Chime — Senior Content Strategist
 

@@ -2,8 +2,8 @@
   "meta": {
     "title": "BCO Content Skills Tracker",
     "description": "A curated skills tracker for the content design community.",
-    "lastUpdated": "2026-08-07",
-    "totalEntries": 30
+    "lastUpdated": "2026-08-12",
+    "totalEntries": 31
   },
   "entries": [
     {
@@ -940,6 +940,41 @@
       "sourceUrl": null,
       "dateAdded": "2026-08-07",
       "quote": "Design, build, and maintain taxonomies, ontologies, and controlled vocabularies that support content organization and navigation across Meta products and platforms."
+    },
+    {
+      "id": "capitalone-senior-manager-content-designer",
+      "company": "Capital One",
+      "title": "Senior Manager Content Designer (Individual Contributor)",
+      "domain": "Finance",
+      "engagement": "Full-time",
+      "location": "McLean, VA | Richmond, VA | New York, NY",
+      "remote": false,
+      "coreFrame": "Foundational content systems, voice guidelines, and structured prompt libraries that let product design teams write independently; taxonomy and logic ownership for high-leverage content initiatives; narrative quality auditing across live product experiences; mentoring and enablement to mature the content design practice within a cross-functional pod",
+      "clusters": [
+        "content-systems-design",
+        "terminology-governance",
+        "ai-tooling",
+        "ai-content-governance",
+        "taxonomy",
+        "enablement",
+        "technical-writing"
+      ],
+      "signals": [
+        "ai-native-expectation",
+        "enabler-not-bottleneck",
+        "governance-as-value-prop"
+      ],
+      "compRange": {
+        "min": 219000,
+        "max": 249900,
+        "currency": "USD",
+        "covers": null,
+        "scope": "New York, NY",
+        "extras": "bonus + LTI"
+      },
+      "sourceUrl": null,
+      "dateAdded": "2026-08-12",
+      "quote": "Instead of focusing only on isolated product screens, you will focus on building the foundational tools — including content design systems, voice guidelines, and structured prompt libraries — that empower broader product design teams to handle day-to-day writing tasks independently."
     }
   ],
   "clusters": {
