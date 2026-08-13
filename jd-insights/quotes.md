@@ -3,7 +3,7 @@
 
 # Quotes
 
-Every stored quote, verbatim from the posting. **30 of 31** entries carry one.
+Every stored quote, verbatim from the posting. **31 of 32** entries carry one.
 
 These are the lines that anchor each entry's cluster and signal assignments, so they are the strongest citable evidence in the dataset. Each is checked against its `jd-source` archive before commit.
 
@@ -18,6 +18,12 @@ These are the lines that anchor each entry's cluster and signal assignments, so 
 > Define and govern content models, taxonomies, metadata and structured data standards that enable modular, machine-readable, high-performing content.
 
 `ally-content-architect` · added 2026-07-29
+
+### Amazon — Sr. UX Conversation Designer, Amazon Customer Service
+
+> You'll also be involved in building AI and Large Language Models (LLMs), creating writing guidelines to raise the bar, and share our expertise with our product and tech partners.
+
+`amazon-senior-ux-conversation-designer-customer-service` · added 2026-08-13
 
 ### Apple — UX Writer, Systems
 

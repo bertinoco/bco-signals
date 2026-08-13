@@ -2,8 +2,8 @@
   "meta": {
     "title": "BCO Content Skills Tracker",
     "description": "A curated skills tracker for the content design community.",
-    "lastUpdated": "2026-08-12",
-    "totalEntries": 31
+    "lastUpdated": "2026-08-13",
+    "totalEntries": 32
   },
   "entries": [
     {
@@ -975,6 +975,34 @@
       "sourceUrl": null,
       "dateAdded": "2026-08-12",
       "quote": "Instead of focusing only on isolated product screens, you will focus on building the foundational tools — including content design systems, voice guidelines, and structured prompt libraries — that empower broader product design teams to handle day-to-day writing tasks independently."
+    },
+    {
+      "id": "amazon-senior-ux-conversation-designer-customer-service",
+      "company": "Amazon",
+      "title": "Sr. UX Conversation Designer, Amazon Customer Service",
+      "domain": "Big Tech",
+      "engagement": "Full-time",
+      "location": "Austin, TX or Seattle, WA",
+      "remote": false,
+      "coreFrame": "Conversation design and voice/tone/personality for customer service chatbots and web/app experiences, A/B testing and research on voice, tone, and messaging, involvement in building AI and LLMs, writing guidelines for conversation and content design",
+      "clusters": [
+        "content-systems-design",
+        "enablement"
+      ],
+      "signals": [
+        "model-behavior-design"
+      ],
+      "compRange": {
+        "min": 137800,
+        "max": 186400,
+        "currency": "USD",
+        "covers": "base",
+        "scope": "Seattle, WA",
+        "extras": "sign-on payments + RSUs"
+      },
+      "sourceUrl": null,
+      "dateAdded": "2026-08-13",
+      "quote": "You'll also be involved in building AI and Large Language Models (LLMs), creating writing guidelines to raise the bar, and share our expertise with our product and tech partners."
     }
   ],
   "clusters": {
