@@ -35,11 +35,11 @@ Every figure here is counted from `docs/data/jobs.json`. If you quote one in som
 | Language as infrastructure | 9 | 28% |
 | Central standards function | 9 | 28% |
 | Model behavior design | 7 | 22% |
-| Content marketing adjacent | 5 | 16% |
 | GEO & SEO | 5 | 16% |
 | Structured data | 5 | 16% |
+| Content systems for marketers | 4 | 12% |
 | Accessibility as structural constraint | 4 | 12% |
-| Content-adjacent | 3 | 9% |
+| Content work under new titles | 3 | 9% |
 | Title ≠ stated responsibilities | 2 | 6% |
 | Classification for ML | 2 | 6% |
 | Structured for agent retrieval | 2 | 6% |
@@ -66,9 +66,9 @@ USD entries only (24 of 25 stated ranges). Signals carried by at least 3 of them
 | AI fluency expected | 13 | $144,000 | $209,000 | +$22,700 |
 | Central standards function | 8 | $132,000 | $190,000 | +$3,700 |
 | Governance emphasized | 13 | $133,000 | $186,200 | −$100 |
+| Content systems for marketers | 3 | $110,000 | $160,000 | −$26,300 |
 | Structured data | 5 | $115,000 | $157,800 | −$28,500 |
 | GEO & SEO | 5 | $90,000 | $157,800 | −$28,500 |
-| Content marketing adjacent | 4 | $100,000 | $155,000 | −$31,300 |
 
 Read the n column before quoting any of these. A median over fewer than roughly eight entries moves substantially when one more lands, so the smaller groups are indicative rather than conclusive.
 
