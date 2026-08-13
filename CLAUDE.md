@@ -220,13 +220,8 @@ posting itself: `"New York, NY"`, `"Illinois"`, `"Toronto, ON"`. Use `null`
 when the range applies to the whole posting. A country-wide qualifier like
 "US locations" is not a scope.
 
-Recorded always; displayed only for ranges in the baseline currency (USD).
-A scope earns its space by explaining why a range differs from the ones around
-it, which presupposes the range is comparable to them. A CAD range is already
-marked as a different market by its currency, so naming the city adds nothing —
-HelloFresh keeps `"Toronto, ON"` in the data and shows only the range. If the
-dataset ever carries several entries in one non-USD currency, revisit this:
-scope would start doing real work within that group.
+Recorded always; never displayed on the Roles tab. Location strings wrap and
+extend the card at narrow widths, so `scope` stays in `jobs.json` as data only.
 
 **`extras`** — what sits on top of the range: `"bonus + equity"`,
 `"annual incentive plan"`. Recorded because the JD states it, never displayed.

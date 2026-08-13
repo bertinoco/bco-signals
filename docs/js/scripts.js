@@ -3,9 +3,6 @@ const DATA_PATH = 'data/jobs.json';
 const SIGNAL_THRESHOLD = 2;
 const TITLES_LIMIT = 12;
 const FETCH_TIMEOUT_MS = 10000;
-// Currency the dataset's ranges are read against. Scope qualifiers are only
-// shown for ranges in it — see renderTitles.
-const BASELINE_CURRENCY = 'USD';
 const SECTION_CONTAINERS = ['cluster-grid', 'signal-list', 'title-list'];
 let showAllTitles = false;
 let globalData = null;
@@ -248,18 +245,11 @@ function renderTitles(data) {
     // to the base ranges around it. `covers: "base"` and `covers: null` show
     // nothing, since neither can claim more than the bare number does.
     //
-    // `scope` is a comparability caveat — it explains why a range differs from
-    // the others around it — so it only helps when the range is comparable in
-    // the first place. Outside the baseline currency it is suppressed: CAD
-    // already tells the reader this is a different market, and naming the city
-    // adds nothing on top.
-    //
-    // `extras`, what sits on top of the range, is never rendered. All three
-    // fields stay in jobs.json regardless of what displays.
+    // `scope` and `extras` are never rendered on the card — location strings
+    // wrap and extend the card at narrow widths. Both stay in jobs.json.
     const c = entry.compRange;
-    const showScope = !!c && c.currency === BASELINE_CURRENCY;
     const qualifiers = c
-      ? [c.covers === 'total' ? 'total comp' : null, showScope ? c.scope : null].filter(Boolean)
+      ? [c.covers === 'total' ? 'total comp' : null].filter(Boolean)
       : [];
     const compHtml = c
       ? `<span class="title-comp">${fmt(c.min)}–${fmt(c.max)} ${c.currency}`
