@@ -191,6 +191,29 @@ Retained deliberately in `jd-source`, since they are facts about the posting:
 Six of the stored quotes needed a character corrected to match their source —
 five apostrophes and one hyphen. None was visible on screen.
 
+## AI language in the narrative, absent from the qualifications
+
+**Amazon**'s Sr. UX Conversation Designer, Amazon Customer Service posting
+names AI/LLM work twice in its body copy: "You'll also be involved in
+building AI and Large Language Models (LLMs), creating writing guidelines to
+raise the bar" in the role description, and "Lead the strategic vision for
+several products that include generative AI/Large Language Models" as a key
+responsibility.
+
+Neither Basic Qualifications nor Preferred Qualifications mentions AI, LLMs,
+generative, or model behavior in any form. Both lists read as a conventional
+conversation-design hiring bar instead: portfolio, 5+ years of conversation
+design/content design/UX writing/voice design experience, a degree in
+English, Journalism, Marketing/Communications, HCI, or Design, and experience
+leading review sessions.
+
+Worth recording because it runs the opposite direction from the pattern
+`ai-native-expectation` describes elsewhere in the corpus — there, AI fluency
+shows up as a qualification, not just a duty. Here the AI framing sits in the
+narrative and the responsibilities, and the qualifications that would actually
+gate a hire don't ask for it. First Amazon entry in the corpus, so there is
+nothing yet to compare it against within the same employer.
+
 ## Where the posting was captured from changes what you get
 
 Company careers pages give clean text, and often a requisition number and
