@@ -160,8 +160,7 @@
         "enablement"
       ],
       "signals": [
-        "title-dilution",
-        "content-marketing-adjacent"
+        "title-dilution"
       ],
       "compRange": {
         "min": 65000,
@@ -1069,16 +1068,16 @@
       "description": "When a JD frames language work as 'infrastructure,' it signals the company sees content as a foundational system rather than a production task. These roles tend to sit closer to platform and engineering teams."
     },
     "content-adjacent": {
-      "label": "Content-adjacent",
-      "description": "Content skills like taxonomy, governance, and documentation are being applied in roles that don't carry a content title. The demand is there even when the label isn't."
+      "label": "Content work under new titles",
+      "description": "Content skills like taxonomy, governance, and documentation are being applied in roles that aren't content design jobs. The demand is there under titles the field doesn't recognize yet."
     },
     "classification-for-ml": {
       "label": "Classification for ML",
       "description": "Taxonomy and classification skills are showing up in roles that feed machine learning systems. Content designers who've built tagging schemas or content models have transferable value in AI-adjacent contexts."
     },
     "content-marketing-adjacent": {
-      "label": "Content marketing adjacent",
-      "description": "Systems and architecture language is being used to describe what is fundamentally content marketing work. The framing is more sophisticated but the core responsibilities haven't shifted. Read carefully."
+      "label": "Content systems for marketers",
+      "description": "Roles that specialize in content architecture, taxonomy governance, and AI output standards are being hired into marketing orgs, not just product and design. The systems responsibilities are substantive. What's different is where they sit."
     },
     "geo-seo": {
       "label": "GEO & SEO",
