@@ -2,8 +2,8 @@
   "meta": {
     "title": "BCO Content Skills Tracker",
     "description": "A curated skills tracker for the content design community.",
-    "lastUpdated": "2026-08-13",
-    "totalEntries": 32
+    "lastUpdated": "2026-08-14",
+    "totalEntries": 33
   },
   "entries": [
     {
@@ -1002,6 +1002,35 @@
       "sourceUrl": null,
       "dateAdded": "2026-08-13",
       "quote": "You'll also be involved in building AI and Large Language Models (LLMs), creating writing guidelines to raise the bar, and share our expertise with our product and tech partners."
+    },
+    {
+      "id": "airbnb-senior-staff-ux-writer-international",
+      "company": "Airbnb",
+      "title": "Senior Staff UX Writer, International",
+      "domain": "E-commerce",
+      "engagement": "Not specified",
+      "location": "London, United Kingdom",
+      "remote": false,
+      "coreFrame": "Standing up the UX Writing function within a newly forming Global Markets team — workflows, partnerships, and standards; localized product language for country-specific features across Italy, Germany, Spain, France and the UK; cross-functional collaboration with country managers, localization experts, linguists, and translators; mentoring and reviewing other UX writers; alignment with the central UX Writing team on shared voice and quality standards",
+      "clusters": [
+        "content-systems-design",
+        "localization",
+        "enablement"
+      ],
+      "signals": [
+        "enabler-not-bottleneck"
+      ],
+      "compRange": {
+        "min": 126000,
+        "max": 158000,
+        "currency": "GBP",
+        "covers": "base",
+        "scope": null,
+        "extras": "bonus + equity + Employee Travel Credits"
+      },
+      "sourceUrl": null,
+      "dateAdded": "2026-08-14",
+      "quote": "Define and drive the UX Writing function within Global Markets, establishing workflows, partnerships, and standards for a newly forming team, including reviewing and mentoring other UX writers."
     }
   ],
   "clusters": {
