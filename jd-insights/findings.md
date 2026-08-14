@@ -256,6 +256,29 @@ familiarity.* Two would justify separating the practice from
 `model-behavior-design`, which currently covers both writing a system
 instruction and building the harness that tests it.
 
+*A posting-based instance, not just testimony — excluded.* Fin's "Staff AI
+Designer" (page header; the body calls itself "Staff AI Product Designer"
+throughout) was excluded from the dataset: no occurrence of *content,
+writing, copy, language, tone, voice,* or *terminology* anywhere in the text,
+which fails the required content-discipline criterion outright. But most of
+its stated responsibilities — "Define what AI should do—and just as
+importantly, what it should not do," "Establish decision frameworks: when
+systems should act, ask, escalate, or defer," "Define what 'good' looks
+like... Design evaluation scenarios and feedback loops" — read as the
+specification side of the deterministic/generative split: authoring a
+generator's constraints and judging criteria, not an artifact. The
+maintainer's read is that, apart from "Deep understanding of LLMs and their
+limitations, along with a grounding in traditional ML approaches" and "You
+will not be training models or building ML infrastructure" (the two lines
+that place this closer to an ML-adjacent product discipline than to content
+work), the posting could pass for a generative-focused content design role
+in different vocabulary. That reframing is the maintainer's own, not a claim
+the posting makes — Fin never uses content-design language, and the posting
+was excluded on exactly that absence. Recorded because it is the first
+JD-based instance of the "model design" side of the split, where the source
+note above draws only on practitioner testimony. One instance; a second
+similarly language-free posting would be the one to compare it against.
+
 **`content-marketing-adjacent` description versus use.** The description reads
 "systems and architecture language is being used to describe what is
 fundamentally content marketing work… the core responsibilities haven't
