@@ -3,7 +3,7 @@
 
 # Quotes
 
-Every stored quote, verbatim from the posting. **33 of 34** entries carry one.
+Every stored quote, verbatim from the posting. **34 of 35** entries carry one.
 
 These are the lines that anchor each entry's cluster and signal assignments, so they are the strongest citable evidence in the dataset. Each is checked against its `jd-source` archive before commit.
 
@@ -198,6 +198,12 @@ These are the lines that anchor each entry's cluster and signal assignments, so 
 > You're an accomplished and experienced Model Designer, or a systems-focused Content Designer who has already made this transition in your day-to-day work.
 
 `wise-principal-ai-model-designer` · added 2026-08-14
+
+### Wise — Staff AI Content Designer, FinCrime
+
+> You'll be figuring out how to harness the potential of AI to scale your impact as a content designer, quickly test and iterate on your ideas with a huge degree of freedom and flexibility, and learn as part of your day-to-day work as this technology evolves.
+
+`wise-staff-ai-content-designer-fincrime` · added 2026-08-14
 
 ### Zoom — AI Information Architect / Content Strategist
 

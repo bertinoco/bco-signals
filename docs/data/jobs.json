@@ -3,7 +3,7 @@
     "title": "BCO Content Skills Tracker",
     "description": "A curated skills tracker for the content design community.",
     "lastUpdated": "2026-08-14",
-    "totalEntries": 34
+    "totalEntries": 35
   },
   "entries": [
     {
@@ -1063,6 +1063,36 @@
       "dateAdded": "2026-08-14",
       "quote": "You're an accomplished and experienced Model Designer, or a systems-focused Content Designer who has already made this transition in your day-to-day work.",
       "note": "The JD places the role within the \"Content Design Guild\" as part of the Design team, stating the disciplines \"share a common skill set and design process,\" and frames Model Designer and systems-focused Content Designer as two entry paths into the same role. This is the clearest instance in the corpus of the dataset's \"model design\" vocabulary term appearing as an actual job title while the role still organizationally reports through a content design function."
+    },
+    {
+      "id": "wise-staff-ai-content-designer-fincrime",
+      "company": "Wise",
+      "title": "Staff AI Content Designer, FinCrime",
+      "domain": "Finance",
+      "engagement": "Not specified",
+      "location": "London, United Kingdom",
+      "remote": false,
+      "coreFrame": "Content design strategy across FinCrime's cross-functional teams, balancing regulatory obligations with customer experience; using AI to scale content design impact and as part of the content design toolkit; standardising and systematising experiences with design leaders from other squads; owning the squad's content end-to-end and raising content design quality and maturity within FinCrime; part of the Content Guild, collaborating with the content community across Wise",
+      "clusters": [
+        "content-systems-design",
+        "ai-tooling",
+        "enablement"
+      ],
+      "signals": [
+        "ai-native-expectation",
+        "enabler-not-bottleneck"
+      ],
+      "compRange": {
+        "min": 102000,
+        "max": 133000,
+        "currency": "GBP",
+        "covers": null,
+        "scope": null,
+        "extras": null
+      },
+      "sourceUrl": null,
+      "dateAdded": "2026-08-14",
+      "quote": "You'll be figuring out how to harness the potential of AI to scale your impact as a content designer, quickly test and iterate on your ideas with a huge degree of freedom and flexibility, and learn as part of your day-to-day work as this technology evolves."
     }
   ],
   "clusters": {
