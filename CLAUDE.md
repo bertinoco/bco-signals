@@ -127,7 +127,7 @@ Once the user confirms the audit (including any new cluster/signal/domain propos
 
 ## Voice & copy decisions
 
-These rules apply to all user-facing copy on signals.bertino.co: card descriptions, section intros, header copy, and any editorial text rendered in the browser.
+These rules apply to all user-facing copy on signals.bertino.co: card descriptions, section intros, header copy, and any editorial text rendered in the browser — except the hero, which is scoped out below.
 
 **Who we're writing for**
 Content designers, UX writers, and content strategists who want to understand where the discipline is heading. They read closely and notice when copy hedges or generalizes.
@@ -152,6 +152,20 @@ Signal + implication. State what the data shows, then note what it means for the
 
 **Reporting vs. editorializing**
 Card descriptions are the one place we editorialize lightly — stating an implication based on evidence. Everywhere else (cluster/signal assignments, JD entries, quotes) stays neutral and reportorial.
+
+**Brand copy exception**
+The hero headline and pull-quote in `docs/index.html`, and the opening
+pitch in `README.md`, are brand assets, not data reporting — the argument
+for why the dataset exists, not a claim the dataset backs number-for-number.
+They may state an industry-level trend and be more overtly persuasive than
+anything else on the site, including projections and claims broader than
+what a single dataset can prove on its own. This is the only copy on the
+site exempted from the no-projections and no-overpromising rules above.
+
+Keep this exception narrow. It covers only that headline/pull-quote and
+that pitch — nowhere else. Section intros, card descriptions (beyond the
+light editorializing already permitted above), cluster/signal text, JD
+entries, and quotes all stay reportorial and grounded, no exceptions.
 
 **Loading, empty, and error states**
 See `copy-patterns.md` for the rules and current copy. Strings live in the `COPY`
