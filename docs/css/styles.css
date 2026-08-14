@@ -42,6 +42,7 @@
   --font-base: 0.9375rem;
   --font-md:   1.0625rem;
   --font-lg:   1.1875rem;
+  --font-xl:   1.375rem;
   --font-3xl:  clamp(2rem, 1.35rem + 2.7vw, 2.75rem);
 
   --weight-regular:  400;
@@ -74,6 +75,7 @@
   /* Motion */
   --duration-fast: 140ms;
   --duration-base: 220ms;
+  --duration-flip: 420ms;
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
 
   /* Layout */
@@ -324,19 +326,12 @@ body {
 
 .cluster-card h3 {
   font-family: var(--font-sans);
-  font-size: var(--font-lg);
+  font-size: var(--font-xl);
   font-weight: var(--weight-semibold);
   line-height: var(--leading-snug);
   letter-spacing: var(--tracking-snug);
   text-wrap: balance;
   color: hsl(var(--foreground));
-  margin-bottom: var(--space-1);
-}
-
-.cluster-desc {
-  font-size: var(--font-sm);
-  color: hsl(var(--secondary-foreground));
-  line-height: var(--leading-normal);
 }
 
 /* ── All Job Descriptions ─────────────────────────────────── */
@@ -588,19 +583,229 @@ body {
 
 .signal-label {
   font-family: var(--font-sans);
-  font-size: var(--font-lg);
+  font-size: var(--font-xl);
   font-weight: var(--weight-semibold);
   line-height: var(--leading-snug);
   letter-spacing: var(--tracking-snug);
   text-wrap: balance;
   color: hsl(var(--foreground));
-  margin-bottom: var(--space-1);
 }
 
-.signal-desc {
-  font-size: var(--font-sm);
+/* ── Flip-card overlay ────────────────────────────────────── */
+/* Cluster/signal cards flip in place and grow to fill the viewport. The
+   outer element owns position/size via top/left/width/height (real
+   layout, so text reflows correctly at every step rather than distorting
+   under a transform-scale); `.flip-card-inner` owns the 3D rotation. Both
+   run on --duration-flip so they land together. See scripts.js: the
+   trigger card stays in the grid (visibility: hidden) while a clone,
+   `.flip-card--overlay`, does the animating. */
+.flip-card {
+  cursor: pointer;
+  perspective: 1400px;
+}
+
+.flip-card:focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform var(--duration-flip) var(--ease-out);
+}
+
+.flip-card-inner.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* The front carries only the label now — no description, so the grid
+   reads as a set of short, even tiles rather than a wall of text. */
+.flip-card-front {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 64px;
+}
+
+.flip-card-back {
+  position: absolute;
+  inset: 0;
+  transform: rotateY(180deg);
+  overflow-y: auto;
+  padding: var(--space-4);
+}
+
+.flip-card--overlay {
+  z-index: 1001;
+  border-radius: 20px;
+  box-shadow: 0 24px 64px hsl(var(--foreground) / 0.28);
+  transition: top var(--duration-flip) var(--ease-out),
+              left var(--duration-flip) var(--ease-out),
+              width var(--duration-flip) var(--ease-out),
+              height var(--duration-flip) var(--ease-out),
+              border-radius var(--duration-flip) var(--ease-out);
+}
+
+/* Horizontal padding is wide enough to clear the nav chevrons (24px inset
+   + 44px button + a few px gap = ~72px) — otherwise a two-line heading on
+   a narrow panel wraps right under them, since they sit at the panel's
+   vertical center regardless of how tall the heading happens to be. */
+.flip-card--overlay .flip-card-back {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: var(--space-8) 72px;
+}
+
+.flip-card-close {
+  position: absolute;
+  top: var(--space-3);
+  right: var(--space-3);
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: hsl(var(--secondary-foreground));
-  line-height: var(--leading-normal);
+  background: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: color var(--duration-fast) ease, border-color var(--duration-fast) ease;
+}
+
+.flip-card-close:hover {
+  color: hsl(var(--foreground));
+  border-color: hsl(var(--foreground) / 0.45);
+}
+
+.flip-card-close:focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
+}
+
+/* The carousel swap only ever touches this wrapper — title, description,
+   and the stat line slide/fade together while the close button and the
+   panel's own position/size transitions stay untouched. */
+.flip-card-back-content {
+  transition: transform var(--duration-fast) var(--ease-out),
+              opacity var(--duration-fast) var(--ease-out);
+}
+
+/* "next" content exits left, and the new content that replaces it enters
+   from the right (so it needs the same starting offset as "prev"'s exit,
+   which is also to the right) — hence the cross-pairing below. */
+.flip-card-back-content.is-sliding-out-next,
+.flip-card-back-content.is-sliding-in-from-left {
+  transform: translateX(-16px);
+  opacity: 0;
+}
+
+.flip-card-back-content.is-sliding-out-prev,
+.flip-card-back-content.is-sliding-in-from-right {
+  transform: translateX(16px);
+  opacity: 0;
+}
+
+.flip-card-back-title {
+  max-width: 560px;
+  font-family: var(--font-sans);
+  font-size: 1.625rem;
+  font-weight: var(--weight-semibold);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  text-wrap: balance;
+  text-align: left;
+  color: hsl(var(--foreground));
+  margin-top: var(--space-6);
+}
+
+.flip-card-back-desc {
+  max-width: 560px;
+  margin-top: var(--space-3);
+  font-size: var(--font-sm);
+  line-height: var(--leading-relaxed);
+  color: hsl(var(--secondary-foreground));
+  text-align: left;
+}
+
+.flip-card-roles {
+  width: 100%;
+  max-width: 560px;
+  margin-top: var(--space-4);
+  text-align: left;
+}
+
+.flip-card-roles-label {
+  font-family: var(--font-mono);
+  font-size: var(--font-xs);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: hsl(var(--muted-foreground));
+}
+
+.card-overlay-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: hsl(var(--background) / 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  opacity: 0;
+  transition: opacity var(--duration-flip) var(--ease-out);
+  pointer-events: none;
+}
+
+.card-overlay-backdrop.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Carousel prev/next. JS sets top/left inset from the PANEL's own edges
+   (see positionNavButtons) rather than the viewport's — viewport-edge
+   positioning breaks down on narrow screens, where the panel (up to 90vw)
+   leaves too little margin to avoid overlapping its own content. */
+.flip-card-nav {
+  position: fixed;
+  transform: translateY(-50%);
+  z-index: 1002;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: hsl(var(--secondary-foreground));
+  background: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+  border-radius: 50%;
+  cursor: pointer;
+  transition: color var(--duration-fast) ease, border-color var(--duration-fast) ease, opacity var(--duration-fast) ease;
+}
+
+.flip-card-nav[hidden] { display: none; }
+
+.flip-card-nav:hover:not(:disabled) {
+  color: hsl(var(--foreground));
+  border-color: hsl(var(--foreground) / 0.45);
+}
+
+.flip-card-nav:focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
+}
+
+.flip-card-nav:disabled {
+  opacity: 0.35;
+  cursor: default;
 }
 
 /* ── Footer ───────────────────────────────────────────────── */
@@ -800,7 +1005,12 @@ body {
   .title-detail,
   .title-expand,
   .show-more-btn,
-  .state-action {
+  .state-action,
+  .flip-card-inner,
+  .flip-card--overlay,
+  .flip-card-back-content,
+  .flip-card-nav,
+  .card-overlay-backdrop {
     transition: none;
   }
 
