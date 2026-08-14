@@ -279,6 +279,33 @@ JD-based instance of the "model design" side of the split, where the source
 note above draws only on practitioner testimony. One instance; a second
 similarly language-free posting would be the one to compare it against.
 
+*The second instance is not language-free — it is the opposite case, and it
+was admitted.* Wise's Principal AI Model Designer, posted days after Fin, is
+titled for the same discipline but states its own continuity with content
+design rather than omitting the connection: "This role will sit within the
+Content Design Guild as part of our Design team, as the disciplines share a
+common skill set and design process," and, load-bearing for the entry's
+inclusion, "You're an accomplished and experienced Model Designer, or a
+systems-focused Content Designer who has already made this transition in
+your day-to-day work." That sentence treats Model Designer and Content
+Designer as two entry paths into one role, which is a first-party claim of
+skill continuity, not just shared reporting lines — the reason the entry was
+admitted where Fin, with the same category of day-to-day work, was not.
+
+This is the clearest confirmation the corpus has that the practitioner
+testimony's split is materializing in live postings, not only in how
+individual practitioners describe their own work: a title change ("Model
+Designer") arriving before the reporting line does ("Content Design Guild").
+Two companies, two instances, in opposite configurations — one excluded for
+naming no content discipline at all, one included for naming the transition
+explicitly — which is itself the finding: the shift is real, and it is
+surfacing under new titles inside old org charts before it reorganizes them.
+Still two data points. The trigger from the Fin entry (a second
+language-free posting) is still open and separate from this one; the
+trigger to revisit here is a second posting that, like Wise's, names the
+Model-Designer-or-transitioning-Content-Designer path explicitly rather than
+implying it through guild placement alone.
+
 **`content-marketing-adjacent` description versus use.** The description reads
 "systems and architecture language is being used to describe what is
 fundamentally content marketing work… the core responsibilities haven't
