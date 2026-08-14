@@ -3,7 +3,7 @@
 
 # Quotes
 
-Every stored quote, verbatim from the posting. **31 of 32** entries carry one.
+Every stored quote, verbatim from the posting. **32 of 33** entries carry one.
 
 These are the lines that anchor each entry's cluster and signal assignments, so they are the strongest citable evidence in the dataset. Each is checked against its `jd-source` archive before commit.
 
@@ -12,6 +12,12 @@ These are the lines that anchor each entry's cluster and signal assignments, so 
 > As Content Systems Architect, you’re responsible for the architecture that turns Adobe’s editorial and AI-generated language standards into working systems.
 
 `adobe-staff-content-strategist-systems-architect` · added 2026-08-01
+
+### Airbnb — Senior Staff UX Writer, International
+
+> Define and drive the UX Writing function within Global Markets, establishing workflows, partnerships, and standards for a newly forming team, including reviewing and mentoring other UX writers.
+
+`airbnb-senior-staff-ux-writer-international` · added 2026-08-14
 
 ### Ally Financial — Content Architect
 
