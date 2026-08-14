@@ -225,13 +225,11 @@ function renderClusters(data) {
     const cluster = data.clusters[key];
     return `
       <div class="flip-card cluster-card" data-key="${key}" role="button" tabindex="0" aria-label="Expand ${cluster.label}">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <h3>${cluster.label}</h3>
-          </div>
-          <div class="flip-card-back">
-            ${flipCardBackHtml(key, 'clusters', cluster.label, cluster.description, data)}
-          </div>
+        <div class="flip-card-front">
+          <h3>${cluster.label}</h3>
+        </div>
+        <div class="flip-card-back">
+          ${flipCardBackHtml(key, 'clusters', cluster.label, cluster.description, data)}
         </div>
       </div>
     `;
@@ -387,13 +385,11 @@ function renderSignals(data) {
     const signal = data.signals[key];
     return `
       <div class="flip-card signal-card" data-key="${key}" role="button" tabindex="0" aria-label="Expand ${signal.label}">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <div class="signal-label">${signal.label}</div>
-          </div>
-          <div class="flip-card-back">
-            ${flipCardBackHtml(key, 'signals', signal.label, signal.description, data)}
-          </div>
+        <div class="flip-card-front">
+          <div class="signal-label">${signal.label}</div>
+        </div>
+        <div class="flip-card-back">
+          ${flipCardBackHtml(key, 'signals', signal.label, signal.description, data)}
         </div>
       </div>
     `;
@@ -459,9 +455,9 @@ badgeNav.addEventListener('keydown', (e) => {
 // viewport. The trigger card stays in the grid (visibility: hidden, so
 // layout doesn't reflow) while a clone does the animating: `.flip-card`
 // owns position/size via top/left/width/height (real layout, so text
-// reflows correctly at every step, not a distorted transform-scale) and
-// `.flip-card-inner` owns the 3D rotation. Both run on the same duration
-// so they land together.
+// reflows correctly at every step, not a distorted transform-scale) while
+// the front label crossfades to the back content via the `.is-open`
+// class. Both run on the same duration so they land together.
 const overlayBackdrop = document.getElementById('card-overlay-backdrop');
 const overlayPrevBtn = document.getElementById('card-overlay-prev');
 const overlayNextBtn = document.getElementById('card-overlay-next');
@@ -517,12 +513,11 @@ function computeOverlayTarget(clone) {
 // narrow screens, where the panel (up to 90vw) leaves too little margin
 // for viewport-edge buttons to avoid overlapping its content. Vertically
 // centered on the panel; the "next" button's column aligns with the close
-// button directly above it. The close button's containing block isn't
-// the panel's own border-box — .flip-card-back sits inside
-// .flip-card-inner, which is inset by the panel's own base padding
-// (--space-3, 24px, still applied to .flip-card--overlay) — so its true
-// center is 24 (that padding) + 24 (close's own `right`) + 18 (half its
-// 36px width) in from the panel's actual right edge, not just 24 + 18.
+// button directly above it. The close button's containing block is
+// `.flip-card` itself, which is inset by its own base padding (--space-3,
+// 24px, still applied to .flip-card--overlay) — so its true center is
+// 24 (that padding) + 24 (close's own `right`) + 18 (half its 36px width)
+// in from the panel's actual right edge, not just 24 + 18.
 function positionNavButtons(target) {
   // Mobile positions them via the fixed-footer CSS instead — clear any
   // inline values a wider viewport may have set.
@@ -615,7 +610,7 @@ function openFlipCard(card) {
     clone.style.width = `${target.width}px`;
     clone.style.height = `${target.height}px`;
     clone.style.borderRadius = '';
-    clone.querySelector('.flip-card-inner').classList.add('is-flipped');
+    clone.classList.add('is-open');
     overlayBackdrop.classList.add('is-visible');
     finishOpen();
     return;
@@ -628,7 +623,7 @@ function openFlipCard(card) {
     clone.style.width = `${target.width}px`;
     clone.style.height = `${target.height}px`;
     clone.style.borderRadius = '';
-    clone.querySelector('.flip-card-inner').classList.add('is-flipped');
+    clone.classList.add('is-open');
   });
 
   function onOpenEnd(e) {
@@ -731,7 +726,7 @@ function closeFlipCard() {
   clone.style.width = `${rect.width}px`;
   clone.style.height = `${rect.height}px`;
   clone.style.borderRadius = '';
-  clone.querySelector('.flip-card-inner').classList.remove('is-flipped');
+  clone.classList.remove('is-open');
 
   function onCloseEnd(e) {
     if (e.propertyName !== 'width') return;

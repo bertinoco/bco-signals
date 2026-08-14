@@ -592,39 +592,24 @@ body {
 }
 
 /* ── Flip-card overlay ────────────────────────────────────── */
-/* Cluster/signal cards flip in place and grow to fill the viewport. The
-   outer element owns position/size via top/left/width/height (real
-   layout, so text reflows correctly at every step rather than distorting
-   under a transform-scale); `.flip-card-inner` owns the 3D rotation. Both
-   run on --duration-flip so they land together. See scripts.js: the
+/* Cluster/signal cards grow to fill the viewport, with the front label
+   crossfading to the back content as they go. The outer element owns
+   position/size via top/left/width/height (real layout, so text reflows
+   correctly at every step rather than distorting under a
+   transform-scale); front/back opacity runs on the same --duration-flip
+   so the fade lands exactly as the resize finishes. See scripts.js: the
    trigger card stays in the grid (visibility: hidden) while a clone,
-   `.flip-card--overlay`, does the animating. */
+   `.flip-card--overlay`, does the animating.
+   (Previously a 3D rotateY flip — dropped because rotating and resizing
+   at once read as two conflicting motions rather than one clear gesture.) */
 .flip-card {
+  position: relative;
   cursor: pointer;
-  perspective: 1400px;
 }
 
 .flip-card:focus-visible {
   outline: 2px solid hsl(var(--ring));
   outline-offset: 2px;
-}
-
-.flip-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  transform-style: preserve-3d;
-  transition: transform var(--duration-flip) var(--ease-out);
-}
-
-.flip-card-inner.is-flipped {
-  transform: rotateY(180deg);
-}
-
-.flip-card-front,
-.flip-card-back {
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
 }
 
 /* The front carries only the label now — no description, so the grid
@@ -634,14 +619,26 @@ body {
   display: flex;
   align-items: center;
   min-height: 64px;
+  transition: opacity var(--duration-flip) var(--ease-out);
 }
 
 .flip-card-back {
   position: absolute;
   inset: 0;
-  transform: rotateY(180deg);
   overflow-y: auto;
   padding: var(--space-4);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--duration-flip) var(--ease-out);
+}
+
+.flip-card.is-open .flip-card-front {
+  opacity: 0;
+}
+
+.flip-card.is-open .flip-card-back {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .flip-card--overlay {
@@ -1059,7 +1056,8 @@ body {
   .title-expand,
   .show-more-btn,
   .state-action,
-  .flip-card-inner,
+  .flip-card-front,
+  .flip-card-back,
   .flip-card--overlay,
   .flip-card-back-content,
   .flip-card-nav,
