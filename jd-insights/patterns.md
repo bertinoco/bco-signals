@@ -223,3 +223,25 @@ also carry the only surviving copy of a posting that has since closed.
 
 Insurify's own careers page opens with a fraudulent-job-advert warning before
 the posting begins.
+
+## Two headers that don't match their own body
+
+Two postings in a row state one title at the top and a different one in the
+body text.
+
+**Fin**'s posting is headed "Staff AI Designer," but the body repeatedly calls
+the role "Staff AI Product Designer": "We're looking for a Staff AI Product
+Designer..." Same seniority level, different role name.
+
+**Wise**'s Staff AI Content Designer, FinCrime is headed at Staff level, but
+the body twice self-describes the role a level up: "an AI Principal Content
+Designer will work on..." and "You're an accomplished and experienced
+Principal Content Designer..." Same role name, different level.
+
+Both entries store the header as `title`, per the Title field rule, and record
+the body's alternate self-description in the archive's `captureNote` rather
+than resolving it. Flagged together because they're the only two header/body
+mismatches in the corpus so far — but they aren't the same kind of mismatch:
+Fin substitutes the role name, Wise substitutes the seniority level. Two
+instances, and two different substitutions, isn't enough to call this one
+pattern yet; recorded so a third instance has something to compare against.
