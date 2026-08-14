@@ -619,6 +619,7 @@ body {
   display: flex;
   align-items: center;
   min-height: 64px;
+  text-align: left;
   transition: opacity var(--duration-flip) var(--ease-out);
 }
 
