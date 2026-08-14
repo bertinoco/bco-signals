@@ -42,7 +42,6 @@
   --font-base: 0.9375rem;
   --font-md:   1.0625rem;
   --font-lg:   1.1875rem;
-  --font-xl:   1.125rem;
   --font-3xl:  clamp(2rem, 1.35rem + 2.7vw, 2.75rem);
 
   --weight-regular:  400;
@@ -326,7 +325,7 @@ body {
 
 .cluster-card h3 {
   font-family: var(--font-sans);
-  font-size: var(--font-xl);
+  font-size: var(--font-lg);
   font-weight: var(--weight-semibold);
   line-height: var(--leading-snug);
   letter-spacing: var(--tracking-snug);
@@ -583,7 +582,7 @@ body {
 
 .signal-label {
   font-family: var(--font-sans);
-  font-size: var(--font-xl);
+  font-size: var(--font-lg);
   font-weight: var(--weight-semibold);
   line-height: var(--leading-snug);
   letter-spacing: var(--tracking-snug);
