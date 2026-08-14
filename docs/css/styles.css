@@ -655,6 +655,15 @@ body {
               border-radius var(--duration-flip) var(--ease-out);
 }
 
+/* Full-screen on mobile (see computeOverlayTarget) — no rounded corners
+   or shadow floating against a viewport it already fills edge-to-edge. */
+@media (max-width: 599px) {
+  .flip-card--overlay {
+    border-radius: 0;
+    box-shadow: none;
+  }
+}
+
 /* Horizontal padding is wide enough to clear the nav chevrons (24px inset
    + 44px button + a few px gap = ~72px) — otherwise a two-line heading on
    a narrow panel wraps right under them, since they sit at the panel's
@@ -666,6 +675,12 @@ body {
   padding: var(--space-8) 72px;
 }
 
+@media (max-width: 599px) {
+  .flip-card--overlay .flip-card-back {
+    padding: var(--space-6) var(--space-4) 88px;
+  }
+}
+
 .flip-card-close {
   position: absolute;
   top: var(--space-3);
@@ -675,17 +690,15 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: hsl(var(--secondary-foreground));
-  background: hsl(var(--card));
-  border: 1px solid hsl(var(--border));
-  border-radius: var(--radius-sm);
+  color: hsl(var(--muted-foreground));
+  background: none;
+  border: none;
   cursor: pointer;
-  transition: color var(--duration-fast) ease, border-color var(--duration-fast) ease;
+  transition: color var(--duration-fast) ease;
 }
 
 .flip-card-close:hover {
   color: hsl(var(--foreground));
-  border-color: hsl(var(--foreground) / 0.45);
 }
 
 .flip-card-close:focus-visible {
@@ -783,19 +796,17 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: hsl(var(--secondary-foreground));
-  background: hsl(var(--card));
-  border: 1px solid hsl(var(--border));
-  border-radius: 50%;
+  color: hsl(var(--muted-foreground));
+  background: none;
+  border: none;
   cursor: pointer;
-  transition: color var(--duration-fast) ease, border-color var(--duration-fast) ease, opacity var(--duration-fast) ease;
+  transition: color var(--duration-fast) ease, opacity var(--duration-fast) ease;
 }
 
 .flip-card-nav[hidden] { display: none; }
 
 .flip-card-nav:hover:not(:disabled) {
   color: hsl(var(--foreground));
-  border-color: hsl(var(--foreground) / 0.45);
 }
 
 .flip-card-nav:focus-visible {
@@ -806,6 +817,48 @@ body {
 .flip-card-nav:disabled {
   opacity: 0.35;
   cursor: default;
+}
+
+/* Bare passthrough on desktop — the ring only appears in the mobile
+   footer bar below, where it anchors the icon inside a much larger tap
+   zone that would otherwise read as empty. */
+.flip-card-nav-ring {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Below the same 600px breakpoint the grid drops to a single column,
+   the overlay switches from a centered panel to a full-screen sheet with
+   a fixed split footer (see computeOverlayTarget / positionNavButtons in
+   scripts.js) — floating side chevrons are awkward to reach one-handed,
+   and a bottom bar puts both tap targets within thumb reach. */
+@media (max-width: 599px) {
+  .flip-card-nav {
+    top: auto;
+    bottom: 0;
+    transform: none;
+    width: 50vw;
+    height: 64px;
+    background: hsl(var(--card));
+    border-top: 1px solid hsl(var(--border));
+  }
+
+  .flip-card-nav--prev {
+    left: 0;
+    border-right: 1px solid hsl(var(--border));
+  }
+
+  .flip-card-nav--next {
+    left: 50vw;
+  }
+
+  .flip-card-nav-ring {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid hsl(var(--border));
+  }
 }
 
 /* ── Footer ───────────────────────────────────────────────── */

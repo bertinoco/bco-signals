@@ -488,9 +488,21 @@ function measureOverlayHeight(backInnerHTML, width) {
   return height;
 }
 
+// Matches the grid's own single-column breakpoint (see .cluster-grid) —
+// below it the overlay switches from a centered panel to a full-screen
+// sheet with a fixed footer, driven by the same media query in styles.css.
+function isMobileOverlay() {
+  return window.matchMedia('(max-width: 599px)').matches;
+}
+
 // A centered panel, not an edge-to-edge sheet, so the blurred page stays
-// visible around it.
+// visible around it — except on mobile, where it goes full-screen instead
+// (a floating panel has too little margin to work with at that width,
+// and the footer nav below needs the full viewport height to anchor to).
 function computeOverlayTarget(clone) {
+  if (isMobileOverlay()) {
+    return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
+  }
   const width = Math.min(680, window.innerWidth * 0.9);
   const backHTML = clone.querySelector('.flip-card-back').innerHTML;
   const contentHeight = measureOverlayHeight(backHTML, width);
@@ -512,6 +524,15 @@ function computeOverlayTarget(clone) {
 // center is 24 (that padding) + 24 (close's own `right`) + 18 (half its
 // 36px width) in from the panel's actual right edge, not just 24 + 18.
 function positionNavButtons(target) {
+  // Mobile positions them via the fixed-footer CSS instead — clear any
+  // inline values a wider viewport may have set.
+  if (isMobileOverlay()) {
+    overlayPrevBtn.style.top = '';
+    overlayPrevBtn.style.left = '';
+    overlayNextBtn.style.top = '';
+    overlayNextBtn.style.left = '';
+    return;
+  }
   const midY = target.top + target.height / 2;
   const closeCenterX = target.left + target.width - 24 - 24 - 18;
   overlayPrevBtn.style.top = `${midY}px`;
