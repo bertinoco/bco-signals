@@ -325,9 +325,15 @@ function renderTitles(data) {
     // no quote, so gating on the quote alone would leave their chips unreachable.
     const hasQuote = !!entry.quote;
     const hasDetail = hasQuote || shownSignals.length > 0;
+    // `quoteTranslatedFrom` marks a quote as a translation rather than the
+    // verbatim source text — see CLAUDE.md's Quote field section. Rendered so
+    // a reader never mistakes a translation for verbatim quotation.
+    const translationHtml = (hasQuote && entry.quoteTranslatedFrom)
+      ? `<p class="quote-translation-note">Translated from ${entry.quoteTranslatedFrom}</p>`
+      : '';
     const detailHtml = hasDetail
       ? `<div class="title-detail"><div class="title-detail-inner">`
-        + (hasQuote ? `<blockquote>${entry.quote}</blockquote>` : '')
+        + (hasQuote ? `<blockquote>${entry.quote}</blockquote>${translationHtml}` : '')
         + signalsHtml
         + `</div></div>`
       : '';

@@ -286,6 +286,21 @@ Each entry may include an optional `quote` field — a direct excerpt from the J
 - If no single excerpt is definitive, leave the field null rather than stitching sentences together.
 - The field is optional. Omit it (or set to null) if no suitable quote exists.
 
+**Non-English JDs.** "Verbatim" means the original language — a Korean JD's
+`quote` is Korean text, unaltered, same as an English JD's `quote` is English
+text, unaltered. A translation is a rewording, not a normalization, so it
+never substitutes for the verbatim excerpt silently.
+
+The one exception: `quote` may hold an English translation instead of the
+verbatim original when `quoteTranslatedFrom` is also set to the source
+language (e.g. `"Korean"`) — and only then. The site renders that field as a
+visible caption under the quote, so a reader never mistakes a translation for
+verbatim source text the way they would if the two were indistinguishable.
+Set `quoteTranslatedFrom` only when `quote` is actually a translation; leave
+both fields alone for English-language JDs. The archived source in
+`jd-source/{id}.md` stays in the original language regardless — this
+exception touches `quote` only, never the archive.
+
 ## Site code
 
 `docs/index.html` loads its assets with a query-string cache-buster:

@@ -436,6 +436,17 @@ body {
 .title-detail blockquote::before { content: '\201C'; }
 .title-detail blockquote::after  { content: '\201D'; }
 
+/* Caption for a translated quote — same mono/muted treatment as .title-attrib,
+   so the disclosure reads as dataset metadata rather than prose. */
+.quote-translation-note {
+  margin-top: var(--space-1);
+  padding-left: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--font-xs);
+  color: hsl(var(--muted-foreground));
+  line-height: var(--leading-snug);
+}
+
 /* One attribution line under the role: company and date. Mono, because
    everything on it is dataset metadata rather than prose. Rank is carried
    by size and colour instead of by a change of face. */
