@@ -3,7 +3,7 @@
     "title": "BCO Content Skills Tracker",
     "description": "A curated skills tracker for the content design community.",
     "lastUpdated": "2026-08-14",
-    "totalEntries": 35
+    "totalEntries": 36
   },
   "entries": [
     {
@@ -1093,6 +1093,33 @@
       "sourceUrl": null,
       "dateAdded": "2026-08-14",
       "quote": "You'll be figuring out how to harness the potential of AI to scale your impact as a content designer, quickly test and iterate on your ideas with a huge degree of freedom and flexibility, and learn as part of your day-to-day work as this technology evolves."
+    },
+    {
+      "id": "coupang-senior-content-strategist-core-ux",
+      "company": "Coupang",
+      "title": "Senior Content Strategist (Core UX)",
+      "domain": "E-commerce",
+      "engagement": "Not specified",
+      "location": "Not specified",
+      "remote": null,
+      "coreFrame": "UX writing and content strategy across Coupang's app and services — defining writing principles, terminology, and content frameworks and propagating them org-wide; proposing content strategy from the customer journey and UX principles in collaboration with PMs and designers. Extends into AI-generated content experience design — establishing behavioral guidelines, response formats, and quality rubrics for AI-generated content, defining Korean voice & tone for conversational AI, and collaborating with engineers to write pass/fail quality rules and redefine format and tone guidelines as requirements for model training and prompt improvement.",
+      "clusters": [
+        "terminology-governance",
+        "content-systems-design",
+        "ai-content-governance",
+        "ai-tooling",
+        "enablement"
+      ],
+      "signals": [
+        "ai-native-expectation",
+        "model-behavior-design",
+        "governance-as-value-prop"
+      ],
+      "compRange": null,
+      "sourceUrl": null,
+      "dateAdded": "2026-08-14",
+      "quote": "Redefines format and tone guidelines into requirements that engineers can use for model training and prompt improvement.",
+      "quoteTranslatedFrom": "Korean"
     }
   ],
   "clusters": {

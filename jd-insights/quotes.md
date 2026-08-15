@@ -3,7 +3,7 @@
 
 # Quotes
 
-Every stored quote, verbatim from the posting. **34 of 35** entries carry one.
+Every stored quote, verbatim from the posting. **35 of 36** entries carry one.
 
 These are the lines that anchor each entry's cluster and signal assignments, so they are the strongest citable evidence in the dataset. Each is checked against its `jd-source` archive before commit.
 
@@ -60,6 +60,12 @@ These are the lines that anchor each entry's cluster and signal assignments, so 
 > As Content Systems Architect, your job is to own the execution and growth of those series — not by writing content yourself, but by building AI-powered systems.
 
 `colab-content-systems-architect` · added 2026-05-24
+
+### Coupang — Senior Content Strategist (Core UX)
+
+> Redefines format and tone guidelines into requirements that engineers can use for model training and prompt improvement.
+
+`coupang-senior-content-strategist-core-ux` · added 2026-08-14
 
 ### Figma — UX Writer, AI
 
