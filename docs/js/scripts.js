@@ -474,9 +474,12 @@ function reducedMotion() {
 // instead of pushing the panel past the viewport.
 function measureOverlayHeight(backInnerHTML, width) {
   const probe = document.createElement('div');
+  // Padding must match .flip-card--overlay .flip-card-back exactly (see
+  // styles.css) — a narrower probe wraps text less than the real render
+  // does, so the estimated height comes in short.
   probe.style.cssText = `position:fixed; visibility:hidden; left:-9999px; top:0;
     width:${width}px; box-sizing:border-box; display:flex; flex-direction:column;
-    align-items:flex-start; padding: var(--space-8) var(--space-4);`;
+    align-items:flex-start; padding: var(--space-8) 72px;`;
   probe.innerHTML = backInnerHTML;
   document.body.appendChild(probe);
   const height = probe.scrollHeight;

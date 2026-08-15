@@ -347,6 +347,26 @@ This has now been missed twice.
   and the cached script re-rendered the slot as "Loading the dataset…".
   Fixed in `d7f9113`.
 
+## Design tokens
+
+`--radius` and `--radius-sm` cover small controls — buttons, chips, inputs.
+`--radius-lg` (20px) is for panel-scale surfaces, currently just the
+flip-card overlay. Reach for it instead of a hardcoded radius value when a
+new surface needs rounding at that scale, and add a new token rather than
+repeating a raw number if a third scale turns out to be needed.
+
+Any offscreen measurement used to precompute a layout value — height,
+width — must mirror the padding, width, and box-sizing of what actually
+renders, not an approximation of it. The flip-card overlay's height was
+originally measured against a narrower horizontal padding than
+`.flip-card--overlay .flip-card-back` actually applies, so the estimate
+came in short. It hadn't visibly clipped anything yet — current entries
+still had margin to spare — but a description or roles list one wrap
+longer would have clipped silently under `overflow-y: auto`, with no
+visible scrollbar to hint at it (macOS renders overlay-style scrollbars).
+Fixed by making the probe's padding match the CSS exactly instead of
+approximating it.
+
 ## Vocabulary
 
 Terms the repository has adopted because the dataset needed a word the

@@ -70,6 +70,7 @@
   /* Shape — near-square, no fills */
   --radius-sm: 3px;
   --radius:    4px;
+  --radius-lg: 20px;
 
   /* Motion */
   --duration-fast: 140ms;
@@ -643,7 +644,7 @@ body {
 
 .flip-card--overlay {
   z-index: 1001;
-  border-radius: 20px;
+  border-radius: var(--radius-lg);
   box-shadow: 0 24px 64px hsl(var(--foreground) / 0.28);
   transition: top var(--duration-flip) var(--ease-out),
               left var(--duration-flip) var(--ease-out),
