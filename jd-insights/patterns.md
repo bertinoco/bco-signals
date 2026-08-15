@@ -245,3 +245,26 @@ mismatches in the corpus so far — but they aren't the same kind of mismatch:
 Fin substitutes the role name, Wise substitutes the seniority level. Two
 instances, and two different substitutions, isn't enough to call this one
 pattern yet; recorded so a third instance has something to compare against.
+
+## First non-English posting
+
+**Coupang**'s Senior Content Strategist (Core UX) is the first entry in the
+corpus written in a language other than English — the posting is entirely in
+Korean, with a single exception: the job title itself is stated in English,
+verbatim, inside an otherwise Korean document. `title` stores that English
+string unchanged, same as any other entry.
+
+This is also the first use of `quoteTranslatedFrom`, added to the schema
+alongside this entry. `quote` holds an English translation of the JD's
+own line about redefining format and tone guidelines into requirements
+engineers can use for model training and prompt improvement, and
+`quoteTranslatedFrom: "Korean"` marks it as a translation rather than a
+verbatim excerpt — the site renders that field as a visible caption so a
+reader never mistakes the two. The Korean sentence the translation is drawn
+from is preserved unaltered in `jd-source`, per the Quote field rule that
+"verbatim" means the original language, not the English translation.
+
+One instance, so nothing yet to compare it against — worth recording because
+it's the first time the archive itself has had to represent a posting in a
+language other than English, not because of anything the posting's content
+does.
