@@ -210,7 +210,6 @@ body {
 .hero-top {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: var(--space-2);
   text-align: left;
 }
@@ -224,18 +223,36 @@ body {
   text-align: left;
 }
 
+.hero-wordmark {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-size: var(--font-sm);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: hsl(var(--hero-fg));
+}
+
 /* icon_circle.png is a black circle — invert makes it read as a white mark
-   against this same fixed black band instead of vanishing into it. "Signals"
-   now lives in the heading itself (.hero-prefix below), so the corner mark
-   is icon-only. */
+   against this same fixed black band instead of vanishing into it. */
 .hero-mark {
-  width: 28px;
-  height: 28px;
+  width: 24px;
+  height: 24px;
   filter: invert(1);
 }
 
-/* Lighter weight and reduced opacity than the wordmark so the CTA reads as
-   secondary — a way out, not the brand mark. */
+/* Both CTAs sit under the body copy now: "Show me the data" as the primary
+   bordered button, "View on GitHub" beside it as an understated secondary
+   link — same visual hierarchy, just relocated out of the top corner. */
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+}
+
 .hero-cta {
   display: flex;
   align-items: center;
@@ -276,20 +293,16 @@ body {
   line-height: var(--leading-tight);
   letter-spacing: var(--tracking-tight);
   text-wrap: balance;
-  /* Dimmed base so .hero-prefix's full-opacity "Signals —" reads as the
-     brighter of the two — brighter than the subtext below it, though, so
-     the heading still outranks it. */
-  color: hsl(var(--hero-fg) / 0.75);
+  color: hsl(var(--hero-fg));
   margin-bottom: var(--space-2);
   /* Cap the measure so the headline breaks into even lines rather than one
      long line and a short one. */
   max-width: 640px;
 }
 
-.hero-prefix {
-  color: hsl(var(--hero-fg));
-}
-
+/* 0.7 opacity over the fixed black ground computes to ~9.9:1 against
+   --hero-bg — clearly a lighter grey next to the full-white heading, well
+   past AA (4.5:1) for body text. */
 .site-header p {
   font-size: var(--font-md);
   color: hsl(var(--hero-fg) / 0.7);
@@ -303,7 +316,6 @@ body {
   display: inline-flex;
   align-items: center;
   gap: var(--space-1);
-  margin-top: var(--space-4);
   padding: 10px var(--space-3);
   font-size: var(--font-sm);
   font-weight: var(--weight-medium);
