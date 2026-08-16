@@ -671,6 +671,17 @@ body {
   margin-top: var(--space-4);
 }
 
+/* Left-aligned, not centered: Roles is a single-column list, where a
+   centered button under it reads fine. Centering this one under a
+   3-column grid instead lands it under whichever column happens to be
+   in the middle, with no visible relationship to the grid it belongs
+   to — flush with the grid's own left edge reads as intentional. */
+#clusters-show-more,
+#signals-show-more {
+  text-align: left;
+  margin-top: var(--space-4);
+}
+
 .show-more-btn {
   font-family: var(--font-mono);
   font-size: var(--font-xs);
