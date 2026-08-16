@@ -363,17 +363,22 @@ body {
 /* No divider — the opaque background alone is enough to separate it from
    content scrolling underneath once it sticks. Left-aligned to match the
    hero content's own left edge, overriding body's centered text-align.
-   Heavier on top than bottom, on purpose: the pull-quote's own padding
-   above this is gray, reads as belonging to that block, and doesn't
-   register as breathing room before the nav — only this element's own
-   (white) padding does. Light on the bottom so the nav sits closer to
-   the cards than to the quote, rather than symmetric or reversed. */
+
+   This element is `position: sticky`, so its own padding has to work in
+   two very different contexts: sitting once right after the pull-quote
+   (static), and then pinned flush to the bare viewport top for the rest
+   of the scroll (stuck) — nearly all of the time it's actually visible.
+   A tall top padding reads as reasonable separation from the quote in
+   the static case, but the same value looks like a stray gap floating
+   above the tabs once it's stuck against nothing. Kept modest and
+   symmetric so it doesn't misbehave in the stuck state, at the cost of
+   being merely fine (not ideal) in the brief static one. */
 .nav-bar {
   position: sticky;
   top: 0;
   z-index: 10;
   background: hsl(var(--background));
-  padding: var(--space-8) 0 0;
+  padding: var(--space-3) 0;
   text-align: left;
 }
 
