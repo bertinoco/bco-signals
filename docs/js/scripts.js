@@ -5,7 +5,17 @@ const TITLES_LIMIT = 12;
 const FETCH_TIMEOUT_MS = 10000;
 const SECTION_CONTAINERS = ['cluster-grid', 'signal-list', 'title-list'];
 let showAllTitles = false;
+let showAllClusters = false;
+let showAllSignals = false;
 let globalData = null;
+
+// Responsibilities/Skills truncate at 2 full rows of whatever column count
+// the grid is actually rendering at, not a flat number — read the live
+// layout instead of duplicating the grid's own breakpoints as a second,
+// driftable source of truth.
+function currentColumnCount(gridEl) {
+  return getComputedStyle(gridEl).gridTemplateColumns.split(' ').length;
+}
 
 // ── Copy ────────────────────────────────────────────────────
 // All loading, empty, and error copy lives here. See copy-patterns.md
@@ -221,7 +231,21 @@ function renderClusters(data) {
   // Sort by number of companies, descending
   clusterKeys.sort((a, b) => clusterMap[b].length - clusterMap[a].length);
 
-  grid.innerHTML = clusterKeys.map(key => {
+  const showMore = document.getElementById('clusters-show-more');
+  const showMoreBtn = showMore ? showMore.querySelector('.show-more-btn') : null;
+  const limit = currentColumnCount(grid) * 2;
+  const keysToRender = showAllClusters ? clusterKeys : clusterKeys.slice(0, limit);
+
+  if (showMore) {
+    if (!showAllClusters && clusterKeys.length > limit) {
+      showMore.style.display = 'block';
+      showMoreBtn.textContent = `View all ${clusterKeys.length} responsibilities`;
+    } else {
+      showMore.style.display = 'none';
+    }
+  }
+
+  grid.innerHTML = keysToRender.map(key => {
     const cluster = data.clusters[key];
     return `
       <div class="flip-card cluster-card" data-key="${key}" role="button" tabindex="0" aria-label="Expand ${cluster.label}">
@@ -381,7 +405,21 @@ function renderSignals(data) {
     return;
   }
 
-  list.innerHTML = relevantSignals.map(key => {
+  const showMore = document.getElementById('signals-show-more');
+  const showMoreBtn = showMore ? showMore.querySelector('.show-more-btn') : null;
+  const limit = currentColumnCount(list) * 2;
+  const keysToRender = showAllSignals ? relevantSignals : relevantSignals.slice(0, limit);
+
+  if (showMore) {
+    if (!showAllSignals && relevantSignals.length > limit) {
+      showMore.style.display = 'block';
+      showMoreBtn.textContent = `View all ${relevantSignals.length} skills`;
+    } else {
+      showMore.style.display = 'none';
+    }
+  }
+
+  list.innerHTML = keysToRender.map(key => {
     const signal = data.signals[key];
     return `
       <div class="flip-card signal-card" data-key="${key}" role="button" tabindex="0" aria-label="Expand ${signal.label}">
@@ -754,6 +792,22 @@ if (showMoreEl) {
   showMoreEl.querySelector('.show-more-btn').addEventListener('click', () => {
     showAllTitles = true;
     if (globalData) renderTitles(globalData);
+  });
+}
+
+const clustersShowMoreEl = document.getElementById('clusters-show-more');
+if (clustersShowMoreEl) {
+  clustersShowMoreEl.querySelector('.show-more-btn').addEventListener('click', () => {
+    showAllClusters = true;
+    if (globalData) renderClusters(globalData);
+  });
+}
+
+const signalsShowMoreEl = document.getElementById('signals-show-more');
+if (signalsShowMoreEl) {
+  signalsShowMoreEl.querySelector('.show-more-btn').addEventListener('click', () => {
+    showAllSignals = true;
+    if (globalData) renderSignals(globalData);
   });
 }
 
