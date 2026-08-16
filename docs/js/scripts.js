@@ -361,22 +361,16 @@ function renderTitles(data) {
     const hasDetail = hasQuote || shownSignals.length > 0;
     // `quoteTranslatedFrom`/`titleTranslatedFrom` mark the quote and/or title as
     // translations rather than verbatim source text — see CLAUDE.md's Quote and
-    // Title field sections. One combined note, worded for whichever combination
-    // applies, surfaces only once a reader expands the entry (not as metadata
-    // sitting under the title) — so it only ever shows alongside the quote it
-    // qualifies. A title-only translation on an entry with no quote and no
-    // signals has no detail panel to appear in; no entry has hit that yet, so
-    // it's left unhandled rather than solved for a case that doesn't exist.
-    let translationText = '';
-    if (entry.titleTranslatedFrom && entry.quoteTranslatedFrom) {
-      translationText = `Title and quote translated from ${entry.quoteTranslatedFrom}`;
-    } else if (entry.quoteTranslatedFrom) {
-      translationText = `Translated from ${entry.quoteTranslatedFrom}`;
-    } else if (entry.titleTranslatedFrom) {
-      translationText = `Title translated from ${entry.titleTranslatedFrom}`;
-    }
-    const translationHtml = (hasDetail && translationText)
-      ? `<p class="quote-translation-note">${translationText}</p>`
+    // Title field sections. One plain note, regardless of which field(s) are
+    // actually translated, surfaces only once a reader expands the entry (not
+    // as metadata sitting under the title) — so it only ever shows alongside
+    // the quote it qualifies. A title-only translation on an entry with no
+    // quote and no signals has no detail panel to appear in; no entry has hit
+    // that yet, so it's left unhandled rather than solved for a case that
+    // doesn't exist.
+    const translationLang = entry.quoteTranslatedFrom || entry.titleTranslatedFrom;
+    const translationHtml = (hasDetail && translationLang)
+      ? `<p class="quote-translation-note">Translated from ${translationLang}</p>`
       : '';
     const detailHtml = hasDetail
       ? `<div class="title-detail"><div class="title-detail-inner">`
