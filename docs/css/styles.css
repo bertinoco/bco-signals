@@ -421,7 +421,12 @@ body {
 }
 
 @media (max-width: 480px) {
-  .badge-nav { gap: var(--space-2); }
+  /* The three relabeled tabs (Phase B) no longer reliably fit on one row
+     at the narrowest supported widths even with the reduced gap — verified
+     overflow at 320-340px viewport width. Wrapping the row (rather than
+     shrinking text further or letting a single label wrap mid-phrase)
+     keeps every label on one line and never clips content off-screen. */
+  .badge-nav { gap: var(--space-2); flex-wrap: wrap; }
 }
 
 /* ── Sections ─────────────────────────────────────────────── */

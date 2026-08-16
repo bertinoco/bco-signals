@@ -257,7 +257,7 @@ function renderClusters(data) {
     const cluster = data.clusters[key];
     const pct = keyPercentage(data, key, 'clusters');
     return `
-      <div class="flip-card cluster-card" data-key="${key}" role="button" tabindex="0" aria-label="Expand ${cluster.label}">
+      <div class="flip-card cluster-card" data-key="${key}" role="button" tabindex="0" aria-label="Expand ${cluster.label}, ${pct}% of roles">
         <div class="flip-card-front">
           <h3>${cluster.label}</h3>
           <div class="flip-card-stat">${pct}%</div>
@@ -433,7 +433,7 @@ function renderSignals(data) {
     const signal = data.signals[key];
     const pct = keyPercentage(data, key, 'signals');
     return `
-      <div class="flip-card signal-card" data-key="${key}" role="button" tabindex="0" aria-label="Expand ${signal.label}">
+      <div class="flip-card signal-card" data-key="${key}" role="button" tabindex="0" aria-label="Expand ${signal.label}, ${pct}% of roles">
         <div class="flip-card-front">
           <div class="signal-label">${signal.label}</div>
           <div class="flip-card-stat">${pct}%</div>
