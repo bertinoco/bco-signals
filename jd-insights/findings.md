@@ -145,15 +145,15 @@ so they are not rediscovered from scratch. Entries stay here after a key is
 created, marked resolved, so the reasoning survives the promotion. Step 4's bar still applies: a new
 instance updates a count, it does not promote a pattern to a finding.
 
-**Measurement and evaluation frameworks — 12 instances.** OpenAI (evals,
+**Measurement and evaluation frameworks — 13 instances.** OpenAI (evals,
 evaluation rubrics), Netflix and Spotify (evaluation frameworks), Meta
 (measurement frameworks, twice — the AI Content Strategy Lead states both
 evaluation frameworks and business-impact measurement), LinkedIn (architecture health metrics), GM and Notion
 (content QA), Ride Platform (success metrics), Chime (content quality metrics,
 automated governance dashboards), Ally (success metrics and measurement
-frameworks). The largest un-keyed pattern in the corpus. Held because it
-overlaps `governance-as-value-prop` heavily and cannot yet be separated
-cleanly.
+frameworks), Wix (evaluation workflows for generated UX content). The largest
+un-keyed pattern in the corpus. Held because it overlaps
+`governance-as-value-prop` heavily and cannot yet be separated cleanly.
 
 The entry below suggests the separator: whether the measurement is executable.
 A framework reported on quarterly is governance. An eval suite that runs
@@ -348,6 +348,22 @@ First instance, so it stays here rather than becoming a key or a finding.
 *Trigger to revisit: a second posting titled for the classification
 discipline on its own — Taxonomist, Ontologist, Information Architect — rather
 than for a content role with taxonomy folded in.*
+
+**A single governance framework named for both human and agentic workflows —
+one instance.** Wix's Content Designer, Language & Systems states the role is
+"central to defining how content governance works across both human and
+agentic workflows" — one governance framework, explicitly scoped to cover
+both. The closest existing language in the corpus is Figma's UX Writer, AI,
+which asks for "taxonomies, glossaries, and other artifacts for both human and
+agentic ingestion" — but that line is about content built to be read by both
+audiences, not about a governance process applied to both. Different framing:
+Figma's is what the content is for, Wix's is how the process that produces and
+polices it is structured. Not a clean second instance of the same pattern.
+First instance, so it stays here rather than becoming a key or a finding.
+*Trigger to revisit: a second posting that states one governance, standards,
+or review process explicitly scoped to cover both human-authored and
+agent-generated content, rather than either a process for one audience or an
+artifact built for both.*
 
 ---
 

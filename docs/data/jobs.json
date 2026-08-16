@@ -3,7 +3,7 @@
     "title": "BCO Content Skills Tracker",
     "description": "A curated skills tracker for the content design community.",
     "lastUpdated": "2026-08-15",
-    "totalEntries": 38
+    "totalEntries": 39
   },
   "entries": [
     {
@@ -1178,6 +1178,34 @@
       "sourceUrl": null,
       "dateAdded": "2026-08-15",
       "quote": "You will shape how our AI Assistant thinks, speaks, and acts, defining the conversation flows, prompt structures, and behavioral standards that make agentic AI experiences feel trustworthy, capable, and human-centered."
+    },
+    {
+      "id": "wix-content-designer-language-systems",
+      "company": "Wix",
+      "title": "Content Designer, Language & Systems",
+      "domain": "SaaS",
+      "engagement": "Full-time",
+      "location": "Tel Aviv",
+      "remote": false,
+      "coreFrame": "Tooling, documentation, standards, and evaluation workflows within the Writers Guild that make it possible to generate and update UX content at scale, reliably and consistently, in line with Wix's guidelines; defining content governance across both human and agentic workflows; building programmatic style guides, evaluation frameworks, reusable UI patterns, and rule-based terminology systems intended as the authoritative source of truth org-wide; mentoring UX writers and educating writers and non-writers on these systems and best practices; championing AI tool adoption through workshops and guild content reviews; and collaborating with product localization on frameworks that scale across languages, regions, and assistive technology contexts.",
+      "clusters": [
+        "content-systems-design",
+        "terminology-governance",
+        "ai-content-governance",
+        "ai-tooling",
+        "enablement",
+        "localization"
+      ],
+      "signals": [
+        "enabler-not-bottleneck",
+        "governance-as-value-prop",
+        "central-standards-function",
+        "accessibility-as-constraint"
+      ],
+      "compRange": null,
+      "sourceUrl": null,
+      "dateAdded": "2026-08-15",
+      "quote": "You'll be central to defining how content governance works across both human and agentic workflows, while also educating writers and non-writers on these systems and best practices."
     }
   ],
   "clusters": {
