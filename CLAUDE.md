@@ -64,6 +64,16 @@ Identify every stated responsibility, skill requirement, and process expectation
 **Step 2 — Map against existing clusters and signals**
 For each finding, check whether it maps to an existing cluster or signal key in `jobs.json`. Assign only those that are explicitly grounded in the JD text. Do not assign a cluster or signal because it "probably applies."
 
+Some keys have a documented gap between their user-facing label/description
+and how they've actually been assigned across the corpus — see
+`jd-insights/findings.md`'s "description versus use" notes (currently
+`content-marketing-adjacent`, `ai-native-expectation`, `ai-tooling`). For
+these, resolve the assignment against the documented pattern of actual use,
+not the literal wording of the description — read the note and the entries it
+cites before deciding. This is not a judgment call to bring to the user each
+time; decide it directly from precedent, and only flag if the JD in front of
+you doesn't fit the pattern the note already describes.
+
 **Step 3 — Flag potential new additions**
 If a finding does not map to any existing cluster or signal, flag it explicitly before writing the entry. Do not silently add new keys.
 
