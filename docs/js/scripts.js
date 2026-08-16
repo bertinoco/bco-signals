@@ -259,8 +259,8 @@ function renderClusters(data) {
     return `
       <div class="flip-card cluster-card" data-key="${key}" role="button" tabindex="0" aria-label="Expand ${cluster.label}">
         <div class="flip-card-front">
-          <div class="flip-card-stat">${pct}%</div>
           <h3>${cluster.label}</h3>
+          <div class="flip-card-stat">${pct}%</div>
         </div>
         <div class="flip-card-back">
           ${flipCardBackHtml(key, 'clusters', cluster.label, cluster.description, data)}
@@ -435,8 +435,8 @@ function renderSignals(data) {
     return `
       <div class="flip-card signal-card" data-key="${key}" role="button" tabindex="0" aria-label="Expand ${signal.label}">
         <div class="flip-card-front">
-          <div class="flip-card-stat">${pct}%</div>
           <div class="signal-label">${signal.label}</div>
+          <div class="flip-card-stat">${pct}%</div>
         </div>
         <div class="flip-card-back">
           ${flipCardBackHtml(key, 'signals', signal.label, signal.description, data)}
