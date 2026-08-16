@@ -281,6 +281,27 @@ Em dash and pipe both join a role to its scope, which is what a comma does:
 If a new posting uses a separator that fits neither case, leave the title
 verbatim and raise it rather than widening the rule.
 
+**Non-English JDs.** The same verbatim principle applies: a Chinese posting's
+`title` is Chinese text, unaltered, unless translated under the exception
+below. Silently storing an English gloss would break the same tie back to the
+archive this field exists to protect.
+
+The one exception, mirroring the Quote field's non-English exception: `title`
+may hold an English translation instead of the verbatim original when
+`titleTranslatedFrom` is also set to the source language — and only then. The
+site renders that field as a visible caption under the title, the same
+mechanism `quote` uses. Set `titleTranslatedFrom` only when `title` is
+actually a translation; leave both fields alone for English-language JDs. The
+archived source's own front-matter `title:` field records the posting's
+actual title in its original language regardless of what `jobs.json`
+stores — this exception touches the `jobs.json` field only, never the
+archive.
+
+Before committing (Step 6), confirm the original-language title actually
+appears in the archived source text, the same way a translated `quote` is
+checked against its original-language sentence rather than a literal string
+match.
+
 ## Quote field
 
 Each entry may include an optional `quote` field — a direct excerpt from the JD that anchors the cluster and signal assignments. Rules:
