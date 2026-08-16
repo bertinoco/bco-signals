@@ -353,12 +353,18 @@ function renderTitles(data) {
       ? `<div class="title-date">${formatDate(entry.dateAdded)}</div>`
       : '';
 
+    // Mirrors quoteTranslatedFrom — see CLAUDE.md's Title field section.
+    const titleTranslationHtml = entry.titleTranslatedFrom
+      ? `<p class="quote-translation-note">Translated from ${entry.titleTranslatedFrom}</p>`
+      : '';
+
     return `
       <div class="title-entry${hasDetail ? ' is-expandable' : ''}">
         <div class="title-header">
           <div class="title-name">${formatTitle(entry.title)}</div>
           ${expandBtn}
         </div>
+        ${titleTranslationHtml}
         ${attribHtml}
         ${dateHtml}
         ${detailHtml}

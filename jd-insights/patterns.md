@@ -343,6 +343,47 @@ recording because it's the first real test of whether the 8-value taxonomy
 holds up as new sectors show up, rather than just accumulating companies
 inside the categories it already has.
 
+## Second non-English posting, and the first translated title
+
+**Alibaba**'s AI内容策略师 (AI Content Strategist) is the second entry in the
+corpus written in a language other than English — Chinese this time, after
+Coupang's Korean. Unlike Coupang, where the title itself was stated in
+English inside an otherwise Korean posting, Alibaba's title is Chinese
+throughout with no English variant anywhere in the source. That makes this
+the first entry to need `titleTranslatedFrom`, added to the schema alongside
+this one and mirroring `quoteTranslatedFrom`: `jobs.json` stores the English
+translation "AI Content Strategist" as `title` with `titleTranslatedFrom:
+"Chinese"`, while the archive's own front matter and body keep the original
+"AI内容策略师" unaltered, per the Title field's non-English rule.
+
+`quote` is translated the same way, with `quoteTranslatedFrom: "Chinese"`
+alongside it — so this entry uses both translation mechanisms at once, the
+first to need both. Two non-English entries, two different languages, two
+different reasons the title needed translating (Coupang's was already
+English in the source; Alibaba's wasn't) — worth recording because it's the
+first time the title mechanism has been exercised at all, not because a
+second instance yet exists to compare it against.
+
+## First posting captured from phone screenshots
+
+**Alibaba**'s AI Content Strategist is the first entry in the corpus
+captured by transcribing phone screenshots of a LinkedIn posting rather than
+pasting text directly. The method left one short fragment ("言内容库。")
+stranded at a screenshot scroll boundary with no confident place in the
+sequence; it's excluded from the archive rather than guessed at, and
+`captureNote` records that all eight responsibilities, five background
+items, and eight competency items were otherwise confirmed complete against
+the submitter's own translation. `captureMethod` still reads
+`pasted-from-claude-chat` — the closest existing enum value — with the actual
+provenance carried in `captureNote` instead, since the README's three
+methods don't have a value for this.
+
+Distinct from the "Where the posting was captured from" pattern above, which
+is about platform (LinkedIn vs. a company site) rather than capture
+mechanism. One instance, so nothing yet to compare it against — worth
+recording because it's a new way source text can arrive incomplete that
+isn't covered by any existing `captureMethod` value.
+
 ## "Guild" as a name for the content community
 
 Two companies now describe their content people as a "Guild" rather than a

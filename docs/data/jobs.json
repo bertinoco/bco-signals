@@ -3,7 +3,7 @@
     "title": "BCO Content Skills Tracker",
     "description": "A curated skills tracker for the content design community.",
     "lastUpdated": "2026-08-15",
-    "totalEntries": 39
+    "totalEntries": 40
   },
   "entries": [
     {
@@ -1206,6 +1206,36 @@
       "sourceUrl": null,
       "dateAdded": "2026-08-15",
       "quote": "You'll be central to defining how content governance works across both human and agentic workflows, while also educating writers and non-writers on these systems and best practices."
+    },
+    {
+      "id": "alibaba-ai-content-strategist",
+      "company": "Alibaba",
+      "title": "AI Content Strategist",
+      "titleTranslatedFrom": "Chinese",
+      "domain": "Big Tech",
+      "engagement": "Full-time",
+      "location": "Hangzhou, Zhejiang, China",
+      "remote": false,
+      "coreFrame": "Building an AI-driven automated content production system within the Global Content Strategy & Design team — covering requirements analysis, prompt design, content generation, channel adaptation, quality evaluation, and asset accumulation across online promotions, campaign pages, ad creative, and multilingual marketing content; establishing AI content standards and quality evaluation mechanisms; building industry terminology, prompt libraries, and content templates as reusable knowledge assets; and judging which content suits AI mass-production versus human refinement.",
+      "clusters": [
+        "content-systems-design",
+        "terminology-governance",
+        "ai-tooling",
+        "ai-content-governance",
+        "enablement"
+      ],
+      "signals": [
+        "ai-native-expectation",
+        "content-marketing-adjacent",
+        "enabler-not-bottleneck",
+        "governance-as-value-prop",
+        "agent-retrieval"
+      ],
+      "compRange": null,
+      "sourceUrl": null,
+      "dateAdded": "2026-08-15",
+      "quote": "This role isn't just about using AI to generate content — it requires understanding business goals, product UX/UI, brand voice, channel strategy, and B2B industry differences, to judge what content is suited to AI mass-production versus what needs human refinement, and how to safeguard content quality through standards, templates, terminology banks, industry insight, and evaluation mechanisms.",
+      "quoteTranslatedFrom": "Chinese"
     }
   ],
   "clusters": {

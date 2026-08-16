@@ -3,51 +3,51 @@
 
 # Stats
 
-Dataset state: **39 entries**, `meta.lastUpdated` 2026-08-15. Generated 2026-08-16.
+Dataset state: **40 entries**, `meta.lastUpdated` 2026-08-15. Generated 2026-08-16.
 
 Every figure here is counted from `docs/data/jobs.json`. If you quote one in something published, quote the entry count with it — these move.
 
 ## Headline
 
-- **39** entries across **33** companies and **9** domains
+- **40** entries across **34** companies and **9** domains
 - Date range: 2026-05-24 to 2026-08-15
 
 ## Responsibility clusters
 
 | | Entries | Share |
 |---|---:|---:|
-| Content systems design | 36 | 92% |
-| Enablement & team upskilling | 33 | 85% |
-| AI tooling & automation | 26 | 67% |
-| AI-generated content governance | 22 | 56% |
-| Terminology & language governance | 16 | 41% |
-| Taxonomy & information architecture | 16 | 41% |
+| Content systems design | 37 | 92% |
+| Enablement & team upskilling | 34 | 85% |
+| AI tooling & automation | 27 | 68% |
+| AI-generated content governance | 23 | 58% |
+| Terminology & language governance | 17 | 42% |
+| Taxonomy & information architecture | 16 | 40% |
 | Technical writing & documentation | 11 | 28% |
-| Localization & internationalization | 8 | 21% |
+| Localization & internationalization | 8 | 20% |
 
 ## Skill signals
 
 | | Entries | Share |
 |---|---:|---:|
-| AI fluency expected | 24 | 62% |
-| Governance emphasized | 17 | 44% |
-| Enabler, not bottleneck | 15 | 38% |
+| AI fluency expected | 25 | 62% |
+| Governance emphasized | 18 | 45% |
+| Enabler, not bottleneck | 16 | 40% |
 | Central standards function | 11 | 28% |
-| Model behavior design | 10 | 26% |
-| Language as infrastructure | 9 | 23% |
-| Content systems for marketers | 5 | 13% |
-| GEO & SEO | 5 | 13% |
-| Structured data | 5 | 13% |
-| Accessibility as structural constraint | 5 | 13% |
+| Model behavior design | 10 | 25% |
+| Language as infrastructure | 9 | 22% |
+| Content systems for marketers | 6 | 15% |
+| GEO & SEO | 5 | 12% |
+| Structured data | 5 | 12% |
+| Accessibility as structural constraint | 5 | 12% |
 | Content work under new titles | 3 | 8% |
+| Structured for agent retrieval | 3 | 8% |
 | Title ≠ stated responsibilities | 2 | 5% |
 | Title dilution | 2 | 5% |
 | Classification for ML | 2 | 5% |
-| Structured for agent retrieval | 2 | 5% |
 
 ## Compensation
 
-- Stated in **29 of 39** entries (24 USD, 3 GBP, 2 CAD)
+- Stated in **29 of 40** entries (24 USD, 3 GBP, 2 CAD)
 - Full spread: **$65,000** to **$710,000**
 - USD medians: **$132,000** low, **$186,300** high
 - `covers`: 20 base, 7 unstated, 2 total
@@ -74,20 +74,20 @@ Read the n column before quoting any of these. A median over fewer than roughly 
 
 ## Title vocabulary
 
-Words appearing in 3 or more of the 39 stored titles. Counted from `title`, which is stored verbatim — so this reflects what employers wrote, not what the site renders.
+Words appearing in 3 or more of the 40 stored titles. Counted from `title`, which is stored verbatim — so this reflects what employers wrote, not what the site renders.
 
 | Word | Titles | Share |
 |---|---:|---:|
-| Content | 30 | 77% |
+| Content | 31 | 78% |
 | Designer | 15 | 38% |
-| Systems | 9 | 23% |
-| Senior | 9 | 23% |
-| UX | 9 | 23% |
-| AI | 9 | 23% |
-| Staff | 9 | 23% |
+| AI | 10 | 25% |
+| Systems | 9 | 22% |
+| UX | 9 | 22% |
+| Senior | 9 | 22% |
+| Staff | 9 | 22% |
 | Architect | 7 | 18% |
 | Writer | 6 | 15% |
-| Strategist | 5 | 13% |
+| Strategist | 6 | 15% |
 | Engineer | 3 | 8% |
 | Language | 3 | 8% |
 | Design | 3 | 8% |
@@ -97,8 +97,8 @@ Words appearing in 3 or more of the 39 stored titles. Counted from `title`, whic
 
 | | Entries | Companies |
 |---|---:|---|
+| Big Tech | 10 | Alibaba, Amazon, Apple, Google, LinkedIn, Meta, OpenAI |
 | Finance | 9 | Ally Financial, Capital One, Chime, Insurify, JPMorgan Chase, Sanna, Wealthsimple, Wise |
-| Big Tech | 9 | Amazon, Apple, Google, LinkedIn, Meta, OpenAI |
 | SaaS | 6 | Adobe, CoLab, Figma, Notion, Wix, Zoom |
 | E-commerce | 5 | Airbnb, Coupang, HelloFresh, The Ride Platform, Wellhub |
 | Media | 4 | Netflix, Spotify |
@@ -109,12 +109,13 @@ Words appearing in 3 or more of the 39 stored titles. Counted from `title`, whic
 
 ## Stated org placement
 
-Recorded in `jd-source` front matter. **31 of 39** postings say where the role sits; the rest do not, which is itself a fact about the posting.
+Recorded in `jd-source` front matter. **32 of 40** postings say where the role sits; the rest do not, which is itself a fact about the posting.
 
 | Company | Placement as stated |
 |---|---|
 | Adobe | Job associated with 2 categories: Design; Engineering and Product |
 | Airbnb | UX Writing is described as 'a core design discipline at Airbnb'; the role sits on the International team within that discipline, working alongside the London-based team and reporting relationships including the central UX Writing team. |
+| Alibaba | Global Content Strategy & Design team |
 | Ally Financial | Career area: Marketing; the role "sits above channels and formats", acting as a connective engine between editorial, UX, data, PR and SEO/GEO teams |
 | Amazon | Amazon's Customer Service (CS) UX (CS-UX) Word and Voice Design team; part of the bigger Customer Service UX Studio |
 | Apple | Product, Design & Marketing team on Apple Services; HI Writing discipline |
@@ -147,7 +148,7 @@ Recorded in `jd-source` front matter. **31 of 39** postings say where the role s
 
 ## Stated posting dates
 
-**6 of 39** postings state a date. Where both exist, the gap to `dateAdded` varies enough that one is not a proxy for the other.
+**6 of 40** postings state a date. Where both exist, the gap to `dateAdded` varies enough that one is not a proxy for the other.
 
 | Company | Posted | Added |
 |---|---|---|
