@@ -9,7 +9,7 @@ let showAllClusters = false;
 let showAllSignals = false;
 let globalData = null;
 
-// Responsibilities/Skills truncate at 2 full rows of whatever column count
+// Responsibilities/Skills truncate at 3 full rows of whatever column count
 // the grid is actually rendering at, not a flat number — read the live
 // layout instead of duplicating the grid's own breakpoints as a second,
 // driftable source of truth.
@@ -233,13 +233,13 @@ function renderClusters(data) {
 
   const showMore = document.getElementById('clusters-show-more');
   const showMoreBtn = showMore ? showMore.querySelector('.show-more-btn') : null;
-  const limit = currentColumnCount(grid) * 2;
+  const limit = currentColumnCount(grid) * 3;
   const keysToRender = showAllClusters ? clusterKeys : clusterKeys.slice(0, limit);
 
   if (showMore) {
     if (!showAllClusters && clusterKeys.length > limit) {
       showMore.style.display = 'block';
-      showMoreBtn.textContent = `View all ${clusterKeys.length} responsibilities`;
+      showMoreBtn.textContent = 'View all';
     } else {
       showMore.style.display = 'none';
     }
@@ -297,7 +297,7 @@ function renderTitles(data) {
   if (showMore) {
     if (!showAllTitles && data.entries.length > TITLES_LIMIT) {
       showMore.style.display = 'block';
-      showMoreBtn.textContent = `View all ${data.entries.length} job descriptions`;
+      showMoreBtn.textContent = 'View all';
     } else {
       showMore.style.display = 'none';
     }
@@ -407,13 +407,13 @@ function renderSignals(data) {
 
   const showMore = document.getElementById('signals-show-more');
   const showMoreBtn = showMore ? showMore.querySelector('.show-more-btn') : null;
-  const limit = currentColumnCount(list) * 2;
+  const limit = currentColumnCount(list) * 3;
   const keysToRender = showAllSignals ? relevantSignals : relevantSignals.slice(0, limit);
 
   if (showMore) {
     if (!showAllSignals && relevantSignals.length > limit) {
       showMore.style.display = 'block';
-      showMoreBtn.textContent = `View all ${relevantSignals.length} skills`;
+      showMoreBtn.textContent = 'View all';
     } else {
       showMore.style.display = 'none';
     }
