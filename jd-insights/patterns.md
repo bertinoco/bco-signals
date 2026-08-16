@@ -326,3 +326,19 @@ One instance, so nothing yet to compare it against. Recorded because a
 posting landing on both sides of that line at once is the situation the two
 signals exist to distinguish between, and this is the first time a single
 entry has needed both.
+
+## First new domain value since the taxonomy consolidation
+
+**Gen Digital**'s Staff AI Conversation Designer is filed under `Cybersecurity`
+— the first new value added to the domain taxonomy since `75cb703` collapsed
+16 granular values (things like "Fintech", "Media / streaming", "Social
+media") down to the current 8 single-word categories. No entry between that
+consolidation and this one introduced a value the table didn't already have;
+every new company since has fit an existing one.
+
+Gen Digital owns Norton, Avast, LifeLock, Avira, AVG, ReputationDefender and
+CCleaner — consumer digital-safety brands with no fit among Agency,
+Automotive, Big Tech, E-commerce, Finance, Healthcare, Media, or SaaS. Worth
+recording because it's the first real test of whether the 8-value taxonomy
+holds up as new sectors show up, rather than just accumulating companies
+inside the categories it already has.

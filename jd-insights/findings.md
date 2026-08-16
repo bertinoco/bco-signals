@@ -323,6 +323,20 @@ and all 18 assignments follow the narrow reading. Ally was declined on that
 basis. Left alone deliberately; noted because the gap makes the call look
 arbitrary from the label alone.
 
+**`ai-tooling` description versus use.** The description reads "Building and
+operationalizing AI-powered workflows... goes beyond using AI tools...
+evaluate, configure, and own the workflow end to end" — a content-production
+automation frame. Spotify's Senior Conversation Designer already carries the
+key for the other kind of work: prompt engineering, model behavior guardrails,
+and evaluation frameworks for a conversational AI product, not a content
+workflow. Gen Digital's Staff AI Conversation Designer reinforces it —
+prompt structures, model persona and tone, and behavioral standards for an
+agentic AI Assistant, with no content-production workflow described anywhere
+in the posting. Two entries now use the key for AI-behavior and model-design
+ownership rather than the workflow-automation frame the description states.
+Noted rather than rewritten, same as the two entries above — the description
+is user-facing card copy.
+
 **A dedicated single-discipline title for taxonomy work — one instance.**
 15 entries carry the `taxonomy` cluster, and in 14 of them taxonomy is one
 responsibility folded into a broader content-design, architecture, or
