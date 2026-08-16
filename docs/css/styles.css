@@ -776,6 +776,10 @@ body {
    stays behind the click, on the back. Mono, like every other stat/
    metadata treatment on the site (dates, comp, counts), set against the
    title's Inter for contrast. */
+/* Secondary-foreground, not a new accent — the same grey the rest of the
+   site already uses to rank supporting text below a heading. Achromatic
+   throughout on purpose (see the file header): red is the only hue in
+   the system, reserved for failure/flagged states, never for emphasis. */
 .flip-card-stat {
   position: absolute;
   right: 0;
@@ -784,7 +788,7 @@ body {
   font-size: var(--font-3xl);
   font-weight: var(--weight-medium);
   line-height: var(--leading-tight);
-  color: hsl(var(--foreground));
+  color: hsl(var(--secondary-foreground));
   text-align: right;
 }
 
