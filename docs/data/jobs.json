@@ -3,7 +3,7 @@
     "title": "BCO Content Skills Tracker",
     "description": "A curated skills tracker for the content design community.",
     "lastUpdated": "2026-08-14",
-    "totalEntries": 36
+    "totalEntries": 37
   },
   "entries": [
     {
@@ -1120,6 +1120,38 @@
       "dateAdded": "2026-08-14",
       "quote": "Redefines format and tone guidelines into requirements that engineers can use for model training and prompt improvement.",
       "quoteTranslatedFrom": "Korean"
+    },
+    {
+      "id": "intercept-content-engineer",
+      "company": "Intercept",
+      "title": "Content Engineer",
+      "domain": "Agency",
+      "engagement": "Full-Time",
+      "location": "Toronto, Ontario",
+      "remote": true,
+      "coreFrame": "B2B technology content development across long-form and campaign assets for enterprise clients; developing prompts, prompt patterns, reusable instructions, and workflow templates for AI-assisted drafting, editing, and content repurposing; pressure-testing AI-generated outputs for hallucinations, generic language, and unsupported claims, and building QA checklists and editorial review standards for AI-supported content workflows; documenting repeatable workflows — source requirements, prompt inputs, review steps, QA criteria — as part of an evolving Human + AI content operating model; helping train and enable teammates on AI-supported workflows.",
+      "clusters": [
+        "content-systems-design",
+        "ai-tooling",
+        "ai-content-governance",
+        "enablement"
+      ],
+      "signals": [
+        "ai-native-expectation",
+        "content-marketing-adjacent",
+        "title-dilution"
+      ],
+      "compRange": {
+        "min": 80000,
+        "max": 90000,
+        "currency": "CAD",
+        "covers": null,
+        "scope": null,
+        "extras": null
+      },
+      "sourceUrl": null,
+      "dateAdded": "2026-08-14",
+      "quote": "Develop prompts, prompt patterns, reusable instructions, and workflow templates that improve content quality and production speed."
     }
   ],
   "clusters": {

@@ -224,10 +224,10 @@ also carry the only surviving copy of a posting that has since closed.
 Insurify's own careers page opens with a fraudulent-job-advert warning before
 the posting begins.
 
-## Two headers that don't match their own body
+## Three headers that don't match their own body
 
-Two postings in a row state one title at the top and a different one in the
-body text.
+Three postings so far state one title at the top and a different one in the
+body text — and no two of them drift the same way.
 
 **Fin**'s posting is headed "Staff AI Designer," but the body repeatedly calls
 the role "Staff AI Product Designer": "We're looking for a Staff AI Product
@@ -238,13 +238,20 @@ the body twice self-describes the role a level up: "an AI Principal Content
 Designer will work on..." and "You're an accomplished and experienced
 Principal Content Designer..." Same role name, different level.
 
-Both entries store the header as `title`, per the Title field rule, and record
-the body's alternate self-description in the archive's `captureNote` rather
-than resolving it. Flagged together because they're the only two header/body
-mismatches in the corpus so far — but they aren't the same kind of mismatch:
-Fin substitutes the role name, Wise substitutes the seniority level. Two
-instances, and two different substitutions, isn't enough to call this one
-pattern yet; recorded so a third instance has something to compare against.
+**Intercept**'s posting is headed "Content Engineer," but the body opens with
+"We're looking for a Content Engineer, Human + AI Workflows:" Same role name
+and level — the body appends a scope qualifier the header drops.
+
+All three entries store the header as `title`, per the Title field rule, and
+record the body's alternate self-description in the archive's `captureNote`
+rather than resolving it. Three instances, three different kinds of drift —
+role name (Fin), seniority level (Wise), scope qualifier (Intercept) — which
+is enough to call header/body mismatch itself a recurring feature of how
+these postings are laid out, even though no two instances substitute the same
+thing. The title-then-location or title-then-department header line evidently
+invites a fuller self-description once the body gets going; worth a fourth
+instance to see whether a fourth kind of drift shows up or one of these three
+repeats.
 
 ## First non-English posting
 
@@ -268,3 +275,54 @@ One instance, so nothing yet to compare it against — worth recording because
 it's the first time the archive itself has had to represent a posting in a
 language other than English, not because of anything the posting's content
 does.
+
+## First inferred currency
+
+**Intercept**'s Content Engineer states a compensation figure with no
+currency attached anywhere in the source: "$80,000-$90,000." Every other
+compRange in the corpus states its currency directly in the posting text —
+including HelloFresh's CAD entry, which labels its range "$116,130—$134,000
+CAD" in the source itself.
+
+`compRange.currency` is recorded as `CAD` on this entry, inferred from the
+posting's Toronto, Ontario location and confirmed by the user as a deliberate,
+acknowledged exception to reading only what a JD states — not a silent
+assumption. This is the first entry in the dataset where a `compRange` field
+is filled in from something other than the JD's own text. Recorded here, and
+in the archive's `captureNote`, so a later reader auditing this entry (or
+building the next one with an unlabelled figure) knows the currency was
+inferred rather than stated, and doesn't read it as a second instance of
+HelloFresh's pattern.
+
+## A marketing-agency posting carrying both `content-marketing-adjacent` and `title-dilution`
+
+**Intercept**'s Content Engineer is the first entry in the corpus to carry
+both signals together. Five other entries carry `content-marketing-adjacent`
+alone or alongside other signals (CoLab, Insurify, Ride Platform, Ally, Meta's
+AI Content Strategy Lead); none of them also carries `title-dilution`.
+
+The posting is explicit about sitting on both sides at once. It states "This
+is not a traditional copywriter role" and describes a title-page role called
+"Content Engineer," but the bulk of the stated responsibilities are
+traditional B2B agency copywriting and editing — eBooks, whitepapers, blogs,
+case studies, landing page copy, campaign copy — for an "award-winning B2B
+marketing agency." `title-dilution` is grounded in that gap between the
+systems-sounding title and the largely conventional content-production work
+underneath it.
+
+What keeps the entry in the dataset despite that gap, and grounds
+`content-marketing-adjacent` rather than exclusion, is that the AI-workflow
+responsibilities sitting alongside the copywriting are specific, named
+deliverables rather than framing: "Develop prompts, prompt patterns, reusable
+instructions, and workflow templates," "Document source requirements, prompt
+inputs, review steps, QA criteria, and output expectations," "Help build QA
+checklists and editorial review standards for AI-supported content
+workflows." CLAUDE.md's marketing-sited note asks exactly this question —
+whether the systems language is doing the work of a title or is backed by
+stated responsibilities — and this posting answers it both ways depending on
+which responsibility you read.
+
+One instance, so nothing yet to compare it against. Recorded because a
+posting landing on both sides of that line at once is the situation the two
+signals exist to distinguish between, and this is the first time a single
+entry has needed both.
