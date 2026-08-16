@@ -307,7 +307,9 @@ body {
   font-size: var(--font-md);
   color: hsl(var(--hero-fg) / 0.7);
   line-height: var(--leading-relaxed);
-  max-width: 480px;
+  /* Matches the h1's own cap so both share the same right edge instead of
+     the paragraph wrapping noticeably narrower than the heading above it. */
+  max-width: 640px;
   /* Without this the last line lands as a two-word widow. */
   text-wrap: balance;
 }
