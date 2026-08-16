@@ -363,16 +363,17 @@ body {
 /* No divider — the opaque background alone is enough to separate it from
    content scrolling underneath once it sticks. Left-aligned to match the
    hero content's own left edge, overriding body's centered text-align.
-   Own padding is generous on both sides rather than relying on the
-   pull-quote's padding above it: that space is gray, reads as belonging
-   to the quote block, and doesn't register as breathing room before the
-   nav — only this element's own (white) padding does. */
+   Heavier on top than bottom, on purpose: the pull-quote's own padding
+   above this is gray, reads as belonging to that block, and doesn't
+   register as breathing room before the nav — only this element's own
+   (white) padding does. Light on the bottom so the nav sits closer to
+   the cards than to the quote, rather than symmetric or reversed. */
 .nav-bar {
   position: sticky;
   top: 0;
   z-index: 10;
   background: hsl(var(--background));
-  padding: var(--space-4) 0;
+  padding: var(--space-8) 0 0;
   text-align: left;
 }
 
