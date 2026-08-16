@@ -396,29 +396,6 @@ function renderSignals(data) {
   }).join('');
 }
 
-function renderNavCounts(data) {
-  const signalCount = displayedSignalKeys(data).size;
-
-  const counts = {
-    clusters: Object.keys(data.clusters).length,
-    signals: signalCount,
-    titles: data.entries.length,
-  };
-
-  document.querySelectorAll('.badge-btn').forEach(btn => {
-    // Retry re-renders the nav; clear any count from the previous pass.
-    const existing = btn.querySelector('.badge-count');
-    if (existing) existing.remove();
-
-    const count = counts[btn.dataset.section];
-    if (count === undefined) return;
-    const span = document.createElement('span');
-    span.className = 'badge-count';
-    span.textContent = count;
-    btn.insertBefore(span, btn.firstChild);
-  });
-}
-
 // ── Badge nav (click + arrow keys) ──────────────────────────
 const badges = Array.from(document.querySelectorAll('.badge-btn'));
 const badgeNav = document.querySelector('.badge-nav');
@@ -432,11 +409,19 @@ function activateBadge(badge) {
   badge.classList.add('active');
   badge.setAttribute('aria-selected', 'true');
   document.getElementById(badge.dataset.section).classList.add('active');
-  badge.blur();
 }
 
 badges.forEach(badge => {
-  badge.addEventListener('click', () => activateBadge(badge));
+  badge.addEventListener('click', () => {
+    activateBadge(badge);
+    // Blur only here, not inside activateBadge: the arrow-key handler below
+    // also calls activateBadge after moving focus with .focus(), and a
+    // shared blur() there stripped focus again immediately — the keydown
+    // listener is on .badge-nav, and relies on a focused descendant for
+    // events to bubble through, so after one arrow press focus (and with
+    // it, all further arrow presses) went dead.
+    badge.blur();
+  });
 });
 
 badgeNav.addEventListener('keydown', (e) => {
@@ -782,7 +767,6 @@ async function init({ fromRetry = false } = {}) {
 
   globalData = result.data;
   renderMeta(globalData);
-  renderNavCounts(globalData);
   renderClusters(globalData);
   renderTitles(globalData);
   renderSignals(globalData);
