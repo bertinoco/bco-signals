@@ -764,10 +764,25 @@ body {
 .flip-card-front {
   position: relative;
   display: flex;
-  align-items: flex-end;
+  flex-direction: column;
+  justify-content: flex-end;
   min-height: 180px;
   text-align: left;
   transition: opacity var(--duration-flip) var(--ease-out);
+}
+
+/* The bare percentage only — full context ("Appears in N of M roles")
+   stays behind the click, on the back. Same scale as the hero h1: this
+   is the one other place on the site a number gets to be the headline. */
+.flip-card-stat {
+  font-family: var(--font-sans);
+  font-size: var(--font-3xl);
+  font-weight: var(--weight-semibold);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: hsl(var(--foreground));
+  font-variant-numeric: tabular-nums;
+  margin-bottom: var(--space-1);
 }
 
 .flip-card-back {

@@ -177,13 +177,21 @@ function entriesForKey(data, key, field) {
     .sort((a, b) => new Date(b.dateAdded) - new Date(a.dateAdded));
 }
 
+// Single source for the rounded percentage shown both on the card front
+// (bare number) and the back (full "Appears in N of M roles" string).
+function keyPercentage(data, key, field) {
+  const entries = entriesForKey(data, key, field);
+  const total = data.entries.length;
+  return total ? Math.round((entries.length / total) * 100) : 0;
+}
+
 // Title + description + stat line only — the part that swaps when the
 // overlay carousel navigates to another key. The close button lives
 // outside this wrapper so navigating never has to re-wire its listener.
 function flipCardContentHtml(key, field, label, description, data) {
   const entries = entriesForKey(data, key, field);
   const total = data.entries.length;
-  const pct = total ? Math.round((entries.length / total) * 100) : 0;
+  const pct = keyPercentage(data, key, field);
   const rolesHtml = entries.length
     ? `<div class="flip-card-roles">
         <p class="flip-card-roles-label">Appears in ${entries.length} of ${total} roles — ${pct}%</p>
@@ -247,9 +255,11 @@ function renderClusters(data) {
 
   grid.innerHTML = keysToRender.map(key => {
     const cluster = data.clusters[key];
+    const pct = keyPercentage(data, key, 'clusters');
     return `
       <div class="flip-card cluster-card" data-key="${key}" role="button" tabindex="0" aria-label="Expand ${cluster.label}">
         <div class="flip-card-front">
+          <div class="flip-card-stat">${pct}%</div>
           <h3>${cluster.label}</h3>
         </div>
         <div class="flip-card-back">
@@ -421,9 +431,11 @@ function renderSignals(data) {
 
   list.innerHTML = keysToRender.map(key => {
     const signal = data.signals[key];
+    const pct = keyPercentage(data, key, 'signals');
     return `
       <div class="flip-card signal-card" data-key="${key}" role="button" tabindex="0" aria-label="Expand ${signal.label}">
         <div class="flip-card-front">
+          <div class="flip-card-stat">${pct}%</div>
           <div class="signal-label">${signal.label}</div>
         </div>
         <div class="flip-card-back">
