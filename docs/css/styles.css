@@ -362,13 +362,17 @@ body {
 /* ── Nav bar (sticky) ─────────────────────────────────────── */
 /* No divider — the opaque background alone is enough to separate it from
    content scrolling underneath once it sticks. Left-aligned to match the
-   hero content's own left edge, overriding body's centered text-align. */
+   hero content's own left edge, overriding body's centered text-align.
+   Own padding is generous on both sides rather than relying on the
+   pull-quote's padding above it: that space is gray, reads as belonging
+   to the quote block, and doesn't register as breathing room before the
+   nav — only this element's own (white) padding does. */
 .nav-bar {
   position: sticky;
   top: 0;
   z-index: 10;
   background: hsl(var(--background));
-  padding: var(--space-2) 0;
+  padding: var(--space-4) 0;
   text-align: left;
 }
 
