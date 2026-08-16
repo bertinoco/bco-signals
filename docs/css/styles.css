@@ -42,6 +42,7 @@
   --font-base: 0.9375rem;
   --font-md:   1.0625rem;
   --font-lg:   1.1875rem;
+  --font-2xl:  1.5rem;
   --font-3xl:  clamp(2rem, 1.35rem + 2.7vw, 2.75rem);
 
   --weight-regular:  400;
@@ -134,6 +135,16 @@
   }
 }
 
+/* ── Fixed brand tokens ───────────────────────────────────── */
+/* The hero is a brand mark, not a themed surface — it stays black in both
+   color schemes (a custom hero image is coming later), so these live
+   outside the dark-mode block on purpose rather than beside --background
+   and --foreground above. 21:1 against each other. */
+:root {
+  --hero-bg: 0 0% 0%;
+  --hero-fg: 0 0% 100%;
+}
+
 /* ── Reset ────────────────────────────────────────────────── */
 *,
 *::before,
@@ -179,9 +190,70 @@ body {
 }
 
 /* ── Header ───────────────────────────────────────────────── */
+/* Fixed black band — see --hero-bg/--hero-fg above. Every color here reads
+   off those two tokens, never --foreground/--background, so light/dark
+   toggling can't touch it. */
 .site-header {
+  background: hsl(var(--hero-bg));
   padding: var(--space-12) 0 var(--space-6);
   text-align: center;
+}
+
+.hero-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  margin-bottom: var(--space-6);
+  text-align: left;
+}
+
+/* Text-only until a real wordmark asset replaces it — icon_circle.png
+   (the site favicon) is a black circle and disappears against this same
+   fixed black band, so it's left out rather than shipped broken. */
+.hero-wordmark {
+  display: flex;
+  align-items: center;
+  font-size: var(--font-sm);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: hsl(var(--hero-fg));
+}
+
+/* Lighter weight and reduced opacity than the wordmark so the CTA reads as
+   secondary — a way out, not the brand mark. */
+.hero-cta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  /* Text/icon alone render at ~20px tall — under the 24px CSS-pixel hit-area
+     floor, and unlike the footer's inline link this one isn't embedded in a
+     sentence, so that exception doesn't cover it. Padding extends the
+     target without changing the visible size. */
+  padding: 2px 0;
+  font-size: var(--font-sm);
+  color: hsl(var(--hero-fg) / 0.7);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  text-decoration-color: hsl(var(--hero-fg) / 0.35);
+  transition: color var(--duration-base) var(--ease-out),
+              text-decoration-color var(--duration-base) var(--ease-out);
+}
+
+.hero-cta:hover {
+  color: hsl(var(--hero-fg));
+  text-decoration-color: hsl(var(--hero-fg) / 0.7);
+}
+
+/* --ring is theme-adaptive and reads near-black in light mode — invisible
+   against this band's fixed black background. Every other focus-visible
+   rule in the file uses --ring; this is the one exception, and it has to
+   be, since the hero itself is the one exception to theme-adaptive color. */
+.hero-cta:focus-visible {
+  outline: 2px solid hsl(var(--hero-fg));
+  outline-offset: 2px;
 }
 
 .site-header h1 {
@@ -191,7 +263,7 @@ body {
   line-height: var(--leading-tight);
   letter-spacing: var(--tracking-tight);
   text-wrap: balance;
-  color: hsl(var(--foreground));
+  color: hsl(var(--hero-fg));
   margin-bottom: var(--space-2);
   /* Cap the measure so the headline breaks into even lines rather than one
      long line and a short one. */
@@ -202,11 +274,33 @@ body {
 
 .site-header p {
   font-size: var(--font-md);
-  color: hsl(var(--secondary-foreground));
+  color: hsl(var(--hero-fg) / 0.7);
   line-height: var(--leading-relaxed);
   max-width: 480px;
   margin: 0 auto;
   /* Without this the last line lands as a two-word widow. */
+  text-wrap: balance;
+}
+
+/* ── Hero pull-quote ──────────────────────────────────────── */
+/* Theme-adaptive, unlike the hero above it — a supporting content band,
+   not the fixed brand mark. Reuses the README pitch verbatim (see
+   CLAUDE.md's brand-copy exception). */
+.hero-quote {
+  background: hsl(var(--muted));
+  padding: var(--space-6) 0;
+}
+
+.hero-quote p {
+  max-width: 720px;
+  margin: 0 auto;
+  font-size: var(--font-2xl);
+  font-weight: var(--weight-medium);
+  /* Wraps to 3 lines at this width — --leading-snug (1.3) is for short,
+     unwrapped text; matches .site-header p's own multi-line treatment. */
+  line-height: var(--leading-relaxed);
+  letter-spacing: var(--tracking-snug);
+  color: hsl(var(--foreground));
   text-wrap: balance;
 }
 
