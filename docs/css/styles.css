@@ -423,15 +423,6 @@ body {
   display: block;
 }
 
-.section-intro {
-  font-size: var(--font-sm);
-  font-weight: var(--weight-regular);
-  color: hsl(var(--secondary-foreground));
-  line-height: var(--leading-relaxed);
-  max-width: 560px;
-  margin: 0 auto var(--space-4);
-}
-
 /* ── Responsibility Clusters ──────────────────────────────── */
 .cluster-grid {
   display: grid;
@@ -749,12 +740,15 @@ body {
 }
 
 /* The front carries only the label now — no description, so the grid
-   reads as a set of short, even tiles rather than a wall of text. */
+   reads as a set of short, even tiles rather than a wall of text. Taller
+   box with the label bottom-aligned (rather than centered) gives each
+   tile visible breathing room above its label instead of reading as a
+   dense, uniform grid. */
 .flip-card-front {
   position: relative;
   display: flex;
-  align-items: center;
-  min-height: 64px;
+  align-items: flex-end;
+  min-height: 180px;
   text-align: left;
   transition: opacity var(--duration-flip) var(--ease-out);
 }
