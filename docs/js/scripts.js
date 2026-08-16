@@ -181,8 +181,8 @@ function flipCardContentHtml(key, field, label, description, data) {
     : '';
   return `
     <h3 class="flip-card-back-title">${label}</h3>
-    <p class="flip-card-back-desc">${description}</p>
     ${rolesHtml}
+    <p class="flip-card-back-desc">${description}</p>
   `;
 }
 
@@ -464,7 +464,7 @@ function measureOverlayHeight(backInnerHTML, width) {
   // does, so the estimated height comes in short.
   probe.style.cssText = `position:fixed; visibility:hidden; left:-9999px; top:0;
     width:${width}px; box-sizing:border-box; display:flex; flex-direction:column;
-    align-items:flex-start; padding: var(--space-8) 72px;`;
+    align-items:flex-start; padding: var(--space-8) 88px;`;
   probe.innerHTML = backInnerHTML;
   document.body.appendChild(probe);
   const height = probe.scrollHeight;
@@ -501,11 +501,14 @@ function computeOverlayTarget(clone) {
 // narrow screens, where the panel (up to 90vw) leaves too little margin
 // for viewport-edge buttons to avoid overlapping its content. Vertically
 // centered on the panel; the "next" button's column aligns with the close
-// button directly above it. The close button's containing block is
-// `.flip-card` itself, which is inset by its own base padding (--space-3,
-// 24px, still applied to .flip-card--overlay) — so its true center is
-// 24 (that padding) + 24 (close's own `right`) + 18 (half its 36px width)
-// in from the panel's actual right edge, not just 24 + 18.
+// button directly above it. `right`/`top` on an absolutely-positioned
+// child resolve against the containing block's *padding edge* — the
+// containing block's own padding does not add a further offset on top of
+// that, so the close button's true center is just 24 (its own `right`) +
+// 18 (half its 36px width) in from the panel's actual right edge.
+// (Previously double-counted the base card padding here too, which
+// silently misaligned the chevron from the close button above it by
+// exactly that amount — 24px — and let description text run underneath it.)
 function positionNavButtons(target) {
   // Mobile positions them via the fixed-footer CSS instead — clear any
   // inline values a wider viewport may have set.
@@ -517,7 +520,7 @@ function positionNavButtons(target) {
     return;
   }
   const midY = target.top + target.height / 2;
-  const closeCenterX = target.left + target.width - 24 - 24 - 18;
+  const closeCenterX = target.left + target.width - 24 - 18;
   overlayPrevBtn.style.top = `${midY}px`;
   overlayNextBtn.style.top = `${midY}px`;
   overlayPrevBtn.style.left = `${target.left + 24}px`;

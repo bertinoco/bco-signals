@@ -360,13 +360,16 @@ body {
 }
 
 /* ── Nav bar (sticky) ─────────────────────────────────────── */
+/* No divider — the opaque background alone is enough to separate it from
+   content scrolling underneath once it sticks. Left-aligned to match the
+   hero content's own left edge, overriding body's centered text-align. */
 .nav-bar {
   position: sticky;
   top: 0;
   z-index: 10;
   background: hsl(var(--background));
-  border-bottom: 1px solid hsl(var(--muted));
   padding: var(--space-2) 0;
+  text-align: left;
 }
 
 /* ── Segmented nav ────────────────────────────────────────── */
@@ -792,15 +795,18 @@ body {
   }
 }
 
-/* Horizontal padding is wide enough to clear the nav chevrons (24px inset
-   + 44px button + a few px gap = ~72px) — otherwise a two-line heading on
-   a narrow panel wraps right under them, since they sit at the panel's
-   vertical center regardless of how tall the heading happens to be. */
+/* Horizontal padding clears the nav chevrons: the chevron's near edge
+   always sits 64px in from the panel's edge (see positionNavButtons in
+   scripts.js), so 64 + a --space-3 buffer = 88px, otherwise text wraps
+   right up against — or under — them, since the chevrons sit at the
+   panel's vertical center regardless of how tall the content is.
+   (Previously 72px, derived from the same double-counted offset that
+   misaligned the chevron itself — corrected alongside that fix.) */
 .flip-card--overlay .flip-card-back {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: var(--space-8) 72px;
+  padding: var(--space-8) 88px;
 }
 
 @media (max-width: 599px) {
@@ -879,10 +885,12 @@ body {
   text-align: left;
 }
 
+/* Sits directly under the title now, as a scannable stat before the
+   prose — closer spacing than it had trailing after the description. */
 .flip-card-roles {
   width: 100%;
   max-width: 560px;
-  margin-top: var(--space-4);
+  margin-top: var(--space-2);
   text-align: left;
 }
 
