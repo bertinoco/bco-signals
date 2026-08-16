@@ -2,8 +2,8 @@
   "meta": {
     "title": "BCO Content Skills Tracker",
     "description": "A curated skills tracker for the content design community.",
-    "lastUpdated": "2026-08-14",
-    "totalEntries": 37
+    "lastUpdated": "2026-08-15",
+    "totalEntries": 38
   },
   "entries": [
     {
@@ -1152,6 +1152,32 @@
       "sourceUrl": null,
       "dateAdded": "2026-08-14",
       "quote": "Develop prompts, prompt patterns, reusable instructions, and workflow templates that improve content quality and production speed."
+    },
+    {
+      "id": "gen-staff-ai-conversation-designer",
+      "company": "Gen Digital",
+      "title": "Staff AI Conversation Designer",
+      "domain": "Cybersecurity",
+      "engagement": "Full-time",
+      "location": "London, United Kingdom",
+      "remote": false,
+      "coreFrame": "Conversation and model design for an agentic AI Assistant used across Gen's brands — dialogue flows, prompt structures, model persona and tone, error and fallback handling, and multi-turn interaction patterns; reviewing model outputs and agent behavior for quality, safety, and consistency; building reusable conversation frameworks, prompt libraries, and evaluation criteria; and acting as design lead for the AI Assistant platform team, partnering with each brand's product and design teams to integrate the assistant's behavior with brand-owned UI.",
+      "clusters": [
+        "content-systems-design",
+        "ai-content-governance",
+        "enablement",
+        "ai-tooling"
+      ],
+      "signals": [
+        "model-behavior-design",
+        "ai-native-expectation",
+        "governance-as-value-prop",
+        "central-standards-function"
+      ],
+      "compRange": null,
+      "sourceUrl": null,
+      "dateAdded": "2026-08-15",
+      "quote": "You will shape how our AI Assistant thinks, speaks, and acts, defining the conversation flows, prompt structures, and behavioral standards that make agentic AI experiences feel trustworthy, capable, and human-centered."
     }
   ],
   "clusters": {

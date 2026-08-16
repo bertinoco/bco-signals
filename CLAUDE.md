@@ -175,6 +175,7 @@ The `domain` field describes the broad industry or sector the company operates i
 | `Agency` | Phase2, Accenture |
 | `Automotive` | GM |
 | `Big Tech` | Apple, Google, Meta, LinkedIn, OpenAI |
+| `Cybersecurity` | Gen Digital (Norton, Avast) |
 | `E-commerce` | HelloFresh, Wellhub, The Ride Platform |
 | `Finance` | JPMorgan Chase, Ally, Sanna, Wealthsimple, Chime, Insurify |
 | `Healthcare` | Atria |
