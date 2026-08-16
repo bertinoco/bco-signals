@@ -3,7 +3,7 @@
 
 # Quotes
 
-Every stored quote, verbatim from the posting. **35 of 36** entries carry one.
+Every stored quote, verbatim from the posting. **36 of 37** entries carry one.
 
 These are the lines that anchor each entry's cluster and signal assignments, so they are the strongest citable evidence in the dataset. Each is checked against its `jd-source` archive before commit.
 
@@ -102,6 +102,12 @@ These are the lines that anchor each entry's cluster and signal assignments, so 
 > Take the lead on designing, testing, and refining AI workflows and model configurations that produce engaging, accurate editorial content tailored to our brand's unique voice.
 
 `insurify-editor-ai-content-systems` · added 2026-05-24
+
+### Intercept — Content Engineer
+
+> Develop prompts, prompt patterns, reusable instructions, and workflow templates that improve content quality and production speed.
+
+`intercept-content-engineer` · added 2026-08-14
 
 ### JPMorgan Chase — Content Design, Vice President
 
