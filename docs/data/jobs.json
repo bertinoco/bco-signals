@@ -2,8 +2,8 @@
   "meta": {
     "title": "BCO Content Skills Tracker",
     "description": "A curated skills tracker for the content design community.",
-    "lastUpdated": "2026-08-13",
-    "totalEntries": 32
+    "lastUpdated": "2026-08-15",
+    "totalEntries": 40
   },
   "entries": [
     {
@@ -1002,6 +1002,240 @@
       "sourceUrl": null,
       "dateAdded": "2026-08-13",
       "quote": "You'll also be involved in building AI and Large Language Models (LLMs), creating writing guidelines to raise the bar, and share our expertise with our product and tech partners."
+    },
+    {
+      "id": "airbnb-senior-staff-ux-writer-international",
+      "company": "Airbnb",
+      "title": "Senior Staff UX Writer, International",
+      "domain": "E-commerce",
+      "engagement": "Not specified",
+      "location": "London, United Kingdom",
+      "remote": false,
+      "coreFrame": "Standing up the UX Writing function within a newly forming Global Markets team — workflows, partnerships, and standards; localized product language for country-specific features across Italy, Germany, Spain, France and the UK; cross-functional collaboration with country managers, localization experts, linguists, and translators; mentoring and reviewing other UX writers; alignment with the central UX Writing team on shared voice and quality standards",
+      "clusters": [
+        "content-systems-design",
+        "localization",
+        "enablement"
+      ],
+      "signals": [
+        "enabler-not-bottleneck"
+      ],
+      "compRange": {
+        "min": 126000,
+        "max": 158000,
+        "currency": "GBP",
+        "covers": "base",
+        "scope": null,
+        "extras": "bonus + equity + Employee Travel Credits"
+      },
+      "sourceUrl": null,
+      "dateAdded": "2026-08-14",
+      "quote": "Define and drive the UX Writing function within Global Markets, establishing workflows, partnerships, and standards for a newly forming team, including reviewing and mentoring other UX writers."
+    },
+    {
+      "id": "wise-principal-ai-model-designer",
+      "company": "Wise",
+      "title": "Principal AI Model Designer",
+      "domain": "Finance",
+      "engagement": "Not specified",
+      "location": "London, United Kingdom",
+      "remote": false,
+      "coreFrame": "Designing the Wise Assistant conversational AI system for Support — architecting agents, owning prompts, and defining how context and knowledge are used to resolve customer problems; shaping agent behaviour and how system components interact; raising design maturity and context engineering understanding within the Support squad; role sits within the Content Design Guild alongside Content Designers",
+      "clusters": [
+        "content-systems-design",
+        "ai-tooling",
+        "ai-content-governance",
+        "enablement"
+      ],
+      "signals": [
+        "model-behavior-design",
+        "ai-native-expectation"
+      ],
+      "compRange": {
+        "min": 128000,
+        "max": 173000,
+        "currency": "GBP",
+        "covers": null,
+        "scope": null,
+        "extras": null
+      },
+      "sourceUrl": null,
+      "dateAdded": "2026-08-14",
+      "quote": "You're an accomplished and experienced Model Designer, or a systems-focused Content Designer who has already made this transition in your day-to-day work.",
+      "note": "The JD places the role within the \"Content Design Guild\" as part of the Design team, stating the disciplines \"share a common skill set and design process,\" and frames Model Designer and systems-focused Content Designer as two entry paths into the same role. This is the clearest instance in the corpus of the dataset's \"model design\" vocabulary term appearing as an actual job title while the role still organizationally reports through a content design function."
+    },
+    {
+      "id": "wise-staff-ai-content-designer-fincrime",
+      "company": "Wise",
+      "title": "Staff AI Content Designer, FinCrime",
+      "domain": "Finance",
+      "engagement": "Not specified",
+      "location": "London, United Kingdom",
+      "remote": false,
+      "coreFrame": "Content design strategy across FinCrime's cross-functional teams, balancing regulatory obligations with customer experience; using AI to scale content design impact and as part of the content design toolkit; standardising and systematising experiences with design leaders from other squads; owning the squad's content end-to-end and raising content design quality and maturity within FinCrime; part of the Content Guild, collaborating with the content community across Wise",
+      "clusters": [
+        "content-systems-design",
+        "ai-tooling",
+        "enablement"
+      ],
+      "signals": [
+        "ai-native-expectation",
+        "enabler-not-bottleneck"
+      ],
+      "compRange": {
+        "min": 102000,
+        "max": 133000,
+        "currency": "GBP",
+        "covers": null,
+        "scope": null,
+        "extras": null
+      },
+      "sourceUrl": null,
+      "dateAdded": "2026-08-14",
+      "quote": "You'll be figuring out how to harness the potential of AI to scale your impact as a content designer, quickly test and iterate on your ideas with a huge degree of freedom and flexibility, and learn as part of your day-to-day work as this technology evolves."
+    },
+    {
+      "id": "coupang-senior-content-strategist-core-ux",
+      "company": "Coupang",
+      "title": "Senior Content Strategist (Core UX)",
+      "domain": "E-commerce",
+      "engagement": "Not specified",
+      "location": "Not specified",
+      "remote": null,
+      "coreFrame": "UX writing and content strategy across Coupang's app and services — defining writing principles, terminology, and content frameworks and propagating them org-wide; proposing content strategy from the customer journey and UX principles in collaboration with PMs and designers. Extends into AI-generated content experience design — establishing behavioral guidelines, response formats, and quality rubrics for AI-generated content, defining Korean voice & tone for conversational AI, and collaborating with engineers to write pass/fail quality rules and redefine format and tone guidelines as requirements for model training and prompt improvement.",
+      "clusters": [
+        "terminology-governance",
+        "content-systems-design",
+        "ai-content-governance",
+        "ai-tooling",
+        "enablement"
+      ],
+      "signals": [
+        "ai-native-expectation",
+        "model-behavior-design",
+        "governance-as-value-prop"
+      ],
+      "compRange": null,
+      "sourceUrl": null,
+      "dateAdded": "2026-08-14",
+      "quote": "Redefines format and tone guidelines into requirements that engineers can use for model training and prompt improvement.",
+      "quoteTranslatedFrom": "Korean"
+    },
+    {
+      "id": "intercept-content-engineer",
+      "company": "Intercept",
+      "title": "Content Engineer",
+      "domain": "Agency",
+      "engagement": "Full-Time",
+      "location": "Toronto, Ontario",
+      "remote": true,
+      "coreFrame": "B2B technology content development across long-form and campaign assets for enterprise clients; developing prompts, prompt patterns, reusable instructions, and workflow templates for AI-assisted drafting, editing, and content repurposing; pressure-testing AI-generated outputs for hallucinations, generic language, and unsupported claims, and building QA checklists and editorial review standards for AI-supported content workflows; documenting repeatable workflows — source requirements, prompt inputs, review steps, QA criteria — as part of an evolving Human + AI content operating model; helping train and enable teammates on AI-supported workflows.",
+      "clusters": [
+        "content-systems-design",
+        "ai-tooling",
+        "ai-content-governance",
+        "enablement"
+      ],
+      "signals": [
+        "ai-native-expectation",
+        "content-marketing-adjacent",
+        "title-dilution"
+      ],
+      "compRange": {
+        "min": 80000,
+        "max": 90000,
+        "currency": "CAD",
+        "covers": null,
+        "scope": null,
+        "extras": null
+      },
+      "sourceUrl": null,
+      "dateAdded": "2026-08-14",
+      "quote": "Develop prompts, prompt patterns, reusable instructions, and workflow templates that improve content quality and production speed."
+    },
+    {
+      "id": "gen-staff-ai-conversation-designer",
+      "company": "Gen Digital",
+      "title": "Staff AI Conversation Designer",
+      "domain": "Cybersecurity",
+      "engagement": "Full-time",
+      "location": "London, United Kingdom",
+      "remote": false,
+      "coreFrame": "Conversation and model design for an agentic AI Assistant used across Gen's brands — dialogue flows, prompt structures, model persona and tone, error and fallback handling, and multi-turn interaction patterns; reviewing model outputs and agent behavior for quality, safety, and consistency; building reusable conversation frameworks, prompt libraries, and evaluation criteria; and acting as design lead for the AI Assistant platform team, partnering with each brand's product and design teams to integrate the assistant's behavior with brand-owned UI.",
+      "clusters": [
+        "content-systems-design",
+        "ai-content-governance",
+        "enablement",
+        "ai-tooling"
+      ],
+      "signals": [
+        "model-behavior-design",
+        "ai-native-expectation",
+        "governance-as-value-prop",
+        "central-standards-function"
+      ],
+      "compRange": null,
+      "sourceUrl": null,
+      "dateAdded": "2026-08-15",
+      "quote": "You will shape how our AI Assistant thinks, speaks, and acts, defining the conversation flows, prompt structures, and behavioral standards that make agentic AI experiences feel trustworthy, capable, and human-centered."
+    },
+    {
+      "id": "wix-content-designer-language-systems",
+      "company": "Wix",
+      "title": "Content Designer, Language & Systems",
+      "domain": "SaaS",
+      "engagement": "Full-time",
+      "location": "Tel Aviv",
+      "remote": false,
+      "coreFrame": "Tooling, documentation, standards, and evaluation workflows within the Writers Guild that make it possible to generate and update UX content at scale, reliably and consistently, in line with Wix's guidelines; defining content governance across both human and agentic workflows; building programmatic style guides, evaluation frameworks, reusable UI patterns, and rule-based terminology systems intended as the authoritative source of truth org-wide; mentoring UX writers and educating writers and non-writers on these systems and best practices; championing AI tool adoption through workshops and guild content reviews; and collaborating with product localization on frameworks that scale across languages, regions, and assistive technology contexts.",
+      "clusters": [
+        "content-systems-design",
+        "terminology-governance",
+        "ai-content-governance",
+        "ai-tooling",
+        "enablement",
+        "localization"
+      ],
+      "signals": [
+        "enabler-not-bottleneck",
+        "governance-as-value-prop",
+        "central-standards-function",
+        "accessibility-as-constraint"
+      ],
+      "compRange": null,
+      "sourceUrl": null,
+      "dateAdded": "2026-08-15",
+      "quote": "You'll be central to defining how content governance works across both human and agentic workflows, while also educating writers and non-writers on these systems and best practices."
+    },
+    {
+      "id": "alibaba-ai-content-strategist",
+      "company": "Alibaba",
+      "title": "AI Content Strategist",
+      "titleTranslatedFrom": "Chinese",
+      "domain": "Big Tech",
+      "engagement": "Full-time",
+      "location": "Hangzhou, Zhejiang, China",
+      "remote": false,
+      "coreFrame": "Building an AI-driven automated content production system within the Global Content Strategy & Design team — covering requirements analysis, prompt design, content generation, channel adaptation, quality evaluation, and asset accumulation across online promotions, campaign pages, ad creative, and multilingual marketing content; establishing AI content standards and quality evaluation mechanisms; building industry terminology, prompt libraries, and content templates as reusable knowledge assets; and judging which content suits AI mass-production versus human refinement.",
+      "clusters": [
+        "content-systems-design",
+        "terminology-governance",
+        "ai-tooling",
+        "ai-content-governance",
+        "enablement"
+      ],
+      "signals": [
+        "ai-native-expectation",
+        "content-marketing-adjacent",
+        "enabler-not-bottleneck",
+        "governance-as-value-prop",
+        "agent-retrieval"
+      ],
+      "compRange": null,
+      "sourceUrl": null,
+      "dateAdded": "2026-08-15",
+      "quote": "This role isn't just about using AI to generate content — it requires understanding business goals, product UX/UI, brand voice, channel strategy, and B2B industry differences, to judge what content is suited to AI mass-production versus what needs human refinement, and how to safeguard content quality through standards, templates, terminology banks, industry insight, and evaluation mechanisms.",
+      "quoteTranslatedFrom": "Chinese"
     }
   ],
   "clusters": {

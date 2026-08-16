@@ -223,3 +223,182 @@ also carry the only surviving copy of a posting that has since closed.
 
 Insurify's own careers page opens with a fraudulent-job-advert warning before
 the posting begins.
+
+## Three headers that don't match their own body
+
+Three postings so far state one title at the top and a different one in the
+body text — and no two of them drift the same way.
+
+**Fin**'s posting is headed "Staff AI Designer," but the body repeatedly calls
+the role "Staff AI Product Designer": "We're looking for a Staff AI Product
+Designer..." Same seniority level, different role name.
+
+**Wise**'s Staff AI Content Designer, FinCrime is headed at Staff level, but
+the body twice self-describes the role a level up: "an AI Principal Content
+Designer will work on..." and "You're an accomplished and experienced
+Principal Content Designer..." Same role name, different level.
+
+**Intercept**'s posting is headed "Content Engineer," but the body opens with
+"We're looking for a Content Engineer, Human + AI Workflows:" Same role name
+and level — the body appends a scope qualifier the header drops.
+
+All three entries store the header as `title`, per the Title field rule, and
+record the body's alternate self-description in the archive's `captureNote`
+rather than resolving it. Three instances, three different kinds of drift —
+role name (Fin), seniority level (Wise), scope qualifier (Intercept) — which
+is enough to call header/body mismatch itself a recurring feature of how
+these postings are laid out, even though no two instances substitute the same
+thing. The title-then-location or title-then-department header line evidently
+invites a fuller self-description once the body gets going; worth a fourth
+instance to see whether a fourth kind of drift shows up or one of these three
+repeats.
+
+## First non-English posting
+
+**Coupang**'s Senior Content Strategist (Core UX) is the first entry in the
+corpus written in a language other than English — the posting is entirely in
+Korean, with a single exception: the job title itself is stated in English,
+verbatim, inside an otherwise Korean document. `title` stores that English
+string unchanged, same as any other entry.
+
+This is also the first use of `quoteTranslatedFrom`, added to the schema
+alongside this entry. `quote` holds an English translation of the JD's
+own line about redefining format and tone guidelines into requirements
+engineers can use for model training and prompt improvement, and
+`quoteTranslatedFrom: "Korean"` marks it as a translation rather than a
+verbatim excerpt — the site renders that field as a visible caption so a
+reader never mistakes the two. The Korean sentence the translation is drawn
+from is preserved unaltered in `jd-source`, per the Quote field rule that
+"verbatim" means the original language, not the English translation.
+
+One instance, so nothing yet to compare it against — worth recording because
+it's the first time the archive itself has had to represent a posting in a
+language other than English, not because of anything the posting's content
+does.
+
+## First inferred currency
+
+**Intercept**'s Content Engineer states a compensation figure with no
+currency attached anywhere in the source: "$80,000-$90,000." Every other
+compRange in the corpus states its currency directly in the posting text —
+including HelloFresh's CAD entry, which labels its range "$116,130—$134,000
+CAD" in the source itself.
+
+`compRange.currency` is recorded as `CAD` on this entry, inferred from the
+posting's Toronto, Ontario location and confirmed by the user as a deliberate,
+acknowledged exception to reading only what a JD states — not a silent
+assumption. This is the first entry in the dataset where a `compRange` field
+is filled in from something other than the JD's own text. Recorded here, and
+in the archive's `captureNote`, so a later reader auditing this entry (or
+building the next one with an unlabelled figure) knows the currency was
+inferred rather than stated, and doesn't read it as a second instance of
+HelloFresh's pattern.
+
+## A marketing-agency posting carrying both `content-marketing-adjacent` and `title-dilution`
+
+**Intercept**'s Content Engineer is the first entry in the corpus to carry
+both signals together. Five other entries carry `content-marketing-adjacent`
+alone or alongside other signals (CoLab, Insurify, Ride Platform, Ally, Meta's
+AI Content Strategy Lead); none of them also carries `title-dilution`.
+
+The posting is explicit about sitting on both sides at once. It states "This
+is not a traditional copywriter role" and describes a title-page role called
+"Content Engineer," but the bulk of the stated responsibilities are
+traditional B2B agency copywriting and editing — eBooks, whitepapers, blogs,
+case studies, landing page copy, campaign copy — for an "award-winning B2B
+marketing agency." `title-dilution` is grounded in that gap between the
+systems-sounding title and the largely conventional content-production work
+underneath it.
+
+What keeps the entry in the dataset despite that gap, and grounds
+`content-marketing-adjacent` rather than exclusion, is that the AI-workflow
+responsibilities sitting alongside the copywriting are specific, named
+deliverables rather than framing: "Develop prompts, prompt patterns, reusable
+instructions, and workflow templates," "Document source requirements, prompt
+inputs, review steps, QA criteria, and output expectations," "Help build QA
+checklists and editorial review standards for AI-supported content
+workflows." CLAUDE.md's marketing-sited note asks exactly this question —
+whether the systems language is doing the work of a title or is backed by
+stated responsibilities — and this posting answers it both ways depending on
+which responsibility you read.
+
+One instance, so nothing yet to compare it against. Recorded because a
+posting landing on both sides of that line at once is the situation the two
+signals exist to distinguish between, and this is the first time a single
+entry has needed both.
+
+## First new domain value since the taxonomy consolidation
+
+**Gen Digital**'s Staff AI Conversation Designer is filed under `Cybersecurity`
+— the first new value added to the domain taxonomy since `75cb703` collapsed
+16 granular values (things like "Fintech", "Media / streaming", "Social
+media") down to the current 8 single-word categories. No entry between that
+consolidation and this one introduced a value the table didn't already have;
+every new company since has fit an existing one.
+
+Gen Digital owns Norton, Avast, LifeLock, Avira, AVG, ReputationDefender and
+CCleaner — consumer digital-safety brands with no fit among Agency,
+Automotive, Big Tech, E-commerce, Finance, Healthcare, Media, or SaaS. Worth
+recording because it's the first real test of whether the 8-value taxonomy
+holds up as new sectors show up, rather than just accumulating companies
+inside the categories it already has.
+
+## Second non-English posting, and the first translated title
+
+**Alibaba**'s AI内容策略师 (AI Content Strategist) is the second entry in the
+corpus written in a language other than English — Chinese this time, after
+Coupang's Korean. Unlike Coupang, where the title itself was stated in
+English inside an otherwise Korean posting, Alibaba's title is Chinese
+throughout with no English variant anywhere in the source. That makes this
+the first entry to need `titleTranslatedFrom`, added to the schema alongside
+this one and mirroring `quoteTranslatedFrom`: `jobs.json` stores the English
+translation "AI Content Strategist" as `title` with `titleTranslatedFrom:
+"Chinese"`, while the archive's own front matter and body keep the original
+"AI内容策略师" unaltered, per the Title field's non-English rule.
+
+`quote` is translated the same way, with `quoteTranslatedFrom: "Chinese"`
+alongside it — so this entry uses both translation mechanisms at once, the
+first to need both. Two non-English entries, two different languages, two
+different reasons the title needed translating (Coupang's was already
+English in the source; Alibaba's wasn't) — worth recording because it's the
+first time the title mechanism has been exercised at all, not because a
+second instance yet exists to compare it against.
+
+## First posting captured from phone screenshots
+
+**Alibaba**'s AI Content Strategist is the first entry in the corpus
+captured by transcribing phone screenshots of a LinkedIn posting rather than
+pasting text directly. The method left one short fragment ("言内容库。")
+stranded at a screenshot scroll boundary with no confident place in the
+sequence; it's excluded from the archive rather than guessed at, and
+`captureNote` records that all eight responsibilities, five background
+items, and eight competency items were otherwise confirmed complete against
+the submitter's own translation. `captureMethod` still reads
+`pasted-from-claude-chat` — the closest existing enum value — with the actual
+provenance carried in `captureNote` instead, since the README's three
+methods don't have a value for this.
+
+Distinct from the "Where the posting was captured from" pattern above, which
+is about platform (LinkedIn vs. a company site) rather than capture
+mechanism. One instance, so nothing yet to compare it against — worth
+recording because it's a new way source text can arrive incomplete that
+isn't covered by any existing `captureMethod` value.
+
+## "Guild" as a name for the content community
+
+Two companies now describe their content people as a "Guild" rather than a
+department or team. **Wise** places three entries in a "Content Guild" or
+"Content Design Guild": "You'll also be part of the Content Guild, and will
+regularly collaborate with the content community across Wise" (Senior Content
+Designer, Spend), and "This role will sit within the Content Design Guild as
+part of our Design team, as the disciplines share a common skill set and
+design process" (Principal AI Model Designer). **Wix**'s Content Designer,
+Language & Systems opens "you'll join a core team within the Writers Guild."
+
+Both uses describe the same kind of thing: a cross-team community of practice
+for writers/content designers, distinct from a reporting line or department —
+Wise's guild sits alongside a separately-named product team (FinCrime, Spend),
+and Wix's posting names the Guild as the home team itself rather than a
+department. Two companies, so this crosses the bar for recording it as a
+naming pattern rather than one company's house style, though not for reading
+anything into it beyond the word choice.

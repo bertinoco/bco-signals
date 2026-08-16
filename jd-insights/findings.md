@@ -145,15 +145,15 @@ so they are not rediscovered from scratch. Entries stay here after a key is
 created, marked resolved, so the reasoning survives the promotion. Step 4's bar still applies: a new
 instance updates a count, it does not promote a pattern to a finding.
 
-**Measurement and evaluation frameworks — 12 instances.** OpenAI (evals,
+**Measurement and evaluation frameworks — 13 instances.** OpenAI (evals,
 evaluation rubrics), Netflix and Spotify (evaluation frameworks), Meta
 (measurement frameworks, twice — the AI Content Strategy Lead states both
 evaluation frameworks and business-impact measurement), LinkedIn (architecture health metrics), GM and Notion
 (content QA), Ride Platform (success metrics), Chime (content quality metrics,
 automated governance dashboards), Ally (success metrics and measurement
-frameworks). The largest un-keyed pattern in the corpus. Held because it
-overlaps `governance-as-value-prop` heavily and cannot yet be separated
-cleanly.
+frameworks), Wix (evaluation workflows for generated UX content). The largest
+un-keyed pattern in the corpus. Held because it overlaps
+`governance-as-value-prop` heavily and cannot yet be separated cleanly.
 
 The entry below suggests the separator: whether the measurement is executable.
 A framework reported on quarterly is governance. An eval suite that runs
@@ -181,6 +181,16 @@ distinct from public search, from schema markup, and from training data.
 Keyed at two instances rather than three, which is the floor of Step 4's bar
 and not comfortably past it. If a third does not appear, this is the one to
 revisit and consider folding back.
+
+**Update, 2026-08-16: a third instance has appeared.** Alibaba's AI Content
+Strategist states the same move in its fourth responsibility — building,
+across B2B industries, terminology, buyer concerns, and product language
+"形成可被 AI 调用和复用的内容知识资产" ("as content knowledge assets that AI
+can call on and reuse"). Same structural move as Notion and Meta: content
+prepared as a substrate a model reads from and draws on at generation time,
+not published for public search or reduced to schema markup. Three companies
+now carry the key — Notion, Meta, and Alibaba. The key is comfortably past
+Step 4's floor, not merely at it.
 
 **Deterministic and generative content work are separating — and only one
 side is visible here.**
@@ -256,6 +266,56 @@ familiarity.* Two would justify separating the practice from
 `model-behavior-design`, which currently covers both writing a system
 instruction and building the harness that tests it.
 
+*A posting-based instance, not just testimony — excluded.* Fin's "Staff AI
+Designer" (page header; the body calls itself "Staff AI Product Designer"
+throughout) was excluded from the dataset: no occurrence of *content,
+writing, copy, language, tone, voice,* or *terminology* anywhere in the text,
+which fails the required content-discipline criterion outright. But most of
+its stated responsibilities — "Define what AI should do—and just as
+importantly, what it should not do," "Establish decision frameworks: when
+systems should act, ask, escalate, or defer," "Define what 'good' looks
+like... Design evaluation scenarios and feedback loops" — read as the
+specification side of the deterministic/generative split: authoring a
+generator's constraints and judging criteria, not an artifact. The
+maintainer's read is that, apart from "Deep understanding of LLMs and their
+limitations, along with a grounding in traditional ML approaches" and "You
+will not be training models or building ML infrastructure" (the two lines
+that place this closer to an ML-adjacent product discipline than to content
+work), the posting could pass for a generative-focused content design role
+in different vocabulary. That reframing is the maintainer's own, not a claim
+the posting makes — Fin never uses content-design language, and the posting
+was excluded on exactly that absence. Recorded because it is the first
+JD-based instance of the "model design" side of the split, where the source
+note above draws only on practitioner testimony. One instance; a second
+similarly language-free posting would be the one to compare it against.
+
+*The second instance is not language-free — it is the opposite case, and it
+was admitted.* Wise's Principal AI Model Designer, posted days after Fin, is
+titled for the same discipline but states its own continuity with content
+design rather than omitting the connection: "This role will sit within the
+Content Design Guild as part of our Design team, as the disciplines share a
+common skill set and design process," and, load-bearing for the entry's
+inclusion, "You're an accomplished and experienced Model Designer, or a
+systems-focused Content Designer who has already made this transition in
+your day-to-day work." That sentence treats Model Designer and Content
+Designer as two entry paths into one role, which is a first-party claim of
+skill continuity, not just shared reporting lines — the reason the entry was
+admitted where Fin, with the same category of day-to-day work, was not.
+
+This is the clearest confirmation the corpus has that the practitioner
+testimony's split is materializing in live postings, not only in how
+individual practitioners describe their own work: a title change ("Model
+Designer") arriving before the reporting line does ("Content Design Guild").
+Two companies, two instances, in opposite configurations — one excluded for
+naming no content discipline at all, one included for naming the transition
+explicitly — which is itself the finding: the shift is real, and it is
+surfacing under new titles inside old org charts before it reorganizes them.
+Still two data points. The trigger from the Fin entry (a second
+language-free posting) is still open and separate from this one; the
+trigger to revisit here is a second posting that, like Wise's, names the
+Model-Designer-or-transitioning-Content-Designer path explicitly rather than
+implying it through guild placement alone.
+
 **`content-marketing-adjacent` description versus use.** The description reads
 "systems and architecture language is being used to describe what is
 fundamentally content marketing work… the core responsibilities haven't
@@ -273,6 +333,20 @@ and all 18 assignments follow the narrow reading. Ally was declined on that
 basis. Left alone deliberately; noted because the gap makes the call look
 arbitrary from the label alone.
 
+**`ai-tooling` description versus use.** The description reads "Building and
+operationalizing AI-powered workflows... goes beyond using AI tools...
+evaluate, configure, and own the workflow end to end" — a content-production
+automation frame. Spotify's Senior Conversation Designer already carries the
+key for the other kind of work: prompt engineering, model behavior guardrails,
+and evaluation frameworks for a conversational AI product, not a content
+workflow. Gen Digital's Staff AI Conversation Designer reinforces it —
+prompt structures, model persona and tone, and behavioral standards for an
+agentic AI Assistant, with no content-production workflow described anywhere
+in the posting. Two entries now use the key for AI-behavior and model-design
+ownership rather than the workflow-automation frame the description states.
+Noted rather than rewritten, same as the two entries above — the description
+is user-facing card copy.
+
 **A dedicated single-discipline title for taxonomy work — one instance.**
 15 entries carry the `taxonomy` cluster, and in 14 of them taxonomy is one
 responsibility folded into a broader content-design, architecture, or
@@ -284,6 +358,22 @@ First instance, so it stays here rather than becoming a key or a finding.
 *Trigger to revisit: a second posting titled for the classification
 discipline on its own — Taxonomist, Ontologist, Information Architect — rather
 than for a content role with taxonomy folded in.*
+
+**A single governance framework named for both human and agentic workflows —
+one instance.** Wix's Content Designer, Language & Systems states the role is
+"central to defining how content governance works across both human and
+agentic workflows" — one governance framework, explicitly scoped to cover
+both. The closest existing language in the corpus is Figma's UX Writer, AI,
+which asks for "taxonomies, glossaries, and other artifacts for both human and
+agentic ingestion" — but that line is about content built to be read by both
+audiences, not about a governance process applied to both. Different framing:
+Figma's is what the content is for, Wix's is how the process that produces and
+polices it is structured. Not a clean second instance of the same pattern.
+First instance, so it stays here rather than becoming a key or a finding.
+*Trigger to revisit: a second posting that states one governance, standards,
+or review process explicitly scoped to cover both human-authored and
+agent-generated content, rather than either a process for one audience or an
+artifact built for both.*
 
 ---
 

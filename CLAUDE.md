@@ -64,6 +64,16 @@ Identify every stated responsibility, skill requirement, and process expectation
 **Step 2 — Map against existing clusters and signals**
 For each finding, check whether it maps to an existing cluster or signal key in `jobs.json`. Assign only those that are explicitly grounded in the JD text. Do not assign a cluster or signal because it "probably applies."
 
+Some keys have a documented gap between their user-facing label/description
+and how they've actually been assigned across the corpus — see
+`jd-insights/findings.md`'s "description versus use" notes (currently
+`content-marketing-adjacent`, `ai-native-expectation`, `ai-tooling`). For
+these, resolve the assignment against the documented pattern of actual use,
+not the literal wording of the description — read the note and the entries it
+cites before deciding. This is not a judgment call to bring to the user each
+time; decide it directly from precedent, and only flag if the JD in front of
+you doesn't fit the pattern the note already describes.
+
 **Step 3 — Flag potential new additions**
 If a finding does not map to any existing cluster or signal, flag it explicitly before writing the entry. Do not silently add new keys.
 
@@ -189,6 +199,7 @@ The `domain` field describes the broad industry or sector the company operates i
 | `Agency` | Phase2, Accenture |
 | `Automotive` | GM |
 | `Big Tech` | Apple, Google, Meta, LinkedIn, OpenAI |
+| `Cybersecurity` | Gen Digital (Norton, Avast) |
 | `E-commerce` | HelloFresh, Wellhub, The Ride Platform |
 | `Finance` | JPMorgan Chase, Ally, Sanna, Wealthsimple, Chime, Insurify |
 | `Healthcare` | Atria |
@@ -284,6 +295,27 @@ Em dash and pipe both join a role to its scope, which is what a comma does:
 If a new posting uses a separator that fits neither case, leave the title
 verbatim and raise it rather than widening the rule.
 
+**Non-English JDs.** The same verbatim principle applies: a Chinese posting's
+`title` is Chinese text, unaltered, unless translated under the exception
+below. Silently storing an English gloss would break the same tie back to the
+archive this field exists to protect.
+
+The one exception, mirroring the Quote field's non-English exception: `title`
+may hold an English translation instead of the verbatim original when
+`titleTranslatedFrom` is also set to the source language — and only then. The
+site renders that field as a visible caption under the title, the same
+mechanism `quote` uses. Set `titleTranslatedFrom` only when `title` is
+actually a translation; leave both fields alone for English-language JDs. The
+archived source's own front-matter `title:` field records the posting's
+actual title in its original language regardless of what `jobs.json`
+stores — this exception touches the `jobs.json` field only, never the
+archive.
+
+Before committing (Step 6), confirm the original-language title actually
+appears in the archived source text, the same way a translated `quote` is
+checked against its original-language sentence rather than a literal string
+match.
+
 ## Quote field
 
 Each entry may include an optional `quote` field — a direct excerpt from the JD that anchors the cluster and signal assignments. Rules:
@@ -299,6 +331,21 @@ Each entry may include an optional `quote` field — a direct excerpt from the J
 - Prefer a line legible to a general content design reader over one dense with employer-specific jargon — acronyms, internal system names, team names. The quote must still ground the assigned clusters and signals; legibility breaks ties among lines that do, it does not override grounding. If the only line that grounds an assignment is unavoidably jargon-heavy, keep it and reconsider whether the assignment is well grounded.
 - If no single excerpt is definitive, leave the field null rather than stitching sentences together.
 - The field is optional. Omit it (or set to null) if no suitable quote exists.
+
+**Non-English JDs.** "Verbatim" means the original language — a Korean JD's
+`quote` is Korean text, unaltered, same as an English JD's `quote` is English
+text, unaltered. A translation is a rewording, not a normalization, so it
+never substitutes for the verbatim excerpt silently.
+
+The one exception: `quote` may hold an English translation instead of the
+verbatim original when `quoteTranslatedFrom` is also set to the source
+language (e.g. `"Korean"`) — and only then. The site renders that field as a
+visible caption under the quote, so a reader never mistakes a translation for
+verbatim source text the way they would if the two were indistinguishable.
+Set `quoteTranslatedFrom` only when `quote` is actually a translation; leave
+both fields alone for English-language JDs. The archived source in
+`jd-source/{id}.md` stays in the original language regardless — this
+exception touches `quote` only, never the archive.
 
 ## Site code
 

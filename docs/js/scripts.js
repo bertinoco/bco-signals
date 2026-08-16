@@ -4,6 +4,15 @@ const SIGNAL_THRESHOLD = 2;
 const TITLES_LIMIT = 12;
 const FETCH_TIMEOUT_MS = 10000;
 const SECTION_CONTAINERS = ['cluster-grid', 'signal-list', 'title-list'];
+// Symbol only — the ISO code is always shown alongside it (see fmt below),
+// since a bare symbol is ambiguous (USD/CAD/AUD/HKD all use "$"). A currency
+// missing here still renders correctly: no symbol, just the number and code.
+const CURRENCY_SYMBOLS = {
+  USD: '$',
+  GBP: '£',
+  CAD: '$',
+  EUR: '€',
+};
 let showAllTitles = false;
 let showAllClusters = false;
 let showAllSignals = false;
@@ -316,7 +325,7 @@ function renderTitles(data) {
   const displayed = displayedSignalKeys(data);
 
   list.innerHTML = entries.map(entry => {
-    const fmt = (n) => '$' + n.toLocaleString('en-US');
+    const fmt = (n, currency) => (CURRENCY_SYMBOLS[currency] || '') + n.toLocaleString('en-US');
 
     // Qualifiers are read from structured fields, never parsed out of prose.
     //
@@ -331,7 +340,7 @@ function renderTitles(data) {
       ? [c.covers === 'total' ? 'total comp' : null].filter(Boolean)
       : [];
     const compHtml = c
-      ? `<span class="title-comp">${fmt(c.min)}–${fmt(c.max)} ${c.currency}`
+      ? `<span class="title-comp">${fmt(c.min, c.currency)}–${fmt(c.max, c.currency)} ${c.currency}`
         + qualifiers.map(q => ` · ${q}`).join('')
         + `</span>`
       : '';
@@ -350,9 +359,15 @@ function renderTitles(data) {
     // no quote, so gating on the quote alone would leave their chips unreachable.
     const hasQuote = !!entry.quote;
     const hasDetail = hasQuote || shownSignals.length > 0;
+    // `quoteTranslatedFrom` marks a quote as a translation rather than the
+    // verbatim source text — see CLAUDE.md's Quote field section. Rendered so
+    // a reader never mistakes a translation for verbatim quotation.
+    const translationHtml = (hasQuote && entry.quoteTranslatedFrom)
+      ? `<p class="quote-translation-note">Translated from ${entry.quoteTranslatedFrom}</p>`
+      : '';
     const detailHtml = hasDetail
       ? `<div class="title-detail"><div class="title-detail-inner">`
-        + (hasQuote ? `<blockquote>${entry.quote}</blockquote>` : '')
+        + (hasQuote ? `<blockquote>${entry.quote}</blockquote>${translationHtml}` : '')
         + signalsHtml
         + `</div></div>`
       : '';
@@ -372,12 +387,18 @@ function renderTitles(data) {
       ? `<div class="title-date">${formatDate(entry.dateAdded)}</div>`
       : '';
 
+    // Mirrors quoteTranslatedFrom — see CLAUDE.md's Title field section.
+    const titleTranslationHtml = entry.titleTranslatedFrom
+      ? `<p class="quote-translation-note">Translated from ${entry.titleTranslatedFrom}</p>`
+      : '';
+
     return `
       <div class="title-entry${hasDetail ? ' is-expandable' : ''}">
         <div class="title-header">
           <div class="title-name">${formatTitle(entry.title)}</div>
           ${expandBtn}
         </div>
+        ${titleTranslationHtml}
         ${attribHtml}
         ${dateHtml}
         ${detailHtml}
