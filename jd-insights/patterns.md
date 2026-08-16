@@ -342,3 +342,22 @@ Automotive, Big Tech, E-commerce, Finance, Healthcare, Media, or SaaS. Worth
 recording because it's the first real test of whether the 8-value taxonomy
 holds up as new sectors show up, rather than just accumulating companies
 inside the categories it already has.
+
+## "Guild" as a name for the content community
+
+Two companies now describe their content people as a "Guild" rather than a
+department or team. **Wise** places three entries in a "Content Guild" or
+"Content Design Guild": "You'll also be part of the Content Guild, and will
+regularly collaborate with the content community across Wise" (Senior Content
+Designer, Spend), and "This role will sit within the Content Design Guild as
+part of our Design team, as the disciplines share a common skill set and
+design process" (Principal AI Model Designer). **Wix**'s Content Designer,
+Language & Systems opens "you'll join a core team within the Writers Guild."
+
+Both uses describe the same kind of thing: a cross-team community of practice
+for writers/content designers, distinct from a reporting line or department —
+Wise's guild sits alongside a separately-named product team (FinCrime, Spend),
+and Wix's posting names the Guild as the home team itself rather than a
+department. Two companies, so this crosses the bar for recording it as a
+naming pattern rather than one company's house style, though not for reading
+anything into it beyond the word choice.

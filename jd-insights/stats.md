@@ -3,42 +3,42 @@
 
 # Stats
 
-Dataset state: **38 entries**, `meta.lastUpdated` 2026-08-15. Generated 2026-08-16.
+Dataset state: **39 entries**, `meta.lastUpdated` 2026-08-15. Generated 2026-08-16.
 
 Every figure here is counted from `docs/data/jobs.json`. If you quote one in something published, quote the entry count with it — these move.
 
 ## Headline
 
-- **38** entries across **32** companies and **9** domains
+- **39** entries across **33** companies and **9** domains
 - Date range: 2026-05-24 to 2026-08-15
 
 ## Responsibility clusters
 
 | | Entries | Share |
 |---|---:|---:|
-| Content systems design | 35 | 92% |
-| Enablement & team upskilling | 32 | 84% |
-| AI tooling & automation | 25 | 66% |
-| AI-generated content governance | 21 | 55% |
-| Taxonomy & information architecture | 16 | 42% |
-| Terminology & language governance | 15 | 39% |
-| Technical writing & documentation | 11 | 29% |
-| Localization & internationalization | 7 | 18% |
+| Content systems design | 36 | 92% |
+| Enablement & team upskilling | 33 | 85% |
+| AI tooling & automation | 26 | 67% |
+| AI-generated content governance | 22 | 56% |
+| Terminology & language governance | 16 | 41% |
+| Taxonomy & information architecture | 16 | 41% |
+| Technical writing & documentation | 11 | 28% |
+| Localization & internationalization | 8 | 21% |
 
 ## Skill signals
 
 | | Entries | Share |
 |---|---:|---:|
-| AI fluency expected | 24 | 63% |
-| Governance emphasized | 16 | 42% |
-| Enabler, not bottleneck | 14 | 37% |
-| Central standards function | 10 | 26% |
+| AI fluency expected | 24 | 62% |
+| Governance emphasized | 17 | 44% |
+| Enabler, not bottleneck | 15 | 38% |
+| Central standards function | 11 | 28% |
 | Model behavior design | 10 | 26% |
-| Language as infrastructure | 9 | 24% |
+| Language as infrastructure | 9 | 23% |
 | Content systems for marketers | 5 | 13% |
 | GEO & SEO | 5 | 13% |
 | Structured data | 5 | 13% |
-| Accessibility as structural constraint | 4 | 11% |
+| Accessibility as structural constraint | 5 | 13% |
 | Content work under new titles | 3 | 8% |
 | Title ≠ stated responsibilities | 2 | 5% |
 | Title dilution | 2 | 5% |
@@ -47,7 +47,7 @@ Every figure here is counted from `docs/data/jobs.json`. If you quote one in som
 
 ## Compensation
 
-- Stated in **29 of 38** entries (24 USD, 3 GBP, 2 CAD)
+- Stated in **29 of 39** entries (24 USD, 3 GBP, 2 CAD)
 - Full spread: **$65,000** to **$710,000**
 - USD medians: **$132,000** low, **$186,300** high
 - `covers`: 20 base, 7 unstated, 2 total
@@ -74,21 +74,22 @@ Read the n column before quoting any of these. A median over fewer than roughly 
 
 ## Title vocabulary
 
-Words appearing in 3 or more of the 38 stored titles. Counted from `title`, which is stored verbatim — so this reflects what employers wrote, not what the site renders.
+Words appearing in 3 or more of the 39 stored titles. Counted from `title`, which is stored verbatim — so this reflects what employers wrote, not what the site renders.
 
 | Word | Titles | Share |
 |---|---:|---:|
-| Content | 29 | 76% |
-| Designer | 14 | 37% |
-| Senior | 9 | 24% |
-| UX | 9 | 24% |
-| AI | 9 | 24% |
-| Staff | 9 | 24% |
-| Systems | 8 | 21% |
+| Content | 30 | 77% |
+| Designer | 15 | 38% |
+| Systems | 9 | 23% |
+| Senior | 9 | 23% |
+| UX | 9 | 23% |
+| AI | 9 | 23% |
+| Staff | 9 | 23% |
 | Architect | 7 | 18% |
-| Writer | 6 | 16% |
+| Writer | 6 | 15% |
 | Strategist | 5 | 13% |
 | Engineer | 3 | 8% |
+| Language | 3 | 8% |
 | Design | 3 | 8% |
 | Conversation | 3 | 8% |
 
@@ -98,7 +99,7 @@ Words appearing in 3 or more of the 38 stored titles. Counted from `title`, whic
 |---|---:|---|
 | Finance | 9 | Ally Financial, Capital One, Chime, Insurify, JPMorgan Chase, Sanna, Wealthsimple, Wise |
 | Big Tech | 9 | Amazon, Apple, Google, LinkedIn, Meta, OpenAI |
-| SaaS | 5 | Adobe, CoLab, Figma, Notion, Zoom |
+| SaaS | 6 | Adobe, CoLab, Figma, Notion, Wix, Zoom |
 | E-commerce | 5 | Airbnb, Coupang, HelloFresh, The Ride Platform, Wellhub |
 | Media | 4 | Netflix, Spotify |
 | Agency | 3 | Accenture, Intercept, Phase2 |
@@ -108,7 +109,7 @@ Words appearing in 3 or more of the 38 stored titles. Counted from `title`, whic
 
 ## Stated org placement
 
-Recorded in `jd-source` front matter. **30 of 38** postings say where the role sits; the rest do not, which is itself a fact about the posting.
+Recorded in `jd-source` front matter. **31 of 39** postings say where the role sits; the rest do not, which is itself a fact about the posting.
 
 | Company | Placement as stated |
 |---|---|
@@ -141,11 +142,12 @@ Recorded in `jd-source` front matter. **30 of 38** postings say where the role s
 | Wellhub | Consumer Digital Experience team |
 | Wise | Content Design Guild, within the Design team |
 | Wise | FinCrime, part of the Content Guild |
+| Wix | Writers Guild |
 | Zoom | Not stated as a department; the team designs and manages the knowledge base powering customer self-service support |
 
 ## Stated posting dates
 
-**6 of 38** postings state a date. Where both exist, the gap to `dateAdded` varies enough that one is not a proxy for the other.
+**6 of 39** postings state a date. Where both exist, the gap to `dateAdded` varies enough that one is not a proxy for the other.
 
 | Company | Posted | Added |
 |---|---|---|
