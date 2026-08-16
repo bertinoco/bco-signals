@@ -182,6 +182,16 @@ Keyed at two instances rather than three, which is the floor of Step 4's bar
 and not comfortably past it. If a third does not appear, this is the one to
 revisit and consider folding back.
 
+**Update, 2026-08-16: a third instance has appeared.** Alibaba's AI Content
+Strategist states the same move in its fourth responsibility — building,
+across B2B industries, terminology, buyer concerns, and product language
+"形成可被 AI 调用和复用的内容知识资产" ("as content knowledge assets that AI
+can call on and reuse"). Same structural move as Notion and Meta: content
+prepared as a substrate a model reads from and draws on at generation time,
+not published for public search or reduced to schema markup. Three companies
+now carry the key — Notion, Meta, and Alibaba. The key is comfortably past
+Step 4's floor, not merely at it.
+
 **Deterministic and generative content work are separating — and only one
 side is visible here.**
 

@@ -3,7 +3,7 @@
 
 # Quotes
 
-Every stored quote, verbatim from the posting. **38 of 39** entries carry one.
+Every stored quote, verbatim from the posting. **39 of 40** entries carry one.
 
 These are the lines that anchor each entry's cluster and signal assignments, so they are the strongest citable evidence in the dataset. Each is checked against its `jd-source` archive before commit.
 
@@ -18,6 +18,12 @@ These are the lines that anchor each entry's cluster and signal assignments, so 
 > Define and drive the UX Writing function within Global Markets, establishing workflows, partnerships, and standards for a newly forming team, including reviewing and mentoring other UX writers.
 
 `airbnb-senior-staff-ux-writer-international` · added 2026-08-14
+
+### Alibaba — AI Content Strategist
+
+> This role isn't just about using AI to generate content — it requires understanding business goals, product UX/UI, brand voice, channel strategy, and B2B industry differences, to judge what content is suited to AI mass-production versus what needs human refinement, and how to safeguard content quality through standards, templates, terminology banks, industry insight, and evaluation mechanisms.
+
+`alibaba-ai-content-strategist` · added 2026-08-15
 
 ### Ally Financial — Content Architect
 
