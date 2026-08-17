@@ -563,12 +563,29 @@ window.addEventListener('resize', () => positionNavIndicator(true));
 const aiInfoBtn = document.getElementById('ai-info-btn');
 const aiInfoTooltip = document.getElementById('ai-info-tooltip');
 
+// Below 480px the toggletip spans the full nav-heading-row instead of
+// anchoring to the icon (see the CSS comment on that media query), so the
+// caret can't just sit at a fixed spot — it has to track wherever the icon
+// actually renders, which shifts with the heading text's rendered width.
+// Harmless to compute above 480px too: the desktop caret is positioned via
+// `right`, not `left`, so --caret-left has no effect there.
+function positionAiCaret() {
+  const row = aiInfoBtn.closest('.nav-heading-row');
+  if (!row) return;
+  const rowRect = row.getBoundingClientRect();
+  const btnRect = aiInfoBtn.getBoundingClientRect();
+  const center = btnRect.left + btnRect.width / 2 - rowRect.left;
+  const clamped = Math.max(16, Math.min(center, rowRect.width - 16));
+  aiInfoTooltip.style.setProperty('--caret-left', `${clamped}px`);
+}
+
 function closeAiInfo() {
   aiInfoTooltip.hidden = true;
   aiInfoBtn.setAttribute('aria-expanded', 'false');
 }
 
 function openAiInfo() {
+  positionAiCaret();
   aiInfoTooltip.hidden = false;
   aiInfoBtn.setAttribute('aria-expanded', 'true');
 }
@@ -590,6 +607,12 @@ document.addEventListener('keydown', (e) => {
     closeAiInfo();
     aiInfoBtn.focus();
   }
+});
+
+// Rotating a device or resizing the window while the toggletip is open
+// shifts the row's width and the icon's position within it.
+window.addEventListener('resize', () => {
+  if (!aiInfoTooltip.hidden) positionAiCaret();
 });
 
 // ── Flip-card overlay ───────────────────────────────────────

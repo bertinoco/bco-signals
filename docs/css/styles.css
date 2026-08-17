@@ -546,9 +546,33 @@ body {
     max-width: none;
   }
 
+  /* Caret still points at the icon, just vertically now — the box grows
+     downward from the row here instead of upward from the icon, so the
+     desktop caret's sideways triangle is rotated to point up instead of
+     hidden outright. --caret-left comes from JS (positionAiCaret in
+     scripts.js): the icon's x offset shifts with the heading text's
+     rendered width, which CSS alone can't express, so it's measured from
+     the actual layout each time the toggletip opens. */
   .ai-info-tooltip::before,
   .ai-info-tooltip::after {
-    display: none;
+    top: -6px;
+    bottom: auto;
+    right: auto;
+    left: var(--caret-left, 50%);
+    transform: translateX(-50%);
+    border-top: none;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 6px solid hsl(var(--border));
+  }
+
+  .ai-info-tooltip::after {
+    top: -5px;
+    margin-right: 0;
+    border-left-width: 5px;
+    border-right-width: 5px;
+    border-bottom-width: 5px;
+    border-bottom-color: hsl(var(--card));
   }
 }
 
