@@ -1275,7 +1275,7 @@
   "signals": {
     "ai-native-expectation": {
       "label": "AI fluency expected",
-      "description": "AI fluency is listed as a baseline in most roles we're tracking, not a bonus. If you're not actively working with AI tools, this is the most urgent gap the data points to."
+      "description": "AI fluency is listed as a baseline in most roles we're tracking. If you're not actively working with AI tools, this is the most urgent gap the data shows."
     },
     "enabler-not-bottleneck": {
       "label": "Enabler, not bottleneck",
