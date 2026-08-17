@@ -402,3 +402,40 @@ and Wix's posting names the Guild as the home team itself rather than a
 department. Two companies, so this crosses the bar for recording it as a
 naming pattern rather than one company's house style, though not for reading
 anything into it beyond the word choice.
+
+## Recruiting calls versus job postings, and contract roles as a first
+
+**Lisa Jennings Young**, a Content Design Leader at Adobe, posted directly to
+her LinkedIn feed rather than to a careers site: "Hello content friends!
+We're building a new Content Foundations team in Adobe Content Strategy and
+we're hiring a Design and Language Standards Lead to help build it." The
+post carries none of the apparatus every entry's source text has — no
+requisition ID, no Responsibilities/Requirements structure, no stated title
+header, no ATS. Applicants route to a named mailbox instead: "Please send
+your resume and portfolio to contentfoundationscontractor@adobe.com. (I
+won't be able to respond to DMs, so please do use that email address.)"
+
+The role described sits close to the Content Systems Architect role already
+in the dataset — terminology systems, voice and tone frameworks "for
+traditional UX and conversational AI," cross-functional influence across
+design, product, and engineering — and may be the same "Content Foundations"
+initiative described from the inside rather than a second one.
+
+It's also the first **contract** engagement surfaced anywhere in the
+corpus's research to date: six months initial, "full-time... 40 hours/week,"
+extended "as budget allows" — everything else has been permanent hiring.
+
+Held out of `jobs.json` on genre grounds, not content grounds: the schema
+and audit process both assume an institutional posting to audit, and a
+hiring manager's personal, first-person solicitation isn't one, whatever
+else is true about the role underneath it. Not archived to `jd-source`
+either, since there's no posting text separate from this LinkedIn post to
+preserve against re-audit.
+
+Recorded as a category to watch, not a single incident: informal, off-ATS,
+personally-voiced recruiting calls — especially for contract or interim
+roles — are a genre the dataset holds out deliberately. A second instance,
+of either the informality or the contract-engagement type, is the one to
+compare this against; if either recurs, it's worth deciding then whether the
+exclusion should become a documented rule rather than a one-off judgment
+call.
