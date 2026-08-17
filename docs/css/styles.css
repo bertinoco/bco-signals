@@ -251,7 +251,7 @@ body {
   filter: invert(1);
 }
 
-/* Both CTAs sit under the body copy now: "Show me the data" as the primary
+/* Both CTAs sit under the body copy now: "Explore the data" as the primary
    bordered button, "View on GitHub" beside it as an understated secondary
    link — same visual hierarchy, just relocated out of the top corner. */
 .hero-actions {
@@ -260,17 +260,6 @@ body {
   align-items: center;
   gap: var(--space-3);
   margin-top: var(--space-4);
-}
-
-/* Stacked, not side-by-side, on mobile — matches the grid's own single-
-   column breakpoint. Both buttons fit on one row even at 375px, but two
-   CTAs of different weight competing for the same line reads better
-   resolved than crowded. */
-@media (max-width: 599px) {
-  .hero-actions {
-    flex-direction: column;
-    align-items: flex-start;
-  }
 }
 
 .hero-cta {
