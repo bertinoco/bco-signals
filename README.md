@@ -16,13 +16,13 @@ jd-source/            — Verbatim JD text archive
                           - Includes included and excludes JDs
   README.md           — A good place to read more about exclusion rules
 
-jd-insights/            — What this dataset means (none of this content is published) 
-  stats.md              — Interesting stats (generated)
-  quotes.md             — Interesting quotes (generated verbatim)
-  patterns.md           — Notes and commentary on how postings are written
-  findings.md           — Notes on what Claude and I find interesting (this is editorialized) 
-  refresh.py            — How we generate stats.md and quotes.md from jobs.json + jd-source/
-  README.md             — What each file is for and the editorial boundary
+jd-insights/          — What this dataset means (none of this content is published) 
+  stats.md            — Interesting stats (generated)
+  quotes.md           — Interesting quotes (generated verbatim)
+  patterns.md         — Notes and commentary on how postings are written
+  findings.md         — Notes on what Claude and I find interesting (this is editorialized) 
+  refresh.py          — How we generate stats.md and quotes.md from jobs.json + jd-source/
+  README.md           — What each file is for and the editorial boundary
 ```
 
 ## Data schema
