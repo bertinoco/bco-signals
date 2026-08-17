@@ -154,6 +154,12 @@
 }
 
 /* ── Base ─────────────────────────────────────────────────── */
+/* Applies to both in-page anchor jumps: the hero CTA (#nav-bar) and the
+   skip-link (#main). Turned off under prefers-reduced-motion, below. */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: var(--font-sans);
   font-size: var(--font-base);
@@ -1445,6 +1451,10 @@ body {
 
 /* ── Reduced motion ───────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
   .footer-brand a,
   .badge-btn,
   .cluster-card,
