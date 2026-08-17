@@ -410,12 +410,65 @@ body {
 /* One page-level h1 lives in the hero; this is a section heading, not a
    second h1. Modest size — it orients the section without competing with
    the tab labels directly below it. */
+/* position: relative — the tooltip (absolute) positions against this row,
+   not the page, and margin-bottom moves here from .nav-heading since the
+   row is now the thing sitting above the tabs. */
+.nav-heading-row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  margin-bottom: var(--space-3);
+}
+
 .nav-heading {
   font-family: var(--font-sans);
   font-size: var(--font-md);
   font-weight: var(--weight-semibold);
   color: hsl(var(--foreground));
-  margin-bottom: var(--space-3);
+}
+
+.ai-info-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  color: hsl(var(--muted-foreground));
+  background: none;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: color var(--duration-fast) ease, background var(--duration-fast) ease;
+}
+
+.ai-info-btn:hover {
+  color: hsl(var(--foreground));
+  background: hsl(var(--muted));
+}
+
+.ai-info-btn:focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
+}
+
+/* Toggled via [hidden] in JS, not a CSS class — no transition needed for a
+   plain show/hide popover this small and infrequently used. */
+.ai-info-tooltip {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 20;
+  margin-top: var(--space-1);
+  max-width: 320px;
+  padding: var(--space-2) var(--space-3);
+  background: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius);
+  box-shadow: 0 8px 24px hsl(var(--foreground) / 0.12);
+  font-size: var(--font-sm);
+  color: hsl(var(--secondary-foreground));
+  text-align: left;
 }
 
 /* position: relative so the sliding indicator (absolute) measures against
@@ -1096,23 +1149,6 @@ body {
     border-radius: 50%;
     border: 1px solid hsl(var(--border));
   }
-}
-
-/* ── AI disclosure band ───────────────────────────────────── */
-/* Sits between the content and the footer as its own quiet band, not
-   folded into the footer itself — a small, muted strip rather than a
-   loud banner: same --muted ground as the hero pull-quote, but far less
-   padding and body-copy size, so it registers as a notice, not a pitch. */
-.ai-disclosure {
-  background: hsl(var(--muted));
-  margin-top: var(--space-12);
-  padding: var(--space-3) 0;
-}
-
-.ai-disclosure p {
-  font-size: var(--font-sm);
-  color: hsl(var(--secondary-foreground));
-  text-align: left;
 }
 
 /* ── Footer ───────────────────────────────────────────────── */

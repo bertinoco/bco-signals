@@ -556,6 +556,42 @@ positionNavIndicator(true);
 // both shift a button's offsetLeft/offsetTop.
 window.addEventListener('resize', () => positionNavIndicator(true));
 
+// ── AI disclosure tooltip ────────────────────────────────────
+// Click-to-toggle rather than hover-only: hover doesn't exist on touch, and
+// a single trigger mechanism that works everywhere beats hover-plus-a-
+// separate-touch-fallback for a control this minor.
+const aiInfoBtn = document.getElementById('ai-info-btn');
+const aiInfoTooltip = document.getElementById('ai-info-tooltip');
+
+function closeAiInfo() {
+  aiInfoTooltip.hidden = true;
+  aiInfoBtn.setAttribute('aria-expanded', 'false');
+}
+
+function openAiInfo() {
+  aiInfoTooltip.hidden = false;
+  aiInfoBtn.setAttribute('aria-expanded', 'true');
+}
+
+aiInfoBtn.addEventListener('click', (e) => {
+  e.stopPropagation();
+  if (aiInfoTooltip.hidden) openAiInfo();
+  else closeAiInfo();
+});
+
+document.addEventListener('click', (e) => {
+  if (!aiInfoTooltip.hidden && e.target !== aiInfoBtn && !aiInfoTooltip.contains(e.target)) {
+    closeAiInfo();
+  }
+});
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && !aiInfoTooltip.hidden) {
+    closeAiInfo();
+    aiInfoBtn.focus();
+  }
+});
+
 // ── Flip-card overlay ───────────────────────────────────────
 // Clicking a cluster/signal card flips it and grows it to fill the
 // viewport. The trigger card stays in the grid (visibility: hidden, so
