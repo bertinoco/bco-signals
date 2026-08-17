@@ -18,11 +18,11 @@ jd-source/            — Verbatim JD text archive
                           - Both included and excluded JDs
   README.md           — Read more about exclusion rules
 
-jd-insights/          — What this dataset means (none of this content is published) 
-  stats.md            — Interesting stats (generated)
-  quotes.md           — Interesting quotes (generated verbatim)
-  patterns.md         — Notes and commentary on how postings are written
-  findings.md         — Notes on what Claude and I find interesting (this is editorialized) 
+jd-insights/          — Big picture archive
+  stats.md            — Interesting stats
+  quotes.md           — Interesting quotes (verbatim)
+  patterns.md         — Notes on how postings are formatted and written
+  findings.md         — Notes on what Claude and I find interesting (based on dictation, then editorialized) 
   refresh.py          — How we generate stats.md and quotes.md from jobs.json + jd-source/
   README.md           — What each file is for and our editorial boundaries
 ```
@@ -37,8 +37,8 @@ Each entry in `jobs.json` includes:
 - `signals` — skills and observable patterns
 - `compRange` — stated range, plus extras
 - `quote` — optional verbatim excerpt
-- `note` — optional factual note
-- `tag` — optional, factual classifier
+- `note` — optional note
+- `tag` — optional classifier
 
 ---
 
