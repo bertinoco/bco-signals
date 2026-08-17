@@ -22,7 +22,7 @@ jd-insights/          — What this dataset means (none of this content is publi
   patterns.md         — Notes and commentary on how postings are written
   findings.md         — Notes on what Claude and I find interesting (this is editorialized) 
   refresh.py          — How we generate stats.md and quotes.md from jobs.json + jd-source/
-  README.md           — What each file is for and the editorial boundary
+  README.md           — What each file is for and our editorial boundaries
 ```
 
 ## Data schema
