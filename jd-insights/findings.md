@@ -375,6 +375,44 @@ or review process explicitly scoped to cover both human-authored and
 agent-generated content, rather than either a process for one audience or an
 artifact built for both.*
 
+**Named AI tools — 4 instances, one of them gating.** Of the 25 entries
+carrying `ai-native-expectation`, only four name a specific product rather
+than the category. HelloFresh: "building rapid interactive prototypes (using
+tools like Claude Code, Gemini, or Figma AI)." Coupang's Senior Content
+Strategist, Core UX (Korean posting): "ChatGPT, Claude, Gemini 등의 다양한
+생성형 AI" ("ChatGPT, Claude, Gemini, and other generative AI tools").
+Intercept: "Hands-on experience using LLMs or AI writing tools such as
+ChatGPT, Claude, Copilot, Jasper, or similar platforms." All three list
+several tools as interchangeable examples of the category, not a required
+one.
+
+The Ride Platform is the different case: "Jasper is core to how we work,"
+"Jasper embedded as the core engine for content creation," "with Jasper
+strongly preferred." One named tool, stated as the standard the role is
+built around, not an example among several.
+
+Adobe's Staff Content Strategist names Firefly, but as part of describing
+Adobe's own product portfolio the role writes about, not a tool the
+candidate is expected to use — checked and excluded on that basis. Fin's
+"Claude Code" mention (a perks line, "Unlimited access to Claude Code and
+best-in-class AI tools") is not counted as a fifth instance: the posting is
+excluded from the dataset outright (no occurrence of *content, writing,
+copy, language, tone, voice,* or *terminology*, per the entry above), so
+nothing in it is available to cite as corpus evidence.
+
+Held here rather than promoted: three of the four instances are examples,
+not requirements, and the one gating instance (Ride Platform) is a single
+company's procurement choice, not evidence of a market standard. *Trigger to
+revisit: a second posting that gates on one specific named tool as a stated
+requirement, the way Ride Platform gates on Jasper — or the same tool named
+across three or more postings.* If either happens, the promotion should
+also change `ai-native-expectation`'s card description in `jobs.json`: it
+currently states the expectation generically ("AI fluency… baseline"), and
+naming the tool(s) the postings actually converge on would sharpen the
+description as directly as the evidence supports — consistent with
+`CLAUDE.md`'s card-copy rule to state what the data shows, not the category
+it falls under, once the data shows something more specific.
+
 ---
 
 # What this data cannot support
