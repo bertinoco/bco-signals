@@ -1241,11 +1241,11 @@
   "clusters": {
     "terminology-governance": {
       "label": "Terminology & language governance",
-      "description": "Companies are asking content designers to own the language layer, building glossaries, controlled vocabularies, and a single source of truth for product language. This shows up at a consistent rate across the dataset, across industries."
+      "description": "Companies are asking content designers to own the language layer, building glossaries, controlled vocabularies, and a single source of truth for product language. The pattern holds across industries, not one sector."
     },
     "content-systems-design": {
       "label": "Content systems design",
-      "description": "The most common cluster in the dataset. Companies want someone who designs content as a system, building frameworks, patterns, and reusable templates rather than writing one screen at a time."
+      "description": "The most common cluster in the dataset. Companies want someone who designs content as a system: frameworks, patterns, reusable templates that scale past a single screen."
     },
     "ai-tooling": {
       "label": "AI tooling & automation",
@@ -1265,7 +1265,7 @@
     },
     "enablement": {
       "label": "Enablement & team upskilling",
-      "description": "Content design teams are shrinking, and it's increasingly common to be a one-person centralized resource. The roles we're tracking are hiring for the ability to build playbooks, guidelines, and tools that scale content quality across teams — not to write everything yourself."
+      "description": "Content design teams are shrinking, and it's increasingly common to be a one-person centralized resource. The roles we're tracking are hiring for the ability to build playbooks, guidelines, and tools that scale content quality across teams, not to write everything yourself."
     },
     "technical-writing": {
       "label": "Technical writing & documentation",
@@ -1275,19 +1275,19 @@
   "signals": {
     "ai-native-expectation": {
       "label": "AI fluency expected",
-      "description": "AI fluency isn't a bonus — it's listed as a baseline in most roles we're tracking. If you're not actively working with AI tools, this is the most urgent gap the data is pointing to."
+      "description": "AI fluency is listed as a baseline in most roles we're tracking, not a bonus. If you're not actively working with AI tools, this is the most urgent gap the data points to."
     },
     "enabler-not-bottleneck": {
       "label": "Enabler, not bottleneck",
-      "description": "These roles aren't hiring someone to write everything — they're hiring someone to build systems that let others write well. A consistent signal that the solo-writer model is losing ground."
+      "description": "These roles are hiring someone to build systems that let others write well, not someone to write everything themselves. A consistent signal that the solo-writer model is losing ground."
     },
     "governance-as-value-prop": {
       "label": "Governance emphasized",
-      "description": "Governance isn't a background process in these roles — it's the primary deliverable. Companies are hiring for the ability to set standards and make them stick across teams."
+      "description": "Governance is the primary deliverable in these roles, not a background process. Companies are hiring for the ability to set standards and make them stick across teams."
     },
     "title-dilution": {
       "label": "Title dilution",
-      "description": "Not every 'content systems' role is a content systems role. Some use the language to describe what is fundamentally editorial or marketing work. The title alone isn't a reliable signal here. Read the responsibilities."
+      "description": "A “content systems” title doesn't always mean content systems work. Some postings borrow the language to describe editorial or marketing work instead. Read the responsibilities, not the title."
     },
     "title-responsibility-gap": {
       "label": "Title ≠ stated responsibilities",
@@ -1299,7 +1299,7 @@
     },
     "language-infrastructure": {
       "label": "Language as infrastructure",
-      "description": "When a JD frames language work as 'infrastructure,' it signals the company sees content as a foundational system rather than a production task. These roles tend to sit closer to platform and engineering teams."
+      "description": "When a job description frames language work as “infrastructure,” it signals the company sees content as a foundational system, not a production task. These roles tend to sit closer to platform and engineering teams."
     },
     "content-adjacent": {
       "label": "Content work under new titles",
@@ -1327,11 +1327,11 @@
     },
     "central-standards-function": {
       "label": "Central standards function",
-      "description": "Content standards owned by one central or horizontal function, with distributed teams consuming them inside set guardrails. Roles describe sitting above channels, acting as a single accountable owner, or publishing playbooks other teams adapt. It's a structural answer to where content work sits — and the opposite of embedding writers in product teams."
+      "description": "Content standards owned by one central or horizontal function, with distributed teams consuming them inside set guardrails. Roles describe sitting above channels, acting as a single accountable owner, or publishing playbooks other teams adapt. It's a structural answer to where content work sits, distinct from embedding writers directly in product teams."
     },
     "agent-retrieval": {
       "label": "Structured for agent retrieval",
-      "description": "Content structured so AI systems can retrieve and apply it at generation time. Not search optimization and not schema markup — this is the knowledge layer a model reads from before it writes. A small pattern so far, and it places content work upstream of the output rather than after it."
+      "description": "Content structured so AI systems can retrieve and apply it at generation time. This sits apart from search optimization and schema markup — it's the knowledge layer a model reads from before it writes. A small pattern so far, and it places content work upstream of the output rather than after it."
     }
   }
 }
