@@ -1098,13 +1098,29 @@ body {
   }
 }
 
+/* ── AI disclosure band ───────────────────────────────────── */
+/* Sits between the content and the footer as its own quiet band, not
+   folded into the footer itself — a small, muted strip rather than a
+   loud banner: same --muted ground as the hero pull-quote, but far less
+   padding and body-copy size, so it registers as a notice, not a pitch. */
+.ai-disclosure {
+  background: hsl(var(--muted));
+  margin-top: var(--space-12);
+  padding: var(--space-3) 0;
+}
+
+.ai-disclosure p {
+  font-size: var(--font-sm);
+  color: hsl(var(--secondary-foreground));
+  text-align: left;
+}
+
 /* ── Footer ───────────────────────────────────────────────── */
 /* No longer an inverted block — the ground is already dark half
    the time, so a rule does the separating. */
 .site-footer {
   border-top: 1px solid hsl(var(--border));
   padding: var(--space-6) 0;
-  margin-top: var(--space-12);
 }
 
 .footer-inner {
