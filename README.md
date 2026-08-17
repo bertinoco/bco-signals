@@ -11,10 +11,12 @@ I began parsing this data using a curated schema (json) and rendering content in
 ```
 docs/data/jobs.json   — Structured entries for each tracked role
 
+CLAUDE.md             - This is the good stuff. Start here to learn about our criteria and audit process.
+
 jd-source/            — Verbatim JD text archive
                           - One md file per entry
                           - Both included and excluded JDs
-  README.md           — A good place to read more about exclusion rules
+  README.md           — Read more about exclusion rules
 
 jd-insights/          — What this dataset means (none of this content is published) 
   stats.md            — Interesting stats (generated)
