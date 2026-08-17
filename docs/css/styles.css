@@ -410,9 +410,10 @@ body {
 /* One page-level h1 lives in the hero; this is a section heading, not a
    second h1. Modest size — it orients the section without competing with
    the tab labels directly below it. */
-/* position: relative — the tooltip (absolute) positions against this row,
-   not the page, and margin-bottom moves here from .nav-heading since the
-   row is now the thing sitting above the tabs. */
+/* position: relative is unused on desktop (.ai-info-wrap, being closer in
+   the ancestor chain, is what the toggletip positions against there) but
+   becomes the toggletip's positioning context at <=480px, once that media
+   query turns .ai-info-wrap itself back to static. */
 .nav-heading-row {
   position: relative;
   display: flex;
@@ -426,6 +427,13 @@ body {
   font-size: var(--font-md);
   font-weight: var(--weight-semibold);
   color: hsl(var(--foreground));
+}
+
+/* Positioning context for the toggletip — right of the icon specifically,
+   not the row, so it never depends on the heading text's own width. */
+.ai-info-wrap {
+  position: relative;
+  display: flex;
 }
 
 .ai-info-btn {
@@ -452,14 +460,33 @@ body {
   outline-offset: 2px;
 }
 
-/* Toggled via [hidden] in JS, not a CSS class — no transition needed for a
-   plain show/hide popover this small and infrequently used. */
+/* Sits to the right of the icon, vertically centered on it, with a caret
+   pointing back at the trigger — a toggletip, not a tooltip (it opens on
+   click, not hover), but the caret is what visually ties it to its
+   trigger regardless of which one it is. Toggled via [hidden] in JS, not
+   a CSS class — no transition needed for a plain show/hide this small and
+   infrequently used. Positioned right rather than below so it never
+   covers the tabs directly under the heading.
+
+   bottom: 0 (not vertically centered) is deliberate: .ai-info-wrap's own
+   height is exactly the 24px icon, so this anchors the box's bottom edge
+   to the icon's bottom edge and it grows upward from there. Centering it
+   on the icon instead let roughly half its height sag below the icon —
+   which, at 2-3 lines of text, was enough to overlap the tab row directly
+   underneath, the exact thing this placement was meant to avoid. */
 .ai-info-tooltip {
   position: absolute;
-  top: 100%;
-  left: 0;
+  bottom: 0;
+  left: 100%;
+  margin-left: var(--space-2);
   z-index: 20;
-  margin-top: var(--space-1);
+  /* Explicit width, not just max-width: an absolutely-positioned child of
+     a flex container (.ai-info-wrap) gets sized by flex-basis rules in
+     some browsers instead of shrinking to fit its content, which made
+     this render at a fraction of max-width with the sentence wrapping
+     almost one word per line. width: max-content forces content-based
+     sizing again; max-width still caps it. */
+  width: max-content;
   max-width: 320px;
   padding: var(--space-2) var(--space-3);
   background: hsl(var(--card));
@@ -469,6 +496,71 @@ body {
   font-size: var(--font-sm);
   color: hsl(var(--secondary-foreground));
   text-align: left;
+}
+
+/* Two stacked triangles — border-colored, then a slightly smaller
+   card-colored one on top — is the standard way to fake a bordered
+   callout caret with no extra markup. Positioned near the box's bottom
+   (roughly the icon's own vertical center, since the box now grows
+   upward from the icon's bottom edge) rather than the box's true
+   center, which no longer corresponds to where the icon actually is. */
+.ai-info-tooltip::before,
+.ai-info-tooltip::after {
+  content: '';
+  position: absolute;
+  bottom: 8px;
+  right: 100%;
+  width: 0;
+  height: 0;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+}
+
+.ai-info-tooltip::before {
+  border-right: 6px solid hsl(var(--border));
+}
+
+.ai-info-tooltip::after {
+  margin-right: -1px;
+  border-top-width: 5px;
+  border-bottom-width: 5px;
+  border-right: 5px solid hsl(var(--card));
+}
+
+@media (max-width: 480px) {
+  /* Not enough horizontal room to the right of the icon at these widths —
+     falls back to the original below-the-row placement instead, same as
+     before the caret was added.
+
+     Anchoring this to the icon (.ai-info-wrap) the way desktop does was
+     the first attempt, but the icon sits well left-of-center on a narrow
+     screen — a fixed-width box anchored to it and extending in either
+     direction ran off whichever edge was closer (confirmed: right-aligned
+     at 240px put its left edge 51px past the left of a 375px viewport,
+     permanently off-screen, not just requiring a scroll). Repositioning
+     against the full row instead, spanning left:0 to right:0, makes its
+     width follow the row's own (container-padding-safe) width
+     automatically — it can't overflow either edge at any viewport size. */
+  .ai-info-wrap {
+    position: static;
+  }
+
+  .ai-info-tooltip {
+    position: absolute;
+    top: 100%;
+    bottom: auto;
+    left: 0;
+    right: 0;
+    margin-left: 0;
+    margin-top: var(--space-2);
+    width: auto;
+    max-width: none;
+  }
+
+  .ai-info-tooltip::before,
+  .ai-info-tooltip::after {
+    display: none;
+  }
 }
 
 /* position: relative so the sliding indicator (absolute) measures against

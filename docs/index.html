@@ -23,7 +23,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=75">
+  <link rel="stylesheet" href="css/styles.css?v=79">
 
   <script type="application/ld+json">
   [
@@ -151,14 +151,16 @@
     <div class="container">
       <div class="nav-heading-row">
         <h2 class="nav-heading">Explore the data</h2>
-        <button type="button" class="ai-info-btn" id="ai-info-btn" aria-expanded="false" aria-controls="ai-info-tooltip" aria-label="About AI-drafted content">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <circle cx="8" cy="8" r="6.25" stroke="currentColor" stroke-width="1.4"/>
-            <path d="M8 7.25V11.25" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
-            <circle cx="8" cy="5.25" r="0.75" fill="currentColor"/>
-          </svg>
-        </button>
-        <p class="ai-info-tooltip" id="ai-info-tooltip" hidden>AI disclosure: Card descriptions are drafted by Claude and reviewed before publishing</p>
+        <div class="ai-info-wrap">
+          <button type="button" class="ai-info-btn" id="ai-info-btn" aria-expanded="false" aria-controls="ai-info-tooltip" aria-label="About AI-drafted content">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="8" cy="8" r="6.25" stroke="currentColor" stroke-width="1.4"/>
+              <path d="M8 7.25V11.25" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+              <circle cx="8" cy="5.25" r="0.75" fill="currentColor"/>
+            </svg>
+          </button>
+          <p class="ai-info-tooltip" id="ai-info-tooltip" hidden>AI disclosure: Card descriptions are drafted by Claude and reviewed before publishing</p>
+        </div>
       </div>
       <nav class="badge-nav" role="tablist" aria-label="Content sections">
         <button class="badge-btn active" id="tab-signals" role="tab" data-section="signals" aria-selected="true" aria-controls="signals">Emerging patterns</button>
