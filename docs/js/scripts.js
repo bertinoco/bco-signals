@@ -18,6 +18,13 @@ let showAllClusters = false;
 let showAllSignals = false;
 let globalData = null;
 
+// Full sorted key order for each collection, snapshotted at render time —
+// the overlay carousel reads from these, not the grid's DOM, so it can
+// always reach every entry regardless of what pagination currently has
+// rendered (see openFlipCard/navigateFlipCard).
+let clusterOrder = [];
+let signalOrder = [];
+
 // Responsibilities/Skills truncate at 3 full rows of whatever column count
 // the grid is actually rendering at, not a flat number — read the live
 // layout instead of duplicating the grid's own breakpoints as a second,
@@ -197,13 +204,16 @@ function keyPercentage(data, key, field) {
 // Title + description + stat line only — the part that swaps when the
 // overlay carousel navigates to another key. The close button lives
 // outside this wrapper so navigating never has to re-wire its listener.
+// Percentage is deliberately not repeated here — the front already shows
+// the bare number, and this line's own "N of M roles" count is the same
+// conclusion stated a different way; a reader can connect the two without
+// the figure appearing twice.
 function flipCardContentHtml(key, field, label, description, data) {
   const entries = entriesForKey(data, key, field);
   const total = data.entries.length;
-  const pct = keyPercentage(data, key, field);
   const rolesHtml = entries.length
     ? `<div class="flip-card-roles">
-        <p class="flip-card-roles-label">Appears in ${entries.length} of ${total} roles — ${pct}%</p>
+        <p class="flip-card-roles-label">Appears in ${entries.length} of ${total} roles</p>
       </div>`
     : '';
   return `
@@ -247,14 +257,18 @@ function renderClusters(data) {
 
   // Sort by number of companies, descending
   clusterKeys.sort((a, b) => clusterMap[b].length - clusterMap[a].length);
+  clusterOrder = clusterKeys.slice();
 
   const showMore = document.getElementById('clusters-show-more');
   const showMoreBtn = showMore ? showMore.querySelector('.show-more-btn') : null;
+  // Single column (mobile) shows everything, no pagination — with a dataset
+  // this small, "load more" gates a handful of items, not a real list.
+  const isSingleColumn = currentColumnCount(grid) === 1;
   const limit = currentColumnCount(grid) * 3;
-  const keysToRender = showAllClusters ? clusterKeys : clusterKeys.slice(0, limit);
+  const keysToRender = (isSingleColumn || showAllClusters) ? clusterKeys : clusterKeys.slice(0, limit);
 
   if (showMore) {
-    if (!showAllClusters && clusterKeys.length > limit) {
+    if (!isSingleColumn && !showAllClusters && clusterKeys.length > limit) {
       showMore.style.display = 'block';
       showMoreBtn.textContent = 'View all';
     } else {
@@ -438,13 +452,18 @@ function renderSignals(data) {
     return;
   }
 
+  signalOrder = relevantSignals.slice();
+
   const showMore = document.getElementById('signals-show-more');
   const showMoreBtn = showMore ? showMore.querySelector('.show-more-btn') : null;
+  // Single column (mobile) shows everything, no pagination — with a dataset
+  // this small, "load more" gates a handful of items, not a real list.
+  const isSingleColumn = currentColumnCount(list) === 1;
   const limit = currentColumnCount(list) * 3;
-  const keysToRender = showAllSignals ? relevantSignals : relevantSignals.slice(0, limit);
+  const keysToRender = (isSingleColumn || showAllSignals) ? relevantSignals : relevantSignals.slice(0, limit);
 
   if (showMore) {
-    if (!showAllSignals && relevantSignals.length > limit) {
+    if (!isSingleColumn && !showAllSignals && relevantSignals.length > limit) {
       showMore.style.display = 'block';
       showMoreBtn.textContent = 'View all';
     } else {
@@ -473,6 +492,28 @@ function renderSignals(data) {
 const badges = Array.from(document.querySelectorAll('.badge-btn'));
 const badgeNav = document.querySelector('.badge-nav');
 
+const badgeNavIndicator = document.querySelector('.badge-nav-indicator');
+
+// Slides the shared indicator under whichever tab is active. top is
+// included, not just left/width, because the nav wraps to a second row
+// at narrow widths (see the <=480px media query) — the active tab isn't
+// always on the same row. skipTransition suppresses the CSS transition
+// for the very first call, so the indicator doesn't animate in from
+// (0,0) on page load — see the "Skip Animation on Page Load" pattern
+// used elsewhere on the site.
+function positionNavIndicator(skipTransition) {
+  const activeBadge = document.querySelector('.badge-btn.active');
+  if (!activeBadge || !badgeNavIndicator) return;
+  if (skipTransition) badgeNavIndicator.style.transition = 'none';
+  badgeNavIndicator.style.top = `${activeBadge.offsetTop + activeBadge.offsetHeight}px`;
+  badgeNavIndicator.style.left = `${activeBadge.offsetLeft}px`;
+  badgeNavIndicator.style.width = `${activeBadge.offsetWidth}px`;
+  if (skipTransition) {
+    void badgeNavIndicator.offsetWidth; // force reflow before restoring the transition
+    badgeNavIndicator.style.transition = '';
+  }
+}
+
 function activateBadge(badge) {
   badges.forEach(b => {
     b.classList.remove('active');
@@ -482,6 +523,7 @@ function activateBadge(badge) {
   badge.classList.add('active');
   badge.setAttribute('aria-selected', 'true');
   document.getElementById(badge.dataset.section).classList.add('active');
+  positionNavIndicator();
 }
 
 badges.forEach(badge => {
@@ -507,6 +549,12 @@ badgeNav.addEventListener('keydown', (e) => {
   badges[next].focus();
   activateBadge(badges[next]);
 });
+
+positionNavIndicator(true);
+// Column count and text wrapping don't change on resize, but which row a
+// tab wraps to (<=480px) or the container's own available width can —
+// both shift a button's offsetLeft/offsetTop.
+window.addEventListener('resize', () => positionNavIndicator(true));
 
 // ── Flip-card overlay ───────────────────────────────────────
 // Clicking a cluster/signal card flips it and grows it to fill the
@@ -606,17 +654,28 @@ function onOverlayKeydown(e) {
   if (e.key === 'ArrowRight') navigateFlipCard('next');
 }
 
-// Siblings within the same collection (clusters or signals), in the same
-// order the grid rendered them — the carousel never crosses collections.
-function overlaySiblings() {
-  return Array.from(activeOverlay.container.querySelectorAll('.flip-card'));
+// Full key order for the active collection — clusterOrder/signalOrder are
+// snapshotted at render time (see renderClusters/renderSignals), independent
+// of how many of those keys the grid currently has rendered. The carousel
+// reads from here rather than querying DOM `.flip-card` elements, so it can
+// reach every entry even when the grid itself is still paginated ("View
+// all" not yet clicked) — previously it stopped at whatever was rendered.
+function overlayKeys() {
+  return activeOverlay.type === 'clusters' ? clusterOrder : signalOrder;
+}
+
+// The grid tile for a key, if the grid currently has one rendered (it may
+// not, past a pagination cutoff) — used only to hide/restore the underlying
+// tile while its overlay is open, never to drive navigation itself.
+function gridTileForKey(key) {
+  return activeOverlay.container.querySelector(`.flip-card[data-key="${key}"]`);
 }
 
 function updateNavButtons() {
-  const cards = overlaySiblings();
-  const index = cards.indexOf(activeOverlay.currentCard);
+  const keys = overlayKeys();
+  const index = keys.indexOf(activeOverlay.currentKey);
   overlayPrevBtn.disabled = index <= 0;
-  overlayNextBtn.disabled = index >= cards.length - 1;
+  overlayNextBtn.disabled = index >= keys.length - 1;
 }
 
 function openFlipCard(card) {
@@ -626,15 +685,17 @@ function openFlipCard(card) {
   const lastFocused = document.activeElement;
   const container = card.closest('#cluster-grid, #signal-list');
   const type = container.id === 'cluster-grid' ? 'clusters' : 'signals';
+  const key = card.dataset.key;
+  const item = globalData[type][key];
+  const pct = keyPercentage(globalData, key, type);
 
   const clone = card.cloneNode(true);
   card.style.visibility = 'hidden';
   clone.classList.add('flip-card--overlay');
   clone.removeAttribute('tabindex');
-  const labelEl = clone.querySelector('h3, .signal-label');
   clone.setAttribute('role', 'dialog');
   clone.setAttribute('aria-modal', 'true');
-  clone.setAttribute('aria-label', labelEl ? labelEl.textContent : '');
+  clone.setAttribute('aria-label', `${item.label}, ${pct}% of roles`);
   clone.style.position = 'fixed';
   clone.style.margin = '0';
   clone.style.top = `${rect.top}px`;
@@ -653,7 +714,12 @@ function openFlipCard(card) {
   const closeBtn = clone.querySelector('.flip-card-close');
   closeBtn.addEventListener('click', closeFlipCard);
 
-  activeOverlay = { clone, currentCard: card, container, type, lastFocused, pendingHandler: null, navigating: false };
+  // triggerCard is fixed for the whole overlay session — the close animation
+  // always shrinks back to where it opened, regardless of how far the
+  // carousel navigated (its target key may not even have a grid tile if the
+  // grid is still paginated). currentKey is what actually drives the
+  // carousel and the accessible name as navigation moves it.
+  activeOverlay = { clone, triggerCard: card, currentKey: key, container, type, lastFocused, pendingHandler: null, navigating: false };
   updateNavButtons();
 
   // Force layout with the clone at the card's original rect, so the style
@@ -706,12 +772,12 @@ function openFlipCard(card) {
 function navigateFlipCard(direction) {
   if (!activeOverlay || activeOverlay.navigating) return;
 
-  const cards = overlaySiblings();
-  const index = cards.indexOf(activeOverlay.currentCard);
+  const keys = overlayKeys();
+  const index = keys.indexOf(activeOverlay.currentKey);
   const nextIndex = index + (direction === 'next' ? 1 : -1);
-  if (nextIndex < 0 || nextIndex >= cards.length) return;
+  if (nextIndex < 0 || nextIndex >= keys.length) return;
 
-  const nextCard = cards[nextIndex];
+  const nextKey = keys[nextIndex];
   const { clone, type } = activeOverlay;
   const contentEl = clone.querySelector('.flip-card-back-content');
   const outClass = direction === 'next' ? 'is-sliding-out-next' : 'is-sliding-out-prev';
@@ -720,14 +786,18 @@ function navigateFlipCard(direction) {
   activeOverlay.navigating = true;
 
   const swap = () => {
-    activeOverlay.currentCard.style.visibility = '';
-    nextCard.style.visibility = 'hidden';
-    activeOverlay.currentCard = nextCard;
+    // Neither tile is guaranteed to exist — the grid may still be paginated
+    // past one or both keys. Only hide/restore a tile that's actually there.
+    const prevTile = gridTileForKey(activeOverlay.currentKey);
+    const nextTile = gridTileForKey(nextKey);
+    if (prevTile) prevTile.style.visibility = '';
+    if (nextTile) nextTile.style.visibility = 'hidden';
+    activeOverlay.currentKey = nextKey;
 
-    const key = nextCard.dataset.key;
-    const item = globalData[type][key];
-    contentEl.innerHTML = flipCardContentHtml(key, type, item.label, item.description, globalData);
-    clone.setAttribute('aria-label', item.label);
+    const item = globalData[type][nextKey];
+    const pct = keyPercentage(globalData, nextKey, type);
+    contentEl.innerHTML = flipCardContentHtml(nextKey, type, item.label, item.description, globalData);
+    clone.setAttribute('aria-label', `${item.label}, ${pct}% of roles`);
 
     const target = computeOverlayTarget(clone);
     clone.style.top = `${target.top}px`;
@@ -760,18 +830,23 @@ function navigateFlipCard(direction) {
 
 function closeFlipCard() {
   if (!activeOverlay) return;
-  const { clone, currentCard, lastFocused, pendingHandler } = activeOverlay;
+  const { clone, triggerCard, currentKey, lastFocused, pendingHandler } = activeOverlay;
   if (pendingHandler) clone.removeEventListener('transitionend', pendingHandler);
 
-  const rect = currentCard.getBoundingClientRect();
+  // Always shrinks back to the tile that opened it, not wherever the
+  // carousel ended up — that key may not even have a grid tile right now.
+  const rect = triggerCard.getBoundingClientRect();
   overlayBackdrop.classList.remove('is-visible');
   overlayPrevBtn.hidden = true;
   overlayNextBtn.hidden = true;
   document.removeEventListener('keydown', onOverlayKeydown);
 
+  const currentTile = gridTileForKey(currentKey);
+
   const finishClose = () => {
     clone.remove();
-    currentCard.style.visibility = '';
+    triggerCard.style.visibility = '';
+    if (currentTile && currentTile !== triggerCard) currentTile.style.visibility = '';
     document.querySelectorAll('.site-header, .nav-bar, main, .site-footer')
       .forEach(el => el.removeAttribute('aria-hidden'));
     document.body.style.overflow = '';

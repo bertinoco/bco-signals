@@ -23,7 +23,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=72">
+  <link rel="stylesheet" href="css/styles.css?v=73">
 
   <script type="application/ld+json">
   [
@@ -116,10 +116,10 @@
   <header class="site-header">
     <div class="container hero-container">
       <div class="hero-top">
-        <div class="hero-wordmark">
+        <a class="hero-wordmark" href="/">
           <img class="hero-mark" src="images/icon_circle.png" alt="" width="24" height="24">
           <span>Signals</span>
-        </div>
+        </a>
       </div>
       <div class="hero-main">
         <h1>What content design jobs are telling us</h1>
@@ -127,9 +127,6 @@
         <div class="hero-actions">
           <a class="hero-data-cta" href="#nav-bar">
             Show me the data
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <path d="M3 7h8M8 3.5 11.5 7 8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
           </a>
           <a class="hero-cta" href="https://github.com/bertinoco/bco-signals" target="_blank" rel="noopener noreferrer">
             View on GitHub
@@ -152,10 +149,12 @@
 
   <div class="nav-bar" id="nav-bar">
     <div class="container">
+      <h2 class="nav-heading">Explore the data</h2>
       <nav class="badge-nav" role="tablist" aria-label="Content sections">
         <button class="badge-btn active" id="tab-signals" role="tab" data-section="signals" aria-selected="true" aria-controls="signals">Emerging patterns</button>
         <button class="badge-btn" id="tab-clusters" role="tab" data-section="clusters" aria-selected="false" aria-controls="clusters">Core responsibilities</button>
         <button class="badge-btn" id="tab-titles" role="tab" data-section="titles" aria-selected="false" aria-controls="titles">All roles</button>
+        <span class="badge-nav-indicator" aria-hidden="true"></span>
       </nav>
     </div>
   </div>
@@ -222,6 +221,6 @@
     </span>
   </button>
 
-  <script src="js/scripts.js?v=39"></script>
+  <script src="js/scripts.js?v=40"></script>
 </body>
 </html>

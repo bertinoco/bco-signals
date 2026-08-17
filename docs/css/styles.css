@@ -223,6 +223,9 @@ body {
   text-align: left;
 }
 
+/* Links home (the site's own root) — same fixed hero-fg treatment as the
+   other hero links, no underline since the icon+text lockup already reads
+   as a control. */
 .hero-wordmark {
   display: flex;
   align-items: center;
@@ -232,6 +235,12 @@ body {
   letter-spacing: var(--tracking-label);
   text-transform: uppercase;
   color: hsl(var(--hero-fg));
+  text-decoration: none;
+}
+
+.hero-wordmark:focus-visible {
+  outline: 2px solid hsl(var(--hero-fg));
+  outline-offset: 2px;
 }
 
 /* icon_circle.png is a black circle — invert makes it read as a white mark
@@ -251,6 +260,17 @@ body {
   align-items: center;
   gap: var(--space-3);
   margin-top: var(--space-4);
+}
+
+/* Stacked, not side-by-side, on mobile — matches the grid's own single-
+   column breakpoint. Both buttons fit on one row even at 375px, but two
+   CTAs of different weight competing for the same line reads better
+   resolved than crowded. */
+@media (max-width: 599px) {
+  .hero-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 .hero-cta {
@@ -387,9 +407,38 @@ body {
 /* ── Segmented nav ────────────────────────────────────────── */
 /* Plain-text tabs, no surrounding pill/border chrome — active state is a
    colour + weight change rather than an inversion. */
+/* One page-level h1 lives in the hero; this is a section heading, not a
+   second h1. Modest size — it orients the section without competing with
+   the tab labels directly below it. */
+.nav-heading {
+  font-family: var(--font-sans);
+  font-size: var(--font-md);
+  font-weight: var(--weight-semibold);
+  color: hsl(var(--foreground));
+  margin-bottom: var(--space-3);
+}
+
+/* position: relative so the sliding indicator (absolute) measures against
+   this element, not the page. */
 .badge-nav {
+  position: relative;
   display: inline-flex;
   gap: var(--space-4);
+}
+
+/* Slides between tabs on selection (see positionNavIndicator in
+   scripts.js) rather than each tab carrying its own static underline —
+   the motion itself is what reads as "these snap between one another,"
+   not just a color change. top/left/width are set inline per active tab;
+   only the transition lives here. */
+.badge-nav-indicator {
+  position: absolute;
+  height: 2px;
+  background: hsl(var(--foreground));
+  transition: top var(--duration-base) var(--ease-out),
+              left var(--duration-base) var(--ease-out),
+              width var(--duration-base) var(--ease-out);
+  pointer-events: none;
 }
 
 .badge-btn {
@@ -1252,7 +1301,8 @@ body {
   .flip-card--overlay,
   .flip-card-back-content,
   .flip-card-nav,
-  .card-overlay-backdrop {
+  .card-overlay-backdrop,
+  .badge-nav-indicator {
     transition: none;
   }
 
