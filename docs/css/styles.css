@@ -249,12 +249,14 @@ body {
   outline-offset: 2px;
 }
 
-/* icon_circle.png is a black circle — invert makes it read as a white mark
-   against this same fixed black band instead of vanishing into it. */
+/* circle-icon-w.png is already white-on-transparent, so no filter is needed
+   against this fixed black band. The favicon/apple-touch-icon use the
+   separate black variant (circle-icon-b.png) instead — apple-touch-icon
+   gets composited onto an opaque tile that iOS fills white behind
+   transparent pixels, so a white-on-transparent icon there would vanish. */
 .hero-mark {
   width: 24px;
   height: 24px;
-  filter: invert(1);
 }
 
 /* Both CTAs sit under the body copy now: "Explore the data" as the primary
