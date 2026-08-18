@@ -1028,7 +1028,13 @@ body {
   padding: var(--space-4);
   opacity: 0;
   pointer-events: none;
-  transition: opacity var(--duration-flip) var(--ease-out);
+  /* Shorter than the resize, and triggered separately (is-content-visible,
+     added by JS partway through the resize — see CONTENT_REVEAL_DELAY_MS in
+     scripts.js) rather than at is-open's own t=0. Fading this in over the
+     same 420ms as the resize, starting at the same instant, meant the title
+     and description were reflowing under a box that hadn't finished
+     changing size yet. */
+  transition: opacity var(--duration-base) var(--ease-out);
 }
 
 .flip-card.is-open .flip-card-front {
@@ -1036,10 +1042,20 @@ body {
 }
 
 .flip-card.is-open .flip-card-back {
-  opacity: 1;
   pointer-events: auto;
 }
 
+.flip-card.is-content-visible .flip-card-back {
+  opacity: 1;
+}
+
+/* border-radius here is the resting (fully-open) value only — the clone
+   starts each open/close with an explicit inline override matching the
+   grid card's actual radius (see openFlipCard/closeFlipCard in scripts.js),
+   so this rule is what it animates *to*, not what it starts at. Setting
+   the overlay class before that inline value was in place used to skip
+   the transition entirely: the clone rendered at --radius-lg from its very
+   first frame, while still sized like the closed card. */
 .flip-card--overlay {
   z-index: 1001;
   border-radius: var(--radius-lg);

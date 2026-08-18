@@ -630,11 +630,25 @@ window.addEventListener('resize', () => {
 // owns position/size via top/left/width/height (real layout, so text
 // reflows correctly at every step, not a distorted transform-scale) while
 // the front label crossfades to the back content via the `.is-open`
-// class. Both run on the same duration so they land together.
+// class. The back's own opacity is driven by a separate is-content-visible
+// class, added CONTENT_REVEAL_DELAY_MS into the resize rather than at the
+// same instant — content that faded in at t=0 was reflowing under a box
+// that hadn't finished changing size yet.
 const overlayBackdrop = document.getElementById('card-overlay-backdrop');
 const overlayPrevBtn = document.getElementById('card-overlay-prev');
 const overlayNextBtn = document.getElementById('card-overlay-next');
 let activeOverlay = null;
+
+// How far into the 420ms resize (--duration-flip) the back content starts
+// fading in, rather than at the same instant the resize starts.
+const CONTENT_REVEAL_DELAY_MS = 160;
+
+// Elements outside the overlay that are visually behind the backdrop while
+// it's open. Both attributes are set together: aria-hidden removes them
+// from the accessibility tree, inert additionally blocks focus and pointer
+// interaction — aria-hidden alone still leaves a focusable descendant
+// reachable by Tab, which is exactly what it isn't supposed to be.
+const BACKGROUND_SELECTOR = '.site-header, .nav-bar, main, .site-footer';
 
 function reducedMotion() {
   return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -749,6 +763,11 @@ function openFlipCard(card) {
   if (activeOverlay) return;
 
   const rect = card.getBoundingClientRect();
+  // Captured before the clone gets the .flip-card--overlay class, which
+  // carries its own (much larger) --radius-lg — without an explicit
+  // starting value the clone would render at that radius from its very
+  // first frame, while still sized like the closed card.
+  const startRadius = getComputedStyle(card).borderRadius;
   const lastFocused = document.activeElement;
   const container = card.closest('#cluster-grid, #signal-list');
   const type = container.id === 'cluster-grid' ? 'clusters' : 'signals';
@@ -769,10 +788,11 @@ function openFlipCard(card) {
   clone.style.left = `${rect.left}px`;
   clone.style.width = `${rect.width}px`;
   clone.style.height = `${rect.height}px`;
+  clone.style.borderRadius = startRadius;
   document.body.appendChild(clone);
 
-  document.querySelectorAll('.site-header, .nav-bar, main, .site-footer')
-    .forEach(el => el.setAttribute('aria-hidden', 'true'));
+  document.querySelectorAll(BACKGROUND_SELECTOR)
+    .forEach(el => { el.setAttribute('aria-hidden', 'true'); el.inert = true; });
   overlayBackdrop.hidden = false;
   overlayPrevBtn.hidden = false;
   overlayNextBtn.hidden = false;
@@ -807,7 +827,7 @@ function openFlipCard(card) {
     clone.style.width = `${target.width}px`;
     clone.style.height = `${target.height}px`;
     clone.style.borderRadius = '';
-    clone.classList.add('is-open');
+    clone.classList.add('is-open', 'is-content-visible');
     overlayBackdrop.classList.add('is-visible');
     finishOpen();
     return;
@@ -822,6 +842,11 @@ function openFlipCard(card) {
     clone.style.borderRadius = '';
     clone.classList.add('is-open');
   });
+
+  // Delayed rather than added alongside is-open: see CONTENT_REVEAL_DELAY_MS
+  // above. Safe even if the overlay closes before this fires — classList.add
+  // on an already-detached clone is a no-op, not an error.
+  setTimeout(() => clone.classList.add('is-content-visible'), CONTENT_REVEAL_DELAY_MS);
 
   function onOpenEnd(e) {
     if (e.propertyName !== 'width') return;
@@ -903,6 +928,7 @@ function closeFlipCard() {
   // Always shrinks back to the tile that opened it, not wherever the
   // carousel ended up — that key may not even have a grid tile right now.
   const rect = triggerCard.getBoundingClientRect();
+  const endRadius = getComputedStyle(triggerCard).borderRadius;
   overlayBackdrop.classList.remove('is-visible');
   overlayPrevBtn.hidden = true;
   overlayNextBtn.hidden = true;
@@ -914,8 +940,8 @@ function closeFlipCard() {
     clone.remove();
     triggerCard.style.visibility = '';
     if (currentTile && currentTile !== triggerCard) currentTile.style.visibility = '';
-    document.querySelectorAll('.site-header, .nav-bar, main, .site-footer')
-      .forEach(el => el.removeAttribute('aria-hidden'));
+    document.querySelectorAll(BACKGROUND_SELECTOR)
+      .forEach(el => { el.removeAttribute('aria-hidden'); el.inert = false; });
     document.body.style.overflow = '';
     overlayBackdrop.hidden = true;
     activeOverlay = null;
@@ -931,8 +957,10 @@ function closeFlipCard() {
   clone.style.left = `${rect.left}px`;
   clone.style.width = `${rect.width}px`;
   clone.style.height = `${rect.height}px`;
-  clone.style.borderRadius = '';
-  clone.classList.remove('is-open');
+  // Animates down to the trigger card's own radius, not back to
+  // --radius-lg's default — same reasoning as openFlipCard's startRadius.
+  clone.style.borderRadius = endRadius;
+  clone.classList.remove('is-open', 'is-content-visible');
 
   function onCloseEnd(e) {
     if (e.propertyName !== 'width') return;
