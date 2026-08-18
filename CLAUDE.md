@@ -80,6 +80,18 @@ If a finding does not map to any existing cluster or signal, flag it explicitly 
 **Step 4 — Backcheck before creating anything new**
 Before proposing a new cluster or signal key, scan all existing entries to see if the pattern appears elsewhere. A new grouping requires evidence across multiple JDs, not a single instance. The bar is: would a second reader independently notice this as a distinct, recurring pattern? If only one JD shows it, note it in the audit but do not create a new key — revisit when a second example appears.
 
+Distinct companies are not the whole test. Two employers can still be drawing
+from the same well — shared industry conventions, recruiter language, or
+competitive pressure to match a rival's posting — so recurrence confined to
+one `domain` is weaker evidence of a discipline-wide shift than recurrence
+across domains. When backchecking a candidate key, note each instance's
+`domain` alongside its company. A key can still be created at the 2-instance
+floor even if every instance shares a domain — this does not raise the
+floor — but flag it as domain-clustered rather than confirmed cross-industry,
+and record the trigger to revisit: a differently-domained instance. This is a
+check for new signal proposals going forward, not a retroactive test — it
+does not reopen or gate keys already created.
+
 **Step 5 — Report the audit**
 Before writing the entry, summarize: which clusters and signals were assigned and why, and whether anything was flagged as a potential new addition. Wait for confirmation if a new key is being proposed.
 
