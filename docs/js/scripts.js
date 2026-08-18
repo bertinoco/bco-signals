@@ -152,13 +152,21 @@ async function loadData() {
 // ── Render ──────────────────────────────────────────────────
 function renderMeta(data) {
   const dateEl = document.getElementById('footer-date');
-  if (!dateEl) return;
   const iso = data.meta && data.meta.lastUpdated;
   // No date in the payload: keep the value rendered in the HTML rather than
   // replacing it with a blank.
-  if (!iso) return;
-  // ISO, matching the dateAdded format on role cards.
-  dateEl.innerHTML = `<time datetime="${iso}">${iso}</time>`;
+  if (dateEl && iso) {
+    // ISO, matching the dateAdded format on role cards.
+    dateEl.innerHTML = `<time datetime="${iso}">${iso}</time>`;
+  }
+
+  // entries.length, not meta.totalEntries: the array actually loaded is the
+  // authoritative count, rather than a separately hand-maintained field that
+  // could drift from it.
+  const countEl = document.getElementById('hero-role-count');
+  if (countEl && Array.isArray(data.entries)) {
+    countEl.textContent = data.entries.length;
+  }
 }
 
 // The Skills tab shows a signal only once SIGNAL_THRESHOLD postings ask for it —
