@@ -1,0 +1,59 @@
+name: Submit a JD
+description: Submit a job posting for possible inclusion in the dataset
+title: "[JD] Company – Title"
+labels: ["jd-submission"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        See [CONTRIBUTING.md](../../CONTRIBUTING.md) for what qualifies before
+        submitting. The full JD text below is the field that actually matters —
+        paste it in even if the posting is already gone from wherever you found it.
+  - type: input
+    id: company
+    attributes:
+      label: Company
+    validations:
+      required: true
+  - type: input
+    id: title
+    attributes:
+      label: Job title
+      description: Exactly as the posting words it, separator included.
+    validations:
+      required: true
+  - type: textarea
+    id: jd_text
+    attributes:
+      label: Full JD text
+      description: >
+        Paste the entire posting, verbatim. Leave in page chrome, applicant
+        counts, "Apply now" text, etc. — don't clean it up.
+    validations:
+      required: true
+  - type: input
+    id: source_url
+    attributes:
+      label: Source URL (optional)
+      description: Leave blank if you don't have one — a stable link isn't required.
+    validations:
+      required: false
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Where you found it (optional)
+      options:
+        - Company careers page
+        - LinkedIn
+        - Other job board
+        - Referral / forwarded / DM
+        - Other
+    validations:
+      required: false
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything else worth knowing (optional)
+      description: What caught your eye, capture gaps, ambiguous dates, etc.
+    validations:
+      required: false

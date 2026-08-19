@@ -54,6 +54,12 @@ Every text token clears WCAG AA on its own ground.
 
 ---
 
+## Contributing
+
+Come across a posting that fits? See `CONTRIBUTING.md`.
+
+---
+
 ## License
 
 © 2026 Bertino Consulting AB. All rights reserved.
