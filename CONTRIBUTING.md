@@ -21,8 +21,11 @@ happens after submission, not before — see "What happens next" below.
 
 ## How to submit
 
-Open an issue using the **Submit a JD** template. The field that actually
-matters is the full text of the posting, pasted in as-is.
+**[Submit a job posting →](https://github.com/bertinoco/bco-signals/issues/new?template=submit-a-jd.yml)**
+
+That link opens a short form on GitHub (a free account, signed in, is all it
+takes — no coding involved). The field that actually matters is the full text
+of the posting, pasted in as-is.
 
 - **Paste the text now, even if you also have a link.** Postings get taken
   down or edited within days on some job boards, and a submission with no
@@ -38,7 +41,7 @@ matters is the full text of the posting, pasted in as-is.
 ## What happens next
 
 Every submission gets an independent audit, not a rubber stamp of what's in
-the issue. Clusters, signals, and eligibility are re-derived from the JD
+the issue. Clusters, signals, and eligibility are re-derived from the posting
 text directly, whatever the issue says about them.
 
 Two outcomes:

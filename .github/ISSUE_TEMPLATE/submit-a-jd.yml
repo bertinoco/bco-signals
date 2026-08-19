@@ -1,14 +1,15 @@
-name: Submit a JD
+name: Submit a job posting
 description: Submit a job posting for possible inclusion in the dataset
-title: "[JD] Company – Title"
+title: "[Submission] Company – Title"
 labels: ["jd-submission"]
 body:
   - type: markdown
     attributes:
       value: |
         See [CONTRIBUTING.md](../../CONTRIBUTING.md) for what qualifies before
-        submitting. The full JD text below is the field that actually matters —
-        paste it in even if the posting is already gone from wherever you found it.
+        submitting. The full posting text below is the field that actually
+        matters — paste it in even if the posting is already gone from
+        wherever you found it.
   - type: input
     id: company
     attributes:
@@ -25,7 +26,7 @@ body:
   - type: textarea
     id: jd_text
     attributes:
-      label: Full JD text
+      label: Full posting text
       description: >
         Paste the entire posting, verbatim. Leave in page chrome, applicant
         counts, "Apply now" text, etc. — don't clean it up.
