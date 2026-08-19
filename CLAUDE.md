@@ -147,6 +147,17 @@ title breaks that link silently.
 **Step 7 — Commit, push, and merge**
 Once the user confirms the audit (including any new cluster/signal/domain proposal), that confirmation also counts as approval to merge directly to `main` — no separate merge confirmation is needed for JD entry additions specifically. Commit the entry on the working branch, push it, then merge directly to `main` and push. This does not extend to other kinds of changes (site code, design, CLAUDE.md itself, etc.) — those still follow normal confirm-before-merge practice.
 
+## Spelling standard
+
+US English is the base for everything owned and created by us in this
+repo — site copy, `jd-insights/` prose, `CLAUDE.md` itself, commit messages,
+and any other writing that isn't a verbatim excerpt from a source JD.
+
+This does not touch JD text. A UK-English (or any other regional) JD is
+quoted, titled, and archived verbatim, per the Quote and Title field rules —
+those fields are never normalized toward US spelling. The base applies only
+to language we author ourselves.
+
 ## Voice & copy decisions
 
 These rules apply to all user-facing copy on signals.bertino.co: card descriptions, section intros, header copy, and any editorial text rendered in the browser — except the hero, which is scoped out below.
