@@ -413,6 +413,50 @@ description as directly as the evidence supports — consistent with
 `CLAUDE.md`'s card-copy rule to state what the data shows, not the category
 it falls under, once the data shows something more specific.
 
+**Explicit "human-in-the-loop" framing for AI content QA.** Evinova's Content
+Design Lead states it as a stated responsibility of the role itself: "while
+ensuring that AI processes retain a human-in-the-loop approach." Checked
+against a few other AI-heavy entries for the same framing before logging this
+as new: Gen Digital's Staff AI Conversation Designer and Wise's Staff AI
+Content Designer, FinCrime carry no equivalent language, explicit or
+otherwise, despite both discussing AI output and model behavior at length.
+Spotify's Annotation Manager does — "familiar with LLM or AI-driven annotation
+workflows and human-in-the-loop systems" — and was added to the dataset
+2026-05-24, three months before this entry, without the phrase ever being
+logged here.
+
+That backcheck means this is the first time the phrase is tracked as a
+pattern in this file, but not the first time it appears in the corpus, and not
+a first instance in the Step 4 sense — two postings already carry it. The two
+uses differ in kind: Spotify's is a qualification the candidate is expected to
+already have ("familiar with… systems"), Evinova's is a commitment the role
+itself makes ("ensuring that AI processes retain" the approach). Recorded here
+rather than promoted, since two data points aren't enough to say whether that
+difference is a real split or coincidence, and since this note is the
+mechanism surfacing the pattern for the first time at all. *Trigger to
+revisit: a third posting using "human-in-the-loop" or an equivalent explicit
+framing for AI output review — distinct from editing/QA responsibilities that
+imply review without naming it — or a reason to treat the Spotify and Evinova
+instances as two different patterns rather than one.*
+
+**Regulatory or compliance framing bounding the content work — two
+instances.** Wise's Staff AI Content Designer, FinCrime states the role must
+"balance meeting regulatory obligations with building world-class customer
+experiences." Evinova's Content Design Lead states the parallel constraint for
+a different regulatory regime: "a deep awareness of the regulatory and
+ethical requirements that are not only considerations for our content design
+responsibilities but also for those who use our tools," and separately that
+its Content Design Guidance document must stay current "as our products and
+the regulatory landscape evolve." Same structural move in both — content
+responsibilities explicitly bounded by a named external compliance regime
+(financial crime for Wise, clinical/health regulation for Evinova), not just
+by internal brand or product standards.
+
+Two companies, two regulatory domains, at Step 4's floor rather than past it.
+*Trigger to revisit: a third posting that states its content responsibilities
+are bounded by a named regulatory or compliance framework, rather than by
+internal style or brand governance alone.*
+
 ---
 
 # What this data cannot support
