@@ -532,6 +532,25 @@ requires. Recorded together with Redpine as two data points on the same
 pattern (model-design work with zero content vocabulary, outside any design
 org) — the trigger set for Redpine above still applies to both.
 
+**AI-assisted maintenance of the documentation system itself — one
+instance.** Anthropic's Technical Documentation and Content Engineer, Claude
+Docs states "self-healing pipelines, AI-assisted review and maintenance" as
+a stated responsibility, twice — once in the role description and again
+verbatim in the first key responsibility. This is distinct from the
+content-production automation frame `ai-tooling`'s description states and
+most of its holders carry: those entries use AI to help produce or evaluate
+content itself. Here the AI is applied to maintaining the documentation
+*system* — catching and fixing problems in already-published docs — closer
+in kind to the "Enforcement" move described above (content in a repository,
+checked by automated rules) than to content generation, but with the
+checking itself framed as AI-assisted rather than lint-rule-based. Still
+assigned `ai-tooling` per the description-versus-use note above, since no
+more specific key exists yet. One instance, so it stays here rather than
+becoming a key. *Trigger to revisit: a second posting naming AI-assisted
+maintenance, repair, or health-checking of an existing documentation or
+content corpus as a stated responsibility, distinct from producing new
+content or reviewing single drafts.*
+
 ---
 
 # What this data cannot support

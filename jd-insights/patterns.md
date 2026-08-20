@@ -160,6 +160,18 @@ a named California premium; this one gives three co-equal locations and lets
 the reader pick. The dataset records the largest-city figure (New York) per
 the comp range rule for co-equal locations with no stated primary.
 
+**Anthropic** introduces its non-sales salary figure with a template
+disclaimer written for a different role type: "For sales roles, the range
+provided is the role's On Target Earnings ('OTE') range, meaning that the
+range includes both the sales commissions/sales bonuses target and annual
+base salary for the role" precedes a plain "Annual Salary: $270,000 -
+$320,000 USD" for a documentation role with no sales component stated
+anywhere else in the posting. Reused boilerplate rather than role-specific
+copy, similar in kind to Google's shared paragraph across product postings
+above but here inside the comp section of a single posting; it leaves the
+reader unable to tell from the boilerplate alone whether the figure is base
+or total, which is why `compRange.covers` is recorded as `null`.
+
 ## Formatting artifacts survive into the archive
 
 Retained deliberately in `jd-source`, since they are facts about the posting:
@@ -192,6 +204,13 @@ Retained deliberately in `jd-source`, since they are facts about the posting:
   location. Retained verbatim in the archive; `jobs.json`'s `location` field
   stores the cleaned "Barcelona, Spain" instead, per the archive's own
   verbatim rule.
+- **Anthropic**'s Technical Documentation and Content Engineer, Claude Docs
+  posting carries two separate "About Anthropic" paragraphs with different
+  wording — one right after the title and location line, a second
+  immediately before "Key responsibilities" — rather than one paragraph
+  repeated or one dropped. Retained verbatim and unmerged, consistent with a
+  template/formatting artifact from capture rather than two intentional
+  statements about the company.
 
 Six of the stored quotes needed a character corrected to match their source —
 five apostrophes and one hyphen. None was visible on screen.
