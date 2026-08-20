@@ -454,11 +454,21 @@ visible scrollbar to hint at it (macOS renders overlay-style scrollbars).
 Fixed by making the probe's padding match the CSS exactly instead of
 approximating it.
 
-## Vocabulary
+## Terminology
 
-Terms the repository has adopted because the dataset needed a word the
-postings do not supply. They are descriptive, not taxonomy: nothing here is a
-cluster or signal, and nothing here is ever assigned to an entry.
+Two kinds of term live here. Neither is taxonomy: nothing in this section is
+a cluster or signal, and nothing here is ever assigned to an entry.
+
+The first kind is words the dataset adopted because it needed one the
+postings do not supply — a gap in how the *included* work gets described.
+
+The second kind is words that mark where the dataset's scope ends — vocabulary
+from an adjacent discipline whose posting stress-tested the eligibility
+criteria and lost, recorded so the next boundary case doesn't have to
+re-derive why. See the "Note on rejected roles" for how those postings
+themselves get archived; this section is for the *words*, not the postings.
+
+### Words for the work inside scope
 
 **Deterministic**, and its counterpart **generative** — the two sides of what
 a content role authors.
@@ -482,6 +492,43 @@ in the dataset are wholly or partly deterministic. Writing that implies
 otherwise breaks the no-value-judgments rule under Data integrity rules, and
 outruns the evidence besides — the corpus contains almost no postings that
 ask for the generative side by name.
+
+### Words that mark the edge of scope
+
+Terms from Redpine's Senior Knowledge Graph Engineer posting — excluded, but
+kept because the posting sounds close enough to what this dataset tracks
+that the words separating it are worth having on hand.
+
+**Ontology**, here, means a formal specification of entity types, relations,
+and constraints for real-world domain facts — "the entity types, relations,
+and constraints that licensed data from each domain maps into." This is not
+the same activity as the `taxonomy` cluster, even though both "define types
+and relations." `taxonomy` classifies *content* — product copy, UX strings,
+support docs — so people or an agent can navigate it; every entry that
+carries the cluster has a content deliverable underneath the classification
+work. An ontology in Redpine's sense classifies drugs, trials, companies, and
+filings: real-world things, not content about them. Same technique, different
+object — the distinction Redpine's exclusion turned on.
+
+**Data schema** (or **schema design**) — the structural definition of how
+entities and their relations are represented in a database or knowledge
+store: field types, constraints, what a record can and can't hold. Distinct
+from a content template or a structured-data-for-retrieval responsibility
+(which the `agent-retrieval` and `structured-data` signals already track) —
+those describe a content professional shaping *content* for machine
+consumption. Schema design in Redpine's sense has no content professional
+anywhere upstream or downstream; it's the storage layer, not what the
+storage holds.
+
+**Knowledge graph** — a graph-structured store of typed entities and named
+relations, usually with provenance and a confidence score attached to each
+link, built for an agent or planner to traverse and query rather than for a
+person to read. Adjacent to what the `agent-retrieval` signal describes in
+the abstract ("the knowledge layer a model reads from before it writes"), but
+`agent-retrieval`'s three holders are all content professionals restructuring
+their own content for retrieval — the discipline stays inside content design.
+Building the knowledge graph itself, as infrastructure, is a different job
+with no content deliverable in it at all.
 
 ## Insights directory
 

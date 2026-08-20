@@ -209,7 +209,7 @@ not load-bearing.
 work into "deterministic UX writing, in close collaboration with product
 designers" and "model design (shaping system instructions and LLJ in the
 codebase with eng/ML teams)". **Deterministic** is the useful word. It and its
-counterpart **generative** are defined under Vocabulary in CLAUDE.md, which is
+counterpart **generative** are defined under Terminology in CLAUDE.md, which is
 where the pairing is maintained. Deterministic content work authors the artifact: you
 write the string, the string ships, the user sees that string every time, and
 review means reading it. Generative content work authors the constraints on a
@@ -456,6 +456,50 @@ Two companies, two regulatory domains, at Step 4's floor rather than past it.
 *Trigger to revisit: a third posting that states its content responsibilities
 are bounded by a named regulatory or compliance framework, rather than by
 internal style or brand governance alone.*
+
+**Excluded on eligibility, not on thinness — Redpine's Senior Knowledge Graph
+Engineer.** Every other exclusion in the corpus fails on thinness: an AI
+mention confined to a qualifications line, a systems-sounding title over
+otherwise-conventional production work. Redpine is a different kind of
+exclusion — the posting is dense, specific, and well-argued about a real
+discipline, it just isn't this one. A full literal-text check found zero
+occurrences of *content, writing, language, copy, tone, voice,* or
+*terminology* anywhere in it — a cleaner zero than Fin's "Staff AI Designer"
+managed, since Fin at least argued for its place inside a Design org ("AI
+Design team," "product designers") while Redpine sits in "Department: Tech"
+and never engages design discourse at all.
+
+The posting's own framing — "Agents are only as good as the knowledge they
+can reach," provenance-bearing graph nodes served "directly to agents,"
+multi-hop retrieval — reads like a literal engineering implementation of what
+the `agent-retrieval` signal describes in the abstract: "the knowledge layer
+a model reads from before it writes." That thematic closeness was the actual
+temptation to include it, and the reason it's worth recording here rather
+than filing the exclusion silently. It doesn't hold up: `agent-retrieval`'s
+three holders (Notion, Meta, Alibaba) are content professionals restructuring
+their *own* content so agents can retrieve it — upstream of the retrieval
+layer, shaping what goes in. Redpine's engineer builds the retrieval layer
+itself, over other people's licensed documents, with no content deliverable
+anywhere in the posting. Assigning the signal on thematic resemblance would
+have made Redpine the odd one out among its holders, not a fourth confirming
+instance — the signal tracks a shift *inside* content roles, not a general
+tag for agent-facing retrieval infrastructure.
+
+The same test applies to `taxonomy`: Redpine's "define the entity types,
+relations, and constraints that licensed data from each domain maps into"
+sounds like taxonomy work, but every taxonomy-cluster entry classifies
+*content* (product copy, UX strings, support docs) for navigation; Redpine
+classifies real-world entities (drugs, trials, companies, filings) for
+machine reasoning. Same technique — define types and relations — applied to
+a categorically different object. See CLAUDE.md's Terminology section
+("Words that mark the edge of scope") for `ontology`, `data schema`, and
+`knowledge graph`, added there rather than to the taxonomy — these describe
+what's outside this dataset's scope, not a pattern within it, so they aren't
+tracked as instances toward a future key the way the rest of this section
+works. *Trigger to revisit: a posting doing comparable graph/ontology
+engineering that also states a content, writing, or language deliverable
+somewhere in scope — that would be the actual boundary case this one only
+resembles.*
 
 ---
 
