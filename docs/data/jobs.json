@@ -2,8 +2,8 @@
   "meta": {
     "title": "BCO Content Skills Tracker",
     "description": "A curated skills tracker for the content design community.",
-    "lastUpdated": "2026-08-17",
-    "totalEntries": 41
+    "lastUpdated": "2026-08-20",
+    "totalEntries": 42
   },
   "entries": [
     {
@@ -1263,6 +1263,40 @@
       "sourceUrl": null,
       "dateAdded": "2026-08-17",
       "quote": "Champion AI-first ways of working, including identifying and embedding opportunities to use AI to expedite the content design process while simultaneously raising quality, from drafting and editing to consistency checks and content operations, while ensuring that AI processes retain a human-in-the-loop approach."
+    },
+    {
+      "id": "anthropic-technical-documentation-content-engineer",
+      "company": "Anthropic",
+      "title": "Technical Documentation and Content Engineer, Claude Docs",
+      "domain": "Big Tech",
+      "engagement": "Not specified",
+      "location": "San Francisco, CA | New York City, NY",
+      "remote": "hybrid",
+      "coreFrame": "Owning documentation for Claude apps across multiple product surfaces (Claude.ai, Cowork, Claude Tag, Claude Science) written by many teams — the unification layer of information architecture, editorial standards, and style guide for the Claude Docs site; designing, building, and running automated documentation systems, including self-healing pipelines, AI-assisted review and maintenance, and quality guardrails; establishing the conventions and tooling product teams use to keep their own documentation accurate and consistent; curating contributions from across the company for clarity and consistency; and defining and tracking measures of content quality and discoverability.",
+      "clusters": [
+        "content-systems-design",
+        "ai-tooling",
+        "enablement",
+        "technical-writing",
+        "taxonomy"
+      ],
+      "signals": [
+        "governance-as-value-prop",
+        "central-standards-function",
+        "enabler-not-bottleneck",
+        "ai-native-expectation"
+      ],
+      "compRange": {
+        "min": 270000,
+        "max": 320000,
+        "currency": "USD",
+        "covers": null,
+        "scope": null,
+        "extras": null
+      },
+      "sourceUrl": null,
+      "dateAdded": "2026-08-20",
+      "quote": "This is a content + systems ownership role. You'll curate and set the bar for what others write, and you'll build the automation that enforces it: self-healing pipelines, AI-assisted review and maintenance, and the conventions each product team follows to keep their own docs healthy."
     }
   ],
   "clusters": {

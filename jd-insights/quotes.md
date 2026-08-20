@@ -3,7 +3,7 @@
 
 # Quotes
 
-Every stored quote, verbatim from the posting. **40 of 41** entries carry one.
+Every stored quote, verbatim from the posting. **41 of 42** entries carry one.
 
 These are the lines that anchor each entry's cluster and signal assignments, so they are the strongest citable evidence in the dataset. Each is checked against its `jd-source` archive before commit.
 
@@ -36,6 +36,12 @@ These are the lines that anchor each entry's cluster and signal assignments, so 
 > You'll also be involved in building AI and Large Language Models (LLMs), creating writing guidelines to raise the bar, and share our expertise with our product and tech partners.
 
 `amazon-senior-ux-conversation-designer-customer-service` · added 2026-08-13
+
+### Anthropic — Technical Documentation and Content Engineer, Claude Docs
+
+> This is a content + systems ownership role. You'll curate and set the bar for what others write, and you'll build the automation that enforces it: self-healing pipelines, AI-assisted review and maintenance, and the conventions each product team follows to keep their own docs healthy.
+
+`anthropic-technical-documentation-content-engineer` · added 2026-08-20
 
 ### Apple — UX Writer, Systems
 
