@@ -170,15 +170,6 @@ body {
   text-align: center;
 }
 
-/* Metadata reads as machine output: mono, uppercase, letter-spaced. */
-.meta-label {
-  font-family: var(--font-mono);
-  font-size: var(--font-xs);
-  letter-spacing: var(--tracking-label);
-  text-transform: uppercase;
-  font-variant-numeric: tabular-nums;
-}
-
 /* ── Layout ───────────────────────────────────────────────── */
 .container {
   max-width: var(--max-width);
@@ -888,13 +879,6 @@ body {
   text-transform: uppercase;
   font-variant-numeric: tabular-nums;
   color: hsl(var(--muted-foreground));
-}
-
-.title-note {
-  font-size: var(--font-sm);
-  color: hsl(var(--secondary-foreground));
-  font-style: italic;
-  margin-top: var(--space-1);
 }
 
 #titles-show-more,
