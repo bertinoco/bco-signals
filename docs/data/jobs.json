@@ -2,8 +2,8 @@
   "meta": {
     "title": "BCO Content Skills Tracker",
     "description": "A curated skills tracker for the content design community.",
-    "lastUpdated": "2026-08-15",
-    "totalEntries": 40
+    "lastUpdated": "2026-08-17",
+    "totalEntries": 41
   },
   "entries": [
     {
@@ -1236,6 +1236,33 @@
       "dateAdded": "2026-08-15",
       "quote": "This role isn't just about using AI to generate content — it requires understanding business goals, product UX/UI, brand voice, channel strategy, and B2B industry differences, to judge what content is suited to AI mass-production versus what needs human refinement, and how to safeguard content quality through standards, templates, terminology banks, industry insight, and evaluation mechanisms.",
       "quoteTranslatedFrom": "Chinese"
+    },
+    {
+      "id": "evinova-content-design-lead",
+      "company": "Evinova",
+      "title": "Content Design Lead - Evinova",
+      "domain": "Healthcare",
+      "engagement": "Not specified",
+      "location": "Barcelona, Spain",
+      "remote": "hybrid",
+      "coreFrame": "Setting the direction and quality bar for content design and content strategy across the team while staying hands-on with content design on the most critical experiences; owning and maintaining Evinova's Content Design Guidance document, keeping tone of voice, terminology, and content patterns current as products and the regulatory landscape evolve; partnering with the Product team to shape end-to-end experiences, with the Translation and Localization team to extend the Guidance across languages and markets, and with the Content Delivery team to get content into the product; running cross-functional working sessions to upskill product, design, and localization peers on content standards; championing AI-first ways of working by identifying opportunities to use AI to expedite the content design process — from drafting and editing to consistency checks and content operations — while retaining a human-in-the-loop approach; and mentoring content designers while establishing a systematic approach for integrating content design patterns into the Evinova Design System.",
+      "clusters": [
+        "content-systems-design",
+        "terminology-governance",
+        "ai-tooling",
+        "enablement",
+        "localization"
+      ],
+      "signals": [
+        "ai-native-expectation",
+        "enabler-not-bottleneck",
+        "governance-as-value-prop",
+        "accessibility-as-constraint"
+      ],
+      "compRange": null,
+      "sourceUrl": null,
+      "dateAdded": "2026-08-17",
+      "quote": "Champion AI-first ways of working, including identifying and embedding opportunities to use AI to expedite the content design process while simultaneously raising quality, from drafting and editing to consistency checks and content operations, while ensuring that AI processes retain a human-in-the-loop approach."
     }
   ],
   "clusters": {

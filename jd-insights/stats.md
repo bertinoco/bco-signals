@@ -3,51 +3,51 @@
 
 # Stats
 
-Dataset state: **40 entries**, `meta.lastUpdated` 2026-08-15. Generated 2026-08-16.
+Dataset state: **41 entries**, `meta.lastUpdated` 2026-08-17. Generated 2026-08-20.
 
 Every figure here is counted from `docs/data/jobs.json`. If you quote one in something published, quote the entry count with it — these move.
 
 ## Headline
 
-- **40** entries across **34** companies and **9** domains
-- Date range: 2026-05-24 to 2026-08-15
+- **41** entries across **35** companies and **9** domains
+- Date range: 2026-05-24 to 2026-08-17
 
 ## Responsibility clusters
 
 | | Entries | Share |
 |---|---:|---:|
-| Content systems design | 37 | 92% |
-| Enablement & team upskilling | 34 | 85% |
-| AI tooling & automation | 27 | 68% |
-| AI-generated content governance | 23 | 58% |
-| Terminology & language governance | 17 | 42% |
-| Taxonomy & information architecture | 16 | 40% |
-| Technical writing & documentation | 11 | 28% |
-| Localization & internationalization | 8 | 20% |
+| Content systems design | 38 | 93% |
+| Enablement & team upskilling | 35 | 85% |
+| AI tooling & automation | 28 | 68% |
+| AI-generated content governance | 23 | 56% |
+| Terminology & language governance | 18 | 44% |
+| Taxonomy & information architecture | 16 | 39% |
+| Technical writing & documentation | 11 | 27% |
+| Localization & internationalization | 9 | 22% |
 
 ## Skill signals
 
 | | Entries | Share |
 |---|---:|---:|
-| AI fluency expected | 25 | 62% |
-| Governance emphasized | 18 | 45% |
-| Enabler, not bottleneck | 16 | 40% |
-| Central standards function | 11 | 28% |
-| Model behavior design | 10 | 25% |
+| AI fluency expected | 26 | 63% |
+| Governance emphasized | 19 | 46% |
+| Enabler, not bottleneck | 17 | 41% |
+| Central standards function | 11 | 27% |
+| Model behavior design | 10 | 24% |
 | Language as infrastructure | 9 | 22% |
 | Content systems for marketers | 6 | 15% |
+| Accessibility as structural constraint | 6 | 15% |
 | GEO & SEO | 5 | 12% |
 | Structured data | 5 | 12% |
-| Accessibility as structural constraint | 5 | 12% |
-| Content work under new titles | 3 | 8% |
-| Structured for agent retrieval | 3 | 8% |
-| Title ≠ stated responsibilities | 2 | 5% |
-| Title dilution | 2 | 5% |
+| Content work under new titles | 3 | 7% |
+| Structured for agent retrieval | 3 | 7% |
+| Work outpaces the title | 2 | 5% |
+| Title outpaces the work | 2 | 5% |
 | Classification for ML | 2 | 5% |
 
 ## Compensation
 
-- Stated in **29 of 40** entries (24 USD, 3 GBP, 2 CAD)
+- Stated in **29 of 41** entries (24 USD, 3 GBP, 2 CAD)
 - Full spread: **$65,000** to **$710,000**
 - USD medians: **$132,000** low, **$186,300** high
 - `covers`: 20 base, 7 unstated, 2 total
@@ -74,24 +74,24 @@ Read the n column before quoting any of these. A median over fewer than roughly 
 
 ## Title vocabulary
 
-Words appearing in 3 or more of the 40 stored titles. Counted from `title`, which is stored verbatim — so this reflects what employers wrote, not what the site renders.
+Words appearing in 3 or more of the 41 stored titles. Counted from `title`, which is stored verbatim — so this reflects what employers wrote, not what the site renders.
 
 | Word | Titles | Share |
 |---|---:|---:|
-| Content | 31 | 78% |
-| Designer | 15 | 38% |
-| AI | 10 | 25% |
+| Content | 32 | 78% |
+| Designer | 15 | 37% |
+| AI | 10 | 24% |
 | Systems | 9 | 22% |
-| UX | 9 | 22% |
 | Senior | 9 | 22% |
+| UX | 9 | 22% |
 | Staff | 9 | 22% |
-| Architect | 7 | 18% |
+| Architect | 7 | 17% |
 | Writer | 6 | 15% |
 | Strategist | 6 | 15% |
-| Engineer | 3 | 8% |
-| Language | 3 | 8% |
-| Design | 3 | 8% |
-| Conversation | 3 | 8% |
+| Design | 4 | 10% |
+| Engineer | 3 | 7% |
+| Language | 3 | 7% |
+| Conversation | 3 | 7% |
 
 ## Domains
 
@@ -103,13 +103,13 @@ Words appearing in 3 or more of the 40 stored titles. Counted from `title`, whic
 | E-commerce | 5 | Airbnb, Coupang, HelloFresh, The Ride Platform, Wellhub |
 | Media | 4 | Netflix, Spotify |
 | Agency | 3 | Accenture, Intercept, Phase2 |
+| Healthcare | 2 | Atria, Evinova |
 | Automotive | 1 | GM |
-| Healthcare | 1 | Atria |
 | Cybersecurity | 1 | Gen Digital |
 
 ## Stated org placement
 
-Recorded in `jd-source` front matter. **32 of 40** postings say where the role sits; the rest do not, which is itself a fact about the posting.
+Recorded in `jd-source` front matter. **33 of 41** postings say where the role sits; the rest do not, which is itself a fact about the posting.
 
 | Company | Placement as stated |
 |---|---|
@@ -122,6 +122,7 @@ Recorded in `jd-source` front matter. **32 of 40** postings say where the role s
 | Capital One | Category: Design |
 | Chime | Not stated as a department; framed within Chime's member support organization |
 | CoLab | Not stated as a department; the role works closely with the CMO |
+| Evinova | A separate business within the AstraZeneca group |
 | Figma | UX Writing team |
 | GM | Human Interface Design (HID) organization; Language Systems team within HID |
 | Gen Digital | Content Design team, AI Assistant platform team, within Product & Ecommerce |
@@ -148,7 +149,7 @@ Recorded in `jd-source` front matter. **32 of 40** postings say where the role s
 
 ## Stated posting dates
 
-**6 of 40** postings state a date. Where both exist, the gap to `dateAdded` varies enough that one is not a proxy for the other.
+**7 of 41** postings state a date. Where both exist, the gap to `dateAdded` varies enough that one is not a proxy for the other.
 
 | Company | Posted | Added |
 |---|---|---|
@@ -158,3 +159,4 @@ Recorded in `jd-source` front matter. **32 of 40** postings say where the role s
 | Apple | 2026-07-21 | 2026-07-23 |
 | Ally Financial | 2026-07-23 | 2026-07-29 |
 | Adobe | 2026-07-29 | 2026-08-01 |
+| Evinova | 2026-08-17 | 2026-08-17 |

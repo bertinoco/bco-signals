@@ -187,6 +187,11 @@ Retained deliberately in `jd-source`, since they are facts about the posting:
   sentence, and "We’d love to hear from you" in the body becomes "We'd love to
   hear from you if you have:" as a heading four paragraphs later. Consistent
   with a posting assembled from more than one source document.
+- **Evinova** carries a doubled comma in its own location header —
+  "Barcelona, , Spain" — a scraping artifact rather than a stated second
+  location. Retained verbatim in the archive; `jobs.json`'s `location` field
+  stores the cleaned "Barcelona, Spain" instead, per the archive's own
+  verbatim rule.
 
 Six of the stored quotes needed a character corrected to match their source —
 five apostrophes and one hyphen. None was visible on screen.
@@ -439,3 +444,18 @@ of either the informality or the contract-engagement type, is the one to
 compare this against; if either recurs, it's worth deciding then whether the
 exclusion should become a documented rule rather than a one-off judgment
 call.
+
+## First hybrid `remote` value
+
+**Evinova**'s Content Design Lead is the first entry to carry `remote:
+"hybrid"`, added to the schema alongside this entry. Every prior entry
+resolved to `true`, `false`, or `null` — either the JD stated a clean remote
+or on-site position, or it said nothing about location arrangement at all.
+Evinova's posting states a specific mixed split instead: "Role Barcelona
+onsite - 3 days at the office/ 2 days at home." Neither `true` nor `false`
+would have represented that without overstating or understating the on-site
+requirement, which is what the new value exists to avoid.
+
+One instance, so nothing yet to compare it against — worth recording because
+it's the first time the `remote` field's value space has needed to grow
+rather than a company simply landing in an existing bucket.
