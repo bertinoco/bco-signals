@@ -501,6 +501,37 @@ engineering that also states a content, writing, or language deliverable
 somewhere in scope — that would be the actual boundary case this one only
 resembles.*
 
+**A second, more extreme instance — Notion's Model Behavior Engineer, and
+what it settles about the literal-text check.** Same underlying question as
+Redpine, arrived at from a different direction: `context engineering,`
+system prompts, tool prompts, eval design, and model launch work that reads
+almost exactly like Wise's Principal AI Model Designer and Gen Digital's
+Staff AI Conversation Designer — both included. This one is excluded, and
+more clearly than Fin was: Fin at least sat inside an "AI Design team" and
+used "product designers" as its home discipline; Notion's posting sits in
+`Department: Engineering`, in "our AI engineering team," and names design
+only as one of four external partners it works with ("engineering, product,
+design, and data") — the same structural position as "data." Neither of the
+two things that got Wise or Gen Digital included is present: no title
+naming a content discipline, and no bridge sentence framing the role as a
+second path into one ("Model Designer, or a systems-focused Content
+Designer who has already made this transition"). Zero clusters ground, not
+merely fewer than the required two.
+
+This is also the posting that answers the open question about whether the
+seven-word literal-text check (see CLAUDE.md's Terminology section) is too
+narrow. Six of the seven are a clean zero; the seventh, "Be the voice of
+quality in the room," is the idiom, not a content/brand-voice usage — a
+genuine false positive, read in context rather than counted mechanically.
+The same posting also has "help write the playbook," an equally idiomatic
+stem-match on `writing`. Widening the list to catch stems would have
+produced a second false positive here, not a real hit — evidence that the
+list's current shortness isn't an oversight to fix, and the actual
+safeguard is reading each hit in context, which the audit process already
+requires. Recorded together with Redpine as two data points on the same
+pattern (model-design work with zero content vocabulary, outside any design
+org) — the trigger set for Redpine above still applies to both.
+
 ---
 
 # What this data cannot support

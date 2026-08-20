@@ -530,6 +530,27 @@ their own content for retrieval — the discipline stays inside content design.
 Building the knowledge graph itself, as infrastructure, is a different job
 with no content deliverable in it at all.
 
+**The literal-text check, and why the word list stays short.** Audits of
+boundary cases (Fin, Redpine, Notion's Model Behavior Engineer) have used a
+fast pre-check: scan the JD for *content, writing, language, copy, tone,
+voice,* and *terminology*. A clean zero across all seven is supporting
+evidence for exclusion — not the required-criteria test itself, which stays
+a qualitative read of the role's primary discipline, but a fast way to
+confirm a JD never even gestures at this discipline's own words.
+
+Notion's posting is the reason the list stays this short rather than
+growing. It scored a zero on six of the seven, and the seventh — "Be the
+voice of quality in the room" — is the idiom ("be the advocate for X"), not
+a content/brand-voice usage; reading it in context resolves it as a false
+positive, not a hit. The same posting also contains "help write the
+playbook" — a stem-match on *writing* that is exactly as idiomatic. A wider
+list, or a stemmed match, would not have caught anything real here; it would
+have logged a second false positive of the identical kind. The fix was never
+a longer list — it's reading each hit in context before it counts, which
+Steps 1–4 already require. Widen the list only when a real miss shows up: a
+JD that deserved inclusion and would have failed the check outright. None
+has yet.
+
 ## Insights directory
 
 `jd-insights/` holds what the dataset adds up to — current stats, every stored
