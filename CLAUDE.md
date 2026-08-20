@@ -231,6 +231,23 @@ The `domain` field describes the broad industry or sector the company operates i
 
 If a new company doesn't fit any existing value, propose the new domain before writing the entry. New domains should be broad enough to accommodate at least two companies.
 
+## Remote field
+
+`remote` records what the JD states about work location, read off the text
+directly rather than inferred from the company or role.
+
+- `true` — the JD states the role is remote, with no fixed in-office
+  requirement.
+- `false` — the JD states the role is on-site, with no remote option.
+- `"hybrid"` — the JD states a mixed arrangement: some days in the office,
+  some remote (e.g. "3 days at the office/2 days at home"). Not rendered on
+  the site (`remote` is data-only, like `domain`), so a string value here
+  doesn't affect the page, only the dataset. Evinova's Content Design Lead
+  is the entry `"hybrid"` was added for — `false` would have overstated the
+  on-site requirement, and `true` would have understated it.
+- `null` — the JD does not say. Use this rather than guessing from location
+  or company norms.
+
 ## Comp range field
 
 `compRange` is optional. When present it carries the stated range plus three
