@@ -319,10 +319,19 @@ site renders** — that breaks the link to the archive.
 
 **What normalises**
 
-Em dash and pipe both join a role to its scope, which is what a comma does:
+Em dash, en dash, pipe, and a *spaced* hyphen all join a role to its scope, which is what a comma does:
 
 - `Annotation Manager — Content Platform` renders as `Annotation Manager, Content Platform`
 - `Content Strategist | Agentic Commerce` renders as `Content Strategist, Agentic Commerce`
+- `Lead Conversational Designer - Agentic Experiences` renders as `Lead Conversational Designer, Agentic Experiences`
+
+`formatTitle`'s regex already covers all four the same way, keyed on the
+surrounding whitespace rather than which dash character is used — a hyphen
+with a space on both sides is a separator; one with no space on either side
+is a compound (see below). UKG's Lead Conversational Designer entry is the
+first title using a spaced hyphen rather than an em dash or pipe; it needed
+no code change, only this note, since the existing regex already matched it
+correctly.
 
 **What does not**
 
