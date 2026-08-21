@@ -3,7 +3,7 @@
     "title": "BCO Content Skills Tracker",
     "description": "A curated skills tracker for the content design community.",
     "lastUpdated": "2026-08-21",
-    "totalEntries": 43
+    "totalEntries": 44
   },
   "entries": [
     {
@@ -1323,6 +1323,37 @@
       "sourceUrl": null,
       "dateAdded": "2026-08-21",
       "quote": "You can take a content-led feature from problem to shipped without a product designer. That means designing it in Figma, or building it with agentic tools, to a standard we'd actually ship."
+    },
+    {
+      "id": "ukg-lead-conversational-designer-agentic-experiences",
+      "company": "UKG",
+      "title": "Lead Conversational Designer - Agentic Experiences",
+      "domain": "SaaS",
+      "engagement": "Not specified",
+      "location": "Lowell, MA; Seattle, WA; or Sunrise, FL",
+      "remote": "hybrid",
+      "coreFrame": "Building and evolving the behavioral systems that shape how UKG's Bryte AI agents respond and act — conversation response patterns, ontologies and structured content models, and prompt and interaction frameworks. Defining how agents operate across a spectrum of autonomy from suggesting to confirming to acting on the user's behalf, and designing for trust, compliance, and human-in-the-loop decision making within HCM contexts. Iterating on interaction strategies and system behaviors through experimentation, and building patterns that make AI behavior explainable, predictable, and controllable.",
+      "clusters": [
+        "content-systems-design",
+        "taxonomy",
+        "ai-tooling"
+      ],
+      "signals": [
+        "model-behavior-design",
+        "ai-native-expectation",
+        "governance-as-value-prop"
+      ],
+      "compRange": {
+        "min": 129500,
+        "max": 186100,
+        "currency": "USD",
+        "covers": "base",
+        "scope": "Seattle, WA",
+        "extras": "bonus + equity"
+      },
+      "sourceUrl": null,
+      "dateAdded": "2026-08-21",
+      "quote": "Develop and extend ontologies and structured content systems that enable scalable, consistent AI behavior."
     }
   ],
   "clusters": {

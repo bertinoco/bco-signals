@@ -41,6 +41,28 @@ says it is not standard-setting. An employer that specific about its own
 boundaries is describing a discipline that has become crowded enough to need
 them.
 
+**UKG**'s Lead Conversational Designer, Agentic Experiences is the sixth
+instance, and the first to state both sides as parallel headed lists rather
+than exclusion alone:
+
+> This role is:
+> • Designing systems that shape AI behavior
+> • Working with structured content, schemas, and ontologies
+> • Operating in ambiguity and shipping quickly
+> • Deeply collaborative with design, engineering, and legal
+>
+> This role is not:
+> • Writing UI copy or chatbot scripts
+> • Pure UX or visual design
+> • Pure research or strategy without execution
+
+Every other instance of the device — Adobe's headed section, Sanna's,
+Wealthsimple's, and HelloFresh's one-line versions — states only what the
+role excludes. UKG states an equal-length "is" list alongside the "is not"
+list, structured as a matched pair rather than a disclaimer appended to a
+role description. Same underlying move (a role specific enough to need its
+own boundary drawn), a more symmetrical version of it.
+
 ## A posting that disclaims its own title
 
 Figma's "UX Writer, AI" tells the reader in its second paragraph that the title

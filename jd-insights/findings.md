@@ -573,6 +573,57 @@ revisit: a second posting stating a content design role ships product
 changes to production with no design partner at any stage, on an ongoing
 basis rather than as a temporary condition of an early hire.*
 
+**Autonomy-spectrum framing surfacing inside an included entry, not just
+exclusions.** UKG's Lead Conversational Designer, Agentic Experiences states
+"Define how agents operate across a spectrum of autonomy from suggesting,
+confirming to acting on the user's behalf" and, separately, "Define how and
+when AI should ask, confirm, defer, or act." This is the same structural
+framing as Fin's excluded "Establish decision frameworks: when systems
+should act, ask, escalate, or defer," and closely adjacent to what the
+deterministic/generative testimony above describes as the specification
+side of the split. What's different here is where the framing shows up:
+Fin and the testimony are an exclusion and non-posting evidence,
+respectively; this is the first instance of the act/ask/escalate/defer
+framing inside an entry that clears eligibility outright — the title names
+conversation design directly, the posting sits on an "AI Design Systems"
+team inside UKG's design function, and the text carries content vocabulary
+throughout ("structured content systems," "structured content models").
+One instance, so it stays here rather than becoming a key — recorded because
+it's the case the Fin discussion above was implicitly watching for without
+naming it as a trigger. *Trigger to revisit: a second included entry using
+the same autonomy-spectrum or act/ask/escalate/defer framing as a stated
+responsibility.*
+
+**Redpine's open trigger, tested — and resolved without promoting or
+reopening anything.** Redpine's exclusion entry above set a trigger: "a
+posting doing comparable ontology engineering that also states a content,
+writing, or language deliverable somewhere in scope." UKG's Lead
+Conversational Designer, Agentic Experiences is the first posting to test
+it. It states ontology work explicitly and pairs it, in the same
+responsibility, with a content deliverable: "Develop and extend ontologies
+and structured content systems that enable scalable, consistent AI
+behavior," alongside "Translate brand voice, policy, and UX principles into
+machine-interpretable frameworks."
+
+That pairing, not the word "ontology" alone, is why `taxonomy` is assigned
+to this entry where it was withheld from Redpine. Redpine's ontologies
+classify real-world entities — drugs, trials, companies, filings — with no
+content object anywhere in the posting. UKG's ontologies classify and
+structure *content* itself (conversation response patterns, structured
+content models, machine-interpretable frameworks translated from brand
+voice and policy) for the purpose of consistent AI behavior — the same
+content-classification sense every other `taxonomy`-cluster entry carries,
+not Redpine's real-world-entity sense.
+
+This settles the trigger rather than reopening the exclusion it came from:
+Redpine's own text still names no content deliverable and stays excluded on
+that basis. What UKG's entry shows is that the boundary Redpine's exclusion
+drew is a real dividing line running through language that otherwise looks
+identical ("ontology," "structured content") — a second instance of similar
+vocabulary landed on the content side of the line rather than collapsing
+it. No new trigger to set here; the open question the Redpine note raised
+now has an answer, on the strength of one clean test.
+
 ---
 
 # What this data cannot support

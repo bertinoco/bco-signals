@@ -3,42 +3,42 @@
 
 # Stats
 
-Dataset state: **43 entries**, `meta.lastUpdated` 2026-08-21. Generated 2026-08-21.
+Dataset state: **44 entries**, `meta.lastUpdated` 2026-08-21. Generated 2026-08-21.
 
 Every figure here is counted from `docs/data/jobs.json`. If you quote one in something published, quote the entry count with it — these move.
 
 ## Headline
 
-- **43** entries across **37** companies and **9** domains
+- **44** entries across **38** companies and **9** domains
 - Date range: 2026-05-24 to 2026-08-21
 
 ## Responsibility clusters
 
 | | Entries | Share |
 |---|---:|---:|
-| Content systems design | 40 | 93% |
-| Enablement & team upskilling | 37 | 86% |
-| AI tooling & automation | 30 | 70% |
-| AI-generated content governance | 23 | 53% |
-| Terminology & language governance | 19 | 44% |
-| Taxonomy & information architecture | 17 | 40% |
-| Technical writing & documentation | 12 | 28% |
-| Localization & internationalization | 9 | 21% |
+| Content systems design | 41 | 93% |
+| Enablement & team upskilling | 37 | 84% |
+| AI tooling & automation | 31 | 70% |
+| AI-generated content governance | 23 | 52% |
+| Terminology & language governance | 19 | 43% |
+| Taxonomy & information architecture | 18 | 41% |
+| Technical writing & documentation | 12 | 27% |
+| Localization & internationalization | 9 | 20% |
 
 ## Skill signals
 
 | | Entries | Share |
 |---|---:|---:|
-| AI fluency expected | 28 | 65% |
-| Governance emphasized | 21 | 49% |
-| Enabler, not bottleneck | 19 | 44% |
-| Central standards function | 12 | 28% |
+| AI fluency expected | 29 | 66% |
+| Governance emphasized | 22 | 50% |
+| Enabler, not bottleneck | 19 | 43% |
+| Central standards function | 12 | 27% |
+| Model behavior design | 11 | 25% |
 | Language as infrastructure | 10 | 23% |
-| Model behavior design | 10 | 23% |
 | Content systems for marketers | 6 | 14% |
 | Accessibility as structural constraint | 6 | 14% |
-| GEO & SEO | 5 | 12% |
-| Structured data | 5 | 12% |
+| GEO & SEO | 5 | 11% |
+| Structured data | 5 | 11% |
 | Content work under new titles | 3 | 7% |
 | Structured for agent retrieval | 3 | 7% |
 | Work outpaces the title | 2 | 5% |
@@ -47,44 +47,44 @@ Every figure here is counted from `docs/data/jobs.json`. If you quote one in som
 
 ## Compensation
 
-- Stated in **30 of 43** entries (25 USD, 3 GBP, 2 CAD)
+- Stated in **31 of 44** entries (26 USD, 3 GBP, 2 CAD)
 - Full spread: **$65,000** to **$710,000**
-- USD medians: **$133,000** low, **$186,400** high
-- `covers`: 20 base, 8 unstated, 2 total
+- USD medians: **$132,000** low, **$186,300** high
+- `covers`: 21 base, 8 unstated, 2 total
 
 ## Compensation by signal
 
-USD entries only (25 of 30 stated ranges). Signals carried by at least 3 of them.
+USD entries only (26 of 31 stated ranges). Signals carried by at least 3 of them.
 
 | Signal | n | Median low | Median high | vs. all USD |
 |---|---:|---:|---:|---:|
-| **All USD entries** | 25 | $133,000 | $186,400 | — |
-| Language as infrastructure | 6 | $149,650 | $251,000 | +$64,600 |
-| Enabler, not bottleneck | 9 | $146,300 | $249,900 | +$63,500 |
-| Accessibility as structural constraint | 4 | $168,100 | $237,400 | +$51,000 |
-| AI fluency expected | 14 | $145,150 | $229,450 | +$43,050 |
-| Model behavior design | 5 | $144,000 | $209,000 | +$22,600 |
-| Central standards function | 9 | $133,000 | $190,000 | +$3,600 |
-| Governance emphasized | 14 | $134,500 | $188,100 | +$1,700 |
-| Content systems for marketers | 3 | $110,000 | $160,000 | −$26,400 |
-| Structured data | 5 | $115,000 | $157,800 | −$28,600 |
-| GEO & SEO | 5 | $90,000 | $157,800 | −$28,600 |
+| **All USD entries** | 26 | $132,000 | $186,300 | — |
+| Language as infrastructure | 6 | $149,650 | $251,000 | +$64,700 |
+| Enabler, not bottleneck | 9 | $146,300 | $249,900 | +$63,600 |
+| Accessibility as structural constraint | 4 | $168,100 | $237,400 | +$51,100 |
+| Model behavior design | 6 | $144,000 | $209,000 | +$22,700 |
+| AI fluency expected | 15 | $144,000 | $209,000 | +$22,700 |
+| Central standards function | 9 | $133,000 | $190,000 | +$3,700 |
+| Governance emphasized | 15 | $133,000 | $186,200 | −$100 |
+| Content systems for marketers | 3 | $110,000 | $160,000 | −$26,300 |
+| Structured data | 5 | $115,000 | $157,800 | −$28,500 |
+| GEO & SEO | 5 | $90,000 | $157,800 | −$28,500 |
 
 Read the n column before quoting any of these. A median over fewer than roughly eight entries moves substantially when one more lands, so the smaller groups are indicative rather than conclusive.
 
 ## Title vocabulary
 
-Words appearing in 3 or more of the 43 stored titles. Counted from `title`, which is stored verbatim — so this reflects what employers wrote, not what the site renders.
+Words appearing in 3 or more of the 44 stored titles. Counted from `title`, which is stored verbatim — so this reflects what employers wrote, not what the site renders.
 
 | Word | Titles | Share |
 |---|---:|---:|
-| Content | 34 | 79% |
-| Designer | 16 | 37% |
+| Content | 34 | 77% |
+| Designer | 17 | 39% |
 | AI | 10 | 23% |
 | Staff | 10 | 23% |
-| Systems | 9 | 21% |
-| UX | 9 | 21% |
-| Senior | 9 | 21% |
+| Systems | 9 | 20% |
+| Senior | 9 | 20% |
+| UX | 9 | 20% |
 | Architect | 7 | 16% |
 | Writer | 6 | 14% |
 | Strategist | 6 | 14% |
@@ -92,6 +92,7 @@ Words appearing in 3 or more of the 43 stored titles. Counted from `title`, whic
 | Design | 4 | 9% |
 | Language | 3 | 7% |
 | Conversation | 3 | 7% |
+| Lead | 3 | 7% |
 
 ## Domains
 
@@ -99,7 +100,7 @@ Words appearing in 3 or more of the 43 stored titles. Counted from `title`, whic
 |---|---:|---|
 | Big Tech | 11 | Alibaba, Amazon, Anthropic, Apple, Google, LinkedIn, Meta, OpenAI |
 | Finance | 9 | Ally Financial, Capital One, Chime, Insurify, JPMorgan Chase, Sanna, Wealthsimple, Wise |
-| SaaS | 7 | Adobe, Bolt.new, CoLab, Figma, Notion, Wix, Zoom |
+| SaaS | 8 | Adobe, Bolt.new, CoLab, Figma, Notion, UKG, Wix, Zoom |
 | E-commerce | 5 | Airbnb, Coupang, HelloFresh, The Ride Platform, Wellhub |
 | Media | 4 | Netflix, Spotify |
 | Agency | 3 | Accenture, Intercept, Phase2 |
@@ -109,7 +110,7 @@ Words appearing in 3 or more of the 43 stored titles. Counted from `title`, whic
 
 ## Stated org placement
 
-Recorded in `jd-source` front matter. **33 of 43** postings say where the role sits; the rest do not, which is itself a fact about the posting.
+Recorded in `jd-source` front matter. **34 of 44** postings say where the role sits; the rest do not, which is itself a fact about the posting.
 
 | Company | Placement as stated |
 |---|---|
@@ -140,6 +141,7 @@ Recorded in `jd-source` front matter. **33 of 43** postings say where the role s
 | Spotify | Annotation Platform Ops team, within the Content Platform R&D studio |
 | Spotify | Design And User Experience - Experience |
 | The Ride Platform | Not stated as a department; scoped across marketing, partnering with Product Marketing and Demand Generation |
+| UKG | Conversation Designer on the AI Design Systems team |
 | Wealthsimple | Department: Product / Product Design |
 | Wellhub | Consumer Digital Experience team |
 | Wise | Content Design Guild, within the Design team |
@@ -149,7 +151,7 @@ Recorded in `jd-source` front matter. **33 of 43** postings say where the role s
 
 ## Stated posting dates
 
-**7 of 43** postings state a date. Where both exist, the gap to `dateAdded` varies enough that one is not a proxy for the other.
+**7 of 44** postings state a date. Where both exist, the gap to `dateAdded` varies enough that one is not a proxy for the other.
 
 | Company | Posted | Added |
 |---|---|---|
