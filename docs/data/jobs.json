@@ -2,8 +2,8 @@
   "meta": {
     "title": "BCO Content Skills Tracker",
     "description": "A curated skills tracker for the content design community.",
-    "lastUpdated": "2026-08-20",
-    "totalEntries": 42
+    "lastUpdated": "2026-08-21",
+    "totalEntries": 43
   },
   "entries": [
     {
@@ -1297,6 +1297,32 @@
       "sourceUrl": null,
       "dateAdded": "2026-08-20",
       "quote": "This is a content + systems ownership role. You'll curate and set the bar for what others write, and you'll build the automation that enforces it: self-healing pipelines, AI-assisted review and maintenance, and the conventions each product team follows to keep their own docs healthy."
+    },
+    {
+      "id": "bolt-staff-content-designer",
+      "company": "Bolt.new",
+      "title": "Staff Content Designer",
+      "domain": "SaaS",
+      "engagement": "Not specified",
+      "location": "Remote (Global)",
+      "remote": true,
+      "coreFrame": "Serving as Bolt's first content designer, with the role split between setting the content standard (voice, terminology, and patterns for recurring product moments such as prompts, errors, empty states, permissions, billing, and settings) and, after the initial period, shipping content-led features end to end as sole design DRI — scoping, designing in Figma or building with agentic tools, and driving through implementation without a product design partner. Also reviewing others' writing to raise its quality, owning content strategy input into product direction, and partnering with Marketing and CX across the user lifecycle.",
+      "clusters": [
+        "terminology-governance",
+        "content-systems-design",
+        "enablement",
+        "ai-tooling"
+      ],
+      "signals": [
+        "enabler-not-bottleneck",
+        "governance-as-value-prop",
+        "language-infrastructure",
+        "ai-native-expectation"
+      ],
+      "compRange": null,
+      "sourceUrl": null,
+      "dateAdded": "2026-08-21",
+      "quote": "You're the design DRI, in Figma or with agentic tools, through to shipped."
     }
   ],
   "clusters": {

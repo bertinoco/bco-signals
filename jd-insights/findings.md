@@ -551,6 +551,28 @@ maintenance, repair, or health-checking of an existing documentation or
 content corpus as a stated responsibility, distinct from producing new
 content or reviewing single drafts.*
 
+**Sole production ownership with no design partner at all — one instance.**
+Bolt.new's Staff Content Designer states the role ships "content-led
+features end to end, on your own," as "the design DRI, in Figma or with
+agentic tools, through to shipped," and separately in the qualifications
+section: "If your process depends on someone else turning your words into
+screens, this role will frustrate us both." This is a different claim from
+the "first content designer" or "newly forming team" framing several other
+entries carry (Sanna, Wise's earlier hires): those describe joining before a
+practice exists, but still leave room for a product designer somewhere in
+the loop once one is hired. Bolt's posting removes that role from the
+picture explicitly, permanently, not just for an interim period before the
+team grows. The stated route to shipping is design in Figma, or build with
+agentic tools — treated by this audit as parallel evidence to entries where
+a content designer ships their own code, which is why `ai-tooling` and
+`ai-native-expectation` are both assigned here on this line rather than on
+qualifications-section AI mentions alone.
+
+One instance, so it stays here rather than becoming a key. *Trigger to
+revisit: a second posting stating a content design role ships product
+changes to production with no design partner at any stage, on an ongoing
+basis rather than as a temporary condition of an early hire.*
+
 ---
 
 # What this data cannot support
