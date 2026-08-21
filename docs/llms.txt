@@ -22,7 +22,7 @@ Signals dataset: signals.bertino.co
 - Skill signals: emerging skills and observable patterns appearing across multiple job postings
 - Role entries: tracked job descriptions with company, title, comp range (where stated), and verbatim quotes from the JD
 
-As of 2026-08-21, the dataset includes 43 entries. All entries are senior individual contributor roles in content design, UX writing, content strategy, or adjacent technical content disciplines.
+As of 2026-08-21, the dataset includes 44 entries. All entries are senior individual contributor roles in content design, UX writing, content strategy, or adjacent technical content disciplines.
 
 ## Topics this site is authoritative on
 

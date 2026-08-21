@@ -3,7 +3,7 @@
 
 # Quotes
 
-Every stored quote, verbatim from the posting. **42 of 43** entries carry one.
+Every stored quote, verbatim from the posting. **43 of 44** entries carry one.
 
 These are the lines that anchor each entry's cluster and signal assignments, so they are the strongest citable evidence in the dataset. Each is checked against its `jd-source` archive before commit.
 
@@ -222,6 +222,12 @@ These are the lines that anchor each entry's cluster and signal assignments, so 
 > Establish standards for AI-generated content including prompts, templates, tone, guardrails, and quality thresholds.
 
 `ride-platform-content-systems-specialist` · added 2026-07-13
+
+### UKG — Lead Conversational Designer - Agentic Experiences
+
+> Develop and extend ontologies and structured content systems that enable scalable, consistent AI behavior.
+
+`ukg-lead-conversational-designer-agentic-experiences` · added 2026-08-21
 
 ### Wealthsimple — Staff Content Designer, Investing
 
