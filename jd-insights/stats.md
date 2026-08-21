@@ -83,8 +83,8 @@ Words appearing in 3 or more of the 43 stored titles. Counted from `title`, whic
 | AI | 10 | 23% |
 | Staff | 10 | 23% |
 | Systems | 9 | 21% |
-| Senior | 9 | 21% |
 | UX | 9 | 21% |
+| Senior | 9 | 21% |
 | Architect | 7 | 16% |
 | Writer | 6 | 14% |
 | Strategist | 6 | 14% |
