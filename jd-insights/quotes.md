@@ -3,7 +3,7 @@
 
 # Quotes
 
-Every stored quote, verbatim from the posting. **41 of 42** entries carry one.
+Every stored quote, verbatim from the posting. **42 of 43** entries carry one.
 
 These are the lines that anchor each entry's cluster and signal assignments, so they are the strongest citable evidence in the dataset. Each is checked against its `jd-source` archive before commit.
 
@@ -54,6 +54,12 @@ These are the lines that anchor each entry's cluster and signal assignments, so 
 > You understand that UX writing is not copywriting with less space. You think in systems, you know why consistency matters, and you're comfortable pushing back when a design choice undercuts the experience.
 
 `atria-ux-writer` · added 2026-07-13
+
+### Bolt.new — Staff Content Designer
+
+> You're the design DRI, in Figma or with agentic tools, through to shipped.
+
+`bolt-staff-content-designer` · added 2026-08-21
 
 ### Capital One — Senior Manager Content Designer (Individual Contributor)
 
