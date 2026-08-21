@@ -369,6 +369,19 @@ Each entry may include an optional `quote` field — a direct excerpt from the J
   Never normalize to make a quote sound stronger, cleaner, or more on-message than the source. These three cannot change what a quote says; anything that can is paraphrase, not normalization.
 - Choose the line or sentence that most clearly justifies the clusters and signals assigned.
 - Prefer a line legible to a general content design reader over one dense with employer-specific jargon — acronyms, internal system names, team names. The quote must still ground the assigned clusters and signals; legibility breaks ties among lines that do, it does not override grounding. If the only line that grounds an assignment is unavoidably jargon-heavy, keep it and reconsider whether the assignment is well grounded.
+
+  This rule was missed once: Bolt.new's Staff Content Designer entry initially
+  used "You're the design DRI, in Figma or with agentic tools, through to
+  shipped." DRI (Directly Responsible Individual) is never defined anywhere in
+  the JD — a reader outside Bolt has no way to resolve it. The posting had an
+  equally strong, jargon-free line available in the same paragraph family
+  ("You can take a content-led feature from problem to shipped without a
+  product designer. That means designing it in Figma, or building it with
+  agentic tools, to a standard we'd actually ship.") that grounds the same
+  assignments without the acronym. Read a candidate quote as a first-time
+  visitor would — an unglossed acronym or internal term is a legibility
+  failure even when the surrounding sentence is otherwise clear, and is worth
+  checking for specifically before treating a quote as settled.
 - If no single excerpt is definitive, leave the field null rather than stitching sentences together.
 - The field is optional. Omit it (or set to null) if no suitable quote exists.
 

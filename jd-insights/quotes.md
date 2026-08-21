@@ -57,7 +57,7 @@ These are the lines that anchor each entry's cluster and signal assignments, so 
 
 ### Bolt.new — Staff Content Designer
 
-> You're the design DRI, in Figma or with agentic tools, through to shipped.
+> You can take a content-led feature from problem to shipped without a product designer. That means designing it in Figma, or building it with agentic tools, to a standard we'd actually ship.
 
 `bolt-staff-content-designer` · added 2026-08-21
 
