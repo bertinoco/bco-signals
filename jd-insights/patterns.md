@@ -478,13 +478,3 @@ requirement, which is what the new value exists to avoid.
 One instance, so nothing yet to compare it against — worth recording because
 it's the first time the `remote` field's value space has needed to grow
 rather than a company simply landing in an existing bucket.
-
-## Emoji-headed section structure
-
-**Bolt.new**'s Staff Content Designer posting divides itself entirely by
-emoji rather than by conventional headings: 🚀 About Us, ✨ About This
-Opportunity, 🛠️ How You'll Contribute, 💡 Qualifications, 🎯 Bonus Points, 📌
-A Few Notes. Every section boundary in the document is marked this way; there
-is no plain-text heading anywhere in the posting. First instance of a posting
-using emoji as its sole section-heading device rather than as occasional
-decoration inside prose or bullets.
