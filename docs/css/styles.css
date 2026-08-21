@@ -1007,6 +1007,32 @@ body {
   text-align: right;
 }
 
+/* Sits in the corner the title/stat pairing leaves empty (top-left title,
+   bottom-right stat). Bordered, not filled — the palette is achromatic
+   except red, reserved for failure states, so "new" has to read through
+   shape and text rather than an accent color. */
+.new-chip {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-family: var(--font-mono);
+  font-size: var(--font-xs);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: hsl(var(--foreground));
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius-sm);
+  padding: 2px 6px;
+}
+
+/* Reserves clearance so the title's own text doesn't wrap underneath the
+   chip — scoped to .has-new-chip so every other card's title keeps using
+   the full width. */
+.flip-card-front.has-new-chip h3,
+.flip-card-front.has-new-chip .signal-label {
+  padding-right: 52px;
+}
+
 .flip-card-back {
   position: absolute;
   inset: 0;

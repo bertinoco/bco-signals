@@ -2,6 +2,13 @@
 const DATA_PATH = 'data/jobs.json';
 const SIGNAL_THRESHOLD = 2;
 const TITLES_LIMIT = 12;
+// How long a cluster/signal shows a "New" chip after its earliest carrying
+// entry landed — self-expiring, so nothing has to remember to remove it.
+// Deliberately not applied to individual roles (see renderTitles): those
+// get added in near-daily batches, so "new" there would be constant and
+// meaningless. Reserved for clusters and signals, which are rare, high-bar
+// additions (see CLAUDE.md Step 4).
+const NEW_KEY_WINDOW_DAYS = 30;
 const FETCH_TIMEOUT_MS = 10000;
 const SECTION_CONTAINERS = ['cluster-grid', 'signal-list', 'title-list'];
 // Symbol only — the ISO code is always shown alongside it (see fmt below),
@@ -201,6 +208,21 @@ function entriesForKey(data, key, field) {
     .sort((a, b) => new Date(b.dateAdded) - new Date(a.dateAdded));
 }
 
+// entriesForKey sorts most-recent-first, so the last element is the
+// earliest — the date this key was first introduced to the dataset.
+function keyIntroducedDate(data, key, field) {
+  const entries = entriesForKey(data, key, field);
+  if (!entries.length) return null;
+  return new Date(entries[entries.length - 1].dateAdded);
+}
+
+function isRecentlyIntroduced(data, key, field) {
+  const introduced = keyIntroducedDate(data, key, field);
+  if (!introduced) return false;
+  const ageMs = Date.now() - introduced.getTime();
+  return ageMs <= NEW_KEY_WINDOW_DAYS * 24 * 60 * 60 * 1000;
+}
+
 // Single source for the rounded percentage shown both on the card front
 // (bare number) and the back (full "Appears in N of M roles" string).
 function keyPercentage(data, key, field) {
@@ -287,10 +309,14 @@ function renderClusters(data) {
   grid.innerHTML = keysToRender.map(key => {
     const cluster = data.clusters[key];
     const pct = keyPercentage(data, key, 'clusters');
+    const isNew = isRecentlyIntroduced(data, key, 'clusters');
+    const newChipHtml = isNew ? `<span class="new-chip">New</span>` : '';
+    const ariaSuffix = isNew ? ', newly added' : '';
     return `
-      <div class="flip-card cluster-card" data-key="${key}" role="button" tabindex="0" aria-label="Expand ${cluster.label}, ${pct}% of roles">
-        <div class="flip-card-front">
+      <div class="flip-card cluster-card" data-key="${key}" role="button" tabindex="0" aria-label="Expand ${cluster.label}, ${pct}% of roles${ariaSuffix}">
+        <div class="flip-card-front${isNew ? ' has-new-chip' : ''}">
           <h3>${cluster.label}</h3>
+          ${newChipHtml}
           <div class="flip-card-stat">${pct}%</div>
         </div>
         <div class="flip-card-back">
@@ -482,10 +508,14 @@ function renderSignals(data) {
   list.innerHTML = keysToRender.map(key => {
     const signal = data.signals[key];
     const pct = keyPercentage(data, key, 'signals');
+    const isNew = isRecentlyIntroduced(data, key, 'signals');
+    const newChipHtml = isNew ? `<span class="new-chip">New</span>` : '';
+    const ariaSuffix = isNew ? ', newly added' : '';
     return `
-      <div class="flip-card signal-card" data-key="${key}" role="button" tabindex="0" aria-label="Expand ${signal.label}, ${pct}% of roles">
-        <div class="flip-card-front">
+      <div class="flip-card signal-card" data-key="${key}" role="button" tabindex="0" aria-label="Expand ${signal.label}, ${pct}% of roles${ariaSuffix}">
+        <div class="flip-card-front${isNew ? ' has-new-chip' : ''}">
           <div class="signal-label">${signal.label}</div>
+          ${newChipHtml}
           <div class="flip-card-stat">${pct}%</div>
         </div>
         <div class="flip-card-back">
