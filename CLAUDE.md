@@ -552,6 +552,20 @@ their own content for retrieval — the discipline stays inside content design.
 Building the knowledge graph itself, as infrastructure, is a different job
 with no content deliverable in it at all.
 
+**Context engineering**, from Microsoft's Senior Language Engineer posting —
+excluded, but the term is worth having on hand because it is a near-miss for
+"content engineering," a named technical content discipline in this file's
+required criteria, and the two are easy to conflate on a skim. Context
+engineering means managing what's fed into an LLM's context window — prompt
+design, context window management, the data that steers a model's
+response — not structuring content for a product. The Microsoft posting's
+responsibilities ("Craft and refine the context and prompts... that steer,
+train and evaluate the language models," "Research & implement novel
+prompting techniques") are all model-behavior work; nothing in it describes
+a content deliverable. Same category of near-miss as Redpine's
+"ontology"/`taxonomy` confusability above — different discipline, similar
+vocabulary.
+
 **The literal-text check, and why the word list stays short.** Audits of
 boundary cases (Fin, Redpine, Notion's Model Behavior Engineer) have used a
 fast pre-check: scan the JD for *content, writing, language, copy, tone,
