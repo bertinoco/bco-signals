@@ -3,7 +3,7 @@
     "title": "BCO Content Skills Tracker",
     "description": "A curated skills tracker for the content design community.",
     "lastUpdated": "2026-08-21",
-    "totalEntries": 44
+    "totalEntries": 45
   },
   "entries": [
     {
@@ -1354,6 +1354,31 @@
       "sourceUrl": null,
       "dateAdded": "2026-08-21",
       "quote": "Develop and extend ontologies and structured content systems that enable scalable, consistent AI behavior."
+    },
+    {
+      "id": "uhg-principal-conversational-ai-designer",
+      "company": "UnitedHealth Group",
+      "title": "Principal Conversational AI Designer",
+      "domain": "Healthcare",
+      "engagement": "Not specified",
+      "location": "Bengaluru, India (+5 locations)",
+      "remote": null,
+      "coreFrame": "Leading the design of conversational experiences across UnitedHealth Group's AI-powered products and services, applying conversation design and Agentic AI expertise to create AI interactions and defining best practices for prompt engineering, styling, and design documentation across personas. Using AI tools throughout the product design lifecycle and defining design tool features to support prompt design iteration and testing. Designing personalized interactions that adapt to individual users over time. Coaching and mentoring conversation designers and cross-functional partners, and partnering with product, engineering, and operations teams to define and test analytics approaches measuring conversation effectiveness and business impact.",
+      "clusters": [
+        "content-systems-design",
+        "ai-content-governance",
+        "ai-tooling",
+        "enablement"
+      ],
+      "signals": [
+        "model-behavior-design",
+        "ai-native-expectation"
+      ],
+      "compRange": null,
+      "sourceUrl": null,
+      "dateAdded": "2026-08-21",
+      "quote": "As a Principal Conversational AI Designer, you will lead the design of conversational experiences that help consumers accomplish their goals through UnitedHealth Group's AI-powered products and services.",
+      "note": "The posting's page header titles the role \"Principal UX CX Designer\" (requisition 2382279), but the body text self-describes it as \"Principal Conversational AI Designer\" from the first sentence onward and consistently thereafter. The `title` field stores the body's self-description, which is also the string the quote and cluster/signal assignments are drawn from."
     }
   ],
   "clusters": {

@@ -664,3 +664,13 @@ excluded postings are archived only when someone happened to submit one.
 retroactively applied to entries audited in May unless someone went back —
 `accessibility-as-constraint` was missing from Phase2 for exactly this reason
 until it was caught. Frequency counts are a floor, not a measurement.
+
+**Personalization as an explicit design responsibility — 1 instance.**
+UnitedHealth Group's Principal Conversational AI Designer lists "Personalization
+in AI Design" as its own named responsibility: "Anticipate user needs and use
+cases using design methods that proactively adapt to individual users over
+time, creating more relevant and meaningful interactions." No other entry in
+the corpus states adaptive, over-time personalization as a stated
+responsibility of the content/conversation design role itself. One instance,
+one domain (Healthcare) — below Step 4's floor. *Trigger to revisit: a second
+instance, ideally in a different domain.*
