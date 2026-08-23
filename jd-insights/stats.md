@@ -3,25 +3,25 @@
 
 # Stats
 
-Dataset state: **44 entries**, `meta.lastUpdated` 2026-08-21. Generated 2026-08-21.
+Dataset state: **45 entries**, `meta.lastUpdated` 2026-08-21. Generated 2026-08-23.
 
 Every figure here is counted from `docs/data/jobs.json`. If you quote one in something published, quote the entry count with it — these move.
 
 ## Headline
 
-- **44** entries across **38** companies and **9** domains
+- **45** entries across **39** companies and **9** domains
 - Date range: 2026-05-24 to 2026-08-21
 
 ## Responsibility clusters
 
 | | Entries | Share |
 |---|---:|---:|
-| Content systems design | 41 | 93% |
-| Enablement & team upskilling | 37 | 84% |
-| AI tooling & automation | 31 | 70% |
-| AI-generated content governance | 23 | 52% |
-| Terminology & language governance | 19 | 43% |
-| Taxonomy & information architecture | 18 | 41% |
+| Content systems design | 42 | 93% |
+| Enablement & team upskilling | 38 | 84% |
+| AI tooling & automation | 32 | 71% |
+| AI-generated content governance | 24 | 53% |
+| Terminology & language governance | 19 | 42% |
+| Taxonomy & information architecture | 18 | 40% |
 | Technical writing & documentation | 12 | 27% |
 | Localization & internationalization | 9 | 20% |
 
@@ -29,25 +29,25 @@ Every figure here is counted from `docs/data/jobs.json`. If you quote one in som
 
 | | Entries | Share |
 |---|---:|---:|
-| AI fluency expected | 29 | 66% |
-| Governance emphasized | 22 | 50% |
-| Enabler, not bottleneck | 19 | 43% |
+| AI fluency expected | 30 | 67% |
+| Governance emphasized | 22 | 49% |
+| Enabler, not bottleneck | 19 | 42% |
 | Central standards function | 12 | 27% |
-| Model behavior design | 11 | 25% |
-| Language as infrastructure | 10 | 23% |
-| Content systems for marketers | 6 | 14% |
-| Accessibility as structural constraint | 6 | 14% |
+| Model behavior design | 12 | 27% |
+| Language as infrastructure | 10 | 22% |
+| Content systems for marketers | 6 | 13% |
+| Accessibility as structural constraint | 6 | 13% |
 | GEO & SEO | 5 | 11% |
 | Structured data | 5 | 11% |
 | Content work under new titles | 3 | 7% |
 | Structured for agent retrieval | 3 | 7% |
-| Work outpaces the title | 2 | 5% |
-| Title outpaces the work | 2 | 5% |
-| Classification for ML | 2 | 5% |
+| Work outpaces the title | 2 | 4% |
+| Title outpaces the work | 2 | 4% |
+| Classification for ML | 2 | 4% |
 
 ## Compensation
 
-- Stated in **31 of 44** entries (26 USD, 3 GBP, 2 CAD)
+- Stated in **31 of 45** entries (26 USD, 3 GBP, 2 CAD)
 - Full spread: **$65,000** to **$710,000**
 - USD medians: **$132,000** low, **$186,300** high
 - `covers`: 21 base, 8 unstated, 2 total
@@ -74,20 +74,20 @@ Read the n column before quoting any of these. A median over fewer than roughly 
 
 ## Title vocabulary
 
-Words appearing in 3 or more of the 44 stored titles. Counted from `title`, which is stored verbatim — so this reflects what employers wrote, not what the site renders.
+Words appearing in 3 or more of the 45 stored titles. Counted from `title`, which is stored verbatim — so this reflects what employers wrote, not what the site renders.
 
 | Word | Titles | Share |
 |---|---:|---:|
-| Content | 34 | 77% |
-| Designer | 17 | 39% |
-| AI | 10 | 23% |
-| Staff | 10 | 23% |
+| Content | 34 | 76% |
+| Designer | 18 | 40% |
+| AI | 11 | 24% |
+| Staff | 10 | 22% |
 | Systems | 9 | 20% |
-| Senior | 9 | 20% |
 | UX | 9 | 20% |
+| Senior | 9 | 20% |
 | Architect | 7 | 16% |
-| Writer | 6 | 14% |
-| Strategist | 6 | 14% |
+| Writer | 6 | 13% |
+| Strategist | 6 | 13% |
 | Engineer | 4 | 9% |
 | Design | 4 | 9% |
 | Language | 3 | 7% |
@@ -104,13 +104,13 @@ Words appearing in 3 or more of the 44 stored titles. Counted from `title`, whic
 | E-commerce | 5 | Airbnb, Coupang, HelloFresh, The Ride Platform, Wellhub |
 | Media | 4 | Netflix, Spotify |
 | Agency | 3 | Accenture, Intercept, Phase2 |
-| Healthcare | 2 | Atria, Evinova |
+| Healthcare | 3 | Atria, Evinova, UnitedHealth Group |
 | Automotive | 1 | GM |
 | Cybersecurity | 1 | Gen Digital |
 
 ## Stated org placement
 
-Recorded in `jd-source` front matter. **34 of 44** postings say where the role sits; the rest do not, which is itself a fact about the posting.
+Recorded in `jd-source` front matter. **34 of 45** postings say where the role sits; the rest do not, which is itself a fact about the posting.
 
 | Company | Placement as stated |
 |---|---|
@@ -151,7 +151,7 @@ Recorded in `jd-source` front matter. **34 of 44** postings say where the role s
 
 ## Stated posting dates
 
-**7 of 44** postings state a date. Where both exist, the gap to `dateAdded` varies enough that one is not a proxy for the other.
+**8 of 45** postings state a date. Where both exist, the gap to `dateAdded` varies enough that one is not a proxy for the other.
 
 | Company | Posted | Added |
 |---|---|---|
@@ -162,3 +162,4 @@ Recorded in `jd-source` front matter. **34 of 44** postings say where the role s
 | Ally Financial | 2026-07-23 | 2026-07-29 |
 | Adobe | 2026-07-29 | 2026-08-01 |
 | Evinova | 2026-08-17 | 2026-08-17 |
+| UnitedHealth Group | 2026-08-20 | 2026-08-21 |

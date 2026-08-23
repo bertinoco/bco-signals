@@ -270,9 +270,9 @@ also carry the only surviving copy of a posting that has since closed.
 Insurify's own careers page opens with a fraudulent-job-advert warning before
 the posting begins.
 
-## Three headers that don't match their own body
+## Four headers that don't match their own body
 
-Three postings so far state one title at the top and a different one in the
+Four postings so far state one title at the top and a different one in the
 body text — and no two of them drift the same way.
 
 **Fin**'s posting is headed "Staff AI Designer," but the body repeatedly calls
@@ -288,16 +288,21 @@ Principal Content Designer..." Same role name, different level.
 "We're looking for a Content Engineer, Human + AI Workflows:" Same role name
 and level — the body appends a scope qualifier the header drops.
 
-All three entries store the header as `title`, per the Title field rule, and
-record the body's alternate self-description in the archive's `captureNote`
-rather than resolving it. Three instances, three different kinds of drift —
-role name (Fin), seniority level (Wise), scope qualifier (Intercept) — which
-is enough to call header/body mismatch itself a recurring feature of how
-these postings are laid out, even though no two instances substitute the same
-thing. The title-then-location or title-then-department header line evidently
-invites a fuller self-description once the body gets going; worth a fourth
-instance to see whether a fourth kind of drift shows up or one of these three
-repeats.
+**UnitedHealth Group**'s posting (via Optum's careers site) is headed
+"Principal UX CX Designer," but the body opens "As a Principal Conversational
+AI Designer, you will lead the design of conversational experiences..." and
+repeats that self-description throughout. Same seniority level, different
+role name — the same kind of drift as Fin's.
+
+The first three entries store the header as `title`, per the Title field
+rule, and record the body's alternate self-description in the archive's
+`captureNote` rather than resolving it. The UHG entry breaks from that: its
+`title` stores the body's self-description instead of the header, because the
+body string is what the quote and cluster/signal assignments are actually
+drawn from — a case-by-case call, not a change to the Title field rule, and
+recorded as such in the entry's `note` and the archive's `captureNote`. Four
+instances, and the first where the stored title took the body over the
+header.
 
 ## First non-English posting
 
