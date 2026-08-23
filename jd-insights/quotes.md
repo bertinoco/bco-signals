@@ -3,7 +3,7 @@
 
 # Quotes
 
-Every stored quote, verbatim from the posting. **44 of 45** entries carry one.
+Every stored quote, verbatim from the posting. **45 of 46** entries carry one.
 
 These are the lines that anchor each entry's cluster and signal assignments, so they are the strongest citable evidence in the dataset. Each is checked against its `jd-source` archive before commit.
 
@@ -120,6 +120,12 @@ These are the lines that anchor each entry's cluster and signal assignments, so 
 > Consider the user experience, including AI-specific elements like prompt design and system instructions.
 
 `google-senior-ux-writer-chrome` · added 2026-05-25
+
+### Government Digital Service — Senior Interaction Designer (Conversation)
+
+> help establish conversation design as a discipline at GDS, contributing to a community of practice, sharing knowledge across teams, and helping others develop their skills in this emerging area
+
+`gds-senior-interaction-designer-conversation` · added 2026-08-21
 
 ### HelloFresh — Staff AI Content Designer
 

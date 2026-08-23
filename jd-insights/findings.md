@@ -624,6 +624,27 @@ vocabulary landed on the content side of the line rather than collapsing
 it. No new trigger to set here; the open question the Redpine note raised
 now has an answer, on the strength of one clean test.
 
+**Explicit discipline-founding framing — one clear instance.** GDS's Senior
+Interaction Designer (Conversation) states plainly: "This is the first
+permanent conversation design role at GDS, and you'll help establish the
+discipline here," and separately asks the hire to "help establish
+conversation design as a discipline at GDS, contributing to a community of
+practice, sharing knowledge across teams, and helping others develop their
+skills in this emerging area." This is more explicit than anything
+previously on record — the framing above (see "Sole production ownership")
+noted, only in passing, that Sanna's and Wise's earlier hires carry a softer
+"first content designer" or "newly forming team" framing, without treating
+that framing as a pattern in its own right. GDS names the act of founding a
+discipline as a stated responsibility, not just a fact about hiring order.
+
+Two of the three instances so far (Sanna, Wise) share the Finance domain;
+GDS is the first non-Finance instance, but three data points across two
+domains does not clear Step 4's cross-industry bar on its own — flagged here
+as domain-clustered pending a wider spread. No key proposed; this stays a
+Watching entry. *Trigger to revisit: a second posting using comparably
+explicit "first/founding a discipline" language, ideally in a domain other
+than Finance or Government.*
+
 ---
 
 # What this data cannot support

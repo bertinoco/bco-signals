@@ -3,7 +3,7 @@
     "title": "BCO Content Skills Tracker",
     "description": "A curated skills tracker for the content design community.",
     "lastUpdated": "2026-08-21",
-    "totalEntries": 45
+    "totalEntries": 46
   },
   "entries": [
     {
@@ -1379,6 +1379,38 @@
       "dateAdded": "2026-08-21",
       "quote": "As a Principal Conversational AI Designer, you will lead the design of conversational experiences that help consumers accomplish their goals through UnitedHealth Group's AI-powered products and services.",
       "note": "The posting's page header titles the role \"Principal UX CX Designer\" (requisition 2382279), but the body text self-describes it as \"Principal Conversational AI Designer\" from the first sentence onward and consistently thereafter. The `title` field stores the body's self-description, which is also the string the quote and cluster/signal assignments are drawn from."
+    },
+    {
+      "id": "gds-senior-interaction-designer-conversation",
+      "company": "Government Digital Service",
+      "title": "Senior Interaction Designer (Conversation)",
+      "domain": "Government",
+      "engagement": "Full-time",
+      "location": "Bristol, London, or Manchester, UK",
+      "remote": "hybrid",
+      "coreFrame": "Designing conversational and multimodal AI experiences for GOV.UK, including GOV.UK Chat and agentic experiences, and prototyping and testing dialogue patterns, prompts, and interaction flows with real users. Exploring multiple approaches to solving user problems through conversation and natural language, and feeding into the development of AI conversation design principles and reusable dialogue patterns for government. Collaborating with product, research, engineering, and other designers to deliver joined-up services, and helping establish conversation design as a discipline at GDS through a community of practice and by sharing knowledge and skills across teams.",
+      "clusters": [
+        "content-systems-design",
+        "enablement",
+        "ai-tooling"
+      ],
+      "signals": [
+        "model-behavior-design",
+        "ai-native-expectation",
+        "central-standards-function"
+      ],
+      "compRange": {
+        "min": 62120,
+        "max": 71920,
+        "currency": "GBP",
+        "covers": null,
+        "scope": "London",
+        "extras": "specialist pay allowance"
+      },
+      "sourceUrl": null,
+      "dateAdded": "2026-08-21",
+      "quote": "help establish conversation design as a discipline at GDS, contributing to a community of practice, sharing knowledge across teams, and helping others develop their skills in this emerging area",
+      "note": "First UK government entry in the dataset, and the first entry outside a corporate employer. Also the first GBP-denominated compRange. The posting states three overlapping compensation figures: a headline range (£56,850-£71,920), a per-location base point figure, and a capability-based range per location (£62,120-£71,920 London / £57,350-£67,150 National Locations, i.e. Bristol and Manchester). The recorded range is the capability-based London figure, following the largest-co-equal-city rule. `covers` is left null rather than resolved to `base`: a separate sentence labels a different, single-point figure as base salary, but this range is described as scaling with a specialist pay allowance on top of that base, which does not cleanly match either the `base` or `total` definition."
     }
   ],
   "clusters": {

@@ -3,37 +3,37 @@
 
 # Stats
 
-Dataset state: **45 entries**, `meta.lastUpdated` 2026-08-21. Generated 2026-08-23.
+Dataset state: **46 entries**, `meta.lastUpdated` 2026-08-21. Generated 2026-08-23.
 
 Every figure here is counted from `docs/data/jobs.json`. If you quote one in something published, quote the entry count with it — these move.
 
 ## Headline
 
-- **45** entries across **39** companies and **9** domains
+- **46** entries across **40** companies and **10** domains
 - Date range: 2026-05-24 to 2026-08-21
 
 ## Responsibility clusters
 
 | | Entries | Share |
 |---|---:|---:|
-| Content systems design | 42 | 93% |
-| Enablement & team upskilling | 38 | 84% |
-| AI tooling & automation | 32 | 71% |
-| AI-generated content governance | 24 | 53% |
-| Terminology & language governance | 19 | 42% |
-| Taxonomy & information architecture | 18 | 40% |
-| Technical writing & documentation | 12 | 27% |
+| Content systems design | 43 | 93% |
+| Enablement & team upskilling | 39 | 85% |
+| AI tooling & automation | 33 | 72% |
+| AI-generated content governance | 24 | 52% |
+| Terminology & language governance | 19 | 41% |
+| Taxonomy & information architecture | 18 | 39% |
+| Technical writing & documentation | 12 | 26% |
 | Localization & internationalization | 9 | 20% |
 
 ## Skill signals
 
 | | Entries | Share |
 |---|---:|---:|
-| AI fluency expected | 30 | 67% |
-| Governance emphasized | 22 | 49% |
-| Enabler, not bottleneck | 19 | 42% |
-| Central standards function | 12 | 27% |
-| Model behavior design | 12 | 27% |
+| AI fluency expected | 31 | 67% |
+| Governance emphasized | 22 | 48% |
+| Enabler, not bottleneck | 19 | 41% |
+| Central standards function | 13 | 28% |
+| Model behavior design | 13 | 28% |
 | Language as infrastructure | 10 | 22% |
 | Content systems for marketers | 6 | 13% |
 | Accessibility as structural constraint | 6 | 13% |
@@ -47,14 +47,14 @@ Every figure here is counted from `docs/data/jobs.json`. If you quote one in som
 
 ## Compensation
 
-- Stated in **31 of 45** entries (26 USD, 3 GBP, 2 CAD)
-- Full spread: **$65,000** to **$710,000**
+- Stated in **32 of 46** entries (26 USD, 4 GBP, 2 CAD)
+- Full spread: **$62,120** to **$710,000**
 - USD medians: **$132,000** low, **$186,300** high
-- `covers`: 21 base, 8 unstated, 2 total
+- `covers`: 21 base, 9 unstated, 2 total
 
 ## Compensation by signal
 
-USD entries only (26 of 31 stated ranges). Signals carried by at least 3 of them.
+USD entries only (26 of 32 stated ranges). Signals carried by at least 3 of them.
 
 | Signal | n | Median low | Median high | vs. all USD |
 |---|---:|---:|---:|---:|
@@ -74,24 +74,24 @@ Read the n column before quoting any of these. A median over fewer than roughly 
 
 ## Title vocabulary
 
-Words appearing in 3 or more of the 45 stored titles. Counted from `title`, which is stored verbatim — so this reflects what employers wrote, not what the site renders.
+Words appearing in 3 or more of the 46 stored titles. Counted from `title`, which is stored verbatim — so this reflects what employers wrote, not what the site renders.
 
 | Word | Titles | Share |
 |---|---:|---:|
-| Content | 34 | 76% |
-| Designer | 18 | 40% |
+| Content | 34 | 74% |
+| Designer | 19 | 41% |
 | AI | 11 | 24% |
+| Senior | 10 | 22% |
 | Staff | 10 | 22% |
 | Systems | 9 | 20% |
 | UX | 9 | 20% |
-| Senior | 9 | 20% |
-| Architect | 7 | 16% |
+| Architect | 7 | 15% |
 | Writer | 6 | 13% |
 | Strategist | 6 | 13% |
 | Engineer | 4 | 9% |
 | Design | 4 | 9% |
+| Conversation | 4 | 9% |
 | Language | 3 | 7% |
-| Conversation | 3 | 7% |
 | Lead | 3 | 7% |
 
 ## Domains
@@ -107,10 +107,11 @@ Words appearing in 3 or more of the 45 stored titles. Counted from `title`, whic
 | Healthcare | 3 | Atria, Evinova, UnitedHealth Group |
 | Automotive | 1 | GM |
 | Cybersecurity | 1 | Gen Digital |
+| Government | 1 | Government Digital Service |
 
 ## Stated org placement
 
-Recorded in `jd-source` front matter. **34 of 45** postings say where the role sits; the rest do not, which is itself a fact about the posting.
+Recorded in `jd-source` front matter. **35 of 46** postings say where the role sits; the rest do not, which is itself a fact about the posting.
 
 | Company | Placement as stated |
 |---|---|
@@ -127,6 +128,7 @@ Recorded in `jd-source` front matter. **34 of 45** postings say where the role s
 | Figma | UX Writing team |
 | GM | Human Interface Design (HID) organization; Language Systems team within HID |
 | Gen Digital | Content Design team, AI Assistant platform team, within Product & Ecommerce |
+| Government Digital Service | GOV.UK AI team, within GDS - Products & Services |
 | HelloFresh | Category: Software Engineering |
 | Insurify | Not stated as a department; partners with the Editor in Chief and editorial leadership |
 | Intercept | Content department |
@@ -151,7 +153,7 @@ Recorded in `jd-source` front matter. **34 of 45** postings say where the role s
 
 ## Stated posting dates
 
-**8 of 45** postings state a date. Where both exist, the gap to `dateAdded` varies enough that one is not a proxy for the other.
+**8 of 46** postings state a date. Where both exist, the gap to `dateAdded` varies enough that one is not a proxy for the other.
 
 | Company | Posted | Added |
 |---|---|---|

@@ -225,7 +225,8 @@ The `domain` field describes the broad industry or sector the company operates i
 | `Cybersecurity` | Gen Digital (Norton, Avast) |
 | `E-commerce` | HelloFresh, Wellhub, The Ride Platform |
 | `Finance` | JPMorgan Chase, Ally, Sanna, Wealthsimple, Chime, Insurify |
-| `Healthcare` | Atria |
+| `Government` | Government Digital Service |
+| `Healthcare` | Atria, UnitedHealth Group |
 | `Media` | Netflix, Spotify |
 | `SaaS` | Notion, Zoom, Figma, CoLab |
 

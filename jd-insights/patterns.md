@@ -505,3 +505,27 @@ requirement, which is what the new value exists to avoid.
 One instance, so nothing yet to compare it against — worth recording because
 it's the first time the `remote` field's value space has needed to grow
 rather than a company simply landing in an existing bucket.
+
+## UK Civil Service competency-framework boilerplate
+
+**Government Digital Service**'s Senior Interaction Designer (Conversation)
+is the first UK government posting in the corpus, and its structure differs
+from every corporate posting on file. Instead of a single free-text
+qualifications section, the assessment criteria are named as formal,
+externally-defined instruments: "Success Profiles," four "Civil Service
+Behaviours" (working together, making effective decisions, communicating
+and influencing, delivering at pace), and seven named skills from the
+"Government Digital and Data Capability Framework" (design communication,
+designing for everyone, designing strategically, designing together,
+evidence-based design, iterative design, leading design). The posting also
+carries statutory hiring apparatus with no corporate equivalent seen so
+far — nationality-eligibility rules tied to specific international
+agreements (EUSS settled/pre-settled status, Turkish nationals' accrued
+rights), a named reserve-list policy (12 months), and references to the
+Civil Service Code and Recruitment Principles by name.
+
+One instance, so nothing to compare it against yet. Worth recording because
+none of this vocabulary is discretionary employer voice — it is externally
+mandated framework language specific to UK central government hiring, and a
+second government posting would be expected to reuse the same named
+instruments rather than inventing its own.
