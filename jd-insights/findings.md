@@ -733,6 +733,64 @@ four bullets anchored in writing or standards-for-writing) could reasonably
 land on include. See `jd-source/basis-intelligence-architect.md` for the full
 reasoning.
 
+**Whole-posting generic strategic language — 2 instances, cross-domain.**
+O.C. Tanner's Principal Product Content Strategist and Verily's Content
+Designer III were both excluded on the same failure mode: every
+responsibility restates the same handful of abstract nouns — governance,
+standards, consistency, scalability, cross-functional alignment — without
+ever naming a concrete object the work produces or touches. O.C. Tanner's
+four "Key Responsibilities" subheads recombine "governance," "AI readiness,"
+"scalable," and "cross-functional" across every section, and its "Success
+Looks Like" section restates the identical claims a third time with no new
+information; the posting never once names a style guide, a taxonomy, a
+governed term, a described workflow, a tool, or an evaluation process.
+Verily's excludedReason independently reached for the same description:
+"too thin and too vague to support a confident entry... generic UX-strategy
+language with no reusable-template, taxonomy, or cross-team-scale
+specifics, the weakest grounding for that cluster anywhere in the corpus."
+
+Both postings pass the required criteria and the signal test on a literal
+read of their vocabulary — the failure isn't an absence of the right words,
+it's an absence of anything concrete behind them. This is what distinguishes
+the pattern from entries that clear the bar: UKG names "ontologies and
+structured content systems" and "a spectrum of autonomy from suggesting,
+confirming to acting"; GDS names "dialogue patterns, prompts, and
+interaction flows." A posting in this pattern never drops to that level of
+specificity once, no matter how many times it restates its strategic intent.
+
+Two instances, two different domains (Healthcare, SaaS) — clears Step 4's
+floor without being domain-clustered. *Trigger to revisit: a third instance,
+to confirm this is a recurring authorial style (templated senior-strategist
+language reused across companies) rather than coincidence.*
+
+**AI mentions that name no tool, governed object, or model behavior — a
+placeholder pattern already precedented five times over, never centralized
+until now.** Roblox, Checkout.com, TCGplayer, Meta's WhatsApp, and Wise's
+Senior Content Designer, Spend were each excluded in part or in full on the
+same specific test, cited directly in each successive exclusion's own
+reasoning without ever being written up as its own pattern: an AI mention
+that names no tool, no governed object, and no model behavior fails the
+signal test's AI-tooling/governance/model-behavior prong, regardless of how
+many times "AI" appears. Roblox's "Identify and implement AI solutions to
+improve content quality and scale" was the first to fail this way — "AI
+solutions" is a placeholder, not a described responsibility. TCGplayer's "AI-
+assisted tools where they strengthen quality or efficiency" repeated the
+same gap as a subordinate clause rather than a responsibility of its own.
+Checkout.com and Wise's Spend entry failed the same test from the
+qualifications side — AI-assisted-tools experience listed as a *preferred*
+qualification, never a stated responsibility. WhatsApp's AI material sits
+entirely in Preferred Qualifications ("integrate AI tools to optimize/
+redesign workflows," "prompt/context engineering, agent orchestration")
+while its stated Responsibilities are standard product content design.
+
+Five instances across four domains (Media, Finance, E-commerce, Big Tech) —
+this has been operating as settled, self-citing precedent since Roblox first
+established it, but had never been pulled into one place. No new key
+proposed: this describes a recurring way postings fail the existing signal
+test, not a new cluster or signal to assign to an included entry. Recorded
+here so the next boundary case can cite the pattern directly instead of
+re-deriving it from a chain of cross-references between exclusion files.
+
 ---
 
 # What this data cannot support
