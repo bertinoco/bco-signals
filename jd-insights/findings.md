@@ -645,6 +645,94 @@ Watching entry. *Trigger to revisit: a second posting using comparably
 explicit "first/founding a discipline" language, ideally in a domain other
 than Finance or Government.*
 
+**Excluded on eligibility, but the closest call in the model-design lineage
+yet — Basis's "Intelligence Architect" fails on writing-craft density, not
+its absence.** Every prior lineage exclusion (Fin, Redpine, Notion) failed on
+a clean or idiom-only literal-text check — none of them used writing or
+language vocabulary in a way that could plausibly ground a content-discipline
+read. Basis inverts this. The posting's "What you'll bring" section states
+outright: "Writing as a craft. You treat language as load-bearing. You catch
+the sentence that will be misread before it ships. You have excellent
+taste." "The writing work is yours" appears as a stated division of labor
+against a separate "measurement work." This is denser, more central,
+non-idiomatic writing-craft language than any prior exclusion in this corpus
+— arguably denser than some included entries. And yet the word "content"
+does not appear once in the roughly 1,000-word posting, a clean zero on the
+one trigger word every included lineage entry (Wise, Gen Digital, UKG, GDS)
+uses somewhere in its body even when the title doesn't. Title ("Intelligence
+Architect") and org placement ("Department: Technical," with the word
+"design" appearing nowhere in the text — a step below even Notion's
+placement, which at least named design as one of four partner functions)
+give this posting no support either.
+
+**The reason for exclusion is the posting's own explicit, structural denial
+that writing is the role's primary discipline — not a euphemism problem the
+way Microsoft's context-engineering exclusion was.** Both postings center
+"context" as the object of the work ("we treat context like a product" here;
+prompt/context-window management at Microsoft), which invites treating them
+as the same near-miss. They aren't. Microsoft was excluded because the
+underlying skill was ML/software engineering wearing "context" vocabulary
+with zero writing-craft substance anywhere — the vocabulary itself was doing
+the work of a euphemism. Basis's writing-craft vocabulary is real and
+substantial; the posting still fails, on a different axis, because it states
+directly that no single discipline is what the role is "primarily" about.
+Required criterion 1 asks whether a role is primarily a content discipline —
+and a JD can pass the literal-text check strongly and still fail that
+"primarily" clause when it says so itself.
+
+**The clearest evidence for this reading is structural, not lexical: how the
+posting frames who should apply.** "This role doesn't have a standard
+background. The people who do it well come from many places" introduces
+seven co-equal candidate pools, given equal weight and equal-length
+treatment: engineers and PMs "who've drifted from building systems to
+questioning whether the system is doing the right thing"; philosophers
+"who've spent years writing precise prose about systems no one else
+understood"; lawyers who "write the kind of language other people have to
+follow"; accountants "who appreciate language and want to shape the future
+of your profession"; editors and writers "who treat structured prose as
+engineering"; academics "tired of producing work that nobody acts on"; and
+"anyone who reads about what we're doing and recognizes the work as theirs."
+Writers and editors are one-seventh of the stated hiring pool, not the
+target the other six are bridging toward.
+
+Compare this against Wise's Principal AI Model Designer, the entry that
+established what a working bridge sentence looks like: "an accomplished and
+experienced Model Designer, or a systems-focused Content Designer who has
+already made this transition in your day-to-day work." Two paths, not seven.
+Both paths already inside or transitioning into a content identity,
+reinforced by the role's actual placement in a "Content Design Guild." The
+sentence's function is to assert continuity — this new role and content
+design are the same skill set wearing a different name. Basis's seven-path
+list does the opposite: it asserts that no single named discipline, content
+design included, is what unifies the people who succeed at this job. The
+"What you'll bring" list reinforces the same point from another angle — of
+its seven listed traits, only one ("Writing as a craft") is language-specific;
+the other six (systems reasoning, causal thinking, comfort with ambiguity,
+learning velocity, holding multiple threads at once) are generic analytical
+traits with no connection to language or content. The posting's own theory of
+who succeeds is a general precision-reasoning-expressed-in-binding-language
+aptitude, not a writing or content discipline that happens to recruit
+broadly — closer to how a law firm might describe the temperament needed for
+contract drafting than to how any included entry in this corpus describes
+itself.
+
+One instance, so no key of any kind is proposed — this is recorded as a
+structural counterpoint to Wise's bridge-sentence precedent, not as evidence
+toward a new signal. *Trigger to revisit: a second posting pairing dense,
+non-idiomatic writing-craft language with an explicit multi-path,
+discipline-agnostic hiring philosophy (three or more co-equal, mostly
+non-content candidate backgrounds) — distinct from Wise's two-path,
+both-already-in-content bridge, and distinct from a role that simply fails
+to name any discipline at all (Fin, Redpine, Notion).*
+
+Ambiguous call recorded rather than resolved in the exclusion itself: whether
+"Who might be a fit" should be read as authoritative on primary discipline —
+the reading applied here — or discounted as recruiting-funnel copy. A reader
+who discounts it and weights "What you'll be doing" instead (three of its
+four bullets anchored in writing or standards-for-writing) could reasonably
+land on include. See `jd-source/basis-intelligence-architect.md` for the full
+reasoning.
+
 ---
 
 # What this data cannot support
