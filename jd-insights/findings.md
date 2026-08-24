@@ -118,6 +118,41 @@ carrying reliable information about scope, which is a problem for anyone trying
 to navigate the market by title — and an opportunity for anyone able to
 articulate scope precisely in an interview.
 
+## Titles are failing in both directions at once
+
+**What the data shows.** `title-dilution` (a title claims more systems/AI
+substance than the stated responsibilities support) and
+`title-responsibility-gap` (the title claims less than the responsibilities
+actually cover) each have exactly two holders: `title-dilution` on Insurify's
+"Editor, AI Content Systems" and Intercept's "Content Engineer";
+`title-responsibility-gap` on Wellhub's "Senior Global UX Writer, Content
+Systems" and Figma's "UX Writer, AI" — the latter posting disclaiming its own
+title outright, in its second paragraph: "While the title of this role is
+'UX Writer,' you might think of yourself as a content engineer as much as a
+writer." Separately, `jd-insights/patterns.md`'s "Roles defined by what they
+are not" device — a posting stating explicitly what its own role does *not*
+cover — is now at six instances (Adobe, Sanna, Wealthsimple, HelloFresh,
+Meta, UKG), up from the five recorded when that pattern note was last
+written, and has grown a second form: UKG states a matched "is / is not"
+pair rather than an exclusion sentence alone.
+
+**What I think it means.** This is the same underlying claim as "Nobody
+agrees what this work is worth" above, from a different angle: that finding
+showed compensation ranges spanning an order of magnitude under nearly
+identical "Systems" titles; this one shows titles failing in both
+directions — overclaiming and underclaiming — at the same time, on the same
+small scale. Six employers have now judged their own titles insufficiently
+self-explanatory and appended a disclaimer, an unusual thing for a title to
+need. Read together, both findings point at the same mechanism rather than
+two separate ones: titles have stopped reliably carrying scope information,
+and employers are compensating for it in the two places that show up in a
+posting — the number, and the paragraph right under the title.
+
+This is thinner evidence than the compensation finding — four total
+signal/pattern holders plus six disclaimer instances, no time dimension, and
+no claim here should be read as the problem worsening rather than simply
+being visible once enough postings are collected to notice it.
+
 ## Content roles are appearing outside design orgs
 
 **What the data shows.** 23 of 29 postings state where the role sits, and the
@@ -135,6 +170,32 @@ AI Content Strategy Lead, which sits in Business Marketing.
 functions at once, and none of them has won. This is the most under-discussed
 finding in the set — the conversation about content design's future tends to
 assume it stays in design. The postings do not.
+
+**Conversation design shows the identical placement chaos, not a resolution
+toward content design.** The corpus's conversation/AI-model-design entries
+split almost evenly on where they sit. Wise's Principal AI Model Designer and
+Gen Digital's Staff AI Conversation Designer are placed inside a
+content-design-labeled function ("Content Design Guild," "Content Design
+team"). UKG's Lead Conversational Designer and GDS's Senior Interaction
+Designer (Conversation) state the opposite outright — "This is a systems
+design role, not a copywriting role... This role is not: Writing UI copy or
+chatbot scripts... Pure UX or visual design" (UKG); "the first permanent
+conversation design role at GDS" (GDS, a founding claim, not an absorption
+claim). Amazon's Sr. UX Conversation Designer sits on a team named "Word and
+Voice Design" — the two disciplines merged into one unit, neither
+subordinated to the other. Widen the lens to the excluded model-design
+lineage (Fin, Notion, Redpine, Basis — all explicitly placed outside content
+design, all excluded partly on that basis) and only 2 of 6 comparable
+postings claim any content-design lineage at all.
+
+What this reframes, rather than answers: conversation design is not being
+absorbed into content design, and it is not clearly separating from it
+either. It is being scattered across org charts in parallel with content
+design itself — the same placement chaos this finding already documents,
+now visible a second time in an adjacent discipline. Six of the seven
+relevant entries were added within a single two-week window, which is a
+sourcing artifact of when they were submitted, not evidence that either
+direction is accelerating. Nothing here should be read as a trend over time.
 
 ---
 

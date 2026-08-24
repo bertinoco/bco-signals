@@ -12,7 +12,7 @@ Every claim here should name the companies it came from, so a reader can go to
 
 ## Roles defined by what they are not
 
-Five postings define scope by exclusion, and the more senior the role, the more
+Six postings define scope by exclusion, and the more senior the role, the more
 formal the device gets.
 
 **Adobe** goes furthest, with a headed section:
