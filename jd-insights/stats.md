@@ -3,14 +3,14 @@
 
 # Stats
 
-Dataset state: **47 entries**, `meta.lastUpdated` 2026-08-21. Generated 2026-08-25.
+Dataset state: **47 entries**, `meta.lastUpdated` 2026-08-24. Generated 2026-08-25.
 
 Every figure here is counted from `docs/data/jobs.json`. If you quote one in something published, quote the entry count with it — these move.
 
 ## Headline
 
 - **47** entries across **41** companies and **10** domains
-- Date range: 2026-05-24 to 2026-08-21
+- Date range: 2026-05-24 to 2026-08-24
 
 ## Responsibility clusters
 

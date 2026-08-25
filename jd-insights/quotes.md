@@ -89,7 +89,7 @@ These are the lines that anchor each entry's cluster and signal assignments, so 
 
 > Help to shape AI tools that can empower others to generate content with the correct tone, structure, and necessary guardrails.
 
-`ethos-staff-content-designer` · added 2026-08-21
+`ethos-staff-content-designer` · added 2026-08-24
 
 ### Evinova — Content Design Lead - Evinova
 

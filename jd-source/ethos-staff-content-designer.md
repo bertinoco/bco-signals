@@ -7,8 +7,8 @@ sourcePlatform: company-site
 orgPlacement: null
 postedDate: null
 reqId: null
-dateAdded: 2026-08-21
-captured: 2026-08-21
+dateAdded: 2026-08-24
+captured: 2026-08-24
 captureMethod: pasted-from-claude-chat
 ---
 
