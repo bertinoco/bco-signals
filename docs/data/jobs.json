@@ -3,7 +3,7 @@
     "title": "BCO Content Skills Tracker",
     "description": "A curated skills tracker for the content design community.",
     "lastUpdated": "2026-08-21",
-    "totalEntries": 46
+    "totalEntries": 47
   },
   "entries": [
     {
@@ -1411,6 +1411,37 @@
       "dateAdded": "2026-08-21",
       "quote": "help establish conversation design as a discipline at GDS, contributing to a community of practice, sharing knowledge across teams, and helping others develop their skills in this emerging area",
       "note": "First UK government entry in the dataset, and the first entry outside a corporate employer. Also the first GBP-denominated compRange. The posting states three overlapping compensation figures: a headline range (£56,850-£71,920), a per-location base point figure, and a capability-based range per location (£62,120-£71,920 London / £57,350-£67,150 National Locations, i.e. Bristol and Manchester). The recorded range is the capability-based London figure, following the largest-co-equal-city rule. `covers` is left null rather than resolved to `base`: a separate sentence labels a different, single-point figure as base salary, but this range is described as scaling with a specialist pay allowance on top of that base, which does not cleanly match either the `base` or `total` definition."
+    },
+    {
+      "id": "ethos-staff-content-designer",
+      "company": "Ethos",
+      "title": "Staff Content Designer",
+      "domain": "Finance",
+      "engagement": "Full-time",
+      "location": "Remote (US)",
+      "remote": true,
+      "coreFrame": "Writing and shaping content across the purchase journey — landing pages, onboarding, checkout, post-purchase, and microcopy — and building the narrative backbone for major product flows. Contributing to Ethos's content standards, tone-of-voice guidelines, and review processes alongside design leadership. Using AI tools and frameworks to produce on-brand content faster, and helping shape AI tools that let others generate content with the correct tone, structure, and guardrails. Grounding the work in customer research, competitive audits, analytics, and A/B testing.",
+      "clusters": [
+        "ai-tooling",
+        "ai-content-governance",
+        "enablement",
+        "content-systems-design"
+      ],
+      "signals": [
+        "ai-native-expectation",
+        "enabler-not-bottleneck"
+      ],
+      "compRange": {
+        "min": 147000,
+        "max": 259000,
+        "currency": "USD",
+        "covers": "base",
+        "scope": null,
+        "extras": null
+      },
+      "sourceUrl": null,
+      "dateAdded": "2026-08-21",
+      "quote": "Help to shape AI tools that can empower others to generate content with the correct tone, structure, and necessary guardrails."
     }
   ],
   "clusters": {

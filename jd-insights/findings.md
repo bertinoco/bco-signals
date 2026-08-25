@@ -500,7 +500,7 @@ framing for AI output review — distinct from editing/QA responsibilities that
 imply review without naming it — or a reason to treat the Spotify and Evinova
 instances as two different patterns rather than one.*
 
-**Regulatory or compliance framing bounding the content work — two
+**Regulatory or compliance framing bounding the content work — three
 instances.** Wise's Staff AI Content Designer, FinCrime states the role must
 "balance meeting regulatory obligations with building world-class customer
 experiences." Evinova's Content Design Lead states the parallel constraint for
@@ -508,15 +508,25 @@ a different regulatory regime: "a deep awareness of the regulatory and
 ethical requirements that are not only considerations for our content design
 responsibilities but also for those who use our tools," and separately that
 its Content Design Guidance document must stay current "as our products and
-the regulatory landscape evolve." Same structural move in both — content
+the regulatory landscape evolve." Ethos's Staff Content Designer states the
+same move for a third regime: "Comfort in Figma and with regulatory
+constraints, since in an industry like life insurance, clarity and compliance
+are the same job." Same structural move in all three — content
 responsibilities explicitly bounded by a named external compliance regime
-(financial crime for Wise, clinical/health regulation for Evinova), not just
-by internal brand or product standards.
+(financial crime for Wise, clinical/health regulation for Evinova, life
+insurance regulation for Ethos), not just by internal brand or product
+standards.
 
-Two companies, two regulatory domains, at Step 4's floor rather than past it.
-*Trigger to revisit: a third posting that states its content responsibilities
-are bounded by a named regulatory or compliance framework, rather than by
-internal style or brand governance alone.*
+Three companies, three named regimes, but two of the three (Wise, Ethos) sit
+in the Finance domain and the third (Evinova) in Healthcare — both regulated
+industries. Per Step 4's domain-clustering guidance, this reads as
+domain-leaning rather than confirmed cross-industry: recurrence inside
+regulated-industry hiring specifically is weaker evidence of a discipline-wide
+pattern than recurrence spanning unrelated domains would be. *Trigger to
+revisit: a fourth posting that states its content responsibilities are
+bounded by a named regulatory or compliance framework, from a domain outside
+Finance and Healthcare — needed to confirm this is a cross-industry pattern
+rather than one specific to regulated-industry hiring.*
 
 **Excluded on eligibility, not on thinness — Redpine's Senior Knowledge Graph
 Engineer.** Every other exclusion in the corpus fails on thinness: an AI

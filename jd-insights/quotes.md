@@ -3,7 +3,7 @@
 
 # Quotes
 
-Every stored quote, verbatim from the posting. **45 of 46** entries carry one.
+Every stored quote, verbatim from the posting. **46 of 47** entries carry one.
 
 These are the lines that anchor each entry's cluster and signal assignments, so they are the strongest citable evidence in the dataset. Each is checked against its `jd-source` archive before commit.
 
@@ -84,6 +84,12 @@ These are the lines that anchor each entry's cluster and signal assignments, so 
 > Redefines format and tone guidelines into requirements that engineers can use for model training and prompt improvement.
 
 `coupang-senior-content-strategist-core-ux` · added 2026-08-14
+
+### Ethos — Staff Content Designer
+
+> Help to shape AI tools that can empower others to generate content with the correct tone, structure, and necessary guardrails.
+
+`ethos-staff-content-designer` · added 2026-08-21
 
 ### Evinova — Content Design Lead - Evinova
 
