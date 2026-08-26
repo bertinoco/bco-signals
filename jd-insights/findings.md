@@ -206,13 +206,15 @@ so they are not rediscovered from scratch. Entries stay here after a key is
 created, marked resolved, so the reasoning survives the promotion. Step 4's bar still applies: a new
 instance updates a count, it does not promote a pattern to a finding.
 
-**Measurement and evaluation frameworks — 13 instances.** OpenAI (evals,
+**Measurement and evaluation frameworks — 14 instances.** OpenAI (evals,
 evaluation rubrics), Netflix and Spotify (evaluation frameworks), Meta
 (measurement frameworks, twice — the AI Content Strategy Lead states both
 evaluation frameworks and business-impact measurement), LinkedIn (architecture health metrics), GM and Notion
 (content QA), Ride Platform (success metrics), Chime (content quality metrics,
 automated governance dashboards), Ally (success metrics and measurement
-frameworks), Wix (evaluation workflows for generated UX content). The largest
+frameworks), Wix (evaluation workflows for generated UX content), Engrain
+(documentation engagement metrics tracked to accelerate self-service adoption
+and time-to-market value). The largest
 un-keyed pattern in the corpus. Held because it overlaps
 `governance-as-value-prop` heavily and cannot yet be separated cleanly.
 

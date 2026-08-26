@@ -3,7 +3,7 @@
 
 # Quotes
 
-Every stored quote, verbatim from the posting. **46 of 47** entries carry one.
+Every stored quote, verbatim from the posting. **47 of 48** entries carry one.
 
 These are the lines that anchor each entry's cluster and signal assignments, so they are the strongest citable evidence in the dataset. Each is checked against its `jd-source` archive before commit.
 
@@ -84,6 +84,12 @@ These are the lines that anchor each entry's cluster and signal assignments, so 
 > Redefines format and tone guidelines into requirements that engineers can use for model training and prompt improvement.
 
 `coupang-senior-content-strategist-core-ux` · added 2026-08-14
+
+### Engrain — Senior Content Strategist, Product Enablement
+
+> Partner directly with Marketing to co-build core messaging platforms, terminology standards, and voice-and-tone frameworks, ensuring unified positioning across product enablement, demand generation campaigns, and sales collateral.
+
+`engrain-senior-content-strategist-product-enablement` · added 2026-08-26
 
 ### Ethos — Staff Content Designer
 
