@@ -3,7 +3,7 @@
 
 # Quotes
 
-Every stored quote, verbatim from the posting. **48 of 49** entries carry one.
+Every stored quote, verbatim from the posting. **49 of 50** entries carry one.
 
 These are the lines that anchor each entry's cluster and signal assignments, so they are the strongest citable evidence in the dataset. Each is checked against its `jd-source` archive before commit.
 
@@ -258,6 +258,12 @@ These are the lines that anchor each entry's cluster and signal assignments, so 
 > As a Principal Conversational AI Designer, you will lead the design of conversational experiences that help consumers accomplish their goals through UnitedHealth Group's AI-powered products and services.
 
 `uhg-principal-conversational-ai-designer` · added 2026-08-21
+
+### Vinted — Content Design Lead
+
+> You'll shape the direction of the function through standards, tooling, and craft infrastructure that enables a distributed team to do their best work.
+
+`vinted-content-design-lead` · added 2026-08-26
 
 ### Wealthsimple — Staff Content Designer, Investing
 

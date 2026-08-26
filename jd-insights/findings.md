@@ -879,6 +879,33 @@ test, not a new cluster or signal to assign to an included entry. Recorded
 here so the next boundary case can cite the pattern directly instead of
 re-deriving it from a chain of cross-references between exclusion files.
 
+**Guild/craft-authority posed as an alternative to direct management — one
+instance.** Vinted's Content Design Lead states twice that the org structure
+around the role is not yet decided: "Depending on the organisation's evolving
+structure, this may involve direct people leadership, a guild model built on
+craft authority, or both" (role overview), and "Demonstrated ability to lead
+a content design function through direct management, craft authority, or
+guild-style leadership" (About You). This is a different use of "guild" than
+the one already on record in `patterns.md` ("Guild" as a name for the content
+community — Wise, Wix), where the word names an existing cross-team community
+of practice alongside a separately-named reporting line. Vinted instead names
+guild-authority and direct management as two candidate *organizational
+structures*, contingent on a decision the posting says has not been made.
+
+Joe's read, recorded as interpretation and not something the JD states or the
+data confirms: this framing may be a deliberate way to keep the org structure
+open — leaving people-management scope and expectations unresolved until
+after hiring, so the company can decide based on whether the person it
+actually hires has the management experience to take on direct reports. The
+posting supports the observation that the structure is stated as undecided;
+it does not state a reason why, and the reason above is Joe's inference, not
+a finding this dataset can independently support.
+
+One instance, so no key is proposed. *Trigger to revisit: a second posting
+explicitly framing guild/craft-authority leadership as an alternative
+organizational mode to direct management — rather than as a name for a
+cross-team community of practice.*
+
 ---
 
 # What this data cannot support

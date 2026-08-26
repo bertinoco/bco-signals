@@ -454,6 +454,14 @@ department. Two companies, so this crosses the bar for recording it as a
 naming pattern rather than one company's house style, though not for reading
 anything into it beyond the word choice.
 
+**Vinted's Content Design Lead uses "guild" differently and is not counted
+above.** Its "guild model built on craft authority" names a candidate
+*organizational structure*, posed against "direct people leadership" as an
+alternative the company has not yet chosen between — not an existing
+community of practice alongside a named team, the way Wise's and Wix's uses
+are. See `jd-insights/findings.md`'s Watching section for the one-instance
+entry this opened.
+
 ## Recruiting calls versus job postings, and contract roles as a first
 
 **Lisa Jennings Young**, a Content Design Leader at Adobe, posted directly to
