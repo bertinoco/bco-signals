@@ -438,16 +438,18 @@ or review process explicitly scoped to cover both human-authored and
 agent-generated content, rather than either a process for one audience or an
 artifact built for both.*
 
-**Named AI tools — 4 instances, one of them gating.** Of the 25 entries
-carrying `ai-native-expectation`, only four name a specific product rather
-than the category. HelloFresh: "building rapid interactive prototypes (using
-tools like Claude Code, Gemini, or Figma AI)." Coupang's Senior Content
-Strategist, Core UX (Korean posting): "ChatGPT, Claude, Gemini 등의 다양한
-생성형 AI" ("ChatGPT, Claude, Gemini, and other generative AI tools").
-Intercept: "Hands-on experience using LLMs or AI writing tools such as
-ChatGPT, Claude, Copilot, Jasper, or similar platforms." All three list
-several tools as interchangeable examples of the category, not a required
-one.
+**Named AI tools — 5 instances, one of them gating.** Of the entries carrying
+`ai-native-expectation`, five name a specific product rather than the
+category. HelloFresh: "building rapid interactive prototypes (using tools
+like Claude Code, Gemini, or Figma AI)." Coupang's Senior Content Strategist,
+Core UX (Korean posting): "ChatGPT, Claude, Gemini 등의 다양한 생성형 AI"
+("ChatGPT, Claude, Gemini, and other generative AI tools"). Intercept:
+"Hands-on experience using LLMs or AI writing tools such as ChatGPT, Claude,
+Copilot, Jasper, or similar platforms." Function Health: "You use AI tooling
+actively. Claude, Cursor, or equivalent — to accelerate ideation, draft
+generation, and iteration without sacrificing voice quality." All four list
+one or more tools as interchangeable examples of the category ("or similar,"
+"or equivalent," "등의"), not a required one.
 
 The Ride Platform is the different case: "Jasper is core to how we work,"
 "Jasper embedded as the core engine for content creation," "with Jasper

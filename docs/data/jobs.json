@@ -3,7 +3,7 @@
     "title": "BCO Content Skills Tracker",
     "description": "A curated skills tracker for the content design community.",
     "lastUpdated": "2026-08-26",
-    "totalEntries": 48
+    "totalEntries": 49
   },
   "entries": [
     {
@@ -1475,6 +1475,29 @@
       "sourceUrl": null,
       "dateAdded": "2026-08-26",
       "quote": "Partner directly with Marketing to co-build core messaging platforms, terminology standards, and voice-and-tone frameworks, ensuring unified positioning across product enablement, demand generation campaigns, and sales collateral."
+    },
+    {
+      "id": "function-health-senior-content-designer",
+      "company": "Function Health",
+      "title": "Senior Content Designer",
+      "domain": "Healthcare",
+      "engagement": "Full-time",
+      "location": "Remote (US)",
+      "remote": true,
+      "coreFrame": "Owning product and member-facing copy across in-app flows, onboarding, notifications, action plans, empty states, and error handling. Defining and stewarding the brand voice across surfaces and contributors, and reviewing copy org-wide beyond the role's own output. Working upstream of design decisions alongside Product Design and PMM, and using AI tooling (named: Claude, Cursor) to accelerate ideation, drafting, and iteration.",
+      "clusters": [
+        "content-systems-design",
+        "ai-tooling",
+        "enablement"
+      ],
+      "signals": [
+        "ai-native-expectation",
+        "enabler-not-bottleneck"
+      ],
+      "compRange": null,
+      "sourceUrl": null,
+      "dateAdded": "2026-08-26",
+      "quote": "You use AI tooling actively. Claude, Cursor, or equivalent — to accelerate ideation, draft generation, and iteration without sacrificing voice quality."
     }
   ],
   "clusters": {
