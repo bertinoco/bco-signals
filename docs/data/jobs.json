@@ -2,8 +2,8 @@
   "meta": {
     "title": "BCO Content Skills Tracker",
     "description": "A curated skills tracker for the content design community.",
-    "lastUpdated": "2026-08-25",
-    "totalEntries": 47
+    "lastUpdated": "2026-08-26",
+    "totalEntries": 48
   },
   "entries": [
     {
@@ -1442,6 +1442,39 @@
       "sourceUrl": null,
       "dateAdded": "2026-08-25",
       "quote": "Help to shape AI tools that can empower others to generate content with the correct tone, structure, and necessary guardrails."
+    },
+    {
+      "id": "engrain-senior-content-strategist-product-enablement",
+      "company": "Engrain",
+      "title": "Senior Content Strategist, Product Enablement",
+      "domain": "SaaS",
+      "engagement": "Not specified",
+      "location": "Greenwood Village, CO",
+      "remote": null,
+      "coreFrame": "Owns narrative architecture and technical enablement across the product ecosystem: strategy and authoring for the developer hub, API specs, and integration guides, partnering with Marketing to co-build messaging platforms and terminology standards, connecting Engineering, Product Design, Customer Success, and Marketing around product rollouts, and using AI tools to offload routine writing so effort concentrates on technical narratives and enablement assets. Reports to the VP, Experience Design.",
+      "clusters": [
+        "technical-writing",
+        "terminology-governance",
+        "enablement",
+        "content-systems-design",
+        "ai-tooling"
+      ],
+      "signals": [
+        "ai-native-expectation",
+        "central-standards-function",
+        "content-marketing-adjacent"
+      ],
+      "compRange": {
+        "min": 102000,
+        "max": 120000,
+        "currency": "USD",
+        "covers": "base",
+        "scope": null,
+        "extras": null
+      },
+      "sourceUrl": null,
+      "dateAdded": "2026-08-26",
+      "quote": "Partner directly with Marketing to co-build core messaging platforms, terminology standards, and voice-and-tone frameworks, ensuring unified positioning across product enablement, demand generation campaigns, and sales collateral."
     }
   ],
   "clusters": {
