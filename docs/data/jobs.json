@@ -3,7 +3,7 @@
     "title": "BCO Content Skills Tracker",
     "description": "A curated skills tracker for the content design community.",
     "lastUpdated": "2026-08-26",
-    "totalEntries": 49
+    "totalEntries": 50
   },
   "entries": [
     {
@@ -1498,6 +1498,30 @@
       "sourceUrl": null,
       "dateAdded": "2026-08-26",
       "quote": "You use AI tooling actively. Claude, Cursor, or equivalent — to accelerate ideation, draft generation, and iteration without sacrificing voice quality."
+    },
+    {
+      "id": "vinted-content-design-lead",
+      "company": "Vinted",
+      "title": "Content Design Lead",
+      "domain": "E-commerce",
+      "engagement": "Not specified",
+      "location": "Vilnius or Kaunas, Lithuania",
+      "remote": "hybrid",
+      "coreFrame": "Setting the quality bar for content design across a team of six embedded Content Designers, and building craft infrastructure — frameworks, guidelines, tooling, and content systems — that scales across those embedded teams. Deepening how content design is embedded in the product development lifecycle across Product, Design, Engineering, and Research; enabling Content Designer growth through direct leadership, mentorship, or community-building depending on team structure; defining metrics that demonstrate content design's value to the broader organisation; and driving operational efficiency across the function. The posting states the org structure is still evolving, and this may involve direct people leadership, a guild model built on craft authority, or both.",
+      "clusters": [
+        "content-systems-design",
+        "enablement"
+      ],
+      "signals": [
+        "governance-as-value-prop",
+        "central-standards-function",
+        "enabler-not-bottleneck"
+      ],
+      "compRange": null,
+      "sourceUrl": null,
+      "dateAdded": "2026-08-26",
+      "quote": "You'll shape the direction of the function through standards, tooling, and craft infrastructure that enables a distributed team to do their best work.",
+      "note": "The posting's job-board header titles the role \"Content Design Manager,\" but the body text self-describes it as \"Content Design Lead\" from the opening sentence of the role overview onward, and consistently thereafter — the header title appears once and is never reinforced. The `title` field stores the body's self-description. Separately, the JD states a gross monthly salary range (\"€4.917—€6.650 EUR\"), the first monthly-stated figure in the corpus; every other entry states an annual figure. `compRange` is recorded as null rather than displayed: the schema has no period field, annualizing would assume a bonus or 13th-month structure the JD never states, and recording the bare monthly numbers would misrepresent them as an annual figure to a reader comparing across entries."
     }
   ],
   "clusters": {
