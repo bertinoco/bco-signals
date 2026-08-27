@@ -174,6 +174,26 @@ function renderMeta(data) {
   if (countEl && Array.isArray(data.entries)) {
     countEl.textContent = data.entries.length;
   }
+
+  // PREVIEW: hero stat block. jdCount mirrors hero-role-count above. The
+  // signal count applies the same SIGNAL_THRESHOLD filter renderSignals()
+  // uses, so this number always matches what the Emerging patterns tab
+  // actually shows rather than the raw key count in data.signals.
+  const jdCountEl = document.getElementById('hero-stat-jds');
+  if (jdCountEl && Array.isArray(data.entries)) {
+    jdCountEl.textContent = data.entries.length;
+  }
+
+  const signalCountEl = document.getElementById('hero-stat-signals');
+  if (signalCountEl && data.signals) {
+    const relevantSignals = [...signalEntryCounts(data)].filter(([, n]) => n >= SIGNAL_THRESHOLD);
+    signalCountEl.textContent = relevantSignals.length;
+  }
+
+  const clusterCountEl = document.getElementById('hero-stat-clusters');
+  if (clusterCountEl && data.clusters) {
+    clusterCountEl.textContent = Object.keys(data.clusters).length;
+  }
 }
 
 // The Skills tab shows a signal only once SIGNAL_THRESHOLD postings ask for it —
