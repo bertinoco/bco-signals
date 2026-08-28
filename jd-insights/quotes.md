@@ -231,7 +231,7 @@ These are the lines that anchor each entry's cluster and signal assignments, so 
 
 ### Salesforce — Experience Design Lead
 
-> Build and maintain lightweight design and content guidelines the team can actually use.
+> The ideal background here is UX writing or content design — someone who's sat on a product team, worked in sprint cycles, and knows how to translate complex product thinking into clear, useful language.
 
 `salesforce-experience-design-lead` · added 2026-08-28
 
