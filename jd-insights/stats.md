@@ -3,37 +3,37 @@
 
 # Stats
 
-Dataset state: **50 entries**, `meta.lastUpdated` 2026-08-26. Generated 2026-08-26.
+Dataset state: **51 entries**, `meta.lastUpdated` 2026-08-28. Generated 2026-08-28.
 
 Every figure here is counted from `docs/data/jobs.json`. If you quote one in something published, quote the entry count with it — these move.
 
 ## Headline
 
-- **50** entries across **44** companies and **10** domains
-- Date range: 2026-05-24 to 2026-08-26
+- **51** entries across **45** companies and **11** domains
+- Date range: 2026-05-24 to 2026-08-28
 
 ## Responsibility clusters
 
 | | Entries | Share |
 |---|---:|---:|
-| Content systems design | 47 | 94% |
-| Enablement & team upskilling | 43 | 86% |
-| AI tooling & automation | 36 | 72% |
-| AI-generated content governance | 25 | 50% |
-| Terminology & language governance | 20 | 40% |
-| Taxonomy & information architecture | 18 | 36% |
-| Technical writing & documentation | 13 | 26% |
-| Localization & internationalization | 9 | 18% |
+| Content systems design | 48 | 94% |
+| Enablement & team upskilling | 44 | 86% |
+| AI tooling & automation | 37 | 73% |
+| AI-generated content governance | 25 | 49% |
+| Terminology & language governance | 21 | 41% |
+| Taxonomy & information architecture | 18 | 35% |
+| Technical writing & documentation | 13 | 25% |
+| Localization & internationalization | 10 | 20% |
 
 ## Skill signals
 
 | | Entries | Share |
 |---|---:|---:|
-| AI fluency expected | 34 | 68% |
-| Governance emphasized | 23 | 46% |
-| Enabler, not bottleneck | 22 | 44% |
-| Central standards function | 15 | 30% |
-| Model behavior design | 13 | 26% |
+| AI fluency expected | 35 | 69% |
+| Governance emphasized | 23 | 45% |
+| Enabler, not bottleneck | 22 | 43% |
+| Central standards function | 15 | 29% |
+| Model behavior design | 13 | 25% |
 | Language as infrastructure | 10 | 20% |
 | Content systems for marketers | 7 | 14% |
 | Accessibility as structural constraint | 6 | 12% |
@@ -47,7 +47,7 @@ Every figure here is counted from `docs/data/jobs.json`. If you quote one in som
 
 ## Compensation
 
-- Stated in **34 of 50** entries (28 USD, 4 GBP, 2 CAD)
+- Stated in **34 of 51** entries (28 USD, 4 GBP, 2 CAD)
 - Full spread: **$62,120** to **$710,000**
 - USD medians: **$132,000** low, **$186,300** high
 - `covers`: 23 base, 9 unstated, 2 total
@@ -74,13 +74,13 @@ Read the n column before quoting any of these. A median over fewer than roughly 
 
 ## Title vocabulary
 
-Words appearing in 3 or more of the 50 stored titles. Counted from `title`, which is stored verbatim — so this reflects what employers wrote, not what the site renders.
+Words appearing in 3 or more of the 51 stored titles. Counted from `title`, which is stored verbatim — so this reflects what employers wrote, not what the site renders.
 
 | Word | Titles | Share |
 |---|---:|---:|
-| Content | 38 | 76% |
-| Designer | 21 | 42% |
-| Senior | 12 | 24% |
+| Content | 39 | 76% |
+| Designer | 22 | 43% |
+| Senior | 13 | 25% |
 | AI | 11 | 22% |
 | Staff | 11 | 22% |
 | Systems | 9 | 18% |
@@ -108,10 +108,11 @@ Words appearing in 3 or more of the 50 stored titles. Counted from `title`, whic
 | Automotive | 1 | GM |
 | Cybersecurity | 1 | Gen Digital |
 | Government | 1 | Government Digital Service |
+| Logistics | 1 | Relay |
 
 ## Stated org placement
 
-Recorded in `jd-source` front matter. **38 of 50** postings say where the role sits; the rest do not, which is itself a fact about the posting.
+Recorded in `jd-source` front matter. **39 of 51** postings say where the role sits; the rest do not, which is itself a fact about the posting.
 
 | Company | Placement as stated |
 |---|---|
@@ -142,6 +143,7 @@ Recorded in `jd-source` front matter. **38 of 50** postings say where the role s
 | Notion | Department: Customer Experience |
 | OpenAI | Product Design |
 | Phase2 | Reports to: Director, Marketing Services |
+| Relay | Design team, Department: Technology |
 | Spotify | Annotation Platform Ops team, within the Content Platform R&D studio |
 | Spotify | Design And User Experience - Experience |
 | The Ride Platform | Not stated as a department; scoped across marketing, partnering with Product Marketing and Demand Generation |
@@ -156,7 +158,7 @@ Recorded in `jd-source` front matter. **38 of 50** postings say where the role s
 
 ## Stated posting dates
 
-**8 of 50** postings state a date. Where both exist, the gap to `dateAdded` varies enough that one is not a proxy for the other.
+**8 of 51** postings state a date. Where both exist, the gap to `dateAdded` varies enough that one is not a proxy for the other.
 
 | Company | Posted | Added |
 |---|---|---|

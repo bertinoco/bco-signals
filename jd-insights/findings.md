@@ -906,6 +906,48 @@ explicitly framing guild/craft-authority leadership as an alternative
 organizational mode to direct management — rather than as a name for a
 cross-team community of practice.*
 
+**Solo content-design hires absorbing an expanding, sometimes atypical
+scope — one instance.** Relay's Senior Content Designer states, as one of
+seven "What you'll do" bullets for a role explicitly billed as "Relay's
+first Content Designer": "Be ready to jump into an incident and support
+with crisis messaging and recovery comms in the event that things go
+wrong." The same posting separately asks the same solo hire to "occasionally
+... take on graphic design and copywriting for high-consequence marketing
+materials such as investor decks, client pitch decks, candidate pitch decks
+and the Relay website." Checked directly against the full `jd-source/`
+corpus: no other entry states crisis or incident messaging as a content
+responsibility — the only other hits for "crisis" or "incident" anywhere in
+the archive are unrelated (DeepMind's "not incidental," dxw's "incidental
+boilerplate," Insurify's fraud-warning "incidents"). This is a genuine first
+instance, not merely a first instance outside conversation-design or
+CX-leaning roles.
+
+Joe's read, recorded as interpretation and not something the JD states or
+the data confirms: this is part of a broader pattern worth tracking in its
+own right, distinct from the "explicit discipline-founding framing" entry
+above (which is about postings stating they are founding a discipline).
+This is about scope — a solo or first content-design hire being asked to
+absorb an expanding and sometimes atypical range of responsibilities (crisis
+comms here, alongside the marketing-collateral spillover in the same
+posting), regardless of whether founding language is present. Whether this
+reflects a real hiring trend or is one company's unusual scope for one role
+is exactly what a second instance would help settle.
+
+One instance, so no key is proposed. *Trigger to revisit: a second posting
+showing a solo or first content-design hire taking on a stated
+responsibility outside the traditional content design brief — crisis or
+incident comms, marketing collateral, or a comparably atypical ask.*
+
+**Personalization as an explicit design responsibility — 1 instance.**
+UnitedHealth Group's Principal Conversational AI Designer lists "Personalization
+in AI Design" as its own named responsibility: "Anticipate user needs and use
+cases using design methods that proactively adapt to individual users over
+time, creating more relevant and meaningful interactions." No other entry in
+the corpus states adaptive, over-time personalization as a stated
+responsibility of the content/conversation design role itself. One instance,
+one domain (Healthcare) — below Step 4's floor. *Trigger to revisit: a second
+instance, ideally in a different domain.*
+
 ---
 
 # What this data cannot support
@@ -946,13 +988,3 @@ excluded postings are archived only when someone happened to submit one.
 retroactively applied to entries audited in May unless someone went back —
 `accessibility-as-constraint` was missing from Phase2 for exactly this reason
 until it was caught. Frequency counts are a floor, not a measurement.
-
-**Personalization as an explicit design responsibility — 1 instance.**
-UnitedHealth Group's Principal Conversational AI Designer lists "Personalization
-in AI Design" as its own named responsibility: "Anticipate user needs and use
-cases using design methods that proactively adapt to individual users over
-time, creating more relevant and meaningful interactions." No other entry in
-the corpus states adaptive, over-time personalization as a stated
-responsibility of the content/conversation design role itself. One instance,
-one domain (Healthcare) — below Step 4's floor. *Trigger to revisit: a second
-instance, ideally in a different domain.*
