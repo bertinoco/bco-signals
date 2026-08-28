@@ -3,7 +3,7 @@
     "title": "BCO Content Skills Tracker",
     "description": "A curated skills tracker for the content design community.",
     "lastUpdated": "2026-08-28",
-    "totalEntries": 51
+    "totalEntries": 52
   },
   "entries": [
     {
@@ -1546,6 +1546,36 @@
       "sourceUrl": null,
       "dateAdded": "2026-08-28",
       "quote": "Establish the conventions, systems, libraries, style guides, tools and AI skills that Relay relies on to ensure consistency of language as we scale and diversify our product experiences."
+    },
+    {
+      "id": "salesforce-experience-design-lead",
+      "company": "Salesforce",
+      "title": "Experience Design Lead",
+      "domain": "SaaS",
+      "engagement": "Full-time",
+      "location": "New York, NY; Atlanta, GA; Seattle, WA; or Indianapolis, IN",
+      "remote": null,
+      "coreFrame": "Setting the design and content quality bar for a team building AI and automation tools for internal Customer Success Managers — contributing UX writing, information architecture, and content direction on product features from early sprint stages through delivery; owning voice, tone, and content standards across Skills copy, product documentation, and field-facing materials; and building lightweight design and content guidelines the team can use. Also named: producing polished decks and communications for field, ops, and leadership audiences, and auditing existing assets against how they're documented or delivered. The posting frames the role as craft rather than strategy.",
+      "clusters": [
+        "content-systems-design",
+        "enablement"
+      ],
+      "signals": [
+        "content-adjacent"
+      ],
+      "compRange": {
+        "min": 172200,
+        "max": 236700,
+        "currency": "USD",
+        "covers": "base",
+        "scope": "New York, NY",
+        "extras": null
+      },
+      "sourceUrl": null,
+      "dateAdded": "2026-08-28",
+      "tag": "content-adjacent",
+      "quote": "Build and maintain lightweight design and content guidelines the team can actually use.",
+      "note": "The posting's job-board metadata files this role under \"Job Category: Program & Project Management,\" a category that matches neither the title nor the described work, which is content-design craft on UX writing, IA, and content standards. `content-adjacent` is assigned because the title (\"Experience Design Lead\") and that job-board category sit outside titles the field recognizes as content design or UX writing, while the body states directly that \"the ideal background here is UX writing or content design\" and the stated responsibilities are content-design craft work — the same pattern as the Spotify Annotation Manager, Meta Product Content Engineer, and Notion CX Knowledge Architect entries. The JD's only AI-tooling line (\"Experience making AI tools or technical products accessible... for non-technical audiences is a major plus\") sits in the preferred-qualifications section, not a stated responsibility, so ai-native-expectation and ai-tooling are not assigned; enabler-not-bottleneck is not assigned either, since the posting states directly \"This isn't a strategy role — it's a craft role. You'll get your hands dirty, ship things fast.\" The role's scope — owning quality for internally-consumed artifacts (decks, Slack messages, prototypes, field-facing materials) rather than product-surface content — is a single instance in the corpus so far and is not reflected in any cluster or signal assignment."
     }
   ],
   "clusters": {

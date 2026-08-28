@@ -948,6 +948,22 @@ responsibility of the content/conversation design role itself. One instance,
 one domain (Healthcare) — below Step 4's floor. *Trigger to revisit: a second
 instance, ideally in a different domain.*
 
+**Craft standard-bearer for internally-consumed artifacts, not product
+surfaces — one instance.** Salesforce's Experience Design Lead scopes the
+role's quality ownership to decks, Slack messages, prototypes, and
+field-facing materials for an internal team (Customer Success Managers), not
+to a product surface end users see: "the design and content standard-bearer
+for our team," covering "a prototype, a field-facing deck, or a Slack message
+that lands," and separately, "Design and produce polished decks and
+communications that represent the team well at all levels — from field CSMs
+to exec stakeholders." The corpus is near-universally about content on a
+product surface; this is the first entry whose stated deliverables are
+internal-audience artifacts throughout, with no product-surface content
+named. One instance, so no key is proposed. *Trigger to revisit: a second
+posting asking a content designer to be the craft standard-bearer for
+internal team artifacts — decks, comms, prototypes — rather than
+product-facing content.*
+
 ---
 
 # What this data cannot support
