@@ -4,14 +4,24 @@ Process a new job description for possible addition to `docs/data/jobs.json`, fo
 
 The JD text should already be in the conversation, pasted by the user, chrome and all. If it isn't there, ask for it before doing anything else.
 
+## Step 0 — Triage depth yourself, before spawning anything
+
+`docs/data/jobs.json`, `jd-insights/findings.md`, and `jd-insights/patterns.md` only grow — every entry added makes the next audit's backcheck more expensive if agents keep re-reading these files in full. You read the JD text before writing the Step A prompt anyway, so make the depth call at that point; don't ask the user to specify it and don't default to maximal depth on every submission.
+
+**Lean shallow** (targeted lookups only — grep for the company name, pull just the taxonomy definitions and the one or two precedent sections actually relevant) when the JD's title and scope look like a clean match to an already-included pattern, or clean generic-exclude territory, and nothing about title/comp/location/org-placement looks unusual on a first read.
+
+**Go deep** (broader precedent reads, full lineage/boundary-test treatment) when: the user flags the JD as interesting, borderline, a stretch, or worth a closer look (always an override, regardless of how the JD reads to you); it's a new company with no precedent; anything about title/comp/currency/location is genuinely ambiguous; or it touches the AI/model-behavior lineage where the corpus's boundary cases live.
+
+Say which way you're leaning in your one-sentence status update before launching Step A, so it's visible rather than a silent internal call. If a "shallow" audit turns out to have a real wrinkle once the agent is in it, that's a cheap, correctable mistake — the agent can escalate its own depth mid-task, or you can re-run deeper. Don't let the fear of under-calibrating push everything back to maximal depth by default.
+
 ## Step A — Eligibility + audit (subagent, foreground)
 
 Spawn a `general-purpose` agent (`run_in_background: false`) with a fully self-contained prompt. It hasn't seen this conversation, so include:
 
 - The complete JD text as submitted, verbatim, including any platform chrome
 - An instruction to follow this repo's `CLAUDE.md` — specifically the "Entry eligibility" section and Steps 1–4 of "Entry audit process" (it will have `CLAUDE.md` loaded automatically as project context; point it at these sections by name rather than re-deriving the rules yourself)
-- An instruction to read `docs/data/jobs.json` for the current `clusters`, `signals`, and `domain` taxonomy, and `jd-source/README.md` for the archive format
-- An instruction to check `docs/data/jobs.json` for any existing entries from the same company, for precedent/consistency
+- An instruction to check for existing entries from the same company by grepping `docs/data/jobs.json` and `jd-source/` for the company name — not reading the full file — and to pull the current `clusters`, `signals`, and `domain` taxonomy from `jobs.json`'s own `clusters`/`signals` definition objects (not by reading all entries). Read `jd-source/README.md` for the archive format.
+- On a **deep** pass: name the specific `jd-insights/findings.md` sections or prior `jd-source/*.md` entries the agent should read for precedent (you already know which boundary cases or prior companies are relevant from your own triage) — don't tell it to read the whole file. On a **shallow** pass: skip findings.md/patterns.md reads unless the audit surfaces something that needs them.
 - An instruction to return *only* a structured report, not raw file dumps: eligibility verdict with reasoning, proposed cluster/signal assignments each with the grounding quote from the JD, any ambiguous calls flagged rather than resolved, any new cluster/signal/domain candidates per Step 4's backcheck bar (flagged, not created), proposed `title` (verbatim, separator noted), `domain`, `location`, `engagement`, `remote`, a proposed `id`, a proposed `compRange` with reasoning for `covers`/`scope`/`extras`, and a proposed `quote`.
 
 The subagent must not write to any files in this step — research and judgment only.
@@ -24,7 +34,7 @@ If the user says the JD should be excluded instead, do not use a subagent for th
 
 ## Step C — Write (subagent, foreground)
 
-Once the user confirms, spawn a second `general-purpose` agent (`run_in_background: false`) to carry out CLAUDE.md Step 6 in full, using the now-confirmed field values from Step B:
+Once the user confirms, spawn a second `general-purpose` agent (`run_in_background: false`) to carry out CLAUDE.md Step 6 in full, using the now-confirmed field values from Step B. Give it the exact schema position to match rather than telling it to read all of `jobs.json` to figure that out — e.g. point it at the single most-recently-added entry as the field-order/formatting template, since that's the only part of the file it needs to see in full.
 
 - Append the entry to `docs/data/jobs.json`, preserving existing field order and formatting
 - Archive the JD verbatim to `jd-source/{id}.md` per `jd-source/README.md`
@@ -33,7 +43,7 @@ Once the user confirms, spawn a second `general-purpose` agent (`run_in_backgrou
 - Update the entry count/date in `docs/llms.txt` (both the dataset-description section and the citation line)
 - Run `python3 jd-insights/refresh.py`
 - Verify the archived `quote` and `title` match the archive verbatim (only the three permitted normalizations), and fail loudly if they don't
-- Check whether `jd-insights/patterns.md` or `jd-insights/findings.md` warrant an update per CLAUDE.md's rules — most entries add nothing; only propose an addition if it clears Step 4's bar (evidence across multiple JDs) or is explicitly a first-instance item for the Watching section
+- Check whether `jd-insights/patterns.md` or `jd-insights/findings.md` warrant an update per CLAUDE.md's rules — most entries add nothing; only propose an addition if it clears Step 4's bar (evidence across multiple JDs) or is explicitly a first-instance item for the Watching section. If Step A already identified a specific existing Watching entry this JD extends, point the write agent at that exact section instead of having it search the whole file.
 - Return a short summary, `git diff --stat`, and anything it flagged for `patterns.md`/`findings.md` — added or just proposed, your call which
 
 ## Step D — Review and ship
