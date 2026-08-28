@@ -3,7 +3,7 @@
 
 # Quotes
 
-Every stored quote, verbatim from the posting. **50 of 51** entries carry one.
+Every stored quote, verbatim from the posting. **51 of 52** entries carry one.
 
 These are the lines that anchor each entry's cluster and signal assignments, so they are the strongest citable evidence in the dataset. Each is checked against its `jd-source` archive before commit.
 
@@ -228,6 +228,12 @@ These are the lines that anchor each entry's cluster and signal assignments, so 
 > Establish the conventions, systems, libraries, style guides, tools and AI skills that Relay relies on to ensure consistency of language as we scale and diversify our product experiences.
 
 `relay-senior-content-designer` · added 2026-08-28
+
+### Salesforce — Experience Design Lead
+
+> Build and maintain lightweight design and content guidelines the team can actually use.
+
+`salesforce-experience-design-lead` · added 2026-08-28
 
 ### Sanna — Content Engineer
 
