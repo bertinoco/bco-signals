@@ -3,7 +3,7 @@
 
 # Quotes
 
-Every stored quote, verbatim from the posting. **49 of 50** entries carry one.
+Every stored quote, verbatim from the posting. **50 of 51** entries carry one.
 
 These are the lines that anchor each entry's cluster and signal assignments, so they are the strongest citable evidence in the dataset. Each is checked against its `jd-source` archive before commit.
 
@@ -222,6 +222,12 @@ These are the lines that anchor each entry's cluster and signal assignments, so 
 > By architecting content for both human users and machine learning systems, this role ensures clients capture opportunities across traditional search, generative engine optimization (GEO), and AI-powered experiences.
 
 `phase2-content-architect` · added 2026-05-24
+
+### Relay — Senior Content Designer
+
+> Establish the conventions, systems, libraries, style guides, tools and AI skills that Relay relies on to ensure consistency of language as we scale and diversify our product experiences.
+
+`relay-senior-content-designer` · added 2026-08-28
 
 ### Sanna — Content Engineer
 

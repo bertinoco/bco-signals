@@ -227,6 +227,7 @@ The `domain` field describes the broad industry or sector the company operates i
 | `Finance` | JPMorgan Chase, Ally, Sanna, Wealthsimple, Chime, Insurify |
 | `Government` | Government Digital Service |
 | `Healthcare` | Atria, UnitedHealth Group |
+| `Logistics` | Relay |
 | `Media` | Netflix, Spotify |
 | `SaaS` | Notion, Zoom, Figma, CoLab |
 

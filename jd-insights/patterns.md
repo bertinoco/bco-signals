@@ -537,3 +537,15 @@ none of this vocabulary is discretionary employer voice — it is externally
 mandated framework language specific to UK central government hiring, and a
 second government posting would be expected to reuse the same named
 instruments rather than inventing its own.
+
+## The hiring process as proof of the pitch
+
+**Relay**'s Senior Content Designer lays out its interview stages under a
+headed "Fast & Focused Hiring Process" — five numbered steps, each timed
+("Hiring Manager interview - 45 mins," "Portfolio review - 1 hour") — and
+closes with "Decision and offer within 48 hours; our process mirrors our
+pace of work, typically completed in a week." The device is self-referential:
+rather than just asserting a fast-paced culture the way most postings do, the
+posting points at its own hiring mechanics as the evidence for the claim. No
+other posting in the corpus times its interview stages or uses the process
+itself this way. One instance.

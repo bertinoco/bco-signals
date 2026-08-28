@@ -2,8 +2,8 @@
   "meta": {
     "title": "BCO Content Skills Tracker",
     "description": "A curated skills tracker for the content design community.",
-    "lastUpdated": "2026-08-26",
-    "totalEntries": 50
+    "lastUpdated": "2026-08-28",
+    "totalEntries": 51
   },
   "entries": [
     {
@@ -1522,6 +1522,30 @@
       "dateAdded": "2026-08-26",
       "quote": "You'll shape the direction of the function through standards, tooling, and craft infrastructure that enables a distributed team to do their best work.",
       "note": "The posting's job-board header titles the role \"Content Design Manager,\" but the body text self-describes it as \"Content Design Lead\" from the opening sentence of the role overview onward, and consistently thereafter — the header title appears once and is never reinforced. The `title` field stores the body's self-description. Separately, the JD states a gross monthly salary range (\"€4.917—€6.650 EUR\"), the first monthly-stated figure in the corpus; every other entry states an annual figure. `compRange` is recorded as null rather than displayed: the schema has no period field, annualizing would assume a bonus or 13th-month structure the JD never states, and recording the bare monthly numbers would misrepresent them as an annual figure to a reader comparing across entries."
+    },
+    {
+      "id": "relay-senior-content-designer",
+      "company": "Relay",
+      "title": "Senior Content Designer",
+      "domain": "Logistics",
+      "engagement": "Full-time",
+      "location": "London",
+      "remote": false,
+      "coreFrame": "End-to-end content strategy and execution across the product, from framing concepts to microcopy, as the company's first Content Designer. Establishing the conventions, systems, libraries, style guides, tools, and AI skills the company relies on for language consistency as it scales, and consulting on content management and translation tooling for multi-language product experience. Also named: user research and experimentation to define user needs and behaviors, jumping into incidents to support crisis messaging and recovery comms, and occasional graphic design and copywriting for marketing materials (investor decks, pitch decks, the company website) as part of the small Design team's shared brand-building work.",
+      "clusters": [
+        "content-systems-design",
+        "localization",
+        "enablement",
+        "ai-tooling",
+        "terminology-governance"
+      ],
+      "signals": [
+        "ai-native-expectation"
+      ],
+      "compRange": null,
+      "sourceUrl": null,
+      "dateAdded": "2026-08-28",
+      "quote": "Establish the conventions, systems, libraries, style guides, tools and AI skills that Relay relies on to ensure consistency of language as we scale and diversify our product experiences."
     }
   ],
   "clusters": {
