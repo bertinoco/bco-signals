@@ -43,6 +43,8 @@ when it is.
 **Note on seniority**
 Level is not a hard gate — seniority varies significantly across companies and the same title can mean different things. Flag (don't auto-exclude) roles where people management is listed but craft responsibilities are still substantive and specific. Push back on roles where management, headcount, or executive stakeholder navigation dominate the stated responsibilities.
 
+Excluding on this ground is not a reason to discard what the JD still shows. When a role fails required criterion 3 specifically (management/headcount/executive-stakeholder navigation dominates) and the posting also contains stated responsibilities that ground cleanly in existing clusters or signals, the `excludedReason` must name exactly which clusters and signals would have applied, with their grounding quotes — not a vague "the signal test would likely have passed." This is not a path to writing the entry to `jobs.json`: the role's title, comp, domain, and location all describe a management job, and admitting it there would misrepresent what was actually audited, however cleanly a few of its sentences map onto the taxonomy. It exists so the archive itself carries the evidence — for `jd-insights/findings.md`'s Watching section to reference later, and so a reader doesn't mistake "excluded" for "nothing here was relevant." DeepMind's Senior Manager, UX Content Design (Gemini) exclusion is the worked example this generalizes from.
+
 **Note on rejected roles**
 A JD that fails these criteria is still worth archiving. Write it to
 `jd-source/{id}.md` with `excluded` and `excludedReason` set, as described in
