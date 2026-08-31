@@ -186,7 +186,20 @@ Signal + implication. State what the data shows, then note what it means for the
 - Projections: don't predict where the market is heading beyond what the data shows
 
 **Reporting vs. editorializing**
-Card descriptions are the one place we editorialize lightly — stating an implication based on evidence. Everywhere else (cluster/signal assignments, JD entries, quotes) stays neutral and reportorial.
+Card descriptions are the one place on most of the site we editorialize lightly — stating an implication based on evidence. The Findings tab's `interpretation` field goes further, under the exception below. Everywhere else (cluster/signal assignments, JD entries, quotes, `dataStatement` in `docs/data/findings.json`) stays neutral and reportorial.
+
+**Findings tab exception**
+`docs/data/findings.json`'s `interpretation` field may state what a finding
+is taken to mean, not just what the data shows — the same license
+`jd-insights/findings.md` already carries (see Insights directory), exposed
+publicly for a curated subset of its entries. This exists because the
+interpretation is what makes a finding worth reading, not just worth
+recording, and readers come to the Findings tab wanting to know what a
+pattern adds up to, not only that it exists.
+
+The `dataStatement` field carries no extra license — it stays as reportorial
+and citable as a card description's first sentence. The exception is
+`interpretation` only.
 
 **Brand copy exception**
 The hero headline and pull-quote in `docs/index.html`, and the opening
@@ -200,7 +213,9 @@ site exempted from the no-projections and no-overpromising rules above.
 Keep this exception narrow. It covers only that headline/pull-quote and
 that pitch — nowhere else. Section intros, card descriptions (beyond the
 light editorializing already permitted above), cluster/signal text, JD
-entries, and quotes all stay reportorial and grounded, no exceptions.
+entries, quotes, and `dataStatement` in `docs/data/findings.json` all stay
+reportorial and grounded. The Findings tab's `interpretation` field is the
+one other exception, scoped separately above — it does not widen this one.
 
 **Loading, empty, and error states**
 See `copy-patterns.md` for the rules and current copy. Strings live in the `COPY`
@@ -615,4 +630,43 @@ that contained:
   not the entry.
 
 Everything else in the repository stays reportorial, including `patterns.md`,
-which describes what postings do without arguing about what it means.
+which describes what postings do without arguing about what it means. The one
+place `findings.md`'s editorializing is deliberately let out onto the public
+site is the Findings tab promotion process below.
+
+### Findings tab promotion process
+
+`docs/data/findings.json` is a small, hand-curated subset of `findings.md`,
+published to the live Findings tab (see the Findings tab exception in Voice
+& copy decisions for what license that field carries). Promoting an entry is
+a separate step from writing it to `findings.md` in the first place — nothing
+moves to the public tab straight from a single JD. A finding has to have
+already cleared `findings.md`'s own bar (Step 4: recurring across multiple
+JDs, not a single instance) before it's even eligible.
+
+**When to review.** Ad hoc — no fixed schedule and no entry-count trigger.
+Either of us can raise it in a session when something in `findings.md`, or a
+fresh audit, looks worth surfacing publicly. Clearing `findings.md`'s bar is
+necessary but not sufficient for promotion — not everything that belongs
+there is written for a general reader or interesting enough to lead with on
+the site.
+
+**Promotion is a joint decision.** Draft the `dataStatement` and
+`interpretation`, then wait for confirmation before writing to
+`findings.json` — the same pattern Step 5 uses for a new cluster or signal
+key.
+
+**Field rules.**
+- `dataStatement` stays reportorial, but carries no counts, fractions, or
+  percentages of the dataset ("15 of 52 roles," "29%") — those assume a
+  fixed denominator, and the corpus keeps growing after a finding is
+  published, so a stated count goes stale the moment the total moves without
+  the claim being re-audited. Ground the claim in specific quotes and named
+  companies instead: what postings actually say, not what share of the
+  dataset says it. A citation to a named company doesn't expire the way a
+  tally does.
+- `interpretation` is the one field the Findings tab exception covers.
+- `companies` lists every company the finding cites, so a reader can check
+  the claim against the archive. The list can grow later if another posting
+  says the same thing — that's an addition, not a correction, since nothing
+  it already claimed becomes false.

@@ -1,8 +1,9 @@
 // Data path for GitHub Pages with `docs/` at repo root
 const DATA_PATH = 'data/jobs.json';
 // Findings are hand-curated and load separately from the dataset proper —
-// see FINDINGS.md's promotion process. A fetch failure here degrades to the
-// empty state rather than blocking the rest of the page (see loadFindings).
+// see CLAUDE.md's Findings tab promotion process. A fetch failure here
+// degrades to the empty state rather than blocking the rest of the page
+// (see loadFindings).
 const FINDINGS_PATH = 'data/findings.json';
 const SIGNAL_THRESHOLD = 2;
 const TITLES_LIMIT = 12;
@@ -164,10 +165,11 @@ async function loadData() {
   }
 }
 
-// Findings are a small, separately-curated file (see FINDINGS.md) — a fetch
-// failure or malformed payload here degrades to the "no findings yet" empty
-// state instead of the offline/network/timeout error treatment loadData
-// uses, since the rest of the page still works without them.
+// Findings are a small, separately-curated file (see CLAUDE.md's Findings
+// tab promotion process) — a fetch failure or malformed payload here
+// degrades to the "no findings yet" empty state instead of the
+// offline/network/timeout error treatment loadData uses, since the rest of
+// the page still works without them.
 async function loadFindings() {
   try {
     const res = await fetch(FINDINGS_PATH);
@@ -554,7 +556,7 @@ function renderSignals(data) {
 // Each finding is deep-linkable (#finding-<id>) — a blog entry, not a scroll
 // position, so it can be shared and cited on its own. Renders every finding,
 // most recent first; no pagination, since a hand-curated list stays short by
-// design (see FINDINGS.md's promotion bar).
+// design (see CLAUDE.md's Findings tab promotion process).
 function renderFindings(data) {
   const list = document.getElementById('finding-list');
   const findings = (data && Array.isArray(data.findings)) ? data.findings : [];
