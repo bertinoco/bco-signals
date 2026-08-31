@@ -1,0 +1,28 @@
+{
+  "findings": [
+    {
+      "id": "central-standards-function",
+      "date": "2026-08-31",
+      "title": "Content standards are being pulled into central functions",
+      "dataStatement": "15 of 52 roles in the dataset — 29% — describe content standards owned by one central or horizontal function, with product teams consuming them rather than setting them. Netflix calls it a “centralized authority” over “a decentralized content design community.” Ally’s Content Architect “sits above channels and formats.” LinkedIn asks for a “single accountable owner.” Adobe draws the line explicitly: the role covers “how terminology, patterns, and guidance are modeled,” not “product-level content decisions or UI copy — that lives with embedded product and domain content teams.”",
+      "interpretation": "This looks like the design-systems teams of a decade ago: a small central group owns the primitives, and product teams consume them. The embedded model isn’t gone — some roles in this dataset still hire directly onto product teams — but for the most senior systems work, it’s no longer the default path.",
+      "companies": ["OpenAI", "JPMorgan Chase", "Meta", "LinkedIn", "Netflix", "Ally Financial", "Adobe", "Gen Digital", "Wix", "Anthropic", "Government Digital Service", "Engrain", "Vinted"]
+    },
+    {
+      "id": "ai-fluency-baseline",
+      "date": "2026-08-31",
+      "title": "AI fluency is a baseline, not a differentiator",
+      "dataStatement": "35 of 52 roles in the dataset — 67% — expect a candidate to already be working with AI tools, not simply curious about them. HelloFresh names the tools directly: “Active usage of AI as a core part of your daily workflow… building rapid interactive prototypes (using tools like Claude Code, Gemini, or Figma AI).” Wealthsimple asks for “shipping your own code changes.” The expectation isn’t limited to AI-native employers — it shows up at a carmaker (GM) and a meal-kit company (HelloFresh) alongside the AI companies you’d expect.",
+      "interpretation": "Two years ago this would have read as a differentiator. Now it reads the way “proficiency in Figma” reads — stated in the qualifications, not floated as a nice-to-have. Whether an employer builds AI products doesn’t predict whether its content team is expected to use it. What predicts it is whether the content function has been handed a systems mandate, which shows up in whether the responsibilities describe building mechanisms or producing pages.",
+      "companies": ["HelloFresh", "Wealthsimple", "GM", "Sanna", "Chime", "Accenture", "The Ride Platform"]
+    },
+    {
+      "id": "compensation-consensus",
+      "date": "2026-08-31",
+      "title": "Nobody agrees what this work is worth",
+      "dataStatement": "Where a range is stated in US dollars, they run from $65,000 (Insurify, for an “Editor, AI Content Systems”) to $710,000 (Netflix, for a “Staff Systems Designer, Language”) — both titles carry the word “Systems.” 35 of 52 roles in the dataset state a compensation range at all.",
+      "interpretation": "An order of magnitude between two roles whose titles would sit side by side in a search result isn’t a seniority gap — it’s an absence of consensus about what the discipline actually is. Titles aren’t yet carrying reliable information about scope, which is a problem for anyone trying to navigate this market by title alone.",
+      "companies": ["Insurify", "Netflix"]
+    }
+  ]
+}

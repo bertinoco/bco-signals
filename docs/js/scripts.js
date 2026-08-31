@@ -1,5 +1,9 @@
 // Data path for GitHub Pages with `docs/` at repo root
 const DATA_PATH = 'data/jobs.json';
+// Findings are hand-curated and load separately from the dataset proper —
+// see FINDINGS.md's promotion process. A fetch failure here degrades to the
+// empty state rather than blocking the rest of the page (see loadFindings).
+const FINDINGS_PATH = 'data/findings.json';
 const SIGNAL_THRESHOLD = 2;
 const TITLES_LIMIT = 12;
 // How long a cluster/signal shows a "New" chip after its earliest carrying
@@ -10,7 +14,7 @@ const TITLES_LIMIT = 12;
 // additions (see CLAUDE.md Step 4).
 const NEW_KEY_WINDOW_DAYS = 30;
 const FETCH_TIMEOUT_MS = 10000;
-const SECTION_CONTAINERS = ['cluster-grid', 'signal-list', 'title-list'];
+const SECTION_CONTAINERS = ['cluster-grid', 'signal-list', 'title-list', 'finding-list'];
 // Symbol only — the ISO code is always shown alongside it (see fmt below),
 // since a bare symbol is ambiguous (USD/CAD/AUD/HKD all use "$"). A currency
 // missing here still renders correctly: no symbol, just the number and code.
@@ -59,6 +63,10 @@ const COPY = {
     titles: {
       title: 'No roles yet',
       body: 'Roles appear here as job descriptions are added to the dataset.',
+    },
+    findings: {
+      title: 'No findings yet',
+      body: 'Findings appear here once a pattern is confirmed across multiple postings.',
     },
   },
   error: {
@@ -153,6 +161,23 @@ async function loadData() {
     return { error: navigator.onLine === false ? 'offline' : 'network' };
   } finally {
     clearTimeout(timer);
+  }
+}
+
+// Findings are a small, separately-curated file (see FINDINGS.md) — a fetch
+// failure or malformed payload here degrades to the "no findings yet" empty
+// state instead of the offline/network/timeout error treatment loadData
+// uses, since the rest of the page still works without them.
+async function loadFindings() {
+  try {
+    const res = await fetch(FINDINGS_PATH);
+    if (!res.ok) return { findings: [] };
+    const data = await res.json();
+    if (!data || !Array.isArray(data.findings)) return { findings: [] };
+    return data;
+  } catch (err) {
+    console.error(err);
+    return { findings: [] };
   }
 }
 
@@ -524,6 +549,61 @@ function renderSignals(data) {
       </div>
     `;
   }).join('');
+}
+
+// Each finding is deep-linkable (#finding-<id>) — a blog entry, not a scroll
+// position, so it can be shared and cited on its own. Renders every finding,
+// most recent first; no pagination, since a hand-curated list stays short by
+// design (see FINDINGS.md's promotion bar).
+function renderFindings(data) {
+  const list = document.getElementById('finding-list');
+  const findings = (data && Array.isArray(data.findings)) ? data.findings : [];
+
+  if (findings.length === 0) {
+    renderState('finding-list', { variant: 'empty', ...COPY.empty.findings });
+    return;
+  }
+
+  const sorted = [...findings].sort((a, b) => new Date(b.date) - new Date(a.date));
+
+  list.innerHTML = sorted.map(f => {
+    const companiesHtml = (f.companies || []).length
+      ? `<ul class="finding-companies">`
+        + f.companies.map(c => `<li>${c}</li>`).join('')
+        + `</ul>`
+      : '';
+    return `
+      <article class="finding" id="finding-${f.id}">
+        <a class="finding-permalink" href="#finding-${f.id}" aria-label="Permalink to this finding">
+          <time datetime="${f.date}">${formatDate(f.date)}</time>
+        </a>
+        <h3 class="finding-title">${f.title}</h3>
+        <p class="finding-data">${f.dataStatement}</p>
+        <div class="finding-take">
+          <p class="finding-take-label">What this means</p>
+          <p>${f.interpretation}</p>
+        </div>
+        ${companiesHtml}
+      </article>
+    `;
+  }).join('');
+}
+
+// A page load carrying #finding-<id> in the URL should land on that entry
+// directly, not on whichever tab is active by default — switches to the
+// Findings tab, scrolls the entry into view, and briefly highlights it so a
+// reader arriving from a shared link can see what they were sent to.
+function openFindingFromHash() {
+  const hash = window.location.hash;
+  if (!hash.startsWith('#finding-')) return;
+  const target = document.querySelector(hash);
+  const findingsBadge = document.getElementById('tab-findings');
+  if (!target || !findingsBadge) return;
+
+  activateBadge(findingsBadge);
+  target.scrollIntoView({ block: 'start' });
+  target.classList.add('is-highlighted');
+  setTimeout(() => target.classList.remove('is-highlighted'), 2000);
 }
 
 // ── Badge nav (click + arrow keys) ──────────────────────────
@@ -1062,6 +1142,11 @@ async function init({ fromRetry = false } = {}) {
   renderClusters(globalData);
   renderTitles(globalData);
   renderSignals(globalData);
+
+  const findingsData = await loadFindings();
+  renderFindings(findingsData);
+  openFindingFromHash();
+
   announce(`Dataset loaded. ${globalData.entries.length} roles.`);
 
   // Retry destroys the button that had focus. Move focus to the panel the

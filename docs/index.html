@@ -30,7 +30,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=86">
+  <link rel="stylesheet" href="css/styles.css?v=87">
 
   <script type="application/ld+json">
   [
@@ -173,6 +173,7 @@
         <button class="badge-btn active" id="tab-signals" role="tab" data-section="signals" aria-selected="true" aria-controls="signals">Emerging patterns</button>
         <button class="badge-btn" id="tab-clusters" role="tab" data-section="clusters" aria-selected="false" aria-controls="clusters">Core responsibilities</button>
         <button class="badge-btn" id="tab-titles" role="tab" data-section="titles" aria-selected="false" aria-controls="titles">All roles</button>
+        <button class="badge-btn" id="tab-findings" role="tab" data-section="findings" aria-selected="false" aria-controls="findings">Findings</button>
         <span class="badge-nav-indicator" aria-hidden="true"></span>
       </nav>
     </div>
@@ -199,6 +200,14 @@
         </div>
         <div id="titles-show-more" style="display:none;">
           <button class="show-more-btn"></button>
+        </div>
+      </section>
+
+      <section class="section" id="findings" role="tabpanel" tabindex="-1" aria-labelledby="tab-findings">
+        <div class="finding-list" id="finding-list">
+          <div class="state state--loading">
+            <p class="state-title">Loading…</p>
+          </div>
         </div>
       </section>
 
@@ -240,6 +249,6 @@
     </span>
   </button>
 
-  <script src="js/scripts.js?v=45"></script>
+  <script src="js/scripts.js?v=46"></script>
 </body>
 </html>

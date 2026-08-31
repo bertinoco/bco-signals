@@ -912,6 +912,120 @@ body {
   outline-offset: 2px;
 }
 
+/* ── Findings ─────────────────────────────────────────────── */
+/* Long-form entries, not cards — reading measure and vertical rhythm follow
+   .title-entry's pattern (border-separated rows, 640px prose width) rather
+   than the flip-card grid, since a finding runs several sentences of prose
+   per section instead of a label and a stat. */
+.finding-list {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.finding {
+  max-width: 640px;
+  padding: var(--space-4) 0;
+  border-bottom: 1px solid hsl(var(--muted));
+  border-radius: var(--radius);
+  transition: background-color 1.2s ease;
+}
+
+.finding:last-child {
+  border-bottom: none;
+}
+
+/* Brief highlight on arrival via a #finding-<id> permalink — see
+   openFindingFromHash in scripts.js. Fades via the transition on .finding
+   itself rather than its own, so removing the class after the timeout
+   animates back to transparent instead of snapping. */
+.finding.is-highlighted {
+  background: hsl(var(--muted));
+}
+
+.finding-permalink {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: var(--font-xs);
+  letter-spacing: var(--tracking-wide);
+  font-variant-numeric: tabular-nums;
+  color: hsl(var(--muted-foreground));
+  text-decoration: none;
+  transition: color var(--duration-fast) ease;
+}
+
+.finding-permalink:hover {
+  color: hsl(var(--foreground));
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.finding-permalink:focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
+}
+
+.finding-title {
+  margin-top: var(--space-1);
+  font-family: var(--font-sans);
+  font-size: var(--font-lg);
+  font-weight: var(--weight-semibold);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-snug);
+  text-wrap: balance;
+  color: hsl(var(--foreground));
+}
+
+.finding-data {
+  margin-top: var(--space-2);
+  line-height: var(--leading-relaxed);
+  color: hsl(var(--foreground));
+}
+
+/* Set apart from the factual statement above it — same device as
+   .title-detail blockquote (left rule, not a filled panel), reused here to
+   mark "this is a read, not a fact" rather than to mark a quotation. */
+.finding-take {
+  margin-top: var(--space-3);
+  padding-left: var(--space-2);
+  border-left: 2px solid hsl(var(--foreground));
+}
+
+.finding-take-label {
+  font-family: var(--font-mono);
+  font-size: var(--font-xs);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: hsl(var(--muted-foreground));
+  margin-bottom: 4px;
+}
+
+.finding-take p {
+  line-height: var(--leading-relaxed);
+  color: hsl(var(--secondary-foreground));
+}
+
+.finding-companies {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: var(--space-3);
+}
+
+.finding-companies li {
+  font-family: var(--font-mono);
+  font-size: var(--font-xs);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: hsl(var(--muted-foreground));
+  background: none;
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius);
+  padding: 4px 8px;
+  line-height: 1.35;
+}
+
 /* ── Emerging Skills & Patterns ───────────────────────────── */
 .signal-list {
   display: grid;
@@ -1491,6 +1605,8 @@ body {
   .title-expand,
   .show-more-btn,
   .state-action,
+  .finding,
+  .finding-permalink,
   .flip-card-front,
   .flip-card-back,
   .flip-card--overlay,
