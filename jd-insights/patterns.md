@@ -549,3 +549,16 @@ rather than just asserting a fast-paced culture the way most postings do, the
 posting points at its own hiring mechanics as the evidence for the claim. No
 other posting in the corpus times its interview stages or uses the process
 itself this way. One instance.
+
+**Lovable**'s Content Designer (Contract) posting — held as an excluded
+record — makes a related but distinct move: instead of timing its process,
+it defines its evaluation criteria around shipped, verifiable work rather
+than a general portfolio. It asks for "real in-product examples" and "real
+web examples" specifically, adding "Tell us what changed as a result" to
+each, and its "How we hire" section states "Send us two pieces of work:
+ideally one from inside a product and one from the web" and "In some cases,
+we may opt to do paid, trial work." Where Relay's process demonstrates
+speed, Lovable's demonstrates a preference for builders with outcomes
+already in the wild over credentials or a portfolio alone — consistent with
+the posting's own stated culture ("extreme ownership, high velocity"). One
+instance.
