@@ -3,7 +3,7 @@
 
 # Quotes
 
-Every stored quote, verbatim from the posting. **52 of 53** entries carry one.
+Every stored quote, verbatim from the posting. **53 of 54** entries carry one.
 
 These are the lines that anchor each entry's cluster and signal assignments, so they are the strongest citable evidence in the dataset. Each is checked against its `jd-source` archive before commit.
 
@@ -156,6 +156,12 @@ These are the lines that anchor each entry's cluster and signal assignments, so 
 > Active usage of AI as a core part of your daily workflow includes synthesizing user insights, accelerating discovery, building rapid interactive prototypes (using tools like Claude Code, Gemini, or Figma AI), and closing the gap between design and implementation.
 
 `hellofresh-staff-ai-content-designer` · added 2026-07-29
+
+### HoneyBook — AI Content Program Manager, Chatbot
+
+> You'll set the direction for how our chatbot resolves member issues, from what it should be able to handle to how content gets structured so it can act on it, and you'll build the Help Center content and Support documentation that equip Support Specialists with clear, dependable guidance across every channel.
+
+`honeybook-ai-content-program-manager-chatbot` · added 2026-09-02
 
 ### Insurify — Editor, AI Content Systems
 
