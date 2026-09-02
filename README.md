@@ -50,7 +50,7 @@ it uses — HSL channel triplets, and a surface/`-foreground` pairing so every
 ground carries its own text color — originates with
 [shadcn/ui](https://ui.shadcn.com) (MIT). Every text token clears WCAG AA on its own ground.
 
-Brand identity by [Sällsam Studio]([https://ui.shadcn.com](https://www.sallsam.com/)
+Brand identity by [Sällsam Studio](https://www.sallsam.com/).
 
 ---
 
