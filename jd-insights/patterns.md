@@ -103,6 +103,19 @@ products" — appears verbatim in the Search posting too. When one employer has
 several entries, check whether a candidate quote is role-specific before using
 it as evidence.
 
+Booking.com does the same thing. Its UX Writer II postings for req 30157
+(Organic Marketing, excluded) and req 29710 (Growth Marketing) share an
+identical opening "Role Description" paragraph, an identical "You'd be
+embedded across multiple product teams…" paragraph, identical mission and
+org-description paragraphs, and near-identical Responsibilities and
+Qualifications bullet lists — only the team-specific opening line ("Organic
+Marketing: …" versus "Growth Marketing: …") differs. Same consequence as
+Google: the quote grounding the Growth Marketing entry's clusters and signals
+("From AI-driven creative ads and ad-hoc campaigns to subscription management
+with legal nuances, the topics you own require experience with LLMs and
+attention to detail.") sits inside that one team-specific line precisely
+because the shared boilerplate carries no role-specific signal to quote.
+
 ## Requisition numbers are not titles
 
 Apple has posted at least two distinct requisitions titled "UX Writer, Systems"
