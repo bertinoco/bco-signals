@@ -938,15 +938,27 @@ showing a solo or first content-design hire taking on a stated
 responsibility outside the traditional content design brief — crisis or
 incident comms, marketing collateral, or a comparably atypical ask.*
 
-**Personalization as an explicit design responsibility — 1 instance.**
-UnitedHealth Group's Principal Conversational AI Designer lists "Personalization
-in AI Design" as its own named responsibility: "Anticipate user needs and use
-cases using design methods that proactively adapt to individual users over
-time, creating more relevant and meaningful interactions." No other entry in
-the corpus states adaptive, over-time personalization as a stated
-responsibility of the content/conversation design role itself. One instance,
-one domain (Healthcare) — below Step 4's floor. *Trigger to revisit: a second
-instance, ideally in a different domain.*
+**Personalization as an explicit design responsibility — 1 included instance,
+1 cross-domain excluded sighting.** UnitedHealth Group's Principal
+Conversational AI Designer lists "Personalization in AI Design" as its own
+named responsibility: "Anticipate user needs and use cases using design
+methods that proactively adapt to individual users over time, creating more
+relevant and meaningful interactions." No other *included* entry in the
+corpus states adaptive, over-time personalization as a stated responsibility
+of the content/conversation design role itself. One instance, one domain
+(Healthcare) — below Step 4's floor for a jobs.json-grounded key.
+
+Pinterest's Content Designer II, Personalization — excluded (only one cluster,
+`content-systems-design`, grounded; nothing written to jobs.json) — is a
+second, cross-domain sighting of the same framing: a role and team built
+entirely around adaptive personalization, tasked to "explain why people are
+seeing content and how they can shape their experience." Recorded here
+because it satisfies this note's own trigger ("a second instance, ideally in
+a different domain") on text alone, even though the posting carries no
+jobs.json entry to ground an assignment from — the same limitation noted for
+eDreams' human-in-the-loop instance. *Trigger to revisit: a third instance,
+this one grounded in an included entry, which would clear Step 4's floor for
+real.*
 
 **Craft standard-bearer for internally-consumed artifacts, not product
 surfaces — one instance.** Salesforce's Experience Design Lead scopes the
