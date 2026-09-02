@@ -3,7 +3,7 @@
     "title": "BCO Content Skills Tracker",
     "description": "A curated skills tracker for the content design community.",
     "lastUpdated": "2026-09-02",
-    "totalEntries": 53
+    "totalEntries": 54
   },
   "entries": [
     {
@@ -1598,6 +1598,37 @@
       "sourceUrl": null,
       "dateAdded": "2026-09-02",
       "quote": "From AI-driven creative ads and ad-hoc campaigns to subscription management with legal nuances, the topics you own require experience with LLMs and attention to detail."
+    },
+    {
+      "id": "honeybook-ai-content-program-manager-chatbot",
+      "company": "HoneyBook",
+      "title": "AI Content Program Manager, Chatbot",
+      "domain": "SaaS",
+      "engagement": "Full-time",
+      "location": "San Francisco, CA | New York City, NY",
+      "remote": "hybrid",
+      "coreFrame": "Owns strategy and execution of HoneyBook's support chatbot on the Knowledge & Instructional Content team, building and maintaining Help Center content and internal Support documentation structured for both human and AI-assisted resolution. Uses Claude Code to build and maintain the data connectors that power the chatbot, and evaluates and rolls out AI tools and workflows for the team.",
+      "clusters": [
+        "content-systems-design",
+        "ai-tooling",
+        "technical-writing",
+        "enablement"
+      ],
+      "signals": [
+        "ai-native-expectation",
+        "agent-retrieval"
+      ],
+      "compRange": {
+        "min": 140000,
+        "max": 158000,
+        "currency": "USD",
+        "covers": "base",
+        "scope": null,
+        "extras": "equity"
+      },
+      "sourceUrl": null,
+      "dateAdded": "2026-09-02",
+      "quote": "You'll set the direction for how our chatbot resolves member issues, from what it should be able to handle to how content gets structured so it can act on it, and you'll build the Help Center content and Support documentation that equip Support Specialists with clear, dependable guidance across every channel."
     }
   ],
   "clusters": {

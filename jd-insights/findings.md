@@ -1035,6 +1035,37 @@ instance, or one specific enough to describe how the restriction is
 enforced (an interview format change, a live verification step) rather than
 a general conduct warning.*
 
+**"Program Manager" as a title for content-discipline work — 1 instance.**
+HoneyBook's AI Content Program Manager, Chatbot is the first entry in the
+corpus whose own title carries "Program Manager" rather than Designer,
+Writer, Strategist, Architect, or Engineer, while the stated responsibilities
+are still primarily content authorship and strategy (Help Center content,
+technical documentation, AI resolution content strategy). Confirmed
+independently that no other entry's title carries this — the corpus's only
+prior "program manager" hits are incidental stakeholder mentions in other
+postings, not a role's own title. Distinct from the management-titles this
+dataset otherwise excludes on (DeepMind, eDreams): the JD states no direct
+reports, headcount, or budget ownership anywhere — "own" throughout refers to
+a program or system, not people. One instance, one domain (SaaS) — below
+Step 4's floor. *Trigger to revisit: a second content-discipline role titled
+"Program Manager" or a comparable ops-flavored title, ideally in a different
+domain.*
+
+**A content role with data-connector/backend maintenance as a stated,
+recurring responsibility — 1 instance.** HoneyBook's posting states "use
+Claude Code to build and maintain the data connectors" that power its
+support chatbot, and separately asks for comfort "owning the technical side
+of chatbot configuration, not just the content that feeds it." This is
+qualitatively different from the corpus's three other Claude Code mentions:
+HelloFresh uses it for rapid interactive prototyping, Fin's mention is a
+perks-line benefit in an excluded posting, and a Meta Taxonomist entry uses
+it for metadata capture. None of those three treat the tool as a means of
+maintaining live backend integrations as an ongoing job function. One
+instance, one domain (SaaS) — below Step 4's floor. *Trigger to revisit: a
+second posting where a content role owns data-pipeline or connector
+maintenance as a stated, recurring responsibility rather than a one-off
+prototyping or metadata task.*
+
 ---
 
 # What this data cannot support
