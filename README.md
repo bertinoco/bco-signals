@@ -47,10 +47,10 @@ Each entry in `jobs.json` includes:
 The site runs an achromatic palette, informed by **[Midday](https://midday.ai)**
 ([midday-ai/midday](https://github.com/midday-ai/midday), AGPL-3.0). The naming convention
 it uses — HSL channel triplets, and a surface/`-foreground` pairing so every
-ground carries its own text colour — originates with
-[shadcn/ui](https://ui.shadcn.com) (MIT).
+ground carries its own text color — originates with
+[shadcn/ui](https://ui.shadcn.com) (MIT). Every text token clears WCAG AA on its own ground.
 
-Every text token clears WCAG AA on its own ground.
+Brand identity by [Sällsam Studio]([https://ui.shadcn.com](https://www.sallsam.com/)
 
 ---
 
