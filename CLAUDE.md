@@ -186,20 +186,23 @@ Signal + implication. State what the data shows, then note what it means for the
 - Projections: don't predict where the market is heading beyond what the data shows
 
 **Reporting vs. editorializing**
-Card descriptions are the one place on most of the site we editorialize lightly — stating an implication based on evidence. The Findings tab's `interpretation` field goes further, under the exception below. Everywhere else (cluster/signal assignments, JD entries, quotes, `dataStatement` in `docs/data/findings.json`) stays neutral and reportorial.
+Card descriptions are the one place on most of the site we editorialize lightly — stating an implication based on evidence. The Findings tab's `interpretation` field, rendered under the label "My take," goes considerably further, under the exception below. Everywhere else (cluster/signal assignments, JD entries, quotes, `dataStatement` in `docs/data/findings.json`) stays neutral and reportorial.
 
 **Findings tab exception**
-`docs/data/findings.json`'s `interpretation` field may state what a finding
-is taken to mean, not just what the data shows — the same license
-`jd-insights/findings.md` already carries (see Insights directory), exposed
-publicly for a curated subset of its entries. This exists because the
-interpretation is what makes a finding worth reading, not just worth
-recording, and readers come to the Findings tab wanting to know what a
-pattern adds up to, not only that it exists.
+`docs/data/findings.json`'s `interpretation` field is rendered on the site
+under the label "My take" — explicitly marked as Joe's personal reaction,
+not a claim the dataset backs number-for-number. Like the Brand copy
+exception below, it may state an industry-level view, draw on experience
+outside this dataset, and go beyond what the cited postings alone prove —
+the no-projections and no-overpromising rules don't apply to it. This is a
+deliberate requirement, not just a nice-to-have: the point of "My take" is
+a personal, experience-informed reaction, and that requires room to draw on
+things the dataset itself can't cite.
 
 The `dataStatement` field carries no extra license — it stays as reportorial
-and citable as a card description's first sentence. The exception is
-`interpretation` only.
+and citable as a card description's first sentence, exactly as before. The
+label "My take" is what keeps the two apart for the reader: everything
+above it is what the postings say, everything under it is Joe's own.
 
 **Brand copy exception**
 The hero headline and pull-quote in `docs/index.html`, and the opening
@@ -207,15 +210,14 @@ pitch in `README.md`, are brand assets, not data reporting — the argument
 for why the dataset exists, not a claim the dataset backs number-for-number.
 They may state an industry-level trend and be more overtly persuasive than
 anything else on the site, including projections and claims broader than
-what a single dataset can prove on its own. This is the only copy on the
-site exempted from the no-projections and no-overpromising rules above.
+what a single dataset can prove on its own.
 
 Keep this exception narrow. It covers only that headline/pull-quote and
 that pitch — nowhere else. Section intros, card descriptions (beyond the
 light editorializing already permitted above), cluster/signal text, JD
 entries, quotes, and `dataStatement` in `docs/data/findings.json` all stay
-reportorial and grounded. The Findings tab's `interpretation` field is the
-one other exception, scoped separately above — it does not widen this one.
+reportorial and grounded, no exceptions besides the two named above (Brand
+copy and the Findings tab's "My take").
 
 **Loading, empty, and error states**
 See `copy-patterns.md` for the rules and current copy. Strings live in the `COPY`
@@ -665,7 +667,9 @@ key.
   companies instead: what postings actually say, not what share of the
   dataset says it. A citation to a named company doesn't expire the way a
   tally does.
-- `interpretation` is the one field the Findings tab exception covers.
+- `interpretation` ("My take") is the one field the Findings tab exception
+  covers — personal, experience-informed, not required to cite back to the
+  dataset the way `dataStatement` does.
 - `companies` lists every company the finding cites, so a reader can check
   the claim against the archive. The list can grow later if another posting
   says the same thing — that's an addition, not a correction, since nothing

@@ -1023,6 +1023,21 @@ instance, or one specific enough to describe how the restriction is
 enforced (an interview format change, a live verification step) rather than
 a general conduct warning.*
 
+**No EU-jurisdiction posting states a compensation range — 0 instances.**
+Checked while strengthening "Nobody agrees what this work is worth" for the
+Findings tab: the corpus's actual EU-jurisdiction postings — Evinova
+(Barcelona, Spain), Vinted (Vilnius or Kaunas, Lithuania), and Spotify's
+Stockholm option — all state `compRange: null`. The postings currently
+backing that finding's base-vs-total and extras comparison (Airbnb, Wise,
+Government Digital Service) are UK, and the UK is not bound by EU law post-
+Brexit; Canada's HelloFresh and Intercept obviously aren't either. So there
+is no instance in the corpus yet of an EU directive's effect on range
+disclosure, in either direction. *Trigger to revisit: an EU-jurisdiction
+posting states a compensation range, or explicitly references pay
+transparency law — either would be the first evidence of the EU Pay
+Transparency Directive (2023/970, transposition deadline June 2026) showing
+up in a posting.*
+
 ---
 
 # What this data cannot support

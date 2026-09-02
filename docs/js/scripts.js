@@ -582,7 +582,7 @@ function renderFindings(data) {
         <h3 class="finding-title">${f.title}</h3>
         <p class="finding-data">${f.dataStatement}</p>
         <div class="finding-take">
-          <p class="finding-take-label">What this means</p>
+          <p class="finding-take-label">My take</p>
           <p>${f.interpretation}</p>
         </div>
         ${companiesHtml}
