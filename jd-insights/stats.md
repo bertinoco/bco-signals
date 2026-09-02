@@ -3,42 +3,42 @@
 
 # Stats
 
-Dataset state: **52 entries**, `meta.lastUpdated` 2026-08-28. Generated 2026-08-28.
+Dataset state: **53 entries**, `meta.lastUpdated` 2026-09-02. Generated 2026-09-02.
 
 Every figure here is counted from `docs/data/jobs.json`. If you quote one in something published, quote the entry count with it — these move.
 
 ## Headline
 
-- **52** entries across **46** companies and **11** domains
-- Date range: 2026-05-24 to 2026-08-28
+- **53** entries across **47** companies and **12** domains
+- Date range: 2026-05-24 to 2026-09-02
 
 ## Responsibility clusters
 
 | | Entries | Share |
 |---|---:|---:|
-| Content systems design | 49 | 94% |
-| Enablement & team upskilling | 45 | 87% |
-| AI tooling & automation | 37 | 71% |
-| AI-generated content governance | 25 | 48% |
+| Content systems design | 49 | 92% |
+| Enablement & team upskilling | 45 | 85% |
+| AI tooling & automation | 38 | 72% |
+| AI-generated content governance | 25 | 47% |
 | Terminology & language governance | 21 | 40% |
-| Taxonomy & information architecture | 18 | 35% |
+| Taxonomy & information architecture | 18 | 34% |
 | Technical writing & documentation | 13 | 25% |
-| Localization & internationalization | 10 | 19% |
+| Localization & internationalization | 11 | 21% |
 
 ## Skill signals
 
 | | Entries | Share |
 |---|---:|---:|
-| AI fluency expected | 35 | 67% |
-| Governance emphasized | 23 | 44% |
+| AI fluency expected | 36 | 68% |
+| Governance emphasized | 23 | 43% |
 | Enabler, not bottleneck | 22 | 42% |
-| Central standards function | 15 | 29% |
+| Central standards function | 15 | 28% |
 | Model behavior design | 13 | 25% |
 | Language as infrastructure | 10 | 19% |
-| Content systems for marketers | 7 | 13% |
-| Accessibility as structural constraint | 6 | 12% |
-| GEO & SEO | 5 | 10% |
-| Structured data | 5 | 10% |
+| Content systems for marketers | 8 | 15% |
+| Accessibility as structural constraint | 6 | 11% |
+| GEO & SEO | 5 | 9% |
+| Structured data | 5 | 9% |
 | Content work under new titles | 4 | 8% |
 | Structured for agent retrieval | 3 | 6% |
 | Work outpaces the title | 2 | 4% |
@@ -47,7 +47,7 @@ Every figure here is counted from `docs/data/jobs.json`. If you quote one in som
 
 ## Compensation
 
-- Stated in **35 of 52** entries (29 USD, 4 GBP, 2 CAD)
+- Stated in **35 of 53** entries (29 USD, 4 GBP, 2 CAD)
 - Full spread: **$62,120** to **$710,000**
 - USD medians: **$133,000** low, **$186,400** high
 - `covers`: 24 base, 9 unstated, 2 total
@@ -75,22 +75,22 @@ Read the n column before quoting any of these. A median over fewer than roughly 
 
 ## Title vocabulary
 
-Words appearing in 3 or more of the 52 stored titles. Counted from `title`, which is stored verbatim — so this reflects what employers wrote, not what the site renders.
+Words appearing in 3 or more of the 53 stored titles. Counted from `title`, which is stored verbatim — so this reflects what employers wrote, not what the site renders.
 
 | Word | Titles | Share |
 |---|---:|---:|
-| Content | 39 | 75% |
+| Content | 39 | 74% |
 | Designer | 22 | 42% |
 | Senior | 13 | 25% |
 | AI | 11 | 21% |
 | Staff | 11 | 21% |
+| UX | 10 | 19% |
 | Systems | 9 | 17% |
-| UX | 9 | 17% |
 | Architect | 7 | 13% |
+| Writer | 7 | 13% |
 | Strategist | 7 | 13% |
-| Writer | 6 | 12% |
-| Design | 6 | 12% |
-| Lead | 5 | 10% |
+| Design | 6 | 11% |
+| Lead | 5 | 9% |
 | Engineer | 4 | 8% |
 | Conversation | 4 | 8% |
 | Language | 3 | 6% |
@@ -110,10 +110,11 @@ Words appearing in 3 or more of the 52 stored titles. Counted from `title`, whic
 | Cybersecurity | 1 | Gen Digital |
 | Government | 1 | Government Digital Service |
 | Logistics | 1 | Relay |
+| Travel | 1 | Booking.com |
 
 ## Stated org placement
 
-Recorded in `jd-source` front matter. **40 of 52** postings say where the role sits; the rest do not, which is itself a fact about the posting.
+Recorded in `jd-source` front matter. **41 of 53** postings say where the role sits; the rest do not, which is itself a fact about the posting.
 
 | Company | Placement as stated |
 |---|---|
@@ -123,6 +124,7 @@ Recorded in `jd-source` front matter. **40 of 52** postings say where the role s
 | Ally Financial | Career area: Marketing; the role "sits above channels and formats", acting as a connective engine between editorial, UX, data, PR and SEO/GEO teams |
 | Amazon | Amazon's Customer Service (CS) UX (CS-UX) Word and Voice Design team; part of the bigger Customer Service UX Studio |
 | Apple | Product, Design & Marketing team on Apple Services; HI Writing discipline |
+| Booking.com | UX Writing and Content Design organisation, within the Marketing department |
 | Capital One | Category: Design |
 | Chime | Not stated as a department; framed within Chime's member support organization |
 | CoLab | Not stated as a department; the role works closely with the CMO |
@@ -160,7 +162,7 @@ Recorded in `jd-source` front matter. **40 of 52** postings say where the role s
 
 ## Stated posting dates
 
-**8 of 52** postings state a date. Where both exist, the gap to `dateAdded` varies enough that one is not a proxy for the other.
+**8 of 53** postings state a date. Where both exist, the gap to `dateAdded` varies enough that one is not a proxy for the other.
 
 | Company | Posted | Added |
 |---|---|---|

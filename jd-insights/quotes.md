@@ -3,7 +3,7 @@
 
 # Quotes
 
-Every stored quote, verbatim from the posting. **51 of 52** entries carry one.
+Every stored quote, verbatim from the posting. **52 of 53** entries carry one.
 
 These are the lines that anchor each entry's cluster and signal assignments, so they are the strongest citable evidence in the dataset. Each is checked against its `jd-source` archive before commit.
 
@@ -60,6 +60,12 @@ These are the lines that anchor each entry's cluster and signal assignments, so 
 > You can take a content-led feature from problem to shipped without a product designer. That means designing it in Figma, or building it with agentic tools, to a standard we'd actually ship.
 
 `bolt-staff-content-designer` · added 2026-08-21
+
+### Booking.com — UX Writer II - Growth Marketing - Marketplace
+
+> From AI-driven creative ads and ad-hoc campaigns to subscription management with legal nuances, the topics you own require experience with LLMs and attention to detail.
+
+`booking-ux-writer-growth-marketing` · added 2026-09-02
 
 ### Capital One — Senior Manager Content Designer (Individual Contributor)
 

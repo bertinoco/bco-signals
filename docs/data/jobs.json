@@ -2,8 +2,8 @@
   "meta": {
     "title": "BCO Content Skills Tracker",
     "description": "A curated skills tracker for the content design community.",
-    "lastUpdated": "2026-08-28",
-    "totalEntries": 52
+    "lastUpdated": "2026-09-02",
+    "totalEntries": 53
   },
   "entries": [
     {
@@ -1576,6 +1576,28 @@
       "tag": "content-adjacent",
       "quote": "The ideal background here is UX writing or content design — someone who's sat on a product team, worked in sprint cycles, and knows how to translate complex product thinking into clear, useful language.",
       "note": "The posting's job-board metadata files this role under \"Job Category: Program & Project Management,\" a category that matches neither the title nor the described work, which is content-design craft on UX writing, IA, and content standards. `content-adjacent` is assigned because the title (\"Experience Design Lead\") and that job-board category sit outside titles the field recognizes as content design or UX writing, while the body states directly that \"the ideal background here is UX writing or content design\" and the stated responsibilities are content-design craft work — the same pattern as the Spotify Annotation Manager, Meta Product Content Engineer, and Notion CX Knowledge Architect entries. The JD's only AI-tooling line (\"Experience making AI tools or technical products accessible... for non-technical audiences is a major plus\") sits in the preferred-qualifications section, not a stated responsibility, so ai-native-expectation and ai-tooling are not assigned; enabler-not-bottleneck is not assigned either, since the posting states directly \"This isn't a strategy role — it's a craft role. You'll get your hands dirty, ship things fast.\" The role's scope — owning quality for internally-consumed artifacts (decks, Slack messages, prototypes, field-facing materials) rather than product-surface content — is a single instance in the corpus so far and is not reflected in any cluster or signal assignment."
+    },
+    {
+      "id": "booking-ux-writer-growth-marketing",
+      "company": "Booking.com",
+      "title": "UX Writer II - Growth Marketing - Marketplace",
+      "domain": "Travel",
+      "engagement": "Not specified",
+      "location": "Amsterdam, Netherlands",
+      "remote": null,
+      "coreFrame": "Writing UX copy embedded in Booking.com's Growth Marketing team, covering AI-driven creative ads, ad-hoc campaigns, and subscription management copy with legal nuances for travelers. The role sends copy to in-house Language Specialists for translation into 44+ languages and dialects, collaborates with product managers, marketing specialists, and UX designers across multiple product teams, and uses qualitative and quantitative data to measure impact and inform iterations.",
+      "clusters": [
+        "localization",
+        "ai-tooling"
+      ],
+      "signals": [
+        "ai-native-expectation",
+        "content-marketing-adjacent"
+      ],
+      "compRange": null,
+      "sourceUrl": null,
+      "dateAdded": "2026-09-02",
+      "quote": "From AI-driven creative ads and ad-hoc campaigns to subscription management with legal nuances, the topics you own require experience with LLMs and attention to detail."
     }
   ],
   "clusters": {

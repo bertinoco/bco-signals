@@ -232,6 +232,7 @@ The `domain` field describes the broad industry or sector the company operates i
 | `Logistics` | Relay |
 | `Media` | Netflix, Spotify |
 | `SaaS` | Notion, Zoom, Figma, CoLab |
+| `Travel` | Booking.com |
 
 If a new company doesn't fit any existing value, propose the new domain before writing the entry. New domains should be broad enough to accommodate at least two companies.
 
