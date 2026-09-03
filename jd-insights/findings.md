@@ -1066,6 +1066,28 @@ second posting where a content role owns data-pipeline or connector
 maintenance as a stated, recurring responsibility rather than a one-off
 prototyping or metadata task.*
 
+**Scope-elasticity disclaimer ("responsibilities may not be exhaustive") — one
+instance.** Base's Member Experience Operations, Content Strategy posting
+(excluded — content strategy is one of several co-equal disciplines the
+role's own text names, not the primary one) states: "Please note: Base is a
+startup, which means priorities shift and evolve quickly. Your role may
+expand or change based on the needs of the business at any given time, so
+the responsibilities listed may not be exhaustive."
+
+Joe's read, recorded as interpretation and not something the JD states or the
+data confirms: this reads as employer overreach — a pre-emptive disclaimer
+reserving the right to expand the role's scope indefinitely, with no
+corresponding commitment (comp, title, level) tied to that expansion. The
+posting supports the observation that the disclaimer exists and is stated
+this explicitly; it does not state that scope will expand without additional
+compensation or recognition, and that inference is Joe's, not a finding this
+dataset can independently support.
+
+One instance, so no key is proposed, and the posting is excluded so it
+carries no jobs.json entry regardless. *Trigger to revisit: a second instance
+of comparable scope-elasticity/catch-all-responsibilities disclaimer
+language, ideally in an included entry.*
+
 ---
 
 # What this data cannot support
