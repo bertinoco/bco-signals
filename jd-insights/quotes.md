@@ -3,7 +3,7 @@
 
 # Quotes
 
-Every stored quote, verbatim from the posting. **53 of 54** entries carry one.
+Every stored quote, verbatim from the posting. **54 of 55** entries carry one.
 
 These are the lines that anchor each entry's cluster and signal assignments, so they are the strongest citable evidence in the dataset. Each is checked against its `jd-source` archive before commit.
 
@@ -78,6 +78,12 @@ These are the lines that anchor each entry's cluster and signal assignments, so 
 > Partner with our Insights and Data teams to review and build additional dashboards and tooling to establish more automated governance mechanisms.
 
 `chime-senior-content-strategist` · added 2026-07-29
+
+### Citizens — Content Architect Manager
+
+> Define structured data standards, including schema.org and JSON-LD where appropriate, so content is discoverable, retrievable, and reusable by search engines, answer engines, LLMs, and internal systems.
+
+`citizens-content-architect-manager` · added 2026-09-04
 
 ### CoLab — Content Systems Architect
 
