@@ -1088,6 +1088,27 @@ carries no jobs.json entry regardless. *Trigger to revisit: a second instance
 of comparable scope-elasticity/catch-all-responsibilities disclaimer
 language, ideally in an included entry.*
 
+**Department-level "Marketing" label wider than the stated reporting
+line — one instance.** Citizens' Content Architect Manager is filed under a
+department called "Marketing, Digital Experience, and Communications," which
+on its own would read as a sixth instance of the "Content roles are appearing
+outside design orgs" finding's marketing-sited group (CoLab, Insurify, Ride
+Platform, Ally, Meta). But the posting also names a specific reporting line
+and team one level in — reports to the Head of Web Experience, sits on the
+Digital Content Experience Strategy team — and neither is marketing or
+editorial work. `content-marketing-adjacent` was not assigned: the more
+specific, more concrete placement the posting itself states overrides the
+broader department bucket above it, per Step 2's rule to ground assignments in
+what the JD states rather than the widest label available. This is a
+different shape from the five existing marketing-sited entries, where the
+stated placement (not just the department name) is the marketing or editorial
+function the systems work sits inside. One instance, one domain (Finance) —
+below Step 4's floor, and not a candidate key regardless since this is a
+placement-reading question, not a cluster or signal. *Trigger to revisit: a
+second posting where a department-level label names marketing but a more
+specific stated reporting line or team clearly does not — worth revisiting as
+a note on how to read `orgPlacement` rather than as a taxonomy key.*
+
 ---
 
 # What this data cannot support

@@ -2,8 +2,8 @@
   "meta": {
     "title": "BCO Content Skills Tracker",
     "description": "A curated skills tracker for the content design community.",
-    "lastUpdated": "2026-09-02",
-    "totalEntries": 54
+    "lastUpdated": "2026-09-04",
+    "totalEntries": 55
   },
   "entries": [
     {
@@ -1629,6 +1629,40 @@
       "sourceUrl": null,
       "dateAdded": "2026-09-02",
       "quote": "You'll set the direction for how our chatbot resolves member issues, from what it should be able to handle to how content gets structured so it can act on it, and you'll build the Help Center content and Support documentation that equip Support Specialists with clear, dependable guidance across every channel."
+    },
+    {
+      "id": "citizens-content-architect-manager",
+      "company": "Citizens",
+      "title": "Content Architect Manager",
+      "domain": "Finance",
+      "engagement": "Full-time",
+      "location": "Boston, MA; New York, NY; Johnston, RI; or Westwood, MA",
+      "remote": "hybrid",
+      "coreFrame": "Defines and evolves Citizens' enterprise content model — types, fields, relationships, and metadata for entities like products, rates, disclosures, and offers — so content is structured independent of presentation and reusable across web, mobile, and AI-driven experiences. Sets structured data standards for discoverability by search and answer engines and LLMs, owns the governance process for content model changes, and partners with CMS, API, engineering, and design-system teams on delivery.",
+      "clusters": [
+        "content-systems-design",
+        "taxonomy",
+        "enablement",
+        "technical-writing"
+      ],
+      "signals": [
+        "structured-data",
+        "governance-as-value-prop",
+        "central-standards-function",
+        "agent-retrieval",
+        "geo-seo"
+      ],
+      "compRange": {
+        "min": 110000,
+        "max": 130000,
+        "currency": "USD",
+        "covers": "base",
+        "scope": null,
+        "extras": "annual discretionary bonus"
+      },
+      "sourceUrl": null,
+      "dateAdded": "2026-09-04",
+      "quote": "Define structured data standards, including schema.org and JSON-LD where appropriate, so content is discoverable, retrievable, and reusable by search engines, answer engines, LLMs, and internal systems."
     }
   ],
   "clusters": {
