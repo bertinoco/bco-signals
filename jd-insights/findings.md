@@ -1109,6 +1109,68 @@ second posting where a department-level label names marketing but a more
 specific stated reporting line or team clearly does not — worth revisiting as
 a note on how to read `orgPlacement` rather than as a taxonomy key.*
 
+**Behavioral-science / behavior-change framing as an explicit content-strategy
+responsibility — one instance.** HealthEquity's Sr. Content Strategist &
+Engagement Writer (excluded — only one existing cluster, content-systems-design,
+grounds cleanly) states "Apply behavioral science, behavioral economics, and
+engagement principles to create content that motivates action, reinforces
+positive behaviors, and helps members progress toward meaningful goals," and
+separately asks for content organized into "structured journeys, modules,
+challenges, or other progressive formats," including "gamification." No other
+entry in the corpus states human-behavior-change or educational-journey design
+as a stated content responsibility — the existing "behavior" hits (Google, Gen
+Digital, UKG) are all about AI *model* behavior, a different sense entirely.
+One instance, below Step 4's floor, and the posting is excluded so it carries
+no jobs.json entry regardless. *Trigger to revisit: a second posting stating
+behavioral-science, behavioral-economics, or gamification framing as a stated
+responsibility of a content-strategy or content-design role, ideally in an
+included entry.*
+
+**Header title using broader, more recognized content/UX-design vocabulary
+than the posting's own operative title — 3 instances (1 included, 2
+excluded).** Across this dataset's title-discrepancy resolutions, the same
+shape recurs: a job-board header or page-chrome title uses more broadly
+searched content/UX-design language, while the posting's own body names a
+different, more specific (and differently scoped) operative title once read
+in full.
+
+- **UnitedHealth Group** (included): page header "Principal UX CX Designer";
+  body self-describes as "Principal Conversational AI Designer" from the
+  first sentence onward and consistently thereafter — the stored title.
+- **NiCE** (excluded): header "Senior AI Conversation Designer"; body
+  self-describes as "The Professional Services Conversational Designer, AI"
+  — a genuine tie by reinforcement count, with the header stored for archive
+  readability per the submitter's explicit choice, not because it was the
+  more load-bearing string.
+- **HealthEquity** (excluded, this entry): header "Sr UX Content Designer";
+  body's operative, reinforced title is "Sr. Content Strategist & Engagement
+  Writer" ("engagement" alone recurs 8+ times as a thematic anchor; "UX
+  content" appears exactly once, buried in a qualifications list).
+
+In all three, the header string leans on generic, high-search-volume
+content/UX-design vocabulary (UX CX Designer, AI Conversation Designer, UX
+Content Designer), while the operative title once the body is read in full
+names something more specific — a different discipline entirely (UHG,
+NiCE) or a differently-scoped framing of the same discipline (HealthEquity).
+
+Joe's read, recorded as interpretation and not something the JDs state or the
+data confirms: employers or job boards may choose a broadly recognized header
+title deliberately to reach more, or more highly skilled, content-design
+applicants than the posting's own internal title would attract on its own —
+casting a wider net via job-board metadata while the actual internal framing
+only becomes visible once a candidate opens the posting. This is distinct
+from the `title-dilution` and `title-responsibility-gap` signals, which
+compare a single stated title against its own responsibilities; this pattern
+is a discrepancy between two different title *strings* for the same posting.
+The postings support the observation that the two strings differ and that the
+header is the more broadly recognized one in each case; they do not state a
+reason for the discrepancy, and the recruiting-net-casting explanation is
+Joe's inference, not a finding this dataset can independently support. *Trigger
+to revisit: a fourth instance, or one where a captured `sourcePlatform` or
+posting metadata confirms whether the header was job-board-generated versus
+employer-authored, which would help separate deliberate framing from platform
+SEO tagging.*
+
 ---
 
 # What this data cannot support
