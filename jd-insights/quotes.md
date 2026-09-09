@@ -3,9 +3,15 @@
 
 # Quotes
 
-Every stored quote, verbatim from the posting. **57 of 58** entries carry one.
+Every stored quote, verbatim from the posting. **58 of 59** entries carry one.
 
 These are the lines that anchor each entry's cluster and signal assignments, so they are the strongest citable evidence in the dataset. Each is checked against its `jd-source` archive before commit.
+
+### Adidas — Senior UX Copywriter
+
+> Design scalable content systems: prompts, patterns, guardrails, evaluation criteria and quality standards, enabling teams without creating an approval bottleneck.
+
+`adidas-senior-ux-copywriter` · added 2026-09-09
 
 ### Adobe — Staff Content Strategist, Content Systems Architect
 

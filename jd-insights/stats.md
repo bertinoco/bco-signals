@@ -3,43 +3,43 @@
 
 # Stats
 
-Dataset state: **58 entries**, `meta.lastUpdated` 2026-09-06. Generated 2026-09-06.
+Dataset state: **59 entries**, `meta.lastUpdated` 2026-09-09. Generated 2026-09-09.
 
 Every figure here is counted from `docs/data/jobs.json`. If you quote one in something published, quote the entry count with it — these move.
 
 ## Headline
 
-- **58** entries across **50** companies and **12** domains
-- Date range: 2026-05-24 to 2026-09-06
+- **59** entries across **51** companies and **13** domains
+- Date range: 2026-05-24 to 2026-09-09
 
 ## Responsibility clusters
 
 | | Entries | Share |
 |---|---:|---:|
-| Content systems design | 53 | 91% |
-| Enablement & team upskilling | 49 | 84% |
-| AI tooling & automation | 40 | 69% |
-| AI-generated content governance | 25 | 43% |
-| Terminology & language governance | 22 | 38% |
+| Content systems design | 54 | 92% |
+| Enablement & team upskilling | 50 | 85% |
+| AI tooling & automation | 41 | 69% |
+| AI-generated content governance | 26 | 44% |
+| Terminology & language governance | 22 | 37% |
 | Taxonomy & information architecture | 21 | 36% |
-| Technical writing & documentation | 16 | 28% |
-| Localization & internationalization | 11 | 19% |
+| Technical writing & documentation | 16 | 27% |
+| Localization & internationalization | 12 | 20% |
 
 ## Skill signals
 
 | | Entries | Share |
 |---|---:|---:|
-| AI fluency expected | 37 | 64% |
+| AI fluency expected | 38 | 64% |
+| Enabler, not bottleneck | 24 | 41% |
 | Governance emphasized | 24 | 41% |
-| Enabler, not bottleneck | 23 | 40% |
-| Central standards function | 16 | 28% |
+| Central standards function | 16 | 27% |
 | Model behavior design | 14 | 24% |
 | Language as infrastructure | 10 | 17% |
 | Content systems for marketers | 8 | 14% |
 | GEO & SEO | 6 | 10% |
 | Structured data | 6 | 10% |
 | Accessibility as structural constraint | 6 | 10% |
-| Structured for agent retrieval | 5 | 9% |
+| Structured for agent retrieval | 5 | 8% |
 | Content work under new titles | 4 | 7% |
 | Work outpaces the title | 3 | 5% |
 | Classification for ML | 3 | 5% |
@@ -48,7 +48,7 @@ Every figure here is counted from `docs/data/jobs.json`. If you quote one in som
 
 ## Compensation
 
-- Stated in **40 of 58** entries (33 USD, 4 GBP, 2 CAD, 1 EUR)
+- Stated in **40 of 59** entries (33 USD, 4 GBP, 2 CAD, 1 EUR)
 - Full spread: **$62,120** to **$710,000**
 - USD medians: **$133,000** low, **$186,200** high
 - `covers`: 27 base, 11 unstated, 2 total
@@ -77,22 +77,22 @@ Read the n column before quoting any of these. A median over fewer than roughly 
 
 ## Title vocabulary
 
-Words appearing in 3 or more of the 58 stored titles. Counted from `title`, which is stored verbatim — so this reflects what employers wrote, not what the site renders.
+Words appearing in 3 or more of the 59 stored titles. Counted from `title`, which is stored verbatim — so this reflects what employers wrote, not what the site renders.
 
 | Word | Titles | Share |
 |---|---:|---:|
-| Content | 42 | 72% |
+| Content | 42 | 71% |
 | Designer | 24 | 41% |
-| Senior | 13 | 22% |
-| AI | 12 | 21% |
+| Senior | 14 | 24% |
+| AI | 12 | 20% |
+| UX | 11 | 19% |
 | Staff | 11 | 19% |
-| UX | 10 | 17% |
-| Systems | 9 | 16% |
+| Systems | 9 | 15% |
 | Architect | 8 | 14% |
 | Writer | 7 | 12% |
 | Strategist | 7 | 12% |
 | Design | 6 | 10% |
-| Lead | 5 | 9% |
+| Lead | 5 | 8% |
 | Engineer | 4 | 7% |
 | Manager | 4 | 7% |
 | Conversation | 4 | 7% |
@@ -115,13 +115,15 @@ Words appearing in 3 or more of the 58 stored titles. Counted from `title`, whic
 | Government | 1 | Government Digital Service |
 | Logistics | 1 | Relay |
 | Travel | 1 | Booking.com |
+| Retail | 1 | Adidas |
 
 ## Stated org placement
 
-Recorded in `jd-source` front matter. **46 of 58** postings say where the role sits; the rest do not, which is itself a fact about the posting.
+Recorded in `jd-source` front matter. **47 of 59** postings say where the role sits; the rest do not, which is itself a fact about the posting.
 
 | Company | Placement as stated |
 |---|---|
+| Adidas | Consumer Experience team, within Digital |
 | Adobe | Job associated with 2 categories: Design; Engineering and Product |
 | Airbnb | UX Writing is described as 'a core design discipline at Airbnb'; the role sits on the International team within that discipline, working alongside the London-based team and reporting relationships including the central UX Writing team. |
 | Alibaba | Global Content Strategy & Design team |
@@ -171,7 +173,7 @@ Recorded in `jd-source` front matter. **46 of 58** postings say where the role s
 
 ## Stated posting dates
 
-**8 of 58** postings state a date. Where both exist, the gap to `dateAdded` varies enough that one is not a proxy for the other.
+**9 of 59** postings state a date. Where both exist, the gap to `dateAdded` varies enough that one is not a proxy for the other.
 
 | Company | Posted | Added |
 |---|---|---|
@@ -183,3 +185,4 @@ Recorded in `jd-source` front matter. **46 of 58** postings say where the role s
 | Adobe | 2026-07-29 | 2026-08-01 |
 | Evinova | 2026-08-17 | 2026-08-17 |
 | UnitedHealth Group | 2026-08-20 | 2026-08-21 |
+| Adidas | 2026-09-07 | 2026-09-09 |

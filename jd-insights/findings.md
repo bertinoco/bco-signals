@@ -481,10 +481,15 @@ and evaluation frameworks for a conversational AI product, not a content
 workflow. Gen Digital's Staff AI Conversation Designer reinforces it —
 prompt structures, model persona and tone, and behavioral standards for an
 agentic AI Assistant, with no content-production workflow described anywhere
-in the posting. Two entries now use the key for AI-behavior and model-design
-ownership rather than the workflow-automation frame the description states.
-Noted rather than rewritten, same as the two entries above — the description
-is user-facing card copy.
+in the posting. Adidas's Senior UX Copywriter is a third: "Design scalable
+content systems: prompts, patterns, guardrails, evaluation criteria and
+quality standards, enabling teams without creating an approval bottleneck" —
+the same prompt/guardrail/evaluation vocabulary, in a UX-copywriting role with
+no content-production workflow described either. Three entries now use the
+key for AI-behavior and model-design ownership rather than the
+workflow-automation frame the description states. Noted rather than
+rewritten, same as the entries above — the description is user-facing card
+copy.
 
 **A single governance framework named for both human and agentic workflows —
 one instance.** Wix's Content Designer, Language & Systems states the role is
