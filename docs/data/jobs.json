@@ -2,8 +2,8 @@
   "meta": {
     "title": "BCO Content Skills Tracker",
     "description": "A curated skills tracker for the content design community.",
-    "lastUpdated": "2026-09-06",
-    "totalEntries": 58
+    "lastUpdated": "2026-09-09",
+    "totalEntries": 59
   },
   "entries": [
     {
@@ -1753,6 +1753,31 @@
       "sourceUrl": null,
       "dateAdded": "2026-09-06",
       "quote": "Define and maintain cross-product terminology, partnering with product management and product marketing to resolve naming conflicts and drive durable decisions."
+    },
+    {
+      "id": "adidas-senior-ux-copywriter",
+      "company": "Adidas",
+      "title": "Senior UX Copywriter",
+      "domain": "Retail",
+      "engagement": "Full-time",
+      "location": "Amsterdam, Netherlands",
+      "remote": null,
+      "coreFrame": "Owns UX writing across end-to-end consumer journeys for Adidas's Consumer Experience team, covering product launches, participation mechanics, eligibility, and access, and shapes journeys, information architecture, and flows beyond copy alone. Designs scalable content systems — prompts, patterns, guardrails, evaluation criteria, and quality standards — that enable other teams without creating an approval bottleneck, and partners with localization and market teams for global scalability.",
+      "clusters": [
+        "content-systems-design",
+        "ai-content-governance",
+        "enablement",
+        "localization",
+        "ai-tooling"
+      ],
+      "signals": [
+        "enabler-not-bottleneck",
+        "ai-native-expectation"
+      ],
+      "compRange": null,
+      "sourceUrl": null,
+      "dateAdded": "2026-09-09",
+      "quote": "Design scalable content systems: prompts, patterns, guardrails, evaluation criteria and quality standards, enabling teams without creating an approval bottleneck."
     }
   ],
   "clusters": {

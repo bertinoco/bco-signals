@@ -272,6 +272,17 @@ Retained deliberately in `jd-source`, since they are facts about the posting:
   repeated or one dropped. Retained verbatim and unmerged, consistent with a
   template/formatting artifact from capture rather than two intentional
   statements about the company.
+- **Adidas**'s Senior UX Copywriter posting renders several full sentences in
+  ALL CAPS mid-paragraph, with no relation to heading or section
+  structure — "WILL OWN AND SHAPE END-TO-END CONSUMER EXPERIENCES...",
+  "OWN UX WRITING ACROSS END-TO-END CONSUMER JOURNEYS". Reads as bold or
+  highlighted spans that lost their formatting on capture and rendered as
+  caps instead, rather than employer emphasis — the affected sentences carry
+  no more semantic weight than the sentence-case text around them. The
+  posting also states its own title twice at different casings (an all-caps
+  heading, a normal-cased "JOB TITLE:" footer field); `jobs.json` stores the
+  footer's normal-cased value, per `jd-source/adidas-senior-ux-copywriter.md`'s
+  `captureNote`.
 
 Six of the stored quotes needed a character corrected to match their source —
 five apostrophes and one hyphen. None was visible on screen.

@@ -273,6 +273,7 @@ The `domain` field describes the broad industry or sector the company operates i
 | `Healthcare` | Atria, UnitedHealth Group |
 | `Logistics` | Relay |
 | `Media` | Netflix, Spotify |
+| `Retail` | Adidas |
 | `SaaS` | Notion, Zoom, Figma, CoLab |
 | `Travel` | Booking.com |
 
