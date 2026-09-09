@@ -3,7 +3,7 @@
 
 # Quotes
 
-Every stored quote, verbatim from the posting. **58 of 59** entries carry one.
+Every stored quote, verbatim from the posting. **59 of 60** entries carry one.
 
 These are the lines that anchor each entry's cluster and signal assignments, so they are the strongest citable evidence in the dataset. Each is checked against its `jd-source` archive before commit.
 
@@ -288,6 +288,12 @@ These are the lines that anchor each entry's cluster and signal assignments, so 
 > This role sits at the intersection of writing and system design. You'll bring sharp editorial instincts and real writing chops, but you'll spend your time designing how conversations work — not producing UI copy.
 
 `spotify-senior-conversation-designer` · added 2026-05-25
+
+### Teladoc Health — Lead Content Designer
+
+> Collaborate with AI, clinical, legal, and engineering stakeholders to develop prompt frameworks, content guidelines, and quality criteria for LLM-generated responses in regulated healthcare contexts, ensuring accuracy, safety, empathy, and appropriate tone.
+
+`teladoc-health-lead-content-designer` · added 2026-09-09
 
 ### The Ride Platform — AI-Powered Content Systems Specialist
 

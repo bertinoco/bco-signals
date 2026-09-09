@@ -1240,6 +1240,16 @@ posting metadata confirms whether the header was job-board-generated versus
 employer-authored, which would help separate deliberate framing from platform
 SEO tagging.*
 
+**Red-teaming named as a content design responsibility — one instance.**
+Teladoc Health's Lead Content Designer states "Contribute to establishing
+content standards and governance for generative AI outputs, including
+evaluation rubrics, red-teaming participation, and feedback loops with model
+and product teams." No other entry in the corpus names red-teaming as part
+of a content design role's stated work. One instance, one domain
+(Healthcare) — below Step 4's floor. *Trigger to revisit: a second posting
+naming red-teaming as a content design responsibility, ideally outside
+Healthcare.*
+
 ---
 
 # What this data cannot support
