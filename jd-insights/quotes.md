@@ -3,7 +3,7 @@
 
 # Quotes
 
-Every stored quote, verbatim from the posting. **59 of 60** entries carry one.
+Every stored quote, verbatim from the posting. **60 of 61** entries carry one.
 
 These are the lines that anchor each entry's cluster and signal assignments, so they are the strongest citable evidence in the dataset. Each is checked against its `jd-source` archive before commit.
 
@@ -108,6 +108,12 @@ These are the lines that anchor each entry's cluster and signal assignments, so 
 > Redefines format and tone guidelines into requirements that engineers can use for model training and prompt improvement.
 
 `coupang-senior-content-strategist-core-ux` · added 2026-08-14
+
+### Docebo — Senior Product Designer, Content Design & Language Systems
+
+> Establish terminology, product voice and tone, reusable microcopy patterns, audience guidance, and language principles that improve clarity across product areas.
+
+`docebo-senior-product-designer-language-systems` · added 2026-09-09
 
 ### Engrain — Senior Content Strategist, Product Enablement
 

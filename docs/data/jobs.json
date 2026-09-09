@@ -3,7 +3,7 @@
     "title": "BCO Content Skills Tracker",
     "description": "A curated skills tracker for the content design community.",
     "lastUpdated": "2026-09-09",
-    "totalEntries": 60
+    "totalEntries": 61
   },
   "entries": [
     {
@@ -1809,6 +1809,36 @@
       "sourceUrl": null,
       "dateAdded": "2026-09-09",
       "quote": "Collaborate with AI, clinical, legal, and engineering stakeholders to develop prompt frameworks, content guidelines, and quality criteria for LLM-generated responses in regulated healthcare contexts, ensuring accuracy, safety, empathy, and appropriate tone."
+    },
+    {
+      "id": "docebo-senior-product-designer-language-systems",
+      "company": "Docebo",
+      "title": "Senior Product Designer, Content Design & Language Systems",
+      "domain": "SaaS",
+      "engagement": "Full-time",
+      "location": "Toronto, Ontario",
+      "remote": "hybrid",
+      "coreFrame": "Leads ambiguous product problems at Docebo where workflow, interaction, information architecture, and language work together, building the product's terminology, voice and tone, and reusable microcopy patterns. Embeds language guidance into the design system at the component level, owns localization-readiness standards for translation-ready writing and terminology reuse, and mentors designers and partners on product-language judgment.",
+      "clusters": [
+        "terminology-governance",
+        "localization",
+        "content-systems-design",
+        "enablement"
+      ],
+      "signals": [
+        "ai-native-expectation"
+      ],
+      "compRange": {
+        "min": 100400,
+        "max": 133900,
+        "currency": "CAD",
+        "covers": null,
+        "scope": null,
+        "extras": "bonus"
+      },
+      "sourceUrl": null,
+      "dateAdded": "2026-09-09",
+      "quote": "Establish terminology, product voice and tone, reusable microcopy patterns, audience guidance, and language principles that improve clarity across product areas."
     }
   ],
   "clusters": {
