@@ -104,6 +104,50 @@ predicts the job is whether the content function has been given a systems
 mandate — and that is visible in the posting, in whether the responsibilities
 describe building mechanisms or producing pages.
 
+## Judgment and taste are what's asked for once AI does more of the drafting
+
+**What the data shows.** Five included postings across four domains name
+judgment or taste explicitly as the thing the human still provides, once AI
+is doing more of the execution — not as a soft-skill throwaway, but paired
+directly against AI-generated or AI-assisted output. CoLab (SaaS): "you'll
+act as Editor in Chief: orchestrating AI agents and applying editorial
+judgment across outputs." Intercept (Agency): "our team is supported by
+custom-built AI teammates, agentic workflows, and emerging content
+systems... without replacing the human judgment that makes the work great,"
+and separately, "Strong editorial judgment and comfort challenging weak
+AI-generated outputs." Meta's Product Content Engineer (Big Tech): "previous
+experience with GenAI, strong editorial judgment and a keen eye for crafting
+thorough, nuanced and objective guidelines." Sanna (Finance): "This is a
+foundational role where taste, judgment, and systems thinking matter," and
+"We value judgment, taste, and learning ability over years of experience or
+specific tools." Docebo (SaaS): "You use AI-assisted tools thoughtfully for
+research, synthesis, language exploration, prototyping, quality review, or
+implementation critique while retaining human judgment and accountability."
+
+A sixth instance sits in an excluded record, cited here as existence
+evidence only, not corpus grounding: DeepMind's Senior Manager, UX Content
+Design (Gemini) — excluded on required criterion 3, management dominance —
+states "This role requires high taste, creativity, and the ability to
+uncover top user needs and pain points. The role also requires excellent
+writing skills and high judgement in order to define what good quality
+looks like."
+
+Checked and excluded from the count: Wealthsimple's one "judgment" hit is
+about AI screening job applicants during hiring ("These tools assist our
+team but don't replace human judgment — all final hiring decisions are made
+by people"), not about the content role's own work — a false positive for
+this pattern, not an instance of it.
+
+**What I think it means.** This is a sharper version of the AI-fluency
+finding above, not a restatement of it. That finding says AI use is now a
+baseline expectation; this one says something about what's left for the
+human once that baseline is assumed — the postings that pair judgment or
+taste against AI output are drawing a line between what the tool produces
+and what a person is still accountable for deciding is good. Four domains
+with no repeated employer or shared industry (SaaS, Agency, Big Tech,
+Finance) is real spread, not one company's house style borrowed by a
+competitor.
+
 ## Nobody agrees what this work is worth
 
 **What the data shows.** Stated ranges run from **$65,000** (Insurify, Editor,
@@ -1249,6 +1293,21 @@ of a content design role's stated work. One instance, one domain
 (Healthcare) — below Step 4's floor. *Trigger to revisit: a second posting
 naming red-teaming as a content design responsibility, ideally outside
 Healthcare.*
+
+**Human-facing control UI for reviewing AI output, as a design
+responsibility — one instance.** Docebo's Senior Product Designer, Content
+Design & Language Systems states "Design Trustworthy AI Moments: Create
+patterns that help people understand what AI did, what informed it, what
+needs attention, and how to review, edit, regenerate, approve, reverse, or
+recover." This is distinct from `model-behavior-design` (authoring the AI's
+own language or behavior — prompts, persona, conversation flow) and from
+`ai-content-governance` (setting quality standards/rubrics for AI-generated
+content) — neither vocabulary appears here. This bullet describes designing
+the review/control affordances an end user exercises over AI output, not
+the AI's behavior or the standards it's held to. One instance, one domain
+(SaaS) — below Step 4's floor. *Trigger to revisit: a second posting naming
+end-user-facing review/approve/reverse-style control patterns for AI output
+as a stated design responsibility.*
 
 ---
 
