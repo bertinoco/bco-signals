@@ -3,7 +3,7 @@
     "title": "BCO Content Skills Tracker",
     "description": "A curated skills tracker for the content design community.",
     "lastUpdated": "2026-09-09",
-    "totalEntries": 59
+    "totalEntries": 60
   },
   "entries": [
     {
@@ -1778,6 +1778,37 @@
       "sourceUrl": null,
       "dateAdded": "2026-09-09",
       "quote": "Design scalable content systems: prompts, patterns, guardrails, evaluation criteria and quality standards, enabling teams without creating an approval bottleneck."
+    },
+    {
+      "id": "teladoc-health-lead-content-designer",
+      "company": "Teladoc Health",
+      "title": "Lead Content Designer",
+      "domain": "Healthcare",
+      "engagement": "Full-time",
+      "location": "United States (Remote)",
+      "remote": true,
+      "coreFrame": "Leads content strategy across multiple product areas on Teladoc Health's Product Experience team, designing conversation flows and response frameworks for AI-powered chatbot and virtual assistant experiences in member- and provider-facing healthcare settings. Partners with AI, clinical, and engineering stakeholders to develop prompt frameworks and quality criteria for LLM-generated responses, and contributes to governance for generative AI outputs, including evaluation rubrics and red-teaming participation.",
+      "clusters": [
+        "content-systems-design",
+        "ai-content-governance",
+        "ai-tooling",
+        "enablement"
+      ],
+      "signals": [
+        "model-behavior-design",
+        "ai-native-expectation"
+      ],
+      "compRange": {
+        "min": 135000,
+        "max": 165000,
+        "currency": "USD",
+        "covers": "base",
+        "scope": null,
+        "extras": "performance bonus"
+      },
+      "sourceUrl": null,
+      "dateAdded": "2026-09-09",
+      "quote": "Collaborate with AI, clinical, legal, and engineering stakeholders to develop prompt frameworks, content guidelines, and quality criteria for LLM-generated responses in regulated healthcare contexts, ensuring accuracy, safety, empathy, and appropriate tone."
     }
   ],
   "clusters": {
