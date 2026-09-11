@@ -3,7 +3,7 @@
 
 # Quotes
 
-Every stored quote, verbatim from the posting. **60 of 61** entries carry one.
+Every stored quote, verbatim from the posting. **61 of 62** entries carry one.
 
 These are the lines that anchor each entry's cluster and signal assignments, so they are the strongest citable evidence in the dataset. Each is checked against its `jd-source` archive before commit.
 
@@ -138,6 +138,12 @@ These are the lines that anchor each entry's cluster and signal assignments, so 
 > While the title of this role is “UX Writer,” you might think of yourself as a content engineer as much as a writer — someone who uses language to shape how people interact with AI, from crafting better inputs to defining clear, consistent outputs.
 
 `figma-ux-writer-ai` · added 2026-06-10
+
+### Fin — Brand Voice Lead - Systems
+
+> Build and maintain practical writing systems that support scale, including channel guidance, prompt libraries, reusable messaging assets, and AI-enabled workflows.
+
+`fin-brand-voice-lead-systems` · added 2026-09-11
 
 ### Function Health — Senior Content Designer
 
