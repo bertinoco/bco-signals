@@ -106,7 +106,7 @@ describe building mechanisms or producing pages.
 
 ## Judgment and taste are what's asked for once AI does more of the drafting
 
-**What the data shows.** Five included postings across four domains name
+**What the data shows.** Six included postings across four domains name
 judgment or taste explicitly as the thing the human still provides, once AI
 is doing more of the execution — not as a soft-skill throwaway, but paired
 directly against AI-generated or AI-assisted output. CoLab (SaaS): "you'll
@@ -123,8 +123,13 @@ foundational role where taste, judgment, and systems thinking matter," and
 specific tools." Docebo (SaaS): "You use AI-assisted tools thoughtfully for
 research, synthesis, language exploration, prototyping, quality review, or
 implementation critique while retaining human judgment and accountability."
+Fin (SaaS): "Strong editorial judgment and taste, with the ability to
+simplify complex ideas into clear, compelling narratives," paired with "a
+clear point of view on how they can improve creative workflows," and closing
+with "You'll bring strong judgment, excellent writing, and a practical
+systems mindset to the work... through an AI-driven lens."
 
-A sixth instance sits in an excluded record, cited here as existence
+A seventh instance sits in an excluded record, cited here as existence
 evidence only, not corpus grounding: DeepMind's Senior Manager, UX Content
 Design (Gemini) — excluded on required criterion 3, management dominance —
 states "This role requires high taste, creativity, and the ability to
@@ -146,7 +151,8 @@ taste against AI output are drawing a line between what the tool produces
 and what a person is still accountable for deciding is good. Four domains
 with no repeated employer or shared industry (SaaS, Agency, Big Tech,
 Finance) is real spread, not one company's house style borrowed by a
-competitor.
+competitor — SaaS now accounts for three of the six included instances
+(CoLab, Docebo, Fin), the only domain repeated so far.
 
 ## Nobody agrees what this work is worth
 

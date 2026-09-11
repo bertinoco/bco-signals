@@ -2,8 +2,8 @@
   "meta": {
     "title": "BCO Content Skills Tracker",
     "description": "A curated skills tracker for the content design community.",
-    "lastUpdated": "2026-09-09",
-    "totalEntries": 61
+    "lastUpdated": "2026-09-11",
+    "totalEntries": 62
   },
   "entries": [
     {
@@ -1839,6 +1839,37 @@
       "sourceUrl": null,
       "dateAdded": "2026-09-09",
       "quote": "Establish terminology, product voice and tone, reusable microcopy patterns, audience guidance, and language principles that improve clarity across product areas."
+    },
+    {
+      "id": "fin-brand-voice-lead-systems",
+      "company": "Fin",
+      "title": "Brand Voice Lead - Systems",
+      "domain": "SaaS",
+      "engagement": "Full-time",
+      "location": "San Francisco, California",
+      "remote": "hybrid",
+      "coreFrame": "Evolves Fin's verbal identity across brand and customer touchpoints, writing copy for launches, campaigns, and executive narratives while building the writing systems behind that work: voice and tone guidance, editorial standards, channel frameworks, prompt libraries, and reusable messaging assets. Partners across Brand, Product Marketing, Product, and Design rather than owning company-wide communication alone, and is framed explicitly as a senior hands-on contributor rather than a sole owner of how the company writes.",
+      "clusters": [
+        "content-systems-design",
+        "ai-tooling",
+        "enablement"
+      ],
+      "signals": [
+        "content-marketing-adjacent",
+        "ai-native-expectation",
+        "enabler-not-bottleneck"
+      ],
+      "compRange": {
+        "min": 155700,
+        "max": 186000,
+        "currency": "USD",
+        "covers": "base",
+        "scope": "San Francisco Bay Area",
+        "extras": "bonus + equity (RSUs)"
+      },
+      "sourceUrl": null,
+      "dateAdded": "2026-09-11",
+      "quote": "Build and maintain practical writing systems that support scale, including channel guidance, prompt libraries, reusable messaging assets, and AI-enabled workflows."
     }
   ],
   "clusters": {
