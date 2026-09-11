@@ -12,8 +12,8 @@ Every claim here should name the companies it came from, so a reader can go to
 
 ## Roles defined by what they are not
 
-Six postings define scope by exclusion, and the more senior the role, the more
-formal the device gets.
+Eight postings define scope by exclusion, and the more senior the role, the
+more formal the device gets.
 
 **Adobe** goes furthest, with a headed section:
 
@@ -62,6 +62,20 @@ role excludes. UKG states an equal-length "is" list alongside the "is not"
 list, structured as a matched pair rather than a disclaimer appended to a
 role description. Same underlying move (a role specific enough to need its
 own boundary drawn), a more symmetrical version of it.
+
+**Docebo**'s Senior Product Designer, Content Design & Language Systems is
+the seventh instance: "This is not a traditional UX writing role or a
+localization-operations role." Also two negations in one sentence, against
+two different adjacent disciplines (UX writing, localization operations)
+rather than one.
+
+**Fin**'s Brand Voice Lead, Systems is the eighth instance, the same
+two-negations-in-one-sentence shape again: "This is not a traditional
+copywriting role, and it's different from a standard content strategy
+position," fencing off copywriting and content strategy. Two postings in a
+row now use this doubled form rather than the single exclusion every earlier
+instance used — worth watching whether it becomes the new default phrasing
+for the device rather than a coincidence of two postings.
 
 ## A posting that disclaims its own title
 
