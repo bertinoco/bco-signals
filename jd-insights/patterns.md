@@ -626,3 +626,22 @@ speed, Lovable's demonstrates a preference for builders with outcomes
 already in the wild over credentials or a portfolio alone — consistent with
 the posting's own stated culture ("extreme ownership, high velocity"). One
 instance.
+
+## ATS chrome contradicts the posting's own location text
+
+**Cleo**'s Lead Conversational Designer lists three co-equal location
+options in its chrome — "United Kingdom (Hybrid); Spain; United Kingdom
+(Remote)" — with no single location marked primary. A separate chrome field
+one line below, "Location Type: Hybrid," reflects only the first-listed
+option and is contradicted by the third option's own text, "United Kingdom
+(Remote)." Distinct from Capital One's three co-equal comp ranges above,
+where no field asserts a single answer; here one chrome field claims a
+single value while the posting's own location listing states an
+incompatible option in the same block. `remote` is recorded as `null` rather
+than `"hybrid"` or `true`, since resolving it either way would adopt one
+side of a disagreement the posting itself never resolves.
+
+One instance, so nothing yet to compare it against. Worth recording because
+it is a different failure mode than Evinova's doubled comma or the UK Civil
+Service boilerplate above — not an artifact within one field, but two
+separate chrome fields on the same posting stating incompatible things.

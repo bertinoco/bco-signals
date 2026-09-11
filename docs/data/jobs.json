@@ -3,7 +3,7 @@
     "title": "BCO Content Skills Tracker",
     "description": "A curated skills tracker for the content design community.",
     "lastUpdated": "2026-09-11",
-    "totalEntries": 62
+    "totalEntries": 63
   },
   "entries": [
     {
@@ -1870,6 +1870,27 @@
       "sourceUrl": null,
       "dateAdded": "2026-09-11",
       "quote": "Build and maintain practical writing systems that support scale, including channel guidance, prompt libraries, reusable messaging assets, and AI-enabled workflows."
+    },
+    {
+      "id": "cleo-lead-conversational-designer",
+      "company": "Cleo",
+      "title": "Lead Conversational Designer",
+      "domain": "Finance",
+      "engagement": "Full-time",
+      "location": "United Kingdom (Hybrid); Spain; United Kingdom (Remote)",
+      "remote": null,
+      "coreFrame": "Works within Cleo's Financial Assistant Pillar to embed conversation design into a multi-agent product architecture, partnering with machine learning and backend engineers, product designers, and PMs. Shapes the system architecture of chat experiences, defines persona strategy across agents, and helps prompt engineer LLMs to generate content that matches design intent. Also designs conversational frameworks and flows alongside UX designers' accompanying GUI components, and contributes to strengthening how the multi-agent architecture works from a conversation design perspective, potentially including a prompt library for organizing and managing prompts.",
+      "clusters": [
+        "content-systems-design",
+        "ai-tooling"
+      ],
+      "signals": [
+        "model-behavior-design",
+        "ai-native-expectation"
+      ],
+      "sourceUrl": null,
+      "dateAdded": "2026-09-11",
+      "quote": "Help prompt engineer LLMs to generate content that matches the intent of your designs."
     }
   ],
   "clusters": {

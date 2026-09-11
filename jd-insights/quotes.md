@@ -3,7 +3,7 @@
 
 # Quotes
 
-Every stored quote, verbatim from the posting. **61 of 62** entries carry one.
+Every stored quote, verbatim from the posting. **62 of 63** entries carry one.
 
 These are the lines that anchor each entry's cluster and signal assignments, so they are the strongest citable evidence in the dataset. Each is checked against its `jd-source` archive before commit.
 
@@ -96,6 +96,12 @@ These are the lines that anchor each entry's cluster and signal assignments, so 
 > Define structured data standards, including schema.org and JSON-LD where appropriate, so content is discoverable, retrievable, and reusable by search engines, answer engines, LLMs, and internal systems.
 
 `citizens-content-architect-manager` · added 2026-09-04
+
+### Cleo — Lead Conversational Designer
+
+> Help prompt engineer LLMs to generate content that matches the intent of your designs.
+
+`cleo-lead-conversational-designer` · added 2026-09-11
 
 ### CoLab — Content Systems Architect
 
