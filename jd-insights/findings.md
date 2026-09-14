@@ -173,16 +173,26 @@ articulate scope precisely in an interview.
 **What the data shows.** `title-dilution` (a title claims more systems/AI
 substance than the stated responsibilities support) has exactly two holders:
 Insurify's "Editor, AI Content Systems" and Intercept's "Content Engineer".
-`title-responsibility-gap` (the title claims less than the responsibilities
-actually cover) now has three: Wellhub's "Senior Global UX Writer, Content
-Systems", Figma's "UX Writer, AI" — the latter posting disclaiming its own
-title outright, in its second paragraph: "While the title of this role is
-'UX Writer,' you might think of yourself as a content engineer as much as a
-writer" — and Splunk's plain "Content Designer (Remote)", whose stated
-responsibilities (cross-product terminology governance, information
-architecture and navigation design, design-system-compliant content
-patterns) carry more systems scope than a generic "Content Designer" title
-signals on its own. Separately, `jd-insights/patterns.md`'s "Roles defined by
+A third, purer instance sits in an excluded record, cited here as existence
+evidence only, not corpus grounding: TikTok's "Content Design Manager, AI"
+names AI directly in the title, yet the word appears nowhere else in the
+entire posting — a full search of the body for "AI," "artificial
+intelligence," "machine learning," "LLM," "model," and "prompt" returns zero
+hits, and the stated team is "TikTok UED Monetization," a business-services
+function with no AI connection stated anywhere. Where Insurify and Intercept
+overclaim against real but thinner substance, TikTok overclaims against
+nothing at all — the title asserts a discipline the responsibilities never
+touch once. `title-responsibility-gap` (the title claims less than the
+responsibilities actually cover) now has three: Wellhub's "Senior Global UX
+Writer, Content Systems", Figma's "UX Writer, AI" — the latter posting
+disclaiming its own title outright, in its second paragraph: "While the
+title of this role is 'UX Writer,' you might think of yourself as a content
+engineer as much as a writer" — and Splunk's plain "Content Designer
+(Remote)", whose stated responsibilities (cross-product terminology
+governance, information architecture and navigation design,
+design-system-compliant content patterns) carry more systems scope than a
+generic "Content Designer" title signals on its own. Separately,
+`jd-insights/patterns.md`'s "Roles defined by
 what they are not" device — a posting stating explicitly what its own role
 does *not* cover — is now at six instances (Adobe, Sanna, Wealthsimple,
 HelloFresh, Meta, UKG), up from the five recorded when that pattern note was
@@ -201,10 +211,11 @@ two separate ones: titles have stopped reliably carrying scope information,
 and employers are compensating for it in the two places that show up in a
 posting — the number, and the paragraph right under the title.
 
-This is thinner evidence than the compensation finding — four total
-signal/pattern holders plus six disclaimer instances, no time dimension, and
-no claim here should be read as the problem worsening rather than simply
-being visible once enough postings are collected to notice it.
+This is thinner evidence than the compensation finding — four included
+signal/pattern holders, one excluded existence-evidence instance, plus six
+disclaimer instances, no time dimension, and no claim here should be read as
+the problem worsening rather than simply being visible once enough postings
+are collected to notice it.
 
 ## Evaluation infrastructure is an engineering-heavy expression of generative work
 
