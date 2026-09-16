@@ -2,8 +2,8 @@
   "meta": {
     "title": "BCO Content Skills Tracker",
     "description": "A curated skills tracker for the content design community.",
-    "lastUpdated": "2026-09-11",
-    "totalEntries": 63
+    "lastUpdated": "2026-09-16",
+    "totalEntries": 64
   },
   "entries": [
     {
@@ -636,7 +636,7 @@
       "domain": "Big Tech",
       "engagement": "Full-time",
       "location": "Cupertino, CA",
-      "remote": false,
+      "remote": null,
       "coreFrame": "Writing systems governance, design system integration, writing standards codification, AI-leveraged UX writing, guidelines for generated content",
       "clusters": [
         "content-systems-design",
@@ -658,7 +658,7 @@
         "currency": "USD",
         "covers": "base",
         "scope": null,
-        "extras": "bonus + equity"
+        "extras": null
       },
       "sourceUrl": null,
       "dateAdded": "2026-07-23",
@@ -1891,6 +1891,32 @@
       "sourceUrl": null,
       "dateAdded": "2026-09-11",
       "quote": "Help prompt engineer LLMs to generate content that matches the intent of your designs."
+    },
+    {
+      "id": "apple-ux-writer-music",
+      "company": "Apple",
+      "title": "UX Writer, Apple Music",
+      "domain": "Big Tech",
+      "engagement": "Full-time",
+      "location": "Cupertino, California, United States",
+      "remote": null,
+      "coreFrame": "Writes UX copy for Apple Music across platforms, including end-to-end flows and in-product copy for mobile, desktop, and web. Designs features alongside cross-functional partners and collaborates on the product roadmap. Develops style and tonal guidance for both product features and LLM-generated content, and leads discussions on naming, terminology, and messaging.",
+      "clusters": [
+        "ai-content-governance",
+        "terminology-governance"
+      ],
+      "signals": [],
+      "compRange": {
+        "min": 184700,
+        "max": 277600,
+        "currency": "USD",
+        "covers": "base",
+        "scope": null,
+        "extras": null
+      },
+      "sourceUrl": null,
+      "dateAdded": "2026-09-16",
+      "quote": "Developing style and tonal guidance for features and LLM-generated content."
     }
   ],
   "clusters": {

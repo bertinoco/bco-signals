@@ -3,7 +3,7 @@
 
 # Quotes
 
-Every stored quote, verbatim from the posting. **62 of 63** entries carry one.
+Every stored quote, verbatim from the posting. **63 of 64** entries carry one.
 
 These are the lines that anchor each entry's cluster and signal assignments, so they are the strongest citable evidence in the dataset. Each is checked against its `jd-source` archive before commit.
 
@@ -60,6 +60,12 @@ These are the lines that anchor each entry's cluster and signal assignments, so 
 > Experience using large language models, and an ability to see how they can be leveraged in writing systems.
 
 `apple-ux-writer-systems` · added 2026-07-23
+
+### Apple — UX Writer, Apple Music
+
+> Developing style and tonal guidance for features and LLM-generated content.
+
+`apple-ux-writer-music` · added 2026-09-16
 
 ### Atria — UX Writer
 

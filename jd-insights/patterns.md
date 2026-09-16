@@ -139,6 +139,24 @@ different postings.
 Anything that identifies a posting by title alone will eventually attach the
 wrong text to an entry. This is why `reqId` is recorded where stated.
 
+## Apple's benefits paragraph is boilerplate, not a stated extra
+
+`apple-ux-writer-systems` and `apple-ux-writer-music` — two different
+requisitions, two different pay ranges — carry an identical "Pay & Benefits"
+paragraph below the range, word for word aside from the figures themselves:
+"Apple employees also have the opportunity to become an Apple shareholder
+through participation in Apple's discretionary employee stock programs...
+Additionally, this role might be eligible for discretionary bonuses or
+commission payments as well as relocation."
+
+Nothing in it is role-specific, and its own language ("might be eligible,"
+"discretionary") is conditional rather than a stated extra. Auditing the
+second posting against the first surfaced that `apple-ux-writer-systems` had
+recorded this boilerplate as `compRange.extras: "bonus + equity"` — since
+corrected to `null`, alongside a `remote: false` that the same archived text
+never actually states. Worth checking any future Apple entry's Pay & Benefits
+paragraph against this one before treating anything in it as posting-specific.
+
 ## Which employers state metadata
 
 Netflix, Apple, JPMorgan Chase, Ally, and Adobe state an explicit posting date
