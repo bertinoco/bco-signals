@@ -2,8 +2,8 @@
   "meta": {
     "title": "BCO Content Skills Tracker",
     "description": "A curated skills tracker for the content design community.",
-    "lastUpdated": "2026-09-16",
-    "totalEntries": 64
+    "lastUpdated": "2026-09-17",
+    "totalEntries": 65
   },
   "entries": [
     {
@@ -1917,6 +1917,37 @@
       "sourceUrl": null,
       "dateAdded": "2026-09-16",
       "quote": "Developing style and tonal guidance for features and LLM-generated content."
+    },
+    {
+      "id": "soda-ai-content-engineer",
+      "company": "Soda",
+      "title": "AI Content Engineer",
+      "domain": "SaaS",
+      "engagement": "Full-time",
+      "location": "New York, New York, United States; San Francisco, California, United States; London, England, United Kingdom; Berlin, Berlin, Germany; Amsterdam, North Holland, Netherlands",
+      "remote": true,
+      "coreFrame": "Owns content at Soda end to end, including the website, technical blogs, webinars, and product videos. Builds a multi-step LLM content-generation pipeline with structured outputs and evals rather than hand-writing each piece, and exercises editorial judgment over what the pipeline produces, accepting, rejecting, and diagnosing failures in its output. Engineers the pipeline to write in distinct voices matching specific people, such as founders and customer engineers, rather than a single generic voice.",
+      "clusters": [
+        "content-systems-design",
+        "ai-tooling"
+      ],
+      "signals": [
+        "content-marketing-adjacent",
+        "ai-native-expectation",
+        "model-behavior-design",
+        "eval-infrastructure"
+      ],
+      "compRange": {
+        "min": 120000,
+        "max": 130000,
+        "currency": "USD",
+        "covers": null,
+        "scope": null,
+        "extras": "equity"
+      },
+      "sourceUrl": null,
+      "dateAdded": "2026-09-17",
+      "quote": "One person cannot hand-make all of that. So you'll build the system that can."
     }
   ],
   "clusters": {
