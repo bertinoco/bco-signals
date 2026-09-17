@@ -106,7 +106,7 @@ describe building mechanisms or producing pages.
 
 ## Judgment and taste are what's asked for once AI does more of the drafting
 
-**What the data shows.** Six included postings across four domains name
+**What the data shows.** Seven included postings across four domains name
 judgment or taste explicitly as the thing the human still provides, once AI
 is doing more of the execution — not as a soft-skill throwaway, but paired
 directly against AI-generated or AI-assisted output. CoLab (SaaS): "you'll
@@ -127,9 +127,13 @@ Fin (SaaS): "Strong editorial judgment and taste, with the ability to
 simplify complex ideas into clear, compelling narratives," paired with "a
 clear point of view on how they can improve creative workflows," and closing
 with "You'll bring strong judgment, excellent writing, and a practical
-systems mindset to the work... through an AI-driven lens."
+systems mindset to the work... through an AI-driven lens." Soda (SaaS):
+"Taste is the bar. Anti-slop is the whole point. An engine that ships slop
+faster has negative value, and most of them do. We're hiring for the
+judgment to look at an accurate, competent, lifeless draft and bin it — then
+work out what the pipeline did wrong and fix it."
 
-A seventh instance sits in an excluded record, cited here as existence
+An eighth instance sits in an excluded record, cited here as existence
 evidence only, not corpus grounding: DeepMind's Senior Manager, UX Content
 Design (Gemini) — excluded on required criterion 3, management dominance —
 states "This role requires high taste, creativity, and the ability to
@@ -151,8 +155,8 @@ taste against AI output are drawing a line between what the tool produces
 and what a person is still accountable for deciding is good. Four domains
 with no repeated employer or shared industry (SaaS, Agency, Big Tech,
 Finance) is real spread, not one company's house style borrowed by a
-competitor — SaaS now accounts for three of the six included instances
-(CoLab, Docebo, Fin), the only domain repeated so far.
+competitor — SaaS now accounts for four of the seven included instances
+(CoLab, Docebo, Fin, Soda), the only domain repeated so far.
 
 ## Nobody agrees what this work is worth
 
@@ -229,8 +233,11 @@ conversation quality, accuracy, task completion, and user impact" — and
 Anthropic's Product Designer, Evals & Prompts is built almost entirely
 around it: writing and revising the prompts behind Claude's product
 surfaces, then building the graders and harness that prove a prompt fix
-holds and keep working across model releases. Two companies, two domains
-(Media, Big Tech) — the `eval-infrastructure` signal this finding grounds.
+holds and keep working across model releases. Soda's AI Content Engineer is
+a third instance: "Serious prompt engineering: multi-step LLM pipelines with
+structured outputs and evals, not chatting with a model. You know why the
+naive version produces slop." Three companies, three domains (Media, Big
+Tech, SaaS) — the `eval-infrastructure` signal this finding grounds.
 
 Two structurally similar postings were checked and stay excluded, for
 reasons independent of this pattern: Notion's Model Behavior Engineer and
@@ -256,7 +263,11 @@ being validated is language. A hiring filter built around "does the
 candidate's background show content craft" will systematically undercount
 this work. Expect this signal to be thin for a while — it names a real
 pattern, not yet a common one, and future JDs should be left to fill it out
-rather than backfilling every past posting with a passing mention.
+rather than backfilling every past posting with a passing mention. Soda adds
+a third domain, SaaS, alongside Media and Big Tech — the kind of
+differently-domained instance that keeps this from reading as two adjacent
+sectors' shared house style, though three companies is still early to call
+it a discipline-wide pattern rather than a signal still filling out.
 
 ## Taxonomy work is starting to get its own title, and its own org
 

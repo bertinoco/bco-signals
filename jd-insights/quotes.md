@@ -3,7 +3,7 @@
 
 # Quotes
 
-Every stored quote, verbatim from the posting. **63 of 64** entries carry one.
+Every stored quote, verbatim from the posting. **64 of 65** entries carry one.
 
 These are the lines that anchor each entry's cluster and signal assignments, so they are the strongest citable evidence in the dataset. Each is checked against its `jd-source` archive before commit.
 
@@ -294,6 +294,12 @@ These are the lines that anchor each entry's cluster and signal assignments, so 
 > This isn’t a traditional content role. We’re looking for someone who operates at the edge of tech and language – someone who can design systems, build agents, and orchestrate tooling that scales quality.
 
 `sanna-content-engineer` · added 2026-05-24
+
+### Soda — AI Content Engineer
+
+> One person cannot hand-make all of that. So you'll build the system that can.
+
+`soda-ai-content-engineer` · added 2026-09-17
 
 ### Splunk — Content Designer (Remote)
 

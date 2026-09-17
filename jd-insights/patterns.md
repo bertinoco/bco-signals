@@ -663,3 +663,17 @@ One instance, so nothing yet to compare it against. Worth recording because
 it is a different failure mode than Evinova's doubled comma or the UK Civil
 Service boilerplate above — not an artifact within one field, but two
 separate chrome fields on the same posting stating incompatible things.
+
+## One comp band stated in two currencies
+
+**Soda**'s AI Content Engineer states a single compensation figure as an
+explicit dual-currency equivalence rather than separate per-location ranges:
+"$120,000-$130,000 / €110,000-€120,000 per year + equity - the same band
+wherever you live. We don't discount for geography." Distinct from Capital
+One's or Adobe's multi-location postings above, which each give a separate
+range per location in one currency; here the posting states one band and
+asserts the two currency figures are the same number, not two numbers for
+two places. `compRange.currency` has no way to hold two currencies at once,
+so USD was recorded as the structured value (min 120000, max 130000) since
+it is listed first, and the EUR figures live only in the `jd-source`
+archive's `captureNote`. One instance, so nothing yet to compare it against.
