@@ -948,7 +948,7 @@
       "domain": "Finance",
       "engagement": "Full-time",
       "location": "McLean, VA | Richmond, VA | New York, NY",
-      "remote": false,
+      "remote": null,
       "coreFrame": "Foundational content systems, voice guidelines, and structured prompt libraries that let product design teams write independently; taxonomy and logic ownership for high-leverage content initiatives; narrative quality auditing across live product experiences; mentoring and enablement to mature the content design practice within a cross-functional pod",
       "clusters": [
         "content-systems-design",
