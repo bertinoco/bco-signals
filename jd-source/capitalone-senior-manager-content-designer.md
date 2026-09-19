@@ -24,6 +24,14 @@ captureNote: >
   so covers is null. It states the role is "also eligible to earn performance
   based incentive compensation, which may include cash bonus(es) and/or long
   term incentive (LTI)," recorded in extras as "bonus + LTI."
+
+  Corrected 2026-09-19: `remote` was originally recorded as `false`, but
+  this archived text contains no statement anywhere about on-site, hybrid,
+  or remote policy — only the three office locations. Naming three cities
+  is not a stated on-site requirement, the same reasoning that corrected
+  apple-ux-writer-systems's `remote: false` in this same manner. Corrected
+  to `null`. Surfaced during the audit of a related posting,
+  capitalone-content-designer-manager-core-card (excluded).
 ---
 R247234
 Posted 07/17/2026

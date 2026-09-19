@@ -3,7 +3,7 @@
 
 # Stats
 
-Dataset state: **65 entries**, `meta.lastUpdated` 2026-09-17. Generated 2026-09-17.
+Dataset state: **65 entries**, `meta.lastUpdated` 2026-09-17. Generated 2026-09-19.
 
 Every figure here is counted from `docs/data/jobs.json`. If you quote one in something published, quote the entry count with it — these move.
 
