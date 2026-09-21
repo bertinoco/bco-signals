@@ -677,3 +677,18 @@ two places. `compRange.currency` has no way to hold two currencies at once,
 so USD was recorded as the structured value (min 120000, max 130000) since
 it is listed first, and the EUR figures live only in the `jd-source`
 archive's `captureNote`. One instance, so nothing yet to compare it against.
+
+## A role's scope stated as a scheduled handoff
+
+**Trustly**'s Adoption and Knowledge Manager, AI Transformation does not
+describe its scope as a single list of responsibilities to be carried
+concurrently — it states a calendar: "The role runs in two phases. For the
+first two quarters you own adoption... From the third quarter you turn to
+the knowledge system itself." A second sentence pins the transition to an
+external event rather than the calendar alone: "The champion network
+transfers to you after the current pilot completes its scale review, so
+momentum is protected through that decision." Most postings in the corpus
+list responsibilities as a flat set the hire is expected to hold at once;
+this one tells the candidate which half of the job is temporary and which
+half is the one they will still be doing in year two. One instance, so
+nothing yet to compare it against.

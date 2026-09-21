@@ -3,7 +3,7 @@
 
 # Quotes
 
-Every stored quote, verbatim from the posting. **65 of 66** entries carry one.
+Every stored quote, verbatim from the posting. **66 of 67** entries carry one.
 
 These are the lines that anchor each entry's cluster and signal assignments, so they are the strongest citable evidence in the dataset. Each is checked against its `jd-source` archive before commit.
 
@@ -336,6 +336,12 @@ These are the lines that anchor each entry's cluster and signal assignments, so 
 > Establish standards for AI-generated content including prompts, templates, tone, guardrails, and quality thresholds.
 
 `ride-platform-content-systems-specialist` · added 2026-07-13
+
+### Trustly — Adoption and Knowledge Manager, AI Transformation
+
+> Design and own the taxonomy that organizes Trustly's knowledge base end to end, defining what counts as the source of truth for each domain.
+
+`trustly-adoption-knowledge-manager` · added 2026-09-21
 
 ### UKG — Lead Conversational Designer - Agentic Experiences
 
