@@ -3,7 +3,7 @@
     "title": "BCO Content Skills Tracker",
     "description": "A curated skills tracker for the content design community.",
     "lastUpdated": "2026-09-21",
-    "totalEntries": 66
+    "totalEntries": 67
   },
   "entries": [
     {
@@ -1972,6 +1972,39 @@
       "sourceUrl": null,
       "dateAdded": "2026-09-21",
       "quote": "Act as a human-in-the-loop for emerging platforms by defining, reviewing, and improving prompts, responses, agent behaviors, voice, tone, taxonomy, and content quality."
+    },
+    {
+      "id": "trustly-adoption-knowledge-manager",
+      "company": "Trustly",
+      "title": "Adoption and Knowledge Manager, AI Transformation",
+      "domain": "Finance",
+      "engagement": "Full-time",
+      "location": "New York",
+      "remote": null,
+      "coreFrame": "Two-phase role on Trustly's AI Transformation team. For the first two quarters, owns AI adoption: the cohort rollout model, the champion network, and the enablement hub that functions use to bring AI into daily work. From the third quarter, shifts to owning the knowledge system itself: designs the taxonomy that organizes Trustly's knowledge base, defines the source-of-truth model for each domain, leads evaluation, selection, and migration for a new knowledge base platform, and defines how that knowledge base connects to Claude and other AI tools for retrieval.",
+      "clusters": [
+        "taxonomy",
+        "content-systems-design",
+        "enablement"
+      ],
+      "signals": [
+        "agent-retrieval",
+        "governance-as-value-prop",
+        "central-standards-function",
+        "content-adjacent"
+      ],
+      "compRange": {
+        "min": 180000,
+        "max": 240000,
+        "currency": "USD",
+        "covers": "base",
+        "scope": null,
+        "extras": "equity + bonus"
+      },
+      "sourceUrl": null,
+      "dateAdded": "2026-09-21",
+      "tag": "content-adjacent",
+      "quote": "Design and own the taxonomy that organizes Trustly's knowledge base end to end, defining what counts as the source of truth for each domain."
     }
   ],
   "clusters": {
