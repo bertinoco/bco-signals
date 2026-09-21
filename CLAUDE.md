@@ -580,6 +580,22 @@ work. An ontology in Redpine's sense classifies drugs, trials, companies, and
 filings: real-world things, not content about them. Same technique, different
 object — the distinction Redpine's exclusion turned on.
 
+Schneider Electric's Global Ontology and Semantic Data Leader posting —
+excluded — is a second instance of the identical distinction, in a
+completely different domain and company type: a large industrial
+conglomerate rather than an early-stage AI startup, building ontologies for
+"products, systems, devices, points, relationships, behaviors, and
+operational concepts" across buildings, energy management, and automation
+systems, rather than Redpine's licensed drug/trial/filing data. The object
+being classified is again real-world physical/operational things, not
+content, and the posting's own "taxonomies" usage names industry data models
+(Brick Schema, Project Haystack, RealEstateCore, SAREF, BOT) in that same
+real-world sense. Two instances now, in unrelated domains — the kind of
+cross-domain recurrence Step 4's backcheck treats as stronger evidence than
+repetition within one domain, and worth having on hand the next time an
+"ontology" or "semantic data" posting looks close enough to this dataset's
+scope to need the distinction spelled out again.
+
 **Data schema** (or **schema design**) — the structural definition of how
 entities and their relations are represented in a database or knowledge
 store: field types, constraints, what a record can and can't hold. Distinct
