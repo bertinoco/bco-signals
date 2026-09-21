@@ -2,8 +2,8 @@
   "meta": {
     "title": "BCO Content Skills Tracker",
     "description": "A curated skills tracker for the content design community.",
-    "lastUpdated": "2026-09-17",
-    "totalEntries": 65
+    "lastUpdated": "2026-09-21",
+    "totalEntries": 66
   },
   "entries": [
     {
@@ -1948,6 +1948,30 @@
       "sourceUrl": null,
       "dateAdded": "2026-09-17",
       "quote": "One person cannot hand-make all of that. So you'll build the system that can."
+    },
+    {
+      "id": "bofa-xd-ii-content-design",
+      "company": "Bank of America",
+      "title": "Experience Design (XD) II, Content Design",
+      "domain": "Finance",
+      "engagement": "Full-time",
+      "location": "Charlotte, North Carolina; Seattle, Washington; San Francisco, California",
+      "remote": null,
+      "coreFrame": "Delivers advanced content design execution for a multi-disciplinary Experience Design team supporting Digital Consumer Investing and Workplace Benefits. Works across the discovery-to-delivery workflow, including content strategy, information architecture, content models, and taxonomies, and contributes to large-scale content audits and reusable content systems. Designs content for AI-powered and multimodal experiences, including conversational interfaces, agents, search, and recommendations. Acts as a human-in-the-loop reviewer of prompts, agent responses, and behaviors on emerging platforms.",
+      "clusters": [
+        "content-systems-design",
+        "taxonomy",
+        "ai-tooling",
+        "ai-content-governance",
+        "enablement"
+      ],
+      "signals": [
+        "ai-native-expectation",
+        "model-behavior-design"
+      ],
+      "sourceUrl": null,
+      "dateAdded": "2026-09-21",
+      "quote": "Act as a human-in-the-loop for emerging platforms by defining, reviewing, and improving prompts, responses, agent behaviors, voice, tone, taxonomy, and content quality."
     }
   ],
   "clusters": {

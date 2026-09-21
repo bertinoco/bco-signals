@@ -3,7 +3,7 @@
 
 # Quotes
 
-Every stored quote, verbatim from the posting. **64 of 65** entries carry one.
+Every stored quote, verbatim from the posting. **65 of 66** entries carry one.
 
 These are the lines that anchor each entry's cluster and signal assignments, so they are the strongest citable evidence in the dataset. Each is checked against its `jd-source` archive before commit.
 
@@ -72,6 +72,12 @@ These are the lines that anchor each entry's cluster and signal assignments, so 
 > You understand that UX writing is not copywriting with less space. You think in systems, you know why consistency matters, and you're comfortable pushing back when a design choice undercuts the experience.
 
 `atria-ux-writer` · added 2026-07-13
+
+### Bank of America — Experience Design (XD) II, Content Design
+
+> Act as a human-in-the-loop for emerging platforms by defining, reviewing, and improving prompts, responses, agent behaviors, voice, tone, taxonomy, and content quality.
+
+`bofa-xd-ii-content-design` · added 2026-09-21
 
 ### Bolt.new — Staff Content Designer
 

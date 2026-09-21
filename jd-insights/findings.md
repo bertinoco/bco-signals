@@ -652,11 +652,24 @@ already have ("familiar with… systems"), Evinova's is a commitment the role
 itself makes ("ensuring that AI processes retain" the approach). Recorded here
 rather than promoted, since two data points aren't enough to say whether that
 difference is a real split or coincidence, and since this note is the
-mechanism surfacing the pattern for the first time at all. *Trigger to
-revisit: a third posting using "human-in-the-loop" or an equivalent explicit
-framing for AI output review — distinct from editing/QA responsibilities that
-imply review without naming it — or a reason to treat the Spotify and Evinova
-instances as two different patterns rather than one.*
+mechanism surfacing the pattern for the first time at all.
+
+**Third instance: Bank of America's Experience Design (XD) II, Content
+Design.** States it as a stated responsibility, not a qualification: "Act as
+a human-in-the-loop for emerging platforms by defining, reviewing, and
+improving prompts, responses, agent behaviors, voice, tone, taxonomy, and
+content quality." Like Evinova's, this is a commitment the role itself makes,
+not something the candidate is expected to already have — and it names what
+is being reviewed (prompts, responses, agent behaviors, voice, tone,
+taxonomy, content quality) more explicitly than either prior instance. This
+is now a third posting carrying the phrase as a stated responsibility, which
+puts the count at or near Step 4's floor for a candidate signal — worth
+flagging rather than acting on. Not promoted here: the Spotify/Evinova
+qualification-versus-responsibility split noted above is still unresolved,
+and a count crossing a floor is not the same read as a second reader
+independently noticing a recurring pattern. *Trigger to revisit: a fourth
+instance, or a deliberate re-read of whether these three already clear the
+bar for a signal.*
 
 **Regulatory or compliance framing bounding the content work — three
 instances.** Wise's Staff AI Content Designer, FinCrime states the role must
