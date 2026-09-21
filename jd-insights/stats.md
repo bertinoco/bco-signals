@@ -3,37 +3,37 @@
 
 # Stats
 
-Dataset state: **65 entries**, `meta.lastUpdated` 2026-09-17. Generated 2026-09-19.
+Dataset state: **66 entries**, `meta.lastUpdated` 2026-09-21. Generated 2026-09-21.
 
 Every figure here is counted from `docs/data/jobs.json`. If you quote one in something published, quote the entry count with it — these move.
 
 ## Headline
 
-- **65** entries across **56** companies and **13** domains
-- Date range: 2026-05-24 to 2026-09-17
+- **66** entries across **57** companies and **13** domains
+- Date range: 2026-05-24 to 2026-09-21
 
 ## Responsibility clusters
 
 | | Entries | Share |
 |---|---:|---:|
-| Content systems design | 59 | 91% |
-| Enablement & team upskilling | 53 | 82% |
-| AI tooling & automation | 45 | 69% |
-| AI-generated content governance | 28 | 43% |
-| Terminology & language governance | 24 | 37% |
-| Taxonomy & information architecture | 21 | 32% |
-| Technical writing & documentation | 16 | 25% |
+| Content systems design | 60 | 91% |
+| Enablement & team upskilling | 54 | 82% |
+| AI tooling & automation | 46 | 70% |
+| AI-generated content governance | 29 | 44% |
+| Terminology & language governance | 24 | 36% |
+| Taxonomy & information architecture | 22 | 33% |
+| Technical writing & documentation | 16 | 24% |
 | Localization & internationalization | 13 | 20% |
 
 ## Skill signals
 
 | | Entries | Share |
 |---|---:|---:|
-| AI fluency expected | 43 | 66% |
+| AI fluency expected | 44 | 67% |
 | Enabler, not bottleneck | 25 | 38% |
-| Governance emphasized | 24 | 37% |
-| Model behavior design | 17 | 26% |
-| Central standards function | 16 | 25% |
+| Governance emphasized | 24 | 36% |
+| Model behavior design | 18 | 27% |
+| Central standards function | 16 | 24% |
 | Language as infrastructure | 10 | 15% |
 | Content systems for marketers | 10 | 15% |
 | GEO & SEO | 6 | 9% |
@@ -48,7 +48,7 @@ Every figure here is counted from `docs/data/jobs.json`. If you quote one in som
 
 ## Compensation
 
-- Stated in **45 of 65** entries (37 USD, 4 GBP, 3 CAD, 1 EUR)
+- Stated in **45 of 66** entries (37 USD, 4 GBP, 3 CAD, 1 EUR)
 - Full spread: **$62,120** to **$710,000**
 - USD medians: **$135,000** low, **$186,100** high
 - `covers`: 30 base, 13 unstated, 2 total
@@ -77,12 +77,12 @@ Read the n column before quoting any of these. A median over fewer than roughly 
 
 ## Title vocabulary
 
-Words appearing in 3 or more of the 65 stored titles. Counted from `title`, which is stored verbatim — so this reflects what employers wrote, not what the site renders.
+Words appearing in 3 or more of the 66 stored titles. Counted from `title`, which is stored verbatim — so this reflects what employers wrote, not what the site renders.
 
 | Word | Titles | Share |
 |---|---:|---:|
-| Content | 45 | 69% |
-| Designer | 27 | 42% |
+| Content | 46 | 70% |
+| Designer | 27 | 41% |
 | Senior | 15 | 23% |
 | AI | 13 | 20% |
 | UX | 12 | 18% |
@@ -90,14 +90,15 @@ Words appearing in 3 or more of the 65 stored titles. Counted from `title`, whic
 | Staff | 11 | 17% |
 | Architect | 8 | 12% |
 | Writer | 8 | 12% |
+| Design | 8 | 12% |
 | Lead | 8 | 12% |
-| Design | 7 | 11% |
 | Strategist | 7 | 11% |
 | Engineer | 5 | 8% |
 | Language | 4 | 6% |
 | Manager | 4 | 6% |
 | Product | 4 | 6% |
 | Conversation | 4 | 6% |
+| Experience | 3 | 5% |
 | Conversational | 3 | 5% |
 
 ## Domains
@@ -105,8 +106,8 @@ Words appearing in 3 or more of the 65 stored titles. Counted from `title`, whic
 | | Entries | Companies |
 |---|---:|---|
 | SaaS | 15 | Adobe, Bolt.new, CoLab, Docebo, Engrain, Figma, Fin, HoneyBook, Notion, Salesforce, Soda, Splunk, UKG, Wix, Zoom |
+| Finance | 13 | Ally Financial, Bank of America, Capital One, Chime, Citizens, Cleo, Ethos, Insurify, JPMorgan Chase, Sanna, Wealthsimple, Wise |
 | Big Tech | 13 | Alibaba, Amazon, Anthropic, Apple, Google, LinkedIn, Meta, OpenAI |
-| Finance | 12 | Ally Financial, Capital One, Chime, Citizens, Cleo, Ethos, Insurify, JPMorgan Chase, Sanna, Wealthsimple, Wise |
 | E-commerce | 7 | Airbnb, Coupang, HelloFresh, The Ride Platform, Vinted, Wellhub |
 | Healthcare | 5 | Atria, Evinova, Function Health, Teladoc Health, UnitedHealth Group |
 | Media | 4 | Netflix, Spotify |
@@ -120,7 +121,7 @@ Words appearing in 3 or more of the 65 stored titles. Counted from `title`, whic
 
 ## Stated org placement
 
-Recorded in `jd-source` front matter. **53 of 65** postings say where the role sits; the rest do not, which is itself a fact about the posting.
+Recorded in `jd-source` front matter. **54 of 66** postings say where the role sits; the rest do not, which is itself a fact about the posting.
 
 | Company | Placement as stated |
 |---|---|
@@ -133,6 +134,7 @@ Recorded in `jd-source` front matter. **53 of 65** postings say where the role s
 | Anthropic | Product Prompt and Eval Design team, within Product Design |
 | Apple | Product, Design & Marketing team on Apple Services; HI Writing discipline |
 | Apple | Product, Design & Marketing team on Apple Services... The Writing arm of our Product, Design & Marketing team |
+| Bank of America | Bank of America Experience Design (XD) team, supporting Digital Consumer Investing and Workplace Benefits |
 | Booking.com | UX Writing and Content Design organisation, within the Marketing department |
 | Capital One | Category: Design |
 | Chime | Not stated as a department; framed within Chime's member support organization |
@@ -180,7 +182,7 @@ Recorded in `jd-source` front matter. **53 of 65** postings say where the role s
 
 ## Stated posting dates
 
-**10 of 65** postings state a date. Where both exist, the gap to `dateAdded` varies enough that one is not a proxy for the other.
+**11 of 66** postings state a date. Where both exist, the gap to `dateAdded` varies enough that one is not a proxy for the other.
 
 | Company | Posted | Added |
 |---|---|---|
@@ -194,3 +196,4 @@ Recorded in `jd-source` front matter. **53 of 65** postings say where the role s
 | UnitedHealth Group | 2026-08-20 | 2026-08-21 |
 | Adidas | 2026-09-07 | 2026-09-09 |
 | Apple | 2026-09-15 | 2026-09-16 |
+| Bank of America | 2026-09-18 | 2026-09-21 |
