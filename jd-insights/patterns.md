@@ -692,3 +692,21 @@ list responsibilities as a flat set the hire is expected to hold at once;
 this one tells the candidate which half of the job is temporary and which
 half is the one they will still be doing in year two. One instance, so
 nothing yet to compare it against.
+
+## A posting with PERM recruitment-ad signatures
+
+**Robinhood**'s Senior Content Designer carries several markers associated
+with a PERM (labor-certification) recruitment ad rather than an ordinary
+posting: "3 years of experience in the job offered or a related occupation,"
+"Bachelor's degree (or foreign equivalent)," a bare standalone "Background
+checks required," a tracking job code the applicant is told to cite
+("Indicate job code I-2725 in your application"), and a base-pay minimum
+stated to the cent ("$82,056.00") rather than a round market-rate number —
+more consistent with a Department of Labor prevailing-wage determination
+than a number set by a comp team. Worth reading this kind of posting with
+that in mind: a PERM ad is legally required to state the position's actual
+full duties, so the responsibilities list reads unusually complete, but that
+same list can also be an aggregation of multiple pooled responsibilities
+rather than one person's realistic day-to-day scope. One instance, so
+nothing yet to compare it against — worth checking future postings that
+carry this same signature.

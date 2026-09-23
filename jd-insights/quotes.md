@@ -3,7 +3,7 @@
 
 # Quotes
 
-Every stored quote, verbatim from the posting. **66 of 67** entries carry one.
+Every stored quote, verbatim from the posting. **67 of 68** entries carry one.
 
 These are the lines that anchor each entry's cluster and signal assignments, so they are the strongest citable evidence in the dataset. Each is checked against its `jd-source` archive before commit.
 
@@ -288,6 +288,12 @@ These are the lines that anchor each entry's cluster and signal assignments, so 
 > Establish the conventions, systems, libraries, style guides, tools and AI skills that Relay relies on to ensure consistency of language as we scale and diversify our product experiences.
 
 `relay-senior-content-designer` · added 2026-08-28
+
+### Robinhood — Senior Content Designer
+
+> Establish the strategic governance and prompt-design frameworks for AI-native trading assistants and LLM-generated market insights, ensuring machine-generated content adheres to strict financial disclosure standards and algorithmic transparency requirements.
+
+`robinhood-senior-content-designer` · added 2026-09-23
 
 ### Salesforce — Experience Design Lead
 
