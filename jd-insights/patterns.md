@@ -710,3 +710,18 @@ same list can also be an aggregation of multiple pooled responsibilities
 rather than one person's realistic day-to-day scope. One instance, so
 nothing yet to compare it against — worth checking future postings that
 carry this same signature.
+
+## A status banner contradicted by external evidence
+
+**Autodesk**'s Senior Principal Content Strategist posting carries its own
+"No longer accepting applications" banner, but the submitter had direct,
+contemporaneous evidence against it: the same posting was promoted on
+LinkedIn the same day it was captured here. Distinct from the chrome
+artifacts recorded elsewhere in this file — a PERM signature, a truncated
+multi-location placeholder, a header-versus-body title mismatch — those are
+all internal inconsistencies a reader can spot from the text alone. This one
+is a status claim the text itself does not contradict; only outside
+information does. Recorded as a discrepancy rather than resolved, since
+nothing in the eligibility criteria turns on whether a posting is still
+accepting applications. One instance, so nothing yet to compare it
+against.

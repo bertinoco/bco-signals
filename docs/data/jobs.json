@@ -2,8 +2,8 @@
   "meta": {
     "title": "BCO Content Skills Tracker",
     "description": "A curated skills tracker for the content design community.",
-    "lastUpdated": "2026-09-23",
-    "totalEntries": 68
+    "lastUpdated": "2026-09-25",
+    "totalEntries": 69
   },
   "entries": [
     {
@@ -2038,6 +2038,30 @@
       "sourceUrl": null,
       "dateAdded": "2026-09-23",
       "quote": "Establish the strategic governance and prompt-design frameworks for AI-native trading assistants and LLM-generated market insights, ensuring machine-generated content adheres to strict financial disclosure standards and algorithmic transparency requirements."
+    },
+    {
+      "id": "autodesk-senior-principal-content-strategist",
+      "company": "Autodesk",
+      "title": "Senior Principal Content Strategist",
+      "domain": "SaaS",
+      "engagement": "Full-time",
+      "location": "Oslo, Norway",
+      "remote": null,
+      "coreFrame": "Defines content strategy for Autodesk's Forma Design, an AI-native industry cloud for the AEC (architecture, engineering, and construction) lifecycle, spanning in-product experiences, learning and onboarding, and connected platform touchpoints. Designs onboarding and learning experiences aligned with the product's AI-forward direction and pioneers AI-native content workflows intended to scale content output and quality. Develops scalable frameworks, governance models, and operating practices for consistent experiences across products, leads terminology, naming, and content-system efforts, and defines success metrics for content quality. Scales content-strategy practice across Forma and the broader AEC organization through mentorship and shared standards.",
+      "clusters": [
+        "content-systems-design",
+        "terminology-governance",
+        "enablement",
+        "ai-tooling"
+      ],
+      "signals": [
+        "ai-native-expectation",
+        "central-standards-function",
+        "governance-as-value-prop"
+      ],
+      "sourceUrl": null,
+      "dateAdded": "2026-09-25",
+      "quote": "Develop scalable frameworks, governance models, and operating practices that help teams deliver high-quality, consistent experiences across products."
     }
   ],
   "clusters": {

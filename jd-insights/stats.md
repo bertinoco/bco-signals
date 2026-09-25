@@ -3,39 +3,39 @@
 
 # Stats
 
-Dataset state: **68 entries**, `meta.lastUpdated` 2026-09-23. Generated 2026-09-23.
+Dataset state: **69 entries**, `meta.lastUpdated` 2026-09-25. Generated 2026-09-25.
 
 Every figure here is counted from `docs/data/jobs.json`. If you quote one in something published, quote the entry count with it — these move.
 
 ## Headline
 
-- **68** entries across **59** companies and **13** domains
-- Date range: 2026-05-24 to 2026-09-23
+- **69** entries across **60** companies and **13** domains
+- Date range: 2026-05-24 to 2026-09-25
 
 ## Responsibility clusters
 
 | | Entries | Share |
 |---|---:|---:|
-| Content systems design | 62 | 91% |
-| Enablement & team upskilling | 56 | 82% |
-| AI tooling & automation | 47 | 69% |
-| AI-generated content governance | 30 | 44% |
-| Terminology & language governance | 24 | 35% |
+| Content systems design | 63 | 91% |
+| Enablement & team upskilling | 57 | 83% |
+| AI tooling & automation | 48 | 70% |
+| AI-generated content governance | 30 | 43% |
+| Terminology & language governance | 25 | 36% |
 | Taxonomy & information architecture | 24 | 35% |
-| Technical writing & documentation | 16 | 24% |
+| Technical writing & documentation | 16 | 23% |
 | Localization & internationalization | 13 | 19% |
 
 ## Skill signals
 
 | | Entries | Share |
 |---|---:|---:|
-| AI fluency expected | 44 | 65% |
-| Governance emphasized | 26 | 38% |
-| Enabler, not bottleneck | 25 | 37% |
+| AI fluency expected | 45 | 65% |
+| Governance emphasized | 27 | 39% |
+| Enabler, not bottleneck | 25 | 36% |
+| Central standards function | 19 | 28% |
 | Model behavior design | 19 | 28% |
-| Central standards function | 18 | 26% |
-| Language as infrastructure | 10 | 15% |
-| Content systems for marketers | 10 | 15% |
+| Language as infrastructure | 10 | 14% |
+| Content systems for marketers | 10 | 14% |
 | GEO & SEO | 6 | 9% |
 | Structured data | 6 | 9% |
 | Accessibility as structural constraint | 6 | 9% |
@@ -48,7 +48,7 @@ Every figure here is counted from `docs/data/jobs.json`. If you quote one in som
 
 ## Compensation
 
-- Stated in **47 of 68** entries (39 USD, 4 GBP, 3 CAD, 1 EUR)
+- Stated in **47 of 69** entries (39 USD, 4 GBP, 3 CAD, 1 EUR)
 - Full spread: **$62,120** to **$710,000**
 - USD medians: **$135,000** low, **$186,100** high
 - `covers`: 32 base, 13 unstated, 2 total
@@ -77,36 +77,37 @@ Read the n column before quoting any of these. A median over fewer than roughly 
 
 ## Title vocabulary
 
-Words appearing in 3 or more of the 68 stored titles. Counted from `title`, which is stored verbatim — so this reflects what employers wrote, not what the site renders.
+Words appearing in 3 or more of the 69 stored titles. Counted from `title`, which is stored verbatim — so this reflects what employers wrote, not what the site renders.
 
 | Word | Titles | Share |
 |---|---:|---:|
-| Content | 47 | 69% |
+| Content | 48 | 70% |
 | Designer | 28 | 41% |
-| Senior | 16 | 24% |
-| AI | 14 | 21% |
-| UX | 12 | 18% |
+| Senior | 17 | 25% |
+| AI | 14 | 20% |
+| UX | 12 | 17% |
 | Systems | 11 | 16% |
 | Staff | 11 | 16% |
 | Architect | 8 | 12% |
 | Writer | 8 | 12% |
 | Design | 8 | 12% |
+| Strategist | 8 | 12% |
 | Lead | 8 | 12% |
-| Strategist | 7 | 10% |
 | Engineer | 5 | 7% |
 | Manager | 5 | 7% |
 | Language | 4 | 6% |
 | Product | 4 | 6% |
 | Conversation | 4 | 6% |
 | Experience | 3 | 4% |
+| Principal | 3 | 4% |
 | Conversational | 3 | 4% |
 
 ## Domains
 
 | | Entries | Companies |
 |---|---:|---|
+| SaaS | 16 | Adobe, Autodesk, Bolt.new, CoLab, Docebo, Engrain, Figma, Fin, HoneyBook, Notion, Salesforce, Soda, Splunk, UKG, Wix, Zoom |
 | Finance | 15 | Ally Financial, Bank of America, Capital One, Chime, Citizens, Cleo, Ethos, Insurify, JPMorgan Chase, Robinhood, Sanna, Trustly, Wealthsimple, Wise |
-| SaaS | 15 | Adobe, Bolt.new, CoLab, Docebo, Engrain, Figma, Fin, HoneyBook, Notion, Salesforce, Soda, Splunk, UKG, Wix, Zoom |
 | Big Tech | 13 | Alibaba, Amazon, Anthropic, Apple, Google, LinkedIn, Meta, OpenAI |
 | E-commerce | 7 | Airbnb, Coupang, HelloFresh, The Ride Platform, Vinted, Wellhub |
 | Healthcare | 5 | Atria, Evinova, Function Health, Teladoc Health, UnitedHealth Group |
@@ -121,7 +122,7 @@ Words appearing in 3 or more of the 68 stored titles. Counted from `title`, whic
 
 ## Stated org placement
 
-Recorded in `jd-source` front matter. **55 of 68** postings say where the role sits; the rest do not, which is itself a fact about the posting.
+Recorded in `jd-source` front matter. **56 of 69** postings say where the role sits; the rest do not, which is itself a fact about the posting.
 
 | Company | Placement as stated |
 |---|---|
@@ -134,6 +135,7 @@ Recorded in `jd-source` front matter. **55 of 68** postings say where the role s
 | Anthropic | Product Prompt and Eval Design team, within Product Design |
 | Apple | Product, Design & Marketing team on Apple Services; HI Writing discipline |
 | Apple | Product, Design & Marketing team on Apple Services... The Writing arm of our Product, Design & Marketing team |
+| Autodesk | Department: Experience Design Architect; Experience Foundations team for AEC (Architecture, Engineering, and Construction); reports to a Senior Manager of Content Strategy |
 | Bank of America | Bank of America Experience Design (XD) team, supporting Digital Consumer Investing and Workplace Benefits |
 | Booking.com | UX Writing and Content Design organisation, within the Marketing department |
 | Capital One | Category: Design |
@@ -183,7 +185,7 @@ Recorded in `jd-source` front matter. **55 of 68** postings say where the role s
 
 ## Stated posting dates
 
-**11 of 68** postings state a date. Where both exist, the gap to `dateAdded` varies enough that one is not a proxy for the other.
+**12 of 69** postings state a date. Where both exist, the gap to `dateAdded` varies enough that one is not a proxy for the other.
 
 | Company | Posted | Added |
 |---|---|---|
@@ -196,5 +198,6 @@ Recorded in `jd-source` front matter. **55 of 68** postings say where the role s
 | Evinova | 2026-08-17 | 2026-08-17 |
 | UnitedHealth Group | 2026-08-20 | 2026-08-21 |
 | Adidas | 2026-09-07 | 2026-09-09 |
+| Autodesk | 2026-09-09 | 2026-09-25 |
 | Apple | 2026-09-15 | 2026-09-16 |
 | Bank of America | 2026-09-18 | 2026-09-21 |
