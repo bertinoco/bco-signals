@@ -630,6 +630,29 @@ a content deliverable. Same category of near-miss as Redpine's
 "ontology"/`taxonomy` confusability above — different discipline, similar
 vocabulary.
 
+**Game content design**, from Scopely's Content Designer (Monopoly GO!)
+posting — excluded, but the title itself is the near-miss this time, not
+just adjacent vocabulary. Game content design means designing narrative,
+theming, and creative assets for a live-service game — sticker sets,
+minigames, character designs, seasonal event content — and it is a
+video-game-industry discipline distinct from this file's required-criteria
+sense of "content design" (UX writing, content strategy, or content
+systems work for a product interface), even though the two share a job
+title. The Scopely posting's own qualifications section gives the game away:
+"3+ years of relevant professional experience in content design, game
+design, narrative design, game writing, creative development, or a related
+discipline" treats "content design" as one interchangeable label among
+several game-industry creative disciplines, not as this dataset's target
+discipline. None of its ten stated responsibilities named a product-UI
+deliverable, and none mapped to any existing cluster — a title match with
+zero cluster grounding underneath it. Compare Roblox's Content Designer
+(also excluded, but for a different reason): that posting's stated work —
+owning UX content for monetization surfaces, applying UX writing and
+content strategy, building content guidelines and voice-and-tone
+frameworks — was genuine product content design that only failed the
+signal test. Scopely never reaches that question; the title is the same,
+the discipline underneath it is not.
+
 **The literal-text check, and why the word list stays short.** Audits of
 boundary cases (Fin, Redpine, Notion's Model Behavior Engineer) have used a
 fast pre-check: scan the JD for *content, writing, language, copy, tone,
