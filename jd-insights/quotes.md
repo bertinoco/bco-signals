@@ -3,7 +3,7 @@
 
 # Quotes
 
-Every stored quote, verbatim from the posting. **67 of 68** entries carry one.
+Every stored quote, verbatim from the posting. **68 of 69** entries carry one.
 
 These are the lines that anchor each entry's cluster and signal assignments, so they are the strongest citable evidence in the dataset. Each is checked against its `jd-source` archive before commit.
 
@@ -72,6 +72,12 @@ These are the lines that anchor each entry's cluster and signal assignments, so 
 > You understand that UX writing is not copywriting with less space. You think in systems, you know why consistency matters, and you're comfortable pushing back when a design choice undercuts the experience.
 
 `atria-ux-writer` · added 2026-07-13
+
+### Autodesk — Senior Principal Content Strategist
+
+> Develop scalable frameworks, governance models, and operating practices that help teams deliver high-quality, consistent experiences across products.
+
+`autodesk-senior-principal-content-strategist` · added 2026-09-25
 
 ### Bank of America — Experience Design (XD) II, Content Design
 
