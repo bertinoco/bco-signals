@@ -325,6 +325,13 @@ Retained deliberately in `jd-source`, since they are facts about the posting:
   footer's normal-cased value, per `jd-source/adidas-senior-ux-copywriter.md`'s
   `captureNote`.
 
+- **Huge** interrupts its own compensation-factors paragraph with a bare
+  heading before the number, rather than a labeled section: "...For current
+  Huge employees, tenure will also be a consideration. Wage Disclosure
+  $160,000 - $200,000 USD." "Wage Disclosure" reads as a template field label
+  that surfaced inline rather than a heading the posting intended to render
+  as one.
+
 Six of the stored quotes needed a character corrected to match their source —
 five apostrophes and one hyphen. None was visible on screen.
 
