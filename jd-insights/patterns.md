@@ -265,6 +265,15 @@ or total, which is why `compRange.covers` is recorded as `null`.
   underlying pattern — a sales-comp template carried wholesale into a
   non-sales posting — now confirmed at a third employer.
 
+**Roche** states no comp figure at all and defers disclosure explicitly:
+"Information about the compensation package for this position will be
+provided ahead of any interview." Distinct from Nscale's all-components-
+no-figure disclosure above — Nscale names base/equity/bonus with no number;
+Roche names neither a number nor components, only a promise that the
+information comes later in the hiring process. `compRange` is omitted from
+this entry rather than recorded with `covers: null`, since there is no range
+of any kind stated to record.
+
 ## Formatting artifacts survive into the archive
 
 Retained deliberately in `jd-source`, since they are facts about the posting:
