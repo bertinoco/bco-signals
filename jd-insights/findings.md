@@ -1381,6 +1381,30 @@ East-Asian e-commerce/fashion-platform posting using "콘텐츠 디자인"/"cont
 design" to denote on-site visual or graphic design rather than UX writing
 or content strategy.*
 
+**Phonetic lexicon / ASR fine-tuning as a content-adjacent responsibility —
+one instance in the actual dataset.** Roche's Content Design & AI Readiness
+Specialist states "Improve voicebot accuracy by creating and maintaining
+phonetic lexicons and fine-tuning Automatic Speech Recognition (ASR) models,"
+alongside conversational-AI and technical-documentation responsibilities that
+ground the entry in existing clusters (`taxonomy`, `technical-writing`,
+`content-systems-design`, `enablement`, `ai-tooling`, `terminology-governance`)
+and signals (`agent-retrieval`, `classification-for-ml`). This is the first
+*included* instance of this vocabulary. NiCE's Senior AI Conversation
+Designer used near-identical language (phonetic lexicons, ASR) but was
+excluded independently, on required criterion 1 and 3 grounds unrelated to
+this specific responsibility, so the vocabulary has not previously appeared
+in a live entry. The responsibility itself was flagged as ambiguous in the
+Roche audit rather than resolved: a phonetic lexicon is a controlled
+vocabulary, which reads as content-terminology work, while "fine-tuning" a
+model is model-behavior/ML-engineering work in the sense the rest of this
+file's clusters describe — `model-behavior-design` was deliberately withheld
+from this entry over that ambiguity. One instance in the dataset proper, one
+domain (Healthcare), and the responsibility is itself conversational-AI/
+customer-service-adjacent rather than domain-specific — below Step 4's floor
+either way. *Trigger to revisit: a second included posting naming phonetic
+lexicon or ASR fine-tuning work, ideally outside conversational-AI/
+customer-service-adjacent contexts.*
+
 ---
 
 # What this data cannot support
