@@ -301,6 +301,35 @@ and it's worth watching whether a third instance keeps that shape (product-
 or data-org placement, no content-design language) or reverts to pairing the
 bare title with a content-design identity the way Meta's does.
 
+## "AI Content Strategy" is starting to be the title, not a responsibility inside one
+
+**What the data shows.** Three entries now use "AI Content Strategy" (or "AI
+Content Strategist") as the role's entire title rather than a responsibility
+folded into a broader content-design or content-strategy title: Meta's AI
+Content Strategy Lead, Alibaba's AI Content Strategist, and Huge's Director,
+AI Content Strategy. The first two share a domain (Big Tech); Huge adds a
+second domain (Agency) and a step up in seniority — the first Director-level
+title in the corpus built around this naming, rather than a Lead or
+individual-contributor level.
+
+Huge's posting also passes CLAUDE.md's seniority note cleanly: client
+relationship management and account-growth language appear ("Lead client
+relationships as the senior content & AI strategist across engagements,"
+"partner with pitch teams to shape winning proposals") but sit alongside, not
+in place of, craft- and systems-level responsibilities — content governance,
+taxonomy and metadata systems, conversation design, AI content pipelines. It
+is a Director title without the people-management or headcount language that
+would have triggered required criterion 3.
+
+**What I think it means.** Same shape as the taxonomy finding above, one
+level up: as AI-content-specific work matures, it looks like it is claiming
+its own title rather than staying a line item inside a content strategist's
+or content designer's scope. Three instances is thin evidence, and two of the
+three share a domain, so this reads as an early pattern rather than a
+confirmed one — the trigger to revisit is a fourth instance in a domain
+outside Big Tech and Agency, which would rule out shared industry convention
+within either one.
+
 ## Content roles are appearing outside design orgs
 
 **What the data shows.** 23 of 29 postings state where the role sits, and the
