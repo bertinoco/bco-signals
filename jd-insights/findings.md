@@ -1350,6 +1350,25 @@ the AI's behavior or the standards it's held to. One instance, one domain
 end-user-facing review/approve/reverse-style control patterns for AI output
 as a stated design responsibility.*
 
+**"Content design" as a title for on-site visual/graphic design, not UX
+writing or content strategy — one instance.** Musinsa's Content Designer
+(Global Commerce) posting (excluded) titles the role "Content Design" but
+every stated responsibility is visual/graphic craft: producing "sales
+campaign and editorial design" (에디토리얼 디자인 — layout/graphic design, not
+textual editorial content), developing "visual identity" for campaigns,
+advancing a Figma-based "design system," and qualifications asking for
+"high understanding of typography and editorial design" and "2D/3D-based
+motion graphic design." A literal-text check for Korean equivalents of this
+dataset's target vocabulary (문구/카피/UX 라이팅/톤앤매너/용어 — copy/UX
+writing/tone-and-manner/terminology) returns zero hits. Structurally the
+same near-miss as Scopely's "Game content design" Terminology entry — a
+shared job title, a different discipline underneath — but in a Korean
+e-commerce/fashion-platform context rather than gaming. One instance, so no
+Terminology entry proposed yet. *Trigger to revisit: a second Korean or
+East-Asian e-commerce/fashion-platform posting using "콘텐츠 디자인"/"content
+design" to denote on-site visual or graphic design rather than UX writing
+or content strategy.*
+
 ---
 
 # What this data cannot support
