@@ -3,7 +3,7 @@
     "title": "BCO Content Skills Tracker",
     "description": "A curated skills tracker for the content design community.",
     "lastUpdated": "2026-09-26",
-    "totalEntries": 70
+    "totalEntries": 71
   },
   "entries": [
     {
@@ -2087,6 +2087,42 @@
       "sourceUrl": null,
       "dateAdded": "2026-09-26",
       "quote": "Develop and maintain structured, machine-readable technical content ready for use in generative AI platforms (e.g., RAG architectures)."
+    },
+    {
+      "id": "huge-director-ai-content-strategy",
+      "company": "Huge",
+      "title": "Director, AI Content Strategy",
+      "domain": "Agency",
+      "engagement": "Not specified",
+      "location": "Remote (US)",
+      "remote": true,
+      "coreFrame": "Leads content governance, audits, workflow design, and lifecycle management for client engagements, alongside information architecture, content models, taxonomy structures, and metadata systems. Defines voice and tone frameworks, messaging guidelines, and systemized content patterns, and designs conversation strategy for chat, voice, and agentic experiences, building dialogue flows, interaction scripts, guardrails, and error-handling pathways. Develops golden queries and responses to benchmark quality and ensure safe, consistent outputs, and creates AI content pipelines encompassing governance, training data readiness, and human-in-the-loop review frameworks. Architects intent taxonomies, entity structures, and conversational knowledge hierarchies, and serves as the senior content and AI strategist across client relationships, partnering with Experience Design, Product, and Engineering teams to scale content operations.",
+      "clusters": [
+        "content-systems-design",
+        "taxonomy",
+        "terminology-governance",
+        "enablement",
+        "ai-tooling",
+        "ai-content-governance"
+      ],
+      "signals": [
+        "ai-native-expectation",
+        "governance-as-value-prop",
+        "model-behavior-design",
+        "eval-infrastructure",
+        "classification-for-ml"
+      ],
+      "compRange": {
+        "min": 160000,
+        "max": 200000,
+        "currency": "USD",
+        "covers": null,
+        "scope": null,
+        "extras": null
+      },
+      "sourceUrl": null,
+      "dateAdded": "2026-09-26",
+      "quote": "Create AI content pipelines, including frameworks for governance, training data readiness, and human-in-the-loop review."
     }
   ],
   "clusters": {
