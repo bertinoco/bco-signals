@@ -975,9 +975,9 @@ four bullets anchored in writing or standards-for-writing) could reasonably
 land on include. See `jd-source/basis-intelligence-architect.md` for the full
 reasoning.
 
-**Whole-posting generic strategic language — 2 instances, cross-domain.**
-O.C. Tanner's Principal Product Content Strategist and Verily's Content
-Designer III were both excluded on the same failure mode: every
+**Whole-posting generic strategic language — 3 instances, cross-domain.**
+O.C. Tanner's Principal Product Content Strategist, Verily's Content
+Designer III, and Zilch's UX Copywriter were all excluded on the same failure mode: every
 responsibility restates the same handful of abstract nouns — governance,
 standards, consistency, scalability, cross-functional alignment — without
 ever naming a concrete object the work produces or touches. O.C. Tanner's
@@ -991,19 +991,31 @@ Verily's excludedReason independently reached for the same description:
 language with no reusable-template, taxonomy, or cross-team-scale
 specifics, the weakest grounding for that cluster anywhere in the corpus."
 
-Both postings pass the required criteria and the signal test on a literal
-read of their vocabulary — the failure isn't an absence of the right words,
-it's an absence of anything concrete behind them. This is what distinguishes
-the pattern from entries that clear the bar: UKG names "ontologies and
-structured content systems" and "a spectrum of autonomy from suggesting,
-confirming to acting"; GDS names "dialogue patterns, prompts, and
-interaction flows." A posting in this pattern never drops to that level of
-specificity once, no matter how many times it restates its strategic intent.
+All three postings pass the required criteria and the signal test on a
+literal read of their vocabulary — the failure isn't an absence of the right
+words, it's an absence of anything concrete behind them. This is what
+distinguishes the pattern from entries that clear the bar: UKG names
+"ontologies and structured content systems" and "a spectrum of autonomy from
+suggesting, confirming to acting"; GDS names "dialogue patterns, prompts,
+and interaction flows." A posting in this pattern never drops to that level
+of specificity once, no matter how many times it restates its strategic
+intent. Zilch's UX Copywriter fits the same shape from a different angle:
+its bullets name concrete surfaces (SEO content, help articles, FAQs,
+operational communications, Figma), but the candidate cluster/signal
+assignments each bullet might otherwise support — cross-functional
+collaboration, accessibility, customer-insight-driven iteration — stop at
+boilerplate ("partner with Product Design," "champion accessibility... and
+best practice," "use customer insight, data and testing to improve the
+content") with no reusable-framework, structural-constraint, or named-metric
+specificity behind any of them.
 
-Two instances, two different domains (Healthcare, SaaS) — clears Step 4's
-floor without being domain-clustered. *Trigger to revisit: a third instance,
-to confirm this is a recurring authorial style (templated senior-strategist
-language reused across companies) rather than coincidence.*
+Three instances, three different domains (Healthcare, SaaS, Finance) — this
+is now a confirmed recurring authorial style (templated senior-strategist or
+generalist-copy language reused across companies and industries) rather
+than coincidence, clearing the trigger the two-instance note set. *Trigger
+to revisit: a fourth instance, to see whether the pattern clusters by
+seniority/scope (strategist-level and generalist-IC roles both fail this way
+so far) rather than by domain.*
 
 **AI mentions that name no tool, governed object, or model behavior — a
 placeholder pattern already precedented five times over, never centralized
