@@ -3,7 +3,7 @@
 
 # Quotes
 
-Every stored quote, verbatim from the posting. **69 of 70** entries carry one.
+Every stored quote, verbatim from the posting. **70 of 71** entries carry one.
 
 These are the lines that anchor each entry's cluster and signal assignments, so they are the strongest citable evidence in the dataset. Each is checked against its `jd-source` archive before commit.
 
@@ -216,6 +216,12 @@ These are the lines that anchor each entry's cluster and signal assignments, so 
 > You'll set the direction for how our chatbot resolves member issues, from what it should be able to handle to how content gets structured so it can act on it, and you'll build the Help Center content and Support documentation that equip Support Specialists with clear, dependable guidance across every channel.
 
 `honeybook-ai-content-program-manager-chatbot` · added 2026-09-02
+
+### Huge — Director, AI Content Strategy
+
+> Create AI content pipelines, including frameworks for governance, training data readiness, and human-in-the-loop review.
+
+`huge-director-ai-content-strategy` · added 2026-09-26
 
 ### Insurify — Editor, AI Content Systems
 
