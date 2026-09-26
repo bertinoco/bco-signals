@@ -2,8 +2,8 @@
   "meta": {
     "title": "BCO Content Skills Tracker",
     "description": "A curated skills tracker for the content design community.",
-    "lastUpdated": "2026-09-25",
-    "totalEntries": 69
+    "lastUpdated": "2026-09-26",
+    "totalEntries": 70
   },
   "entries": [
     {
@@ -2062,6 +2062,31 @@
       "sourceUrl": null,
       "dateAdded": "2026-09-25",
       "quote": "Develop scalable frameworks, governance models, and operating practices that help teams deliver high-quality, consistent experiences across products."
+    },
+    {
+      "id": "roche-content-design-ai-readiness-specialist",
+      "company": "Roche",
+      "title": "Content Design & AI Readiness Specialist",
+      "domain": "Healthcare",
+      "engagement": "Not specified",
+      "location": "Warsaw, Masovian, Poland",
+      "remote": "hybrid",
+      "coreFrame": "Optimizes technical content for both human readability and AI consumption within the Knowledge Strategy & Language Operations Subchapter, developing structured, machine-readable content for use in generative AI platforms including RAG architectures. Manages metadata, search synonyms, and prompt libraries to support AI-assisted retrieval, and improves voicebot accuracy by building phonetic lexicons and fine-tuning Automatic Speech Recognition models. Aligns taxonomy, metadata, and content governance with subject matter experts across teams, and provides training to internal stakeholders on AI tools and content structuring.",
+      "clusters": [
+        "taxonomy",
+        "technical-writing",
+        "content-systems-design",
+        "enablement",
+        "ai-tooling",
+        "terminology-governance"
+      ],
+      "signals": [
+        "agent-retrieval",
+        "classification-for-ml"
+      ],
+      "sourceUrl": null,
+      "dateAdded": "2026-09-26",
+      "quote": "Develop and maintain structured, machine-readable technical content ready for use in generative AI platforms (e.g., RAG architectures)."
     }
   ],
   "clusters": {

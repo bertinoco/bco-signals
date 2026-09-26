@@ -3,7 +3,7 @@
 
 # Quotes
 
-Every stored quote, verbatim from the posting. **68 of 69** entries carry one.
+Every stored quote, verbatim from the posting. **69 of 70** entries carry one.
 
 These are the lines that anchor each entry's cluster and signal assignments, so they are the strongest citable evidence in the dataset. Each is checked against its `jd-source` archive before commit.
 
@@ -300,6 +300,12 @@ These are the lines that anchor each entry's cluster and signal assignments, so 
 > Establish the strategic governance and prompt-design frameworks for AI-native trading assistants and LLM-generated market insights, ensuring machine-generated content adheres to strict financial disclosure standards and algorithmic transparency requirements.
 
 `robinhood-senior-content-designer` · added 2026-09-23
+
+### Roche — Content Design & AI Readiness Specialist
+
+> Develop and maintain structured, machine-readable technical content ready for use in generative AI platforms (e.g., RAG architectures).
+
+`roche-content-design-ai-readiness-specialist` · added 2026-09-26
 
 ### Salesforce — Experience Design Lead
 
