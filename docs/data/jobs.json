@@ -2,8 +2,8 @@
   "meta": {
     "title": "BCO Content Skills Tracker",
     "description": "A curated skills tracker for the content design community.",
-    "lastUpdated": "2026-09-26",
-    "totalEntries": 71
+    "lastUpdated": "2026-09-30",
+    "totalEntries": 72
   },
   "entries": [
     {
@@ -2123,6 +2123,32 @@
       "sourceUrl": null,
       "dateAdded": "2026-09-26",
       "quote": "Create AI content pipelines, including frameworks for governance, training data readiness, and human-in-the-loop review."
+    },
+    {
+      "id": "personio-content-designer",
+      "company": "Personio",
+      "title": "Content Designer (d/f/m)",
+      "domain": "SaaS",
+      "engagement": "Full Time",
+      "location": "Munich, Berlin, London",
+      "remote": "hybrid",
+      "coreFrame": "Builds and maintains reusable content patterns, standards, and self-service tools, using AI to scale their impact so Product teams can handle everyday content needs independently. Sets the standard for content and information architecture quality, identifying where AI-generated or Product-Designer-authored work misses the mark and proposing or making the fix. Partners with the Localisation function to prepare source content for translation across target languages, particularly German, provides embedded design support to specific product areas, and contributes to playbooks, training, and reviews that raise the content quality bar across Design, Product, and Engineering.",
+      "clusters": [
+        "content-systems-design",
+        "terminology-governance",
+        "ai-content-governance",
+        "ai-tooling",
+        "enablement",
+        "localization"
+      ],
+      "signals": [
+        "ai-native-expectation",
+        "enabler-not-bottleneck",
+        "central-standards-function"
+      ],
+      "sourceUrl": null,
+      "dateAdded": "2026-09-30",
+      "quote": "You will build and maintain reusable content patterns, standards, and self-service tools, using AI where it helps scale their impact, so Product teams can handle everyday content needs independently."
     }
   ],
   "clusters": {
