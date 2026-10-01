@@ -2,8 +2,8 @@
   "meta": {
     "title": "BCO Content Skills Tracker",
     "description": "A curated skills tracker for the content design community.",
-    "lastUpdated": "2026-09-30",
-    "totalEntries": 72
+    "lastUpdated": "2026-10-01",
+    "totalEntries": 73
   },
   "entries": [
     {
@@ -2149,6 +2149,27 @@
       "sourceUrl": null,
       "dateAdded": "2026-09-30",
       "quote": "You will build and maintain reusable content patterns, standards, and self-service tools, using AI where it helps scale their impact, so Product teams can handle everyday content needs independently."
+    },
+    {
+      "id": "smartly-user-guidance-lead",
+      "company": "Smartly",
+      "title": "User Guidance Lead",
+      "domain": "SaaS",
+      "engagement": "Not specified",
+      "location": "Helsinki, Uusimaa, Finland",
+      "remote": "hybrid",
+      "coreFrame": "Owns the strategy and execution for making Smartly's product knowledge accurate, discoverable, reusable, and accessible to both humans and AI, leading a small team of technical writers while remaining hands-on. Owns the customer-facing Knowledge Base and embeds User Guidance into the product development lifecycle, partnering with Product, Engineering, Design, Support, Customer Success, Data, and AI teams. Identifies the additional context and collateral AI systems and agents need to understand and use Smartly's products, and helps shape how product knowledge is made available through developer documentation, APIs, MCP, and other machine-consumable interfaces. Uses analytics and customer behavior to identify knowledge gaps and prioritize improvements, and explores AI paths to improve how User Guidance content is created, reviewed, and maintained.",
+      "clusters": [
+        "content-systems-design",
+        "technical-writing",
+        "ai-tooling"
+      ],
+      "signals": [
+        "agent-retrieval"
+      ],
+      "sourceUrl": null,
+      "dateAdded": "2026-10-01",
+      "quote": "Identify and provide the additional context and collateral that AI systems and agents need to understand and use Smartly's products."
     }
   ],
   "clusters": {

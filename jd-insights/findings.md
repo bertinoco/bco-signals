@@ -1434,6 +1434,24 @@ either way. *Trigger to revisit: a second included posting naming phonetic
 lexicon or ASR fine-tuning work, ideally outside conversational-AI/
 customer-service-adjacent contexts.*
 
+**MCP named as a channel the role's own output is consumed through, not a
+tool the role builds with — one instance.** Smartly's User Guidance Lead
+states the role should "help shape how product knowledge is made available
+through developer documentation, APIs, MCP and other machine-consumable
+interfaces," and separately counts success as product knowledge becoming
+"reusable across the KB, in-product experiences, Support AI, APIs, and MCP."
+In both mentions, MCP is a distribution channel for the role's own
+documentation/knowledge output — distinct from the corpus's three prior MCP
+mentions: Soda's AI Content Engineer uses MCP as a protocol the role builds
+agents *with*; Bank of America's mention sits in a generic
+tools-and-technologies list; Redpine's (excluded) is infrastructure-side and
+carries no content deliverable at all. This fits inside the existing
+`agent-retrieval` signal rather than warranting a new key — one instance is
+below Step 4's floor regardless. *Trigger to revisit: a second posting naming
+MCP specifically as a channel through which the role's own content or
+documentation output reaches AI agents, rather than a tool the role builds
+agentic systems with.*
+
 ---
 
 # What this data cannot support
