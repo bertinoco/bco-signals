@@ -1,0 +1,60 @@
+{
+  "_comment": "Patterns are case-insensitive regular expressions. test_scout.py fails if any title in docs/data/jobs.json would be missed or excluded, so widen title_terms when it does.",
+  "title_terms": [
+    "content",
+    "ux writ",
+    "product writ",
+    "ux copy",
+    "copywrit",
+    "conversation",
+    "language",
+    "taxonom",
+    "knowledge",
+    "\\bvoice\\b",
+    "information architect",
+    "model design",
+    "prompt"
+  ],
+  "title_exclude": [
+    "content marketing",
+    "content creator",
+    "content moderat",
+    "content review",
+    "content policy",
+    "content acquisition",
+    "content licens",
+    "content partnership",
+    "content delivery",
+    "video",
+    "social media",
+    "game",
+    "narrative",
+    "voice ?over",
+    "voice actor",
+    "sign language"
+  ],
+  "body_phrases": [
+    "content design",
+    "ux writing",
+    "ux writer",
+    "content strateg",
+    "conversation design",
+    "conversational design",
+    "content systems",
+    "system prompts?",
+    "voice and tone",
+    "tone of voice"
+  ],
+  "body_only_title_exclude": [
+    "engineer",
+    "developer",
+    "scientist",
+    "sales",
+    "account",
+    "recruit",
+    "finance",
+    "legal",
+    "counsel",
+    "intern\\b"
+  ]
+}
