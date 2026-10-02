@@ -1,5 +1,5 @@
 {
-  "_comment": "Patterns are case-insensitive regular expressions. test_scout.py fails if any title in docs/data/jobs.json would be missed or excluded, so widen title_terms when it does.",
+  "_comment": "Patterns are case-insensitive regular expressions. title_exclude drops a posting before matching. A body-only match also needs a body_only_title_require pattern in the title. test_scout.py fails if any entry in docs/data/jobs.json would be missed, so widen these lists when it does.",
   "title_terms": [
     "content",
     "ux writ",
@@ -9,11 +9,11 @@
     "conversation",
     "language",
     "taxonom",
-    "knowledge",
-    "\\bvoice\\b",
     "information architect",
     "model design",
-    "prompt"
+    "prompt",
+    "knowledge (architect|manager|management|base)",
+    "brand voice"
   ],
   "title_exclude": [
     "content marketing",
@@ -31,7 +31,28 @@
     "narrative",
     "voice ?over",
     "voice actor",
-    "sign language"
+    "sign language",
+    "(software|backend|frontend|full[- ]?stack|data|machine learning|ml|research|platform|infrastructure|site reliability) engineer",
+    "staff engineer",
+    "director of engineering",
+    "engineering manager",
+    "product marketing",
+    "voice of the customer",
+    "language training",
+    "language model",
+    "product manager",
+    "project manager",
+    "(migration|bot|software|web|front-?end|back-?end|full[- ]?stack) developer",
+    "software development",
+    "\\bsde\\b",
+    "analyst",
+    "customer success",
+    "content protection",
+    "content compliance",
+    "content marketer",
+    "\\bseo\\b",
+    "performance marketing",
+    "conversational ai engineer"
   ],
   "body_phrases": [
     "content design",
@@ -45,16 +66,11 @@
     "voice and tone",
     "tone of voice"
   ],
-  "body_only_title_exclude": [
-    "engineer",
-    "developer",
-    "scientist",
-    "sales",
-    "account",
-    "recruit",
-    "finance",
-    "legal",
-    "counsel",
-    "intern\\b"
+  "body_only_title_require": [
+    "design",
+    "writ",
+    "\\bedit",
+    "guidance",
+    "documentation"
   ]
 }

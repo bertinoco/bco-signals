@@ -42,9 +42,10 @@ TIMEOUT = 20
 USER_AGENT = "bco-signals-jd-scout/1.0 (+https://signals.bertino.co)"
 
 # Board feed per ATS. "-eu" variants are boards hosted in the vendor's EU region.
+# Greenhouse serves EU-hosted boards from its main API too.
 FEEDS = {
     "greenhouse": "https://boards-api.greenhouse.io/v1/boards/{slug}/jobs?content=true",
-    "greenhouse-eu": "https://boards-api.eu.greenhouse.io/v1/boards/{slug}/jobs?content=true",
+    "greenhouse-eu": "https://boards-api.greenhouse.io/v1/boards/{slug}/jobs?content=true",
     "lever": "https://api.lever.co/v0/postings/{slug}?mode=json",
     "lever-eu": "https://api.eu.lever.co/v0/postings/{slug}?mode=json",
     "ashby": "https://api.ashbyhq.com/posting-api/job-board/{slug}?includeCompensation=true",
@@ -199,7 +200,7 @@ def classify(title, text, kw):
     terms = _hits(kw["title_terms"], title)
     if terms:
         return "title", terms
-    if _hits(kw["body_only_title_exclude"], title):
+    if not _hits(kw["body_only_title_require"], title):
         return None, []
     terms = _hits(kw["body_phrases"], text)
     if terms:

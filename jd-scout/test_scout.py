@@ -53,8 +53,15 @@ class Classify(unittest.TestCase):
     def test_body_match(self):
         self.assertEqual(scout.classify("Product Designer", "You'll own content design.", self.kw)[0], "body")
 
-    def test_body_only_excludes_engineers(self):
-        self.assertIsNone(scout.classify("Software Engineer", "partner with content design", self.kw)[0])
+    def test_body_only_needs_a_design_or_writing_title(self):
+        self.assertIsNone(scout.classify("Credit Risk Manager", "see our tone of voice guide", self.kw)[0])
+        self.assertEqual(scout.classify("User Guidance Lead", "content design", self.kw)[0], "body")
+
+    def test_engineering_titles_excluded(self):
+        for title in ("Staff Engineer - Content Platform", "Senior Backend Data Engineer – Content Intelligence",
+                      "Software Engineer, Tokens and Prompt Structures", "Director of Engineering - Content Platform"):
+            self.assertIsNone(scout.classify(title, "", self.kw)[0], title)
+        self.assertEqual(scout.classify("Staff Content Engineer", "", self.kw)[0], "title")
 
     def test_no_match(self):
         self.assertIsNone(scout.classify("Product Designer", "Figma, prototyping", self.kw)[0])

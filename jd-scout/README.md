@@ -35,8 +35,10 @@ The match runs in two passes:
   User Guidance Lead get found.
 
 `title_exclude` drops a posting before either pass, for titles like content
-marketing, moderation and game design. `body_only_title_exclude` stops
-body-only matches on engineering, sales and similar roles.
+marketing, moderation, game design and engineering roles on "content platform"
+teams. A body-only match also needs a `body_only_title_require` word in the
+title (design, writing, editing, guidance, documentation), so a credit risk
+role that mentions a tone of voice guide doesn't qualify.
 
 `test_scout.py` runs every entry in `docs/data/jobs.json` through the filter
 and fails if any would be missed. When a new entry fails it, widen
@@ -73,6 +75,6 @@ each candidate with status `audit`:
 
 ## Network access
 
-The feeds live at `boards-api.greenhouse.io`, `boards-api.eu.greenhouse.io`,
+The feeds live at `boards-api.greenhouse.io` (which also serves EU-hosted boards),
 `api.lever.co`, `api.eu.lever.co` and `api.ashbyhq.com`. The cloud environment
 must allow those hosts, or every board fails and the page reports it.
