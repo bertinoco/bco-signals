@@ -16,5 +16,17 @@
     "\"content engineer\" OR \"content architect\"",
     "\"language systems\" OR \"taxonomist\"",
     "\"content systems\""
-  ]
+  ],
+  "skip_boards": {
+    "_comment": "Boards discovery should never add: job aggregators, referral and internal boards, and boards whose postings are all out of scope.",
+    "boards": [
+      "greenhouse-eu/agency",
+      "greenhouse/ziprecruiter",
+      "greenhouse/referralsuseonly",
+      "greenhouse/coupanginternal",
+      "greenhouse/mrbeastyoutube",
+      "lever/jobgether",
+      "lever/weekdayworks"
+    ]
+  }
 }

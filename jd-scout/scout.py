@@ -395,9 +395,13 @@ def parse_board_url(url):
 
 
 def cmd_slugs(_args):
+    with open(os.path.join(HERE, "discovery.json")) as fh:
+        skip = {b.lower() for b in json.load(fh).get("skip_boards", {}).get("boards", [])}
     seen, out = set(), []
     for line in sys.stdin:
         hit = parse_board_url(line)
+        if hit and "{}/{}".format(hit["ats"], hit["slug"]).lower() in skip:
+            continue
         if hit and (hit["ats"], hit["slug"].lower()) not in seen:
             seen.add((hit["ats"], hit["slug"].lower()))
             hit["source"] = "discovered"
