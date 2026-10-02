@@ -3,7 +3,7 @@
 
 # Quotes
 
-Every stored quote, verbatim from the posting. **72 of 73** entries carry one.
+Every stored quote, verbatim from the posting. **73 of 74** entries carry one.
 
 These are the lines that anchor each entry's cluster and signal assignments, so they are the strongest citable evidence in the dataset. Each is checked against its `jd-source` archive before commit.
 
@@ -330,6 +330,12 @@ These are the lines that anchor each entry's cluster and signal assignments, so 
 > This isn’t a traditional content role. We’re looking for someone who operates at the edge of tech and language – someone who can design systems, build agents, and orchestrate tooling that scales quality.
 
 `sanna-content-engineer` · added 2026-05-24
+
+### Slang AI — Senior Conversation Designer
+
+> Partner with engineers to define prompts and guardrails for LLM integration, and evaluate LLM performance in production.
+
+`slang-ai-senior-conversation-designer` · added 2026-10-02
 
 ### Smartly — User Guidance Lead
 

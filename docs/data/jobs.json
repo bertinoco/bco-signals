@@ -2,8 +2,8 @@
   "meta": {
     "title": "BCO Content Skills Tracker",
     "description": "A curated skills tracker for the content design community.",
-    "lastUpdated": "2026-10-01",
-    "totalEntries": 73
+    "lastUpdated": "2026-10-02",
+    "totalEntries": 74
   },
   "entries": [
     {
@@ -2170,6 +2170,35 @@
       "sourceUrl": null,
       "dateAdded": "2026-10-01",
       "quote": "Identify and provide the additional context and collateral that AI systems and agents need to understand and use Smartly's products."
+    },
+    {
+      "id": "slang-ai-senior-conversation-designer",
+      "company": "Slang AI",
+      "title": "Senior Conversation Designer",
+      "domain": "SaaS",
+      "engagement": "Not specified",
+      "location": "New York, NY",
+      "remote": "hybrid",
+      "coreFrame": "Designs end-to-end conversational flows for generative AI capabilities across voice and chat, incorporating conditional logic, parameter handling, and tool calls, and builds error handling and fallback mechanisms for conversation recovery. Creates and tests dialog that maintains a consistent voice, tone, and personality across the product. Partners with engineers to define prompts and guardrails for LLM integration, and evaluates LLM performance in production, while analyzing conversation transcripts, audio, and metrics to identify friction points. Defines and documents conversation design standards, best practices, and reusable patterns that scale across experiences.",
+      "clusters": [
+        "content-systems-design",
+        "ai-tooling"
+      ],
+      "signals": [
+        "model-behavior-design",
+        "ai-native-expectation"
+      ],
+      "compRange": {
+        "min": 160000,
+        "max": 180000,
+        "currency": "USD",
+        "covers": "base",
+        "scope": null,
+        "extras": "equity"
+      },
+      "sourceUrl": null,
+      "dateAdded": "2026-10-02",
+      "quote": "Partner with engineers to define prompts and guardrails for LLM integration, and evaluate LLM performance in production."
     }
   ],
   "clusters": {
