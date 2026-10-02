@@ -16,7 +16,8 @@ session that follows `ROUTINE.md`:
 1. **Discovery.** Runs the `site:` searches in `discovery.json` to find company
    boards that aren't on the list yet.
 2. **Poll.** Reads each board's public JSON feed and keeps postings that match
-   `keywords.json`.
+   `keywords.json` and were posted in the last 30 days (`MAX_AGE_DAYS` in
+   `scout.py`). A posting the board gives no date for is kept.
 3. **Filter.** Drops postings already archived in `jd-source/` (included or
    excluded), already in `jobs.json`, or already on the triage page, whatever
    their status. A posting counts as already archived when its job id appears
