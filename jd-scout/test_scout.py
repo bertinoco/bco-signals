@@ -152,6 +152,8 @@ class Poll(unittest.TestCase):
             {"id": 2, "title": "UX Writer", "absolute_url": "u2", "content": "x"},
             {"id": 3, "title": "Account Executive", "absolute_url": "u3", "content": "content design"},
             {"id": 4, "title": "Content Engineer", "absolute_url": "u4", "content": "x"},
+            {"id": 5, "title": "UX Writer", "absolute_url": "u5", "content": "x",
+             "first_published": "2020-01-01T00:00:00Z"},
         ]}
         real = scout.fetch_json
         scout.fetch_json = lambda url: feed
@@ -172,7 +174,7 @@ class Poll(unittest.TestCase):
                                {"ats": "greenhouse", "slug": "sanna", "name": "Sanna"},
                                {"ats": "greenhouse", "slug": "off"}], fh)
                 out = os.path.join(tmp, "out")
-                scout.cmd_poll(SimpleNamespace(companies=[companies], db_dump=dump, out=out))
+                scout.cmd_poll(SimpleNamespace(companies=[companies], db_dump=dump, out=out, max_age=30))
                 with open(os.path.join(out, "summary.json")) as fh:
                     s = json.load(fh)
                 new_boards = sorted(os.listdir(os.path.join(out, "companies-new")))
@@ -185,6 +187,10 @@ class Poll(unittest.TestCase):
         self.assertNotIn("greenhouse-acme-3", s["openIds"])
         self.assertNotIn("greenhouse-sanna-4", s["openIds"])
         self.assertIn("greenhouse-acme-4", s["newIds"])
+        # Posted years ago: still open on the board, but never added.
+        self.assertIn("greenhouse-acme-5", s["openIds"])
+        self.assertNotIn("greenhouse-acme-5", s["newIds"])
+        self.assertGreaterEqual(s["skippedTooOld"], 1)
         # Only the board missing from the db is written; the disabled one is not polled.
         self.assertEqual(new_boards, ["greenhouse-acme.json"])
         self.assertEqual(s["companiesChecked"], 2)

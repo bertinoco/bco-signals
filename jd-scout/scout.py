@@ -31,7 +31,7 @@ import re
 import sys
 import urllib.error
 import urllib.request
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from html.parser import HTMLParser
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -40,6 +40,10 @@ JOBS = os.path.join(ROOT, "docs", "data", "jobs.json")
 SOURCE_DIR = os.path.join(ROOT, "jd-source")
 
 TIMEOUT = 20
+
+# Postings older than this, by the date the board says they were posted, are
+# never added. A posting with no date is kept, since its age can't be checked.
+MAX_AGE_DAYS = 30
 USER_AGENT = "bco-signals-jd-scout/1.0 (+https://signals.bertino.co)"
 
 # Board feed per ATS. "-eu" variants are boards hosted in the vendor's EU region.
@@ -346,6 +350,7 @@ def cmd_poll(args):
     companies = [c for c in load_companies_list(db_boards + file_boards)
                  if "{}/{}".format(c["ats"], c["slug"]).lower() not in skip]
     today = datetime.now(timezone.utc).date().isoformat()
+    cutoff = (datetime.now(timezone.utc) - timedelta(days=args.max_age)).date().isoformat()
     board_dir = os.path.join(args.out, "companies-new")
     os.makedirs(board_dir, exist_ok=True)
     for c in file_boards:
@@ -361,6 +366,7 @@ def cmd_poll(args):
     cand_dir = os.path.join(args.out, "candidates")
     os.makedirs(cand_dir, exist_ok=True)
     open_ids, new_ids, failed = [], [], []
+    too_old = 0
 
     for c in companies:
         ats, slug = c["ats"], c["slug"]
@@ -395,6 +401,9 @@ def cmd_poll(args):
             open_ids.append(did)
             if did in known:
                 continue
+            if job["postedDate"] and job["postedDate"] < cutoff:
+                too_old += 1
+                continue
             pats = terms if match == "body" else kw_patterns(kw["body_phrases"]) + terms
             doc = {
                 "title": job["title"],
@@ -423,6 +432,8 @@ def cmd_poll(args):
         "finishedAt": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "companiesChecked": len(companies) - len(failed),
         "companiesFailed": failed,
+        "maxAgeDays": args.max_age,
+        "skippedTooOld": too_old,
         "newCount": len(new_ids),
         "newBoards": len(os.listdir(board_dir)),
         "newIds": new_ids,
@@ -495,6 +506,8 @@ def main():
     sub = ap.add_subparsers(dest="cmd", required=True)
     p = sub.add_parser("poll")
     p.add_argument("--companies", nargs="+", default=[], help="board lists: seed-companies.json, discovered.json")
+    p.add_argument("--max-age", type=int, default=MAX_AGE_DAYS,
+                   help="skip postings posted more than this many days ago (default %(default)s)")
     p.add_argument("--db-dump", help="directory holding companies/ and candidates/ saved from the triage db")
     p.add_argument("--out", required=True)
     p.set_defaults(func=cmd_poll)
