@@ -741,3 +741,22 @@ information does. Recorded as a discrepancy rather than resolved, since
 nothing in the eligibility criteria turns on whether a posting is still
 accepting applications. One instance, so nothing yet to compare it
 against.
+
+## A posting that disclaims title-matching as a filter, not its own title
+
+**Slang AI**'s Senior Conversation Designer carries a parenthetical aimed at
+applicants, not at the role itself:
+
+> (Note: Conversation Design is called different things at different
+> companies; even if your past titles don't match, we're looking for someone
+> who can design AI and its underlying logic and training.)
+
+A different move from Figma's self-disclaiming title above. Figma renames the
+role the posting is hiring for ("you might think of yourself as a content
+engineer as much as a writer"). Slang doesn't touch its own title at all — it
+tells applicants whose resumes carry a different title not to self-select out,
+because the posting doesn't treat title match as a reliable filter for the
+work. The move only makes sense for a discipline without settled vocabulary
+across employers, which is the same instability this dataset's `title` field
+and `title-responsibility-gap` signal exist to track from the other direction.
+One instance, so nothing yet to compare it against.
