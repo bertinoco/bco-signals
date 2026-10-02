@@ -122,6 +122,26 @@ class Urls(unittest.TestCase):
         self.assertEqual(scout.doc_id("lever", "a b", "x/y"), "lever-a-b-x-y")
 
 
+class Dedupe(unittest.TestCase):
+    records = [{"id": "nice-x", "company": "NiCE (Cognigy)", "title": "Senior AI Conversation Designer", "excluded": True},
+               {"id": "airbnb-x", "company": "Airbnb", "title": "Senior Staff UX Writer, International", "excluded": False}]
+
+    def test_company_variants_match(self):
+        self.assertTrue(scout.same_company("NiCE (Cognigy)", "NICE"))
+        self.assertTrue(scout.same_company("Gusto, Inc.", "Gusto"))
+        self.assertFalse(scout.same_company("Block", "Robinhood"))
+
+    def test_same_posting_is_dropped(self):
+        self.assertEqual(scout.match_archive("NICE", "nice", "Senior AI Conversation Designer", self.records)[0], "same")
+
+    def test_close_title_is_flagged_not_dropped(self):
+        kind, rec = scout.match_archive("Airbnb", "airbnb", "Senior Staff UX Writer, Internationalization", self.records)
+        self.assertEqual((kind, rec["id"]), ("similar", "airbnb-x"))
+
+    def test_different_role_passes(self):
+        self.assertEqual(scout.match_archive("Airbnb", "airbnb", "Staff UX Writer, AI", self.records), (None, None))
+
+
 class Poll(unittest.TestCase):
     def test_poll_writes_new_and_skips_known_and_archived(self):
         import tempfile

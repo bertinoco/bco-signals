@@ -17,8 +17,13 @@ session that follows `ROUTINE.md`:
    boards that aren't on the list yet.
 2. **Poll.** Reads each board's public JSON feed and keeps postings that match
    `keywords.json`.
-3. **Filter.** Drops postings already archived in `jd-source/` or already on
-   the triage page, whatever their status.
+3. **Filter.** Drops postings already archived in `jd-source/` (included or
+   excluded), already in `jobs.json`, or already on the triage page, whatever
+   their status. A posting counts as already archived when its job id appears
+   in an archived `sourceUrl`, or when the company matches loosely ("NiCE
+   (Cognigy)" and "NICE") and the title matches exactly. A title that is close
+   but not identical isn't dropped. It shows on the page as "Similar to
+   archived", so you can decide whether it's a repost or a new role.
 4. **Write.** Adds the new postings to the triage page's database.
 
 Triage page: https://claude.ai/artifact/JgK9ZkqrKmRt2Zj6KkMXuK
