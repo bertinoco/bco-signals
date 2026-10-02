@@ -1,0 +1,20 @@
+{
+  "_comment": "Discovery finds company boards; the weekly poll then sees every job on them. Each query is run once per host as `site:<host> <terms>`. Keep each under Google's 32-word limit.",
+  "hosts": [
+    "jobs.ashbyhq.com",
+    "jobs.lever.co",
+    "jobs.eu.lever.co",
+    "job-boards.greenhouse.io",
+    "boards.greenhouse.io",
+    "job-boards.eu.greenhouse.io"
+  ],
+  "queries": [
+    "\"content designer\" OR \"content design\"",
+    "\"UX writer\" OR \"UX writing\"",
+    "\"content strategist\"",
+    "\"conversation designer\" OR \"conversational designer\"",
+    "\"content engineer\" OR \"content architect\"",
+    "\"language systems\" OR \"taxonomist\"",
+    "\"content systems\""
+  ]
+}

@@ -1,0 +1,735 @@
+{
+  "_comment": "Starter boards, found with the discovery queries in discovery.json on 2026-10-01. The weekly run copies these into the triage page's database; boards found later live only there.",
+  "companies": [
+    {
+      "ats": "ashby",
+      "slug": "1password",
+      "name": "1Password"
+    },
+    {
+      "ats": "ashby",
+      "slug": "airops",
+      "name": "AirOps"
+    },
+    {
+      "ats": "ashby",
+      "slug": "better-mortgage",
+      "name": "Better Mortgage"
+    },
+    {
+      "ats": "ashby",
+      "slug": "betterup",
+      "name": "BetterUp"
+    },
+    {
+      "ats": "ashby",
+      "slug": "BranchInsurance",
+      "name": "Branch Financial"
+    },
+    {
+      "ats": "ashby",
+      "slug": "contrast-security",
+      "name": "Contrast Security"
+    },
+    {
+      "ats": "ashby",
+      "slug": "dash0",
+      "name": "Dash0"
+    },
+    {
+      "ats": "ashby",
+      "slug": "decagon",
+      "name": "Decagon"
+    },
+    {
+      "ats": "ashby",
+      "slug": "directive",
+      "name": "Directive"
+    },
+    {
+      "ats": "ashby",
+      "slug": "dust",
+      "name": "Dust"
+    },
+    {
+      "ats": "ashby",
+      "slug": "fal-ai",
+      "name": "fal"
+    },
+    {
+      "ats": "ashby",
+      "slug": "gen-digital",
+      "name": "Gen Digital"
+    },
+    {
+      "ats": "ashby",
+      "slug": "goodmaven",
+      "name": "Good Maven"
+    },
+    {
+      "ats": "ashby",
+      "slug": "handshake",
+      "name": "Handshake"
+    },
+    {
+      "ats": "ashby",
+      "slug": "illumio",
+      "name": "Illumio"
+    },
+    {
+      "ats": "ashby",
+      "slug": "kalshi",
+      "name": "Kalshi"
+    },
+    {
+      "ats": "ashby",
+      "slug": "legora",
+      "name": "Legora"
+    },
+    {
+      "ats": "ashby",
+      "slug": "Nango",
+      "name": "Nango"
+    },
+    {
+      "ats": "ashby",
+      "slug": "nerdwallet",
+      "name": "NerdWallet"
+    },
+    {
+      "ats": "ashby",
+      "slug": "notion",
+      "name": "Notion"
+    },
+    {
+      "ats": "ashby",
+      "slug": "openai",
+      "name": "OpenAI"
+    },
+    {
+      "ats": "ashby",
+      "slug": "parafin",
+      "name": "Parafin"
+    },
+    {
+      "ats": "ashby",
+      "slug": "rasa",
+      "name": "Rasa"
+    },
+    {
+      "ats": "ashby",
+      "slug": "recall",
+      "name": "Recall"
+    },
+    {
+      "ats": "ashby",
+      "slug": "relay",
+      "name": "Relay"
+    },
+    {
+      "ats": "ashby",
+      "slug": "ScribdInc",
+      "name": "Scribd"
+    },
+    {
+      "ats": "ashby",
+      "slug": "seconddinner",
+      "name": "Second Dinner"
+    },
+    {
+      "ats": "ashby",
+      "slug": "solstice",
+      "name": "Solstice"
+    },
+    {
+      "ats": "ashby",
+      "slug": "stedi",
+      "name": "Stedi"
+    },
+    {
+      "ats": "ashby",
+      "slug": "superplane",
+      "name": "SuperPlane"
+    },
+    {
+      "ats": "ashby",
+      "slug": "taxfix.com",
+      "name": "Taxfix"
+    },
+    {
+      "ats": "ashby",
+      "slug": "tenexlabs",
+      "name": "Tenex"
+    },
+    {
+      "ats": "ashby",
+      "slug": "victorious",
+      "name": "Victorious"
+    },
+    {
+      "ats": "ashby",
+      "slug": "wealthsimple",
+      "name": "Wealthsimple"
+    },
+    {
+      "ats": "ashby",
+      "slug": "ziina",
+      "name": "Ziina"
+    },
+    {
+      "ats": "ashby",
+      "slug": "abridge",
+      "name": "Abridge"
+    },
+    {
+      "ats": "ashby",
+      "slug": "lovable",
+      "name": "Lovable"
+    },
+    {
+      "ats": "ashby",
+      "slug": "checkout.com",
+      "name": "Checkout.com"
+    },
+    {
+      "ats": "greenhouse",
+      "slug": "6sense",
+      "name": "6sense"
+    },
+    {
+      "ats": "greenhouse",
+      "slug": "abinbev",
+      "name": "AB InBev"
+    },
+    {
+      "ats": "greenhouse",
+      "slug": "accenturefederalservices",
+      "name": "Accenture Federal Services"
+    },
+    {
+      "ats": "greenhouse",
+      "slug": "adyen",
+      "name": "Adyen"
+    },
+    {
+      "ats": "greenhouse",
+      "slug": "affirm",
+      "name": "Affirm"
+    },
+    {
+      "ats": "greenhouse",
+      "slug": "agoda",
+      "name": "Agoda"
+    },
+    {
+      "ats": "greenhouse",
+      "slug": "airbnb",
+      "name": "Airbnb"
+    },
+    {
+      "ats": "greenhouse",
+      "slug": "alphasense",
+      "name": "AlphaSense"
+    },
+    {
+      "ats": "greenhouse",
+      "slug": "anthropic",
+      "name": "Anthropic"
+    },
+    {
+      "ats": "greenhouse",
+      "slug": "asana",
+      "name": "Asana"
+    },
+    {
+      "ats": "greenhouse",
+      "slug": "betterhelpcom",
+      "name": "BetterHelp"
+    },
+    {
+      "ats": "greenhouse",
+      "slug": "blip-global",
+      "name": "Blip Global"
+    },
+    {
+      "ats": "greenhouse",
+      "slug": "block",
+      "name": "Block"
+    },
+    {
+      "ats": "greenhouse",
+      "slug": "carrotfertility",
+      "name": "Carrot Fertility"
+    },
+    {
+      "ats": "greenhouse",
+      "slug": "checkr",
+      "name": "Checkr"
+    },
+    {
+      "ats": "greenhouse",
+      "slug": "chime",
+      "name": "Chime"
+    },
+    {
+      "ats": "greenhouse",
+      "slug": "cresta",
+      "name": "Cresta"
+    },
+    {
+      "ats": "greenhouse",
+      "slug": "crunchyroll",
+      "name": "Crunchyroll"
+    },
+    {
+      "ats": "greenhouse",
+      "slug": "customerio",
+      "name": "Customer.io"
+    },
+    {
+      "ats": "greenhouse",
+      "slug": "databento",
+      "name": "Databento"
+    },
+    {
+      "ats": "greenhouse",
+      "slug": "deliveroo",
+      "name": "Deliveroo"
+    },
+    {
+      "ats": "greenhouse",
+      "slug": "descript",
+      "name": "Descript"
+    },
+    {
+      "ats": "greenhouse",
+      "slug": "dicefm-careers",
+      "name": "DICE"
+    },
+    {
+      "ats": "greenhouse",
+      "slug": "doctolib",
+      "name": "Doctolib"
+    },
+    {
+      "ats": "greenhouse",
+      "slug": "evolvevacationrental",
+      "name": "Evolve"
+    },
+    {
+      "ats": "greenhouse",
+      "slug": "faire",
+      "name": "Faire"
+    },
+    {
+      "ats": "greenhouse",
+      "slug": "figma",
+      "name": "Figma"
+    },
+    {
+      "ats": "greenhouse",
+      "slug": "flohealth",
+      "name": "Flo Health"
+    },
+    {
+      "ats": "greenhouse",
+      "slug": "freenow",
+      "name": "FREENOW"
+    },
+    {
+      "ats": "greenhouse",
+      "slug": "gitlab",
+      "name": "GitLab"
+    },
+    {
+      "ats": "greenhouse",
+      "slug": "gongio",
+      "name": "Gong"
+    },
+    {
+      "ats": "greenhouse",
+      "slug": "gusto",
+      "name": "Gusto"
+    },
+    {
+      "ats": "greenhouse",
+      "slug": "gympass",
+      "name": "Wellhub"
+    },
+    {
+      "ats": "greenhouse",
+      "slug": "healthie",
+      "name": "Healthie"
+    },
+    {
+      "ats": "greenhouse",
+      "slug": "hyperquakellc",
+      "name": "Hyperquake"
+    },
+    {
+      "ats": "greenhouse",
+      "slug": "icapitalnetwork",
+      "name": "iCapital"
+    },
+    {
+      "ats": "greenhouse",
+      "slug": "justanswer",
+      "name": "JustAnswer"
+    },
+    {
+      "ats": "greenhouse",
+      "slug": "justworks",
+      "name": "Justworks"
+    },
+    {
+      "ats": "greenhouse",
+      "slug": "launch2",
+      "name": "Launch Potato"
+    },
+    {
+      "ats": "greenhouse",
+      "slug": "launchdarkly",
+      "name": "LaunchDarkly"
+    },
+    {
+      "ats": "greenhouse",
+      "slug": "liveperson",
+      "name": "LivePerson"
+    },
+    {
+      "ats": "greenhouse",
+      "slug": "mercury",
+      "name": "Mercury"
+    },
+    {
+      "ats": "greenhouse",
+      "slug": "monzo",
+      "name": "Monzo"
+    },
+    {
+      "ats": "greenhouse",
+      "slug": "mozilla",
+      "name": "Mozilla"
+    },
+    {
+      "ats": "greenhouse",
+      "slug": "nice",
+      "name": "NICE"
+    },
+    {
+      "ats": "greenhouse",
+      "slug": "okx",
+      "name": "OKX"
+    },
+    {
+      "ats": "greenhouse",
+      "slug": "orkes",
+      "name": "Orkes"
+    },
+    {
+      "ats": "greenhouse",
+      "slug": "oura",
+      "name": "Oura"
+    },
+    {
+      "ats": "greenhouse",
+      "slug": "parachutehealth",
+      "name": "Parachute Health"
+    },
+    {
+      "ats": "greenhouse",
+      "slug": "parsleyhealth",
+      "name": "Parsley Health"
+    },
+    {
+      "ats": "greenhouse",
+      "slug": "pinterest",
+      "name": "Pinterest"
+    },
+    {
+      "ats": "greenhouse",
+      "slug": "powerdigitalmarketing",
+      "name": "Power Digital"
+    },
+    {
+      "ats": "greenhouse",
+      "slug": "rga",
+      "name": "R/GA"
+    },
+    {
+      "ats": "greenhouse",
+      "slug": "robinhood",
+      "name": "Robinhood"
+    },
+    {
+      "ats": "greenhouse",
+      "slug": "stackblitz",
+      "name": "Bolt.new"
+    },
+    {
+      "ats": "greenhouse",
+      "slug": "thenewyorktimes",
+      "name": "The New York Times"
+    },
+    {
+      "ats": "greenhouse",
+      "slug": "theagencyre",
+      "name": "The Agency"
+    },
+    {
+      "ats": "greenhouse",
+      "slug": "tide",
+      "name": "Tide"
+    },
+    {
+      "ats": "greenhouse",
+      "slug": "udacity",
+      "name": "Udacity"
+    },
+    {
+      "ats": "greenhouse",
+      "slug": "upwork",
+      "name": "Upwork"
+    },
+    {
+      "ats": "greenhouse",
+      "slug": "vailexa",
+      "name": "Vailexa"
+    },
+    {
+      "ats": "greenhouse",
+      "slug": "vercel",
+      "name": "Vercel"
+    },
+    {
+      "ats": "greenhouse",
+      "slug": "vestwell",
+      "name": "Vestwell"
+    },
+    {
+      "ats": "greenhouse",
+      "slug": "viseai",
+      "name": "Vise"
+    },
+    {
+      "ats": "greenhouse",
+      "slug": "vmlenterprisesolutions",
+      "name": "VML Enterprise Solutions"
+    },
+    {
+      "ats": "greenhouse",
+      "slug": "vonage",
+      "name": "Vonage"
+    },
+    {
+      "ats": "greenhouse",
+      "slug": "vsapartners",
+      "name": "VSA Partners"
+    },
+    {
+      "ats": "greenhouse",
+      "slug": "vsco39",
+      "name": "VSCO"
+    },
+    {
+      "ats": "greenhouse",
+      "slug": "wrike",
+      "name": "Wrike"
+    },
+    {
+      "ats": "greenhouse",
+      "slug": "xapo61",
+      "name": "Xapo Bank"
+    },
+    {
+      "ats": "greenhouse",
+      "slug": "xometry",
+      "name": "Xometry"
+    },
+    {
+      "ats": "greenhouse",
+      "slug": "yalochatinc",
+      "name": "Yalo"
+    },
+    {
+      "ats": "greenhouse-eu",
+      "slug": "digitalservice",
+      "name": "DigitalService"
+    },
+    {
+      "ats": "greenhouse-eu",
+      "slug": "groupon",
+      "name": "Groupon"
+    },
+    {
+      "ats": "greenhouse-eu",
+      "slug": "groww",
+      "name": "Groww"
+    },
+    {
+      "ats": "greenhouse-eu",
+      "slug": "jetbrains",
+      "name": "JetBrains"
+    },
+    {
+      "ats": "greenhouse-eu",
+      "slug": "mariadbplc",
+      "name": "MariaDB"
+    },
+    {
+      "ats": "greenhouse-eu",
+      "slug": "moniepoint",
+      "name": "Moniepoint"
+    },
+    {
+      "ats": "greenhouse-eu",
+      "slug": "nice",
+      "name": "NICE"
+    },
+    {
+      "ats": "greenhouse-eu",
+      "slug": "nscaleoperationsukltd",
+      "name": "Nscale"
+    },
+    {
+      "ats": "greenhouse-eu",
+      "slug": "physicsx",
+      "name": "PhysicsX"
+    },
+    {
+      "ats": "greenhouse-eu",
+      "slug": "saasgroup",
+      "name": "saas.group"
+    },
+    {
+      "ats": "greenhouse-eu",
+      "slug": "tamara",
+      "name": "Tamara"
+    },
+    {
+      "ats": "greenhouse-eu",
+      "slug": "valtech",
+      "name": "Valtech"
+    },
+    {
+      "ats": "lever",
+      "slug": "BDG",
+      "name": "BDG"
+    },
+    {
+      "ats": "lever",
+      "slug": "better",
+      "name": "Better"
+    },
+    {
+      "ats": "lever",
+      "slug": "blinkux",
+      "name": "Blink UX"
+    },
+    {
+      "ats": "lever",
+      "slug": "bumbleinc",
+      "name": "Bumble"
+    },
+    {
+      "ats": "lever",
+      "slug": "CordTechnologies",
+      "name": "Encord"
+    },
+    {
+      "ats": "lever",
+      "slug": "cyngn",
+      "name": "Cyngn"
+    },
+    {
+      "ats": "lever",
+      "slug": "educative",
+      "name": "Educative"
+    },
+    {
+      "ats": "lever",
+      "slug": "fullscript",
+      "name": "Fullscript"
+    },
+    {
+      "ats": "lever",
+      "slug": "gohighlevel",
+      "name": "HighLevel"
+    },
+    {
+      "ats": "lever",
+      "slug": "matchgroup",
+      "name": "Match Group"
+    },
+    {
+      "ats": "lever",
+      "slug": "mendix",
+      "name": "Mendix"
+    },
+    {
+      "ats": "lever",
+      "slug": "microventures",
+      "name": "MicroVentures"
+    },
+    {
+      "ats": "lever",
+      "slug": "playbook",
+      "name": "Playbook"
+    },
+    {
+      "ats": "lever",
+      "slug": "resilientco",
+      "name": "Resilient Co"
+    },
+    {
+      "ats": "lever",
+      "slug": "saviynt",
+      "name": "Saviynt"
+    },
+    {
+      "ats": "lever",
+      "slug": "shopback-2",
+      "name": "ShopBack"
+    },
+    {
+      "ats": "lever",
+      "slug": "spotify",
+      "name": "Spotify"
+    },
+    {
+      "ats": "lever",
+      "slug": "steerbridge",
+      "name": "SteerBridge"
+    },
+    {
+      "ats": "lever",
+      "slug": "terrahq",
+      "name": "Terra"
+    },
+    {
+      "ats": "lever",
+      "slug": "ttecdigital",
+      "name": "TTEC Digital"
+    },
+    {
+      "ats": "lever",
+      "slug": "viseven",
+      "name": "Viseven"
+    },
+    {
+      "ats": "lever",
+      "slug": "wealthfront",
+      "name": "Wealthfront"
+    },
+    {
+      "ats": "lever",
+      "slug": "wmg",
+      "name": "Warner Music Group"
+    },
+    {
+      "ats": "lever-eu",
+      "slug": "ivcevidensia",
+      "name": "IVC Evidensia"
+    }
+  ]
+}

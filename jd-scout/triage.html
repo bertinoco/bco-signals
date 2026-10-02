@@ -1,0 +1,380 @@
+<title>JD Scout</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap">
+<style>
+/* Layout: one reading column; a run summary, status tabs, then posting rows. Mirrors signals.bertino.co's monochrome system. */
+:root {
+  --bg: #ffffff;
+  --fg: #121212;
+  --card: #f7f7f7;
+  --muted: #ededed;
+  --muted-fg: #6e6e6e;
+  --secondary-fg: #5c5c5c;
+  --border: #d9d9d9;
+  --primary: #121212;
+  --primary-fg: #fafafa;
+  --flag: #c4291d;
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --radius: 4px;
+  --radius-sm: 3px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0d0d0d; --fg: #fafafa; --card: #141414; --muted: #1c1c1c;
+    --muted-fg: #8c8c8c; --secondary-fg: #a3a3a3; --border: #262626;
+    --primary: #fafafa; --primary-fg: #0d0d0d; --flag: #ff5147;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0d0d0d; --fg: #fafafa; --card: #141414; --muted: #1c1c1c;
+  --muted-fg: #8c8c8c; --secondary-fg: #a3a3a3; --border: #262626;
+  --primary: #fafafa; --primary-fg: #0d0d0d; --flag: #ff5147;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--fg);
+  font: 400 0.9375rem/1.55 var(--font-sans);
+  padding: 0 16px;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap { max-width: 760px; margin: 0 auto; padding-block: 40px 64px; display: grid; gap: 32px; }
+h1 { font-size: 1.75rem; font-weight: 600; letter-spacing: -0.022em; line-height: 1.1; margin: 0; text-wrap: balance; }
+h2 { font-size: 0.6875rem; font-weight: 500; letter-spacing: 0.11em; text-transform: uppercase; color: var(--muted-fg); margin: 0; }
+.mono { font-family: var(--font-mono); font-size: 0.8125rem; font-variant-numeric: tabular-nums; }
+.dim { color: var(--muted-fg); }
+header { display: grid; gap: 8px; }
+.runline { color: var(--secondary-fg); }
+.runline .flag { color: var(--flag); }
+
+.tabs { display: flex; flex-wrap: wrap; gap: 4px; border-bottom: 1px solid var(--border); padding-bottom: 8px; }
+.tab {
+  font: 500 0.8125rem var(--font-sans); color: var(--secondary-fg);
+  background: none; border: 1px solid transparent; border-radius: var(--radius);
+  padding: 6px 10px; cursor: pointer; display: inline-flex; gap: 6px; align-items: baseline;
+}
+.tab:hover { color: var(--fg); background: var(--muted); }
+.tab[aria-selected="true"] { background: var(--primary); color: var(--primary-fg); }
+.tab .n { font-family: var(--font-mono); font-size: 0.75rem; opacity: 0.75; }
+
+.list { display: grid; gap: 0; }
+.row { display: grid; gap: 8px; padding-block: 18px; border-bottom: 1px solid var(--border); min-width: 0; }
+.row:first-child { padding-top: 4px; }
+.row-title { font-size: 1.0625rem; font-weight: 600; letter-spacing: -0.012em; line-height: 1.3; margin: 0; overflow-wrap: anywhere; }
+.row-title a { color: inherit; text-decoration: none; }
+.row-title a:hover { text-decoration: underline; text-underline-offset: 3px; }
+.facts { display: flex; flex-wrap: wrap; gap: 4px 12px; color: var(--secondary-fg); }
+.snippet { margin: 0; color: var(--secondary-fg); max-width: 65ch; overflow-wrap: anywhere; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip {
+  font: 500 0.6875rem var(--font-mono); letter-spacing: 0.02em;
+  border: 1px solid var(--border); border-radius: var(--radius-sm);
+  padding: 2px 6px; color: var(--secondary-fg);
+}
+.chip.closed { color: var(--flag); border-color: currentColor; }
+.chip.solid { background: var(--muted); border-color: var(--muted); }
+.actions { display: flex; flex-wrap: wrap; gap: 6px; padding-top: 4px; }
+.btn {
+  font: 500 0.8125rem var(--font-sans); color: var(--fg);
+  background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 6px 12px; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center;
+}
+.btn:hover { background: var(--muted); }
+.btn.primary { background: var(--primary); color: var(--primary-fg); border-color: var(--primary); }
+.btn.primary:hover { opacity: 0.88; }
+.btn:disabled { opacity: 0.5; cursor: default; }
+.tab:focus-visible, .btn:focus-visible, summary:focus-visible, input:focus-visible, select:focus-visible {
+  outline: 2px solid var(--fg); outline-offset: 2px;
+}
+
+details.body-only { border-top: 1px solid var(--border); }
+details.body-only > summary { cursor: pointer; padding-block: 14px; font-weight: 500; color: var(--secondary-fg); }
+details.body-only > summary .dim { font-weight: 400; }
+
+.empty { padding: 32px 0; color: var(--secondary-fg); display: grid; gap: 6px; max-width: 60ch; }
+.empty strong { color: var(--fg); font-weight: 600; }
+
+.boards { display: grid; gap: 14px; }
+.boards-summary { color: var(--secondary-fg); margin: 0; }
+.failures { margin: 0; padding: 0; list-style: none; display: grid; gap: 4px; }
+.failures li { overflow-wrap: anywhere; }
+.failures .flag { color: var(--flag); }
+form.add { display: flex; flex-wrap: wrap; gap: 8px; align-items: end; }
+form.add label { display: grid; gap: 4px; font-size: 0.75rem; color: var(--muted-fg); }
+form.add input, form.add select {
+  font: 400 0.875rem var(--font-sans); color: var(--fg); background: var(--bg);
+  border: 1px solid var(--border); border-radius: var(--radius); padding: 6px 8px; min-width: 0;
+}
+form.add input { width: 14rem; max-width: 100%; }
+.note { font-size: 0.8125rem; color: var(--muted-fg); margin: 0; }
+.status { min-height: 1.2em; font-size: 0.8125rem; color: var(--secondary-fg); }
+.status.err { color: var(--flag); }
+.all-boards { font-size: 0.8125rem; }
+.all-boards summary { cursor: pointer; color: var(--secondary-fg); }
+.all-boards ul { columns: 2 14rem; padding-left: 1.1em; margin: 8px 0 0; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>JD Scout</h1>
+    <p class="runline mono" id="runline">Waiting for the first weekly run, Sundays 19:52 Stockholm time.</p>
+  </header>
+
+  <main style="display:grid;gap:16px">
+    <div class="tabs" role="tablist" id="tabs"></div>
+    <div id="panel" role="tabpanel"></div>
+  </main>
+
+  <section class="boards" aria-labelledby="boards-h">
+    <h2 id="boards-h">Boards</h2>
+    <p class="boards-summary" id="boards-summary">The board list appears after the first run.</p>
+    <ul class="failures mono" id="failures"></ul>
+    <form class="add" id="add-form">
+      <label for="add-ats">ATS
+        <select id="add-ats">
+          <option value="greenhouse">Greenhouse</option>
+          <option value="greenhouse-eu">Greenhouse EU</option>
+          <option value="lever">Lever</option>
+          <option value="lever-eu">Lever EU</option>
+          <option value="ashby">Ashby</option>
+        </select>
+      </label>
+      <label for="add-slug">Board slug or URL
+        <input id="add-slug" placeholder="jobs.ashbyhq.com/notion" autocomplete="off" required>
+      </label>
+      <button class="btn" type="submit">Add board</button>
+    </form>
+    <p class="status" id="add-status" role="status"></p>
+    <details class="all-boards" id="all-boards" hidden><summary>All boards</summary><ul class="mono" id="board-list"></ul></details>
+  </section>
+</div>
+
+<script>
+const STATUSES = [
+  { key: "new", label: "New" },
+  { key: "audit", label: "Audit queue" },
+  { key: "later", label: "Later" },
+  { key: "skip", label: "Skipped" },
+  { key: "done", label: "Done" },
+];
+const ATS_NAME = { greenhouse: "Greenhouse", "greenhouse-eu": "Greenhouse EU", lever: "Lever", "lever-eu": "Lever EU", ashby: "Ashby" };
+const HOSTS = {
+  "boards.greenhouse.io": "greenhouse", "job-boards.greenhouse.io": "greenhouse",
+  "boards.eu.greenhouse.io": "greenhouse-eu", "job-boards.eu.greenhouse.io": "greenhouse-eu",
+  "jobs.lever.co": "lever", "jobs.eu.lever.co": "lever-eu", "jobs.ashbyhq.com": "ashby",
+};
+
+const state = { candidates: [], run: null, companies: [], tab: "new", writable: true, db: null };
+try { state.tab = localStorage.getItem("scout-tab") || "new"; } catch (e) {}
+
+const $ = (id) => document.getElementById(id);
+function el(tag, attrs = {}, ...kids) {
+  const n = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs)) {
+    if (v == null || v === false) continue;
+    if (k === "class") n.className = v;
+    else if (k.startsWith("on")) n.addEventListener(k.slice(2), v);
+    else n.setAttribute(k, v === true ? "" : v);
+  }
+  for (const k of kids.flat()) if (k != null && k !== false) n.append(k);
+  return n;
+}
+function fmtDate(iso) {
+  if (!iso) return null;
+  const d = new Date(iso.length === 10 ? iso + "T12:00:00Z" : iso);
+  return isNaN(d) ? iso : d.toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" });
+}
+function fmtRun(iso) {
+  const d = new Date(iso);
+  if (isNaN(d)) return iso;
+  return d.toLocaleString("en-GB", { weekday: "short", day: "numeric", month: "short", hour: "2-digit", minute: "2-digit", timeZone: "Europe/Stockholm" });
+}
+
+function isOpen(c) {
+  return !state.run || !Array.isArray(state.run.openIds) || state.run.openIds.includes(c.id);
+}
+
+function renderRun() {
+  const r = state.run;
+  if (!r) return;
+  const failed = (r.companiesFailed || []).length;
+  const line = $("runline");
+  line.replaceChildren(
+    "Last run " + fmtRun(r.finishedAt) + " · " + (r.companiesChecked ?? 0) + " boards checked · ",
+    failed ? el("span", { class: "flag" }, failed + " failed") : "0 failed",
+    " · " + (r.newCount ?? 0) + " new"
+    + (r.discovery && r.discovery.newCompanies != null ? " · " + r.discovery.newCompanies + " boards discovered" : "")
+  );
+}
+
+function renderTabs() {
+  const counts = Object.fromEntries(STATUSES.map((s) => [s.key, 0]));
+  for (const c of state.candidates) if (counts[c.status] != null) counts[c.status]++;
+  $("tabs").replaceChildren(...STATUSES.map((s) =>
+    el("button", {
+      class: "tab", role: "tab", id: "tab-" + s.key, "aria-selected": String(state.tab === s.key),
+      onclick: () => { state.tab = s.key; try { localStorage.setItem("scout-tab", s.key); } catch (e) {} render(); },
+    }, s.label, el("span", { class: "n" }, String(counts[s.key])))
+  ));
+}
+
+async function setStatus(c, status, btn) {
+  if (!state.db) return;
+  const row = btn.closest(".row");
+  row.querySelectorAll("button").forEach((b) => (b.disabled = true));
+  try {
+    await state.db.collection("candidates").doc(c.id).update({ status, statusAt: new Date().toISOString() });
+  } catch (e) {
+    row.querySelectorAll("button").forEach((b) => (b.disabled = false));
+    if (e && e.code === "invalid_argument") { state.writable = false; render(); }
+    else row.append(el("p", { class: "status err" }, "Couldn't save that change. Try again in a moment."));
+  }
+}
+
+function actionsFor(c) {
+  if (!state.writable) return null;
+  const b = (label, status, primary) =>
+    el("button", { class: "btn" + (primary ? " primary" : ""), type: "button", onclick: (e) => setStatus(c, status, e.currentTarget) }, label);
+  const set = {
+    new: [b("Audit", "audit", true), b("Later", "later"), b("Skip", "skip")],
+    later: [b("Audit", "audit", true), b("Skip", "skip")],
+    audit: [b("Back to new", "new")],
+    skip: [b("Back to new", "new")],
+    done: [],
+  }[c.status] || [];
+  return set;
+}
+
+function rowFor(c) {
+  const facts = [
+    c.company,
+    ATS_NAME[c.ats] || c.ats,
+    c.postedDate ? "posted " + fmtDate(c.postedDate) : "found " + fmtDate(c.firstSeen),
+    [c.location, c.workplace].filter(Boolean).join(" · ") || null,
+    c.comp,
+  ].filter(Boolean);
+  const chips = [
+    !isOpen(c) && c.status !== "done" ? el("span", { class: "chip closed" }, "Closed") : null,
+    c.status === "done" && c.outcome ? el("span", { class: "chip solid" }, c.outcome === "included" ? "Added to dataset" : "Archived as excluded") : null,
+    ...(c.matchedTerms || []).map((t) => el("span", { class: "chip" }, t.replace(/\\b|\?|\\/g, ""))),
+  ];
+  return el("article", { class: "row" },
+    el("h3", { class: "row-title" }, c.url ? el("a", { href: c.url, target: "_blank", rel: "noopener" }, c.title) : c.title),
+    el("div", { class: "facts mono" }, ...facts.map((f) => el("span", {}, f))),
+    c.snippet ? el("p", { class: "snippet" }, c.snippet) : null,
+    el("div", { class: "chips" }, chips),
+    el("div", { class: "actions" },
+      c.url ? el("a", { class: "btn", href: c.url, target: "_blank", rel: "noopener" }, "Open posting") : null,
+      actionsFor(c))
+  );
+}
+
+const EMPTY = {
+  new: ["Nothing new to triage.", "New postings appear here after each Sunday run. Postings you've already triaged don't come back."],
+  audit: ["The audit queue is empty.", "Mark a posting Audit, then ask Claude Code to “audit the queued JD Scout candidates.” Each one goes through the full add-jd audit."],
+  later: ["Nothing saved for later.", null],
+  skip: ["Nothing skipped yet.", "Skipped postings stay here so the weekly run never shows them again."],
+  done: ["No audits finished yet.", "Postings move here once an audit adds them to the dataset or archives them as excluded."],
+};
+
+function renderPanel() {
+  const items = state.candidates
+    .filter((c) => c.status === state.tab)
+    .sort((a, b) => (isOpen(b) - isOpen(a)) || String(b.postedDate || b.firstSeen).localeCompare(String(a.postedDate || a.firstSeen)));
+  const panel = $("panel");
+  panel.setAttribute("aria-labelledby", "tab-" + state.tab);
+  if (!items.length) {
+    const [head, body] = EMPTY[state.tab];
+    panel.replaceChildren(el("div", { class: "empty" }, el("strong", {}, head), body ? el("span", {}, body) : null));
+    return;
+  }
+  if (state.tab !== "new") {
+    panel.replaceChildren(el("div", { class: "list" }, items.map(rowFor)));
+    return;
+  }
+  const titled = items.filter((c) => c.matchType !== "body");
+  const body = items.filter((c) => c.matchType === "body");
+  const wasOpen = panel.querySelector("details.body-only")?.open;
+  panel.replaceChildren(
+    titled.length ? el("div", { class: "list" }, titled.map(rowFor)) : el("p", { class: "note" }, "No title matches this week."),
+    body.length ? el("details", { class: "body-only", open: wasOpen || null },
+      el("summary", {}, "Body-only matches ", el("span", { class: "dim" }, "(" + body.length + ") · titles without a content term, matched on JD text")),
+      el("div", { class: "list" }, body.map(rowFor))) : null
+  );
+}
+
+function renderBoards() {
+  const cs = state.companies;
+  const r = state.run;
+  if (cs.length) {
+    const by = {};
+    for (const c of cs) if (!c.disabled) by[c.ats] = (by[c.ats] || 0) + 1;
+    $("boards-summary").textContent = cs.filter((c) => !c.disabled).length + " boards: " +
+      Object.entries(by).map(([k, n]) => n + " " + (ATS_NAME[k] || k)).join(", ") + ".";
+    $("board-list").replaceChildren(...cs.slice().sort((a, b) => (a.name || a.slug).localeCompare(b.name || b.slug))
+      .map((c) => el("li", {}, (c.name || c.slug) + " · " + (ATS_NAME[c.ats] || c.ats) + (c.disabled ? " · off" : ""))));
+    $("all-boards").hidden = false;
+  }
+  const failed = (r && r.companiesFailed) || [];
+  $("failures").replaceChildren(...failed.map((f) =>
+    el("li", {}, el("span", { class: "flag" }, "Failed "), f.slug + " (" + (ATS_NAME[f.ats] || f.ats) + "): " + f.error)));
+  $("add-form").hidden = !state.writable || !state.db;
+}
+
+function render() { renderRun(); renderTabs(); renderPanel(); renderBoards(); }
+
+function parseBoard(raw, fallbackAts) {
+  const s = raw.trim().replace(/^https?:\/\//, "");
+  const [host, slug] = s.split("/");
+  if (HOSTS[host?.toLowerCase()] && slug) return { ats: HOSTS[host.toLowerCase()], slug };
+  if (/^[A-Za-z0-9._-]+$/.test(s)) return { ats: fallbackAts, slug: s };
+  return null;
+}
+
+$("add-form").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const status = $("add-status");
+  const board = parseBoard($("add-slug").value, $("add-ats").value);
+  if (!board) { status.className = "status err"; status.textContent = "Enter a slug like notion, or a board URL like jobs.ashbyhq.com/notion."; return; }
+  const id = (board.ats + "-" + board.slug.toLowerCase()).replace(/[^A-Za-z0-9_\-.~:@+]/g, "-");
+  if (state.companies.some((c) => c.id === id)) { status.className = "status"; status.textContent = board.slug + " is already on the list."; return; }
+  try {
+    await state.db.collection("companies").doc(id).set({ ats: board.ats, slug: board.slug, name: board.slug, source: "manual", addedAt: new Date().toISOString() });
+    status.className = "status"; status.textContent = "Added " + board.slug + ". The next Sunday run will check it.";
+    $("add-slug").value = "";
+  } catch (err) {
+    status.className = "status err"; status.textContent = "Couldn't add that board. Try again in a moment.";
+  }
+});
+
+render();
+
+(async () => {
+  const db = await window.claude?.use?.("db");
+  if (!db) {
+    state.writable = false;
+    $("runline").textContent = "Sign in to claude.ai to see the triage list.";
+    render();
+    return;
+  }
+  state.db = db;
+  const user = await window.claude.use("user");
+  if (user) {
+    const can = await user.can("data.write");
+    if (can === false) state.writable = false;
+  }
+  const fail = () => { $("runline").textContent = "Lost the connection to the triage list. Reload the page to reconnect."; };
+  db.collection("candidates").limit(1000).onSnapshot((snap) => {
+    state.candidates = snap.docs.map((d) => ({ id: d.id, ...d.data() }));
+    render();
+  }, fail);
+  db.doc("meta/run").onSnapshot((snap) => { state.run = snap.exists ? snap.data() : null; render(); }, fail);
+  db.collection("companies").limit(1000).onSnapshot((snap) => {
+    state.companies = snap.docs.map((d) => ({ id: d.id, ...d.data() }));
+    render();
+  }, fail);
+})();
+</script>
