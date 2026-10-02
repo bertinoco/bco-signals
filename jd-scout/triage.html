@@ -75,6 +75,7 @@ header { display: grid; gap: 8px; }
 }
 .chip.closed { color: var(--flag); border-color: currentColor; }
 .chip.solid { background: var(--muted); border-color: var(--muted); }
+.chip.similar { color: var(--fg); border-color: var(--fg); overflow-wrap: anywhere; }
 .actions { display: flex; flex-wrap: wrap; gap: 6px; padding-top: 4px; }
 .btn {
   font: 500 0.8125rem var(--font-sans); color: var(--fg);
@@ -259,6 +260,8 @@ function rowFor(c) {
   const chips = [
     !isOpen(c) && c.status !== "done" ? el("span", { class: "chip closed" }, "Closed") : null,
     c.status === "done" && c.outcome ? el("span", { class: "chip solid" }, c.outcome === "included" ? "Added to dataset" : "Archived as excluded") : null,
+    c.similarTo ? el("span", { class: "chip similar", title: "Archived as " + c.similarTo.id },
+      "Similar to " + (c.similarTo.excluded ? "excluded" : "archived") + ": " + c.similarTo.title) : null,
     ...(c.matchedTerms || []).map((t) => el("span", { class: "chip" }, t.replace(/\\b|\?|\\/g, ""))),
   ];
   return el("article", { class: "row" },

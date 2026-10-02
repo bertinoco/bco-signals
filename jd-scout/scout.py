@@ -23,6 +23,7 @@ Run from the repo root:
 """
 
 import argparse
+import difflib
 import html
 import json
 import os
@@ -225,22 +226,62 @@ def _norm(s):
     return re.sub(r"[^a-z0-9]", "", (s or "").lower())
 
 
+COMPANY_SUFFIXES = r"\b(inc|llc|ltd|plc|gmbh|corp|corporation|co|company|technologies|financial|group)\b"
+
+
+def company_key(name):
+    """'NiCE (Cognigy)' and 'NICE' both become 'nice'; 'Gusto, Inc.' becomes 'gusto'."""
+    name = re.sub(r"\(.*?\)", " ", (name or "").lower())
+    return _norm(re.sub(COMPANY_SUFFIXES, " ", name))
+
+
+def same_company(a, b):
+    a, b = company_key(a), company_key(b)
+    if not a or not b:
+        return False
+    return a == b or (min(len(a), len(b)) >= 3 and (a.startswith(b) or b.startswith(a)))
+
+
 def archived():
-    """(job ids seen in archived source URLs, {(company, title)}) from jd-source/ and jobs.json."""
-    ids, pairs = set(), set()
+    """Job ids from archived source URLs, plus one record per archived or listed posting.
+
+    Reads jd-source/ (included and excluded) and jobs.json, so a posting that was
+    already audited either way is never offered again.
+    """
+    ids, records = set(), []
     for name in os.listdir(SOURCE_DIR):
         if not name.endswith(".md"):
             continue
         with open(os.path.join(SOURCE_DIR, name)) as fh:
             head = fh.read(4000)
         fm = dict(re.findall(r"^(\w+):\s*\"?(.*?)\"?\s*$", head.split("\n---", 1)[0], re.M))
-        url = fm.get("sourceUrl", "")
-        ids.update(re.findall(r"[0-9a-f]{8}-[0-9a-f-]{27}|\d{6,}", url))
-        pairs.add((_norm(fm.get("company")), _norm(fm.get("title"))))
+        ids.update(re.findall(r"[0-9a-f]{8}-[0-9a-f-]{27}|\d{6,}", fm.get("sourceUrl", "")))
+        records.append({"id": name[:-3], "company": fm.get("company", ""), "title": fm.get("title", ""),
+                        "excluded": bool(fm.get("excluded"))})
     with open(JOBS) as fh:
         for e in json.load(fh)["entries"]:
-            pairs.add((_norm(e.get("company")), _norm(e.get("title"))))
-    return ids, pairs
+            records.append({"id": e["id"], "company": e.get("company", ""), "title": e.get("title", ""),
+                            "excluded": False})
+    return ids, records
+
+
+SIMILAR_TITLE = 0.8
+
+
+def match_archive(company, slug, title, records):
+    """('same', record) for the same posting, ('similar', record) for a close title, else (None, None)."""
+    best, best_ratio = None, 0.0
+    for r in records:
+        if not (same_company(r["company"], company) or same_company(r["company"], slug)):
+            continue
+        if _norm(r["title"]) == _norm(title):
+            return "same", r
+        ratio = difflib.SequenceMatcher(None, _norm(r["title"]), _norm(title)).ratio()
+        if ratio > best_ratio:
+            best, best_ratio = r, ratio
+    if best_ratio >= SIMILAR_TITLE:
+        return "similar", best
+    return None, None
 
 
 def doc_id(ats, slug, job_id):
@@ -314,7 +355,8 @@ def cmd_poll(args):
                    "source": c.get("source", "seed"), "addedAt": today}
             with open(os.path.join(board_dir, cid + ".json"), "w") as fh:
                 json.dump(doc, fh, ensure_ascii=False, indent=2)
-    arch_ids, arch_pairs = archived()
+    arch_ids, arch_records = archived()
+    seen_jobs = set()
 
     cand_dir = os.path.join(args.out, "candidates")
     os.makedirs(cand_dir, exist_ok=True)
@@ -339,8 +381,16 @@ def cmd_poll(args):
             if not match:
                 continue
             company = job["company"] or c.get("name") or slug
-            if job["jobId"] in arch_ids or (_norm(company), _norm(job["title"])) in arch_pairs:
+            if job["jobId"] in arch_ids:
                 continue
+            kind, rec = match_archive(company, slug, job["title"], arch_records)
+            if kind == "same":
+                continue
+            # The same Greenhouse board can be listed under both its US and EU host.
+            job_key = (ats.split("-")[0], slug.lower(), job["jobId"])
+            if job_key in seen_jobs:
+                continue
+            seen_jobs.add(job_key)
             did = doc_id(ats, slug, job["jobId"])
             open_ids.append(did)
             if did in known:
@@ -362,6 +412,8 @@ def cmd_poll(args):
                 "snippet": snippet(job["text"], pats),
                 "firstSeen": today,
                 "status": "new",
+                "similarTo": ({"id": rec["id"], "title": rec["title"], "excluded": rec["excluded"]}
+                              if kind == "similar" else None),
             }
             with open(os.path.join(cand_dir, did + ".json"), "w") as fh:
                 json.dump(doc, fh, ensure_ascii=False, indent=2)
