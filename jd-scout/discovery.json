@@ -18,15 +18,22 @@
     "\"content systems\""
   ],
   "skip_boards": {
-    "_comment": "Boards discovery should never add: job aggregators, referral and internal boards, and boards whose postings are all out of scope.",
+    "_comment": "Boards never polled or added by discovery: job aggregators, referral and internal boards, ad agencies, and language-annotation or AI-training vendors whose postings are all out of scope.",
     "boards": [
       "greenhouse-eu/agency",
-      "greenhouse/ziprecruiter",
-      "greenhouse/referralsuseonly",
       "greenhouse/coupanginternal",
       "greenhouse/mrbeastyoutube",
+      "greenhouse/referralsuseonly",
+      "greenhouse/wundermanthompson",
+      "greenhouse/ziprecruiter",
+      "lever-eu/lionbridge",
+      "lever/appen",
+      "lever/appen-2",
       "lever/jobgether",
-      "lever/weekdayworks"
+      "lever/tsmg",
+      "lever/veeva",
+      "lever/weekdayworks",
+      "lever/weloglobal"
     ]
   }
 }

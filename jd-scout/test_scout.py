@@ -63,6 +63,13 @@ class Classify(unittest.TestCase):
             self.assertIsNone(scout.classify(title, "", self.kw)[0], title)
         self.assertEqual(scout.classify("Staff Content Engineer", "", self.kw)[0], "title")
 
+    def test_language_vendor_gigs_excluded(self):
+        for title in ("AI tester with German language", "Hindi Language Transcription Expert",
+                      "Norwegian Language Specialist - Freelance AI Trainer Project",
+                      "Evaluators for AI training (English language)"):
+            self.assertIsNone(scout.classify(title, "", self.kw)[0], title)
+        self.assertEqual(scout.classify("Staff Systems Designer, Language", "", self.kw)[0], "title")
+
     def test_no_match(self):
         self.assertIsNone(scout.classify("Product Designer", "Figma, prototyping", self.kw)[0])
 

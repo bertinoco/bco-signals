@@ -301,13 +301,15 @@ def cmd_poll(args):
     file_boards = load_companies(args.companies)
     db_keys = {company_id(c["ats"], c["slug"]) for c in db_boards}
     # Boards in the db win, so a board switched off on the page stays off.
-    companies = load_companies_list(db_boards + file_boards)
+    skip = skip_boards()
+    companies = [c for c in load_companies_list(db_boards + file_boards)
+                 if "{}/{}".format(c["ats"], c["slug"]).lower() not in skip]
     today = datetime.now(timezone.utc).date().isoformat()
     board_dir = os.path.join(args.out, "companies-new")
     os.makedirs(board_dir, exist_ok=True)
     for c in file_boards:
         cid = company_id(c["ats"], c["slug"])
-        if cid not in db_keys:
+        if cid not in db_keys and "{}/{}".format(c["ats"], c["slug"]).lower() not in skip:
             doc = {"ats": c["ats"], "slug": c["slug"], "name": c.get("name") or c["slug"],
                    "source": c.get("source", "seed"), "addedAt": today}
             with open(os.path.join(board_dir, cid + ".json"), "w") as fh:
@@ -394,9 +396,13 @@ def parse_board_url(url):
     return {"ats": HOSTS[m.group(1).lower()], "slug": slug}
 
 
-def cmd_slugs(_args):
+def skip_boards():
     with open(os.path.join(HERE, "discovery.json")) as fh:
-        skip = {b.lower() for b in json.load(fh).get("skip_boards", {}).get("boards", [])}
+        return {b.lower() for b in json.load(fh).get("skip_boards", {}).get("boards", [])}
+
+
+def cmd_slugs(_args):
+    skip = skip_boards()
     seen, out = set(), []
     for line in sys.stdin:
         hit = parse_board_url(line)
