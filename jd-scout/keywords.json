@@ -7,7 +7,7 @@
     "ux copy",
     "copywrit",
     "conversation",
-    "language",
+    "language system|designer, language|language design",
     "taxonom",
     "information architect",
     "model design",
@@ -52,7 +52,14 @@
     "content marketer",
     "\\bseo\\b",
     "performance marketing",
-    "conversational ai engineer"
+    "conversational ai engineer",
+    "ai trainer",
+    "language (specialist|expert)",
+    "linguist",
+    "transcription",
+    "evaluator",
+    "ai tester",
+    "audio tasks"
   ],
   "body_phrases": [
     "content design",

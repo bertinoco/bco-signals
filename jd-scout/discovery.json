@@ -16,5 +16,24 @@
     "\"content engineer\" OR \"content architect\"",
     "\"language systems\" OR \"taxonomist\"",
     "\"content systems\""
-  ]
+  ],
+  "skip_boards": {
+    "_comment": "Boards never polled or added by discovery: job aggregators, referral and internal boards, ad agencies, and language-annotation or AI-training vendors whose postings are all out of scope.",
+    "boards": [
+      "greenhouse-eu/agency",
+      "greenhouse/coupanginternal",
+      "greenhouse/mrbeastyoutube",
+      "greenhouse/referralsuseonly",
+      "greenhouse/wundermanthompson",
+      "greenhouse/ziprecruiter",
+      "lever-eu/lionbridge",
+      "lever/appen",
+      "lever/appen-2",
+      "lever/jobgether",
+      "lever/tsmg",
+      "lever/veeva",
+      "lever/weekdayworks",
+      "lever/weloglobal"
+    ]
+  }
 }
