@@ -64,20 +64,18 @@ You can also add a board by slug or URL there.
 
 ## Auditing queued postings
 
-In a Claude Code session, ask to "audit the queued JD Scout candidates." For
-each candidate with status `audit`:
+Run `/audit-scout` in a Claude Code session. It reads the postings you marked
+Audit, fetches each one's text with `python3 jd-scout/scout.py fetch <candidate
+id>`, and runs `/add-jd` on it. Each posting still gets its own audit and your
+confirmation. With more than two queued, the audits run in groups of up to five
+and come back together, so you can answer them in one reply. The writes still
+happen one at a time.
 
-1. Get the full posting text:
-
-       python3 jd-scout/scout.py fetch <candidate id>
-
-2. Run the add-jd audit on that text, as for any submitted JD. Archive it with
-   `captureMethod: fetched`, the posting URL as `sourceUrl`, and the ATS as
-   `sourcePlatform`. The fetched text is the ATS feed's rendering of the
-   posting, stored as fetched.
-3. Once the entry is written or archived as excluded, set the candidate's
-   `status` to `done`, with `outcome` (`included` or `excluded`) and
-   `entryId`.
+Fetched postings are archived with `captureMethod: fetched`, the posting URL as
+`sourceUrl`, and the ATS as `sourcePlatform`. The fetched text, including its
+labeled header lines, is the source as submitted. Once a posting is added or
+archived as excluded, it moves to Done on the triage page. A posting that has
+closed since you queued it is reported and left in the queue.
 
 ## Network access
 

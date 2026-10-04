@@ -4,6 +4,8 @@ Process a new job description for possible addition to `docs/data/jobs.json`, fo
 
 The JD text should already be in the conversation, pasted by the user, chrome and all. If it isn't there, ask for it before doing anything else.
 
+When `/audit-scout` runs this command, the JD text is fetched from the ATS feed by `jd-scout/scout.py fetch` instead of pasted. Treat that fetched text as the JD as submitted, and use the archive fields `/audit-scout` specifies.
+
 ## Step 0 — Triage depth yourself, before spawning anything
 
 `docs/data/jobs.json`, `jd-insights/findings.md`, and `jd-insights/patterns.md` only grow — every entry added makes the next audit's backcheck more expensive if agents keep re-reading these files in full. You read the JD text before writing the Step A prompt anyway, so make the depth call at that point; don't ask the user to specify it and don't default to maximal depth on every submission.
