@@ -493,12 +493,16 @@ def cmd_fetch(args):
     slug, job_id = m.groups()
     for job in normalize(ats, slug, fetch_json(FEEDS[ats].format(slug=slug))):
         if job["jobId"] == job_id:
+            # The header lines are the ATS's own structured fields, printed as
+            # labeled lines so the archive keeps them alongside the posting text.
             print("# " + job["title"])
-            print("URL: {}\nLocation: {}\nWorkplace: {}\nCompensation: {}\n".format(
-                job["url"], job["location"], job["workplace"], job["comp"]))
+            print("URL: {}\nPosted: {}\nLocation: {}\nWorkplace: {}\nCompensation: {}\n".format(
+                job["url"], job["postedDate"], job["location"], job["workplace"], job["comp"]))
             print(job["text"])
             return
-    sys.exit("posting {} is no longer on the {} board for {}".format(job_id, ats, slug))
+    # Exit code 3 tells /audit-scout the posting has closed, as distinct from an error.
+    print("posting {} is no longer on the {} board for {}".format(job_id, ats, slug), file=sys.stderr)
+    sys.exit(3)
 
 
 def main():
