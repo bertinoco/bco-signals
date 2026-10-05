@@ -4,7 +4,9 @@ Process a new job description for possible addition to `docs/data/jobs.json`, fo
 
 The JD text should already be in the conversation, pasted by the user, chrome and all. If it isn't there, ask for it before doing anything else.
 
-When `/audit-scout` runs this command, the JD text is fetched from the ATS feed by `jd-scout/scout.py fetch` instead of pasted. Treat that fetched text as the JD as submitted, and use the archive fields `/audit-scout` specifies.
+If this posting came from the JD Scout triage queue, say so and give the
+candidate id (or enough to find it — company and title). See "JD Scout
+postings" below for what that adds at the end.
 
 ## Step 0 — Triage depth yourself, before spawning anything
 
@@ -51,3 +53,30 @@ Once the user confirms, spawn a second `general-purpose` agent (`run_in_backgrou
 ## Step D — Review and ship
 
 Read the subagent's diff summary yourself before acting on it — don't relay it unchecked. Per CLAUDE.md Step 7, the user's Step B confirmation already covers commit/push/merge for JD entries specifically, so commit, push, and merge to `main` without asking again — unless the subagent's output looks wrong, in which case stop and show the user what's off.
+
+## JD Scout postings
+
+Only applies when the user flagged this posting as coming from the triage
+queue (see Input). This isn't a batch process — it's just closing the loop
+on one candidate after its own audit finishes, so nothing here reads or
+iterates over the rest of the queue.
+
+If the text was fetched with `python3 jd-scout/scout.py fetch <candidate
+id>` rather than pasted from the browser, tell the Step C agent to use these
+archive fields: `captureMethod: fetched`, `sourceUrl` (the candidate's
+`url`), `sourcePlatform` (the ATS — `greenhouse`, `lever`, or `ashby`, `-eu`
+suffix dropped), `postedDate` (the fetched text's `Posted:` line, if it has
+one), and `captureNote`: "Fetched from the <ATS> job board feed by JD Scout
+(candidate <candidate id>)."
+
+After Step D's merge, or after an exclusion is archived, load `ArtifactData`
+with ToolSearch and `update` that candidate, passing `if_version`:
+
+- `status: "done"`
+- `outcome`: `"included"` or `"excluded"`
+- `entryId`: the `jobs.json` / `jd-source` id
+- `statusAt`: the current time, ISO 8601
+
+If the update fails because the version changed, the user edited the
+posting on the page in the meantime — re-read it and report what changed
+rather than overwriting it.
