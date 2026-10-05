@@ -500,7 +500,7 @@ def cmd_fetch(args):
                 job["url"], job["postedDate"], job["location"], job["workplace"], job["comp"]))
             print(job["text"])
             return
-    # Exit code 3 tells /audit-scout the posting has closed, as distinct from an error.
+    # Exit code 3 signals the posting has closed, as distinct from an error.
     print("posting {} is no longer on the {} board for {}".format(job_id, ats, slug), file=sys.stderr)
     sys.exit(3)
 
