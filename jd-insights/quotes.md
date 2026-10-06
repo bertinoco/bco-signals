@@ -3,7 +3,7 @@
 
 # Quotes
 
-Every stored quote, verbatim from the posting. **74 of 75** entries carry one.
+Every stored quote, verbatim from the posting. **75 of 76** entries carry one.
 
 These are the lines that anchor each entry's cluster and signal assignments, so they are the strongest citable evidence in the dataset. Each is checked against its `jd-source` archive before commit.
 
@@ -180,6 +180,12 @@ These are the lines that anchor each entry's cluster and signal assignments, so 
 > You use AI tooling actively. Claude, Cursor, or equivalent — to accelerate ideation, draft generation, and iteration without sacrificing voice quality.
 
 `function-health-senior-content-designer` · added 2026-08-26
+
+### Gap Inc. — Sr. UX Content Designer – Customer Journey Experience Design
+
+> Work with structured content: content models, metadata, taxonomy, CMS constraints, and translation and localization readiness.
+
+`gap-sr-ux-content-designer-customer-journey` · added 2026-10-06
 
 ### Gen Digital — Staff AI Conversation Designer
 

@@ -106,7 +106,7 @@ describe building mechanisms or producing pages.
 
 ## Judgment and taste are what's asked for once AI does more of the drafting
 
-**What the data shows.** Seven included postings across four domains name
+**What the data shows.** Eight included postings across five domains name
 judgment or taste explicitly as the thing the human still provides, once AI
 is doing more of the execution — not as a soft-skill throwaway, but paired
 directly against AI-generated or AI-assisted output. CoLab (SaaS): "you'll
@@ -131,9 +131,14 @@ systems mindset to the work... through an AI-driven lens." Soda (SaaS):
 "Taste is the bar. Anti-slop is the whole point. An engine that ships slop
 faster has negative value, and most of them do. We're hiring for the
 judgment to look at an accurate, competent, lifeless draft and bin it — then
-work out what the pipeline did wrong and fix it."
+work out what the pipeline did wrong and fix it." Gap Inc. (Retail, the
+first instance in this domain): "AI will write plausible copy at volume all
+day, which makes judgment about what is worth saying the scarce skill rather
+than the throughput. You see AI as a craft multiplier, and you are clear
+about where human judgment and real customer evidence still have to do the
+work."
 
-An eighth instance sits in an excluded record, cited here as existence
+A ninth instance sits in an excluded record, cited here as existence
 evidence only, not corpus grounding: DeepMind's Senior Manager, UX Content
 Design (Gemini) — excluded on required criterion 3, management dominance —
 states "This role requires high taste, creativity, and the ability to
@@ -152,11 +157,12 @@ finding above, not a restatement of it. That finding says AI use is now a
 baseline expectation; this one says something about what's left for the
 human once that baseline is assumed — the postings that pair judgment or
 taste against AI output are drawing a line between what the tool produces
-and what a person is still accountable for deciding is good. Four domains
+and what a person is still accountable for deciding is good. Five domains
 with no repeated employer or shared industry (SaaS, Agency, Big Tech,
-Finance) is real spread, not one company's house style borrowed by a
-competitor — SaaS now accounts for four of the seven included instances
-(CoLab, Docebo, Fin, Soda), the only domain repeated so far.
+Finance, Retail) is real spread, not one company's house style borrowed by
+a competitor — SaaS still accounts for four of the eight included instances
+(CoLab, Docebo, Fin, Soda), the only domain repeated so far. Gap is the
+first Retail-domain instance.
 
 ## Nobody agrees what this work is worth
 
