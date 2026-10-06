@@ -3,7 +3,7 @@
     "title": "BCO Content Skills Tracker",
     "description": "A curated skills tracker for the content design community.",
     "lastUpdated": "2026-10-06",
-    "totalEntries": 75
+    "totalEntries": 76
   },
   "entries": [
     {
@@ -2236,6 +2236,41 @@
       "sourceUrl": null,
       "dateAdded": "2026-10-06",
       "quote": "Own AI content tooling. Architect and maintain the guidelines and prompt infrastructure that power AI-generated copy, define how it shows up in designers' workflows, and set the eval framework that determines if the output meets the quality bar."
+    },
+    {
+      "id": "gap-sr-ux-content-designer-customer-journey",
+      "company": "Gap Inc.",
+      "title": "Sr. UX Content Designer – Customer Journey Experience Design",
+      "domain": "Retail",
+      "engagement": "Full-time",
+      "location": "San Francisco, CA",
+      "remote": null,
+      "coreFrame": "Owns voice, tone, and editorial guidance for product-experience content across four brands (Old Navy, Gap, Banana Republic, Athleta) and the full customer journey — discovery, browse, product detail, checkout, post-purchase, and lifecycle. Sits as a shared capability within the Experience Design organization rather than inside a single value stream, working with brand journey leads and the design system team to decide what content is shared across brands and what stays brand-distinct, and is stated to be the first content designer in the function, building its guidelines and practice rather than inheriting one. Builds content into the design system — content patterns, component-level guidance, microcopy standards — and works with structured content: content models, metadata, taxonomy, CMS constraints, and translation and localization readiness. Partners with UX Research to test language with customers, and is stated to use AI for drafting, variation, and audit at scale, with human judgment applied over what AI produces.",
+      "clusters": [
+        "content-systems-design",
+        "taxonomy",
+        "localization",
+        "terminology-governance",
+        "enablement",
+        "ai-tooling"
+      ],
+      "signals": [
+        "ai-native-expectation",
+        "enabler-not-bottleneck",
+        "central-standards-function",
+        "accessibility-as-constraint"
+      ],
+      "compRange": {
+        "min": 145100,
+        "max": 188600,
+        "currency": "USD",
+        "covers": null,
+        "scope": null,
+        "extras": null
+      },
+      "sourceUrl": null,
+      "dateAdded": "2026-10-06",
+      "quote": "Work with structured content: content models, metadata, taxonomy, CMS constraints, and translation and localization readiness."
     }
   ],
   "clusters": {
