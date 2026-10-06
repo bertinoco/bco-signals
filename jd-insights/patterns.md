@@ -760,3 +760,31 @@ work. The move only makes sense for a discipline without settled vocabulary
 across employers, which is the same instability this dataset's `title` field
 and `title-responsibility-gap` signal exist to track from the other direction.
 One instance, so nothing yet to compare it against.
+
+## "Design tokens" as the word for implementable content standards
+
+**Etsy**'s Staff Content Designer, UX Platform asks that "patterns and
+glossaries are implementable and token-backed." **Capital One**'s Senior
+Manager, Content Design lists "Scalable Content Design Systems: Living,
+accessible content libraries, taxonomy rules, and design token schemas
+implemented across design tools and repositories" among its stated
+responsibilities. Both use the same borrowed-from-engineering vocabulary —
+design tokens, the mechanism that keeps a visual design system's values
+(color, spacing, type) consistent across implementations — to describe
+content standards, not visual ones. Two instances, in different domains
+(Finance and E-commerce), which per this dataset's own backcheck logic is
+stronger evidence of a cross-industry pattern than two instances in the same
+domain would be. Worth watching for a third.
+
+## A company naming the deterministic/generative shift as its own transition
+
+**Etsy**'s Staff Content Designer, UX Platform states one responsibility as
+"Evolve how content work gets done. Carve out a new way of working for the
+org to move us from reviewing strings to governing behavior." This is an
+unusually explicit, employer-authored version of the distinction this
+dataset's own `deterministic`/`generative` terminology exists to name — the
+posting frames its own content org's evolution as a move from reviewing
+fixed strings to governing what a generator produces, in almost those exact
+terms. One instance, so nothing yet to compare it against; noted because the
+framing is the dataset's own organizing distinction stated back by an
+employer, rather than inferred by us.

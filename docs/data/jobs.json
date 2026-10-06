@@ -2,8 +2,8 @@
   "meta": {
     "title": "BCO Content Skills Tracker",
     "description": "A curated skills tracker for the content design community.",
-    "lastUpdated": "2026-10-02",
-    "totalEntries": 74
+    "lastUpdated": "2026-10-06",
+    "totalEntries": 75
   },
   "entries": [
     {
@@ -2199,6 +2199,43 @@
       "sourceUrl": null,
       "dateAdded": "2026-10-02",
       "quote": "Partner with engineers to define prompts and guardrails for LLM integration, and evaluate LLM performance in production."
+    },
+    {
+      "id": "etsy-staff-content-designer-ux-platform",
+      "company": "Etsy",
+      "title": "Staff Content Designer, UX Platform",
+      "domain": "E-commerce",
+      "engagement": "Full-time",
+      "location": "Brooklyn, New York",
+      "remote": "hybrid",
+      "coreFrame": "Works horizontally across Etsy's UX Platform squads rather than embedding within a single product area, setting content strategy and craft standards at a platform level. With Studio, builds content frameworks, voice guidelines, and cross-cutting patterns for buyer and seller surfaces. With Systems, defines how microcopy, error states, empty states, and conversation patterns are structured, composed, and documented within Collage, Etsy's design system, including patterns and glossaries stated to be implementable and token-backed. With UX AI Enablement, builds the content guidelines, documentation, and prompt infrastructure that let AI-assisted design tools generate on-brand, on-system content, and sets the eval framework that determines whether the output meets the quality bar. Runs critiques, documentation, and office hours to help designers reason about content systemically, and contributes to a content community of practice alongside the Director of Content Design.",
+      "clusters": [
+        "content-systems-design",
+        "terminology-governance",
+        "ai-tooling",
+        "ai-content-governance",
+        "enablement"
+      ],
+      "signals": [
+        "model-behavior-design",
+        "eval-infrastructure",
+        "central-standards-function",
+        "enabler-not-bottleneck",
+        "language-infrastructure",
+        "ai-native-expectation",
+        "governance-as-value-prop"
+      ],
+      "compRange": {
+        "min": 160000,
+        "max": 216000,
+        "currency": "USD",
+        "covers": "base",
+        "scope": null,
+        "extras": "equity + annual performance bonus"
+      },
+      "sourceUrl": null,
+      "dateAdded": "2026-10-06",
+      "quote": "Own AI content tooling. Architect and maintain the guidelines and prompt infrastructure that power AI-generated copy, define how it shows up in designers' workflows, and set the eval framework that determines if the output meets the quality bar."
     }
   ],
   "clusters": {
