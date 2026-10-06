@@ -3,7 +3,7 @@
 
 # Quotes
 
-Every stored quote, verbatim from the posting. **73 of 74** entries carry one.
+Every stored quote, verbatim from the posting. **74 of 75** entries carry one.
 
 These are the lines that anchor each entry's cluster and signal assignments, so they are the strongest citable evidence in the dataset. Each is checked against its `jd-source` archive before commit.
 
@@ -150,6 +150,12 @@ These are the lines that anchor each entry's cluster and signal assignments, so 
 > Help to shape AI tools that can empower others to generate content with the correct tone, structure, and necessary guardrails.
 
 `ethos-staff-content-designer` · added 2026-08-25
+
+### Etsy — Staff Content Designer, UX Platform
+
+> Own AI content tooling. Architect and maintain the guidelines and prompt infrastructure that power AI-generated copy, define how it shows up in designers' workflows, and set the eval framework that determines if the output meets the quality bar.
+
+`etsy-staff-content-designer-ux-platform` · added 2026-10-06
 
 ### Evinova — Content Design Lead - Evinova
 
