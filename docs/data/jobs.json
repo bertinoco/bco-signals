@@ -2,8 +2,8 @@
   "meta": {
     "title": "BCO Content Skills Tracker",
     "description": "A curated skills tracker for the content design community.",
-    "lastUpdated": "2026-08-21",
-    "totalEntries": 44
+    "lastUpdated": "2026-10-06",
+    "totalEntries": 76
   },
   "entries": [
     {
@@ -506,7 +506,8 @@
       ],
       "signals": [
         "model-behavior-design",
-        "ai-native-expectation"
+        "ai-native-expectation",
+        "eval-infrastructure"
       ],
       "compRange": null,
       "sourceUrl": null,
@@ -635,7 +636,7 @@
       "domain": "Big Tech",
       "engagement": "Full-time",
       "location": "Cupertino, CA",
-      "remote": false,
+      "remote": null,
       "coreFrame": "Writing systems governance, design system integration, writing standards codification, AI-leveraged UX writing, guidelines for generated content",
       "clusters": [
         "content-systems-design",
@@ -657,7 +658,7 @@
         "currency": "USD",
         "covers": "base",
         "scope": null,
-        "extras": "bonus + equity"
+        "extras": null
       },
       "sourceUrl": null,
       "dateAdded": "2026-07-23",
@@ -947,7 +948,7 @@
       "domain": "Finance",
       "engagement": "Full-time",
       "location": "McLean, VA | Richmond, VA | New York, NY",
-      "remote": false,
+      "remote": null,
       "coreFrame": "Foundational content systems, voice guidelines, and structured prompt libraries that let product design teams write independently; taxonomy and logic ownership for high-leverage content initiatives; narrative quality auditing across live product experiences; mentoring and enablement to mature the content design practice within a cross-functional pod",
       "clusters": [
         "content-systems-design",
@@ -1354,6 +1355,922 @@
       "sourceUrl": null,
       "dateAdded": "2026-08-21",
       "quote": "Develop and extend ontologies and structured content systems that enable scalable, consistent AI behavior."
+    },
+    {
+      "id": "uhg-principal-conversational-ai-designer",
+      "company": "UnitedHealth Group",
+      "title": "Principal Conversational AI Designer",
+      "domain": "Healthcare",
+      "engagement": "Not specified",
+      "location": "Bengaluru, India (+5 locations)",
+      "remote": null,
+      "coreFrame": "Leading the design of conversational experiences across UnitedHealth Group's AI-powered products and services, applying conversation design and Agentic AI expertise to create AI interactions and defining best practices for prompt engineering, styling, and design documentation across personas. Using AI tools throughout the product design lifecycle and defining design tool features to support prompt design iteration and testing. Designing personalized interactions that adapt to individual users over time. Coaching and mentoring conversation designers and cross-functional partners, and partnering with product, engineering, and operations teams to define and test analytics approaches measuring conversation effectiveness and business impact.",
+      "clusters": [
+        "content-systems-design",
+        "ai-content-governance",
+        "ai-tooling",
+        "enablement"
+      ],
+      "signals": [
+        "model-behavior-design",
+        "ai-native-expectation"
+      ],
+      "compRange": null,
+      "sourceUrl": null,
+      "dateAdded": "2026-08-21",
+      "quote": "As a Principal Conversational AI Designer, you will lead the design of conversational experiences that help consumers accomplish their goals through UnitedHealth Group's AI-powered products and services.",
+      "note": "The posting's page header titles the role \"Principal UX CX Designer\" (requisition 2382279), but the body text self-describes it as \"Principal Conversational AI Designer\" from the first sentence onward and consistently thereafter. The `title` field stores the body's self-description, which is also the string the quote and cluster/signal assignments are drawn from."
+    },
+    {
+      "id": "gds-senior-interaction-designer-conversation",
+      "company": "Government Digital Service",
+      "title": "Senior Interaction Designer (Conversation)",
+      "domain": "Government",
+      "engagement": "Full-time",
+      "location": "Bristol, London, or Manchester, UK",
+      "remote": "hybrid",
+      "coreFrame": "Designing conversational and multimodal AI experiences for GOV.UK, including GOV.UK Chat and agentic experiences, and prototyping and testing dialogue patterns, prompts, and interaction flows with real users. Exploring multiple approaches to solving user problems through conversation and natural language, and feeding into the development of AI conversation design principles and reusable dialogue patterns for government. Collaborating with product, research, engineering, and other designers to deliver joined-up services, and helping establish conversation design as a discipline at GDS through a community of practice and by sharing knowledge and skills across teams.",
+      "clusters": [
+        "content-systems-design",
+        "enablement",
+        "ai-tooling"
+      ],
+      "signals": [
+        "model-behavior-design",
+        "ai-native-expectation",
+        "central-standards-function"
+      ],
+      "compRange": {
+        "min": 62120,
+        "max": 71920,
+        "currency": "GBP",
+        "covers": null,
+        "scope": "London",
+        "extras": "specialist pay allowance"
+      },
+      "sourceUrl": null,
+      "dateAdded": "2026-08-21",
+      "quote": "help establish conversation design as a discipline at GDS, contributing to a community of practice, sharing knowledge across teams, and helping others develop their skills in this emerging area",
+      "note": "First UK government entry in the dataset, and the first entry outside a corporate employer. Also the first GBP-denominated compRange. The posting states three overlapping compensation figures: a headline range (£56,850-£71,920), a per-location base point figure, and a capability-based range per location (£62,120-£71,920 London / £57,350-£67,150 National Locations, i.e. Bristol and Manchester). The recorded range is the capability-based London figure, following the largest-co-equal-city rule. `covers` is left null rather than resolved to `base`: a separate sentence labels a different, single-point figure as base salary, but this range is described as scaling with a specialist pay allowance on top of that base, which does not cleanly match either the `base` or `total` definition."
+    },
+    {
+      "id": "ethos-staff-content-designer",
+      "company": "Ethos",
+      "title": "Staff Content Designer",
+      "domain": "Finance",
+      "engagement": "Full-time",
+      "location": "Remote (US)",
+      "remote": true,
+      "coreFrame": "Writing and shaping content across the purchase journey — landing pages, onboarding, checkout, post-purchase, and microcopy — and building the narrative backbone for major product flows. Contributing to Ethos's content standards, tone-of-voice guidelines, and review processes alongside design leadership. Using AI tools and frameworks to produce on-brand content faster, and helping shape AI tools that let others generate content with the correct tone, structure, and guardrails. Grounding the work in customer research, competitive audits, analytics, and A/B testing.",
+      "clusters": [
+        "ai-tooling",
+        "ai-content-governance",
+        "enablement",
+        "content-systems-design"
+      ],
+      "signals": [
+        "ai-native-expectation",
+        "enabler-not-bottleneck"
+      ],
+      "compRange": {
+        "min": 147000,
+        "max": 259000,
+        "currency": "USD",
+        "covers": "base",
+        "scope": null,
+        "extras": null
+      },
+      "sourceUrl": null,
+      "dateAdded": "2026-08-25",
+      "quote": "Help to shape AI tools that can empower others to generate content with the correct tone, structure, and necessary guardrails."
+    },
+    {
+      "id": "engrain-senior-content-strategist-product-enablement",
+      "company": "Engrain",
+      "title": "Senior Content Strategist, Product Enablement",
+      "domain": "SaaS",
+      "engagement": "Not specified",
+      "location": "Greenwood Village, CO",
+      "remote": null,
+      "coreFrame": "Owns narrative architecture and technical enablement across the product ecosystem: strategy and authoring for the developer hub, API specs, and integration guides, partnering with Marketing to co-build messaging platforms and terminology standards, connecting Engineering, Product Design, Customer Success, and Marketing around product rollouts, and using AI tools to offload routine writing so effort concentrates on technical narratives and enablement assets. Reports to the VP, Experience Design.",
+      "clusters": [
+        "technical-writing",
+        "terminology-governance",
+        "enablement",
+        "content-systems-design",
+        "ai-tooling"
+      ],
+      "signals": [
+        "ai-native-expectation",
+        "central-standards-function",
+        "content-marketing-adjacent"
+      ],
+      "compRange": {
+        "min": 102000,
+        "max": 120000,
+        "currency": "USD",
+        "covers": "base",
+        "scope": null,
+        "extras": null
+      },
+      "sourceUrl": null,
+      "dateAdded": "2026-08-26",
+      "quote": "Partner directly with Marketing to co-build core messaging platforms, terminology standards, and voice-and-tone frameworks, ensuring unified positioning across product enablement, demand generation campaigns, and sales collateral."
+    },
+    {
+      "id": "function-health-senior-content-designer",
+      "company": "Function Health",
+      "title": "Senior Content Designer",
+      "domain": "Healthcare",
+      "engagement": "Full-time",
+      "location": "Remote (US)",
+      "remote": true,
+      "coreFrame": "Owning product and member-facing copy across in-app flows, onboarding, notifications, action plans, empty states, and error handling. Defining and stewarding the brand voice across surfaces and contributors, and reviewing copy org-wide beyond the role's own output. Working upstream of design decisions alongside Product Design and PMM, and using AI tooling (named: Claude, Cursor) to accelerate ideation, drafting, and iteration.",
+      "clusters": [
+        "content-systems-design",
+        "ai-tooling",
+        "enablement"
+      ],
+      "signals": [
+        "ai-native-expectation",
+        "enabler-not-bottleneck"
+      ],
+      "compRange": null,
+      "sourceUrl": null,
+      "dateAdded": "2026-08-26",
+      "quote": "You use AI tooling actively. Claude, Cursor, or equivalent — to accelerate ideation, draft generation, and iteration without sacrificing voice quality."
+    },
+    {
+      "id": "vinted-content-design-lead",
+      "company": "Vinted",
+      "title": "Content Design Lead",
+      "domain": "E-commerce",
+      "engagement": "Not specified",
+      "location": "Vilnius or Kaunas, Lithuania",
+      "remote": "hybrid",
+      "coreFrame": "Setting the quality bar for content design across a team of six embedded Content Designers, and building craft infrastructure — frameworks, guidelines, tooling, and content systems — that scales across those embedded teams. Deepening how content design is embedded in the product development lifecycle across Product, Design, Engineering, and Research; enabling Content Designer growth through direct leadership, mentorship, or community-building depending on team structure; defining metrics that demonstrate content design's value to the broader organisation; and driving operational efficiency across the function. The posting states the org structure is still evolving, and this may involve direct people leadership, a guild model built on craft authority, or both.",
+      "clusters": [
+        "content-systems-design",
+        "enablement"
+      ],
+      "signals": [
+        "governance-as-value-prop",
+        "central-standards-function",
+        "enabler-not-bottleneck"
+      ],
+      "compRange": null,
+      "sourceUrl": null,
+      "dateAdded": "2026-08-26",
+      "quote": "You'll shape the direction of the function through standards, tooling, and craft infrastructure that enables a distributed team to do their best work.",
+      "note": "The posting's job-board header titles the role \"Content Design Manager,\" but the body text self-describes it as \"Content Design Lead\" from the opening sentence of the role overview onward, and consistently thereafter — the header title appears once and is never reinforced. The `title` field stores the body's self-description. Separately, the JD states a gross monthly salary range (\"€4.917—€6.650 EUR\"), the first monthly-stated figure in the corpus; every other entry states an annual figure. `compRange` is recorded as null rather than displayed: the schema has no period field, annualizing would assume a bonus or 13th-month structure the JD never states, and recording the bare monthly numbers would misrepresent them as an annual figure to a reader comparing across entries."
+    },
+    {
+      "id": "relay-senior-content-designer",
+      "company": "Relay",
+      "title": "Senior Content Designer",
+      "domain": "Logistics",
+      "engagement": "Full-time",
+      "location": "London",
+      "remote": false,
+      "coreFrame": "End-to-end content strategy and execution across the product, from framing concepts to microcopy, as the company's first Content Designer. Establishing the conventions, systems, libraries, style guides, tools, and AI skills the company relies on for language consistency as it scales, and consulting on content management and translation tooling for multi-language product experience. Also named: user research and experimentation to define user needs and behaviors, jumping into incidents to support crisis messaging and recovery comms, and occasional graphic design and copywriting for marketing materials (investor decks, pitch decks, the company website) as part of the small Design team's shared brand-building work.",
+      "clusters": [
+        "content-systems-design",
+        "localization",
+        "enablement",
+        "ai-tooling",
+        "terminology-governance"
+      ],
+      "signals": [
+        "ai-native-expectation"
+      ],
+      "compRange": null,
+      "sourceUrl": null,
+      "dateAdded": "2026-08-28",
+      "quote": "Establish the conventions, systems, libraries, style guides, tools and AI skills that Relay relies on to ensure consistency of language as we scale and diversify our product experiences."
+    },
+    {
+      "id": "salesforce-experience-design-lead",
+      "company": "Salesforce",
+      "title": "Experience Design Lead",
+      "domain": "SaaS",
+      "engagement": "Full-time",
+      "location": "New York, NY; Atlanta, GA; Seattle, WA; or Indianapolis, IN",
+      "remote": null,
+      "coreFrame": "Setting the design and content quality bar for a team building AI and automation tools for internal Customer Success Managers — contributing UX writing, information architecture, and content direction on product features from early sprint stages through delivery; owning voice, tone, and content standards across Skills copy, product documentation, and field-facing materials; and building lightweight design and content guidelines the team can use. Also named: producing polished decks and communications for field, ops, and leadership audiences, and auditing existing assets against how they're documented or delivered. The posting frames the role as craft rather than strategy.",
+      "clusters": [
+        "content-systems-design",
+        "enablement"
+      ],
+      "signals": [
+        "content-adjacent"
+      ],
+      "compRange": {
+        "min": 172200,
+        "max": 236700,
+        "currency": "USD",
+        "covers": "base",
+        "scope": "New York, NY",
+        "extras": null
+      },
+      "sourceUrl": null,
+      "dateAdded": "2026-08-28",
+      "tag": "content-adjacent",
+      "quote": "The ideal background here is UX writing or content design — someone who's sat on a product team, worked in sprint cycles, and knows how to translate complex product thinking into clear, useful language.",
+      "note": "The posting's job-board metadata files this role under \"Job Category: Program & Project Management,\" a category that matches neither the title nor the described work, which is content-design craft on UX writing, IA, and content standards. `content-adjacent` is assigned because the title (\"Experience Design Lead\") and that job-board category sit outside titles the field recognizes as content design or UX writing, while the body states directly that \"the ideal background here is UX writing or content design\" and the stated responsibilities are content-design craft work — the same pattern as the Spotify Annotation Manager, Meta Product Content Engineer, and Notion CX Knowledge Architect entries. The JD's only AI-tooling line (\"Experience making AI tools or technical products accessible... for non-technical audiences is a major plus\") sits in the preferred-qualifications section, not a stated responsibility, so ai-native-expectation and ai-tooling are not assigned; enabler-not-bottleneck is not assigned either, since the posting states directly \"This isn't a strategy role — it's a craft role. You'll get your hands dirty, ship things fast.\" The role's scope — owning quality for internally-consumed artifacts (decks, Slack messages, prototypes, field-facing materials) rather than product-surface content — is a single instance in the corpus so far and is not reflected in any cluster or signal assignment."
+    },
+    {
+      "id": "booking-ux-writer-growth-marketing",
+      "company": "Booking.com",
+      "title": "UX Writer II - Growth Marketing - Marketplace",
+      "domain": "Travel",
+      "engagement": "Not specified",
+      "location": "Amsterdam, Netherlands",
+      "remote": null,
+      "coreFrame": "Writing UX copy embedded in Booking.com's Growth Marketing team, covering AI-driven creative ads, ad-hoc campaigns, and subscription management copy with legal nuances for travelers. The role sends copy to in-house Language Specialists for translation into 44+ languages and dialects, collaborates with product managers, marketing specialists, and UX designers across multiple product teams, and uses qualitative and quantitative data to measure impact and inform iterations.",
+      "clusters": [
+        "localization",
+        "ai-tooling"
+      ],
+      "signals": [
+        "ai-native-expectation",
+        "content-marketing-adjacent"
+      ],
+      "compRange": null,
+      "sourceUrl": null,
+      "dateAdded": "2026-09-02",
+      "quote": "From AI-driven creative ads and ad-hoc campaigns to subscription management with legal nuances, the topics you own require experience with LLMs and attention to detail."
+    },
+    {
+      "id": "honeybook-ai-content-program-manager-chatbot",
+      "company": "HoneyBook",
+      "title": "AI Content Program Manager, Chatbot",
+      "domain": "SaaS",
+      "engagement": "Full-time",
+      "location": "San Francisco, CA | New York City, NY",
+      "remote": "hybrid",
+      "coreFrame": "Owns strategy and execution of HoneyBook's support chatbot on the Knowledge & Instructional Content team, building and maintaining Help Center content and internal Support documentation structured for both human and AI-assisted resolution. Uses Claude Code to build and maintain the data connectors that power the chatbot, and evaluates and rolls out AI tools and workflows for the team.",
+      "clusters": [
+        "content-systems-design",
+        "ai-tooling",
+        "technical-writing",
+        "enablement"
+      ],
+      "signals": [
+        "ai-native-expectation",
+        "agent-retrieval"
+      ],
+      "compRange": {
+        "min": 140000,
+        "max": 158000,
+        "currency": "USD",
+        "covers": "base",
+        "scope": null,
+        "extras": "equity"
+      },
+      "sourceUrl": null,
+      "dateAdded": "2026-09-02",
+      "quote": "You'll set the direction for how our chatbot resolves member issues, from what it should be able to handle to how content gets structured so it can act on it, and you'll build the Help Center content and Support documentation that equip Support Specialists with clear, dependable guidance across every channel."
+    },
+    {
+      "id": "citizens-content-architect-manager",
+      "company": "Citizens",
+      "title": "Content Architect Manager",
+      "domain": "Finance",
+      "engagement": "Full-time",
+      "location": "Boston, MA; New York, NY; Johnston, RI; or Westwood, MA",
+      "remote": "hybrid",
+      "coreFrame": "Defines and evolves Citizens' enterprise content model — types, fields, relationships, and metadata for entities like products, rates, disclosures, and offers — so content is structured independent of presentation and reusable across web, mobile, and AI-driven experiences. Sets structured data standards for discoverability by search and answer engines and LLMs, owns the governance process for content model changes, and partners with CMS, API, engineering, and design-system teams on delivery.",
+      "clusters": [
+        "content-systems-design",
+        "taxonomy",
+        "enablement",
+        "technical-writing"
+      ],
+      "signals": [
+        "structured-data",
+        "governance-as-value-prop",
+        "central-standards-function",
+        "agent-retrieval",
+        "geo-seo"
+      ],
+      "compRange": {
+        "min": 110000,
+        "max": 130000,
+        "currency": "USD",
+        "covers": "base",
+        "scope": null,
+        "extras": "annual discretionary bonus"
+      },
+      "sourceUrl": null,
+      "dateAdded": "2026-09-04",
+      "quote": "Define structured data standards, including schema.org and JSON-LD where appropriate, so content is discoverable, retrievable, and reusable by search engines, answer engines, LLMs, and internal systems."
+    },
+    {
+      "id": "anthropic-product-designer-evals-prompts",
+      "company": "Anthropic",
+      "title": "Product Designer, Evals & Prompts",
+      "domain": "Big Tech",
+      "engagement": "Not specified",
+      "location": "San Francisco, CA",
+      "remote": "hybrid",
+      "coreFrame": "Writes and revises the prompts behind Claude's tools, features, and behaviors on a product surface, and builds the graders and eval harness that validate prompt fixes across model releases. Builds visual, low-code eval tools that let other designers assemble comparison sets and rubrics without an engineer, and supports model-release testing across the team's roughly 50 to 100 tools.",
+      "clusters": [
+        "ai-tooling",
+        "enablement"
+      ],
+      "signals": [
+        "model-behavior-design",
+        "eval-infrastructure"
+      ],
+      "compRange": {
+        "min": 305000,
+        "max": 385000,
+        "currency": "USD",
+        "covers": null,
+        "scope": null,
+        "extras": null
+      },
+      "sourceUrl": null,
+      "dateAdded": "2026-09-05",
+      "quote": "Write and revise the prompts behind Claude's tools, features, and behaviors on a product surface; test the surface, turn findings into prompt fixes, ship them, and confirm the prompt users get is the one intended."
+    },
+    {
+      "id": "vinted-taxonomist-supply",
+      "company": "Vinted",
+      "title": "Taxonomist, Supply",
+      "domain": "E-commerce",
+      "engagement": "Not specified",
+      "location": "Berlin, Germany",
+      "remote": "hybrid",
+      "coreFrame": "Builds the structural logic for navigation, search relevance, listing quality, and product expansion across Vinted's marketplace, designing and maintaining buyer- and seller-facing product taxonomies and ontologies that support member-facing content. Researches product attributes so buyers can search and sellers can describe items, and documents internal standards, workflows, governance processes, and data models, working cross-functionally with engineers, product managers, designers, and data scientists.",
+      "clusters": [
+        "taxonomy",
+        "content-systems-design",
+        "technical-writing"
+      ],
+      "signals": [
+        "classification-for-ml"
+      ],
+      "compRange": {
+        "min": 75200,
+        "max": 101800,
+        "currency": "EUR",
+        "covers": null,
+        "scope": null,
+        "extras": null
+      },
+      "sourceUrl": null,
+      "dateAdded": "2026-09-06",
+      "quote": "Design, implement, and maintain ontologies and data structures that support our member-facing content."
+    },
+    {
+      "id": "splunk-content-designer",
+      "company": "Splunk",
+      "title": "Content Designer (Remote)",
+      "domain": "SaaS",
+      "engagement": "Not specified",
+      "location": "Remote",
+      "remote": true,
+      "coreFrame": "Designs consistent UI text across flows for Splunk's enterprise security, observability, and platform products, and leads information architecture and navigation design for complex product areas. Defines and maintains cross-product terminology to resolve naming conflicts, develops content-led guidelines and patterns for design-system compliance, and supports product designers on projects without dedicated content design coverage.",
+      "clusters": [
+        "terminology-governance",
+        "content-systems-design",
+        "taxonomy",
+        "enablement"
+      ],
+      "signals": [
+        "enabler-not-bottleneck",
+        "title-responsibility-gap"
+      ],
+      "compRange": {
+        "min": 104100,
+        "max": 131900,
+        "currency": "USD",
+        "covers": "base",
+        "scope": null,
+        "extras": "annual bonus + equity (RSUs)"
+      },
+      "sourceUrl": null,
+      "dateAdded": "2026-09-06",
+      "quote": "Define and maintain cross-product terminology, partnering with product management and product marketing to resolve naming conflicts and drive durable decisions."
+    },
+    {
+      "id": "adidas-senior-ux-copywriter",
+      "company": "Adidas",
+      "title": "Senior UX Copywriter",
+      "domain": "Retail",
+      "engagement": "Full-time",
+      "location": "Amsterdam, Netherlands",
+      "remote": null,
+      "coreFrame": "Owns UX writing across end-to-end consumer journeys for Adidas's Consumer Experience team, covering product launches, participation mechanics, eligibility, and access, and shapes journeys, information architecture, and flows beyond copy alone. Designs scalable content systems — prompts, patterns, guardrails, evaluation criteria, and quality standards — that enable other teams without creating an approval bottleneck, and partners with localization and market teams for global scalability.",
+      "clusters": [
+        "content-systems-design",
+        "ai-content-governance",
+        "enablement",
+        "localization",
+        "ai-tooling"
+      ],
+      "signals": [
+        "enabler-not-bottleneck",
+        "ai-native-expectation"
+      ],
+      "compRange": null,
+      "sourceUrl": null,
+      "dateAdded": "2026-09-09",
+      "quote": "Design scalable content systems: prompts, patterns, guardrails, evaluation criteria and quality standards, enabling teams without creating an approval bottleneck."
+    },
+    {
+      "id": "teladoc-health-lead-content-designer",
+      "company": "Teladoc Health",
+      "title": "Lead Content Designer",
+      "domain": "Healthcare",
+      "engagement": "Full-time",
+      "location": "United States (Remote)",
+      "remote": true,
+      "coreFrame": "Leads content strategy across multiple product areas on Teladoc Health's Product Experience team, designing conversation flows and response frameworks for AI-powered chatbot and virtual assistant experiences in member- and provider-facing healthcare settings. Partners with AI, clinical, and engineering stakeholders to develop prompt frameworks and quality criteria for LLM-generated responses, and contributes to governance for generative AI outputs, including evaluation rubrics and red-teaming participation.",
+      "clusters": [
+        "content-systems-design",
+        "ai-content-governance",
+        "ai-tooling",
+        "enablement"
+      ],
+      "signals": [
+        "model-behavior-design",
+        "ai-native-expectation"
+      ],
+      "compRange": {
+        "min": 135000,
+        "max": 165000,
+        "currency": "USD",
+        "covers": "base",
+        "scope": null,
+        "extras": "performance bonus"
+      },
+      "sourceUrl": null,
+      "dateAdded": "2026-09-09",
+      "quote": "Collaborate with AI, clinical, legal, and engineering stakeholders to develop prompt frameworks, content guidelines, and quality criteria for LLM-generated responses in regulated healthcare contexts, ensuring accuracy, safety, empathy, and appropriate tone."
+    },
+    {
+      "id": "docebo-senior-product-designer-language-systems",
+      "company": "Docebo",
+      "title": "Senior Product Designer, Content Design & Language Systems",
+      "domain": "SaaS",
+      "engagement": "Full-time",
+      "location": "Toronto, Ontario",
+      "remote": "hybrid",
+      "coreFrame": "Leads ambiguous product problems at Docebo where workflow, interaction, information architecture, and language work together, building the product's terminology, voice and tone, and reusable microcopy patterns. Embeds language guidance into the design system at the component level, owns localization-readiness standards for translation-ready writing and terminology reuse, and mentors designers and partners on product-language judgment.",
+      "clusters": [
+        "terminology-governance",
+        "localization",
+        "content-systems-design",
+        "enablement"
+      ],
+      "signals": [
+        "ai-native-expectation"
+      ],
+      "compRange": {
+        "min": 100400,
+        "max": 133900,
+        "currency": "CAD",
+        "covers": null,
+        "scope": null,
+        "extras": "bonus"
+      },
+      "sourceUrl": null,
+      "dateAdded": "2026-09-09",
+      "quote": "Establish terminology, product voice and tone, reusable microcopy patterns, audience guidance, and language principles that improve clarity across product areas."
+    },
+    {
+      "id": "fin-brand-voice-lead-systems",
+      "company": "Fin",
+      "title": "Brand Voice Lead - Systems",
+      "domain": "SaaS",
+      "engagement": "Full-time",
+      "location": "San Francisco, California",
+      "remote": "hybrid",
+      "coreFrame": "Evolves Fin's verbal identity across brand and customer touchpoints, writing copy for launches, campaigns, and executive narratives while building the writing systems behind that work: voice and tone guidance, editorial standards, channel frameworks, prompt libraries, and reusable messaging assets. Partners across Brand, Product Marketing, Product, and Design rather than owning company-wide communication alone, and is framed explicitly as a senior hands-on contributor rather than a sole owner of how the company writes.",
+      "clusters": [
+        "content-systems-design",
+        "ai-tooling",
+        "enablement"
+      ],
+      "signals": [
+        "content-marketing-adjacent",
+        "ai-native-expectation",
+        "enabler-not-bottleneck"
+      ],
+      "compRange": {
+        "min": 155700,
+        "max": 186000,
+        "currency": "USD",
+        "covers": "base",
+        "scope": "San Francisco Bay Area",
+        "extras": "bonus + equity (RSUs)"
+      },
+      "sourceUrl": null,
+      "dateAdded": "2026-09-11",
+      "quote": "Build and maintain practical writing systems that support scale, including channel guidance, prompt libraries, reusable messaging assets, and AI-enabled workflows."
+    },
+    {
+      "id": "cleo-lead-conversational-designer",
+      "company": "Cleo",
+      "title": "Lead Conversational Designer",
+      "domain": "Finance",
+      "engagement": "Full-time",
+      "location": "United Kingdom (Hybrid); Spain; United Kingdom (Remote)",
+      "remote": null,
+      "coreFrame": "Works within Cleo's Financial Assistant Pillar to embed conversation design into a multi-agent product architecture, partnering with machine learning and backend engineers, product designers, and PMs. Shapes the system architecture of chat experiences, defines persona strategy across agents, and helps prompt engineer LLMs to generate content that matches design intent. Also designs conversational frameworks and flows alongside UX designers' accompanying GUI components, and contributes to strengthening how the multi-agent architecture works from a conversation design perspective, potentially including a prompt library for organizing and managing prompts.",
+      "clusters": [
+        "content-systems-design",
+        "ai-tooling"
+      ],
+      "signals": [
+        "model-behavior-design",
+        "ai-native-expectation"
+      ],
+      "sourceUrl": null,
+      "dateAdded": "2026-09-11",
+      "quote": "Help prompt engineer LLMs to generate content that matches the intent of your designs."
+    },
+    {
+      "id": "apple-ux-writer-music",
+      "company": "Apple",
+      "title": "UX Writer, Apple Music",
+      "domain": "Big Tech",
+      "engagement": "Full-time",
+      "location": "Cupertino, California, United States",
+      "remote": null,
+      "coreFrame": "Writes UX copy for Apple Music across platforms, including end-to-end flows and in-product copy for mobile, desktop, and web. Designs features alongside cross-functional partners and collaborates on the product roadmap. Develops style and tonal guidance for both product features and LLM-generated content, and leads discussions on naming, terminology, and messaging.",
+      "clusters": [
+        "ai-content-governance",
+        "terminology-governance"
+      ],
+      "signals": [],
+      "compRange": {
+        "min": 184700,
+        "max": 277600,
+        "currency": "USD",
+        "covers": "base",
+        "scope": null,
+        "extras": null
+      },
+      "sourceUrl": null,
+      "dateAdded": "2026-09-16",
+      "quote": "Developing style and tonal guidance for features and LLM-generated content."
+    },
+    {
+      "id": "soda-ai-content-engineer",
+      "company": "Soda",
+      "title": "AI Content Engineer",
+      "domain": "SaaS",
+      "engagement": "Full-time",
+      "location": "New York, New York, United States; San Francisco, California, United States; London, England, United Kingdom; Berlin, Berlin, Germany; Amsterdam, North Holland, Netherlands",
+      "remote": true,
+      "coreFrame": "Owns content at Soda end to end, including the website, technical blogs, webinars, and product videos. Builds a multi-step LLM content-generation pipeline with structured outputs and evals rather than hand-writing each piece, and exercises editorial judgment over what the pipeline produces, accepting, rejecting, and diagnosing failures in its output. Engineers the pipeline to write in distinct voices matching specific people, such as founders and customer engineers, rather than a single generic voice.",
+      "clusters": [
+        "content-systems-design",
+        "ai-tooling"
+      ],
+      "signals": [
+        "content-marketing-adjacent",
+        "ai-native-expectation",
+        "model-behavior-design",
+        "eval-infrastructure"
+      ],
+      "compRange": {
+        "min": 120000,
+        "max": 130000,
+        "currency": "USD",
+        "covers": null,
+        "scope": null,
+        "extras": "equity"
+      },
+      "sourceUrl": null,
+      "dateAdded": "2026-09-17",
+      "quote": "One person cannot hand-make all of that. So you'll build the system that can."
+    },
+    {
+      "id": "bofa-xd-ii-content-design",
+      "company": "Bank of America",
+      "title": "Experience Design (XD) II, Content Design",
+      "domain": "Finance",
+      "engagement": "Full-time",
+      "location": "Charlotte, North Carolina; Seattle, Washington; San Francisco, California",
+      "remote": null,
+      "coreFrame": "Delivers advanced content design execution for a multi-disciplinary Experience Design team supporting Digital Consumer Investing and Workplace Benefits. Works across the discovery-to-delivery workflow, including content strategy, information architecture, content models, and taxonomies, and contributes to large-scale content audits and reusable content systems. Designs content for AI-powered and multimodal experiences, including conversational interfaces, agents, search, and recommendations. Acts as a human-in-the-loop reviewer of prompts, agent responses, and behaviors on emerging platforms.",
+      "clusters": [
+        "content-systems-design",
+        "taxonomy",
+        "ai-tooling",
+        "ai-content-governance",
+        "enablement"
+      ],
+      "signals": [
+        "ai-native-expectation",
+        "model-behavior-design"
+      ],
+      "sourceUrl": null,
+      "dateAdded": "2026-09-21",
+      "quote": "Act as a human-in-the-loop for emerging platforms by defining, reviewing, and improving prompts, responses, agent behaviors, voice, tone, taxonomy, and content quality."
+    },
+    {
+      "id": "trustly-adoption-knowledge-manager",
+      "company": "Trustly",
+      "title": "Adoption and Knowledge Manager, AI Transformation",
+      "domain": "Finance",
+      "engagement": "Full-time",
+      "location": "New York",
+      "remote": null,
+      "coreFrame": "Two-phase role on Trustly's AI Transformation team. For the first two quarters, owns AI adoption: the cohort rollout model, the champion network, and the enablement hub that functions use to bring AI into daily work. From the third quarter, shifts to owning the knowledge system itself: designs the taxonomy that organizes Trustly's knowledge base, defines the source-of-truth model for each domain, leads evaluation, selection, and migration for a new knowledge base platform, and defines how that knowledge base connects to Claude and other AI tools for retrieval.",
+      "clusters": [
+        "taxonomy",
+        "content-systems-design",
+        "enablement"
+      ],
+      "signals": [
+        "agent-retrieval",
+        "governance-as-value-prop",
+        "central-standards-function",
+        "content-adjacent"
+      ],
+      "compRange": {
+        "min": 180000,
+        "max": 240000,
+        "currency": "USD",
+        "covers": "base",
+        "scope": null,
+        "extras": "equity + bonus"
+      },
+      "sourceUrl": null,
+      "dateAdded": "2026-09-21",
+      "tag": "content-adjacent",
+      "quote": "Design and own the taxonomy that organizes Trustly's knowledge base end to end, defining what counts as the source of truth for each domain."
+    },
+    {
+      "id": "robinhood-senior-content-designer",
+      "company": "Robinhood",
+      "title": "Senior Content Designer",
+      "domain": "Finance",
+      "engagement": "Full-time",
+      "location": "Chicago, IL",
+      "remote": "hybrid",
+      "coreFrame": "Owns content strategy and taxonomy architecture for high-frequency trading products, including multi-leg options and portfolio margin, and defines the communication architecture for high-risk regulatory events such as automated margin liquidations and options lifecycle events. Establishes governance and prompt-design frameworks for AI-native trading assistants and LLM-generated market insights, ensuring machine-generated content meets financial disclosure and algorithmic transparency requirements. Sets unified content logic and accuracy standards for market data visualizations and order-entry systems across iOS, Android, and Web, and mentors junior designers on market mechanics, AI-integrated workflows, and internal content-governance tooling.",
+      "clusters": [
+        "taxonomy",
+        "content-systems-design",
+        "ai-content-governance",
+        "ai-tooling",
+        "enablement"
+      ],
+      "signals": [
+        "model-behavior-design",
+        "governance-as-value-prop",
+        "central-standards-function"
+      ],
+      "compRange": {
+        "min": 82056,
+        "max": 150000,
+        "currency": "USD",
+        "covers": "base",
+        "scope": null,
+        "extras": "bonus + equity"
+      },
+      "sourceUrl": null,
+      "dateAdded": "2026-09-23",
+      "quote": "Establish the strategic governance and prompt-design frameworks for AI-native trading assistants and LLM-generated market insights, ensuring machine-generated content adheres to strict financial disclosure standards and algorithmic transparency requirements."
+    },
+    {
+      "id": "autodesk-senior-principal-content-strategist",
+      "company": "Autodesk",
+      "title": "Senior Principal Content Strategist",
+      "domain": "SaaS",
+      "engagement": "Full-time",
+      "location": "Oslo, Norway",
+      "remote": null,
+      "coreFrame": "Defines content strategy for Autodesk's Forma Design, an AI-native industry cloud for the AEC (architecture, engineering, and construction) lifecycle, spanning in-product experiences, learning and onboarding, and connected platform touchpoints. Designs onboarding and learning experiences aligned with the product's AI-forward direction and pioneers AI-native content workflows intended to scale content output and quality. Develops scalable frameworks, governance models, and operating practices for consistent experiences across products, leads terminology, naming, and content-system efforts, and defines success metrics for content quality. Scales content-strategy practice across Forma and the broader AEC organization through mentorship and shared standards.",
+      "clusters": [
+        "content-systems-design",
+        "terminology-governance",
+        "enablement",
+        "ai-tooling"
+      ],
+      "signals": [
+        "ai-native-expectation",
+        "central-standards-function",
+        "governance-as-value-prop"
+      ],
+      "sourceUrl": null,
+      "dateAdded": "2026-09-25",
+      "quote": "Develop scalable frameworks, governance models, and operating practices that help teams deliver high-quality, consistent experiences across products."
+    },
+    {
+      "id": "roche-content-design-ai-readiness-specialist",
+      "company": "Roche",
+      "title": "Content Design & AI Readiness Specialist",
+      "domain": "Healthcare",
+      "engagement": "Not specified",
+      "location": "Warsaw, Masovian, Poland",
+      "remote": "hybrid",
+      "coreFrame": "Optimizes technical content for both human readability and AI consumption within the Knowledge Strategy & Language Operations Subchapter, developing structured, machine-readable content for use in generative AI platforms including RAG architectures. Manages metadata, search synonyms, and prompt libraries to support AI-assisted retrieval, and improves voicebot accuracy by building phonetic lexicons and fine-tuning Automatic Speech Recognition models. Aligns taxonomy, metadata, and content governance with subject matter experts across teams, and provides training to internal stakeholders on AI tools and content structuring.",
+      "clusters": [
+        "taxonomy",
+        "technical-writing",
+        "content-systems-design",
+        "enablement",
+        "ai-tooling",
+        "terminology-governance"
+      ],
+      "signals": [
+        "agent-retrieval",
+        "classification-for-ml"
+      ],
+      "sourceUrl": null,
+      "dateAdded": "2026-09-26",
+      "quote": "Develop and maintain structured, machine-readable technical content ready for use in generative AI platforms (e.g., RAG architectures)."
+    },
+    {
+      "id": "huge-director-ai-content-strategy",
+      "company": "Huge",
+      "title": "Director, AI Content Strategy",
+      "domain": "Agency",
+      "engagement": "Not specified",
+      "location": "Remote (US)",
+      "remote": true,
+      "coreFrame": "Leads content governance, audits, workflow design, and lifecycle management for client engagements, alongside information architecture, content models, taxonomy structures, and metadata systems. Defines voice and tone frameworks, messaging guidelines, and systemized content patterns, and designs conversation strategy for chat, voice, and agentic experiences, building dialogue flows, interaction scripts, guardrails, and error-handling pathways. Develops golden queries and responses to benchmark quality and ensure safe, consistent outputs, and creates AI content pipelines encompassing governance, training data readiness, and human-in-the-loop review frameworks. Architects intent taxonomies, entity structures, and conversational knowledge hierarchies, and serves as the senior content and AI strategist across client relationships, partnering with Experience Design, Product, and Engineering teams to scale content operations.",
+      "clusters": [
+        "content-systems-design",
+        "taxonomy",
+        "terminology-governance",
+        "enablement",
+        "ai-tooling",
+        "ai-content-governance"
+      ],
+      "signals": [
+        "ai-native-expectation",
+        "governance-as-value-prop",
+        "model-behavior-design",
+        "eval-infrastructure",
+        "classification-for-ml"
+      ],
+      "compRange": {
+        "min": 160000,
+        "max": 200000,
+        "currency": "USD",
+        "covers": null,
+        "scope": null,
+        "extras": null
+      },
+      "sourceUrl": null,
+      "dateAdded": "2026-09-26",
+      "quote": "Create AI content pipelines, including frameworks for governance, training data readiness, and human-in-the-loop review."
+    },
+    {
+      "id": "personio-content-designer",
+      "company": "Personio",
+      "title": "Content Designer (d/f/m)",
+      "domain": "SaaS",
+      "engagement": "Full Time",
+      "location": "Munich, Berlin, London",
+      "remote": "hybrid",
+      "coreFrame": "Builds and maintains reusable content patterns, standards, and self-service tools, using AI to scale their impact so Product teams can handle everyday content needs independently. Sets the standard for content and information architecture quality, identifying where AI-generated or Product-Designer-authored work misses the mark and proposing or making the fix. Partners with the Localisation function to prepare source content for translation across target languages, particularly German, provides embedded design support to specific product areas, and contributes to playbooks, training, and reviews that raise the content quality bar across Design, Product, and Engineering.",
+      "clusters": [
+        "content-systems-design",
+        "terminology-governance",
+        "ai-content-governance",
+        "ai-tooling",
+        "enablement",
+        "localization"
+      ],
+      "signals": [
+        "ai-native-expectation",
+        "enabler-not-bottleneck",
+        "central-standards-function"
+      ],
+      "sourceUrl": null,
+      "dateAdded": "2026-09-30",
+      "quote": "You will build and maintain reusable content patterns, standards, and self-service tools, using AI where it helps scale their impact, so Product teams can handle everyday content needs independently."
+    },
+    {
+      "id": "smartly-user-guidance-lead",
+      "company": "Smartly",
+      "title": "User Guidance Lead",
+      "domain": "SaaS",
+      "engagement": "Not specified",
+      "location": "Helsinki, Uusimaa, Finland",
+      "remote": "hybrid",
+      "coreFrame": "Owns the strategy and execution for making Smartly's product knowledge accurate, discoverable, reusable, and accessible to both humans and AI, leading a small team of technical writers while remaining hands-on. Owns the customer-facing Knowledge Base and embeds User Guidance into the product development lifecycle, partnering with Product, Engineering, Design, Support, Customer Success, Data, and AI teams. Identifies the additional context and collateral AI systems and agents need to understand and use Smartly's products, and helps shape how product knowledge is made available through developer documentation, APIs, MCP, and other machine-consumable interfaces. Uses analytics and customer behavior to identify knowledge gaps and prioritize improvements, and explores AI paths to improve how User Guidance content is created, reviewed, and maintained.",
+      "clusters": [
+        "content-systems-design",
+        "technical-writing",
+        "ai-tooling"
+      ],
+      "signals": [
+        "agent-retrieval"
+      ],
+      "sourceUrl": null,
+      "dateAdded": "2026-10-01",
+      "quote": "Identify and provide the additional context and collateral that AI systems and agents need to understand and use Smartly's products."
+    },
+    {
+      "id": "slang-ai-senior-conversation-designer",
+      "company": "Slang AI",
+      "title": "Senior Conversation Designer",
+      "domain": "SaaS",
+      "engagement": "Not specified",
+      "location": "New York, NY",
+      "remote": "hybrid",
+      "coreFrame": "Designs end-to-end conversational flows for generative AI capabilities across voice and chat, incorporating conditional logic, parameter handling, and tool calls, and builds error handling and fallback mechanisms for conversation recovery. Creates and tests dialog that maintains a consistent voice, tone, and personality across the product. Partners with engineers to define prompts and guardrails for LLM integration, and evaluates LLM performance in production, while analyzing conversation transcripts, audio, and metrics to identify friction points. Defines and documents conversation design standards, best practices, and reusable patterns that scale across experiences.",
+      "clusters": [
+        "content-systems-design",
+        "ai-tooling"
+      ],
+      "signals": [
+        "model-behavior-design",
+        "ai-native-expectation"
+      ],
+      "compRange": {
+        "min": 160000,
+        "max": 180000,
+        "currency": "USD",
+        "covers": "base",
+        "scope": null,
+        "extras": "equity"
+      },
+      "sourceUrl": null,
+      "dateAdded": "2026-10-02",
+      "quote": "Partner with engineers to define prompts and guardrails for LLM integration, and evaluate LLM performance in production."
+    },
+    {
+      "id": "etsy-staff-content-designer-ux-platform",
+      "company": "Etsy",
+      "title": "Staff Content Designer, UX Platform",
+      "domain": "E-commerce",
+      "engagement": "Full-time",
+      "location": "Brooklyn, New York",
+      "remote": "hybrid",
+      "coreFrame": "Works horizontally across Etsy's UX Platform squads rather than embedding within a single product area, setting content strategy and craft standards at a platform level. With Studio, builds content frameworks, voice guidelines, and cross-cutting patterns for buyer and seller surfaces. With Systems, defines how microcopy, error states, empty states, and conversation patterns are structured, composed, and documented within Collage, Etsy's design system, including patterns and glossaries stated to be implementable and token-backed. With UX AI Enablement, builds the content guidelines, documentation, and prompt infrastructure that let AI-assisted design tools generate on-brand, on-system content, and sets the eval framework that determines whether the output meets the quality bar. Runs critiques, documentation, and office hours to help designers reason about content systemically, and contributes to a content community of practice alongside the Director of Content Design.",
+      "clusters": [
+        "content-systems-design",
+        "terminology-governance",
+        "ai-tooling",
+        "ai-content-governance",
+        "enablement"
+      ],
+      "signals": [
+        "model-behavior-design",
+        "eval-infrastructure",
+        "central-standards-function",
+        "enabler-not-bottleneck",
+        "language-infrastructure",
+        "ai-native-expectation",
+        "governance-as-value-prop"
+      ],
+      "compRange": {
+        "min": 160000,
+        "max": 216000,
+        "currency": "USD",
+        "covers": "base",
+        "scope": null,
+        "extras": "equity + annual performance bonus"
+      },
+      "sourceUrl": null,
+      "dateAdded": "2026-10-06",
+      "quote": "Own AI content tooling. Architect and maintain the guidelines and prompt infrastructure that power AI-generated copy, define how it shows up in designers' workflows, and set the eval framework that determines if the output meets the quality bar."
+    },
+    {
+      "id": "gap-sr-ux-content-designer-customer-journey",
+      "company": "Gap Inc.",
+      "title": "Sr. UX Content Designer – Customer Journey Experience Design",
+      "domain": "Retail",
+      "engagement": "Full-time",
+      "location": "San Francisco, CA",
+      "remote": null,
+      "coreFrame": "Owns voice, tone, and editorial guidance for product-experience content across four brands (Old Navy, Gap, Banana Republic, Athleta) and the full customer journey — discovery, browse, product detail, checkout, post-purchase, and lifecycle. Sits as a shared capability within the Experience Design organization rather than inside a single value stream, working with brand journey leads and the design system team to decide what content is shared across brands and what stays brand-distinct, and is stated to be the first content designer in the function, building its guidelines and practice rather than inheriting one. Builds content into the design system — content patterns, component-level guidance, microcopy standards — and works with structured content: content models, metadata, taxonomy, CMS constraints, and translation and localization readiness. Partners with UX Research to test language with customers, and is stated to use AI for drafting, variation, and audit at scale, with human judgment applied over what AI produces.",
+      "clusters": [
+        "content-systems-design",
+        "taxonomy",
+        "localization",
+        "terminology-governance",
+        "enablement",
+        "ai-tooling"
+      ],
+      "signals": [
+        "ai-native-expectation",
+        "enabler-not-bottleneck",
+        "central-standards-function",
+        "accessibility-as-constraint"
+      ],
+      "compRange": {
+        "min": 145100,
+        "max": 188600,
+        "currency": "USD",
+        "covers": null,
+        "scope": null,
+        "extras": null
+      },
+      "sourceUrl": null,
+      "dateAdded": "2026-10-06",
+      "quote": "Work with structured content: content models, metadata, taxonomy, CMS constraints, and translation and localization readiness."
     }
   ],
   "clusters": {
@@ -1450,6 +2367,10 @@
     "agent-retrieval": {
       "label": "Structured for agent retrieval",
       "description": "Content structured so AI systems can retrieve and apply it at generation time. This sits apart from search optimization and schema markup — it's the knowledge layer a model reads from before it writes. A small pattern so far, and it places content work upstream of the output rather than after it."
+    },
+    "eval-infrastructure": {
+      "label": "Evaluation infrastructure",
+      "description": "Building the harnesses, graders, and automated eval pipelines that test whether prompts or model behavior meet a quality bar. Distinct from authoring the behavior (model-behavior-design) or setting governance standards for it (ai-content-governance) — this is the validation system itself, an engineering-heavy expression of generative content work at the frontier."
     }
   }
 }

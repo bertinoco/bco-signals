@@ -188,12 +188,13 @@ body {
 /* ── Header ───────────────────────────────────────────────── */
 /* Fixed black band — see --hero-bg/--hero-fg above. Every color here reads
    off those two tokens, never --foreground/--background, so light/dark
-   toggling can't touch it. Near-full-screen height, ahead of a future
-   background image: the top row pins near the top, the headline block
-   centers in whatever space is left below it. 90vh rather than 100vh so
-   the pull-quote band peeks in as a scroll hint. */
+   toggling can't touch it. Near-full-screen height: the top row pins near
+   the top, the headline block centers in whatever space is left below it.
+   90vh rather than 100vh so the pull-quote band peeks in as a scroll hint.
+   PREVIEW: wave-static.png as a background image, on a branch for local
+   review only — solid --hero-bg stays as the base color underneath it. */
 .site-header {
-  background: hsl(var(--hero-bg));
+  background: hsl(var(--hero-bg)) url('../images/wave-static.png') center / cover no-repeat;
   padding: var(--space-6) 0 var(--space-8);
   text-align: center;
 }
@@ -220,19 +221,11 @@ body {
   text-align: left;
 }
 
-/* Links home (the site's own root) — same fixed hero-fg treatment as the
-   other hero links, no underline since the icon+text lockup already reads
-   as a control. */
+/* Links home (the site's own root). Just the wordmark SVG now — no separate
+   text node, so alt="Signals" on the image itself carries the link's
+   accessible name. */
 .hero-wordmark {
-  display: flex;
-  align-items: center;
-  gap: var(--space-1);
-  font-size: var(--font-sm);
-  font-weight: var(--weight-semibold);
-  letter-spacing: var(--tracking-label);
-  text-transform: uppercase;
-  color: hsl(var(--hero-fg));
-  text-decoration: none;
+  display: block;
 }
 
 .hero-wordmark:focus-visible {
@@ -240,14 +233,15 @@ body {
   outline-offset: 2px;
 }
 
-/* circle-icon-w.png is already white-on-transparent, so no filter is needed
-   against this fixed black band. The favicon/apple-touch-icon use the
-   separate black variant (circle-icon-b.png) instead — apple-touch-icon
-   gets composited onto an opaque tile that iOS fills white behind
-   transparent pixels, so a white-on-transparent icon there would vanish. */
+/* wordmark-white.svg is already white-fill, so no filter is needed against
+   this fixed black band — same reasoning the old circle-icon-w.png had.
+   The favicon/apple-touch-icon keep the separate black variant
+   (circle-icon-b.png): apple-touch-icon gets composited onto an opaque tile
+   that iOS fills white behind transparent pixels, so a white mark there
+   would vanish. */
 .hero-mark {
-  width: 24px;
-  height: 24px;
+  height: 16px;
+  width: auto;
 }
 
 /* Both CTAs sit under the body copy now: "Explore the data" as the primary

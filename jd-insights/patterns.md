@@ -12,8 +12,8 @@ Every claim here should name the companies it came from, so a reader can go to
 
 ## Roles defined by what they are not
 
-Five postings define scope by exclusion, and the more senior the role, the more
-formal the device gets.
+Eight postings define scope by exclusion, and the more senior the role, the
+more formal the device gets.
 
 **Adobe** goes furthest, with a headed section:
 
@@ -63,6 +63,20 @@ list, structured as a matched pair rather than a disclaimer appended to a
 role description. Same underlying move (a role specific enough to need its
 own boundary drawn), a more symmetrical version of it.
 
+**Docebo**'s Senior Product Designer, Content Design & Language Systems is
+the seventh instance: "This is not a traditional UX writing role or a
+localization-operations role." Also two negations in one sentence, against
+two different adjacent disciplines (UX writing, localization operations)
+rather than one.
+
+**Fin**'s Brand Voice Lead, Systems is the eighth instance, the same
+two-negations-in-one-sentence shape again: "This is not a traditional
+copywriting role, and it's different from a standard content strategy
+position," fencing off copywriting and content strategy. Two postings in a
+row now use this doubled form rather than the single exclusion every earlier
+instance used — worth watching whether it becomes the new default phrasing
+for the device rather than a coincidence of two postings.
+
 ## A posting that disclaims its own title
 
 Figma's "UX Writer, AI" tells the reader in its second paragraph that the title
@@ -103,6 +117,19 @@ products" — appears verbatim in the Search posting too. When one employer has
 several entries, check whether a candidate quote is role-specific before using
 it as evidence.
 
+Booking.com does the same thing. Its UX Writer II postings for req 30157
+(Organic Marketing, excluded) and req 29710 (Growth Marketing) share an
+identical opening "Role Description" paragraph, an identical "You'd be
+embedded across multiple product teams…" paragraph, identical mission and
+org-description paragraphs, and near-identical Responsibilities and
+Qualifications bullet lists — only the team-specific opening line ("Organic
+Marketing: …" versus "Growth Marketing: …") differs. Same consequence as
+Google: the quote grounding the Growth Marketing entry's clusters and signals
+("From AI-driven creative ads and ad-hoc campaigns to subscription management
+with legal nuances, the topics you own require experience with LLMs and
+attention to detail.") sits inside that one team-specific line precisely
+because the shared boilerplate carries no role-specific signal to quote.
+
 ## Requisition numbers are not titles
 
 Apple has posted at least two distinct requisitions titled "UX Writer, Systems"
@@ -111,6 +138,24 @@ different postings.
 
 Anything that identifies a posting by title alone will eventually attach the
 wrong text to an entry. This is why `reqId` is recorded where stated.
+
+## Apple's benefits paragraph is boilerplate, not a stated extra
+
+`apple-ux-writer-systems` and `apple-ux-writer-music` — two different
+requisitions, two different pay ranges — carry an identical "Pay & Benefits"
+paragraph below the range, word for word aside from the figures themselves:
+"Apple employees also have the opportunity to become an Apple shareholder
+through participation in Apple's discretionary employee stock programs...
+Additionally, this role might be eligible for discretionary bonuses or
+commission payments as well as relocation."
+
+Nothing in it is role-specific, and its own language ("might be eligible,"
+"discretionary") is conditional rather than a stated extra. Auditing the
+second posting against the first surfaced that `apple-ux-writer-systems` had
+recorded this boilerplate as `compRange.extras: "bonus + equity"` — since
+corrected to `null`, alongside a `remote: false` that the same archived text
+never actually states. Worth checking any future Apple entry's Pay & Benefits
+paragraph against this one before treating anything in it as posting-specific.
 
 ## Which employers state metadata
 
@@ -194,6 +239,41 @@ above but here inside the comp section of a single posting; it leaves the
 reader unable to tell from the boilerplate alone whether the figure is base
 or total, which is why `compRange.covers` is recorded as `null`.
 
+  This is a template, not a one-off: Anthropic's Product Designer, Evals &
+  Prompts posting carries the identical "For sales roles, the range
+  provided is the role's On Target Earnings ('OTE') range..." disclaimer
+  ahead of its own plain "Annual Salary: $305,000 - $385,000 USD," with no
+  sales component in this role either. Two Anthropic postings now, both
+  non-sales, both prefaced by sales-specific boilerplate — confirming this
+  sits in a shared template rather than something specific to the
+  documentation posting above. `compRange.covers` is `null` on this entry
+  for the same reason.
+
+  A third company now shows the same shape in different words. **Splunk**'s
+  Content Designer (Remote) posting, Cisco-branded for its comp section,
+  follows its base-salary figure with a full paragraph on quota-based
+  incentive pay math ("For quota-based incentive pay, Cisco typically pays as
+  follows: .75% of incentive target for each 1% of revenue attainment up to
+  50% of quota...") and a footnoted disclaimer that "the ranges provided in
+  this posting include base pay and sales target incentive compensation
+  combined" for quota-based sales roles — none of which applies to a content
+  design posting with no sales component. Unlike the two Anthropic instances,
+  Splunk's posting does state plainly that the figure excludes incentive
+  compensation ("not including incentive compensation*, equity, or
+  benefits"), so `compRange.covers` is recorded as `"base"` here rather than
+  `null`; the boilerplate is irrelevant rather than ambiguating. Same
+  underlying pattern — a sales-comp template carried wholesale into a
+  non-sales posting — now confirmed at a third employer.
+
+**Roche** states no comp figure at all and defers disclosure explicitly:
+"Information about the compensation package for this position will be
+provided ahead of any interview." Distinct from Nscale's all-components-
+no-figure disclosure above — Nscale names base/equity/bonus with no number;
+Roche names neither a number nor components, only a promise that the
+information comes later in the hiring process. `compRange` is omitted from
+this entry rather than recorded with `covers: null`, since there is no range
+of any kind stated to record.
+
 ## Formatting artifacts survive into the archive
 
 Retained deliberately in `jd-source`, since they are facts about the posting:
@@ -233,6 +313,24 @@ Retained deliberately in `jd-source`, since they are facts about the posting:
   repeated or one dropped. Retained verbatim and unmerged, consistent with a
   template/formatting artifact from capture rather than two intentional
   statements about the company.
+- **Adidas**'s Senior UX Copywriter posting renders several full sentences in
+  ALL CAPS mid-paragraph, with no relation to heading or section
+  structure — "WILL OWN AND SHAPE END-TO-END CONSUMER EXPERIENCES...",
+  "OWN UX WRITING ACROSS END-TO-END CONSUMER JOURNEYS". Reads as bold or
+  highlighted spans that lost their formatting on capture and rendered as
+  caps instead, rather than employer emphasis — the affected sentences carry
+  no more semantic weight than the sentence-case text around them. The
+  posting also states its own title twice at different casings (an all-caps
+  heading, a normal-cased "JOB TITLE:" footer field); `jobs.json` stores the
+  footer's normal-cased value, per `jd-source/adidas-senior-ux-copywriter.md`'s
+  `captureNote`.
+
+- **Huge** interrupts its own compensation-factors paragraph with a bare
+  heading before the number, rather than a labeled section: "...For current
+  Huge employees, tenure will also be a consideration. Wage Disclosure
+  $160,000 - $200,000 USD." "Wage Disclosure" reads as a template field label
+  that surfaced inline rather than a heading the posting intended to render
+  as one.
 
 Six of the stored quotes needed a character corrected to match their source —
 five apostrophes and one hyphen. None was visible on screen.
@@ -270,9 +368,9 @@ also carry the only surviving copy of a posting that has since closed.
 Insurify's own careers page opens with a fraudulent-job-advert warning before
 the posting begins.
 
-## Three headers that don't match their own body
+## Four headers that don't match their own body
 
-Three postings so far state one title at the top and a different one in the
+Four postings so far state one title at the top and a different one in the
 body text — and no two of them drift the same way.
 
 **Fin**'s posting is headed "Staff AI Designer," but the body repeatedly calls
@@ -288,16 +386,21 @@ Principal Content Designer..." Same role name, different level.
 "We're looking for a Content Engineer, Human + AI Workflows:" Same role name
 and level — the body appends a scope qualifier the header drops.
 
-All three entries store the header as `title`, per the Title field rule, and
-record the body's alternate self-description in the archive's `captureNote`
-rather than resolving it. Three instances, three different kinds of drift —
-role name (Fin), seniority level (Wise), scope qualifier (Intercept) — which
-is enough to call header/body mismatch itself a recurring feature of how
-these postings are laid out, even though no two instances substitute the same
-thing. The title-then-location or title-then-department header line evidently
-invites a fuller self-description once the body gets going; worth a fourth
-instance to see whether a fourth kind of drift shows up or one of these three
-repeats.
+**UnitedHealth Group**'s posting (via Optum's careers site) is headed
+"Principal UX CX Designer," but the body opens "As a Principal Conversational
+AI Designer, you will lead the design of conversational experiences..." and
+repeats that self-description throughout. Same seniority level, different
+role name — the same kind of drift as Fin's.
+
+The first three entries store the header as `title`, per the Title field
+rule, and record the body's alternate self-description in the archive's
+`captureNote` rather than resolving it. The UHG entry breaks from that: its
+`title` stores the body's self-description instead of the header, because the
+body string is what the quote and cluster/signal assignments are actually
+drawn from — a case-by-case call, not a change to the Title field rule, and
+recorded as such in the entry's `note` and the archive's `captureNote`. Four
+instances, and the first where the stored title took the body over the
+header.
 
 ## First non-English posting
 
@@ -449,6 +552,14 @@ department. Two companies, so this crosses the bar for recording it as a
 naming pattern rather than one company's house style, though not for reading
 anything into it beyond the word choice.
 
+**Vinted's Content Design Lead uses "guild" differently and is not counted
+above.** Its "guild model built on craft authority" names a candidate
+*organizational structure*, posed against "direct people leadership" as an
+alternative the company has not yet chosen between — not an existing
+community of practice alongside a named team, the way Wise's and Wix's uses
+are. See `jd-insights/findings.md`'s Watching section for the one-instance
+entry this opened.
+
 ## Recruiting calls versus job postings, and contract roles as a first
 
 **Lisa Jennings Young**, a Content Design Leader at Adobe, posted directly to
@@ -500,3 +611,180 @@ requirement, which is what the new value exists to avoid.
 One instance, so nothing yet to compare it against — worth recording because
 it's the first time the `remote` field's value space has needed to grow
 rather than a company simply landing in an existing bucket.
+
+## UK Civil Service competency-framework boilerplate
+
+**Government Digital Service**'s Senior Interaction Designer (Conversation)
+is the first UK government posting in the corpus, and its structure differs
+from every corporate posting on file. Instead of a single free-text
+qualifications section, the assessment criteria are named as formal,
+externally-defined instruments: "Success Profiles," four "Civil Service
+Behaviours" (working together, making effective decisions, communicating
+and influencing, delivering at pace), and seven named skills from the
+"Government Digital and Data Capability Framework" (design communication,
+designing for everyone, designing strategically, designing together,
+evidence-based design, iterative design, leading design). The posting also
+carries statutory hiring apparatus with no corporate equivalent seen so
+far — nationality-eligibility rules tied to specific international
+agreements (EUSS settled/pre-settled status, Turkish nationals' accrued
+rights), a named reserve-list policy (12 months), and references to the
+Civil Service Code and Recruitment Principles by name.
+
+One instance, so nothing to compare it against yet. Worth recording because
+none of this vocabulary is discretionary employer voice — it is externally
+mandated framework language specific to UK central government hiring, and a
+second government posting would be expected to reuse the same named
+instruments rather than inventing its own.
+
+## The hiring process as proof of the pitch
+
+**Relay**'s Senior Content Designer lays out its interview stages under a
+headed "Fast & Focused Hiring Process" — five numbered steps, each timed
+("Hiring Manager interview - 45 mins," "Portfolio review - 1 hour") — and
+closes with "Decision and offer within 48 hours; our process mirrors our
+pace of work, typically completed in a week." The device is self-referential:
+rather than just asserting a fast-paced culture the way most postings do, the
+posting points at its own hiring mechanics as the evidence for the claim. No
+other posting in the corpus times its interview stages or uses the process
+itself this way. One instance.
+
+**Lovable**'s Content Designer (Contract) posting — held as an excluded
+record — makes a related but distinct move: instead of timing its process,
+it defines its evaluation criteria around shipped, verifiable work rather
+than a general portfolio. It asks for "real in-product examples" and "real
+web examples" specifically, adding "Tell us what changed as a result" to
+each, and its "How we hire" section states "Send us two pieces of work:
+ideally one from inside a product and one from the web" and "In some cases,
+we may opt to do paid, trial work." Where Relay's process demonstrates
+speed, Lovable's demonstrates a preference for builders with outcomes
+already in the wild over credentials or a portfolio alone — consistent with
+the posting's own stated culture ("extreme ownership, high velocity"). One
+instance.
+
+## ATS chrome contradicts the posting's own location text
+
+**Cleo**'s Lead Conversational Designer lists three co-equal location
+options in its chrome — "United Kingdom (Hybrid); Spain; United Kingdom
+(Remote)" — with no single location marked primary. A separate chrome field
+one line below, "Location Type: Hybrid," reflects only the first-listed
+option and is contradicted by the third option's own text, "United Kingdom
+(Remote)." Distinct from Capital One's three co-equal comp ranges above,
+where no field asserts a single answer; here one chrome field claims a
+single value while the posting's own location listing states an
+incompatible option in the same block. `remote` is recorded as `null` rather
+than `"hybrid"` or `true`, since resolving it either way would adopt one
+side of a disagreement the posting itself never resolves.
+
+One instance, so nothing yet to compare it against. Worth recording because
+it is a different failure mode than Evinova's doubled comma or the UK Civil
+Service boilerplate above — not an artifact within one field, but two
+separate chrome fields on the same posting stating incompatible things.
+
+## One comp band stated in two currencies
+
+**Soda**'s AI Content Engineer states a single compensation figure as an
+explicit dual-currency equivalence rather than separate per-location ranges:
+"$120,000-$130,000 / €110,000-€120,000 per year + equity - the same band
+wherever you live. We don't discount for geography." Distinct from Capital
+One's or Adobe's multi-location postings above, which each give a separate
+range per location in one currency; here the posting states one band and
+asserts the two currency figures are the same number, not two numbers for
+two places. `compRange.currency` has no way to hold two currencies at once,
+so USD was recorded as the structured value (min 120000, max 130000) since
+it is listed first, and the EUR figures live only in the `jd-source`
+archive's `captureNote`. One instance, so nothing yet to compare it against.
+
+## A role's scope stated as a scheduled handoff
+
+**Trustly**'s Adoption and Knowledge Manager, AI Transformation does not
+describe its scope as a single list of responsibilities to be carried
+concurrently — it states a calendar: "The role runs in two phases. For the
+first two quarters you own adoption... From the third quarter you turn to
+the knowledge system itself." A second sentence pins the transition to an
+external event rather than the calendar alone: "The champion network
+transfers to you after the current pilot completes its scale review, so
+momentum is protected through that decision." Most postings in the corpus
+list responsibilities as a flat set the hire is expected to hold at once;
+this one tells the candidate which half of the job is temporary and which
+half is the one they will still be doing in year two. One instance, so
+nothing yet to compare it against.
+
+## A posting with PERM recruitment-ad signatures
+
+**Robinhood**'s Senior Content Designer carries several markers associated
+with a PERM (labor-certification) recruitment ad rather than an ordinary
+posting: "3 years of experience in the job offered or a related occupation,"
+"Bachelor's degree (or foreign equivalent)," a bare standalone "Background
+checks required," a tracking job code the applicant is told to cite
+("Indicate job code I-2725 in your application"), and a base-pay minimum
+stated to the cent ("$82,056.00") rather than a round market-rate number —
+more consistent with a Department of Labor prevailing-wage determination
+than a number set by a comp team. Worth reading this kind of posting with
+that in mind: a PERM ad is legally required to state the position's actual
+full duties, so the responsibilities list reads unusually complete, but that
+same list can also be an aggregation of multiple pooled responsibilities
+rather than one person's realistic day-to-day scope. One instance, so
+nothing yet to compare it against — worth checking future postings that
+carry this same signature.
+
+## A status banner contradicted by external evidence
+
+**Autodesk**'s Senior Principal Content Strategist posting carries its own
+"No longer accepting applications" banner, but the submitter had direct,
+contemporaneous evidence against it: the same posting was promoted on
+LinkedIn the same day it was captured here. Distinct from the chrome
+artifacts recorded elsewhere in this file — a PERM signature, a truncated
+multi-location placeholder, a header-versus-body title mismatch — those are
+all internal inconsistencies a reader can spot from the text alone. This one
+is a status claim the text itself does not contradict; only outside
+information does. Recorded as a discrepancy rather than resolved, since
+nothing in the eligibility criteria turns on whether a posting is still
+accepting applications. One instance, so nothing yet to compare it
+against.
+
+## A posting that disclaims title-matching as a filter, not its own title
+
+**Slang AI**'s Senior Conversation Designer carries a parenthetical aimed at
+applicants, not at the role itself:
+
+> (Note: Conversation Design is called different things at different
+> companies; even if your past titles don't match, we're looking for someone
+> who can design AI and its underlying logic and training.)
+
+A different move from Figma's self-disclaiming title above. Figma renames the
+role the posting is hiring for ("you might think of yourself as a content
+engineer as much as a writer"). Slang doesn't touch its own title at all — it
+tells applicants whose resumes carry a different title not to self-select out,
+because the posting doesn't treat title match as a reliable filter for the
+work. The move only makes sense for a discipline without settled vocabulary
+across employers, which is the same instability this dataset's `title` field
+and `title-responsibility-gap` signal exist to track from the other direction.
+One instance, so nothing yet to compare it against.
+
+## "Design tokens" as the word for implementable content standards
+
+**Etsy**'s Staff Content Designer, UX Platform asks that "patterns and
+glossaries are implementable and token-backed." **Capital One**'s Senior
+Manager, Content Design lists "Scalable Content Design Systems: Living,
+accessible content libraries, taxonomy rules, and design token schemas
+implemented across design tools and repositories" among its stated
+responsibilities. Both use the same borrowed-from-engineering vocabulary —
+design tokens, the mechanism that keeps a visual design system's values
+(color, spacing, type) consistent across implementations — to describe
+content standards, not visual ones. Two instances, in different domains
+(Finance and E-commerce), which per this dataset's own backcheck logic is
+stronger evidence of a cross-industry pattern than two instances in the same
+domain would be. Worth watching for a third.
+
+## A company naming the deterministic/generative shift as its own transition
+
+**Etsy**'s Staff Content Designer, UX Platform states one responsibility as
+"Evolve how content work gets done. Carve out a new way of working for the
+org to move us from reviewing strings to governing behavior." This is an
+unusually explicit, employer-authored version of the distinction this
+dataset's own `deterministic`/`generative` terminology exists to name — the
+posting frames its own content org's evolution as a move from reviewing
+fixed strings to governing what a generator produces, in almost those exact
+terms. One instance, so nothing yet to compare it against; noted because the
+framing is the dataset's own organizing distinction stated back by an
+employer, rather than inferred by us.

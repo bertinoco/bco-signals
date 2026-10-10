@@ -43,6 +43,50 @@ when it is.
 **Note on seniority**
 Level is not a hard gate — seniority varies significantly across companies and the same title can mean different things. Flag (don't auto-exclude) roles where people management is listed but craft responsibilities are still substantive and specific. Push back on roles where management, headcount, or executive stakeholder navigation dominate the stated responsibilities.
 
+Excluding on this ground is not a reason to discard what the JD still shows. When a role fails required criterion 3 specifically (management/headcount/executive-stakeholder navigation dominates) and the posting also contains stated responsibilities that ground cleanly in existing clusters or signals, the `excludedReason` must name exactly which clusters and signals would have applied, with their grounding quotes — not a vague "the signal test would likely have passed." This is not a path to writing the entry to `jobs.json`: the role's title, comp, domain, and location all describe a management job, and admitting it there would misrepresent what was actually audited, however cleanly a few of its sentences map onto the taxonomy. It exists so the archive itself carries the evidence — for `jd-insights/findings.md`'s Watching section to reference later, and so a reader doesn't mistake "excluded" for "nothing here was relevant." DeepMind's Senior Manager, UX Content Design (Gemini) exclusion is the worked example this generalizes from.
+
+**Note on technical/engineering roles in service of language**
+A role gated on engineering skill — production code, test harnesses, eval
+pipelines — is not automatically outside this dataset's scope. The
+deterministic/generative pairing in the Terminology section already
+anticipates this: generative content work "authors a generator's constraints
+and the criteria for judging what it emits." An eval harness *is* that
+criteria, operationalized as software rather than a hand-run rubric. At the
+frontier, the credentialed entry point for genuinely generative content work
+is often engineering skill, not a writing portfolio — because validating
+language at scale is an engineering problem, even when the artifact being
+validated is language.
+
+This does not loosen required criterion 1 into "any technical role that
+touches AI." The distinguishing test: does the engineering work operate
+directly on a language artifact that constitutes the product's behavior —
+prompts, system instructions, the language a model produces — or does it
+operate on tooling/infrastructure that serves *other people's* work on that
+artifact without the engineer ever touching the artifact themselves? The
+former counts as language-systems work under criterion 1's technical-discipline
+allowance, regardless of whether the candidate's own credentialed path is a
+writing portfolio or a GitHub history. The latter does not.
+
+Anthropic's Product Designer, Evals & Prompts is the worked example this
+generalizes from: the role's first-listed responsibility is "Write and revise
+the prompts behind Claude's tools, features, and behaviors" — direct
+authorship of the artifact — and its eval-harness work exists specifically to
+validate that authored language, not to serve a separate content team's
+output. Compare DoorDash's UX Design Engineer, Content Tooling (excluded): the
+engineer there builds React/Kotlin infrastructure *for content designers to
+use*, never personally writing, revising, or governing a word of content —
+tooling adjacent to language work, not language work itself. Compare also
+Notion's Model Behavior Engineer and Microsoft's Senior Language Engineer
+(both excluded): both do real prompt/context-engineering and eval-framework
+work, structurally close to Anthropic's, but both fail independently of this
+distinction — no title naming a content or design discipline, org placement
+outside any design org entirely (Notion: "Department: Engineering," design
+named as one of four external partners; Microsoft: "Profession: Research,
+Applied, & Data Sciences"), and a clean literal-text check with no genuine
+content/writing vocabulary. This note does not reopen either exclusion; it
+clarifies a criterion those postings never reached in the first place, since
+org placement and title were already dispositive.
+
 **Note on rejected roles**
 A JD that fails these criteria is still worth archiving. Write it to
 `jd-source/{id}.md` with `excluded` and `excludedReason` set, as described in
@@ -225,9 +269,13 @@ The `domain` field describes the broad industry or sector the company operates i
 | `Cybersecurity` | Gen Digital (Norton, Avast) |
 | `E-commerce` | HelloFresh, Wellhub, The Ride Platform |
 | `Finance` | JPMorgan Chase, Ally, Sanna, Wealthsimple, Chime, Insurify |
-| `Healthcare` | Atria |
+| `Government` | Government Digital Service |
+| `Healthcare` | Atria, UnitedHealth Group |
+| `Logistics` | Relay |
 | `Media` | Netflix, Spotify |
+| `Retail` | Adidas |
 | `SaaS` | Notion, Zoom, Figma, CoLab |
+| `Travel` | Booking.com |
 
 If a new company doesn't fit any existing value, propose the new domain before writing the entry. New domains should be broad enough to accommodate at least two companies.
 
@@ -532,6 +580,22 @@ work. An ontology in Redpine's sense classifies drugs, trials, companies, and
 filings: real-world things, not content about them. Same technique, different
 object — the distinction Redpine's exclusion turned on.
 
+Schneider Electric's Global Ontology and Semantic Data Leader posting —
+excluded — is a second instance of the identical distinction, in a
+completely different domain and company type: a large industrial
+conglomerate rather than an early-stage AI startup, building ontologies for
+"products, systems, devices, points, relationships, behaviors, and
+operational concepts" across buildings, energy management, and automation
+systems, rather than Redpine's licensed drug/trial/filing data. The object
+being classified is again real-world physical/operational things, not
+content, and the posting's own "taxonomies" usage names industry data models
+(Brick Schema, Project Haystack, RealEstateCore, SAREF, BOT) in that same
+real-world sense. Two instances now, in unrelated domains — the kind of
+cross-domain recurrence Step 4's backcheck treats as stronger evidence than
+repetition within one domain, and worth having on hand the next time an
+"ontology" or "semantic data" posting looks close enough to this dataset's
+scope to need the distinction spelled out again.
+
 **Data schema** (or **schema design**) — the structural definition of how
 entities and their relations are represented in a database or knowledge
 store: field types, constraints, what a record can and can't hold. Distinct
@@ -565,6 +629,29 @@ prompting techniques") are all model-behavior work; nothing in it describes
 a content deliverable. Same category of near-miss as Redpine's
 "ontology"/`taxonomy` confusability above — different discipline, similar
 vocabulary.
+
+**Game content design**, from Scopely's Content Designer (Monopoly GO!)
+posting — excluded, but the title itself is the near-miss this time, not
+just adjacent vocabulary. Game content design means designing narrative,
+theming, and creative assets for a live-service game — sticker sets,
+minigames, character designs, seasonal event content — and it is a
+video-game-industry discipline distinct from this file's required-criteria
+sense of "content design" (UX writing, content strategy, or content
+systems work for a product interface), even though the two share a job
+title. The Scopely posting's own qualifications section gives the game away:
+"3+ years of relevant professional experience in content design, game
+design, narrative design, game writing, creative development, or a related
+discipline" treats "content design" as one interchangeable label among
+several game-industry creative disciplines, not as this dataset's target
+discipline. None of its ten stated responsibilities named a product-UI
+deliverable, and none mapped to any existing cluster — a title match with
+zero cluster grounding underneath it. Compare Roblox's Content Designer
+(also excluded, but for a different reason): that posting's stated work —
+owning UX content for monetization surfaces, applying UX writing and
+content strategy, building content guidelines and voice-and-tone
+frameworks — was genuine product content design that only failed the
+signal test. Scopely never reaches that question; the title is the same,
+the discipline underneath it is not.
 
 **The literal-text check, and why the word list stays short.** Audits of
 boundary cases (Fin, Redpine, Notion's Model Behavior Engineer) have used a

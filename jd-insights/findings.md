@@ -104,6 +104,66 @@ predicts the job is whether the content function has been given a systems
 mandate — and that is visible in the posting, in whether the responsibilities
 describe building mechanisms or producing pages.
 
+## Judgment and taste are what's asked for once AI does more of the drafting
+
+**What the data shows.** Eight included postings across five domains name
+judgment or taste explicitly as the thing the human still provides, once AI
+is doing more of the execution — not as a soft-skill throwaway, but paired
+directly against AI-generated or AI-assisted output. CoLab (SaaS): "you'll
+act as Editor in Chief: orchestrating AI agents and applying editorial
+judgment across outputs." Intercept (Agency): "our team is supported by
+custom-built AI teammates, agentic workflows, and emerging content
+systems... without replacing the human judgment that makes the work great,"
+and separately, "Strong editorial judgment and comfort challenging weak
+AI-generated outputs." Meta's Product Content Engineer (Big Tech): "previous
+experience with GenAI, strong editorial judgment and a keen eye for crafting
+thorough, nuanced and objective guidelines." Sanna (Finance): "This is a
+foundational role where taste, judgment, and systems thinking matter," and
+"We value judgment, taste, and learning ability over years of experience or
+specific tools." Docebo (SaaS): "You use AI-assisted tools thoughtfully for
+research, synthesis, language exploration, prototyping, quality review, or
+implementation critique while retaining human judgment and accountability."
+Fin (SaaS): "Strong editorial judgment and taste, with the ability to
+simplify complex ideas into clear, compelling narratives," paired with "a
+clear point of view on how they can improve creative workflows," and closing
+with "You'll bring strong judgment, excellent writing, and a practical
+systems mindset to the work... through an AI-driven lens." Soda (SaaS):
+"Taste is the bar. Anti-slop is the whole point. An engine that ships slop
+faster has negative value, and most of them do. We're hiring for the
+judgment to look at an accurate, competent, lifeless draft and bin it — then
+work out what the pipeline did wrong and fix it." Gap Inc. (Retail, the
+first instance in this domain): "AI will write plausible copy at volume all
+day, which makes judgment about what is worth saying the scarce skill rather
+than the throughput. You see AI as a craft multiplier, and you are clear
+about where human judgment and real customer evidence still have to do the
+work."
+
+A ninth instance sits in an excluded record, cited here as existence
+evidence only, not corpus grounding: DeepMind's Senior Manager, UX Content
+Design (Gemini) — excluded on required criterion 3, management dominance —
+states "This role requires high taste, creativity, and the ability to
+uncover top user needs and pain points. The role also requires excellent
+writing skills and high judgement in order to define what good quality
+looks like."
+
+Checked and excluded from the count: Wealthsimple's one "judgment" hit is
+about AI screening job applicants during hiring ("These tools assist our
+team but don't replace human judgment — all final hiring decisions are made
+by people"), not about the content role's own work — a false positive for
+this pattern, not an instance of it.
+
+**What I think it means.** This is a sharper version of the AI-fluency
+finding above, not a restatement of it. That finding says AI use is now a
+baseline expectation; this one says something about what's left for the
+human once that baseline is assumed — the postings that pair judgment or
+taste against AI output are drawing a line between what the tool produces
+and what a person is still accountable for deciding is good. Five domains
+with no repeated employer or shared industry (SaaS, Agency, Big Tech,
+Finance, Retail) is real spread, not one company's house style borrowed by
+a competitor — SaaS still accounts for four of the eight included instances
+(CoLab, Docebo, Fin, Soda), the only domain repeated so far. Gap is the
+first Retail-domain instance.
+
 ## Nobody agrees what this work is worth
 
 **What the data shows.** Stated ranges run from **$65,000** (Insurify, Editor,
@@ -117,6 +177,164 @@ an absence of consensus about what the discipline is. Titles are not yet
 carrying reliable information about scope, which is a problem for anyone trying
 to navigate the market by title — and an opportunity for anyone able to
 articulate scope precisely in an interview.
+
+## Titles are failing in both directions at once
+
+**What the data shows.** `title-dilution` (a title claims more systems/AI
+substance than the stated responsibilities support) has exactly two holders:
+Insurify's "Editor, AI Content Systems" and Intercept's "Content Engineer".
+A third, purer instance sits in an excluded record, cited here as existence
+evidence only, not corpus grounding: TikTok's "Content Design Manager, AI"
+names AI directly in the title, yet the word appears nowhere else in the
+entire posting — a full search of the body for "AI," "artificial
+intelligence," "machine learning," "LLM," "model," and "prompt" returns zero
+hits, and the stated team is "TikTok UED Monetization," a business-services
+function with no AI connection stated anywhere. Where Insurify and Intercept
+overclaim against real but thinner substance, TikTok overclaims against
+nothing at all — the title asserts a discipline the responsibilities never
+touch once. `title-responsibility-gap` (the title claims less than the
+responsibilities actually cover) now has three: Wellhub's "Senior Global UX
+Writer, Content Systems", Figma's "UX Writer, AI" — the latter posting
+disclaiming its own title outright, in its second paragraph: "While the
+title of this role is 'UX Writer,' you might think of yourself as a content
+engineer as much as a writer" — and Splunk's plain "Content Designer
+(Remote)", whose stated responsibilities (cross-product terminology
+governance, information architecture and navigation design,
+design-system-compliant content patterns) carry more systems scope than a
+generic "Content Designer" title signals on its own. Separately,
+`jd-insights/patterns.md`'s "Roles defined by
+what they are not" device — a posting stating explicitly what its own role
+does *not* cover — is now at six instances (Adobe, Sanna, Wealthsimple,
+HelloFresh, Meta, UKG), up from the five recorded when that pattern note was
+last written, and has grown a second form: UKG states a matched "is / is not"
+pair rather than an exclusion sentence alone.
+
+**What I think it means.** This is the same underlying claim as "Nobody
+agrees what this work is worth" above, from a different angle: that finding
+showed compensation ranges spanning an order of magnitude under nearly
+identical "Systems" titles; this one shows titles failing in both
+directions — overclaiming and underclaiming — at the same time, on the same
+small scale. Six employers have now judged their own titles insufficiently
+self-explanatory and appended a disclaimer, an unusual thing for a title to
+need. Read together, both findings point at the same mechanism rather than
+two separate ones: titles have stopped reliably carrying scope information,
+and employers are compensating for it in the two places that show up in a
+posting — the number, and the paragraph right under the title.
+
+This is thinner evidence than the compensation finding — four included
+signal/pattern holders, one excluded existence-evidence instance, plus six
+disclaimer instances, no time dimension, and no claim here should be read as
+the problem worsening rather than simply being visible once enough postings
+are collected to notice it.
+
+## Evaluation infrastructure is an engineering-heavy expression of generative work
+
+**What the data shows.** The deterministic/generative pairing in CLAUDE.md's
+Terminology section already defines generative content work as authoring
+"a generator's constraints and the criteria for judging what it emits." An
+eval harness is that criteria, built as software rather than a hand-run
+rubric. Spotify's Senior Conversation Designer states this as a core
+responsibility — "Build evaluation frameworks to measure and improve
+conversation quality, accuracy, task completion, and user impact" — and
+Anthropic's Product Designer, Evals & Prompts is built almost entirely
+around it: writing and revising the prompts behind Claude's product
+surfaces, then building the graders and harness that prove a prompt fix
+holds and keep working across model releases. Soda's AI Content Engineer is
+a third instance: "Serious prompt engineering: multi-step LLM pipelines with
+structured outputs and evals, not chatting with a model. You know why the
+naive version produces slop." Three companies, three domains (Media, Big
+Tech, SaaS) — the `eval-infrastructure` signal this finding grounds.
+
+Two structurally similar postings were checked and stay excluded, for
+reasons independent of this pattern: Notion's Model Behavior Engineer and
+Microsoft's Senior Language Engineer both do real prompt/context-engineering
+and eval-framework work, but neither role sits in a design org, neither
+title names a content or design discipline, and both return a clean
+literal-text check with no genuine content/writing vocabulary. Anthropic's
+posting clears all three of those bars — title, placement, vocabulary —
+where Notion's and Microsoft's don't. See CLAUDE.md's "Note on
+technical/engineering roles in service of language" for the full
+comparison; this is not a case of loosening eligibility, only of correctly
+recognizing eval-harness work as language-systems work once it clears the
+existing bars.
+
+**What I think it means.** The dataset has been better at catching
+deterministic-side postings than generative-side ones since the pairing was
+named, and CLAUDE.md already says as much ("the corpus contains almost no
+postings that ask for the generative side by name"). This finding is that
+gap showing up concretely: the generative side's most technically advanced
+instances gate on engineering skill, not a writing portfolio, because
+validating language at scale is an engineering problem even when the thing
+being validated is language. A hiring filter built around "does the
+candidate's background show content craft" will systematically undercount
+this work. Expect this signal to be thin for a while — it names a real
+pattern, not yet a common one, and future JDs should be left to fill it out
+rather than backfilling every past posting with a passing mention. Soda adds
+a third domain, SaaS, alongside Media and Big Tech — the kind of
+differently-domained instance that keeps this from reading as two adjacent
+sectors' shared house style, though three companies is still early to call
+it a discipline-wide pattern rather than a signal still filling out.
+
+## Taxonomy work is starting to get its own title, and its own org
+
+**What the data shows.** 16 entries carry the `taxonomy` cluster. In 14, it's
+one responsibility folded into a broader content-design, architecture, or
+strategy title: Wellhub's "Senior Global UX Writer, Content Systems",
+LinkedIn's "Staff Content Architect", Ally's "Content Architect." Two now
+name the classification discipline as the entire title, not a responsibility
+inside one: Meta's Taxonomist, Content Design and Vinted's Taxonomist,
+Supply.
+
+The two aren't the same shape. Meta pairs the bare title with a content-design
+identity explicitly and repeatedly — the title itself, "a closely related
+content design discipline" in its qualifications, "content designers" named
+as collaborators. Vinted's title, org placement ("Product Management"), and
+team ("a cross-functional group of taxonomists, decision scientists, and
+product managers") never invoke content design once. It clears this
+dataset's eligibility bar on the strength of what the work classifies —
+"ontologies and data structures that support our member-facing content,"
+"maintaining Vinted's tone and voice" — not on how the posting frames the
+discipline it belongs to.
+
+**What I think it means.** As taxonomy matures into a credentialed discipline
+in its own right, it looks like it's drifting out of content-design-labeled
+orgs, not staying folded inside them. Vinted's posting is evidence that
+"Taxonomist" can now stand entirely apart from any content-design framing
+while still doing content-classification work this dataset recognizes. That's
+a thinner, more exposed kind of inclusion than Meta's — the entry survives
+on the object of the work rather than the posting's own self-description —
+and it's worth watching whether a third instance keeps that shape (product-
+or data-org placement, no content-design language) or reverts to pairing the
+bare title with a content-design identity the way Meta's does.
+
+## "AI Content Strategy" is starting to be the title, not a responsibility inside one
+
+**What the data shows.** Three entries now use "AI Content Strategy" (or "AI
+Content Strategist") as the role's entire title rather than a responsibility
+folded into a broader content-design or content-strategy title: Meta's AI
+Content Strategy Lead, Alibaba's AI Content Strategist, and Huge's Director,
+AI Content Strategy. The first two share a domain (Big Tech); Huge adds a
+second domain (Agency) and a step up in seniority — the first Director-level
+title in the corpus built around this naming, rather than a Lead or
+individual-contributor level.
+
+Huge's posting also passes CLAUDE.md's seniority note cleanly: client
+relationship management and account-growth language appear ("Lead client
+relationships as the senior content & AI strategist across engagements,"
+"partner with pitch teams to shape winning proposals") but sit alongside, not
+in place of, craft- and systems-level responsibilities — content governance,
+taxonomy and metadata systems, conversation design, AI content pipelines. It
+is a Director title without the people-management or headcount language that
+would have triggered required criterion 3.
+
+**What I think it means.** Same shape as the taxonomy finding above, one
+level up: as AI-content-specific work matures, it looks like it is claiming
+its own title rather than staying a line item inside a content strategist's
+or content designer's scope. Three instances is thin evidence, and two of the
+three share a domain, so this reads as an early pattern rather than a
+confirmed one — the trigger to revisit is a fourth instance in a domain
+outside Big Tech and Agency, which would rule out shared industry convention
+within either one.
 
 ## Content roles are appearing outside design orgs
 
@@ -136,6 +354,32 @@ functions at once, and none of them has won. This is the most under-discussed
 finding in the set — the conversation about content design's future tends to
 assume it stays in design. The postings do not.
 
+**Conversation design shows the identical placement chaos, not a resolution
+toward content design.** The corpus's conversation/AI-model-design entries
+split almost evenly on where they sit. Wise's Principal AI Model Designer and
+Gen Digital's Staff AI Conversation Designer are placed inside a
+content-design-labeled function ("Content Design Guild," "Content Design
+team"). UKG's Lead Conversational Designer and GDS's Senior Interaction
+Designer (Conversation) state the opposite outright — "This is a systems
+design role, not a copywriting role... This role is not: Writing UI copy or
+chatbot scripts... Pure UX or visual design" (UKG); "the first permanent
+conversation design role at GDS" (GDS, a founding claim, not an absorption
+claim). Amazon's Sr. UX Conversation Designer sits on a team named "Word and
+Voice Design" — the two disciplines merged into one unit, neither
+subordinated to the other. Widen the lens to the excluded model-design
+lineage (Fin, Notion, Redpine, Basis — all explicitly placed outside content
+design, all excluded partly on that basis) and only 2 of 6 comparable
+postings claim any content-design lineage at all.
+
+What this reframes, rather than answers: conversation design is not being
+absorbed into content design, and it is not clearly separating from it
+either. It is being scattered across org charts in parallel with content
+design itself — the same placement chaos this finding already documents,
+now visible a second time in an adjacent discipline. Six of the seven
+relevant entries were added within a single two-week window, which is a
+sourcing artifact of when they were submitted, not evidence that either
+direction is accelerating. Nothing here should be read as a trend over time.
+
 ---
 
 # Watching
@@ -145,13 +389,15 @@ so they are not rediscovered from scratch. Entries stay here after a key is
 created, marked resolved, so the reasoning survives the promotion. Step 4's bar still applies: a new
 instance updates a count, it does not promote a pattern to a finding.
 
-**Measurement and evaluation frameworks — 13 instances.** OpenAI (evals,
+**Measurement and evaluation frameworks — 14 instances.** OpenAI (evals,
 evaluation rubrics), Netflix and Spotify (evaluation frameworks), Meta
 (measurement frameworks, twice — the AI Content Strategy Lead states both
 evaluation frameworks and business-impact measurement), LinkedIn (architecture health metrics), GM and Notion
 (content QA), Ride Platform (success metrics), Chime (content quality metrics,
 automated governance dashboards), Ally (success metrics and measurement
-frameworks), Wix (evaluation workflows for generated UX content). The largest
+frameworks), Wix (evaluation workflows for generated UX content), Engrain
+(documentation engagement metrics tracked to accelerate self-service adoption
+and time-to-market value). The largest
 un-keyed pattern in the corpus. Held because it overlaps
 `governance-as-value-prop` heavily and cannot yet be separated cleanly.
 
@@ -319,12 +565,12 @@ implying it through guild placement alone.
 **`content-marketing-adjacent` description versus use.** The description reads
 "systems and architecture language is being used to describe what is
 fundamentally content marketing work… the core responsibilities haven't
-shifted." All five holders contradict it — CoLab, Insurify, Ride Platform, Ally
-and Meta were each admitted *because* their systems responsibilities were
-substantive, and CLAUDE.md's marketing-sited note instructs assigning the key
-on placement rather than on hollowness. The key is doing one job and its
-description claims another. Noted rather than rewritten, because the
-description is user-facing card copy.
+shifted." All six holders contradict it — CoLab, Insurify, Ride Platform, Ally,
+Meta, and Booking.com were each admitted *because* their systems
+responsibilities were substantive, and CLAUDE.md's marketing-sited note
+instructs assigning the key on placement rather than on hollowness. The key is
+doing one job and its description claims another. Noted rather than rewritten,
+because the description is user-facing card copy.
 
 **`ai-native-expectation` label versus description.** The label reads "AI
 fluency expected", broad enough to cover roles that optimize content *for* AI
@@ -342,22 +588,15 @@ and evaluation frameworks for a conversational AI product, not a content
 workflow. Gen Digital's Staff AI Conversation Designer reinforces it —
 prompt structures, model persona and tone, and behavioral standards for an
 agentic AI Assistant, with no content-production workflow described anywhere
-in the posting. Two entries now use the key for AI-behavior and model-design
-ownership rather than the workflow-automation frame the description states.
-Noted rather than rewritten, same as the two entries above — the description
-is user-facing card copy.
-
-**A dedicated single-discipline title for taxonomy work — one instance.**
-15 entries carry the `taxonomy` cluster, and in 14 of them taxonomy is one
-responsibility folded into a broader content-design, architecture, or
-strategy title: Wellhub's "Senior Global UX Writer, Content Systems", LinkedIn's
-"Staff Content Architect", Ally's "Content Architect", and so on. Meta's
-Taxonomist, Content Design is the first title in the corpus that names the
-discipline itself rather than a content role that happens to include it.
-First instance, so it stays here rather than becoming a key or a finding.
-*Trigger to revisit: a second posting titled for the classification
-discipline on its own — Taxonomist, Ontologist, Information Architect — rather
-than for a content role with taxonomy folded in.*
+in the posting. Adidas's Senior UX Copywriter is a third: "Design scalable
+content systems: prompts, patterns, guardrails, evaluation criteria and
+quality standards, enabling teams without creating an approval bottleneck" —
+the same prompt/guardrail/evaluation vocabulary, in a UX-copywriting role with
+no content-production workflow described either. Three entries now use the
+key for AI-behavior and model-design ownership rather than the
+workflow-automation frame the description states. Noted rather than
+rewritten, same as the entries above — the description is user-facing card
+copy.
 
 **A single governance framework named for both human and agentic workflows —
 one instance.** Wix's Content Designer, Language & Systems states the role is
@@ -375,16 +614,18 @@ or review process explicitly scoped to cover both human-authored and
 agent-generated content, rather than either a process for one audience or an
 artifact built for both.*
 
-**Named AI tools — 4 instances, one of them gating.** Of the 25 entries
-carrying `ai-native-expectation`, only four name a specific product rather
-than the category. HelloFresh: "building rapid interactive prototypes (using
-tools like Claude Code, Gemini, or Figma AI)." Coupang's Senior Content
-Strategist, Core UX (Korean posting): "ChatGPT, Claude, Gemini 등의 다양한
-생성형 AI" ("ChatGPT, Claude, Gemini, and other generative AI tools").
-Intercept: "Hands-on experience using LLMs or AI writing tools such as
-ChatGPT, Claude, Copilot, Jasper, or similar platforms." All three list
-several tools as interchangeable examples of the category, not a required
-one.
+**Named AI tools — 5 instances, one of them gating.** Of the entries carrying
+`ai-native-expectation`, five name a specific product rather than the
+category. HelloFresh: "building rapid interactive prototypes (using tools
+like Claude Code, Gemini, or Figma AI)." Coupang's Senior Content Strategist,
+Core UX (Korean posting): "ChatGPT, Claude, Gemini 등의 다양한 생성형 AI"
+("ChatGPT, Claude, Gemini, and other generative AI tools"). Intercept:
+"Hands-on experience using LLMs or AI writing tools such as ChatGPT, Claude,
+Copilot, Jasper, or similar platforms." Function Health: "You use AI tooling
+actively. Claude, Cursor, or equivalent — to accelerate ideation, draft
+generation, and iteration without sacrificing voice quality." All four list
+one or more tools as interchangeable examples of the category ("or similar,"
+"or equivalent," "등의"), not a required one.
 
 The Ride Platform is the different case: "Jasper is core to how we work,"
 "Jasper embedded as the core engine for content creation," "with Jasper
@@ -395,23 +636,36 @@ Adobe's Staff Content Strategist names Firefly, but as part of describing
 Adobe's own product portfolio the role writes about, not a tool the
 candidate is expected to use — checked and excluded on that basis. Fin's
 "Claude Code" mention (a perks line, "Unlimited access to Claude Code and
-best-in-class AI tools") is not counted as a fifth instance: the posting is
+best-in-class AI tools") is not counted as an instance here: the posting is
 excluded from the dataset outright (no occurrence of *content, writing,
 copy, language, tone, voice,* or *terminology*, per the entry above), so
 nothing in it is available to cite as corpus evidence.
 
-Held here rather than promoted: three of the four instances are examples,
+Held here rather than promoted: four of the five instances are examples,
 not requirements, and the one gating instance (Ride Platform) is a single
 company's procurement choice, not evidence of a market standard. *Trigger to
 revisit: a second posting that gates on one specific named tool as a stated
 requirement, the way Ride Platform gates on Jasper — or the same tool named
-across three or more postings.* If either happens, the promotion should
-also change `ai-native-expectation`'s card description in `jobs.json`: it
-currently states the expectation generically ("AI fluency… baseline"), and
-naming the tool(s) the postings actually converge on would sharpen the
-description as directly as the evidence supports — consistent with
-`CLAUDE.md`'s card-copy rule to state what the data shows, not the category
-it falls under, once the data shows something more specific.
+across three or more postings.*
+
+The second half of that trigger is now met on its own terms: Claude appears
+by name, as an interchangeable example, in four of the five instances
+(HelloFresh, Coupang, Intercept, Function Health) — Ride Platform's Jasper is
+the exception. Not treated as a promotion here, since the pattern is "one
+tool keeps showing up in example lists," not "the market has converged on
+one tool" — Claude's appearances are still framed as one option among
+several ("or similar," "or equivalent," "등의") in every instance, the same
+framing the trigger was written to distinguish from a genuine convergence.
+Flagged for a second reader to weigh in on rather than resolved unilaterally,
+since the corresponding action — sharpening `ai-native-expectation`'s card
+description in `jobs.json` to name the tool(s) — is a user-facing copy
+change. If either half of the trigger is judged met, the promotion should
+also change that card description: it currently states the expectation
+generically ("AI fluency… baseline"), and naming the tool(s) the postings
+actually converge on would sharpen the description as directly as the
+evidence supports — consistent with `CLAUDE.md`'s card-copy rule to state
+what the data shows, not the category it falls under, once the data shows
+something more specific.
 
 **Explicit "human-in-the-loop" framing for AI content QA.** Evinova's Content
 Design Lead states it as a stated responsibility of the role itself: "while
@@ -433,13 +687,26 @@ already have ("familiar with… systems"), Evinova's is a commitment the role
 itself makes ("ensuring that AI processes retain" the approach). Recorded here
 rather than promoted, since two data points aren't enough to say whether that
 difference is a real split or coincidence, and since this note is the
-mechanism surfacing the pattern for the first time at all. *Trigger to
-revisit: a third posting using "human-in-the-loop" or an equivalent explicit
-framing for AI output review — distinct from editing/QA responsibilities that
-imply review without naming it — or a reason to treat the Spotify and Evinova
-instances as two different patterns rather than one.*
+mechanism surfacing the pattern for the first time at all.
 
-**Regulatory or compliance framing bounding the content work — two
+**Third instance: Bank of America's Experience Design (XD) II, Content
+Design.** States it as a stated responsibility, not a qualification: "Act as
+a human-in-the-loop for emerging platforms by defining, reviewing, and
+improving prompts, responses, agent behaviors, voice, tone, taxonomy, and
+content quality." Like Evinova's, this is a commitment the role itself makes,
+not something the candidate is expected to already have — and it names what
+is being reviewed (prompts, responses, agent behaviors, voice, tone,
+taxonomy, content quality) more explicitly than either prior instance. This
+is now a third posting carrying the phrase as a stated responsibility, which
+puts the count at or near Step 4's floor for a candidate signal — worth
+flagging rather than acting on. Not promoted here: the Spotify/Evinova
+qualification-versus-responsibility split noted above is still unresolved,
+and a count crossing a floor is not the same read as a second reader
+independently noticing a recurring pattern. *Trigger to revisit: a fourth
+instance, or a deliberate re-read of whether these three already clear the
+bar for a signal.*
+
+**Regulatory or compliance framing bounding the content work — three
 instances.** Wise's Staff AI Content Designer, FinCrime states the role must
 "balance meeting regulatory obligations with building world-class customer
 experiences." Evinova's Content Design Lead states the parallel constraint for
@@ -447,15 +714,25 @@ a different regulatory regime: "a deep awareness of the regulatory and
 ethical requirements that are not only considerations for our content design
 responsibilities but also for those who use our tools," and separately that
 its Content Design Guidance document must stay current "as our products and
-the regulatory landscape evolve." Same structural move in both — content
+the regulatory landscape evolve." Ethos's Staff Content Designer states the
+same move for a third regime: "Comfort in Figma and with regulatory
+constraints, since in an industry like life insurance, clarity and compliance
+are the same job." Same structural move in all three — content
 responsibilities explicitly bounded by a named external compliance regime
-(financial crime for Wise, clinical/health regulation for Evinova), not just
-by internal brand or product standards.
+(financial crime for Wise, clinical/health regulation for Evinova, life
+insurance regulation for Ethos), not just by internal brand or product
+standards.
 
-Two companies, two regulatory domains, at Step 4's floor rather than past it.
-*Trigger to revisit: a third posting that states its content responsibilities
-are bounded by a named regulatory or compliance framework, rather than by
-internal style or brand governance alone.*
+Three companies, three named regimes, but two of the three (Wise, Ethos) sit
+in the Finance domain and the third (Evinova) in Healthcare — both regulated
+industries. Per Step 4's domain-clustering guidance, this reads as
+domain-leaning rather than confirmed cross-industry: recurrence inside
+regulated-industry hiring specifically is weaker evidence of a discipline-wide
+pattern than recurrence spanning unrelated domains would be. *Trigger to
+revisit: a fourth posting that states its content responsibilities are
+bounded by a named regulatory or compliance framework, from a domain outside
+Finance and Healthcare — needed to confirm this is a cross-industry pattern
+rather than one specific to regulated-industry hiring.*
 
 **Excluded on eligibility, not on thinness — Redpine's Senior Knowledge Graph
 Engineer.** Every other exclusion in the corpus fails on thinness: an AI
@@ -623,6 +900,563 @@ identical ("ontology," "structured content") — a second instance of similar
 vocabulary landed on the content side of the line rather than collapsing
 it. No new trigger to set here; the open question the Redpine note raised
 now has an answer, on the strength of one clean test.
+
+**Explicit discipline-founding framing — one clear instance.** GDS's Senior
+Interaction Designer (Conversation) states plainly: "This is the first
+permanent conversation design role at GDS, and you'll help establish the
+discipline here," and separately asks the hire to "help establish
+conversation design as a discipline at GDS, contributing to a community of
+practice, sharing knowledge across teams, and helping others develop their
+skills in this emerging area." This is more explicit than anything
+previously on record — the framing above (see "Sole production ownership")
+noted, only in passing, that Sanna's and Wise's earlier hires carry a softer
+"first content designer" or "newly forming team" framing, without treating
+that framing as a pattern in its own right. GDS names the act of founding a
+discipline as a stated responsibility, not just a fact about hiring order.
+
+Two of the three instances so far (Sanna, Wise) share the Finance domain;
+GDS is the first non-Finance instance, but three data points across two
+domains does not clear Step 4's cross-industry bar on its own — flagged here
+as domain-clustered pending a wider spread. No key proposed; this stays a
+Watching entry. *Trigger to revisit: a second posting using comparably
+explicit "first/founding a discipline" language, ideally in a domain other
+than Finance or Government.*
+
+**Excluded on eligibility, but the closest call in the model-design lineage
+yet — Basis's "Intelligence Architect" fails on writing-craft density, not
+its absence.** Every prior lineage exclusion (Fin, Redpine, Notion) failed on
+a clean or idiom-only literal-text check — none of them used writing or
+language vocabulary in a way that could plausibly ground a content-discipline
+read. Basis inverts this. The posting's "What you'll bring" section states
+outright: "Writing as a craft. You treat language as load-bearing. You catch
+the sentence that will be misread before it ships. You have excellent
+taste." "The writing work is yours" appears as a stated division of labor
+against a separate "measurement work." This is denser, more central,
+non-idiomatic writing-craft language than any prior exclusion in this corpus
+— arguably denser than some included entries. And yet the word "content"
+does not appear once in the roughly 1,000-word posting, a clean zero on the
+one trigger word every included lineage entry (Wise, Gen Digital, UKG, GDS)
+uses somewhere in its body even when the title doesn't. Title ("Intelligence
+Architect") and org placement ("Department: Technical," with the word
+"design" appearing nowhere in the text — a step below even Notion's
+placement, which at least named design as one of four partner functions)
+give this posting no support either.
+
+**The reason for exclusion is the posting's own explicit, structural denial
+that writing is the role's primary discipline — not a euphemism problem the
+way Microsoft's context-engineering exclusion was.** Both postings center
+"context" as the object of the work ("we treat context like a product" here;
+prompt/context-window management at Microsoft), which invites treating them
+as the same near-miss. They aren't. Microsoft was excluded because the
+underlying skill was ML/software engineering wearing "context" vocabulary
+with zero writing-craft substance anywhere — the vocabulary itself was doing
+the work of a euphemism. Basis's writing-craft vocabulary is real and
+substantial; the posting still fails, on a different axis, because it states
+directly that no single discipline is what the role is "primarily" about.
+Required criterion 1 asks whether a role is primarily a content discipline —
+and a JD can pass the literal-text check strongly and still fail that
+"primarily" clause when it says so itself.
+
+**The clearest evidence for this reading is structural, not lexical: how the
+posting frames who should apply.** "This role doesn't have a standard
+background. The people who do it well come from many places" introduces
+seven co-equal candidate pools, given equal weight and equal-length
+treatment: engineers and PMs "who've drifted from building systems to
+questioning whether the system is doing the right thing"; philosophers
+"who've spent years writing precise prose about systems no one else
+understood"; lawyers who "write the kind of language other people have to
+follow"; accountants "who appreciate language and want to shape the future
+of your profession"; editors and writers "who treat structured prose as
+engineering"; academics "tired of producing work that nobody acts on"; and
+"anyone who reads about what we're doing and recognizes the work as theirs."
+Writers and editors are one-seventh of the stated hiring pool, not the
+target the other six are bridging toward.
+
+Compare this against Wise's Principal AI Model Designer, the entry that
+established what a working bridge sentence looks like: "an accomplished and
+experienced Model Designer, or a systems-focused Content Designer who has
+already made this transition in your day-to-day work." Two paths, not seven.
+Both paths already inside or transitioning into a content identity,
+reinforced by the role's actual placement in a "Content Design Guild." The
+sentence's function is to assert continuity — this new role and content
+design are the same skill set wearing a different name. Basis's seven-path
+list does the opposite: it asserts that no single named discipline, content
+design included, is what unifies the people who succeed at this job. The
+"What you'll bring" list reinforces the same point from another angle — of
+its seven listed traits, only one ("Writing as a craft") is language-specific;
+the other six (systems reasoning, causal thinking, comfort with ambiguity,
+learning velocity, holding multiple threads at once) are generic analytical
+traits with no connection to language or content. The posting's own theory of
+who succeeds is a general precision-reasoning-expressed-in-binding-language
+aptitude, not a writing or content discipline that happens to recruit
+broadly — closer to how a law firm might describe the temperament needed for
+contract drafting than to how any included entry in this corpus describes
+itself.
+
+One instance, so no key of any kind is proposed — this is recorded as a
+structural counterpoint to Wise's bridge-sentence precedent, not as evidence
+toward a new signal. *Trigger to revisit: a second posting pairing dense,
+non-idiomatic writing-craft language with an explicit multi-path,
+discipline-agnostic hiring philosophy (three or more co-equal, mostly
+non-content candidate backgrounds) — distinct from Wise's two-path,
+both-already-in-content bridge, and distinct from a role that simply fails
+to name any discipline at all (Fin, Redpine, Notion).*
+
+Ambiguous call recorded rather than resolved in the exclusion itself: whether
+"Who might be a fit" should be read as authoritative on primary discipline —
+the reading applied here — or discounted as recruiting-funnel copy. A reader
+who discounts it and weights "What you'll be doing" instead (three of its
+four bullets anchored in writing or standards-for-writing) could reasonably
+land on include. See `jd-source/basis-intelligence-architect.md` for the full
+reasoning.
+
+**Whole-posting generic strategic language — 3 instances, cross-domain.**
+O.C. Tanner's Principal Product Content Strategist, Verily's Content
+Designer III, and Zilch's UX Copywriter were all excluded on the same failure mode: every
+responsibility restates the same handful of abstract nouns — governance,
+standards, consistency, scalability, cross-functional alignment — without
+ever naming a concrete object the work produces or touches. O.C. Tanner's
+four "Key Responsibilities" subheads recombine "governance," "AI readiness,"
+"scalable," and "cross-functional" across every section, and its "Success
+Looks Like" section restates the identical claims a third time with no new
+information; the posting never once names a style guide, a taxonomy, a
+governed term, a described workflow, a tool, or an evaluation process.
+Verily's excludedReason independently reached for the same description:
+"too thin and too vague to support a confident entry... generic UX-strategy
+language with no reusable-template, taxonomy, or cross-team-scale
+specifics, the weakest grounding for that cluster anywhere in the corpus."
+
+All three postings pass the required criteria and the signal test on a
+literal read of their vocabulary — the failure isn't an absence of the right
+words, it's an absence of anything concrete behind them. This is what
+distinguishes the pattern from entries that clear the bar: UKG names
+"ontologies and structured content systems" and "a spectrum of autonomy from
+suggesting, confirming to acting"; GDS names "dialogue patterns, prompts,
+and interaction flows." A posting in this pattern never drops to that level
+of specificity once, no matter how many times it restates its strategic
+intent. Zilch's UX Copywriter fits the same shape from a different angle:
+its bullets name concrete surfaces (SEO content, help articles, FAQs,
+operational communications, Figma), but the candidate cluster/signal
+assignments each bullet might otherwise support — cross-functional
+collaboration, accessibility, customer-insight-driven iteration — stop at
+boilerplate ("partner with Product Design," "champion accessibility... and
+best practice," "use customer insight, data and testing to improve the
+content") with no reusable-framework, structural-constraint, or named-metric
+specificity behind any of them.
+
+Three instances, three different domains (Healthcare, SaaS, Finance) — this
+is now a confirmed recurring authorial style (templated senior-strategist or
+generalist-copy language reused across companies and industries) rather
+than coincidence, clearing the trigger the two-instance note set. *Trigger
+to revisit: a fourth instance, to see whether the pattern clusters by
+seniority/scope (strategist-level and generalist-IC roles both fail this way
+so far) rather than by domain.*
+
+**AI mentions that name no tool, governed object, or model behavior — a
+placeholder pattern already precedented five times over, never centralized
+until now.** Roblox, Checkout.com, TCGplayer, Meta's WhatsApp, and Wise's
+Senior Content Designer, Spend were each excluded in part or in full on the
+same specific test, cited directly in each successive exclusion's own
+reasoning without ever being written up as its own pattern: an AI mention
+that names no tool, no governed object, and no model behavior fails the
+signal test's AI-tooling/governance/model-behavior prong, regardless of how
+many times "AI" appears. Roblox's "Identify and implement AI solutions to
+improve content quality and scale" was the first to fail this way — "AI
+solutions" is a placeholder, not a described responsibility. TCGplayer's "AI-
+assisted tools where they strengthen quality or efficiency" repeated the
+same gap as a subordinate clause rather than a responsibility of its own.
+Checkout.com and Wise's Spend entry failed the same test from the
+qualifications side — AI-assisted-tools experience listed as a *preferred*
+qualification, never a stated responsibility. WhatsApp's AI material sits
+entirely in Preferred Qualifications ("integrate AI tools to optimize/
+redesign workflows," "prompt/context engineering, agent orchestration")
+while its stated Responsibilities are standard product content design.
+
+Five instances across four domains (Media, Finance, E-commerce, Big Tech) —
+this has been operating as settled, self-citing precedent since Roblox first
+established it, but had never been pulled into one place. No new key
+proposed: this describes a recurring way postings fail the existing signal
+test, not a new cluster or signal to assign to an included entry. Recorded
+here so the next boundary case can cite the pattern directly instead of
+re-deriving it from a chain of cross-references between exclusion files.
+
+**Guild/craft-authority posed as an alternative to direct management — one
+instance.** Vinted's Content Design Lead states twice that the org structure
+around the role is not yet decided: "Depending on the organisation's evolving
+structure, this may involve direct people leadership, a guild model built on
+craft authority, or both" (role overview), and "Demonstrated ability to lead
+a content design function through direct management, craft authority, or
+guild-style leadership" (About You). This is a different use of "guild" than
+the one already on record in `patterns.md` ("Guild" as a name for the content
+community — Wise, Wix), where the word names an existing cross-team community
+of practice alongside a separately-named reporting line. Vinted instead names
+guild-authority and direct management as two candidate *organizational
+structures*, contingent on a decision the posting says has not been made.
+
+Joe's read, recorded as interpretation and not something the JD states or the
+data confirms: this framing may be a deliberate way to keep the org structure
+open — leaving people-management scope and expectations unresolved until
+after hiring, so the company can decide based on whether the person it
+actually hires has the management experience to take on direct reports. The
+posting supports the observation that the structure is stated as undecided;
+it does not state a reason why, and the reason above is Joe's inference, not
+a finding this dataset can independently support.
+
+One instance, so no key is proposed. *Trigger to revisit: a second posting
+explicitly framing guild/craft-authority leadership as an alternative
+organizational mode to direct management — rather than as a name for a
+cross-team community of practice.*
+
+**Solo content-design hires absorbing an expanding, sometimes atypical
+scope — one instance.** Relay's Senior Content Designer states, as one of
+seven "What you'll do" bullets for a role explicitly billed as "Relay's
+first Content Designer": "Be ready to jump into an incident and support
+with crisis messaging and recovery comms in the event that things go
+wrong." The same posting separately asks the same solo hire to "occasionally
+... take on graphic design and copywriting for high-consequence marketing
+materials such as investor decks, client pitch decks, candidate pitch decks
+and the Relay website." Checked directly against the full `jd-source/`
+corpus: no other entry states crisis or incident messaging as a content
+responsibility — the only other hits for "crisis" or "incident" anywhere in
+the archive are unrelated (DeepMind's "not incidental," dxw's "incidental
+boilerplate," Insurify's fraud-warning "incidents"). This is a genuine first
+instance, not merely a first instance outside conversation-design or
+CX-leaning roles.
+
+Joe's read, recorded as interpretation and not something the JD states or
+the data confirms: this is part of a broader pattern worth tracking in its
+own right, distinct from the "explicit discipline-founding framing" entry
+above (which is about postings stating they are founding a discipline).
+This is about scope — a solo or first content-design hire being asked to
+absorb an expanding and sometimes atypical range of responsibilities (crisis
+comms here, alongside the marketing-collateral spillover in the same
+posting), regardless of whether founding language is present. Whether this
+reflects a real hiring trend or is one company's unusual scope for one role
+is exactly what a second instance would help settle.
+
+One instance, so no key is proposed. *Trigger to revisit: a second posting
+showing a solo or first content-design hire taking on a stated
+responsibility outside the traditional content design brief — crisis or
+incident comms, marketing collateral, or a comparably atypical ask.*
+
+**Personalization as an explicit design responsibility — 1 included instance,
+1 cross-domain excluded sighting.** UnitedHealth Group's Principal
+Conversational AI Designer lists "Personalization in AI Design" as its own
+named responsibility: "Anticipate user needs and use cases using design
+methods that proactively adapt to individual users over time, creating more
+relevant and meaningful interactions." No other *included* entry in the
+corpus states adaptive, over-time personalization as a stated responsibility
+of the content/conversation design role itself. One instance, one domain
+(Healthcare) — below Step 4's floor for a jobs.json-grounded key.
+
+Pinterest's Content Designer II, Personalization — excluded (only one cluster,
+`content-systems-design`, grounded; nothing written to jobs.json) — is a
+second, cross-domain sighting of the same framing: a role and team built
+entirely around adaptive personalization, tasked to "explain why people are
+seeing content and how they can shape their experience." Recorded here
+because it satisfies this note's own trigger ("a second instance, ideally in
+a different domain") on text alone, even though the posting carries no
+jobs.json entry to ground an assignment from — the same limitation noted for
+eDreams' human-in-the-loop instance. *Trigger to revisit: a third instance,
+this one grounded in an included entry, which would clear Step 4's floor for
+real.*
+
+**Craft standard-bearer for internally-consumed artifacts, not product
+surfaces — one instance.** Salesforce's Experience Design Lead scopes the
+role's quality ownership to decks, Slack messages, prototypes, and
+field-facing materials for an internal team (Customer Success Managers), not
+to a product surface end users see: "the design and content standard-bearer
+for our team," covering "a prototype, a field-facing deck, or a Slack message
+that lands," and separately, "Design and produce polished decks and
+communications that represent the team well at all levels — from field CSMs
+to exec stakeholders." The corpus is near-universally about content on a
+product surface; this is the first entry whose stated deliverables are
+internal-audience artifacts throughout, with no product-surface content
+named. One instance, so no key is proposed. *Trigger to revisit: a second
+posting asking a content designer to be the craft standard-bearer for
+internal team artifacts — decks, comms, prototypes — rather than
+product-facing content.*
+
+**AI-in-hiring disclosures, stated by the employer — 3 instances, 3 domains.**
+Three postings disclose using AI tools to screen or evaluate applications, in
+near-identical language. Wealthsimple's Staff Content Designer, Investing:
+"We may use artificial intelligence (AI) tools to support parts of our hiring
+process, such as reviewing applications, analyzing resumes, or assessing
+responses. These tools assist our team but don't replace human judgment –
+all final hiring decisions are made by people." Salesforce's Experience
+Design Lead: "Salesforce uses artificial intelligence (AI) tools to help our
+recruiters assess and evaluate candidates' resumes and qualifications
+throughout the recruiting process. Humans will always make any candidate
+selection and hiring decisions." Verily's Content Designer III — excluded
+from `jobs.json` on thinness grounds, cited here only for an existence claim,
+consistent with how excluded postings are used elsewhere in this file: "We
+use artificial intelligence (AI) tools to help screen and/or assess
+applications for this role. These tools analyze information you provide (for
+example, your résumé or answers to application questions) to support our
+hiring team's review."
+
+All three pair the disclosure with an explicit human-final-decision
+assurance, worded almost identically across employers sharing no domain
+(Finance, SaaS, Verily's health-tech). That similarity, more than any one
+company's wording, is what makes this read as compliance boilerplate (several
+jurisdictions now require an AI-in-hiring disclosure) rather than a
+distinctive claim by any one employer.
+
+This describes the hiring process, not a stated job responsibility, so it
+isn't a cluster or signal candidate — recorded so a fourth instance updates a
+count rather than being rediscovered from scratch. *Trigger to revisit: a
+posting that goes beyond disclosure and states what the tool actually
+evaluates or how (a rubric, a scoring criterion) — the first instance with
+enough specificity to say something beyond "this is now standard
+boilerplate."*
+
+**Employer restricts or polices candidate use of AI in the application
+itself — 2 instances, 2 domains.** Two postings run the opposite direction
+from the above, addressing AI use *by the candidate* rather than by the
+company. GDS's Senior Interaction Designer (Conversation): "Artificial
+intelligence can be a useful tool to support your application, however, all
+examples and statements provided must be truthful, factually accurate and
+taken directly from your own experience. Where plagiarism has been
+identified (presenting the ideas and experiences of others, or generated by
+artificial intelligence, as your own) applications may be withdrawn and
+internal candidates may be subject to disciplinary action." The Ride
+Platform's Content Systems Specialist, inside its own "AI Fluency"
+qualifications bullet: "We encourage you to use AI responsibly as you
+prepare your application. Please don't use it to fabricate experiences or
+answer questions live in interviews."
+
+Two companies, two domains (Government, E-commerce) — clears Step 4's floor
+without domain-clustering. Figma's UX Writer, AI states a camera-on
+requirement for video interviews "to ensure the integrity of our hiring
+process," which plausibly addresses the same concern but never names AI —
+not counted as a third instance on that basis. Same caveat as the entry
+above: this is hiring-process commentary, not a stated responsibility, so
+it's not a cluster or signal candidate. *Trigger to revisit: a third
+instance, or one specific enough to describe how the restriction is
+enforced (an interview format change, a live verification step) rather than
+a general conduct warning.*
+
+**"Program Manager" as a title for content-discipline work — 1 instance.**
+HoneyBook's AI Content Program Manager, Chatbot is the first entry in the
+corpus whose own title carries "Program Manager" rather than Designer,
+Writer, Strategist, Architect, or Engineer, while the stated responsibilities
+are still primarily content authorship and strategy (Help Center content,
+technical documentation, AI resolution content strategy). Confirmed
+independently that no other entry's title carries this — the corpus's only
+prior "program manager" hits are incidental stakeholder mentions in other
+postings, not a role's own title. Distinct from the management-titles this
+dataset otherwise excludes on (DeepMind, eDreams): the JD states no direct
+reports, headcount, or budget ownership anywhere — "own" throughout refers to
+a program or system, not people. One instance, one domain (SaaS) — below
+Step 4's floor. *Trigger to revisit: a second content-discipline role titled
+"Program Manager" or a comparable ops-flavored title, ideally in a different
+domain.*
+
+**A content role with data-connector/backend maintenance as a stated,
+recurring responsibility — 1 instance.** HoneyBook's posting states "use
+Claude Code to build and maintain the data connectors" that power its
+support chatbot, and separately asks for comfort "owning the technical side
+of chatbot configuration, not just the content that feeds it." This is
+qualitatively different from the corpus's three other Claude Code mentions:
+HelloFresh uses it for rapid interactive prototyping, Fin's mention is a
+perks-line benefit in an excluded posting, and a Meta Taxonomist entry uses
+it for metadata capture. None of those three treat the tool as a means of
+maintaining live backend integrations as an ongoing job function. One
+instance, one domain (SaaS) — below Step 4's floor. *Trigger to revisit: a
+second posting where a content role owns data-pipeline or connector
+maintenance as a stated, recurring responsibility rather than a one-off
+prototyping or metadata task.*
+
+**Scope-elasticity disclaimer ("responsibilities may not be exhaustive") — one
+instance.** Base's Member Experience Operations, Content Strategy posting
+(excluded — content strategy is one of several co-equal disciplines the
+role's own text names, not the primary one) states: "Please note: Base is a
+startup, which means priorities shift and evolve quickly. Your role may
+expand or change based on the needs of the business at any given time, so
+the responsibilities listed may not be exhaustive."
+
+Joe's read, recorded as interpretation and not something the JD states or the
+data confirms: this reads as employer overreach — a pre-emptive disclaimer
+reserving the right to expand the role's scope indefinitely, with no
+corresponding commitment (comp, title, level) tied to that expansion. The
+posting supports the observation that the disclaimer exists and is stated
+this explicitly; it does not state that scope will expand without additional
+compensation or recognition, and that inference is Joe's, not a finding this
+dataset can independently support.
+
+One instance, so no key is proposed, and the posting is excluded so it
+carries no jobs.json entry regardless. *Trigger to revisit: a second instance
+of comparable scope-elasticity/catch-all-responsibilities disclaimer
+language, ideally in an included entry.*
+
+**Department-level "Marketing" label wider than the stated reporting
+line — one instance.** Citizens' Content Architect Manager is filed under a
+department called "Marketing, Digital Experience, and Communications," which
+on its own would read as a sixth instance of the "Content roles are appearing
+outside design orgs" finding's marketing-sited group (CoLab, Insurify, Ride
+Platform, Ally, Meta). But the posting also names a specific reporting line
+and team one level in — reports to the Head of Web Experience, sits on the
+Digital Content Experience Strategy team — and neither is marketing or
+editorial work. `content-marketing-adjacent` was not assigned: the more
+specific, more concrete placement the posting itself states overrides the
+broader department bucket above it, per Step 2's rule to ground assignments in
+what the JD states rather than the widest label available. This is a
+different shape from the five existing marketing-sited entries, where the
+stated placement (not just the department name) is the marketing or editorial
+function the systems work sits inside. One instance, one domain (Finance) —
+below Step 4's floor, and not a candidate key regardless since this is a
+placement-reading question, not a cluster or signal. *Trigger to revisit: a
+second posting where a department-level label names marketing but a more
+specific stated reporting line or team clearly does not — worth revisiting as
+a note on how to read `orgPlacement` rather than as a taxonomy key.*
+
+**Behavioral-science / behavior-change framing as an explicit content-strategy
+responsibility — one instance.** HealthEquity's Sr. Content Strategist &
+Engagement Writer (excluded — only one existing cluster, content-systems-design,
+grounds cleanly) states "Apply behavioral science, behavioral economics, and
+engagement principles to create content that motivates action, reinforces
+positive behaviors, and helps members progress toward meaningful goals," and
+separately asks for content organized into "structured journeys, modules,
+challenges, or other progressive formats," including "gamification." No other
+entry in the corpus states human-behavior-change or educational-journey design
+as a stated content responsibility — the existing "behavior" hits (Google, Gen
+Digital, UKG) are all about AI *model* behavior, a different sense entirely.
+One instance, below Step 4's floor, and the posting is excluded so it carries
+no jobs.json entry regardless. *Trigger to revisit: a second posting stating
+behavioral-science, behavioral-economics, or gamification framing as a stated
+responsibility of a content-strategy or content-design role, ideally in an
+included entry.*
+
+**Header title using broader, more recognized content/UX-design vocabulary
+than the posting's own operative title — 3 instances (1 included, 2
+excluded).** Across this dataset's title-discrepancy resolutions, the same
+shape recurs: a job-board header or page-chrome title uses more broadly
+searched content/UX-design language, while the posting's own body names a
+different, more specific (and differently scoped) operative title once read
+in full.
+
+- **UnitedHealth Group** (included): page header "Principal UX CX Designer";
+  body self-describes as "Principal Conversational AI Designer" from the
+  first sentence onward and consistently thereafter — the stored title.
+- **NiCE** (excluded): header "Senior AI Conversation Designer"; body
+  self-describes as "The Professional Services Conversational Designer, AI"
+  — a genuine tie by reinforcement count, with the header stored for archive
+  readability per the submitter's explicit choice, not because it was the
+  more load-bearing string.
+- **HealthEquity** (excluded, this entry): header "Sr UX Content Designer";
+  body's operative, reinforced title is "Sr. Content Strategist & Engagement
+  Writer" ("engagement" alone recurs 8+ times as a thematic anchor; "UX
+  content" appears exactly once, buried in a qualifications list).
+
+In all three, the header string leans on generic, high-search-volume
+content/UX-design vocabulary (UX CX Designer, AI Conversation Designer, UX
+Content Designer), while the operative title once the body is read in full
+names something more specific — a different discipline entirely (UHG,
+NiCE) or a differently-scoped framing of the same discipline (HealthEquity).
+
+Joe's read, recorded as interpretation and not something the JDs state or the
+data confirms: employers or job boards may choose a broadly recognized header
+title deliberately to reach more, or more highly skilled, content-design
+applicants than the posting's own internal title would attract on its own —
+casting a wider net via job-board metadata while the actual internal framing
+only becomes visible once a candidate opens the posting. This is distinct
+from the `title-dilution` and `title-responsibility-gap` signals, which
+compare a single stated title against its own responsibilities; this pattern
+is a discrepancy between two different title *strings* for the same posting.
+The postings support the observation that the two strings differ and that the
+header is the more broadly recognized one in each case; they do not state a
+reason for the discrepancy, and the recruiting-net-casting explanation is
+Joe's inference, not a finding this dataset can independently support. *Trigger
+to revisit: a fourth instance, or one where a captured `sourcePlatform` or
+posting metadata confirms whether the header was job-board-generated versus
+employer-authored, which would help separate deliberate framing from platform
+SEO tagging.*
+
+**Red-teaming named as a content design responsibility — one instance.**
+Teladoc Health's Lead Content Designer states "Contribute to establishing
+content standards and governance for generative AI outputs, including
+evaluation rubrics, red-teaming participation, and feedback loops with model
+and product teams." No other entry in the corpus names red-teaming as part
+of a content design role's stated work. One instance, one domain
+(Healthcare) — below Step 4's floor. *Trigger to revisit: a second posting
+naming red-teaming as a content design responsibility, ideally outside
+Healthcare.*
+
+**Human-facing control UI for reviewing AI output, as a design
+responsibility — one instance.** Docebo's Senior Product Designer, Content
+Design & Language Systems states "Design Trustworthy AI Moments: Create
+patterns that help people understand what AI did, what informed it, what
+needs attention, and how to review, edit, regenerate, approve, reverse, or
+recover." This is distinct from `model-behavior-design` (authoring the AI's
+own language or behavior — prompts, persona, conversation flow) and from
+`ai-content-governance` (setting quality standards/rubrics for AI-generated
+content) — neither vocabulary appears here. This bullet describes designing
+the review/control affordances an end user exercises over AI output, not
+the AI's behavior or the standards it's held to. One instance, one domain
+(SaaS) — below Step 4's floor. *Trigger to revisit: a second posting naming
+end-user-facing review/approve/reverse-style control patterns for AI output
+as a stated design responsibility.*
+
+**"Content design" as a title for on-site visual/graphic design, not UX
+writing or content strategy — one instance.** Musinsa's Content Designer
+(Global Commerce) posting (excluded) titles the role "Content Design" but
+every stated responsibility is visual/graphic craft: producing "sales
+campaign and editorial design" (에디토리얼 디자인 — layout/graphic design, not
+textual editorial content), developing "visual identity" for campaigns,
+advancing a Figma-based "design system," and qualifications asking for
+"high understanding of typography and editorial design" and "2D/3D-based
+motion graphic design." A literal-text check for Korean equivalents of this
+dataset's target vocabulary (문구/카피/UX 라이팅/톤앤매너/용어 — copy/UX
+writing/tone-and-manner/terminology) returns zero hits. Structurally the
+same near-miss as Scopely's "Game content design" Terminology entry — a
+shared job title, a different discipline underneath — but in a Korean
+e-commerce/fashion-platform context rather than gaming. One instance, so no
+Terminology entry proposed yet. *Trigger to revisit: a second Korean or
+East-Asian e-commerce/fashion-platform posting using "콘텐츠 디자인"/"content
+design" to denote on-site visual or graphic design rather than UX writing
+or content strategy.*
+
+**Phonetic lexicon / ASR fine-tuning as a content-adjacent responsibility —
+one instance in the actual dataset.** Roche's Content Design & AI Readiness
+Specialist states "Improve voicebot accuracy by creating and maintaining
+phonetic lexicons and fine-tuning Automatic Speech Recognition (ASR) models,"
+alongside conversational-AI and technical-documentation responsibilities that
+ground the entry in existing clusters (`taxonomy`, `technical-writing`,
+`content-systems-design`, `enablement`, `ai-tooling`, `terminology-governance`)
+and signals (`agent-retrieval`, `classification-for-ml`). This is the first
+*included* instance of this vocabulary. NiCE's Senior AI Conversation
+Designer used near-identical language (phonetic lexicons, ASR) but was
+excluded independently, on required criterion 1 and 3 grounds unrelated to
+this specific responsibility, so the vocabulary has not previously appeared
+in a live entry. The responsibility itself was flagged as ambiguous in the
+Roche audit rather than resolved: a phonetic lexicon is a controlled
+vocabulary, which reads as content-terminology work, while "fine-tuning" a
+model is model-behavior/ML-engineering work in the sense the rest of this
+file's clusters describe — `model-behavior-design` was deliberately withheld
+from this entry over that ambiguity. One instance in the dataset proper, one
+domain (Healthcare), and the responsibility is itself conversational-AI/
+customer-service-adjacent rather than domain-specific — below Step 4's floor
+either way. *Trigger to revisit: a second included posting naming phonetic
+lexicon or ASR fine-tuning work, ideally outside conversational-AI/
+customer-service-adjacent contexts.*
+
+**MCP named as a channel the role's own output is consumed through, not a
+tool the role builds with — one instance.** Smartly's User Guidance Lead
+states the role should "help shape how product knowledge is made available
+through developer documentation, APIs, MCP and other machine-consumable
+interfaces," and separately counts success as product knowledge becoming
+"reusable across the KB, in-product experiences, Support AI, APIs, and MCP."
+In both mentions, MCP is a distribution channel for the role's own
+documentation/knowledge output — distinct from the corpus's three prior MCP
+mentions: Soda's AI Content Engineer uses MCP as a protocol the role builds
+agents *with*; Bank of America's mention sits in a generic
+tools-and-technologies list; Redpine's (excluded) is infrastructure-side and
+carries no content deliverable at all. This fits inside the existing
+`agent-retrieval` signal rather than warranting a new key — one instance is
+below Step 4's floor regardless. *Trigger to revisit: a second posting naming
+MCP specifically as a channel through which the role's own content or
+documentation output reaches AI agents, rather than a tool the role builds
+agentic systems with.*
 
 ---
 

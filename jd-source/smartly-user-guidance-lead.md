@@ -1,0 +1,97 @@
+---
+id: smartly-user-guidance-lead
+company: Smartly
+title: User Guidance Lead
+sourceUrl: null
+sourcePlatform: null
+dateAdded: 2026-10-01
+captured: 2026-10-01
+captureMethod: pasted-from-claude-chat
+orgPlacement: null
+reqId: null
+postedDate: null
+---
+
+User Guidance Lead
+Helsinki, Uusimaa, Finland
+
+Smartly is looking for a User Guidance Lead to lead our small User Guidance team and evolve how product knowledge reaches our customers, our internal teams, and increasingly our AI-powered experiences.
+
+This role has evolved beyond traditional technical writing and Knowledge Base management. Our product documentation is no longer consumed only by people reading articles: it also powers AI search, customer-service AI, contextual guidance, APIs, MCP integrations, and emerging agentic experiences.
+
+You will own the strategy and execution for making Smartly's product knowledge accurate, discoverable, reusable, and accessible to both humans and AI.
+
+You will manage a small team of technical writers while remaining hands-on. You will work closely with Product, Engineering, Design, Support, Customer Success, Data, and AI teams to ensure that new capabilities are properly documented and that product knowledge can be reliably consumed wherever customers need it.
+
+What you'll drive
+
+Own the direction, priorities, and impact of User Guidance at Smartly, managing and developing a small team while remaining hands-on.
+Own the quality, structure and evolution of Smartly's customer-facing Knowledge Base, ensuring accurate guidance is available for new and changing capabilities.
+Embed User Guidance into the product development lifecycle, working closely with Product and Engineering.
+Expand guidance beyond articles into video, contextual, and in-product experiences where they improve the customer experience.
+Use analytics and customer behaviour to identify knowledge gaps, prioritize improvements and measure impact.
+Maintain, develop, and evolve our product knowledge so it remains reliable and usable by both people and AI.
+Identify and provide the additional context and collateral that AI systems and agents need to understand and use Smartly's products.
+Partner with Product, Design, and AI teams to make trusted product knowledge available to AI-powered and agentic customer experiences.
+Help shape how product knowledge is made available through developer documentation, APIs, MCP and other machine-consumable interfaces, in partnership with the teams that own those capabilities.
+Explore AI path to improve how User Guidance content is created, reviewed and maintained.
+
+What success looks like
+
+You will be successful when:
+
+Your team delivers accurate and timely user guidance about Smartly capabilities.
+Customers can find the information they need without unnecessarily relying on Support or Customer Success.
+Smartly's AI features can reliably retrieve and use trusted product knowledge.
+Product knowledge is increasingly reusable across the KB, in-product experiences, Support AI, APIs, and MCP rather than recreated separately for each channel.
+Product teams understand their responsibility for supplying the information User Guidance needs.
+The User Guidance team can increase its impact without requiring its workload to grow proportionally with Smartly's product portfolio.
+
+What we're looking for
+
+Strong experience in technical writing, content design, user guidance, developer documentation, or knowledge management in a software/SaaS environment.
+Experience leading people or a small content/documentation function.
+Excellent written and spoken English.
+Strong understanding of information architecture and structured content.
+Experience working closely with Product, Engineering, and Design teams.
+Comfortable understanding technical concepts and translating them into information appropriate for different audiences.
+Practical experience with modern documentation platforms and workflows.
+Experience using analytics to understand how documentation or guidance is performing.
+Ability to operate hands-on while also setting direction and priorities.
+Ability to work 3 days / week at our office in Helsinki
+
+You don't need to be an AI engineer, but you should be genuinely interested in how LLMs, retrieval, APIs, MCP, and AI agents change the role of product documentation. You should be comfortable collaborating with engineers to understand these technologies and determine what they mean for User Guidance.
+
+Why this role matters
+
+User Guidance started at Smartly primarily as a way of maintaining high-quality product documentation. Its role is becoming considerably broader.
+
+Our Knowledge Base already supports richer content and AI-powered discovery, and product information is increasingly becoming an input to AI experiences. The next stage is making that knowledge reusable across customer guidance, Support, APIs, MCP, and Smartly's emerging agentic experiences.
+
+The opportunity for the next User Guidance Lead is therefore not simply to maintain a Knowledge Base.
+
+It is to build the product knowledge capability that helps both people and AI understand how to use Smartly successfully.
+
+What We Offer You
+
+At Smartly, we offer a place where you can advance your career. Here, you'll find:
+
+An Inclusive Global Culture: Join a team of over 750 Smartlies, representing more than 60 nationalities across 24 locations in 13 countries. We cultivate a culture built on trust, transparency, and open feedback, where diverse perspectives are valued and encouraged.
+
+Global Impact: Contribute to a company making a global impact, directly influencing our customers' success and business growth.
+
+Focus on Wellbeing: We prioritize your health with healthcare packages, mental health services, and a commitment to work-life balance through paid holidays and family leave.
+
+Comprehensive Rewards: Benefit from equity options, performance-based rewards, competitive compensation, and career development opportunities.
+
+Flexible Hybrid Workplace: Experience a hybrid work model, balancing office collaboration with remote work, and the option to work abroad for up to 30 days annually.
+
+Apply Now and Build Your Future with Smartly!
+
+About Smartly
+
+Smartly is the AI-powered advertising technology company transforming ad experiences for brands and their consumers. Our comprehensive advertising platform seamlessly integrates the capabilities of media, creative, and intelligence to power more than 800 billion impressions and generate more than 300 billion creatives annually, delivering tangible business outcomes for brands and advertisers.
+
+Smartly is the only company in the industry recognized as a Leader in The Forrester Wave: Creative Advertising Technologies with PwC validating the results it delivers for brands. We manage creative and media for 700+ brands worldwide and $6B in ad spend across the largest media platforms, including Facebook, Google, Instagram, Pinterest, Snap, and TikTok. Our end-to-end technology, unmatched access to media platforms and exceptional customer service help Fortune 500 brands to reach and engage consumers and learn what performs best. Smartly is a multinational and diverse team of 750+ Smartlies from 60+ nationalities, working in 13 countries. Together, we want to create and maintain an inclusive environment where everyone feels respected and heard. Our Diversity, Equity & Inclusion approach is at the heart of it.
+
+The processing of your information is described in our Candidate Privacy Notice.

@@ -3,9 +3,15 @@
 
 # Quotes
 
-Every stored quote, verbatim from the posting. **43 of 44** entries carry one.
+Every stored quote, verbatim from the posting. **75 of 76** entries carry one.
 
 These are the lines that anchor each entry's cluster and signal assignments, so they are the strongest citable evidence in the dataset. Each is checked against its `jd-source` archive before commit.
+
+### Adidas — Senior UX Copywriter
+
+> Design scalable content systems: prompts, patterns, guardrails, evaluation criteria and quality standards, enabling teams without creating an approval bottleneck.
+
+`adidas-senior-ux-copywriter` · added 2026-09-09
 
 ### Adobe — Staff Content Strategist, Content Systems Architect
 
@@ -43,11 +49,23 @@ These are the lines that anchor each entry's cluster and signal assignments, so 
 
 `anthropic-technical-documentation-content-engineer` · added 2026-08-20
 
+### Anthropic — Product Designer, Evals & Prompts
+
+> Write and revise the prompts behind Claude's tools, features, and behaviors on a product surface; test the surface, turn findings into prompt fixes, ship them, and confirm the prompt users get is the one intended.
+
+`anthropic-product-designer-evals-prompts` · added 2026-09-05
+
 ### Apple — UX Writer, Systems
 
 > Experience using large language models, and an ability to see how they can be leveraged in writing systems.
 
 `apple-ux-writer-systems` · added 2026-07-23
+
+### Apple — UX Writer, Apple Music
+
+> Developing style and tonal guidance for features and LLM-generated content.
+
+`apple-ux-writer-music` · added 2026-09-16
 
 ### Atria — UX Writer
 
@@ -55,11 +73,29 @@ These are the lines that anchor each entry's cluster and signal assignments, so 
 
 `atria-ux-writer` · added 2026-07-13
 
+### Autodesk — Senior Principal Content Strategist
+
+> Develop scalable frameworks, governance models, and operating practices that help teams deliver high-quality, consistent experiences across products.
+
+`autodesk-senior-principal-content-strategist` · added 2026-09-25
+
+### Bank of America — Experience Design (XD) II, Content Design
+
+> Act as a human-in-the-loop for emerging platforms by defining, reviewing, and improving prompts, responses, agent behaviors, voice, tone, taxonomy, and content quality.
+
+`bofa-xd-ii-content-design` · added 2026-09-21
+
 ### Bolt.new — Staff Content Designer
 
 > You can take a content-led feature from problem to shipped without a product designer. That means designing it in Figma, or building it with agentic tools, to a standard we'd actually ship.
 
 `bolt-staff-content-designer` · added 2026-08-21
+
+### Booking.com — UX Writer II - Growth Marketing - Marketplace
+
+> From AI-driven creative ads and ad-hoc campaigns to subscription management with legal nuances, the topics you own require experience with LLMs and attention to detail.
+
+`booking-ux-writer-growth-marketing` · added 2026-09-02
 
 ### Capital One — Senior Manager Content Designer (Individual Contributor)
 
@@ -73,6 +109,18 @@ These are the lines that anchor each entry's cluster and signal assignments, so 
 
 `chime-senior-content-strategist` · added 2026-07-29
 
+### Citizens — Content Architect Manager
+
+> Define structured data standards, including schema.org and JSON-LD where appropriate, so content is discoverable, retrievable, and reusable by search engines, answer engines, LLMs, and internal systems.
+
+`citizens-content-architect-manager` · added 2026-09-04
+
+### Cleo — Lead Conversational Designer
+
+> Help prompt engineer LLMs to generate content that matches the intent of your designs.
+
+`cleo-lead-conversational-designer` · added 2026-09-11
+
 ### CoLab — Content Systems Architect
 
 > As Content Systems Architect, your job is to own the execution and growth of those series — not by writing content yourself, but by building AI-powered systems.
@@ -85,6 +133,30 @@ These are the lines that anchor each entry's cluster and signal assignments, so 
 
 `coupang-senior-content-strategist-core-ux` · added 2026-08-14
 
+### Docebo — Senior Product Designer, Content Design & Language Systems
+
+> Establish terminology, product voice and tone, reusable microcopy patterns, audience guidance, and language principles that improve clarity across product areas.
+
+`docebo-senior-product-designer-language-systems` · added 2026-09-09
+
+### Engrain — Senior Content Strategist, Product Enablement
+
+> Partner directly with Marketing to co-build core messaging platforms, terminology standards, and voice-and-tone frameworks, ensuring unified positioning across product enablement, demand generation campaigns, and sales collateral.
+
+`engrain-senior-content-strategist-product-enablement` · added 2026-08-26
+
+### Ethos — Staff Content Designer
+
+> Help to shape AI tools that can empower others to generate content with the correct tone, structure, and necessary guardrails.
+
+`ethos-staff-content-designer` · added 2026-08-25
+
+### Etsy — Staff Content Designer, UX Platform
+
+> Own AI content tooling. Architect and maintain the guidelines and prompt infrastructure that power AI-generated copy, define how it shows up in designers' workflows, and set the eval framework that determines if the output meets the quality bar.
+
+`etsy-staff-content-designer-ux-platform` · added 2026-10-06
+
 ### Evinova — Content Design Lead - Evinova
 
 > Champion AI-first ways of working, including identifying and embedding opportunities to use AI to expedite the content design process while simultaneously raising quality, from drafting and editing to consistency checks and content operations, while ensuring that AI processes retain a human-in-the-loop approach.
@@ -96,6 +168,24 @@ These are the lines that anchor each entry's cluster and signal assignments, so 
 > While the title of this role is “UX Writer,” you might think of yourself as a content engineer as much as a writer — someone who uses language to shape how people interact with AI, from crafting better inputs to defining clear, consistent outputs.
 
 `figma-ux-writer-ai` · added 2026-06-10
+
+### Fin — Brand Voice Lead - Systems
+
+> Build and maintain practical writing systems that support scale, including channel guidance, prompt libraries, reusable messaging assets, and AI-enabled workflows.
+
+`fin-brand-voice-lead-systems` · added 2026-09-11
+
+### Function Health — Senior Content Designer
+
+> You use AI tooling actively. Claude, Cursor, or equivalent — to accelerate ideation, draft generation, and iteration without sacrificing voice quality.
+
+`function-health-senior-content-designer` · added 2026-08-26
+
+### Gap Inc. — Sr. UX Content Designer – Customer Journey Experience Design
+
+> Work with structured content: content models, metadata, taxonomy, CMS constraints, and translation and localization readiness.
+
+`gap-sr-ux-content-designer-customer-journey` · added 2026-10-06
 
 ### Gen Digital — Staff AI Conversation Designer
 
@@ -121,11 +211,29 @@ These are the lines that anchor each entry's cluster and signal assignments, so 
 
 `google-senior-ux-writer-chrome` · added 2026-05-25
 
+### Government Digital Service — Senior Interaction Designer (Conversation)
+
+> help establish conversation design as a discipline at GDS, contributing to a community of practice, sharing knowledge across teams, and helping others develop their skills in this emerging area
+
+`gds-senior-interaction-designer-conversation` · added 2026-08-21
+
 ### HelloFresh — Staff AI Content Designer
 
 > Active usage of AI as a core part of your daily workflow includes synthesizing user insights, accelerating discovery, building rapid interactive prototypes (using tools like Claude Code, Gemini, or Figma AI), and closing the gap between design and implementation.
 
 `hellofresh-staff-ai-content-designer` · added 2026-07-29
+
+### HoneyBook — AI Content Program Manager, Chatbot
+
+> You'll set the direction for how our chatbot resolves member issues, from what it should be able to handle to how content gets structured so it can act on it, and you'll build the Help Center content and Support documentation that equip Support Specialists with clear, dependable guidance across every channel.
+
+`honeybook-ai-content-program-manager-chatbot` · added 2026-09-02
+
+### Huge — Director, AI Content Strategy
+
+> Create AI content pipelines, including frameworks for governance, training data readiness, and human-in-the-loop review.
+
+`huge-director-ai-content-strategy` · added 2026-09-26
 
 ### Insurify — Editor, AI Content Systems
 
@@ -193,17 +301,71 @@ These are the lines that anchor each entry's cluster and signal assignments, so 
 
 `openai-content-designer` · added 2026-05-24
 
+### Personio — Content Designer (d/f/m)
+
+> You will build and maintain reusable content patterns, standards, and self-service tools, using AI where it helps scale their impact, so Product teams can handle everyday content needs independently.
+
+`personio-content-designer` · added 2026-09-30
+
 ### Phase2 — Content Architect
 
 > By architecting content for both human users and machine learning systems, this role ensures clients capture opportunities across traditional search, generative engine optimization (GEO), and AI-powered experiences.
 
 `phase2-content-architect` · added 2026-05-24
 
+### Relay — Senior Content Designer
+
+> Establish the conventions, systems, libraries, style guides, tools and AI skills that Relay relies on to ensure consistency of language as we scale and diversify our product experiences.
+
+`relay-senior-content-designer` · added 2026-08-28
+
+### Robinhood — Senior Content Designer
+
+> Establish the strategic governance and prompt-design frameworks for AI-native trading assistants and LLM-generated market insights, ensuring machine-generated content adheres to strict financial disclosure standards and algorithmic transparency requirements.
+
+`robinhood-senior-content-designer` · added 2026-09-23
+
+### Roche — Content Design & AI Readiness Specialist
+
+> Develop and maintain structured, machine-readable technical content ready for use in generative AI platforms (e.g., RAG architectures).
+
+`roche-content-design-ai-readiness-specialist` · added 2026-09-26
+
+### Salesforce — Experience Design Lead
+
+> The ideal background here is UX writing or content design — someone who's sat on a product team, worked in sprint cycles, and knows how to translate complex product thinking into clear, useful language.
+
+`salesforce-experience-design-lead` · added 2026-08-28
+
 ### Sanna — Content Engineer
 
 > This isn’t a traditional content role. We’re looking for someone who operates at the edge of tech and language – someone who can design systems, build agents, and orchestrate tooling that scales quality.
 
 `sanna-content-engineer` · added 2026-05-24
+
+### Slang AI — Senior Conversation Designer
+
+> Partner with engineers to define prompts and guardrails for LLM integration, and evaluate LLM performance in production.
+
+`slang-ai-senior-conversation-designer` · added 2026-10-02
+
+### Smartly — User Guidance Lead
+
+> Identify and provide the additional context and collateral that AI systems and agents need to understand and use Smartly's products.
+
+`smartly-user-guidance-lead` · added 2026-10-01
+
+### Soda — AI Content Engineer
+
+> One person cannot hand-make all of that. So you'll build the system that can.
+
+`soda-ai-content-engineer` · added 2026-09-17
+
+### Splunk — Content Designer (Remote)
+
+> Define and maintain cross-product terminology, partnering with product management and product marketing to resolve naming conflicts and drive durable decisions.
+
+`splunk-content-designer` · added 2026-09-06
 
 ### Spotify — Annotation Manager — Content Platform
 
@@ -217,17 +379,47 @@ These are the lines that anchor each entry's cluster and signal assignments, so 
 
 `spotify-senior-conversation-designer` · added 2026-05-25
 
+### Teladoc Health — Lead Content Designer
+
+> Collaborate with AI, clinical, legal, and engineering stakeholders to develop prompt frameworks, content guidelines, and quality criteria for LLM-generated responses in regulated healthcare contexts, ensuring accuracy, safety, empathy, and appropriate tone.
+
+`teladoc-health-lead-content-designer` · added 2026-09-09
+
 ### The Ride Platform — AI-Powered Content Systems Specialist
 
 > Establish standards for AI-generated content including prompts, templates, tone, guardrails, and quality thresholds.
 
 `ride-platform-content-systems-specialist` · added 2026-07-13
 
+### Trustly — Adoption and Knowledge Manager, AI Transformation
+
+> Design and own the taxonomy that organizes Trustly's knowledge base end to end, defining what counts as the source of truth for each domain.
+
+`trustly-adoption-knowledge-manager` · added 2026-09-21
+
 ### UKG — Lead Conversational Designer - Agentic Experiences
 
 > Develop and extend ontologies and structured content systems that enable scalable, consistent AI behavior.
 
 `ukg-lead-conversational-designer-agentic-experiences` · added 2026-08-21
+
+### UnitedHealth Group — Principal Conversational AI Designer
+
+> As a Principal Conversational AI Designer, you will lead the design of conversational experiences that help consumers accomplish their goals through UnitedHealth Group's AI-powered products and services.
+
+`uhg-principal-conversational-ai-designer` · added 2026-08-21
+
+### Vinted — Content Design Lead
+
+> You'll shape the direction of the function through standards, tooling, and craft infrastructure that enables a distributed team to do their best work.
+
+`vinted-content-design-lead` · added 2026-08-26
+
+### Vinted — Taxonomist, Supply
+
+> Design, implement, and maintain ontologies and data structures that support our member-facing content.
+
+`vinted-taxonomist-supply` · added 2026-09-06
 
 ### Wealthsimple — Staff Content Designer, Investing
 
