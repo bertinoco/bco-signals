@@ -10,8 +10,9 @@ integrity rules, the voice rules, or the no-"I" rule that govern the rest of
 the repo. Every count in it is recomputed and dated ("as of Oct 2026, 78
 postings") rather than quoted from `findings.md`, whose own figures go stale.
 
-**Status: draft, private.** Committed on a local branch and not pushed. This
-repository is public, so pushing any branch would publish it.
+**Status: draft, public.** Published on the branch `presentation/methodology-talk`
+so it can be edited from any device or session. Not merged to `main`. The
+repository is public, so the deck is visible to anyone, and it is unfinished.
 
 ## Files
 
