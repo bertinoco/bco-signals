@@ -3,7 +3,7 @@
     "title": "BCO Content Skills Tracker",
     "description": "A curated skills tracker for the content design community.",
     "lastUpdated": "2026-10-14",
-    "totalEntries": 77
+    "totalEntries": 78
   },
   "entries": [
     {
@@ -2297,6 +2297,31 @@
       "sourceUrl": null,
       "dateAdded": "2026-10-14",
       "quote": "Create evaluations and guardrails for AI-generated and AI-maintained documentation, investigate failures, and improve the context, tools, prompts, and systems that shape output quality."
+    },
+    {
+      "id": "taxfix-content-engineer",
+      "company": "Taxfix",
+      "title": "Content Engineer (d/f/m)",
+      "domain": "Finance",
+      "engagement": "Full-time",
+      "location": "Berlin, Germany",
+      "remote": "hybrid",
+      "coreFrame": "Sits on the Organic Acquisition team within Country Marketing, distinct from the agency that produces content across Germany, the UK, and Spain; the role is stated not to involve writing blog posts or landing pages, but to build the systems, automations, and workflows that scale content operations across the three markets. Designs and runs CRO and ASO experiments — including multi-armed bandit testing and content personalization across user segments — working with an ASO agency and tooling, and documents results into a shared knowledge base. Automates structured content generation beyond FAQs (HowTo, Article, TaxCalculator, Breadcrumb, and Q&A schema, plus formats for AI answer engines and LLM consumption) and defines reusable templates for comparison pages, how-to guides, tax topic explainers, and calculators, alongside translation-automation pipelines across German, English, and Spanish. Builds workflows with no-code/low-code platforms (n8n, Make) and AI tools (Claude, Langdock, Antigravity), works daily with the company's CMS and SEO stack (Uniform, Ahrefs, Peec.ai, Google Search Console, Google Analytics), manages the handoff between the content agency and internal systems, and is responsible for content quality and consistency across the three markets through automated checks and validation.",
+      "clusters": [
+        "content-systems-design",
+        "ai-tooling",
+        "localization"
+      ],
+      "signals": [
+        "content-marketing-adjacent",
+        "ai-native-expectation",
+        "geo-seo",
+        "structured-data",
+        "enabler-not-bottleneck"
+      ],
+      "sourceUrl": null,
+      "dateAdded": "2026-10-14",
+      "quote": "Instead, you'll be the person who builds the systems, automations, and workflows that make our content operations scale across three markets."
     }
   ],
   "clusters": {

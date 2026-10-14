@@ -77,6 +77,14 @@ row now use this doubled form rather than the single exclusion every earlier
 instance used — worth watching whether it becomes the new default phrasing
 for the device rather than a coincidence of two postings.
 
+**Taxfix**'s Content Engineer is the ninth instance, back to the single-negation
+shape with a concrete elaboration rather than a second named discipline: "This
+is not a traditional content role - you won't be writing blog posts or landing
+pages. We have an excellent agency partner handling content production across
+DE, UK, and ES." Closest in form to Sanna's one-liner, but Taxfix names the
+reason the exclusion holds (an agency owns production) rather than leaving the
+boundary unexplained.
+
 ## A posting that disclaims its own title
 
 Figma's "UX Writer, AI" tells the reader in its second paragraph that the title

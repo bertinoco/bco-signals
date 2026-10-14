@@ -3,7 +3,7 @@
 
 # Quotes
 
-Every stored quote, verbatim from the posting. **76 of 77** entries carry one.
+Every stored quote, verbatim from the posting. **77 of 78** entries carry one.
 
 These are the lines that anchor each entry's cluster and signal assignments, so they are the strongest citable evidence in the dataset. Each is checked against its `jd-source` archive before commit.
 
@@ -384,6 +384,12 @@ These are the lines that anchor each entry's cluster and signal assignments, so 
 > This role sits at the intersection of writing and system design. You'll bring sharp editorial instincts and real writing chops, but you'll spend your time designing how conversations work — not producing UI copy.
 
 `spotify-senior-conversation-designer` · added 2026-05-25
+
+### Taxfix — Content Engineer (d/f/m)
+
+> Instead, you'll be the person who builds the systems, automations, and workflows that make our content operations scale across three markets.
+
+`taxfix-content-engineer` · added 2026-10-14
 
 ### Teladoc Health — Lead Content Designer
 
