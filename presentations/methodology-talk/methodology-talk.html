@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What the Dataset Taught Us — Building BCO Signals</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ===========================================================
+   DESIGN TOKENS — ported from docs/css/styles.css (signals.bertino.co).
+   Same HSL channel triplets, same achromatic light/dark pairing, same
+   Inter / IBM Plex Mono split (Inter for prose, mono for every piece
+   of metadata), same radius and motion scale. Type and spacing are the
+   site's values x2, scaled for a 1920x1080 stage. Everything else is
+   unchanged from the source file. Red (--destructive) is defined for
+   parity and never used: it is reserved for failure states.
+   =========================================================== */
+:root {
+    --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace;
+
+    --font-xs:   22px;
+    --font-sm:   26px;
+    --font-base: 30px;
+    --font-md:   34px;
+    --font-lg:   38px;
+    --font-xl:   56px;
+    --font-3xl:  88px;
+    --font-numeral: 150px;
+
+    --weight-regular:  400;
+    --weight-medium:   500;
+    --weight-semibold: 600;
+
+    --leading-tight:   1.1;
+    --leading-snug:    1.3;
+    --leading-normal:  1.55;
+    --leading-relaxed: 1.7;
+
+    --tracking-tight:  -0.022em;
+    --tracking-snug:   -0.012em;
+    --tracking-label:   0.11em;
+
+    --space-1:  16px;
+    --space-2:  32px;
+    --space-3:  48px;
+    --space-4:  64px;
+    --space-6:  96px;
+
+    --radius-sm: 3px;
+    --radius:    4px;
+
+    --duration-fast: 140ms;
+    --duration-base: 220ms;
+    --duration-flip: 420ms;
+    --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+
+    --max-width: 960px;
+    --edge: 140px;
+
+    /* Fixed brand tokens: the site's hero stays black in both schemes. */
+    --hero-bg: 0 0% 0%;
+    --hero-fg: 0 0% 100%;
+}
+:root {
+    color-scheme: light;
+    --background:           0 0% 100%;
+    --foreground:           0 0% 7.1%;
+    --card:                 0 0% 96.9%;
+    --muted-foreground:     0 0% 43.1%;
+    --secondary-foreground: 0 0% 36.1%;
+    --border:               0 0% 85.1%;
+    --primary:              0 0% 7.1%;
+    --primary-foreground:   0 0% 98%;
+}
+@media (prefers-color-scheme: dark) {
+    :root {
+        color-scheme: dark;
+        --background:           0 0% 5.1%;
+        --foreground:           0 0% 98%;
+        --card:                 0 0% 7.8%;
+        --muted-foreground:     0 0% 54.9%;
+        --secondary-foreground: 0 0% 63.9%;
+        --border:               0 0% 14.9%;
+        --primary:              0 0% 98%;
+        --primary-foreground:   0 0% 5.1%;
+    }
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* ===== FIXED 16:9 STAGE (mandatory base) ===== */
+html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; background: hsl(var(--background)); }
+.deck-viewport { position: fixed; inset: 0; overflow: hidden; background: hsl(var(--background)); }
+.deck-stage { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; overflow: hidden; transform-origin: 0 0; }
+.slide { position: absolute; inset: 0; width: 1920px; height: 1080px; overflow: hidden; display: block; visibility: hidden; opacity: 0; pointer-events: none; }
+.slide.active, .slide.visible { visibility: visible; opacity: 1; pointer-events: auto; z-index: 1; }
+img, video, canvas, svg { max-width: 100%; max-height: 100%; }
+@media print {
+    html, body { width: 1920px; height: auto; overflow: visible; background: #fff; }
+    .deck-viewport { position: static; overflow: visible; }
+    .deck-stage { position: static; width: auto; height: auto; transform: none !important; }
+    .slide { position: relative; display: block !important; visibility: visible !important; opacity: 1 !important; pointer-events: auto !important; width: 1920px; height: 1080px; break-after: page; page-break-after: always; }
+    .slide:last-child { break-after: auto; page-break-after: auto; }
+    .deck-progress, .notes-panel, .edit-hotzone, .edit-toggle { display: none !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.2s !important; }
+}
+
+/* ===== CANVAS ===== */
+.slide { background: hsl(var(--background)); color: hsl(var(--foreground)); font-family: var(--font-sans); }
+.slide--hero { background: hsl(var(--hero-bg)); color: hsl(var(--hero-fg)); }
+
+.pagenum {
+    position: absolute; right: var(--edge); bottom: 56px;
+    font-family: var(--font-mono); font-size: var(--font-xs);
+    font-variant-numeric: tabular-nums; color: hsl(var(--muted-foreground));
+}
+.slide--hero .pagenum { color: hsl(var(--hero-fg) / 0.5); }
+
+.frame {
+    position: absolute; top: 0; left: var(--edge); width: var(--max-width); bottom: 0;
+    display: flex; flex-direction: column; justify-content: center;
+}
+
+/* Reserved negative space for a visual. Invisible by default so the deck is
+   clean to share; press V to outline it while placing images. */
+.visual-slot {
+    position: absolute; top: 190px; bottom: 190px;
+    left: calc(var(--edge) + var(--max-width) + 70px); right: var(--edge);
+    border: 1.5px dashed transparent; border-radius: var(--radius);
+    display: flex; align-items: center; justify-content: center;
+}
+.visual-slot-label { font-family: var(--font-mono); font-size: var(--font-xs); letter-spacing: var(--tracking-label); text-transform: uppercase; color: transparent; }
+body.show-slots .visual-slot { border-color: hsl(var(--border)); }
+body.show-slots .visual-slot-label { color: hsl(var(--muted-foreground)); }
+
+/* ===== TEXT ROLES (mapped to existing site components) ===== */
+.kicker {
+    font-family: var(--font-mono); font-weight: var(--weight-medium); font-size: var(--font-sm);
+    text-transform: uppercase; letter-spacing: var(--tracking-label);
+    color: hsl(var(--muted-foreground)); margin-bottom: var(--space-3);
+}
+.slide--hero .kicker { color: hsl(var(--hero-fg) / 0.6); }
+
+.headline {
+    font-family: var(--font-sans); font-weight: var(--weight-semibold); font-size: var(--font-3xl);
+    line-height: var(--leading-tight); letter-spacing: var(--tracking-tight); text-wrap: balance;
+    color: hsl(var(--foreground));
+}
+.headline.is-md { font-size: var(--font-xl); }
+.slide--hero .headline { color: hsl(var(--hero-fg)); }
+
+.body-lede {
+    font-family: var(--font-sans); font-size: var(--font-base); line-height: var(--leading-relaxed);
+    color: hsl(var(--secondary-foreground)); margin-top: var(--space-3);
+}
+.body-lede.is-mono { font-family: var(--font-mono); font-size: var(--font-lg); color: hsl(var(--foreground)); }
+
+.aside { margin-top: var(--space-3); padding-left: var(--space-2); border-left: 2px solid hsl(var(--foreground)); }
+.aside-label {
+    display: block; font-family: var(--font-mono); font-weight: var(--weight-medium); font-size: var(--font-xs);
+    text-transform: uppercase; letter-spacing: var(--tracking-label); color: hsl(var(--muted-foreground)); margin-bottom: 12px;
+}
+.aside-text { font-size: var(--font-sm); line-height: var(--leading-relaxed); color: hsl(var(--secondary-foreground)); }
+
+/* Big numeral — same role as the site's .flip-card-stat: mono, medium weight, secondary-foreground */
+.numeral-row { display: flex; align-items: center; gap: var(--space-3); margin-top: var(--space-3); }
+.numeral {
+    font-family: var(--font-mono); font-weight: var(--weight-medium); font-size: var(--font-numeral);
+    line-height: var(--leading-tight); color: hsl(var(--secondary-foreground)); font-variant-numeric: tabular-nums;
+}
+.numeral-caption { font-size: var(--font-sm); line-height: var(--leading-relaxed); color: hsl(var(--secondary-foreground)); max-width: 640px; }
+
+/* Pull quote — the site's blockquote pattern: left rule, curly marks via pseudo-elements, never italic */
+.quote-item + .quote-item { margin-top: var(--space-2); }
+blockquote.pull-quote {
+    border-left: 2px solid hsl(var(--foreground)); padding-left: var(--space-2);
+    font-style: normal; font-weight: var(--weight-regular); font-size: var(--font-lg);
+    line-height: var(--leading-relaxed); color: hsl(var(--secondary-foreground));
+}
+blockquote.pull-quote.is-small { font-size: var(--font-md); line-height: var(--leading-normal); }
+blockquote.pull-quote::before { content: '\201C'; }
+blockquote.pull-quote::after  { content: '\201D'; }
+.pull-attr { margin: 12px 0 0 calc(var(--space-2) + 2px); font-family: var(--font-mono); font-size: var(--font-xs); color: hsl(var(--muted-foreground)); }
+.quote-item + .quote-item .pull-attr { margin-top: 10px; }
+.headline + .quote-item, .headline + .body-lede { margin-top: var(--space-3); }
+
+/* Contrast pair — same surface as .cluster-card */
+.contrast-row { display: flex; gap: var(--space-2); margin-top: var(--space-3); }
+.contrast-col { flex: 1; background: hsl(var(--card)); border: 1px solid hsl(var(--border)); border-radius: var(--radius); padding: var(--space-3) var(--space-2); }
+.contrast-label { font-family: var(--font-mono); font-weight: var(--weight-medium); font-size: var(--font-xs); text-transform: uppercase; letter-spacing: var(--tracking-label); color: hsl(var(--muted-foreground)); }
+.contrast-value { font-weight: var(--weight-semibold); font-size: var(--font-md); line-height: var(--leading-snug); letter-spacing: var(--tracking-snug); color: hsl(var(--foreground)); margin-top: var(--space-1); }
+.contrast-note { font-size: var(--font-sm); line-height: var(--leading-normal); color: hsl(var(--secondary-foreground)); margin-top: var(--space-1); }
+
+/* Placeholders stay visibly provisional */
+.is-placeholder { color: hsl(var(--muted-foreground)); }
+
+/* Motion — the site's own duration and easing */
+.reveal { opacity: 0; transform: translateY(14px); transition: opacity var(--duration-flip) var(--ease-out), transform var(--duration-flip) var(--ease-out); }
+.slide.active .reveal { opacity: 1; transform: translateY(0); }
+.reveal:nth-child(1) { transition-delay: 0.04s; }
+.reveal:nth-child(2) { transition-delay: 0.14s; }
+.reveal:nth-child(3) { transition-delay: 0.24s; }
+.reveal:nth-child(4) { transition-delay: 0.34s; }
+.reveal:nth-child(5) { transition-delay: 0.44s; }
+
+/* ===== Chrome outside the stage ===== */
+.deck-progress { position: fixed; left: 0; bottom: 0; height: 3px; background: hsl(var(--foreground) / 0.35); width: 0; transition: width var(--duration-base) var(--ease-out); z-index: 1000; }
+.notes-panel {
+    position: fixed; left: 0; right: 0; bottom: 0; max-height: 34vh; overflow-y: auto; z-index: 1001;
+    background: hsl(var(--card)); border-top: 1px solid hsl(var(--border)); color: hsl(var(--secondary-foreground));
+    font-family: var(--font-sans); font-size: 15px; line-height: 1.55; padding: 18px 28px; display: none;
+}
+.notes-panel.open { display: block; }
+.notes-panel b { font-family: var(--font-mono); font-weight: 500; font-size: 12px; letter-spacing: .11em; text-transform: uppercase; color: hsl(var(--muted-foreground)); display: block; margin-bottom: 6px; }
+
+/* Inline editing — reuses the site's primary / primary-foreground inversion pair */
+.edit-hotzone { position: fixed; top: 0; left: 0; width: 80px; height: 80px; z-index: 10000; cursor: pointer; }
+.edit-toggle { position: fixed; top: 18px; left: 18px; z-index: 10001; width: 40px; height: 40px; border: none; border-radius: var(--radius); background: hsl(var(--primary)); color: hsl(var(--primary-foreground)); font-size: 18px; cursor: pointer; opacity: 0; pointer-events: none; transition: opacity var(--duration-base) ease; }
+.edit-toggle.show, .edit-toggle.active { opacity: 1; pointer-events: auto; }
+[contenteditable="true"] { outline: 1px dashed hsl(var(--border)); }
+</style>
+</head>
+<body>
+<div class="deck-viewport">
+<main class="deck-stage" id="deckStage">
+
+<section class="slide" data-index="0"><div class="frame"><div class="kicker reveal">Cold open</div><h1 class="headline is-placeholder reveal">[Why I started counting job postings]</h1><p class="body-lede is-placeholder reveal">[Your reason for building the dataset, in your words. One or two sentences.]</p></div><div class="visual-slot"><span class="visual-slot-label">+ Visual</span></div><span class="pagenum"></span><div class="notes" hidden>PLACEHOLDER. This is your story, not something to draft for you. Replace the headline and body, or turn it into a single quote slide.</div></section>
+
+<section class="slide" data-index="1"><div class="frame"><div class="kicker reveal">The ground rules</div><h1 class="headline reveal">Every finding keeps two things apart.</h1><div class="contrast-row reveal">
+<div class="contrast-col"><span class="contrast-label">What the data shows</span><p class="contrast-value">You can defend it by linking to a posting.</p></div>
+<div class="contrast-col"><span class="contrast-label">What I think it means</span><p class="contrast-value">A byline opinion, labeled as one.</p></div>
+</div><p class="body-lede reveal">And a finding is never evidence for a cluster or signal assignment. Assignments come from posting text alone.</p></div><div class="visual-slot"><span class="visual-slot-label">+ Visual</span></div><span class="pagenum"></span><div class="notes" hidden>This is the rule that makes everything after it checkable. Source: findings.md preamble. Say it plainly, then point at it every time a slide is labeled “My take.”</div></section>
+
+<section class="slide slide--hero" data-index="2"><div class="frame"><div class="kicker reveal">Section 02</div><h1 class="headline reveal">The process catching itself</h1></div><span class="pagenum"></span><div class="notes" hidden></div></section>
+
+<section class="slide" data-index="3"><div class="frame"><div class="kicker reveal">The correction</div><h1 class="headline reveal">I claimed two instances. There was one.</h1><p class="body-lede reveal">Notion and Spotify were my two examples of content built for machine consumption. Checked against the entries, Spotify’s Annotation Manager is ML training data and its Conversation Designer is model behavior. Neither is retrieval. What remained was Notion alone.</p><div class="aside reveal"><span class="aside-label">What I did</span><p class="aside-text">Corrected it in place and recorded it as a correction, not a quiet fix.</p></div></div><div class="visual-slot"><span class="visual-slot-label">+ Visual</span></div><span class="pagenum"></span><div class="notes" hidden>The point of this slide is that the process catches its own claims. Keep it short and unembarrassed.</div></section>
+
+<section class="slide" data-index="4"><div class="frame"><div class="kicker reveal">Then the data answered</div><h1 class="headline is-md reveal">Two real instances arrived on their own.</h1><div class="quote-item reveal"><blockquote class="pull-quote is-small">…for real-time access by AI agents and content generation systems.</blockquote><div class="pull-attr">Meta, AI Content Strategy Lead</div></div>
+<div class="quote-item reveal"><blockquote class="pull-quote is-small">content knowledge assets that AI can call on and reuse</blockquote><div class="pull-attr">Alibaba, AI Content Strategist</div></div></div><div class="visual-slot"><span class="visual-slot-label">+ Visual</span></div><span class="pagenum"></span><div class="notes" hidden>Confirms the corrected claim rather than the wrong one. Verify the Alibaba wording against the stored quote before presenting.</div></section>
+
+<section class="slide" data-index="5"><div class="frame"><div class="kicker reveal">The near-miss</div><h1 class="headline is-md reveal">Reads like the thing we track. Excluded.</h1><div class="quote-item reveal"><blockquote class="pull-quote">Agents are only as good as the knowledge they can reach.</blockquote><div class="pull-attr">Redpine, Senior Knowledge Graph Engineer</div></div><p class="body-lede reveal">It classifies real-world entities (drugs, trials, companies, filings) for machine reasoning. Not content for navigation. A trigger was written down for what would change the call.</p></div><div class="visual-slot"><span class="visual-slot-label">+ Visual</span></div><span class="pagenum"></span><div class="notes" hidden>Redpine is dense, specific, and well argued, which is exactly why it is a good test. Terminology: ontology here means entity types and relations for real-world facts, not the taxonomy cluster.</div></section>
+
+<section class="slide" data-index="6"><div class="frame"><div class="kicker reveal">The trigger, tested</div><h1 class="headline is-md reveal">Ontology work paired with a content deliverable.</h1><div class="quote-item reveal"><blockquote class="pull-quote">Develop and extend ontologies and structured content systems that enable scalable, consistent AI behavior.</blockquote><div class="pull-attr">UKG</div></div><p class="body-lede reveal">The pairing, in the same responsibility, grounds the assignment. It was withheld from Redpine.</p></div><div class="visual-slot"><span class="visual-slot-label">+ Visual</span></div><span class="pagenum"></span><div class="notes" hidden>This is the trigger from the Redpine exclusion resolving months later. The boundary holds under a real test, not just an assertion.</div></section>
+
+<section class="slide" data-index="7"><div class="frame"><div class="kicker reveal">A second test</div><h1 class="headline reveal">Same boundary, different industry.</h1><p class="body-lede reveal">Schneider Electric’s ontology lead builds ontologies for “products, systems, devices, points, relationships, behaviors, and operational concepts.” Real-world things, not content. Two unrelated domains is stronger evidence than repetition inside one.</p></div><div class="visual-slot"><span class="visual-slot-label">+ Visual</span></div><span class="pagenum"></span><div class="notes" hidden>An industrial conglomerate versus an early-stage AI startup. The backcheck treats cross-domain recurrence as stronger than same-domain repetition.</div></section>
+
+<section class="slide" data-index="8"><div class="frame"><div class="kicker reveal">The closest call</div><h1 class="headline is-md reveal">Denser writing language than some entries we included. Excluded.</h1><div class="quote-item reveal"><blockquote class="pull-quote">Writing as a craft. You treat language as load-bearing. You catch the sentence that will be misread before it ships.</blockquote><div class="pull-attr">Basis, Intelligence Architect</div></div><p class="body-lede reveal">The posting itself names seven co-equal candidate backgrounds, among them engineers, philosophers, lawyers, accountants, editors, and academics.</p></div><div class="visual-slot"><span class="visual-slot-label">+ Visual</span></div><span class="pagenum"></span><div class="notes" hidden>Verify the list of seven against jd-source/basis before presenting. The reason is new: the posting’s own theory of who succeeds denies that any single discipline defines the role.</div></section>
+
+<section class="slide" data-index="9"><div class="frame"><div class="kicker reveal">A title match, the wrong discipline</div><h1 class="headline reveal">Content Designer, at a game studio.</h1><p class="body-lede reveal">Scopely’s posting lists “content design, game design, narrative design, game writing, creative development” as interchangeable. None of its ten responsibilities mapped to any cluster.</p><div class="aside reveal"><span class="aside-label">Compare</span><p class="aside-text">Roblox’s Content Designer was also excluded, but it was genuine product content design that only failed the signal test. Scopely never reaches that question.</p></div></div><div class="visual-slot"><span class="visual-slot-label">+ Visual</span></div><span class="pagenum"></span><div class="notes" hidden>Same title, different discipline underneath. Quote on the slide is a fragment of the qualifications line; full line is in the CLAUDE.md terminology section.</div></section>
+
+<section class="slide" data-index="10"><div class="frame"><div class="kicker reveal">Excluding without discarding</div><h1 class="headline reveal">Excluded does not mean irrelevant.</h1><p class="body-lede reveal">DeepMind’s Senior Manager role was excluded because management dominates its responsibilities. It still held responsibilities that ground cleanly.</p><div class="aside reveal"><span class="aside-label">The rule</span><p class="aside-text">An exclusion record names exactly which clusters and signals would have applied, with the grounding quotes. It never goes in the dataset, but the archive carries the evidence.</p></div></div><div class="visual-slot"><span class="visual-slot-label">+ Visual</span></div><span class="pagenum"></span><div class="notes" hidden>That record later supplied an existence-only instance for the judgment-and-taste finding (slides 24 to 27).</div></section>
+
+<section class="slide" data-index="11"><div class="frame"><div class="kicker reveal">Testing the safeguard</div><h1 class="headline reveal">A longer word list wouldn’t have helped.</h1><p class="body-lede reveal">The pre-check scans for seven words: content, writing, language, copy, tone, voice, terminology. Notion’s Model Behavior Engineer scored two hits, and both were idioms: “Be the voice of quality in the room” and “help write the playbook.”</p><div class="aside reveal"><span class="aside-label">The actual safeguard</span><p class="aside-text">Read each hit in context. Widen the list only when a real miss appears. None has.</p></div></div><div class="visual-slot"><span class="visual-slot-label">+ Visual</span></div><span class="pagenum"></span><div class="notes" hidden>A stemmed or wider list would have logged the same false positive twice.</div></section>
+
+<section class="slide slide--hero" data-index="12"><div class="frame"><div class="kicker reveal">Section 03</div><h1 class="headline reveal">What messy data looks like</h1></div><span class="pagenum"></span><div class="notes" hidden></div></section>
+
+<section class="slide" data-index="13"><div class="frame"><div class="kicker reveal">Titles lie about identity</div><h1 class="headline reveal">Same title, two different postings.</h1><p class="body-lede reveal">Apple posted two requisitions titled “UX Writer, Systems,” with different req IDs. Anything keyed on title alone eventually attaches the wrong text to an entry.</p><div class="aside reveal"><span class="aside-label">So</span><p class="aside-text">Every entry stores a reqId when the posting states one.</p></div></div><div class="visual-slot"><span class="visual-slot-label">+ Visual</span></div><span class="pagenum"></span><div class="notes" hidden></div></section>
+
+<section class="slide" data-index="14"><div class="frame"><div class="kicker reveal">A quote needs to be role-specific</div><h1 class="headline is-md reveal">Boilerplate isn’t evidence.</h1><div class="quote-item reveal"><blockquote class="pull-quote">As a UX writer, you are an advocate for Google design…</blockquote><div class="pull-attr">Google, Search, Chrome, and YouTube postings alike</div></div><p class="body-lede reveal">Only the middle paragraph differs. A quote lifted from the shared section says nothing about the role. DeepMind shares none of it.</p></div><div class="visual-slot"><span class="visual-slot-label">+ Visual</span></div><span class="pagenum"></span><div class="notes" hidden></div></section>
+
+<section class="slide" data-index="15"><div class="frame"><div class="kicker reveal">A quote can fail on legibility</div><h1 class="headline is-md reveal">An acronym nobody defined.</h1><div class="quote-item reveal"><blockquote class="pull-quote">You’re the design DRI, in Figma or with agentic tools, through to shipped.</blockquote><div class="pull-attr">Bolt.new, first choice, rejected</div></div><div class="aside reveal"><span class="aside-label">The fix</span><p class="aside-text">DRI is never defined in the posting. The same paragraph family said it without jargon: “You can take a content-led feature from problem to shipped without a product designer.”</p></div></div><div class="visual-slot"><span class="visual-slot-label">+ Visual</span></div><span class="pagenum"></span><div class="notes" hidden>Rule: read a candidate quote as a first-time visitor would. Documented in CLAUDE.md after this miss.</div></section>
+
+<section class="slide" data-index="16"><div class="frame"><div class="kicker reveal">Invisible errors</div><h1 class="headline reveal">Some mistakes don’t show on screen.</h1><p class="body-lede reveal">Six stored quotes needed one character fixed: five apostrophes and one hyphen. DeepMind’s scraped text carries icon-font names where the page showed icons: “corporate_fare,” “place,” “info_outline.”</p><div class="aside reveal"><span class="aside-label">Left in on purpose</span><p class="aside-text">The archive keeps the text verbatim. Its value is that it’s unedited.</p></div></div><div class="visual-slot"><span class="visual-slot-label">+ Visual</span></div><span class="pagenum"></span><div class="notes" hidden></div></section>
+
+<section class="slide" data-index="17"><div class="frame"><div class="kicker reveal">Building the schema live</div><h1 class="headline reveal">Two languages, two new fields.</h1><p class="body-lede reveal">Coupang’s posting arrived in Korean. Alibaba’s arrived in Chinese. Two fields, quoteTranslatedFrom and titleTranslatedFrom, were built when the data demanded them, not before.</p><div class="aside reveal"><span class="aside-label">On the site</span><p class="aside-text">Both render as a visible caption, so a reader never mistakes a translation for verbatim source text.</p></div></div><div class="visual-slot"><span class="visual-slot-label">+ Visual</span></div><span class="pagenum"></span><div class="notes" hidden></div></section>
+
+<section class="slide" data-index="18"><div class="frame"><div class="kicker reveal">Relevant, and still held out</div><h1 class="headline is-md reveal">A genre problem, not a content problem.</h1><div class="quote-item reveal"><blockquote class="pull-quote">We’re building a new Content Foundations team… we’re hiring a Design and Language Standards Lead.</blockquote><div class="pull-attr">An Adobe content design leader, on her own LinkedIn feed</div></div><p class="body-lede reveal">No requisition, no title header, no applicant system. The audit assumes an institutional posting to audit.</p></div><div class="visual-slot"><span class="visual-slot-label">+ Visual</span></div><span class="pagenum"></span><div class="notes" hidden></div></section>
+
+<section class="slide slide--hero" data-index="19"><div class="frame"><div class="kicker reveal">Section 04</div><h1 class="headline reveal">What the discipline produced</h1></div><span class="pagenum"></span><div class="notes" hidden></div></section>
+
+<section class="slide" data-index="20"><div class="frame"><div class="kicker reveal">Finding</div><h1 class="headline is-md reveal">Content standards are being pulled into central functions.</h1><div class="numeral-row reveal"><div class="numeral">19</div><p class="numeral-caption">of 78 postings (24%), as of Oct 2026, on a close read. The raw tag count is 22.</p></div><div class="quote-item reveal"><blockquote class="pull-quote is-small">…serve as Netflix’s centralized authority for scaling language standards.</blockquote><div class="pull-attr">Netflix, from the posting</div></div></div><div class="visual-slot"><span class="visual-slot-label">+ Visual</span></div><span class="pagenum"></span><div class="notes" hidden>MY TAKE: content design is being reconstituted as infrastructure, a small central group owning primitives and product teams consuming them. Not the only model: Wealthsimple is hiring for “You’ll be embedded on product teams.” A fork, not a replacement. GDS and Vinted carry the tag but don’t hold on a close read. This number moved from 8 of 29 to 19 of 78 as the corpus grew, which is why every count carries a date. Also verify Robinhood (tagged, not supported by source text). Ally: “sits above channels and formats” is from the posting text, not the stored quote.</div></section>
+
+<section class="slide" data-index="21"><div class="frame"><div class="kicker reveal">Finding</div><h1 class="headline is-md reveal">The work moved from producing content to producing systems.</h1><div class="numeral-row reveal"><div class="numeral">72</div><p class="numeral-caption">of 78 postings (92%), as of Oct 2026. A direct cluster count.</p></div><div class="quote-item reveal"><blockquote class="pull-quote is-small">Not by writing content yourself, but by building AI-powered systems.</blockquote><div class="pull-attr">CoLab, from the dataset</div></div></div><div class="visual-slot"><span class="visual-slot-label">+ Visual</span></div><span class="pagenum"></span><div class="notes" hidden>MY TAKE: the unit of work shifted from the artifact to the mechanism that produces artifacts. Ally: “focused less on creating content and more on making content work.”</div></section>
+
+<section class="slide" data-index="22"><div class="frame"><div class="kicker reveal">Finding</div><h1 class="headline is-md reveal">AI fluency is a baseline, not a differentiator.</h1><div class="numeral-row reveal"><div class="numeral">52</div><p class="numeral-caption">of 78 postings (67%), as of Oct 2026, expect the candidate to already work with AI tools.</p></div><div class="quote-item reveal"><blockquote class="pull-quote is-small">Claude Code, Gemini, or Figma AI</blockquote><div class="pull-attr">HelloFresh, naming the tools</div></div></div><div class="visual-slot"><span class="visual-slot-label">+ Visual</span></div><span class="pagenum"></span><div class="notes" hidden>MY TAKE: whether a role touches AI does not track whether the employer builds AI. What predicts the job is whether the content function has a systems mandate. Wealthsimple asks for “shipping your own code changes.” Verify the HelloFresh fragment against the stored quote.</div></section>
+
+<section class="slide" data-index="23"><div class="frame"><div class="kicker reveal">Finding, in full</div><h1 class="headline is-md reveal">Judgment and taste are what’s asked for once AI does the drafting.</h1><div class="numeral-row reveal"><div class="numeral">8</div><p class="numeral-caption">included postings across five domains: SaaS, Agency, Big Tech, Finance, Retail.</p></div><p class="body-lede reveal">Each pairs judgment or taste directly against AI-generated output. Not a soft-skill throwaway.</p></div><div class="visual-slot"><span class="visual-slot-label">+ Visual</span></div><span class="pagenum"></span><div class="notes" hidden>What the data shows, part 1. CoLab, Docebo, Fin, Soda (SaaS); Intercept (Agency); Meta (Big Tech); Sanna (Finance); Gap (Retail, the first in that domain). SaaS is the only domain repeated.</div></section>
+
+<section class="slide" data-index="24"><div class="frame"><div class="kicker reveal">What the data shows</div><h1 class="headline is-md reveal">Two of the eight, in their own words.</h1><div class="quote-item reveal"><blockquote class="pull-quote is-small">you’ll act as Editor in Chief: orchestrating AI agents and applying editorial judgment across outputs.</blockquote><div class="pull-attr">CoLab</div></div>
+<div class="quote-item reveal"><blockquote class="pull-quote is-small">Taste is the bar. Anti-slop is the whole point. An engine that ships slop faster has negative value.</blockquote><div class="pull-attr">Soda</div></div></div><div class="visual-slot"><span class="visual-slot-label">+ Visual</span></div><span class="pagenum"></span><div class="notes" hidden>Others in the count: Intercept (“Strong editorial judgment and comfort challenging weak AI-generated outputs”), Sanna (“We value judgment, taste, and learning ability over years of experience or specific tools”), Docebo, Fin, Meta. Soda quote: check whether to add “and most of them do.”</div></section>
+
+<section class="slide" data-index="25"><div class="frame"><div class="kicker reveal">What the data shows</div><h1 class="headline is-md reveal">And the first one in retail.</h1><div class="quote-item reveal"><blockquote class="pull-quote">AI will write plausible copy at volume all day, which makes judgment about what is worth saying the scarce skill rather than the throughput.</blockquote><div class="pull-attr">Gap Inc.</div></div><div class="aside reveal"><span class="aside-label">Checked and left out</span><p class="aside-text">Wealthsimple’s one “judgment” hit is about AI screening job applicants, not the role’s own work.</p></div></div><div class="visual-slot"><span class="visual-slot-label">+ Visual</span></div><span class="pagenum"></span><div class="notes" hidden>A ninth instance sits in an excluded record (DeepMind: “high taste, creativity… high judgement in order to define what good quality looks like”), existence evidence only. Gap is the first instance in the Retail domain.</div></section>
+
+<section class="slide" data-index="26"><div class="frame"><div class="kicker reveal">My take</div><h1 class="headline reveal">What’s left for the human once fluency is assumed.</h1><p class="body-lede reveal">This is a sharper version of the AI-fluency finding. That one says AI use is the baseline. This one says the postings draw a line between what the tool produces and what a person is still accountable for deciding is good.</p><div class="aside reveal"><span class="aside-label">Caveat</span><p class="aside-text">Five domains with no repeated employer is real spread, though SaaS accounts for four of the eight. This counts postings that use certain words. It doesn’t measure how much judgment the work needs.</p></div></div><div class="visual-slot"><span class="visual-slot-label">+ Visual</span></div><span class="pagenum"></span><div class="notes" hidden>Label this slide as opinion, per the ground rules.</div></section>
+
+<section class="slide" data-index="27"><div class="frame"><div class="kicker reveal">Finding, in full</div><h1 class="headline is-md is-placeholder reveal">Evaluation infrastructure is generative work, built as software.</h1><p class="body-lede is-placeholder reveal">Generative content work authors a generator’s constraints and the criteria for judging what it emits. An eval harness is that criteria, operationalized as software rather than a hand-run rubric.</p><div class="aside reveal"><span class="aside-label">Placeholder: decide the count</span><p class="aside-text">findings.md names four companies in three domains (Spotify, Anthropic, Soda, Glean). The signal is now on six entries in five domains. Etsy is verified; Huge’s grounding is not.</p></div></div><div class="visual-slot"><span class="visual-slot-label">+ Visual</span></div><span class="pagenum"></span><div class="notes" hidden>What the data shows, part 1. Replace the placeholder aside with the chosen count before presenting.</div></section>
+
+<section class="slide" data-index="28"><div class="frame"><div class="kicker reveal">What the data shows</div><h1 class="headline is-md reveal">The work, in the postings’ words.</h1><div class="quote-item reveal"><blockquote class="pull-quote is-small">Build evaluation frameworks to measure and improve conversation quality, accuracy, task completion, and user impact.</blockquote><div class="pull-attr">Spotify</div></div>
+<div class="quote-item reveal"><blockquote class="pull-quote is-small">Serious prompt engineering: multi-step LLM pipelines with structured outputs and evals, not chatting with a model.</blockquote><div class="pull-attr">Soda</div></div></div><div class="visual-slot"><span class="visual-slot-label">+ Visual</span></div><span class="pagenum"></span><div class="notes" hidden>Anthropic is built around writing and revising the prompts behind Claude’s product surfaces, then building the graders and harness that prove a prompt fix holds across model releases. That is a paraphrase from the finding; pull the verbatim line from the posting.</div></section>
+
+<section class="slide" data-index="29"><div class="frame"><div class="kicker reveal">What the data shows</div><h1 class="headline is-md reveal">And what excluded the near-misses.</h1><div class="quote-item reveal"><blockquote class="pull-quote">Create evaluations and guardrails for AI-generated and AI-maintained documentation, investigate failures, and improve the context, tools, prompts, and systems that shape output quality.</blockquote><div class="pull-attr">Glean</div></div><div class="aside reveal"><span class="aside-label">Audit work</span><p class="aside-text">Notion and Microsoft do real eval work and stay excluded: no design org, no content or design title, a clean literal-text check. Anthropic clears all three bars.</p></div></div><div class="visual-slot"><span class="visual-slot-label">+ Visual</span></div><span class="pagenum"></span><div class="notes" hidden>This calls back to the Section 2 near-misses: not a loosening of eligibility.</div></section>
+
+<section class="slide" data-index="30"><div class="frame"><div class="kicker reveal">My take</div><h1 class="headline reveal">Hiring filters built on writing craft will undercount this.</h1><p class="body-lede reveal">The most technical generative-side postings gate on engineering skill, not a writing portfolio, because validating language at scale is an engineering problem even when the thing validated is language.</p><div class="aside reveal"><span class="aside-label">Caveat</span><p class="aside-text">Expect this signal to stay thin for a while. It names a real pattern, not yet a common one.</p></div></div><div class="visual-slot"><span class="visual-slot-label">+ Visual</span></div><span class="pagenum"></span><div class="notes" hidden>This finding is the dataset’s blind side showing up concretely. It sets up slide 40.</div></section>
+
+<section class="slide" data-index="31"><div class="frame"><div class="kicker reveal">Finding</div><h1 class="headline reveal">Nobody agrees what this work is worth.</h1><p class="body-lede reveal">Stated ranges run from $62,120 to $710,000. 51 of 78 postings state one, as of Oct 2026.</p><div class="aside reveal"><span class="aside-label">My take</span><p class="aside-text">An order of magnitude between roles with adjacent titles is not a seniority gap. It’s an absence of consensus about what the discipline is.</p></div></div><div class="visual-slot"><span class="visual-slot-label">+ Visual</span></div><span class="pagenum"></span><div class="notes" hidden>Insurify ($65,000 USD) and Netflix ($710,000) were the original endpoints and both carried “Systems” in the title. Don’t put comp on a slide as a comparison across currencies.</div></section>
+
+<section class="slide" data-index="32"><div class="frame"><div class="kicker reveal">Finding</div><h1 class="headline reveal">Titles are failing in both directions at once.</h1><div class="contrast-row reveal">
+<div class="contrast-col"><span class="contrast-label">Claims more than the job</span><p class="contrast-value">Insurify, Intercept</p><p class="contrast-note">“Editor, AI Content Systems.” “Content Engineer.”</p></div>
+<div class="contrast-col"><span class="contrast-label">Claims less than the job</span><p class="contrast-value">Wellhub, Figma, Splunk</p><p class="contrast-note">“UX Writer, AI.” “Content Designer.”</p></div>
+</div></div><div class="visual-slot"><span class="visual-slot-label">+ Visual</span></div><span class="pagenum"></span><div class="notes" hidden>title-dilution has two holders; title-responsibility-gap has three. Six employers have now appended a disclaimer to their own title.</div></section>
+
+<section class="slide" data-index="33"><div class="frame"><div class="kicker reveal">The posting disclaims its own title</div><h1 class="headline is-md reveal">Employers compensate in the paragraph under the title.</h1><div class="quote-item reveal"><blockquote class="pull-quote">While the title of this role is “UX Writer,” you might think of yourself as a content engineer as much as a writer.</blockquote><div class="pull-attr">Figma, from the dataset</div></div><div class="aside reveal"><span class="aside-label">An excluded case</span><p class="aside-text">TikTok’s “Content Design Manager, AI” has AI in the title and nowhere else in the posting. Existence evidence only.</p></div></div><div class="visual-slot"><span class="visual-slot-label">+ Visual</span></div><span class="pagenum"></span><div class="notes" hidden>MY TAKE: titles have stopped reliably carrying scope, and employers compensate in the two places that show up in a posting: the number, and the paragraph under the title.</div></section>
+
+<section class="slide" data-index="34"><div class="frame"><div class="kicker reveal">Finding</div><h1 class="headline is-md reveal">Content roles are appearing outside design orgs.</h1><div class="numeral-row reveal"><div class="numeral">57</div><p class="numeral-caption">of 78 postings state where the role sits, as of Oct 2026, and placements don’t cluster in design.</p></div><p class="body-lede reveal">HelloFresh: Software Engineering. Ally: Marketing. Notion: Customer Experience. Trustly: Tech.</p></div><div class="visual-slot"><span class="visual-slot-label">+ Visual</span></div><span class="pagenum"></span><div class="notes" hidden>MY TAKE: the discipline is being claimed by several functions at once and none has won. The conversation about content design’s future assumes it stays in design. The postings don’t. Five more postings record that they don’t state a placement; 16 are null.</div></section>
+
+<section class="slide slide--hero" data-index="35"><div class="frame"><div class="kicker reveal">Section 05</div><h1 class="headline reveal">What this can’t tell you</h1></div><span class="pagenum"></span><div class="notes" hidden></div></section>
+
+<section class="slide" data-index="36"><div class="frame"><div class="kicker reveal">Not a market sample</div><h1 class="headline is-md reveal">This shows one slice of the market.</h1><div class="quote-item reveal"><blockquote class="pull-quote">Entries are admitted only if they pass a signal test… It shows what ambitious employers are asking for. It says nothing about the median content design job.</blockquote><div class="pull-attr">findings.md</div></div></div><div class="visual-slot"><span class="visual-slot-label">+ Visual</span></div><span class="pagenum"></span><div class="notes" hidden>Near-verbatim from the findings file’s own admissions. Confirm the exact wording against the current file before presenting.</div></section>
+
+<section class="slide" data-index="37"><div class="frame"><div class="kicker reveal">Invisible change</div><h1 class="headline reveal">Role change without a hiring event leaves no trace.</h1><p class="body-lede reveal">Work that arrives by internal pivot produces no posting. The clearest example on file is practitioners already doing systems and model-design work inside existing orgs, with no new requisition.</p></div><div class="visual-slot"><span class="visual-slot-label">+ Visual</span></div><span class="pagenum"></span><div class="notes" hidden></div></section>
+
+<section class="slide" data-index="38"><div class="frame"><div class="kicker reveal">Existence, not rate</div><h1 class="headline reveal">Excluded records prove a pattern exists. Not how often.</h1><p class="body-lede reveal">YouTube and Nscale are AI companies posting content roles with no AI in the work. TikTok has AI in a title and nowhere else. DeepMind is a ninth judgment-and-taste instance. None of them supports “X% of postings do this.”</p></div><div class="visual-slot"><span class="visual-slot-label">+ Visual</span></div><span class="pagenum"></span><div class="notes" hidden></div></section>
+
+<section class="slide" data-index="39"><div class="frame"><div class="kicker reveal">The known blind side</div><h1 class="headline is-md reveal">The generative side is harder to catch.</h1><div class="quote-item reveal"><blockquote class="pull-quote">The corpus contains almost no postings that ask for the generative side by name.</blockquote><div class="pull-attr">CLAUDE.md, Terminology</div></div><p class="body-lede reveal">The evaluation-infrastructure finding is that gap showing up concretely.</p></div><div class="visual-slot"><span class="visual-slot-label">+ Visual</span></div><span class="pagenum"></span><div class="notes" hidden>Sets up the closing section: the instrument is still being tuned.</div></section>
+
+<section class="slide slide--hero" data-index="40"><div class="frame"><div class="kicker reveal">Section 06</div><h1 class="headline reveal">Where it’s headed</h1></div><span class="pagenum"></span><div class="notes" hidden></div></section>
+
+<section class="slide" data-index="41"><div class="frame"><div class="kicker reveal">Still growing</div><h1 class="headline is-md reveal">A live instrument, not a survey taken once.</h1><div class="numeral-row reveal"><div class="numeral">78</div><p class="numeral-caption">entries, as of Oct 2026. The dataset had 30 when the first version of this talk was drafted.</p></div><p class="body-lede reveal">Every number here was recomputed the day it was written. The repo’s public Findings tab carries no counts, for the same reason.</p></div><div class="visual-slot"><span class="visual-slot-label">+ Visual</span></div><span class="pagenum"></span><div class="notes" hidden></div></section>
+
+<section class="slide" data-index="42"><div class="frame"><div class="kicker reveal">Explore it</div><h1 class="headline reveal">Read the postings yourself.</h1><p class="body-lede is-mono reveal">signals.bertino.co</p><div class="aside reveal"><span class="aside-label">What’s there</span><p class="aside-text">Every entry, cluster, and signal is browsable on the site. No GitHub account needed.</p></div></div><div class="visual-slot"><span class="visual-slot-label">+ Visual</span></div><span class="pagenum"></span><div class="notes" hidden>Confirm the closing claim and URL before presenting.</div></section>
+
+</main>
+</div>
+<div class="deck-progress" id="deckProgress"></div>
+<div class="notes-panel" id="notesPanel"></div>
+<div class="edit-hotzone" id="editHotzone"></div>
+<button class="edit-toggle" id="editToggle" title="Edit mode (E)">&#9998;</button>
+
+<script>
+/* Keys: arrows / space / page keys navigate. N toggles speaker notes. V outlines the
+   reserved visual space. E toggles text editing (saved to this browser only). */
+class SlidePresentation {
+    constructor() {
+        this.slides = Array.from(document.querySelectorAll('.slide'));
+        this.stage = document.getElementById('deckStage');
+        this.progress = document.getElementById('deckProgress');
+        this.notesPanel = document.getElementById('notesPanel');
+        this.current = 0;
+        const total = this.slides.length;
+        this.slides.forEach((s, i) => { s.querySelector('.pagenum').textContent = (i + 1) + ' / ' + total; });
+        this.scale();
+        window.addEventListener('resize', () => this.scale());
+        document.addEventListener('keydown', (e) => this.onKey(e));
+        let x0 = 0;
+        document.addEventListener('touchstart', (e) => { x0 = e.touches[0].clientX; });
+        document.addEventListener('touchend', (e) => { const dx = e.changedTouches[0].clientX - x0; if (Math.abs(dx) > 60) this.show(this.current + (dx < 0 ? 1 : -1)); });
+        const h = parseInt(location.hash.slice(1), 10);
+        this.show(Number.isFinite(h) ? h - 1 : 0);
+    }
+    scale() {
+        const f = Math.min(innerWidth / 1920, innerHeight / 1080);
+        this.stage.style.transform = `translate(${(innerWidth - 1920 * f) / 2}px, ${(innerHeight - 1080 * f) / 2}px) scale(${f})`;
+    }
+    onKey(e) {
+        if (e.target.getAttribute && e.target.getAttribute('contenteditable') === 'true') return;
+        if (['ArrowRight', ' ', 'PageDown'].includes(e.key)) { e.preventDefault(); this.show(this.current + 1); }
+        else if (['ArrowLeft', 'PageUp'].includes(e.key)) { e.preventDefault(); this.show(this.current - 1); }
+        else if (e.key === 'Home') this.show(0);
+        else if (e.key === 'End') this.show(this.slides.length - 1);
+        else if (e.key === 'n' || e.key === 'N') { this.notesPanel.classList.toggle('open'); this.renderNotes(); }
+        else if (e.key === 'v' || e.key === 'V') document.body.classList.toggle('show-slots');
+    }
+    renderNotes() {
+        const n = this.slides[this.current].querySelector('.notes');
+        const t = n ? n.textContent.trim() : '';
+        this.notesPanel.innerHTML = '<b>Speaker notes · slide ' + (this.current + 1) + '</b>' + (t ? t.replace(/</g, '&lt;') : '(none)');
+    }
+    show(i) {
+        this.current = Math.max(0, Math.min(i, this.slides.length - 1));
+        this.slides.forEach((s, k) => { s.classList.toggle('active', k === this.current); s.classList.toggle('visible', k === this.current); });
+        this.progress.style.width = (100 * (this.current + 1) / this.slides.length) + '%';
+        history.replaceState(null, '', '#' + (this.current + 1));
+        if (this.notesPanel.classList.contains('open')) this.renderNotes();
+    }
+}
+
+const editor = {
+    isActive: false,
+    sel: '.headline, .body-lede, .aside-text, .aside-label, .pull-quote, .pull-attr, .kicker, .numeral, .numeral-caption, .contrast-value, .contrast-note, .contrast-label',
+    toggle() {
+        this.isActive = !this.isActive;
+        document.getElementById('editToggle').classList.toggle('active', this.isActive);
+        document.querySelectorAll(this.sel).forEach((el) => el.setAttribute('contenteditable', this.isActive ? 'true' : 'false'));
+    }
+};
+const hz = document.getElementById('editHotzone'), tg = document.getElementById('editToggle');
+let hide = null;
+hz.addEventListener('mouseenter', () => { clearTimeout(hide); tg.classList.add('show'); });
+hz.addEventListener('mouseleave', () => { hide = setTimeout(() => { if (!editor.isActive) tg.classList.remove('show'); }, 400); });
+tg.addEventListener('mouseenter', () => clearTimeout(hide));
+tg.addEventListener('mouseleave', () => { hide = setTimeout(() => { if (!editor.isActive) tg.classList.remove('show'); }, 400); });
+tg.addEventListener('click', () => editor.toggle());
+hz.addEventListener('click', () => editor.toggle());
+document.addEventListener('keydown', (e) => { if ((e.key === 'e' || e.key === 'E') && !(e.target.getAttribute && e.target.getAttribute('contenteditable') === 'true')) editor.toggle(); });
+
+window.deck = new SlidePresentation();
+</script>
+</body>
+</html>

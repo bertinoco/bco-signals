@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What the Dataset Taught Us — Building BCO Signals</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ===========================================================
+   DESIGN TOKENS — ported from docs/css/styles.css (signals.bertino.co).
+   Same HSL channel triplets, same achromatic light/dark pairing, same
+   Inter / IBM Plex Mono split (Inter for prose, mono for every piece
+   of metadata), same radius and motion scale. Type and spacing are the
+   site's values x2, scaled for a 1920x1080 stage. Everything else is
+   unchanged from the source file. Red (--destructive) is defined for
+   parity and never used: it is reserved for failure states.
+   =========================================================== */
+:root {
+    --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace;
+
+    --font-xs:   22px;
+    --font-sm:   26px;
+    --font-base: 30px;
+    --font-md:   34px;
+    --font-lg:   38px;
+    --font-xl:   56px;
+    --font-3xl:  88px;
+    --font-numeral: 150px;
+
+    --weight-regular:  400;
+    --weight-medium:   500;
+    --weight-semibold: 600;
+
+    --leading-tight:   1.1;
+    --leading-snug:    1.3;
+    --leading-normal:  1.55;
+    --leading-relaxed: 1.7;
+
+    --tracking-tight:  -0.022em;
+    --tracking-snug:   -0.012em;
+    --tracking-label:   0.11em;
+
+    --space-1:  16px;
+    --space-2:  32px;
+    --space-3:  48px;
+    --space-4:  64px;
+    --space-6:  96px;
+
+    --radius-sm: 3px;
+    --radius:    4px;
+
+    --duration-fast: 140ms;
+    --duration-base: 220ms;
+    --duration-flip: 420ms;
+    --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+
+    --max-width: 960px;
+    --edge: 140px;
+
+    /* Fixed brand tokens: the site's hero stays black in both schemes. */
+    --hero-bg: 0 0% 0%;
+    --hero-fg: 0 0% 100%;
+}
+:root {
+    color-scheme: light;
+    --background:           0 0% 100%;
+    --foreground:           0 0% 7.1%;
+    --card:                 0 0% 96.9%;
+    --muted-foreground:     0 0% 43.1%;
+    --secondary-foreground: 0 0% 36.1%;
+    --border:               0 0% 85.1%;
+    --primary:              0 0% 7.1%;
+    --primary-foreground:   0 0% 98%;
+}
+@media (prefers-color-scheme: dark) {
+    :root {
+        color-scheme: dark;
+        --background:           0 0% 5.1%;
+        --foreground:           0 0% 98%;
+        --card:                 0 0% 7.8%;
+        --muted-foreground:     0 0% 54.9%;
+        --secondary-foreground: 0 0% 63.9%;
+        --border:               0 0% 14.9%;
+        --primary:              0 0% 98%;
+        --primary-foreground:   0 0% 5.1%;
+    }
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* ===== FIXED 16:9 STAGE (mandatory base) ===== */
+html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; background: hsl(var(--background)); }
+.deck-viewport { position: fixed; inset: 0; overflow: hidden; background: hsl(var(--background)); }
+.deck-stage { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; overflow: hidden; transform-origin: 0 0; }
+.slide { position: absolute; inset: 0; width: 1920px; height: 1080px; overflow: hidden; display: block; visibility: hidden; opacity: 0; pointer-events: none; }
+.slide.active, .slide.visible { visibility: visible; opacity: 1; pointer-events: auto; z-index: 1; }
+img, video, canvas, svg { max-width: 100%; max-height: 100%; }
+@media print {
+    html, body { width: 1920px; height: auto; overflow: visible; background: #fff; }
+    .deck-viewport { position: static; overflow: visible; }
+    .deck-stage { position: static; width: auto; height: auto; transform: none !important; }
+    .slide { position: relative; display: block !important; visibility: visible !important; opacity: 1 !important; pointer-events: auto !important; width: 1920px; height: 1080px; break-after: page; page-break-after: always; }
+    .slide:last-child { break-after: auto; page-break-after: auto; }
+    .deck-progress, .notes-panel, .edit-hotzone, .edit-toggle { display: none !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.2s !important; }
+}
+
+/* ===== CANVAS ===== */
+.slide { background: hsl(var(--background)); color: hsl(var(--foreground)); font-family: var(--font-sans); }
+.slide--hero { background: hsl(var(--hero-bg)); color: hsl(var(--hero-fg)); }
+
+.pagenum {
+    position: absolute; right: var(--edge); bottom: 56px;
+    font-family: var(--font-mono); font-size: var(--font-xs);
+    font-variant-numeric: tabular-nums; color: hsl(var(--muted-foreground));
+}
+.slide--hero .pagenum { color: hsl(var(--hero-fg) / 0.5); }
+
+.frame {
+    position: absolute; top: 0; left: var(--edge); width: var(--max-width); bottom: 0;
+    display: flex; flex-direction: column; justify-content: center;
+}
+
+/* Reserved negative space for a visual. Invisible by default so the deck is
+   clean to share; press V to outline it while placing images. */
+.visual-slot {
+    position: absolute; top: 190px; bottom: 190px;
+    left: calc(var(--edge) + var(--max-width) + 70px); right: var(--edge);
+    border: 1.5px dashed transparent; border-radius: var(--radius);
+    display: flex; align-items: center; justify-content: center;
+}
+.visual-slot-label { font-family: var(--font-mono); font-size: var(--font-xs); letter-spacing: var(--tracking-label); text-transform: uppercase; color: transparent; }
+body.show-slots .visual-slot { border-color: hsl(var(--border)); }
+body.show-slots .visual-slot-label { color: hsl(var(--muted-foreground)); }
+
+/* ===== TEXT ROLES (mapped to existing site components) ===== */
+.kicker {
+    font-family: var(--font-mono); font-weight: var(--weight-medium); font-size: var(--font-sm);
+    text-transform: uppercase; letter-spacing: var(--tracking-label);
+    color: hsl(var(--muted-foreground)); margin-bottom: var(--space-3);
+}
+.slide--hero .kicker { color: hsl(var(--hero-fg) / 0.6); }
+
+.headline {
+    font-family: var(--font-sans); font-weight: var(--weight-semibold); font-size: var(--font-3xl);
+    line-height: var(--leading-tight); letter-spacing: var(--tracking-tight); text-wrap: balance;
+    color: hsl(var(--foreground));
+}
+.headline.is-md { font-size: var(--font-xl); }
+.slide--hero .headline { color: hsl(var(--hero-fg)); }
+
+.body-lede {
+    font-family: var(--font-sans); font-size: var(--font-base); line-height: var(--leading-relaxed);
+    color: hsl(var(--secondary-foreground)); margin-top: var(--space-3);
+}
+.body-lede.is-mono { font-family: var(--font-mono); font-size: var(--font-lg); color: hsl(var(--foreground)); }
+
+.aside { margin-top: var(--space-3); padding-left: var(--space-2); border-left: 2px solid hsl(var(--foreground)); }
+.aside-label {
+    display: block; font-family: var(--font-mono); font-weight: var(--weight-medium); font-size: var(--font-xs);
+    text-transform: uppercase; letter-spacing: var(--tracking-label); color: hsl(var(--muted-foreground)); margin-bottom: 12px;
+}
+.aside-text { font-size: var(--font-sm); line-height: var(--leading-relaxed); color: hsl(var(--secondary-foreground)); }
+
+/* Big numeral — same role as the site's .flip-card-stat: mono, medium weight, secondary-foreground */
+.numeral-row { display: flex; align-items: center; gap: var(--space-3); margin-top: var(--space-3); }
+.numeral {
+    font-family: var(--font-mono); font-weight: var(--weight-medium); font-size: var(--font-numeral);
+    line-height: var(--leading-tight); color: hsl(var(--secondary-foreground)); font-variant-numeric: tabular-nums;
+}
+.numeral-caption { font-size: var(--font-sm); line-height: var(--leading-relaxed); color: hsl(var(--secondary-foreground)); max-width: 640px; }
+
+/* Pull quote — the site's blockquote pattern: left rule, curly marks via pseudo-elements, never italic */
+.quote-item + .quote-item { margin-top: var(--space-2); }
+blockquote.pull-quote {
+    border-left: 2px solid hsl(var(--foreground)); padding-left: var(--space-2);
+    font-style: normal; font-weight: var(--weight-regular); font-size: var(--font-lg);
+    line-height: var(--leading-relaxed); color: hsl(var(--secondary-foreground));
+}
+blockquote.pull-quote.is-small { font-size: var(--font-md); line-height: var(--leading-normal); }
+blockquote.pull-quote::before { content: '\201C'; }
+blockquote.pull-quote::after  { content: '\201D'; }
+.pull-attr { margin: 12px 0 0 calc(var(--space-2) + 2px); font-family: var(--font-mono); font-size: var(--font-xs); color: hsl(var(--muted-foreground)); }
+.quote-item + .quote-item .pull-attr { margin-top: 10px; }
+.headline + .quote-item, .headline + .body-lede { margin-top: var(--space-3); }
+
+/* Contrast pair — same surface as .cluster-card */
+.contrast-row { display: flex; gap: var(--space-2); margin-top: var(--space-3); }
+.contrast-col { flex: 1; background: hsl(var(--card)); border: 1px solid hsl(var(--border)); border-radius: var(--radius); padding: var(--space-3) var(--space-2); }
+.contrast-label { font-family: var(--font-mono); font-weight: var(--weight-medium); font-size: var(--font-xs); text-transform: uppercase; letter-spacing: var(--tracking-label); color: hsl(var(--muted-foreground)); }
+.contrast-value { font-weight: var(--weight-semibold); font-size: var(--font-md); line-height: var(--leading-snug); letter-spacing: var(--tracking-snug); color: hsl(var(--foreground)); margin-top: var(--space-1); }
+.contrast-note { font-size: var(--font-sm); line-height: var(--leading-normal); color: hsl(var(--secondary-foreground)); margin-top: var(--space-1); }
+
+/* Placeholders stay visibly provisional */
+.is-placeholder { color: hsl(var(--muted-foreground)); }
+
+/* Motion — the site's own duration and easing */
+.reveal { opacity: 0; transform: translateY(14px); transition: opacity var(--duration-flip) var(--ease-out), transform var(--duration-flip) var(--ease-out); }
+.slide.active .reveal { opacity: 1; transform: translateY(0); }
+.reveal:nth-child(1) { transition-delay: 0.04s; }
+.reveal:nth-child(2) { transition-delay: 0.14s; }
+.reveal:nth-child(3) { transition-delay: 0.24s; }
+.reveal:nth-child(4) { transition-delay: 0.34s; }
+.reveal:nth-child(5) { transition-delay: 0.44s; }
+
+/* ===== Chrome outside the stage ===== */
+.deck-progress { position: fixed; left: 0; bottom: 0; height: 3px; background: hsl(var(--foreground) / 0.35); width: 0; transition: width var(--duration-base) var(--ease-out); z-index: 1000; }
+.notes-panel {
+    position: fixed; left: 0; right: 0; bottom: 0; max-height: 34vh; overflow-y: auto; z-index: 1001;
+    background: hsl(var(--card)); border-top: 1px solid hsl(var(--border)); color: hsl(var(--secondary-foreground));
+    font-family: var(--font-sans); font-size: 15px; line-height: 1.55; padding: 18px 28px; display: none;
+}
+.notes-panel.open { display: block; }
+.notes-panel b { font-family: var(--font-mono); font-weight: 500; font-size: 12px; letter-spacing: .11em; text-transform: uppercase; color: hsl(var(--muted-foreground)); display: block; margin-bottom: 6px; }
+
+/* Inline editing — reuses the site's primary / primary-foreground inversion pair */
+.edit-hotzone { position: fixed; top: 0; left: 0; width: 80px; height: 80px; z-index: 10000; cursor: pointer; }
+.edit-toggle { position: fixed; top: 18px; left: 18px; z-index: 10001; width: 40px; height: 40px; border: none; border-radius: var(--radius); background: hsl(var(--primary)); color: hsl(var(--primary-foreground)); font-size: 18px; cursor: pointer; opacity: 0; pointer-events: none; transition: opacity var(--duration-base) ease; }
+.edit-toggle.show, .edit-toggle.active { opacity: 1; pointer-events: auto; }
+[contenteditable="true"] { outline: 1px dashed hsl(var(--border)); }
+</style>
+</head>
+<body>
+<div class="deck-viewport">
+<main class="deck-stage" id="deckStage">
+
+{{SLIDES}}
+
+</main>
+</div>
+<div class="deck-progress" id="deckProgress"></div>
+<div class="notes-panel" id="notesPanel"></div>
+<div class="edit-hotzone" id="editHotzone"></div>
+<button class="edit-toggle" id="editToggle" title="Edit mode (E)">&#9998;</button>
+
+<script>
+/* Keys: arrows / space / page keys navigate. N toggles speaker notes. V outlines the
+   reserved visual space. E toggles text editing (saved to this browser only). */
+class SlidePresentation {
+    constructor() {
+        this.slides = Array.from(document.querySelectorAll('.slide'));
+        this.stage = document.getElementById('deckStage');
+        this.progress = document.getElementById('deckProgress');
+        this.notesPanel = document.getElementById('notesPanel');
+        this.current = 0;
+        const total = this.slides.length;
+        this.slides.forEach((s, i) => { s.querySelector('.pagenum').textContent = (i + 1) + ' / ' + total; });
+        this.scale();
+        window.addEventListener('resize', () => this.scale());
+        document.addEventListener('keydown', (e) => this.onKey(e));
+        let x0 = 0;
+        document.addEventListener('touchstart', (e) => { x0 = e.touches[0].clientX; });
+        document.addEventListener('touchend', (e) => { const dx = e.changedTouches[0].clientX - x0; if (Math.abs(dx) > 60) this.show(this.current + (dx < 0 ? 1 : -1)); });
+        const h = parseInt(location.hash.slice(1), 10);
+        this.show(Number.isFinite(h) ? h - 1 : 0);
+    }
+    scale() {
+        const f = Math.min(innerWidth / 1920, innerHeight / 1080);
+        this.stage.style.transform = `translate(${(innerWidth - 1920 * f) / 2}px, ${(innerHeight - 1080 * f) / 2}px) scale(${f})`;
+    }
+    onKey(e) {
+        if (e.target.getAttribute && e.target.getAttribute('contenteditable') === 'true') return;
+        if (['ArrowRight', ' ', 'PageDown'].includes(e.key)) { e.preventDefault(); this.show(this.current + 1); }
+        else if (['ArrowLeft', 'PageUp'].includes(e.key)) { e.preventDefault(); this.show(this.current - 1); }
+        else if (e.key === 'Home') this.show(0);
+        else if (e.key === 'End') this.show(this.slides.length - 1);
+        else if (e.key === 'n' || e.key === 'N') { this.notesPanel.classList.toggle('open'); this.renderNotes(); }
+        else if (e.key === 'v' || e.key === 'V') document.body.classList.toggle('show-slots');
+    }
+    renderNotes() {
+        const n = this.slides[this.current].querySelector('.notes');
+        const t = n ? n.textContent.trim() : '';
+        this.notesPanel.innerHTML = '<b>Speaker notes · slide ' + (this.current + 1) + '</b>' + (t ? t.replace(/</g, '&lt;') : '(none)');
+    }
+    show(i) {
+        this.current = Math.max(0, Math.min(i, this.slides.length - 1));
+        this.slides.forEach((s, k) => { s.classList.toggle('active', k === this.current); s.classList.toggle('visible', k === this.current); });
+        this.progress.style.width = (100 * (this.current + 1) / this.slides.length) + '%';
+        history.replaceState(null, '', '#' + (this.current + 1));
+        if (this.notesPanel.classList.contains('open')) this.renderNotes();
+    }
+}
+
+const editor = {
+    isActive: false,
+    sel: '.headline, .body-lede, .aside-text, .aside-label, .pull-quote, .pull-attr, .kicker, .numeral, .numeral-caption, .contrast-value, .contrast-note, .contrast-label',
+    toggle() {
+        this.isActive = !this.isActive;
+        document.getElementById('editToggle').classList.toggle('active', this.isActive);
+        document.querySelectorAll(this.sel).forEach((el) => el.setAttribute('contenteditable', this.isActive ? 'true' : 'false'));
+    }
+};
+const hz = document.getElementById('editHotzone'), tg = document.getElementById('editToggle');
+let hide = null;
+hz.addEventListener('mouseenter', () => { clearTimeout(hide); tg.classList.add('show'); });
+hz.addEventListener('mouseleave', () => { hide = setTimeout(() => { if (!editor.isActive) tg.classList.remove('show'); }, 400); });
+tg.addEventListener('mouseenter', () => clearTimeout(hide));
+tg.addEventListener('mouseleave', () => { hide = setTimeout(() => { if (!editor.isActive) tg.classList.remove('show'); }, 400); });
+tg.addEventListener('click', () => editor.toggle());
+hz.addEventListener('click', () => editor.toggle());
+document.addEventListener('keydown', (e) => { if ((e.key === 'e' || e.key === 'E') && !(e.target.getAttribute && e.target.getAttribute('contenteditable') === 'true')) editor.toggle(); });
+
+window.deck = new SlidePresentation();
+</script>
+</body>
+</html>

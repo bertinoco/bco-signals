@@ -1,0 +1,38 @@
+# Methodology talk
+
+A speaker-led talk on building BCO Signals: how the audit process catches its
+own mistakes, what messy posting data looks like, and what the dataset has
+produced so far.
+
+**Editorial, not data reporting.** Like `jd-insights/findings.md`, this is
+opinion and interpretation built on the dataset. It does not follow the data
+integrity rules, the voice rules, or the no-"I" rule that govern the rest of
+the repo. Every count in it is recomputed and dated ("as of Oct 2026, 78
+postings") rather than quoted from `findings.md`, whose own figures go stale.
+
+**Status: draft, private.** Committed on a local branch and not pushed. This
+repository is public, so pushing any branch would publish it.
+
+## Files
+
+- `methodology-talk.html` is the built deck. It is a single file and opens
+  in any browser. Arrow keys navigate, `N` shows speaker notes, `V` outlines
+  the space reserved for visuals, `E` edits text (saved to that browser only).
+- `source/slides_data.py` holds every slide's copy. Edit here.
+- `source/template.html` holds the design, ported from `docs/css/styles.css`.
+- `source/make_deck.py` builds the deck from the two files above.
+
+Rebuild after editing the source:
+
+    python3 presentations/methodology-talk/source/make_deck.py presentations/methodology-talk/methodology-talk.html
+
+Page numbers are computed from the slide count, so adding a slide needs no
+renumbering.
+
+## Open placeholders
+
+- Slide 1, the cold open, is bracketed text awaiting the author's own words.
+- The evaluation-infrastructure count (slide 28) is undecided: four companies
+  in three domains per `findings.md`, or six in five per the live signal.
+- Several quotes are flagged in the speaker notes for verification against the
+  source before presenting.
