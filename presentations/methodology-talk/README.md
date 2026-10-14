@@ -36,8 +36,8 @@ renumbering.
 - Confirm the cold open (slide 1): that "automate the frontend" is the phrase as
   said, and that attributing it to Legora by name is intended. This branch is
   public.
-- Decide the judgment-and-taste count (slide 16). The finding says eight; a
-  recount at 78 entries suggests ten (Glean and Ethos qualify on the finding's
-  own criteria). Not changed yet.
+- The judgment-and-taste count (slide 16) is ten: the finding says eight, and a
+  recount at 78 entries added Glean and Ethos on the finding's own criteria.
+  `findings.md` has not been updated to match.
 - Quotes on the slides were verified against the archived source texts in
   October 2026. Counts are as of Oct 2026 (78 postings).

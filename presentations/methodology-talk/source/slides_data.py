@@ -121,12 +121,12 @@ S.append(dict(type="finding", kicker="Finding",
 # Judgment and taste: full depth
 S.append(dict(type="finding", kicker="Finding, in full",
     headline="Judgment and taste are what’s asked for once AI does the drafting.",
-    numeral="8", caption="included postings across five domains: SaaS, Agency, Big Tech, Finance, Retail.",
+    numeral="10", caption="included postings across five domains: SaaS, Agency, Big Tech, Finance, Retail.",
     body="Each pairs judgment or taste directly against AI-generated output. Not a soft-skill throwaway.",
-    notes="What the data shows, part 1. CoLab, Docebo, Fin, Soda (SaaS); Intercept (Agency); Meta (Big Tech); Sanna (Finance); Gap (Retail, the first in that domain). SaaS is the only domain repeated."))
+    notes="What the data shows, part 1. CoLab, Docebo, Fin, Soda, Glean (SaaS); Intercept (Agency); Meta (Big Tech); Sanna, Ethos (Finance); Gap (Retail, the first in that domain). SaaS has five of the ten and Finance two. Glean and Ethos were added on a recount against the source texts in Oct 2026; findings.md still says eight. Ethos is the softer fit. A second Meta posting (AI Content Strategy Lead) is borderline and not counted."))
 
 S.append(dict(type="quote", kicker="What the data shows",
-    headline="Two of the eight, in their own words.",
+    headline="Two of the ten, in their own words.",
     quotes=[("you’ll act as Editor in Chief: orchestrating AI agents and applying editorial judgment across outputs.", "CoLab"),
             ("Taste is the bar. Anti-slop is the whole point. An engine that ships slop faster has negative value, and most of them do.", "Soda")],
     notes="Others in the count: Intercept (“Strong editorial judgment and comfort challenging weak AI-generated outputs”), Sanna (“We value judgment, taste, and learning ability over years of experience or specific tools”), Docebo, Fin, Meta. Soda’s line is now the full source sentence."))
@@ -140,7 +140,7 @@ S.append(dict(type="quote", kicker="What the data shows",
 S.append(dict(type="statement", kicker="My take",
     headline="What’s left for the human once fluency is assumed.",
     body="This is a sharper version of the AI-fluency finding. That one says AI use is the baseline. This one says the postings draw a line between what the tool produces and what a person is still accountable for deciding is good.",
-    aside=("Caveat", "Five domains with no repeated employer is real spread, though SaaS accounts for four of the eight. This counts postings that use certain words. It doesn’t measure how much judgment the work needs."),
+    aside=("Caveat", "Five domains with no repeated employer is real spread, though SaaS accounts for five of the ten. This counts postings that use certain words. It doesn’t measure how much judgment the work needs."),
     notes="Label this slide as opinion, per the ground rules."))
 
 # Evaluation infrastructure: full depth
@@ -200,12 +200,13 @@ S.append(dict(type="contrast", kicker="Still forming",
     notes="Both findings say they are thin. Taxonomy: the cluster is on 28 entries now, but only Meta and Vinted make it the whole title, and Vinted\u2019s posting never invokes content design (placement is Product Management), so it survives on what the work classifies. Trigger to revisit: a third taxonomy title with no content-design framing. AI content strategy: Meta and Alibaba share a domain; Huge adds Agency and the first Director level. Trigger: a fourth outside Big Tech and Agency."))
 
 S.append(dict(type="rows", kicker="What this can’t tell you",
-    headline="Four limits, stated plainly.",
+    headline="Five limits, stated plainly.",
     rows=[("Not a market sample", "Admitted only if they pass a signal test. It says nothing about the median job."),
           ("No pivots", "Role change inside an existing team produces no posting."),
           ("Existence, not rate", "An excluded record proves a pattern exists, not how often."),
+          ("Counts are a floor", "A tag created later isn’t applied to older entries unless someone goes back."),
           ("A blind side", "The generative side is harder to catch than the deterministic side.")],
-    notes="The first three rows follow findings.md’s “What this data cannot support” section (verified against the current file). The fourth is not from that section: it echoes CLAUDE.md’s Terminology note that the corpus contains almost no postings that ask for the generative side by name. That section also says frequency counts are a floor, not a measurement, because a key created later isn’t applied to older entries unless someone goes back. Worth saying aloud, given how many counts are in this deck."))
+    notes="The first four rows follow findings.md’s “What this data cannot support” section (verified against the current file). The last is not from that section: it echoes CLAUDE.md’s Terminology note that the corpus contains almost no postings that ask for the generative side by name. The “floor” row is that section’s own point: frequency counts are a floor, not a measurement. Worth saying aloud, given how many counts are in this deck."))
 
 S.append(dict(type="statement", kicker="Explore it",
     headline="Read the postings yourself.",
