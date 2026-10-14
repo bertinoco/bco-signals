@@ -1,142 +1,117 @@
 # Slide data for the methodology talk. One dict per slide.
-# types: section, statement, quote, finding, contrast, evidence
+# Structure: the idea, how it's set up, what it found. Findings are the bulk.
+# types: section, statement, quote, finding, contrast, rows
 # Keys: kicker, headline, body, quotes[(text, attr)], aside(label, text),
-#       numeral, caption, cards[(label, value, note)], notes, ph (placeholder flag)
+#       numeral, caption, cards[(label, value, note)], rows[(label, desc)],
+#       notes, ph (placeholder flag)
 # Quote text carries no outer quote marks; CSS adds them.
 
 SECTIONS = {
-    2: ("02", "The process catching itself"),
-    3: ("03", "What messy data looks like"),
-    4: ("04", "What the discipline produced"),
-    5: ("05", "What this can’t tell you"),
-    6: ("06", "Where it’s headed"),
+    2: ("02", "How it’s set up"),
+    3: ("03", "What it found"),
 }
 
 S = []
 
-# ---------- SECTION 1 ----------
+# =====================================================================
+# 01  THE IDEA
+# =====================================================================
 S.append(dict(type="statement", kicker="Cold open",
     headline="[Why I started counting job postings]",
     body="[Your reason for building the dataset, in your words. One or two sentences.]",
     ph=True,
     notes="PLACEHOLDER. This is your story, not something to draft for you. Replace the headline and body, or turn it into a single quote slide."))
 
+S.append(dict(type="contrast", kicker="The idea",
+    headline="Track the postings that signal change.",
+    cards=[("What I track", "Interesting, ambitious, forward-leaning postings.", "Mostly senior-level individual contributor roles."),
+           ("What I look for", "Where the description is signaling change.", "Not the median content design job.")],
+    notes="Paraphrased from the README pitch: “I’ve started to track interesting, ambitious, or forward leaning job postings. These are mostly senior-level IC roles where the description is signaling change.” That filter is the whole idea, and also the main limit: this shows what ambitious employers ask for."))
+
 S.append(dict(type="contrast", kicker="The ground rules",
     headline="Every finding keeps two things apart.",
     cards=[("What the data shows", "You can defend it by linking to a posting.", ""),
            ("What I think it means", "A byline opinion, labeled as one.", "")],
     body="And a finding is never evidence for a cluster or signal assignment. Assignments come from posting text alone.",
-    notes="This is the rule that makes everything after it checkable. Source: findings.md preamble. Say it plainly, then point at it every time a slide is labeled “My take.”"))
+    notes="This is the rule that makes everything after it checkable. Source: findings.md preamble. Point back at it every time a slide is labeled “My take.”"))
 
-# ---------- SECTION 2 ----------
+# =====================================================================
+# 02  HOW IT'S SET UP  (a walkthrough of the README)
+# =====================================================================
 S.append(dict(type="section", sec=2))
 
-S.append(dict(type="statement", kicker="The correction",
-    headline="I claimed two instances. There was one.",
-    body="Notion and Spotify were my two examples of content built for machine consumption. Checked against the entries, Spotify’s Annotation Manager is ML training data and its Conversation Designer is model behavior. Neither is retrieval. What remained was Notion alone.",
-    aside=("What I did", "Corrected it in place and recorded it as a correction, not a quiet fix."),
-    notes="The point of this slide is that the process catches its own claims. Keep it short and unembarrassed."))
+S.append(dict(type="rows", kicker="Setup · Structure",
+    headline="Four folders and a rulebook.",
+    rows=[("docs/data/jobs.json", "The dataset. One structured entry per role."),
+          ("jd-source/", "The posting text, word for word. One file each."),
+          ("jd-insights/", "Stats, quotes, patterns, findings."),
+          ("jd-scout/", "The weekly search for new postings."),
+          ("CLAUDE.md", "The rulebook: criteria and audit steps.")],
+    notes="This is the README’s structure section. The dataset also publishes as the site at signals.bertino.co. CLAUDE.md is the file both Claude and I work from."))
 
-S.append(dict(type="quote", kicker="Then the data answered",
-    headline="Two real instances arrived on their own.",
-    quotes=[("…for real-time access by AI agents and content generation systems.", "Meta, AI Content Strategy Lead"),
-            ("content knowledge assets that AI can call on and reuse", "Alibaba, AI Content Strategist")],
-    notes="Confirms the corrected claim rather than the wrong one. Verify the Alibaba wording against the stored quote before presenting."))
+S.append(dict(type="rows", kicker="Setup · Data schema",
+    headline="What one entry holds.",
+    rows=[("title", "Verbatim, as the posting words it."),
+          ("clusters", "Responsibility areas, from the posting’s stated text."),
+          ("signals", "Skills and observable patterns."),
+          ("compRange", "Min, max, currency, and what the range covers."),
+          ("quote", "One verbatim line that anchors the assignments.")],
+    notes="Example entry to show on screen if you want one: CoLab, Content Systems Architect. clusters: content-systems-design, ai-tooling, enablement. signals: ai-native-expectation, content-marketing-adjacent. Other fields: company, domain, location, remote, sourceUrl, dateAdded, note. Two optional fields, quoteTranslatedFrom and titleTranslatedFrom, exist for non-English postings and render as a visible caption so a translation is never mistaken for verbatim text."))
 
-S.append(dict(type="quote", kicker="The near-miss",
-    headline="Reads like the thing we track. Excluded.",
-    quotes=[("Agents are only as good as the knowledge they can reach.", "Redpine, Senior Knowledge Graph Engineer")],
-    body="It classifies real-world entities (drugs, trials, companies, filings) for machine reasoning. Not content for navigation. A trigger was written down for what would change the call.",
-    notes="Redpine is dense, specific, and well argued, which is exactly why it is a good test. Terminology: ontology here means entity types and relations for real-world facts, not the taxonomy cluster."))
+S.append(dict(type="finding", kicker="Setup · The taxonomy",
+    headline="Assigned only when the posting says so.",
+    numeral="8 · 16", caption="clusters and signals. A responsibility the posting doesn’t state doesn’t get the tag, however likely it seems.",
+    notes="8 clusters (responsibility areas) and 16 signals (skills and patterns). A new key needs evidence across multiple postings; a single instance is noted but doesn’t get one. That rule is in CLAUDE.md, Step 4 of the audit."))
 
-S.append(dict(type="quote", kicker="The trigger, tested",
-    headline="Ontology work paired with a content deliverable.",
-    quotes=[("Develop and extend ontologies and structured content systems that enable scalable, consistent AI behavior.", "UKG")],
-    body="The pairing, in the same responsibility, grounds the assignment. It was withheld from Redpine.",
-    notes="This is the trigger from the Redpine exclusion resolving months later. The boundary holds under a real test, not just an assertion."))
+S.append(dict(type="finding", kicker="Setup · The archive",
+    headline="Every posting is kept, word for word.",
+    numeral="131", caption="archived postings: 78 in the dataset, 53 excluded with the reason written down.",
+    aside=("Why", "Nothing is cleaned up, and page chrome stays in. The archive is what every audit and recount reads from, so it has to be unedited."),
+    notes="One markdown file per posting in jd-source/, front matter plus the raw text. An excluded file records why, so the same posting isn’t re-audited from scratch or quietly added later."))
 
-S.append(dict(type="statement", kicker="A second test",
-    headline="Same boundary, different industry.",
-    body="Schneider Electric’s ontology lead builds ontologies for “products, systems, devices, points, relationships, behaviors, and operational concepts.” Real-world things, not content. Two unrelated domains is stronger evidence than repetition inside one.",
-    notes="An industrial conglomerate versus an early-stage AI startup. The backcheck treats cross-domain recurrence as stronger than same-domain repetition."))
+S.append(dict(type="rows", kicker="Setup · Automation, finding",
+    headline="A weekly search finds candidates. A person decides.",
+    rows=[("1  Discover", "Searches for company boards not yet on the list."),
+          ("2  Poll", "Reads Greenhouse, Lever, and Ashby job feeds."),
+          ("3  Filter", "Drops anything already archived or already seen."),
+          ("4  Triage", "A page where each posting is Audit, Later, or Skip.")],
+    aside=("Every Sunday", "An unattended Claude Code session runs it. It never audits, writes data, or commits."),
+    notes="JD Scout, in jd-scout/. A scheduled Routine starts a fresh session that follows ROUTINE.md. Matching is keyword-based (title terms, plus body phrases for noisier matches). Postings from boards that never reach LinkedIn are the point."))
 
-S.append(dict(type="quote", kicker="The closest call",
-    headline="Denser writing language than some entries we included. Excluded.",
-    quotes=[("Writing as a craft. You treat language as load-bearing. You catch the sentence that will be misread before it ships.", "Basis, Intelligence Architect")],
-    body="The posting itself names seven co-equal candidate backgrounds, among them engineers, philosophers, lawyers, accountants, editors, and academics.",
-    notes="Verify the list of seven against jd-source/basis before presenting. The reason is new: the posting’s own theory of who succeeds denies that any single discipline defines the role."))
+S.append(dict(type="rows", kicker="Setup · Automation, audit",
+    headline="One posting, one confirmation.",
+    rows=[("Eligibility", "Required criteria, then a signal test."),
+          ("Audit", "Clusters and signals from the text alone."),
+          ("Report", "What was assigned and why. New keys flagged, not created."),
+          ("Confirm", "I approve, or the posting is archived as excluded."),
+          ("Write", "Entry, archive, and stats updated in one pass.")],
+    aside=("/add-jd", "A slash command. Subagents do the reading, so the main conversation only carries the decisions that need me."),
+    notes="This is the audit process in CLAUDE.md, run through the /add-jd command. Depth is a judgment call per posting: shallow for a clean match to an existing pattern, deep for anything borderline or new."))
 
-S.append(dict(type="statement", kicker="A title match, the wrong discipline",
-    headline="Content Designer, at a game studio.",
-    body="Scopely’s posting lists “content design, game design, narrative design, game writing, creative development” as interchangeable. None of its ten responsibilities mapped to any cluster.",
-    aside=("Compare", "Roblox’s Content Designer was also excluded, but it was genuine product content design that only failed the signal test. Scopely never reaches that question."),
-    notes="Same title, different discipline underneath. Quote on the slide is a fragment of the qualifications line; full line is in the CLAUDE.md terminology section."))
+S.append(dict(type="rows", kicker="Setup · The loops",
+    headline="Checks that close the loop.",
+    rows=[("test_scout.py", "Every entry must pass the scout’s filter. If one wouldn’t have been found, the keywords get widened."),
+          ("refresh.py", "Regenerates stats and quotes from the data. Never edited by hand."),
+          ("check-jobs-json.py", "Runs in CI: unknown keys, duplicate ids, drifting counts."),
+          ("asset version check", "Fails if a changed script or stylesheet ships without a version bump.")],
+    notes="The first one is the real feedback loop: what the dataset includes tunes what the scout looks for. The asset check exists because a missed cache bump shipped a stale site twice."))
 
-S.append(dict(type="statement", kicker="Excluding without discarding",
-    headline="Excluded does not mean irrelevant.",
-    body="DeepMind’s Senior Manager role was excluded because management dominates its responsibilities. It still held responsibilities that ground cleanly.",
-    aside=("The rule", "An exclusion record names exactly which clusters and signals would have applied, with the grounding quotes. It never goes in the dataset, but the archive carries the evidence."),
-    notes="That record later supplied an existence-only instance for the judgment-and-taste finding (slides 24 to 27)."))
-
-S.append(dict(type="statement", kicker="Testing the safeguard",
-    headline="A longer word list wouldn’t have helped.",
-    body="The pre-check scans for seven words: content, writing, language, copy, tone, voice, terminology. Notion’s Model Behavior Engineer scored two hits, and both were idioms: “Be the voice of quality in the room” and “help write the playbook.”",
-    aside=("The actual safeguard", "Read each hit in context. Widen the list only when a real miss appears. None has."),
-    notes="A stemmed or wider list would have logged the same false positive twice."))
-
-# ---------- SECTION 3 ----------
+# =====================================================================
+# 03  WHAT IT FOUND  (the bulk of the talk)
+# =====================================================================
 S.append(dict(type="section", sec=3))
-
-S.append(dict(type="statement", kicker="Titles lie about identity",
-    headline="Same title, two different postings.",
-    body="Apple posted two requisitions titled “UX Writer, Systems,” with different req IDs. Anything keyed on title alone eventually attaches the wrong text to an entry.",
-    aside=("So", "Every entry stores a reqId when the posting states one."),
-    notes=""))
-
-S.append(dict(type="quote", kicker="A quote needs to be role-specific",
-    headline="Boilerplate isn’t evidence.",
-    quotes=[("As a UX writer, you are an advocate for Google design…", "Google, Search, Chrome, and YouTube postings alike")],
-    body="Only the middle paragraph differs. A quote lifted from the shared section says nothing about the role. DeepMind shares none of it.",
-    notes=""))
-
-S.append(dict(type="quote", kicker="A quote can fail on legibility",
-    headline="An acronym nobody defined.",
-    quotes=[("You’re the design DRI, in Figma or with agentic tools, through to shipped.", "Bolt.new, first choice, rejected")],
-    aside=("The fix", "DRI is never defined in the posting. The same paragraph family said it without jargon: “You can take a content-led feature from problem to shipped without a product designer.”"),
-    notes="Rule: read a candidate quote as a first-time visitor would. Documented in CLAUDE.md after this miss."))
-
-S.append(dict(type="statement", kicker="Invisible errors",
-    headline="Some mistakes don’t show on screen.",
-    body="Six stored quotes needed one character fixed: five apostrophes and one hyphen. DeepMind’s scraped text carries icon-font names where the page showed icons: “corporate_fare,” “place,” “info_outline.”",
-    aside=("Left in on purpose", "The archive keeps the text verbatim. Its value is that it’s unedited."),
-    notes=""))
-
-S.append(dict(type="statement", kicker="Building the schema live",
-    headline="Two languages, two new fields.",
-    body="Coupang’s posting arrived in Korean. Alibaba’s arrived in Chinese. Two fields, quoteTranslatedFrom and titleTranslatedFrom, were built when the data demanded them, not before.",
-    aside=("On the site", "Both render as a visible caption, so a reader never mistakes a translation for verbatim source text."),
-    notes=""))
-
-S.append(dict(type="quote", kicker="Relevant, and still held out",
-    headline="A genre problem, not a content problem.",
-    quotes=[("We’re building a new Content Foundations team… we’re hiring a Design and Language Standards Lead.", "An Adobe content design leader, on her own LinkedIn feed")],
-    body="No requisition, no title header, no applicant system. The audit assumes an institutional posting to audit.",
-    notes=""))
-
-# ---------- SECTION 4 ----------
-S.append(dict(type="section", sec=4))
-
-S.append(dict(type="finding", kicker="Finding",
-    headline="Content standards are being pulled into central functions.",
-    numeral="19", caption="of 78 postings (24%), as of Oct 2026, on a close read. The raw tag count is 22.",
-    quotes=[("…serve as Netflix’s centralized authority for scaling language standards.", "Netflix, from the posting")],
-    notes="MY TAKE: content design is being reconstituted as infrastructure, a small central group owning primitives and product teams consuming them. Not the only model: Wealthsimple is hiring for “You’ll be embedded on product teams.” A fork, not a replacement. GDS and Vinted carry the tag but don’t hold on a close read. This number moved from 8 of 29 to 19 of 78 as the corpus grew, which is why every count carries a date. Also verify Robinhood (tagged, not supported by source text). Ally: “sits above channels and formats” is from the posting text, not the stored quote."))
 
 S.append(dict(type="finding", kicker="Finding",
     headline="The work moved from producing content to producing systems.",
     numeral="72", caption="of 78 postings (92%), as of Oct 2026. A direct cluster count.",
     quotes=[("Not by writing content yourself, but by building AI-powered systems.", "CoLab, from the dataset")],
     notes="MY TAKE: the unit of work shifted from the artifact to the mechanism that produces artifacts. Ally: “focused less on creating content and more on making content work.”"))
+
+S.append(dict(type="finding", kicker="Finding",
+    headline="Content standards are being pulled into central functions.",
+    numeral="19", caption="of 78 postings (24%), as of Oct 2026, on a close read. The raw tag count is 22.",
+    quotes=[("…serve as Netflix’s centralized authority for scaling language standards.", "Netflix, from the posting")],
+    notes="MY TAKE: content design is being reconstituted as infrastructure, a small central group owning primitives and product teams consuming them. Not the only model: Wealthsimple is hiring for “You’ll be embedded on product teams.” A fork, not a replacement. GDS and Vinted carry the tag but don’t hold on a close read. This number moved from 8 of 29 to 19 of 78 as the corpus grew, which is why every count carries a date. Also verify Robinhood (tagged, not supported by source text). Ally: “sits above channels and formats” is from the posting text, not the stored quote."))
 
 S.append(dict(type="finding", kicker="Finding",
     headline="AI fluency is a baseline, not a differentiator.",
@@ -187,19 +162,13 @@ S.append(dict(type="quote", kicker="What the data shows",
     headline="And what excluded the near-misses.",
     quotes=[("Create evaluations and guardrails for AI-generated and AI-maintained documentation, investigate failures, and improve the context, tools, prompts, and systems that shape output quality.", "Glean")],
     aside=("Audit work", "Notion and Microsoft do real eval work and stay excluded: no design org, no content or design title, a clean literal-text check. Anthropic clears all three bars."),
-    notes="This calls back to the Section 2 near-misses: not a loosening of eligibility."))
+    notes="Not a loosening of eligibility: the audit rules kept those two out for reasons independent of this pattern."))
 
 S.append(dict(type="statement", kicker="My take",
     headline="Hiring filters built on writing craft will undercount this.",
     body="The most technical generative-side postings gate on engineering skill, not a writing portfolio, because validating language at scale is an engineering problem even when the thing validated is language.",
     aside=("Caveat", "Expect this signal to stay thin for a while. It names a real pattern, not yet a common one."),
-    notes="This finding is the dataset’s blind side showing up concretely. It sets up slide 40."))
-
-S.append(dict(type="statement", kicker="Finding",
-    headline="Nobody agrees what this work is worth.",
-    body="Stated ranges run from $62,120 to $710,000. 51 of 78 postings state one, as of Oct 2026.",
-    aside=("My take", "An order of magnitude between roles with adjacent titles is not a seniority gap. It’s an absence of consensus about what the discipline is."),
-    notes="Insurify ($65,000 USD) and Netflix ($710,000) were the original endpoints and both carried “Systems” in the title. Don’t put comp on a slide as a comparison across currencies."))
+    notes="This finding is the dataset’s blind side showing up concretely: the deterministic side is easier to catch than the generative side."))
 
 S.append(dict(type="contrast", kicker="Finding",
     headline="Titles are failing in both directions at once.",
@@ -213,47 +182,28 @@ S.append(dict(type="quote", kicker="The posting disclaims its own title",
     aside=("An excluded case", "TikTok’s “Content Design Manager, AI” has AI in the title and nowhere else in the posting. Existence evidence only."),
     notes="MY TAKE: titles have stopped reliably carrying scope, and employers compensate in the two places that show up in a posting: the number, and the paragraph under the title."))
 
+S.append(dict(type="statement", kicker="Finding",
+    headline="Nobody agrees what this work is worth.",
+    body="Stated ranges run from $62,120 to $710,000. 51 of 78 postings state one, as of Oct 2026.",
+    aside=("My take", "An order of magnitude between roles with adjacent titles is not a seniority gap. It’s an absence of consensus about what the discipline is."),
+    notes="Insurify ($65,000 USD) and Netflix ($710,000) were the original endpoints and both carried “Systems” in the title. Don’t put comp on a slide as a comparison across currencies."))
+
 S.append(dict(type="finding", kicker="Finding",
     headline="Content roles are appearing outside design orgs.",
     numeral="57", caption="of 78 postings state where the role sits, as of Oct 2026, and placements don’t cluster in design.",
     body="HelloFresh: Software Engineering. Ally: Marketing. Notion: Customer Experience. Trustly: Tech.",
     notes="MY TAKE: the discipline is being claimed by several functions at once and none has won. The conversation about content design’s future assumes it stays in design. The postings don’t. Five more postings record that they don’t state a placement; 16 are null."))
 
-# ---------- SECTION 5 ----------
-S.append(dict(type="section", sec=5))
-
-S.append(dict(type="quote", kicker="Not a market sample",
-    headline="This shows one slice of the market.",
-    quotes=[("Entries are admitted only if they pass a signal test… It shows what ambitious employers are asking for. It says nothing about the median content design job.", "findings.md")],
-    notes="Near-verbatim from the findings file’s own admissions. Confirm the exact wording against the current file before presenting."))
-
-S.append(dict(type="statement", kicker="Invisible change",
-    headline="Role change without a hiring event leaves no trace.",
-    body="Work that arrives by internal pivot produces no posting. The clearest example on file is practitioners already doing systems and model-design work inside existing orgs, with no new requisition.",
-    notes=""))
-
-S.append(dict(type="statement", kicker="Existence, not rate",
-    headline="Excluded records prove a pattern exists. Not how often.",
-    body="YouTube and Nscale are AI companies posting content roles with no AI in the work. TikTok has AI in a title and nowhere else. DeepMind is a ninth judgment-and-taste instance. None of them supports “X% of postings do this.”",
-    notes=""))
-
-S.append(dict(type="quote", kicker="The known blind side",
-    headline="The generative side is harder to catch.",
-    quotes=[("The corpus contains almost no postings that ask for the generative side by name.", "CLAUDE.md, Terminology")],
-    body="The evaluation-infrastructure finding is that gap showing up concretely.",
-    notes="Sets up the closing section: the instrument is still being tuned."))
-
-# ---------- SECTION 6 ----------
-S.append(dict(type="section", sec=6))
-
-S.append(dict(type="finding", kicker="Still growing",
-    headline="A live instrument, not a survey taken once.",
-    numeral="78", caption="entries, as of Oct 2026. The dataset had 30 when the first version of this talk was drafted.",
-    body="Every number here was recomputed the day it was written. The repo’s public Findings tab carries no counts, for the same reason.",
-    notes=""))
+S.append(dict(type="rows", kicker="What this can’t tell you",
+    headline="Four limits, stated plainly.",
+    rows=[("Not a market sample", "Admitted only if they pass a signal test. It says nothing about the median job."),
+          ("No pivots", "Role change inside an existing team produces no posting."),
+          ("Existence, not rate", "An excluded record proves a pattern exists, not how often."),
+          ("A blind side", "The generative side is harder to catch than the deterministic side.")],
+    notes="Near-verbatim from findings.md’s own admissions. Confirm the exact wording against the current file before presenting. The blind side echoes CLAUDE.md: the corpus contains almost no postings that ask for the generative side by name."))
 
 S.append(dict(type="statement", kicker="Explore it",
     headline="Read the postings yourself.",
     body="signals.bertino.co",
     aside=("What’s there", "Every entry, cluster, and signal is browsable on the site. No GitHub account needed."),
-    notes="Confirm the closing claim and URL before presenting."))
+    notes="Confirm the closing claim and URL before presenting. Counts are as of Oct 2026 (78 postings); every number in this deck was recomputed that day, which is also why the site’s public Findings tab carries no counts."))

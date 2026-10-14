@@ -26,6 +26,13 @@ def cards_html(cards):
     out.append('</div>')
     return "\n".join(out)
 
+def rows_html(rows):
+    out = ['<div class="rows reveal">']
+    for label, desc in rows:
+        out.append(f'<div class="row"><span class="row-label">{esc(label)}</span><span class="row-desc">{esc(desc)}</span></div>')
+    out.append('</div>')
+    return "\n".join(out)
+
 def slide_html(i, s):
     t = s["type"]
     notes = s.get("notes", "")
@@ -40,7 +47,7 @@ def slide_html(i, s):
     parts = []
     if s.get("kicker"):
         parts.append(f'<div class="kicker reveal">{esc(s["kicker"])}</div>')
-    hs = " is-md" if (t in ("finding", "quote") or len(s.get("headline", "")) > 62) else ""
+    hs = " is-md" if (t in ("finding", "quote", "rows") or len(s.get("headline", "")) > 62) else ""
     if s.get("headline"):
         parts.append(f'<h1 class="headline{hs}{ph} reveal">{esc(s["headline"])}</h1>')
     if t == "finding" and s.get("numeral"):
@@ -48,6 +55,8 @@ def slide_html(i, s):
                      f'<p class="numeral-caption">{esc(s["caption"])}</p></div>')
     if t == "contrast" and s.get("cards"):
         parts.append(cards_html(s["cards"]))
+    if t == "rows" and s.get("rows"):
+        parts.append(rows_html(s["rows"]))
     if s.get("quotes"):
         small = len(s["quotes"]) > 1 or t == "finding"
         parts.append(quotes_html(s["quotes"], small=small))

@@ -1,8 +1,9 @@
 # Methodology talk
 
-A speaker-led talk on building BCO Signals: how the audit process catches its
-own mistakes, what messy posting data looks like, and what the dataset has
-produced so far.
+A short, speaker-led talk on BCO Signals in three parts: the idea, how it is
+set up (a walkthrough of the README: structure, data schema, taxonomy, archive,
+the weekly scout, the audit command, and the checks that close the loop), and
+what it found. Findings are the bulk of the deck.
 
 **Editorial, not data reporting.** Like `jd-insights/findings.md`, this is
 opinion and interpretation built on the dataset. It does not follow the data
@@ -33,7 +34,7 @@ renumbering.
 ## Open placeholders
 
 - Slide 1, the cold open, is bracketed text awaiting the author's own words.
-- The evaluation-infrastructure count (slide 28) is undecided: four companies
+- The evaluation-infrastructure count (slide 20) is undecided: four companies
   in three domains per `findings.md`, or six in five per the live signal.
 - Several quotes are flagged in the speaker notes for verification against the
   source before presenting.
