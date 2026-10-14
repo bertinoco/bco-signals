@@ -3,7 +3,7 @@
 
 # Quotes
 
-Every stored quote, verbatim from the posting. **75 of 76** entries carry one.
+Every stored quote, verbatim from the posting. **76 of 77** entries carry one.
 
 These are the lines that anchor each entry's cluster and signal assignments, so they are the strongest citable evidence in the dataset. Each is checked against its `jd-source` archive before commit.
 
@@ -192,6 +192,12 @@ These are the lines that anchor each entry's cluster and signal assignments, so 
 > You will shape how our AI Assistant thinks, speaks, and acts, defining the conversation flows, prompt structures, and behavioral standards that make agentic AI experiences feel trustworthy, capable, and human-centered.
 
 `gen-staff-ai-conversation-designer` · added 2026-08-15
+
+### Glean — Content Systems Engineer, Technical Documentation
+
+> Create evaluations and guardrails for AI-generated and AI-maintained documentation, investigate failures, and improve the context, tools, prompts, and systems that shape output quality.
+
+`glean-content-systems-engineer-technical-documentation` · added 2026-10-14
 
 ### GM — Senior Content Designer, Language Systems
 

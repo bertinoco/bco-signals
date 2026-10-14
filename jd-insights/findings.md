@@ -242,8 +242,12 @@ surfaces, then building the graders and harness that prove a prompt fix
 holds and keep working across model releases. Soda's AI Content Engineer is
 a third instance: "Serious prompt engineering: multi-step LLM pipelines with
 structured outputs and evals, not chatting with a model. You know why the
-naive version produces slop." Three companies, three domains (Media, Big
-Tech, SaaS) — the `eval-infrastructure` signal this finding grounds.
+naive version produces slop." Glean's Content Systems Engineer, Technical
+Documentation is a fourth: "Create evaluations and guardrails for
+AI-generated and AI-maintained documentation, investigate failures, and
+improve the context, tools, prompts, and systems that shape output quality."
+Four companies, three domains (Media, Big Tech, SaaS — Soda and Glean both
+sit in SaaS) — the `eval-infrastructure` signal this finding grounds.
 
 Two structurally similar postings were checked and stay excluded, for
 reasons independent of this pattern: Notion's Model Behavior Engineer and

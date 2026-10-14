@@ -788,3 +788,26 @@ fixed strings to governing what a generator produces, in almost those exact
 terms. One instance, so nothing yet to compare it against; noted because the
 framing is the dataset's own organizing distinction stated back by an
 employer, rather than inferred by us.
+
+## A posting using "deterministic" as the literal word, in two parallel bullets rather than a transition
+
+**Glean**'s Content Systems Engineer, Technical Documentation states both
+sides of this dataset's `deterministic`/`generative` pairing as separate,
+ongoing responsibility bullets, using the literal word: "Build deterministic
+automation and agentic workflows that improve documentation freshness and
+accuracy while reducing repetitive manual work" sits alongside "Build
+deterministic checks that detect stale, inconsistent, incomplete, or
+inaccurate documentation" and "Create evaluations and guardrails for
+AI-generated and AI-maintained documentation, investigate failures, and
+improve the context, tools, prompts, and systems that shape output quality."
+
+Different shape from Etsy's instance above. Etsy names the shift as a
+before/after transition for its content org ("from reviewing strings to
+governing behavior") and never uses the word "deterministic" itself. Glean's
+posting never frames a transition at all — deterministic checks and
+generative-output governance are listed as two parallel, concurrent parts of
+one role, and "deterministic" appears as the posting's own term, not ours.
+One instance of the literal word, so nothing yet to compare it against on
+that specific point; noted alongside Etsy's because together they're two
+different ways an employer has now handed back the dataset's own organizing
+vocabulary rather than requiring us to infer it.
