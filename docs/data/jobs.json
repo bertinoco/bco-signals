@@ -2,8 +2,8 @@
   "meta": {
     "title": "BCO Content Skills Tracker",
     "description": "A curated skills tracker for the content design community.",
-    "lastUpdated": "2026-10-06",
-    "totalEntries": 76
+    "lastUpdated": "2026-10-14",
+    "totalEntries": 77
   },
   "entries": [
     {
@@ -2271,6 +2271,32 @@
       "sourceUrl": null,
       "dateAdded": "2026-10-06",
       "quote": "Work with structured content: content models, metadata, taxonomy, CMS constraints, and translation and localization readiness."
+    },
+    {
+      "id": "glean-content-systems-engineer-technical-documentation",
+      "company": "Glean",
+      "title": "Content Systems Engineer, Technical Documentation",
+      "domain": "SaaS",
+      "engagement": "Not specified",
+      "location": "Bangalore, India",
+      "remote": "hybrid",
+      "coreFrame": "Owns the documentation experience for Glean's connectors — the integrations that let Glean access customer systems — serving the technical administrators who configure access, authentication, permissions, and deployments. Builds scripts, agents, and content pipelines that automate documentation creation, transformation, validation, and maintenance, combining technical-writing expertise with programming, information architecture, and AI practices, and remains accountable for the resulting customer experience rather than for content production alone. Creates evaluations and guardrails for AI-generated and AI-maintained documentation, investigates failures, and improves the context, tools, prompts, and systems that shape output quality, alongside deterministic checks that detect stale, inconsistent, incomplete, or inaccurate documentation. Establishes information architecture for complex setup and configuration flows, partners with Engineering, Product, QA, Support, field teams, and customers to identify documentation risk, and tracks measures of documentation health — freshness, accuracy, automated-check coverage, manual effort, and field or support complaints.",
+      "clusters": [
+        "technical-writing",
+        "content-systems-design",
+        "ai-tooling",
+        "ai-content-governance",
+        "taxonomy",
+        "enablement"
+      ],
+      "signals": [
+        "model-behavior-design",
+        "eval-infrastructure",
+        "ai-native-expectation"
+      ],
+      "sourceUrl": null,
+      "dateAdded": "2026-10-14",
+      "quote": "Create evaluations and guardrails for AI-generated and AI-maintained documentation, investigate failures, and improve the context, tools, prompts, and systems that shape output quality."
     }
   ],
   "clusters": {

@@ -3,52 +3,52 @@
 
 # Stats
 
-Dataset state: **76 entries**, `meta.lastUpdated` 2026-10-06. Generated 2026-10-06.
+Dataset state: **77 entries**, `meta.lastUpdated` 2026-10-14. Generated 2026-10-14.
 
 Every figure here is counted from `docs/data/jobs.json`. If you quote one in something published, quote the entry count with it — these move.
 
 ## Headline
 
-- **76** entries across **67** companies and **13** domains
-- Date range: 2026-05-24 to 2026-10-06
+- **77** entries across **68** companies and **13** domains
+- Date range: 2026-05-24 to 2026-10-14
 
 ## Responsibility clusters
 
 | | Entries | Share |
 |---|---:|---:|
-| Content systems design | 70 | 92% |
-| Enablement & team upskilling | 62 | 82% |
-| AI tooling & automation | 55 | 72% |
-| AI-generated content governance | 33 | 43% |
+| Content systems design | 71 | 92% |
+| Enablement & team upskilling | 63 | 82% |
+| AI tooling & automation | 56 | 73% |
+| AI-generated content governance | 34 | 44% |
 | Terminology & language governance | 30 | 39% |
-| Taxonomy & information architecture | 27 | 36% |
-| Technical writing & documentation | 18 | 24% |
-| Localization & internationalization | 15 | 20% |
+| Taxonomy & information architecture | 28 | 36% |
+| Technical writing & documentation | 19 | 25% |
+| Localization & internationalization | 15 | 19% |
 
 ## Skill signals
 
 | | Entries | Share |
 |---|---:|---:|
-| AI fluency expected | 50 | 66% |
+| AI fluency expected | 51 | 66% |
 | Governance emphasized | 29 | 38% |
-| Enabler, not bottleneck | 28 | 37% |
+| Enabler, not bottleneck | 28 | 36% |
+| Model behavior design | 23 | 30% |
 | Central standards function | 22 | 29% |
-| Model behavior design | 22 | 29% |
 | Language as infrastructure | 11 | 14% |
 | Content systems for marketers | 10 | 13% |
-| Structured for agent retrieval | 8 | 11% |
+| Structured for agent retrieval | 8 | 10% |
 | Accessibility as structural constraint | 7 | 9% |
 | GEO & SEO | 6 | 8% |
 | Structured data | 6 | 8% |
-| Content work under new titles | 5 | 7% |
-| Classification for ML | 5 | 7% |
-| Evaluation infrastructure | 5 | 7% |
+| Evaluation infrastructure | 6 | 8% |
+| Content work under new titles | 5 | 6% |
+| Classification for ML | 5 | 6% |
 | Work outpaces the title | 3 | 4% |
 | Title outpaces the work | 2 | 3% |
 
 ## Compensation
 
-- Stated in **51 of 76** entries (43 USD, 4 GBP, 3 CAD, 1 EUR)
+- Stated in **51 of 77** entries (43 USD, 4 GBP, 3 CAD, 1 EUR)
 - Full spread: **$62,120** to **$710,000**
 - USD medians: **$137,800** low, **$186,200** high
 - `covers`: 34 base, 15 unstated, 2 total
@@ -78,25 +78,25 @@ Read the n column before quoting any of these. A median over fewer than roughly 
 
 ## Title vocabulary
 
-Words appearing in 3 or more of the 76 stored titles. Counted from `title`, which is stored verbatim — so this reflects what employers wrote, not what the site renders.
+Words appearing in 3 or more of the 77 stored titles. Counted from `title`, which is stored verbatim — so this reflects what employers wrote, not what the site renders.
 
 | Word | Titles | Share |
 |---|---:|---:|
-| Content | 53 | 70% |
+| Content | 54 | 70% |
 | Designer | 32 | 42% |
-| Senior | 18 | 24% |
+| Senior | 18 | 23% |
 | AI | 16 | 21% |
 | UX | 14 | 18% |
+| Systems | 12 | 16% |
 | Staff | 12 | 16% |
-| Systems | 11 | 14% |
 | Design | 10 | 13% |
 | Lead | 9 | 12% |
-| Architect | 8 | 11% |
-| Writer | 8 | 11% |
-| Strategist | 8 | 11% |
-| Engineer | 5 | 7% |
-| Manager | 5 | 7% |
-| Conversation | 5 | 7% |
+| Architect | 8 | 10% |
+| Writer | 8 | 10% |
+| Strategist | 8 | 10% |
+| Engineer | 6 | 8% |
+| Manager | 5 | 6% |
+| Conversation | 5 | 6% |
 | Language | 4 | 5% |
 | Product | 4 | 5% |
 | Experience | 4 | 5% |
@@ -107,7 +107,7 @@ Words appearing in 3 or more of the 76 stored titles. Counted from `title`, whic
 
 | | Entries | Companies |
 |---|---:|---|
-| SaaS | 19 | Adobe, Autodesk, Bolt.new, CoLab, Docebo, Engrain, Figma, Fin, HoneyBook, Notion, Personio, Salesforce, Slang AI, Smartly, Soda, Splunk, UKG, Wix, Zoom |
+| SaaS | 20 | Adobe, Autodesk, Bolt.new, CoLab, Docebo, Engrain, Figma, Fin, Glean, HoneyBook, Notion, Personio, Salesforce, Slang AI, Smartly, Soda, Splunk, UKG, Wix, Zoom |
 | Finance | 15 | Ally Financial, Bank of America, Capital One, Chime, Citizens, Cleo, Ethos, Insurify, JPMorgan Chase, Robinhood, Sanna, Trustly, Wealthsimple, Wise |
 | Big Tech | 13 | Alibaba, Amazon, Anthropic, Apple, Google, LinkedIn, Meta, OpenAI |
 | E-commerce | 8 | Airbnb, Coupang, Etsy, HelloFresh, The Ride Platform, Vinted, Wellhub |
@@ -123,7 +123,7 @@ Words appearing in 3 or more of the 76 stored titles. Counted from `title`, whic
 
 ## Stated org placement
 
-Recorded in `jd-source` front matter. **61 of 76** postings say where the role sits; the rest do not, which is itself a fact about the posting.
+Recorded in `jd-source` front matter. **61 of 77** postings say where the role sits; the rest do not, which is itself a fact about the posting.
 
 | Company | Placement as stated |
 |---|---|
@@ -191,7 +191,7 @@ Recorded in `jd-source` front matter. **61 of 76** postings say where the role s
 
 ## Stated posting dates
 
-**13 of 76** postings state a date. Where both exist, the gap to `dateAdded` varies enough that one is not a proxy for the other.
+**13 of 77** postings state a date. Where both exist, the gap to `dateAdded` varies enough that one is not a proxy for the other.
 
 | Company | Posted | Added |
 |---|---|---|
