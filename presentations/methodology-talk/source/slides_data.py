@@ -17,9 +17,9 @@ S = []
 # 01  THE IDEA
 # =====================================================================
 S.append(dict(type="quote", kicker="Cold open",
-    quotes=[("Automate the frontend.", "Said to me at Legora")],
+    quotes=[("Automate the frontend.", "Design leader at an AI-native startup")],
     body="That\u2019s when I started noticing the other signals, and tracking them to stay ahead.",
-    notes="From your account of the conversation at Legora. Two things to confirm: that \u201cautomate the frontend\u201d is the phrase as it was said, and that you\u2019re comfortable attributing it to the company by name, since this branch is public. If not, swap the attribution for \u201cA design leader at an AI startup.\u201d"))
+    notes="From your account of the conversation. Confirm that \u201cautomate the frontend\u201d is the phrase as it was said, since the quote marks claim it was verbatim. The company is deliberately not named."))
 
 S.append(dict(type="contrast", kicker="The idea",
     headline="Track the postings that signal change.",

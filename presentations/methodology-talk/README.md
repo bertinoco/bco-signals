@@ -34,8 +34,7 @@ renumbering.
 ## Still to do
 
 - Confirm the cold open (slide 1): that "automate the frontend" is the phrase as
-  said, and that attributing it to Legora by name is intended. This branch is
-  public.
+  said. The company is deliberately not named.
 - The judgment-and-taste count (slide 16) is ten: the finding says eight, and a
   recount at 78 entries added Glean and Ethos on the finding's own criteria.
   `findings.md` has not been updated to match.
