@@ -1462,6 +1462,23 @@ MCP specifically as a channel through which the role's own content or
 documentation output reaches AI agents, rather than a tool the role builds
 agentic systems with.*
 
+**A full multi-category tool stack named by brand — one instance.** Taxfix's
+Content Engineer names tools across five separate categories rather than one:
+AI tools (Claude, Langdock, Antigravity), no-code/low-code automation
+platforms (n8n, Make), an ASO tool (Peec.ai), a CMS (Uniform), and SEO tooling
+(Ahrefs, Google Search Console, Google Analytics). This is a different move
+from the "Named AI tools" finding above, which tracks postings naming a
+specific AI product as an example (or, once, a gate) within an AI-fluency
+ask. Taxfix's AI tools are named the same way its non-AI tools are — as the
+operational stack the role works in daily ("Work daily with our content and
+SEO stack," "Leverage our AI tooling stack") — not singled out as evidence of
+AI fluency specifically. Breadth-of-stack disclosure, not AI-tool-naming, is
+the pattern here, so it is not counted as a sixth "Named AI tools" instance.
+First instance, so it stays here rather than becoming a key or a finding.
+*Trigger to revisit: a second posting naming a comparably full tool stack
+(three or more categories, each with a named brand) as the role's actual
+working environment, rather than listing a skill requirement generically.*
+
 ---
 
 # What this data cannot support
