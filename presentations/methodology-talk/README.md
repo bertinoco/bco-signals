@@ -36,6 +36,8 @@ renumbering.
 - Confirm the cold open (slide 1): that "automate the frontend" is the phrase as
   said, and that attributing it to Legora by name is intended. This branch is
   public.
-- Several quotes are flagged in the speaker notes for verification against the
-  source before presenting.
-- The deck has no placeholders left. Counts are as of Oct 2026 (78 postings).
+- Decide the judgment-and-taste count (slide 16). The finding says eight; a
+  recount at 78 entries suggests ten (Glean and Ethos qualify on the finding's
+  own criteria). Not changed yet.
+- Quotes on the slides were verified against the archived source texts in
+  October 2026. Counts are as of Oct 2026 (78 postings).

@@ -116,7 +116,7 @@ S.append(dict(type="finding", kicker="Finding",
     headline="AI fluency is a baseline, not a differentiator.",
     numeral="52", caption="of 78 postings (67%), as of Oct 2026, expect the candidate to already work with AI tools.",
     quotes=[("Claude Code, Gemini, or Figma AI", "HelloFresh, naming the tools")],
-    notes="MY TAKE: whether a role touches AI does not track whether the employer builds AI. What predicts the job is whether the content function has a systems mandate. Wealthsimple asks for “shipping your own code changes.” Verify the HelloFresh fragment against the stored quote."))
+    notes="MY TAKE: whether a role touches AI does not track whether the employer builds AI. What predicts the job is whether the content function has a systems mandate. Wealthsimple asks for “shipping your own code changes.” HelloFresh fragment verified against the source."))
 
 # Judgment and taste: full depth
 S.append(dict(type="finding", kicker="Finding, in full",
@@ -128,8 +128,8 @@ S.append(dict(type="finding", kicker="Finding, in full",
 S.append(dict(type="quote", kicker="What the data shows",
     headline="Two of the eight, in their own words.",
     quotes=[("you’ll act as Editor in Chief: orchestrating AI agents and applying editorial judgment across outputs.", "CoLab"),
-            ("Taste is the bar. Anti-slop is the whole point. An engine that ships slop faster has negative value.", "Soda")],
-    notes="Others in the count: Intercept (“Strong editorial judgment and comfort challenging weak AI-generated outputs”), Sanna (“We value judgment, taste, and learning ability over years of experience or specific tools”), Docebo, Fin, Meta. Soda quote: check whether to add “and most of them do.”"))
+            ("Taste is the bar. Anti-slop is the whole point. An engine that ships slop faster has negative value, and most of them do.", "Soda")],
+    notes="Others in the count: Intercept (“Strong editorial judgment and comfort challenging weak AI-generated outputs”), Sanna (“We value judgment, taste, and learning ability over years of experience or specific tools”), Docebo, Fin, Meta. Soda’s line is now the full source sentence."))
 
 S.append(dict(type="quote", kicker="What the data shows",
     headline="And the first one in retail.",
@@ -154,7 +154,7 @@ S.append(dict(type="quote", kicker="What the data shows",
     headline="The work, in the postings’ words.",
     quotes=[("Build evaluation frameworks to measure and improve conversation quality, accuracy, task completion, and user impact.", "Spotify"),
             ("Serious prompt engineering: multi-step LLM pipelines with structured outputs and evals, not chatting with a model.", "Soda")],
-    notes="Anthropic is built around writing and revising the prompts behind Claude’s product surfaces, then building the graders and harness that prove a prompt fix holds across model releases. That is a paraphrase from the finding; pull the verbatim line from the posting."))
+    notes="Anthropic, verbatim from the posting: “Write and revise the prompts behind Claude’s tools, features, and behaviors on a product surface” and “Build the graders that prove a prompt fix and rerun on the next model.”"))
 
 S.append(dict(type="quote", kicker="What the data shows",
     headline="And what excluded the near-misses.",
@@ -205,7 +205,7 @@ S.append(dict(type="rows", kicker="What this can’t tell you",
           ("No pivots", "Role change inside an existing team produces no posting."),
           ("Existence, not rate", "An excluded record proves a pattern exists, not how often."),
           ("A blind side", "The generative side is harder to catch than the deterministic side.")],
-    notes="Near-verbatim from findings.md’s own admissions. Confirm the exact wording against the current file before presenting. The blind side echoes CLAUDE.md: the corpus contains almost no postings that ask for the generative side by name."))
+    notes="The first three rows follow findings.md’s “What this data cannot support” section (verified against the current file). The fourth is not from that section: it echoes CLAUDE.md’s Terminology note that the corpus contains almost no postings that ask for the generative side by name. That section also says frequency counts are a floor, not a measurement, because a key created later isn’t applied to older entries unless someone goes back. Worth saying aloud, given how many counts are in this deck."))
 
 S.append(dict(type="statement", kicker="Explore it",
     headline="Read the postings yourself.",
