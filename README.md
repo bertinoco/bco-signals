@@ -33,8 +33,8 @@ Each entry in `jobs.json` includes:
 
 - `company` / `domain` — basics
 - `title` — normalized at render
-- `clusters` — responsibility areas the role covers
-- `signals` — skills and observable patterns
+- `clusters` — core responsibility groupings
+- `signals` — recurring skills and themes
 - `compRange` — stated range, plus extras
 - `quote` — optional verbatim excerpt
 - `note` — optional note
