@@ -16,11 +16,10 @@ S = []
 # =====================================================================
 # 01  THE IDEA
 # =====================================================================
-S.append(dict(type="statement", kicker="Cold open",
-    headline="[Why I started counting job postings]",
-    body="[Your reason for building the dataset, in your words. One or two sentences.]",
-    ph=True,
-    notes="PLACEHOLDER. This is your story, not something to draft for you. Replace the headline and body, or turn it into a single quote slide."))
+S.append(dict(type="quote", kicker="Cold open",
+    quotes=[("Automate the frontend.", "Said to me at Legora")],
+    body="That\u2019s when I started noticing the other signals, and tracking them to stay ahead.",
+    notes="From your account of the conversation at Legora. Two things to confirm: that \u201cautomate the frontend\u201d is the phrase as it was said, and that you\u2019re comfortable attributing it to the company by name, since this branch is public. If not, swap the attribution for \u201cA design leader at an AI startup.\u201d"))
 
 S.append(dict(type="contrast", kicker="The idea",
     headline="Track the postings that signal change.",
@@ -145,12 +144,11 @@ S.append(dict(type="statement", kicker="My take",
     notes="Label this slide as opinion, per the ground rules."))
 
 # Evaluation infrastructure: full depth
-S.append(dict(type="statement", kicker="Finding, in full",
+S.append(dict(type="finding", kicker="Finding, in full",
     headline="Evaluation infrastructure is generative work, built as software.",
-    body="Generative content work authors a generator’s constraints and the criteria for judging what it emits. An eval harness is that criteria, operationalized as software rather than a hand-run rubric.",
-    aside=("Placeholder: decide the count", "findings.md names four companies in three domains (Spotify, Anthropic, Soda, Glean). The signal is now on six entries in five domains. Etsy is verified; Huge’s grounding is not."),
-    ph=True,
-    notes="What the data shows, part 1. Replace the placeholder aside with the chosen count before presenting."))
+    numeral="6", caption="postings across five domains: Media, Big Tech, SaaS, Agency, E-commerce.",
+    body="Generative content work authors a generator\u2019s constraints and the criteria for judging what it emits. An eval harness is that criteria, operationalized as software rather than a hand-run rubric.",
+    notes="What the data shows, part 1. Count verified against the source texts as of Oct 2026: Spotify, Anthropic, Soda, Glean, Etsy (\u201cset the eval framework that determines if the output meets the quality bar\u201d), and Huge (\u201cDevelop golden queries and responses to benchmark quality and ensure safe, consistent outputs\u201d). findings.md still says four companies in three domains; the live signal and the source texts say six in five."))
 
 S.append(dict(type="quote", kicker="What the data shows",
     headline="The work, in the postings’ words.",
@@ -193,6 +191,13 @@ S.append(dict(type="finding", kicker="Finding",
     numeral="57", caption="of 78 postings state where the role sits, as of Oct 2026, and placements don’t cluster in design.",
     body="HelloFresh: Software Engineering. Ally: Marketing. Notion: Customer Experience. Trustly: Tech.",
     notes="MY TAKE: the discipline is being claimed by several functions at once and none has won. The conversation about content design’s future assumes it stays in design. The postings don’t. Five more postings record that they don’t state a placement; 16 are null."))
+
+S.append(dict(type="contrast", kicker="Still forming",
+    headline="Two kinds of work are getting their own titles.",
+    cards=[("Taxonomy", "Meta, Vinted", "\u201cTaxonomist, Content Design.\u201d \u201cTaxonomist, Supply.\u201d"),
+           ("AI content strategy", "Meta, Alibaba, Huge", "\u201cAI Content Strategy Lead.\u201d \u201cDirector, AI Content Strategy.\u201d")],
+    aside=("My take", "Early and thin: two postings, and three. As the work matures it may claim its own title instead of staying a line item."),
+    notes="Both findings say they are thin. Taxonomy: the cluster is on 28 entries now, but only Meta and Vinted make it the whole title, and Vinted\u2019s posting never invokes content design (placement is Product Management), so it survives on what the work classifies. Trigger to revisit: a third taxonomy title with no content-design framing. AI content strategy: Meta and Alibaba share a domain; Huge adds Agency and the first Director level. Trigger: a fourth outside Big Tech and Agency."))
 
 S.append(dict(type="rows", kicker="What this can’t tell you",
     headline="Four limits, stated plainly.",

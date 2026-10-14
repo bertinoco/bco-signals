@@ -31,10 +31,11 @@ Rebuild after editing the source:
 Page numbers are computed from the slide count, so adding a slide needs no
 renumbering.
 
-## Open placeholders
+## Still to do
 
-- Slide 1, the cold open, is bracketed text awaiting the author's own words.
-- The evaluation-infrastructure count (slide 20) is undecided: four companies
-  in three domains per `findings.md`, or six in five per the live signal.
+- Confirm the cold open (slide 1): that "automate the frontend" is the phrase as
+  said, and that attributing it to Legora by name is intended. This branch is
+  public.
 - Several quotes are flagged in the speaker notes for verification against the
   source before presenting.
+- The deck has no placeholders left. Counts are as of Oct 2026 (78 postings).
