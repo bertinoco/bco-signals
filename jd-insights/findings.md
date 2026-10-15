@@ -106,7 +106,7 @@ describe building mechanisms or producing pages.
 
 ## Judgment and taste are what's asked for once AI does more of the drafting
 
-**What the data shows.** Eight included postings across five domains name
+**What the data shows.** Nine included postings across five domains name
 judgment or taste explicitly as the thing the human still provides, once AI
 is doing more of the execution — not as a soft-skill throwaway, but paired
 directly against AI-generated or AI-assisted output. CoLab (SaaS): "you'll
@@ -136,9 +136,12 @@ first instance in this domain): "AI will write plausible copy at volume all
 day, which makes judgment about what is worth saying the scarce skill rather
 than the throughput. You see AI as a craft multiplier, and you are clear
 about where human judgment and real customer evidence still have to do the
-work."
+work." Sequence (Finance, a second instance in this domain alongside Sanna):
+"You already use AI to produce good work, you know how to fix weak output,
+and you can turn a process that worked once into one that works every
+time."
 
-A ninth instance sits in an excluded record, cited here as existence
+A tenth instance sits in an excluded record, cited here as existence
 evidence only, not corpus grounding: DeepMind's Senior Manager, UX Content
 Design (Gemini) — excluded on required criterion 3, management dominance —
 states "This role requires high taste, creativity, and the ability to
@@ -160,9 +163,9 @@ taste against AI output are drawing a line between what the tool produces
 and what a person is still accountable for deciding is good. Five domains
 with no repeated employer or shared industry (SaaS, Agency, Big Tech,
 Finance, Retail) is real spread, not one company's house style borrowed by
-a competitor — SaaS still accounts for four of the eight included instances
-(CoLab, Docebo, Fin, Soda), the only domain repeated so far. Gap is the
-first Retail-domain instance.
+a competitor — SaaS still accounts for four of the nine included instances
+(CoLab, Docebo, Fin, Soda). Finance is now the second domain to repeat,
+with Sanna and Sequence. Gap is the first Retail-domain instance.
 
 ## Nobody agrees what this work is worth
 
