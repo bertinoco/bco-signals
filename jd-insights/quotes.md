@@ -3,7 +3,7 @@
 
 # Quotes
 
-Every stored quote, verbatim from the posting. **77 of 78** entries carry one.
+Every stored quote, verbatim from the posting. **78 of 79** entries carry one.
 
 These are the lines that anchor each entry's cluster and signal assignments, so they are the strongest citable evidence in the dataset. Each is checked against its `jd-source` archive before commit.
 
@@ -348,6 +348,12 @@ These are the lines that anchor each entry's cluster and signal assignments, so 
 > This isn’t a traditional content role. We’re looking for someone who operates at the edge of tech and language – someone who can design systems, build agents, and orchestrate tooling that scales quality.
 
 `sanna-content-engineer` · added 2026-05-24
+
+### Sequence — Content Engineer
+
+> Design reusable AI-assisted workflows from source material and brief to finished assets. Connect research, writing, visuals, production and review, and turn what works into prompts, templates, reference libraries and small tools the team can reuse.
+
+`sequence-content-engineer` · added 2026-10-15
 
 ### Slang AI — Senior Conversation Designer
 

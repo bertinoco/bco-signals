@@ -2,8 +2,8 @@
   "meta": {
     "title": "BCO Content Skills Tracker",
     "description": "A curated skills tracker for the content design community.",
-    "lastUpdated": "2026-10-14",
-    "totalEntries": 78
+    "lastUpdated": "2026-10-15",
+    "totalEntries": 79
   },
   "entries": [
     {
@@ -2322,6 +2322,27 @@
       "sourceUrl": null,
       "dateAdded": "2026-10-14",
       "quote": "Instead, you'll be the person who builds the systems, automations, and workflows that make our content operations scale across three markets."
+    },
+    {
+      "id": "sequence-content-engineer",
+      "company": "Sequence",
+      "title": "Content Engineer",
+      "domain": "Finance",
+      "engagement": "Full-time",
+      "location": "Tel Aviv, Israel",
+      "remote": false,
+      "coreFrame": "Builds the system that turns product knowledge, customer conversations, and campaign ideas into content across formats, working with the growth and product teams on the content behind campaigns, launches, and customer education; writes and produces the work personally, brings in specialists when needed, and owns the finished output. Designs reusable AI-assisted workflows from source material and brief to finished assets, connecting research, writing, visuals, production, and review, and turns what works into prompts, templates, reference libraries, and small tools the team can reuse. Builds complete campaign packages (landing-page copy, video scripts, social posts, ad and sponsorship creative, emails, outreach messages, sales scripts) from a business vertical or campaign idea, owns content for launches and partnerships, and researches and produces customer stories, case studies, and explainers grounded in interviews. Shapes the company's voice across its website, social content, and product microcopy, briefs and reviews work from designers, editors, and other specialists, and is stated to find where output is generic, inaccurate, or slow and fix the inputs, tools, and review steps, setting the quality bar for each deliverable and keeping source facts traceable. Also develops educational formats for the company's YouTube channel and an internal academy. States no fixed requirement for software-engineering experience or a specific past title, and describes the role as senior, expecting significant prior work at early-stage startups.",
+      "clusters": [
+        "content-systems-design",
+        "ai-tooling"
+      ],
+      "signals": [
+        "content-marketing-adjacent",
+        "ai-native-expectation"
+      ],
+      "sourceUrl": null,
+      "dateAdded": "2026-10-15",
+      "quote": "Design reusable AI-assisted workflows from source material and brief to finished assets. Connect research, writing, visuals, production and review, and turn what works into prompts, templates, reference libraries and small tools the team can reuse."
     }
   ],
   "clusters": {
