@@ -782,13 +782,15 @@ moved from excluded to included) — fix the fact, but do not rewrite or add
 to the interpretation around it. New interpretation, or any rewrite of the
 reasoning itself, is the user's voice and still requires the user, always.
 
-**When to check.** Not a dedicated step on every JD addition — re-verifying
-every finding on every single entry isn't worth the cost. Check instead
-whenever: the user is about to read or draft against `findings.md` directly
-and it's been a while since the figures were refreshed; Step 4's backcheck
-surfaces that a finding's named signal or cluster count has grown well past
-what it states; or a broader `jd-insights/` review is already underway for
-another reason, where checking findings.md costs little extra.
+**When to check.** `jd-insights/refresh.py` now prints a staleness check
+against `findings.md`'s own "as of N entries" header every time it runs —
+which Step 6 already requires on every JD addition, so this is no longer
+something to remember, only something to read. A loud `⚠ STALE` line (10+
+entries or 15%+ drift) means do the refresh pass before anything else touches
+`findings.md`; a quiet one-line confirmation means it's current. Also check
+on demand whenever the user is about to read or draft against `findings.md`
+directly, regardless of what the script last said, since drift can happen
+between runs.
 
 **What "fixed" means in practice.** Re-run the actual count from
 `docs/data/jobs.json` (cluster/signal holder counts, `compRange` presence,

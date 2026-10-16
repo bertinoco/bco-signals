@@ -263,9 +263,41 @@ def write_quotes(data):
     return len(quoted)
 
 
+def check_findings_staleness(n):
+    """findings.md is hand-written and never touched here, but its own header
+    states the entry count its figures were last computed against. Step 6
+    already runs this script on every JD addition, so this is the one place
+    a growing gap is guaranteed to surface — the drift that let findings.md
+    go stale by 3x (29 -> 79 entries) before anyone noticed. See CLAUDE.md's
+    "Keeping findings.md's own figures current" section."""
+    path = os.path.join(OUT_DIR, "findings.md")
+    if not os.path.exists(path):
+        return
+    with open(path) as fh:
+        text = fh.read()
+    match = re.search(r"as of \*\*(\d+) entries, ([\d-]+)\*\*", text)
+    if not match:
+        print("findings.md staleness check — couldn't find the 'as of N entries' header; check it by hand.")
+        return
+    stated_n, stated_date = int(match.group(1)), match.group(2)
+    drift = n - stated_n
+    if drift <= 0:
+        print(f"findings.md figures: as of {stated_n} entries ({stated_date}) — current, nothing to flag.")
+        return
+    pct_drift = round(100 * drift / stated_n)
+    loud = drift >= 10 or pct_drift >= 15
+    prefix = "⚠ STALE" if loud else "findings.md figures"
+    print(
+        f"{prefix}: as of {stated_n} entries ({stated_date}), dataset is now {n} "
+        f"(+{drift}, +{pct_drift}%)."
+        + (" Worth a refresh pass before quoting or drafting against it." if loud else "")
+    )
+
+
 if __name__ == "__main__":
     data = load()
     n = write_stats(data)
     q = write_quotes(data)
     print(f"stats.md   regenerated — {n} entries")
     print(f"quotes.md  regenerated — {q} quotes")
+    check_findings_staleness(n)
