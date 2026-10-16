@@ -757,3 +757,46 @@ key.
   the claim against the archive. The list can grow later if another posting
   says the same thing — that's an addition, not a correction, since nothing
   it already claimed becomes false.
+
+### Keeping findings.md's own figures current
+
+Unlike `findings.json`'s `dataStatement` (which avoids dataset-wide counts
+precisely so it never goes stale), `findings.md`'s "What the data shows"
+sections are the internal, pre-publication analysis file — citing precise
+counts, fractions, and percentages here is expected and useful. That means
+they need active upkeep, not avoidance, and they will drift: the corpus grew
+from 29 to 79 entries across many individual JD additions, and none of them
+individually triggered a check, because Step 6 only asks whether *that one
+new entry* changes an existing finding — it never asks whether the figures
+already on the page have drifted. By the time anyone looked, every stated
+fraction in the file was stale by roughly 3x.
+
+**Standing authorization.** Updating a stale figure, holder count, or company
+list in an existing finding's "What the data shows" section — including the
+file's own "Figures below are as of N entries" header — does not require the
+user's approval first. Treat it as a mechanical, reportorial correction, the
+same category as fixing a typo: just fix it and say what changed. This
+includes correcting an embedded factual claim that happens to sit inside a
+"What I think it means" paragraph (a stale count, a company that's since
+moved from excluded to included) — fix the fact, but do not rewrite or add
+to the interpretation around it. New interpretation, or any rewrite of the
+reasoning itself, is the user's voice and still requires the user, always.
+
+**When to check.** Not a dedicated step on every JD addition — re-verifying
+every finding on every single entry isn't worth the cost. Check instead
+whenever: the user is about to read or draft against `findings.md` directly
+and it's been a while since the figures were refreshed; Step 4's backcheck
+surfaces that a finding's named signal or cluster count has grown well past
+what it states; or a broader `jd-insights/` review is already underway for
+another reason, where checking findings.md costs little extra.
+
+**What "fixed" means in practice.** Re-run the actual count from
+`docs/data/jobs.json` (cluster/signal holder counts, `compRange` presence,
+etc.) rather than scaling the old number proportionally — a figure that was
+directionally right at 29 entries is not guaranteed to still be directionally
+right at 79, and some won't be (see "Nobody agrees what this work is worth,"
+where the stated-range rate actually dropped as the corpus grew). Where a
+claim depends on judgment rather than a clean structured field (org
+placement, "marketing-sited" classification), a keyword search is not a
+substitute for rereading the text — say so explicitly and flag it as pending
+a fuller recheck rather than guessing at a refreshed number.

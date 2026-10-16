@@ -17,21 +17,21 @@ alone — that is Step 2 of the audit process and this file does not amend it. I
 a finding here seems to justify an assignment, the finding has drifted from its
 evidence.
 
-Figures below are as of **29 entries, 2026-08-05**. They move. Regenerate
+Figures below are as of **79 entries, 2026-10-16**. They move. Regenerate
 `stats.md` before quoting any of them.
 
 ---
 
 ## Content standards are being pulled into central functions
 
-**What the data shows.** Eight of 29 postings describe content standards owned
-by one central or horizontal function, with distributed teams consuming them:
-Adobe, Ally, JPMorgan Chase, LinkedIn, Meta (twice), Netflix, OpenAI. Seven
-companies, six industries. They describe it in their own words rather than a shared
-vocabulary — Netflix's "centralized authority" over "a decentralized content
-design community", Ally's "sits above channels and formats", LinkedIn's "single
-accountable owner", JPMorgan's "partner playbooks and variation guidelines",
-OpenAI's "domain playbooks that scale across teams".
+**What the data shows.** The `central-standards-function` signal now has 22
+holders across 8 domains — Big Tech, Finance, Media, SaaS, Cybersecurity,
+Government, E-commerce, Retail — up from 8 holders in 7 companies when this
+finding was first written. They describe it in their own words rather than a
+shared vocabulary — Netflix's "centralized authority" over "a decentralized
+content design community", Ally's "sits above channels and formats",
+LinkedIn's "single accountable owner", JPMorgan's "partner playbooks and
+variation guidelines", OpenAI's "domain playbooks that scale across teams".
 
 Adobe states both sides of the arrangement in one clause: this role is "not
 product-level content decisions or UI copy (that lives with embedded product
@@ -51,9 +51,9 @@ and the other branch ends somewhere closer to platform engineering.
 
 ## The work has moved from producing content to producing systems
 
-**What the data shows.** Content systems design appears in 26 of 29 postings
-(90%). Enablement — building templates, playbooks, and guidance so other people
-can write — appears in 24 (83%). Both are more common than any craft
+**What the data shows.** Content systems design appears in 73 of 79 postings
+(92%). Enablement — building templates, playbooks, and guidance so other people
+can write — appears in 63 (80%). Both are more common than any craft
 responsibility.
 
 Several postings say outright that writing is not the job. CoLab: "not by
@@ -70,13 +70,13 @@ people who are excellent at the mechanism.
 
 ## AI fluency is a baseline, not a differentiator
 
-**What the data shows.** 18 of 29 postings (62%) expect the candidate to
+**What the data shows.** 53 of 79 postings (67%) expect the candidate to
 already be working with AI tools — not curious about them. HelloFresh names the
 tools: "Active usage of AI as a core part of your daily workflow… building
 rapid interactive prototypes (using tools like Claude Code, Gemini, or Figma
 AI)." Wealthsimple asks for "shipping your own code changes" via AI.
 
-The 11 postings that omit it are not the ones you would guess. Whether a
+The 26 postings that omit it are not the ones you would guess. Whether a
 content role involves AI does not track whether the employer builds AI. Two
 excluded records are AI companies posting content roles with no AI in the work
 at all: Google's YouTube Staff UX Content Designer, rejected because the JD
@@ -171,8 +171,9 @@ with Sanna and Sequence. Gap is the first Retail-domain instance.
 
 **What the data shows.** Stated ranges run from **$65,000** (Insurify, Editor,
 AI Content Systems) to **$710,000** (Netflix, Staff Systems Designer,
-Language). Both have "Systems" in the title. 22 of 29 postings state a range.
-Adobe alone states two different ranges in one posting depending on location.
+Language). Both have "Systems" in the title. 51 of 79 postings state a range —
+down from 22 of 29 (76%) when this was first written to 65% now, a real shift
+toward fewer postings disclosing comp, not just a bigger sample.
 
 **What I think it means.** An order of magnitude between two roles whose titles
 would sit next to each other in a search result is not a seniority gap; it is
@@ -249,8 +250,15 @@ naive version produces slop." Glean's Content Systems Engineer, Technical
 Documentation is a fourth: "Create evaluations and guardrails for
 AI-generated and AI-maintained documentation, investigate failures, and
 improve the context, tools, prompts, and systems that shape output quality."
-Four companies, three domains (Media, Big Tech, SaaS — Soda and Glean both
-sit in SaaS) — the `eval-infrastructure` signal this finding grounds.
+Etsy's Staff Content Designer, UX Platform is a fifth: "set the eval
+framework that determines if the output meets the quality bar" for
+AI-generated copy across design tools, a content designer rather than an
+engineer owning the eval work directly. Huge's Director, AI Content Strategy
+is a sixth, thinner instance: "Develops golden queries and responses to
+benchmark quality and ensure safe, consistent outputs" alongside its AI
+content pipeline work. Six companies, five domains (Media, Big Tech, SaaS,
+Agency, E-commerce — Soda and Glean both sit in SaaS) — the
+`eval-infrastructure` signal this finding grounds.
 
 Two structurally similar postings were checked and stay excluded, for
 reasons independent of this pattern: Notion's Model Behavior Engineer and
@@ -276,21 +284,23 @@ being validated is language. A hiring filter built around "does the
 candidate's background show content craft" will systematically undercount
 this work. Expect this signal to be thin for a while — it names a real
 pattern, not yet a common one, and future JDs should be left to fill it out
-rather than backfilling every past posting with a passing mention. Soda adds
-a third domain, SaaS, alongside Media and Big Tech — the kind of
-differently-domained instance that keeps this from reading as two adjacent
-sectors' shared house style, though three companies is still early to call
-it a discipline-wide pattern rather than a signal still filling out.
+rather than backfilling every past posting with a passing mention. Two more
+instances have landed since this was first written — Etsy (E-commerce) and
+Huge (Agency) — bringing this to six companies across five domains, past
+the point where it reads as two adjacent sectors' shared house style, though
+still worth a fresh read before calling it a settled discipline-wide pattern
+rather than a signal still filling out.
 
 ## Taxonomy work is starting to get its own title, and its own org
 
-**What the data shows.** 16 entries carry the `taxonomy` cluster. In 14, it's
+**What the data shows.** 28 entries carry the `taxonomy` cluster. In 26, it's
 one responsibility folded into a broader content-design, architecture, or
 strategy title: Wellhub's "Senior Global UX Writer, Content Systems",
-LinkedIn's "Staff Content Architect", Ally's "Content Architect." Two now
-name the classification discipline as the entire title, not a responsibility
-inside one: Meta's Taxonomist, Content Design and Vinted's Taxonomist,
-Supply.
+LinkedIn's "Staff Content Architect", Ally's "Content Architect." Still only
+two name the classification discipline as the entire title, not a
+responsibility inside one: Meta's Taxonomist, Content Design and Vinted's
+Taxonomist, Supply — no third instance yet, despite the cluster's count
+nearly doubling since this was first written.
 
 The two aren't the same shape. Meta pairs the bare title with a content-design
 identity explicitly and repeatedly — the title itself, "a closely related
@@ -345,16 +355,23 @@ within either one.
 
 ## Content roles are appearing outside design orgs
 
-**What the data shows.** 23 of 29 postings state where the role sits, and the
-placements do not cluster in design. HelloFresh files its Staff AI Content
-Designer under "Category: Software Engineering". Ally's Content Architect sits
-in "Career area: Marketing". Notion's is in Customer Experience; LinkedIn's in
-a Knowledge Management Solutions team under a department called GBO. Adobe's is
+**What the data shows.** 57 of 79 postings state where the role sits (up from
+23 of 29 when this was first written), and the placements still do not
+cluster in design. HelloFresh files its Staff AI Content Designer under
+"Category: Software Engineering". Ally's Content Architect sits in "Career
+area: Marketing". Notion's is in Customer Experience; LinkedIn's in a
+Knowledge Management Solutions team under a department called GBO. Adobe's is
 tagged to two categories at once — Design, and Engineering and Product.
 
-Five postings sit in marketing or editorial functions while describing
-substantive systems work: CoLab, Insurify, The Ride Platform, Ally, and Meta's
-AI Content Strategy Lead, which sits in Business Marketing.
+The `content-marketing-adjacent` signal — marketing- or editorial-sited roles
+whose systems or AI responsibilities are substantive enough to include
+despite that placement — now has 12 holders, up from the 5 postings (CoLab,
+Insurify, The Ride Platform, Ally, Meta's AI Content Strategy Lead) originally
+named here. Note this signal isn't a perfect proxy for "sits in marketing":
+Insurify itself doesn't carry it (it's tagged `title-dilution` instead), so
+the two counts were never counting exactly the same thing. Worth a full
+re-read of org placement across the current 79 rather than treating 12 as a
+direct update of "five."
 
 **What I think it means.** The discipline is being claimed by several
 functions at once, and none of them has won. This is the most under-discussed
@@ -374,9 +391,15 @@ conversation design role at GDS" (GDS, a founding claim, not an absorption
 claim). Amazon's Sr. UX Conversation Designer sits on a team named "Word and
 Voice Design" — the two disciplines merged into one unit, neither
 subordinated to the other. Widen the lens to the excluded model-design
-lineage (Fin, Notion, Redpine, Basis — all explicitly placed outside content
-design, all excluded partly on that basis) and only 2 of 6 comparable
-postings claim any content-design lineage at all.
+lineage (Fin's Staff AI Designer, Notion, Redpine, Basis — all explicitly
+placed outside content design, all excluded partly on that basis) and only 2
+of 6 comparable postings claim any content-design lineage at all. Note: Fin
+has a second, later, *included* posting (Brand Voice Lead - Systems) that is
+not part of this lineage — the exclusion applies to the Staff AI Designer
+posting specifically, not to Fin as a company. This "2 of 6" count itself has
+not been re-checked against the current 79-entry corpus for new
+conversation/model-design instances since this was written; treat it as
+dated pending that recheck.
 
 What this reframes, rather than answers: conversation design is not being
 absorbed into content design, and it is not clearly separating from it
