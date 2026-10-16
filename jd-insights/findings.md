@@ -1532,9 +1532,10 @@ positioning. The dataset is filtered *toward* forward-leaning roles by
 construction. It shows what ambitious employers are asking for. It says nothing
 about the median content design job.
 
-**n = 29, over about ten weeks.** Enough to notice a pattern across companies.
-Not enough for a trend over time, and the entries are unevenly distributed —
-15 landed in May, nine of them on a single day.
+**n = 79, over about 21 weeks (2026-05-24 to 2026-10-15).** Enough to notice a
+pattern across companies. Not enough for a trend over time, and the entries
+are unevenly distributed — 15 landed in May (nine of them on a single day),
+25 in August alone.
 
 **`dateAdded` is not a posting date.** Where both are known the gap runs from
 zero to sixty-six days. Any claim about change over time needs `postedDate`,
