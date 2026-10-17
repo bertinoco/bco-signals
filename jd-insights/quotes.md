@@ -3,7 +3,7 @@
 
 # Quotes
 
-Every stored quote, verbatim from the posting. **78 of 79** entries carry one.
+Every stored quote, verbatim from the posting. **79 of 80** entries carry one.
 
 These are the lines that anchor each entry's cluster and signal assignments, so they are the strongest citable evidence in the dataset. Each is checked against its `jd-source` archive before commit.
 
@@ -318,6 +318,12 @@ These are the lines that anchor each entry's cluster and signal assignments, so 
 > By architecting content for both human users and machine learning systems, this role ensures clients capture opportunities across traditional search, generative engine optimization (GEO), and AI-powered experiences.
 
 `phase2-content-architect` · added 2026-05-24
+
+### Red Bull — Senior Specialist – Knowledge Semantics and AI-Ready Content
+
+> You'll develop machine-readable templates and AI-assisted authoring standards for priority content types, including policies, procedures, guidelines, knowledge articles, and contracts.
+
+`redbull-senior-specialist-knowledge-semantics-ai-ready-content` · added 2026-10-17
 
 ### Relay — Senior Content Designer
 

@@ -2,8 +2,8 @@
   "meta": {
     "title": "BCO Content Skills Tracker",
     "description": "A curated skills tracker for the content design community.",
-    "lastUpdated": "2026-10-15",
-    "totalEntries": 79
+    "lastUpdated": "2026-10-17",
+    "totalEntries": 80
   },
   "entries": [
     {
@@ -2343,6 +2343,34 @@
       "sourceUrl": null,
       "dateAdded": "2026-10-15",
       "quote": "Design reusable AI-assisted workflows from source material and brief to finished assets. Connect research, writing, visuals, production and review, and turn what works into prompts, templates, reference libraries and small tools the team can reuse."
+    },
+    {
+      "id": "redbull-senior-specialist-knowledge-semantics-ai-ready-content",
+      "company": "Red Bull",
+      "title": "Senior Specialist – Knowledge Semantics and AI-Ready Content",
+      "domain": "Consumer Goods",
+      "engagement": "Full-time",
+      "location": "Elsbethen, Austria",
+      "remote": null,
+      "coreFrame": "Sits on the Global Data Knowledge Management team, driving AI-readiness standards and content governance across enterprise knowledge. Develops and runs AI-assisted quality assurance processes across the lifecycle of unstructured data and knowledge assets, combining preventive standards and monitoring to strengthen accuracy, consistency, completeness, and trustworthiness, and develops measurable AI-readiness criteria and certification for structure, metadata, ownership, currency, accessibility, and semantic clarity, qualifying priority repositories and content types as trusted sources for people, retrieval, and agentic AI; also facilitates federated governance for unstructured data and knowledge assets across priority repositories and domains. Builds persona-based reports and dashboards that expose gaps and drive root-cause fixes, and uses monitoring insights to improve governance, quality checks, templates, training, and platforms. Operates taxonomy and ontology management across priority repositories and domains as a semantics expert, defining modelling standards and governance for consistency, interoperability, and alignment with business terminology, and translates business concepts into governed structures supporting metadata enrichment, classification, knowledge graphs, semantic search, retrieval-augmented generation, and agentic AI. Develops machine-readable templates and AI-assisted authoring standards for priority content types — policies, procedures, guidelines, knowledge articles, and contracts — and facilitates standards and guardrails for AI-assisted authoring, including approved use cases, guidance, prompt patterns, human review, source traceability, and quality controls.",
+      "clusters": [
+        "taxonomy",
+        "content-systems-design",
+        "ai-content-governance",
+        "terminology-governance",
+        "enablement",
+        "ai-tooling"
+      ],
+      "signals": [
+        "governance-as-value-prop",
+        "central-standards-function",
+        "agent-retrieval",
+        "classification-for-ml"
+      ],
+      "sourceUrl": null,
+      "dateAdded": "2026-10-17",
+      "tag": "content-adjacent",
+      "quote": "You'll develop machine-readable templates and AI-assisted authoring standards for priority content types, including policies, procedures, guidelines, knowledge articles, and contracts."
     }
   ],
   "clusters": {
