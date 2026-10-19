@@ -376,9 +376,9 @@ also carry the only surviving copy of a posting that has since closed.
 Insurify's own careers page opens with a fraudulent-job-advert warning before
 the posting begins.
 
-## Four headers that don't match their own body
+## Five headers that don't match their own body
 
-Four postings so far state one title at the top and a different one in the
+Five postings so far state one title at the top and a different one in the
 body text — and no two of them drift the same way.
 
 **Fin**'s posting is headed "Staff AI Designer," but the body repeatedly calls
@@ -400,15 +400,27 @@ AI Designer, you will lead the design of conversational experiences..." and
 repeats that self-description throughout. Same seniority level, different
 role name — the same kind of drift as Fin's.
 
-The first three entries store the header as `title`, per the Title field
-rule, and record the body's alternate self-description in the archive's
-`captureNote` rather than resolving it. The UHG entry breaks from that: its
-`title` stores the body's self-description instead of the header, because the
-body string is what the quote and cluster/signal assignments are actually
-drawn from — a case-by-case call, not a change to the Title field rule, and
-recorded as such in the entry's `note` and the archive's `captureNote`. Four
-instances, and the first where the stored title took the body over the
-header.
+**Deepgram**'s posting is headed "Staff Product Designer, Conversational AI,"
+the ATS/job-board title field — but the body opens "We are hiring a Staff
+Conversational Designer to own them." Same seniority level (Staff), same
+underlying specialization (conversational behavior), different role name —
+the header folds "Conversational AI" in as a scope qualifier on "Product
+Designer," the body collapses it into the role name itself as "Conversational
+Designer." Closer to Fin's drift than Intercept's: a different role name at
+the same level, not a scope qualifier one side adds and the other drops.
+
+The first three entries, and Deepgram, store the header as `title`, per the
+Title field rule, and record the body's alternate self-description in the
+archive's `captureNote` rather than resolving it — for Deepgram, specifically
+because the header/ATS form is judged to better capture the role's
+uniqueness in a title landscape with no established equivalent ("Very few
+companies have a titled equivalent," the posting says of itself). The UHG
+entry breaks from that: its `title` stores the body's self-description
+instead of the header, because the body string is what the quote and
+cluster/signal assignments are actually drawn from — a case-by-case call, not
+a change to the Title field rule, and recorded as such in the entry's `note`
+and the archive's `captureNote`. Five instances, and still only one (UHG)
+where the stored title took the body over the header.
 
 ## First non-English posting
 

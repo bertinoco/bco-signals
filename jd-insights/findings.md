@@ -256,8 +256,11 @@ AI-generated copy across design tools, a content designer rather than an
 engineer owning the eval work directly. Huge's Director, AI Content Strategy
 is a sixth, thinner instance: "Develops golden queries and responses to
 benchmark quality and ensure safe, consistent outputs" alongside its AI
-content pipeline work. Six companies, five domains (Media, Big Tech, SaaS,
-Agency, E-commerce — Soda and Glean both sit in SaaS) — the
+content pipeline work. Deepgram's Staff Product Designer, Conversational AI
+is a seventh: "Establish conversational-quality evals and a transcript
+review practice that turns production failures into a repeatable design
+loop" — a third SaaS-domain instance alongside Soda and Glean. Seven
+companies, five domains (Media, Big Tech, SaaS ×3, Agency, E-commerce) — the
 `eval-infrastructure` signal this finding grounds.
 
 Two structurally similar postings were checked and stay excluded, for
@@ -284,12 +287,12 @@ being validated is language. A hiring filter built around "does the
 candidate's background show content craft" will systematically undercount
 this work. Expect this signal to be thin for a while — it names a real
 pattern, not yet a common one, and future JDs should be left to fill it out
-rather than backfilling every past posting with a passing mention. Two more
-instances have landed since this was first written — Etsy (E-commerce) and
-Huge (Agency) — bringing this to six companies across five domains, past
-the point where it reads as two adjacent sectors' shared house style, though
-still worth a fresh read before calling it a settled discipline-wide pattern
-rather than a signal still filling out.
+rather than backfilling every past posting with a passing mention. Three more
+instances have landed since this was first written — Etsy (E-commerce), Huge
+(Agency), and Deepgram (SaaS) — bringing this to seven companies across five
+domains, past the point where it reads as two adjacent sectors' shared house
+style, though still worth a fresh read before calling it a settled
+discipline-wide pattern rather than a signal still filling out.
 
 ## Taxonomy work is starting to get its own title, and its own org
 
