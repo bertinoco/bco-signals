@@ -3,7 +3,7 @@
 
 # Quotes
 
-Every stored quote, verbatim from the posting. **79 of 80** entries carry one.
+Every stored quote, verbatim from the posting. **80 of 81** entries carry one.
 
 These are the lines that anchor each entry's cluster and signal assignments, so they are the strongest citable evidence in the dataset. Each is checked against its `jd-source` archive before commit.
 
@@ -132,6 +132,12 @@ These are the lines that anchor each entry's cluster and signal assignments, so 
 > Redefines format and tone guidelines into requirements that engineers can use for model training and prompt improvement.
 
 `coupang-senior-content-strategist-core-ux` · added 2026-08-14
+
+### Deepgram — Staff Product Designer, Conversational AI
+
+> What decides whether those agents feel human is not a screen. It is whether the agent knows when you have finished speaking, what it does when you cut it off, how it recovers from a misheard word, how it confirms something consequential before acting, and how it covers the milliseconds it cannot remove.
+
+`deepgram-staff-product-designer-conversational-ai` · added 2026-10-19
 
 ### Docebo — Senior Product Designer, Content Design & Language Systems
 

@@ -2,8 +2,8 @@
   "meta": {
     "title": "BCO Content Skills Tracker",
     "description": "A curated skills tracker for the content design community.",
-    "lastUpdated": "2026-10-17",
-    "totalEntries": 80
+    "lastUpdated": "2026-10-19",
+    "totalEntries": 81
   },
   "entries": [
     {
@@ -2371,6 +2371,40 @@
       "dateAdded": "2026-10-17",
       "tag": "content-adjacent",
       "quote": "You'll develop machine-readable templates and AI-assisted authoring standards for priority content types, including policies, procedures, guidelines, knowledge articles, and contracts."
+    },
+    {
+      "id": "deepgram-staff-product-designer-conversational-ai",
+      "company": "Deepgram",
+      "title": "Staff Product Designer, Conversational AI",
+      "domain": "SaaS",
+      "engagement": "Full-time",
+      "location": "San Francisco, CA",
+      "remote": true,
+      "coreFrame": "Owns conversational behavior end-to-end for Deepgram's voice agents — persona, turn-taking, repair, confirmation, and pacing. Works directly with ML and Engineering on the tradeoffs that make those behaviors real, including endpointing, barge-in, and latency budgets. Builds the evals that test whether a conversation is good and runs a transcript-review practice that turns production failures into a repeatable design loop. Publishes developer-facing design guidance and reference agent experiences that demonstrate conversation design on the Voice Agent API. Sets the conversation-design principles, review standards, and shared vocabulary the broader team adopts.",
+      "clusters": [
+        "content-systems-design",
+        "ai-content-governance",
+        "enablement",
+        "ai-tooling"
+      ],
+      "signals": [
+        "model-behavior-design",
+        "eval-infrastructure",
+        "ai-native-expectation",
+        "central-standards-function",
+        "governance-as-value-prop"
+      ],
+      "compRange": {
+        "min": 180000,
+        "max": 240000,
+        "currency": "USD",
+        "covers": null,
+        "scope": null,
+        "extras": "equity + bonus"
+      },
+      "sourceUrl": null,
+      "dateAdded": "2026-10-19",
+      "quote": "What decides whether those agents feel human is not a screen. It is whether the agent knows when you have finished speaking, what it does when you cut it off, how it recovers from a misheard word, how it confirms something consequential before acting, and how it covers the milliseconds it cannot remove."
     }
   ],
   "clusters": {
