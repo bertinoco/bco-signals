@@ -75,6 +75,35 @@ code 3 means the posting has closed since it was queued; don't audit it.
 `/add-jd` closes the loop on the triage page itself once the entry is
 written or archived — see its "JD Scout postings" section.
 
+## Importing companies from VC job boards
+
+`vc_import.py` adds portfolio companies from the VC job boards listed in
+`vc-boards.json`. It's run by hand, not by the weekly routine. Portfolios
+change slowly, so every month or two is enough.
+
+1. Save the triage database's `companies` collection with `ArtifactData`
+   `list` and `out_dir`, as in `ROUTINE.md` step 1.
+2. Run:
+
+       python3 jd-scout/vc_import.py --db-dump DUMP_DIR --out OUT_DIR
+
+   Add `--board "Atomico" "Creandum"` to read only some boards.
+3. Write `OUT_DIR/companies-new/*.json` to the `companies` collection with
+   `ArtifactData` `batch`, as in `ROUTINE.md` step 4.
+4. `OUT_DIR/not-covered.md` lists the companies the scout can't check, by VC.
+
+It only adds companies on Greenhouse, Lever or Ashby whose feed works, and
+skips boards already on the list or on the skip list. It only sees companies
+with at least one open job on the VC board. The exception is Index Ventures,
+which is read from its public portfolio page. That page includes exited and
+inactive companies, and its board matches are by name, so a generic name (Apex,
+Build) can occasionally match a different company. Turn those off on the triage
+page if they produce unrelated postings.
+
+To add a board, add it to `vc-boards.json` with its platform (`getro` or
+`consider`), and add its domain to the environment's allowed domains. Getro
+boards also need `api.getro.com`.
+
 ## Network access
 
 The feeds live at `boards-api.greenhouse.io` (which also serves EU-hosted boards),

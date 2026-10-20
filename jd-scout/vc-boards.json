@@ -1,0 +1,13 @@
+{
+  "_comment": "VC portfolio job boards that vc_import.py reads for companies. platform says how: getro and consider are hosted job-board platforms; index-portfolio reads Index Ventures' public portfolio page, since its job board can't be read without credentials.",
+  "boards": [
+    {"name": "Luminar Ventures", "url": "https://careers.luminarventures.com/jobs", "platform": "getro"},
+    {"name": "Creandum", "url": "https://careers.creandum.com/jobs", "platform": "getro"},
+    {"name": "Peak", "url": "https://jobs.peak.capital/jobs", "platform": "getro"},
+    {"name": "Cherry Ventures", "url": "https://talent.cherry.vc/jobs", "platform": "getro"},
+    {"name": "Dawn Capital", "url": "https://jobs.dawncapital.com/jobs", "platform": "getro"},
+    {"name": "Atomico", "url": "https://careers.atomico.com/jobs", "platform": "getro"},
+    {"name": "Balderton Capital", "url": "https://careers.balderton.com/jobs", "platform": "consider"},
+    {"name": "Index Ventures", "url": "https://www.indexventures.com/companies/", "platform": "index-portfolio"}
+  ]
+}
