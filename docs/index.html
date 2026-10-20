@@ -30,7 +30,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=96">
+  <link rel="stylesheet" href="css/styles.css?v=98">
 
   <script type="application/ld+json">
   [
@@ -165,16 +165,20 @@
               <circle cx="8" cy="5.25" r="0.75" fill="currentColor"/>
             </svg>
           </button>
-          <p class="ai-info-tooltip" id="ai-info-tooltip" hidden>AI disclosure: Card descriptions are drafted by Claude and reviewed before publishing.</p>
+          <p class="ai-info-tooltip" id="ai-info-tooltip" hidden>All descriptions are drafted by Claude and reviewed before publishing.</p>
         </div>
       </div>
       <nav class="badge-nav" role="tablist" aria-label="Content sections">
-        <button class="badge-btn active" id="tab-signals" role="tab" data-section="signals" aria-selected="true" aria-controls="signals">Signals</button>
-        <button class="badge-btn" id="tab-clusters" role="tab" data-section="clusters" aria-selected="false" aria-controls="clusters">Clusters</button>
-        <button class="badge-btn" id="tab-findings" role="tab" data-section="findings" aria-selected="false" aria-controls="findings">Findings</button>
-        <button class="badge-btn" id="tab-titles" role="tab" data-section="titles" aria-selected="false" aria-controls="titles">All roles</button>
+        <button class="badge-btn active" id="tab-signals" role="tab" data-section="signals" data-caption="Emerging patterns and themes" aria-selected="true" aria-controls="signals">Signals</button>
+        <button class="badge-btn" id="tab-clusters" role="tab" data-section="clusters" data-caption="Core responsibilities and workload" aria-selected="false" aria-controls="clusters">Clusters</button>
+        <button class="badge-btn" id="tab-findings" role="tab" data-section="findings" data-caption="Key takeaways and reflections" aria-selected="false" aria-controls="findings">Findings</button>
+        <button class="badge-btn" id="tab-titles" role="tab" data-section="titles" data-caption="All roles in the dataset." aria-selected="false" aria-controls="titles">All roles</button>
         <span class="badge-nav-indicator" aria-hidden="true"></span>
       </nav>
+      <p class="tab-caption">
+        <span id="tab-caption-text">Emerging patterns and themes</span>
+        <a class="tab-caption-link" id="tab-caption-link" href="https://github.com/bertinoco/bco-signals/tree/main/jd-source" target="_blank" rel="noopener noreferrer" hidden>View full job descriptions on GitHub<span class="visually-hidden"> (opens in a new tab)</span></a>
+      </p>
     </div>
   </div>
 
@@ -248,6 +252,6 @@
     </span>
   </button>
 
-  <script src="js/scripts.js?v=48"></script>
+  <script src="js/scripts.js?v=51"></script>
 </body>
 </html>

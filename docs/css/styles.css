@@ -629,6 +629,41 @@ body {
   .badge-nav { gap: var(--space-2); flex-wrap: wrap; }
 }
 
+/* One line, always visible, updated on tab switch rather than per-tab or
+   on hover — sits inside the sticky .nav-bar so it never scrolls out of
+   sync with which tab is actually active, regardless of scroll position
+   when a tab is switched. PREVIEW: trying this as the answer to "what does
+   each tab contain," after a per-panel icon+description attempt read as
+   disconnected floating text and a hover-only tooltip would have excluded
+   touch visitors entirely. */
+.tab-caption {
+  margin-top: var(--space-2);
+  font-size: var(--font-sm);
+  color: hsl(var(--muted-foreground));
+}
+
+/* Only the Roles tab's caption carries this — see activateBadge in
+   scripts.js, which toggles its `hidden` attribute per tab rather than
+   building it into the data-caption string. Same link treatment as
+   .state-body a for consistency. */
+.tab-caption-link {
+  color: hsl(var(--foreground));
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  text-decoration-color: hsl(var(--rule));
+  transition: text-decoration-color var(--duration-fast) ease;
+}
+
+.tab-caption-link:hover {
+  text-decoration-color: hsl(var(--foreground));
+}
+
+.tab-caption-link:focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
+}
+
 /* ── Sections ─────────────────────────────────────────────── */
 #main {
   padding-top: var(--space-6);
