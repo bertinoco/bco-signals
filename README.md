@@ -54,12 +54,6 @@ Brand identity by [Sällsam Studio](https://www.sallsam.com/).
 
 ---
 
-## Contributing
-
-Come across a posting that fits? See `CONTRIBUTING.md`.
-
----
-
 ## License
 
 © 2026 Bertino Consulting AB. All rights reserved.
