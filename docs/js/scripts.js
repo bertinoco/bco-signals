@@ -67,7 +67,7 @@ const COPY = {
     },
     findings: {
       title: 'No findings yet',
-      body: 'Findings appear here once a pattern is confirmed across multiple postings.',
+      body: 'Findings will appear here once confirmed across multiple job descriptions.',
     },
   },
   error: {
@@ -635,6 +635,9 @@ function positionNavIndicator(skipTransition) {
   }
 }
 
+const tabCaptionText = document.getElementById('tab-caption-text');
+const tabCaptionLink = document.getElementById('tab-caption-link');
+
 function activateBadge(badge) {
   badges.forEach(b => {
     b.classList.remove('active');
@@ -644,6 +647,10 @@ function activateBadge(badge) {
   badge.classList.add('active');
   badge.setAttribute('aria-selected', 'true');
   document.getElementById(badge.dataset.section).classList.add('active');
+  if (tabCaptionText) tabCaptionText.textContent = badge.dataset.caption;
+  // Only the Roles tab links out to jd-source — the raw archive only makes
+  // sense to browse once you're looking at individual postings.
+  if (tabCaptionLink) tabCaptionLink.hidden = badge.dataset.section !== 'titles';
   positionNavIndicator();
 }
 
