@@ -3,7 +3,7 @@
 
 # Quotes
 
-Every stored quote, verbatim from the posting. **81 of 82** entries carry one.
+Every stored quote, verbatim from the posting. **82 of 83** entries carry one.
 
 These are the lines that anchor each entry's cluster and signal assignments, so they are the strongest citable evidence in the dataset. Each is checked against its `jd-source` archive before commit.
 
@@ -288,6 +288,12 @@ These are the lines that anchor each entry's cluster and signal assignments, so 
 > Design, build, and maintain taxonomies, ontologies, and controlled vocabularies that support content organization and navigation across Meta products and platforms.
 
 `meta-taxonomist-content-design` · added 2026-08-07
+
+### Nedbank — Principal UX Writer
+
+> Designing and optimizing prompts for AI models to ensure accurate, relevant and coherent outputs.
+
+`nedbank-principal-ux-writer` · added 2026-10-21
 
 ### Netflix — Staff Content Designer, NCXD
 
