@@ -3,7 +3,7 @@
     "title": "BCO Content Skills Tracker",
     "description": "A curated skills tracker for the content design community.",
     "lastUpdated": "2026-10-21",
-    "totalEntries": 82
+    "totalEntries": 83
   },
   "entries": [
     {
@@ -2426,6 +2426,32 @@
       "dateAdded": "2026-10-21",
       "quote": "We define Kyarapu's own Japanese voice & tone guideline and glossary.",
       "quoteTranslatedFrom": "Korean"
+    },
+    {
+      "id": "nedbank-principal-ux-writer",
+      "company": "Nedbank",
+      "title": "Principal UX Writer",
+      "domain": "Finance",
+      "engagement": "Full-time",
+      "location": "Johannesburg, South Africa",
+      "remote": false,
+      "coreFrame": "Designs conversations and UI copy across digital platforms with CX, UX, and UI partners. Designs and optimizes prompts for AI models and experiments with prompt techniques to improve AI performance, working with data scientists and AI researchers to enhance LLM capabilities. Defines and documents content standards, patterns, and principles for a unified content approach. Develops playbooks for content strategy execution across the enterprise. Manages copy requests and content outputs across the enterprise's work streams, with mentorship to junior writers.",
+      "clusters": [
+        "content-systems-design",
+        "enablement",
+        "ai-tooling",
+        "ai-content-governance"
+      ],
+      "signals": [
+        "model-behavior-design",
+        "central-standards-function",
+        "governance-as-value-prop",
+        "ai-native-expectation",
+        "enabler-not-bottleneck"
+      ],
+      "sourceUrl": null,
+      "dateAdded": "2026-10-21",
+      "quote": "Designing and optimizing prompts for AI models to ensure accurate, relevant and coherent outputs."
     }
   ],
   "clusters": {

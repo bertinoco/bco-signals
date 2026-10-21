@@ -3,44 +3,44 @@
 
 # Stats
 
-Dataset state: **82 entries**, `meta.lastUpdated` 2026-10-21. Generated 2026-10-21.
+Dataset state: **83 entries**, `meta.lastUpdated` 2026-10-21. Generated 2026-10-21.
 
 Every figure here is counted from `docs/data/jobs.json`. If you quote one in something published, quote the entry count with it — these move.
 
 ## Headline
 
-- **82** entries across **73** companies and **14** domains
+- **83** entries across **74** companies and **14** domains
 - Date range: 2026-05-24 to 2026-10-21
 
 ## Responsibility clusters
 
 | | Entries | Share |
 |---|---:|---:|
-| Content systems design | 75 | 91% |
-| Enablement & team upskilling | 65 | 79% |
-| AI tooling & automation | 60 | 73% |
-| AI-generated content governance | 36 | 44% |
+| Content systems design | 76 | 92% |
+| Enablement & team upskilling | 66 | 80% |
+| AI tooling & automation | 61 | 73% |
+| AI-generated content governance | 37 | 45% |
 | Terminology & language governance | 32 | 39% |
 | Taxonomy & information architecture | 29 | 35% |
 | Technical writing & documentation | 19 | 23% |
-| Localization & internationalization | 17 | 21% |
+| Localization & internationalization | 17 | 20% |
 
 ## Skill signals
 
 | | Entries | Share |
 |---|---:|---:|
-| AI fluency expected | 55 | 67% |
-| Governance emphasized | 31 | 38% |
-| Enabler, not bottleneck | 29 | 35% |
-| Central standards function | 24 | 29% |
-| Model behavior design | 24 | 29% |
-| Content systems for marketers | 12 | 15% |
+| AI fluency expected | 56 | 67% |
+| Governance emphasized | 32 | 39% |
+| Enabler, not bottleneck | 30 | 36% |
+| Central standards function | 25 | 30% |
+| Model behavior design | 25 | 30% |
+| Content systems for marketers | 12 | 14% |
 | Language as infrastructure | 11 | 13% |
 | Structured for agent retrieval | 9 | 11% |
-| GEO & SEO | 7 | 9% |
-| Structured data | 7 | 9% |
-| Accessibility as structural constraint | 7 | 9% |
-| Evaluation infrastructure | 7 | 9% |
+| GEO & SEO | 7 | 8% |
+| Structured data | 7 | 8% |
+| Accessibility as structural constraint | 7 | 8% |
+| Evaluation infrastructure | 7 | 8% |
 | Classification for ML | 6 | 7% |
 | Content work under new titles | 5 | 6% |
 | Work outpaces the title | 3 | 4% |
@@ -48,7 +48,7 @@ Every figure here is counted from `docs/data/jobs.json`. If you quote one in som
 
 ## Compensation
 
-- Stated in **52 of 82** entries (44 USD, 4 GBP, 3 CAD, 1 EUR)
+- Stated in **52 of 83** entries (44 USD, 4 GBP, 3 CAD, 1 EUR)
 - Full spread: **$62,120** to **$710,000**
 - USD medians: **$138,900** low, **$186,300** high
 - `covers`: 34 base, 16 unstated, 2 total
@@ -78,19 +78,19 @@ Read the n column before quoting any of these. A median over fewer than roughly 
 
 ## Title vocabulary
 
-Words appearing in 3 or more of the 82 stored titles. Counted from `title`, which is stored verbatim — so this reflects what employers wrote, not what the site renders.
+Words appearing in 3 or more of the 83 stored titles. Counted from `title`, which is stored verbatim — so this reflects what employers wrote, not what the site renders.
 
 | Word | Titles | Share |
 |---|---:|---:|
-| Content | 57 | 70% |
+| Content | 57 | 69% |
 | Designer | 33 | 40% |
 | Senior | 19 | 23% |
 | AI | 18 | 22% |
-| UX | 15 | 18% |
+| UX | 16 | 19% |
 | Staff | 13 | 16% |
-| Systems | 12 | 15% |
+| Systems | 12 | 14% |
+| Writer | 10 | 12% |
 | Design | 10 | 12% |
-| Writer | 9 | 11% |
 | Lead | 9 | 11% |
 | Engineer | 8 | 10% |
 | Architect | 8 | 10% |
@@ -100,17 +100,17 @@ Words appearing in 3 or more of the 82 stored titles. Counted from `title`, whic
 | Conversation | 5 | 6% |
 | Language | 4 | 5% |
 | Experience | 4 | 5% |
+| Principal | 4 | 5% |
 | Conversational | 4 | 5% |
 | Knowledge | 3 | 4% |
 | Specialist | 3 | 4% |
-| Principal | 3 | 4% |
 
 ## Domains
 
 | | Entries | Companies |
 |---|---:|---|
 | SaaS | 21 | Adobe, Autodesk, Bolt.new, CoLab, Deepgram, Docebo, Engrain, Figma, Fin, Glean, HoneyBook, Notion, Personio, Salesforce, Slang AI, Smartly, Soda, Splunk, UKG, Wix, Zoom |
-| Finance | 17 | Ally Financial, Bank of America, Capital One, Chime, Citizens, Cleo, Ethos, Insurify, JPMorgan Chase, Robinhood, Sanna, Sequence, Taxfix, Trustly, Wealthsimple, Wise |
+| Finance | 18 | Ally Financial, Bank of America, Capital One, Chime, Citizens, Cleo, Ethos, Insurify, JPMorgan Chase, Nedbank, Robinhood, Sanna, Sequence, Taxfix, Trustly, Wealthsimple, Wise |
 | Big Tech | 13 | Alibaba, Amazon, Anthropic, Apple, Google, LinkedIn, Meta, OpenAI |
 | E-commerce | 8 | Airbnb, Coupang, Etsy, HelloFresh, The Ride Platform, Vinted, Wellhub |
 | Healthcare | 6 | Atria, Evinova, Function Health, Roche, Teladoc Health, UnitedHealth Group |
@@ -126,7 +126,7 @@ Words appearing in 3 or more of the 82 stored titles. Counted from `title`, whic
 
 ## Stated org placement
 
-Recorded in `jd-source` front matter. **65 of 82** postings say where the role sits; the rest do not, which is itself a fact about the posting.
+Recorded in `jd-source` front matter. **66 of 83** postings say where the role sits; the rest do not, which is itself a fact about the posting.
 
 | Company | Placement as stated |
 |---|---|
@@ -167,6 +167,7 @@ Recorded in `jd-source` front matter. **65 of 82** postings say where the role s
 | LinkedIn | Department: GBO; Knowledge Management Solutions (KMS) team |
 | Meta | Product Content Engineering, a horizontal function supporting initiatives across Instagram |
 | Meta | Business Marketing |
+| Nedbank | Information Technology (Job Family), Design (Career Stream) |
 | Netflix | Teams: Product Design; horizontal function within the Design Systems organization |
 | Notion | Department: Customer Experience |
 | OpenAI | Product Design |
@@ -198,7 +199,7 @@ Recorded in `jd-source` front matter. **65 of 82** postings say where the role s
 
 ## Stated posting dates
 
-**13 of 82** postings state a date. Where both exist, the gap to `dateAdded` varies enough that one is not a proxy for the other.
+**13 of 83** postings state a date. Where both exist, the gap to `dateAdded` varies enough that one is not a proxy for the other.
 
 | Company | Posted | Added |
 |---|---|---|
