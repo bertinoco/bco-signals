@@ -2,8 +2,8 @@
   "meta": {
     "title": "BCO Content Skills Tracker",
     "description": "A curated skills tracker for the content design community.",
-    "lastUpdated": "2026-10-19",
-    "totalEntries": 81
+    "lastUpdated": "2026-10-21",
+    "totalEntries": 82
   },
   "entries": [
     {
@@ -2405,6 +2405,27 @@
       "sourceUrl": null,
       "dateAdded": "2026-10-19",
       "quote": "What decides whether those agents feel human is not a screen. It is whether the agent knows when you have finished speaking, what it does when you cut it off, how it recovers from a misheard word, how it confirms something consequential before acting, and how it covers the milliseconds it cannot remove."
+    },
+    {
+      "id": "wrtn-jp-ux-writer-kyarapu",
+      "company": "Wrtn Technologies",
+      "title": "JP UX Writer (캬라푸)",
+      "domain": "Media",
+      "engagement": "1-year contract",
+      "location": "Seoul, South Korea",
+      "remote": false,
+      "coreFrame": "Owns all Japanese-language copy exposed across the Kyarapu product, including UI copy, error and system messages, and push notifications. Adapts copy each squad has already confirmed in Korean into Japanese copy suited to screen context and user flow. Defines Kyarapu's own Japanese voice & tone guideline and glossary. Continuously reviews and improves live screens after release.",
+      "clusters": [
+        "localization",
+        "terminology-governance"
+      ],
+      "signals": [
+        "ai-native-expectation"
+      ],
+      "sourceUrl": null,
+      "dateAdded": "2026-10-21",
+      "quote": "We define Kyarapu's own Japanese voice & tone guideline and glossary.",
+      "quoteTranslatedFrom": "Korean"
     }
   ],
   "clusters": {

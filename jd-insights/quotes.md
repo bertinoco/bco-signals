@@ -3,7 +3,7 @@
 
 # Quotes
 
-Every stored quote, verbatim from the posting. **80 of 81** entries carry one.
+Every stored quote, verbatim from the posting. **81 of 82** entries carry one.
 
 These are the lines that anchor each entry's cluster and signal assignments, so they are the strongest citable evidence in the dataset. Each is checked against its `jd-source` archive before commit.
 
@@ -480,6 +480,12 @@ These are the lines that anchor each entry's cluster and signal assignments, so 
 > You'll be central to defining how content governance works across both human and agentic workflows, while also educating writers and non-writers on these systems and best practices.
 
 `wix-content-designer-language-systems` · added 2026-08-15
+
+### Wrtn Technologies — JP UX Writer (캬라푸)
+
+> We define Kyarapu's own Japanese voice & tone guideline and glossary.
+
+`wrtn-jp-ux-writer-kyarapu` · added 2026-10-21
 
 ### Zoom — AI Information Architect / Content Strategist
 

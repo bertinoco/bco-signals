@@ -3,39 +3,39 @@
 
 # Stats
 
-Dataset state: **81 entries**, `meta.lastUpdated` 2026-10-19. Generated 2026-10-19.
+Dataset state: **82 entries**, `meta.lastUpdated` 2026-10-21. Generated 2026-10-21.
 
 Every figure here is counted from `docs/data/jobs.json`. If you quote one in something published, quote the entry count with it — these move.
 
 ## Headline
 
-- **81** entries across **72** companies and **14** domains
-- Date range: 2026-05-24 to 2026-10-19
+- **82** entries across **73** companies and **14** domains
+- Date range: 2026-05-24 to 2026-10-21
 
 ## Responsibility clusters
 
 | | Entries | Share |
 |---|---:|---:|
-| Content systems design | 75 | 93% |
-| Enablement & team upskilling | 65 | 80% |
-| AI tooling & automation | 60 | 74% |
+| Content systems design | 75 | 91% |
+| Enablement & team upskilling | 65 | 79% |
+| AI tooling & automation | 60 | 73% |
 | AI-generated content governance | 36 | 44% |
-| Terminology & language governance | 31 | 38% |
-| Taxonomy & information architecture | 29 | 36% |
+| Terminology & language governance | 32 | 39% |
+| Taxonomy & information architecture | 29 | 35% |
 | Technical writing & documentation | 19 | 23% |
-| Localization & internationalization | 16 | 20% |
+| Localization & internationalization | 17 | 21% |
 
 ## Skill signals
 
 | | Entries | Share |
 |---|---:|---:|
-| AI fluency expected | 54 | 67% |
+| AI fluency expected | 55 | 67% |
 | Governance emphasized | 31 | 38% |
-| Enabler, not bottleneck | 29 | 36% |
-| Central standards function | 24 | 30% |
-| Model behavior design | 24 | 30% |
+| Enabler, not bottleneck | 29 | 35% |
+| Central standards function | 24 | 29% |
+| Model behavior design | 24 | 29% |
 | Content systems for marketers | 12 | 15% |
-| Language as infrastructure | 11 | 14% |
+| Language as infrastructure | 11 | 13% |
 | Structured for agent retrieval | 9 | 11% |
 | GEO & SEO | 7 | 9% |
 | Structured data | 7 | 9% |
@@ -48,7 +48,7 @@ Every figure here is counted from `docs/data/jobs.json`. If you quote one in som
 
 ## Compensation
 
-- Stated in **52 of 81** entries (44 USD, 4 GBP, 3 CAD, 1 EUR)
+- Stated in **52 of 82** entries (44 USD, 4 GBP, 3 CAD, 1 EUR)
 - Full spread: **$62,120** to **$710,000**
 - USD medians: **$138,900** low, **$186,300** high
 - `covers`: 34 base, 16 unstated, 2 total
@@ -78,22 +78,22 @@ Read the n column before quoting any of these. A median over fewer than roughly 
 
 ## Title vocabulary
 
-Words appearing in 3 or more of the 81 stored titles. Counted from `title`, which is stored verbatim — so this reflects what employers wrote, not what the site renders.
+Words appearing in 3 or more of the 82 stored titles. Counted from `title`, which is stored verbatim — so this reflects what employers wrote, not what the site renders.
 
 | Word | Titles | Share |
 |---|---:|---:|
 | Content | 57 | 70% |
-| Designer | 33 | 41% |
+| Designer | 33 | 40% |
 | Senior | 19 | 23% |
 | AI | 18 | 22% |
-| UX | 14 | 17% |
+| UX | 15 | 18% |
 | Staff | 13 | 16% |
 | Systems | 12 | 15% |
 | Design | 10 | 12% |
+| Writer | 9 | 11% |
 | Lead | 9 | 11% |
 | Engineer | 8 | 10% |
 | Architect | 8 | 10% |
-| Writer | 8 | 10% |
 | Strategist | 8 | 10% |
 | Manager | 5 | 6% |
 | Product | 5 | 6% |
@@ -114,8 +114,8 @@ Words appearing in 3 or more of the 81 stored titles. Counted from `title`, whic
 | Big Tech | 13 | Alibaba, Amazon, Anthropic, Apple, Google, LinkedIn, Meta, OpenAI |
 | E-commerce | 8 | Airbnb, Coupang, Etsy, HelloFresh, The Ride Platform, Vinted, Wellhub |
 | Healthcare | 6 | Atria, Evinova, Function Health, Roche, Teladoc Health, UnitedHealth Group |
+| Media | 5 | Netflix, Spotify, Wrtn Technologies |
 | Agency | 4 | Accenture, Huge, Intercept, Phase2 |
-| Media | 4 | Netflix, Spotify |
 | Retail | 2 | Adidas, Gap Inc. |
 | Automotive | 1 | GM |
 | Cybersecurity | 1 | Gen Digital |
@@ -126,7 +126,7 @@ Words appearing in 3 or more of the 81 stored titles. Counted from `title`, whic
 
 ## Stated org placement
 
-Recorded in `jd-source` front matter. **64 of 81** postings say where the role sits; the rest do not, which is itself a fact about the posting.
+Recorded in `jd-source` front matter. **65 of 82** postings say where the role sits; the rest do not, which is itself a fact about the posting.
 
 | Company | Placement as stated |
 |---|---|
@@ -193,11 +193,12 @@ Recorded in `jd-source` front matter. **64 of 81** postings say where the role s
 | Wise | Content Design Guild, within the Design team |
 | Wise | FinCrime, part of the Content Guild |
 | Wix | Writers Guild |
+| Wrtn Technologies | AI Story본부 (AI Story division), within Product |
 | Zoom | Not stated as a department; the team designs and manages the knowledge base powering customer self-service support |
 
 ## Stated posting dates
 
-**13 of 81** postings state a date. Where both exist, the gap to `dateAdded` varies enough that one is not a proxy for the other.
+**13 of 82** postings state a date. Where both exist, the gap to `dateAdded` varies enough that one is not a proxy for the other.
 
 | Company | Posted | Added |
 |---|---|---|
