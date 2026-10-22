@@ -1050,14 +1050,64 @@ body {
   outline-offset: 2px;
 }
 
-.post-date {
-  display: block;
+.post-byline {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
   margin-top: var(--space-4);
+}
+
+.post-byline-photo {
+  display: block;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.post-byline-text {
   font-family: var(--font-mono);
   font-size: var(--font-xs);
   letter-spacing: var(--tracking-wide);
   font-variant-numeric: tabular-nums;
   color: hsl(var(--muted-foreground));
+}
+
+.post-byline-text a {
+  color: hsl(var(--muted-foreground));
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  text-decoration-color: hsl(var(--rule));
+  transition: color var(--duration-base) var(--ease-out),
+              text-decoration-color var(--duration-base) var(--ease-out);
+}
+
+.post-byline-text a:hover {
+  color: hsl(var(--foreground));
+  text-decoration-color: hsl(var(--foreground));
+}
+
+.post-byline-text a:focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
+}
+
+/* ── Findings index page (/findings/) ─────────────────────── */
+/* Plain-HTML listing, generated alongside the post pages — same .post
+   shell, with a short intro line and the home page's own .finding-list
+   markup reused verbatim so the two stay visually identical. */
+.post-intro {
+  margin-top: var(--space-4);
+  max-width: 560px;
+  font-size: var(--font-md);
+  line-height: var(--leading-relaxed);
+  color: hsl(var(--secondary-foreground));
+}
+
+.post-finding-list {
+  margin-top: var(--space-6);
 }
 
 .post-title {

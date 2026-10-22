@@ -256,7 +256,8 @@ def render_page(post, css_version):
         "datePublished": post["date"],
         "dateModified": post["updated"],
         "author": {"@type": "Person", "@id": "https://bertino.co/#joe",
-                   "name": "Joe Bertino", "url": "https://bertino.co"},
+                   "name": "Joe Bertino", "url": "https://bertino.co",
+                   "image": SITE + "/images/joebertino.jpg"},
         "publisher": {"@type": "Organization", "@id": "https://bertino.co/#org",
                       "name": "Bertino Consulting", "url": "https://bertino.co"},
         "isPartOf": {"@id": SITE + "/#website"},
@@ -323,7 +324,10 @@ def render_page(post, css_version):
     <main id="main">
       <article class="post">
         <a class="post-back" href="/#findings"><span aria-hidden="true">← </span>All findings</a>
-        <time class="post-date" datetime="{post['date']}">{post['date']}</time>
+        <div class="post-byline">
+          <img class="post-byline-photo" src="/images/joebertino.jpg" alt="" width="32" height="32">
+          <p class="post-byline-text">By <a href="https://bertino.co">Joe Bertino</a> · <time datetime="{post['date']}">{post['date']}</time></p>
+        </div>
         <h1 class="post-title">{e(post['title'])}</h1>
         <div class="post-body">
 {indent(render_blocks(post['data_md'], where), 10)}
@@ -347,6 +351,94 @@ def render_page(post, css_version):
       <div class="footer-inner">
         <div class="footer-brand">A project by <a href="https://bertino.co">Bertino Consulting</a>, with help from Claude &amp; Freddie Gibbs.</div>
         <div class="footer-meta">Published <time datetime="{post['date']}">{post['date']}</time></div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
+"""
+
+
+def render_findings_index(posts, css_version):
+    """A plain-HTML list of every published post at /findings/, so crawlers
+    that don't run JavaScript can still find them -- the home page's
+    Findings tab renders the same list, but only after scripts.js fetches
+    findings.json."""
+    e = lambda s: html.escape(s, quote=True)
+    url = SITE + "/findings/"
+    items = "\n".join(f"""      <article class="finding">
+        <time class="finding-date" datetime="{p['date']}">{p['date']}</time>
+        <h2 class="finding-title"><a href="/findings/{p['slug']}/">{e(p['title'])}</a></h2>
+        <p class="finding-summary">{e(p['summary'])}</p>
+      </article>""" for p in posts)
+
+    return f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- GENERATED FILE — do not edit by hand.
+       Regenerate with: python3 scripts/build-findings.py -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Findings — Signals</title>
+  <meta name="description" content="Written posts drawn from the content design hiring dataset, each separating what the postings say from Joe Bertino's own take.">
+  <link rel="canonical" href="{url}">
+
+  <!-- Privacy-friendly analytics by Plausible -->
+  <script async src="https://plausible.io/js/pa-WoV37_cSYerP-bLuBDf5L.js"></script>
+  <script>
+    window.plausible=window.plausible||function(){{(plausible.q=plausible.q||[]).push(arguments)}},plausible.init=plausible.init||function(i){{plausible.o=i||{{}}}};
+    plausible.init()
+  </script>
+
+  <!-- Favicon -->
+  <link rel="icon" href="/images/circle-icon-b.png" type="image/png">
+  <link rel="apple-touch-icon" href="/images/circle-icon-b.png">
+
+  <!-- OpenGraph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{url}">
+  <meta property="og:title" content="Findings — Signals">
+  <meta property="og:description" content="Written posts drawn from the content design hiring dataset, each separating what the postings say from Joe Bertino's own take.">
+  <meta property="og:image" content="{OG_IMAGE}">
+
+  <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0D0D0D" media="(prefers-color-scheme: dark)">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css?v={css_version}">
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="post-header">
+    <div class="container">
+      <a class="hero-wordmark" href="/">
+        <img class="hero-mark" src="/images/wordmark-white.svg" alt="Signals" width="104" height="16">
+      </a>
+    </div>
+  </header>
+
+  <div class="container">
+    <main id="main">
+      <article class="post">
+        <a class="post-back" href="/#findings"><span aria-hidden="true">← </span>Back to Signals</a>
+        <h1 class="post-title">Findings</h1>
+        <p class="post-intro">Written posts drawn from the dataset. Each separates what the postings say from a section labeled “My take,” which is Joe Bertino’s personal view and not a claim the dataset backs.</p>
+        <div class="finding-list post-finding-list">
+{items}
+        </div>
+      </article>
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">A project by <a href="https://bertino.co">Bertino Consulting</a>, with help from Claude &amp; Freddie Gibbs.</div>
       </div>
     </div>
   </footer>
@@ -433,13 +525,18 @@ def main():
     css_version = styles_version()
     outputs = {os.path.join(OUT_DIR, p["slug"], "index.html"): render_page(p, css_version)
                for p in posts}
+    outputs[os.path.join(OUT_DIR, "index.html")] = render_findings_index(posts, css_version)
     outputs[FINDINGS_JSON] = render_findings_json(posts)
     outputs[SITEMAP] = render_sitemap(read(SITEMAP), posts)
     outputs[LLMS] = render_llms(read(LLMS), posts)
 
+    # Only per-post subdirectories are orphan candidates -- OUT_DIR's own
+    # index.html (the plain-HTML listing) is a file, not a post, and
+    # shutil.rmtree below would error on it if it were swept in here.
     published = {p["slug"] for p in posts}
     orphans = [os.path.join(OUT_DIR, d) for d in sorted(os.listdir(OUT_DIR))
-               if d not in published] if os.path.isdir(OUT_DIR) else []
+               if os.path.isdir(os.path.join(OUT_DIR, d)) and d not in published] \
+              if os.path.isdir(OUT_DIR) else []
 
     stale = [path for path, content in outputs.items() if read(path) != content]
     rel = lambda p: os.path.relpath(p, ROOT)
