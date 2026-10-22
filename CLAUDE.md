@@ -228,18 +228,22 @@ Signal + implication. State what the data shows, then note what it means for the
 - Projections: don't predict where the market is heading beyond what the data shows
 
 **Reporting vs. editorializing**
-Card descriptions are the one place on most of the site we editorialize lightly — stating an implication based on evidence. A findings post's `<aside>`, rendered under the label "My take," goes considerably further, under the exception below. Everywhere else (cluster/signal assignments, JD entries, quotes, and a post's title, summary, and data section) stays neutral and reportorial.
+Card descriptions are the one place on most of the site we editorialize lightly — stating an implication based on evidence. A findings post's `<aside>`, rendered under the label "My take," is a full exception to the rules on this page, covered below. Everywhere else (cluster/signal assignments, JD entries, quotes, and a post's title, summary, and data section) stays neutral and reportorial.
 
 **Findings tab exception**
 The `<aside>` in a findings post (`findings/*.md`) is rendered on the site
 under the label "My take" — explicitly marked as Joe's personal reaction,
-not a claim the dataset backs number-for-number. Like the Brand copy
-exception below, it may state an industry-level view, draw on experience
-outside this dataset, and go beyond what the cited postings alone prove —
-the no-projections and no-overpromising rules don't apply to it. This is a
-deliberate requirement, not just a nice-to-have: the point of "My take" is
-a personal, experience-informed reaction, and that requires room to draw on
-things the dataset itself can't cite.
+not a claim the dataset backs number-for-number. Joe has complete creative
+freedom to editorialize inside it: none of the rules above — no-projections,
+no-overpromising, no value judgments, hedging/consulting-tone/generic-copy
+avoidance, any of it — apply inside the `<aside>`. It may rank, predict,
+generalize past what the cited postings alone prove, draw on experience
+outside this dataset, or take a harder line than the evidence licenses on
+its own. This is a deliberate requirement, not just a nice-to-have: the
+point of "My take" is a genuine, unhedged personal reaction, not data
+reporting wearing a different label. The label "My take" is what carries
+the weight of marking that shift for the reader — it has to stay accurate
+and present precisely because everything inside it is now unconstrained.
 
 A post's data section — everything outside the `<aside>` — carries no extra
 license, and neither do its `title` and `summary`. They stay as reportorial
@@ -703,9 +707,12 @@ them. It sits outside `docs/` so it is not published.
 never be hand-edited; the next run overwrites anything typed into them.
 `patterns.md` and `findings.md` are hand-written.
 
-**`findings.md` is the only editorialized file in this repository.** It is the
-one place a claim may go beyond what a posting literally states. Two rules keep
-that contained:
+**`findings.md` is the only editorialized file in `jd-insights/`.** It is the
+one place within this directory a claim may go beyond what a posting
+literally states. (A findings post's `<aside>` is the other editorialized
+content in the repository — see the Findings tab exception above, which
+carries a broader license than findings.md's own rules below.) Two rules
+keep findings.md itself contained:
 
 - Every finding separates what the data shows from what it is taken to mean.
   The first is defensible by citation; the second is opinion and is marked as
@@ -759,6 +766,15 @@ mismatch. A quotation in "My take" that isn't found is only reported, since
 the take may quote things that aren't postings. Passing the check means the
 words exist in some archived JD, not that they belong to the company the post
 names — confirm attribution by hand.
+
+When a quotation matches exactly one archived posting, the build also links
+it to that posting on GitHub (in both the data section and "My take") — see
+`findings/README.md`. A quotation that matches more than one posting stays
+unlinked rather than risk linking to the wrong one. This is a second,
+automatic check on attribution, not a replacement for confirming it by
+hand: the link goes to whichever single posting the words happen to be
+unique to, so a mislabeled company name would show up as a link that
+visibly disagrees with the post's own text once clicked.
 
 **Field rules.**
 - The data section stays reportorial, but carries no counts, fractions, or

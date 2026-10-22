@@ -129,7 +129,7 @@ def smart_quotes(text):
     return text.replace("'", "’")
 
 
-def render_inline(text, where):
+def render_inline_segment(text, where):
     out = html.escape(smart_quotes(text), quote=False)
     out = re.sub(r"\[([^\]]+)\]\(([^)\s]+)\)", r'<a href="\2">\1</a>', out)
     out = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", out)
@@ -139,7 +139,27 @@ def render_inline(text, where):
     return out
 
 
-def render_blocks(markdown, where):
+def render_inline(text, where, corpus=None):
+    """As render_inline_segment, but every "quoted span" that matches exactly
+    one jd-source posting (see find_source) becomes a link to it -- split on
+    quote marks first so only the quotation itself, not the surrounding
+    sentence, ends up inside the <a>."""
+    if corpus is None:
+        return render_inline_segment(text, where)
+
+    pieces = re.split(r'("[^"\n]+")', text)
+    out = []
+    for i, piece in enumerate(pieces):
+        rendered = render_inline_segment(piece, where)
+        if i % 2 == 1:  # a captured "..." span, quote marks included
+            source = find_source(piece[1:-1], corpus)
+            if source:
+                rendered = f'<a href="{archive_url(source)}">{rendered}</a>'
+        out.append(rendered)
+    return "".join(out)
+
+
+def render_blocks(markdown, where, corpus=None):
     lines = markdown.splitlines()
     out = []
     i = 0
@@ -153,15 +173,15 @@ def render_blocks(markdown, where):
             i += 1
             continue
         if line.startswith("### "):
-            out.append(f"<h3>{render_inline(line[4:], where)}</h3>")
+            out.append(f"<h3>{render_inline(line[4:], where, corpus)}</h3>")
             i += 1
         elif line.startswith("## "):
-            out.append(f"<h2>{render_inline(line[3:], where)}</h2>")
+            out.append(f"<h2>{render_inline(line[3:], where, corpus)}</h2>")
             i += 1
         elif line.startswith("- "):
             items = []
             while i < len(lines) and lines[i].startswith("- "):
-                items.append(f"  <li>{render_inline(lines[i][2:].strip(), where)}</li>")
+                items.append(f"  <li>{render_inline(lines[i][2:].strip(), where, corpus)}</li>")
                 i += 1
             out.append("<ul>\n" + "\n".join(items) + "\n</ul>")
         elif line.startswith(">"):
@@ -170,7 +190,14 @@ def render_blocks(markdown, where):
                 quoted.append(lines[i][1:].strip())
                 i += 1
             text = " ".join(q for q in quoted if q)
-            out.append(f"<blockquote><p>{render_inline(text, where)}</p></blockquote>")
+            # A blockquote is entirely a quotation (no surrounding sentence
+            # the way an inline "..." span has), so when it matches a single
+            # source, the whole rendered line links rather than just a span.
+            rendered = render_inline_segment(text, where)
+            source = find_source(text, corpus) if corpus else None
+            if source:
+                rendered = f'<a href="{archive_url(source)}">{rendered}</a>'
+            out.append(f"<blockquote><p>{rendered}</p></blockquote>")
         elif UNSUPPORTED_BLOCK.match(line):
             raise BuildError(f"{where}: unsupported syntax: {line!r}")
         else:
@@ -180,7 +207,7 @@ def render_blocks(markdown, where):
                     raise BuildError(f"{where}: unsupported syntax: {lines[i]!r}")
                 para.append(lines[i].strip())
                 i += 1
-            out.append(f"<p>{render_inline(' '.join(para), where)}</p>")
+            out.append(f"<p>{render_inline(' '.join(para), where, corpus)}</p>")
     return "\n".join(out)
 
 
@@ -198,12 +225,16 @@ def normalize(text):
 
 
 def load_corpus():
-    chunks = []
+    """One (jd-source id, normalized full text) pair per archived posting,
+    kept separate rather than concatenated so a matched quote can be traced
+    back to the specific posting it came from, not just "somewhere in the
+    archive." """
+    corpus = []
     for name in sorted(os.listdir(JD_SOURCE_DIR)):
         if name.endswith(".md") and name != "README.md":
             with open(os.path.join(JD_SOURCE_DIR, name), encoding="utf-8") as fh:
-                chunks.append(normalize(fh.read()))
-    return "\n".join(chunks)
+                corpus.append((name[:-3], normalize(fh.read())))
+    return corpus
 
 
 def quotations(markdown):
@@ -217,9 +248,24 @@ def unmatched_quotes(markdown, corpus):
     missing = []
     for span in quotations(markdown):
         needle = normalize(span).rstrip(".,;:")
-        if needle and needle not in corpus:
+        if needle and not any(needle in text for _, text in corpus):
             missing.append(span)
     return missing
+
+
+def find_source(span, corpus):
+    """The single jd-source id a quotation came from, or None if it matches
+    zero or more than one archived posting -- linking confidently requires
+    an unambiguous match, not just *a* match."""
+    needle = normalize(span).rstrip(".,;:")
+    if not needle:
+        return None
+    hits = [cid for cid, text in corpus if needle in text]
+    return hits[0] if len(hits) == 1 else None
+
+
+def archive_url(source_id):
+    return f"https://github.com/bertinoco/bco-signals/blob/main/jd-source/{source_id}.md"
 
 
 # ── Output ──────────────────────────────────────────────────
@@ -241,7 +287,7 @@ def indent(block, spaces):
     return "\n".join(pad + line if line else line for line in block.splitlines())
 
 
-def render_page(post, css_version):
+def render_page(post, css_version, corpus):
     e = lambda s: html.escape(s, quote=True)
     url = post_url(post)
     where = post["source"]
@@ -330,11 +376,11 @@ def render_page(post, css_version):
         </div>
         <h1 class="post-title">{e(post['title'])}</h1>
         <div class="post-body">
-{indent(render_blocks(post['data_md'], where), 10)}
+{indent(render_blocks(post['data_md'], where, corpus), 10)}
         </div>
         <aside class="post-take" aria-labelledby="post-take-label">
           <h2 class="post-label" id="post-take-label">My take</h2>
-{indent(render_blocks(post['take_md'], where), 10)}
+{indent(render_blocks(post['take_md'], where, corpus), 10)}
         </aside>
         <section class="post-companies" aria-labelledby="post-companies-label">
           <h2 class="post-label" id="post-companies-label">Companies cited</h2>
@@ -523,7 +569,7 @@ def main():
             print(f"note: {post['source']}: My take quotes text not in jd-source/: {span!r}")
 
     css_version = styles_version()
-    outputs = {os.path.join(OUT_DIR, p["slug"], "index.html"): render_page(p, css_version)
+    outputs = {os.path.join(OUT_DIR, p["slug"], "index.html"): render_page(p, css_version, corpus)
                for p in posts}
     outputs[os.path.join(OUT_DIR, "index.html")] = render_findings_index(posts, css_version)
     outputs[FINDINGS_JSON] = render_findings_json(posts)

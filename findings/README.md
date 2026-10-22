@@ -55,3 +55,9 @@ python3 scripts/build-findings.py --check  # what CI runs
 
 The build fails if a quotation in the data section can't be found in
 `jd-source/`. Commit the source file and everything the build writes together.
+
+Any `"quoted span"` or `> blockquote` that matches exactly one archived
+posting becomes a link to it on GitHub, in both the data section and "My
+take." A quote that happens to also appear verbatim in a different posting
+stays unlinked rather than risk pointing at the wrong one — nothing to fix,
+that's the intended behavior, not a bug.
