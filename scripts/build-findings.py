@@ -1,0 +1,465 @@
+#!/usr/bin/env python3
+"""Build the Findings posts from findings/*.md.
+
+Each post is a Markdown file with a short front-matter header. This script
+turns every published post into a static page and keeps the files that list
+the posts in step with them:
+
+    docs/findings/<slug>/index.html   one page per post
+    docs/data/findings.json           the list the Findings tab renders
+    docs/sitemap.xml                  the post URLs (the root entry is untouched)
+    docs/llms.txt                     the "Findings" section
+
+See findings/README.md for the post format and CLAUDE.md's Findings tab
+promotion process for what a post may say.
+
+Run from the repo root:
+
+    python3 scripts/build-findings.py          # write everything
+    python3 scripts/build-findings.py --check  # exit 1 if anything is stale
+"""
+
+import html
+import json
+import os
+import re
+import shutil
+import sys
+from datetime import date
+
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+SOURCE_DIR = os.path.join(ROOT, "findings")
+JD_SOURCE_DIR = os.path.join(ROOT, "jd-source")
+DOCS = os.path.join(ROOT, "docs")
+OUT_DIR = os.path.join(DOCS, "findings")
+INDEX_HTML = os.path.join(DOCS, "index.html")
+FINDINGS_JSON = os.path.join(DOCS, "data", "findings.json")
+SITEMAP = os.path.join(DOCS, "sitemap.xml")
+LLMS = os.path.join(DOCS, "llms.txt")
+
+SITE = "https://signals.bertino.co"
+OG_IMAGE = SITE + "/images/og-image.png"
+REQUIRED_FIELDS = ("title", "date", "summary", "companies")
+OPTIONAL_FIELDS = ("updated", "draft")
+
+
+class BuildError(Exception):
+    pass
+
+
+# ── Parsing ─────────────────────────────────────────────────
+
+def parse_post(path):
+    with open(path, encoding="utf-8") as fh:
+        text = fh.read()
+    name = os.path.relpath(path, ROOT)
+
+    match = re.match(r"---\n(.*?)\n---\n(.*)", text, re.S)
+    if not match:
+        raise BuildError(f"{name}: missing front matter (--- ... ---)")
+    header, body = match.groups()
+
+    meta = {}
+    for line in header.splitlines():
+        if not line.strip():
+            continue
+        key, sep, value = line.partition(":")
+        key = key.strip()
+        if not sep or key not in REQUIRED_FIELDS + OPTIONAL_FIELDS:
+            raise BuildError(f"{name}: unknown front-matter line: {line!r}")
+        meta[key] = value.strip()
+
+    missing = [f for f in REQUIRED_FIELDS if not meta.get(f)]
+    if missing:
+        raise BuildError(f"{name}: missing front-matter field(s): {', '.join(missing)}")
+    for field in ("date", "updated"):
+        if field in meta:
+            try:
+                date.fromisoformat(meta[field])
+            except ValueError:
+                raise BuildError(f"{name}: {field} must be YYYY-MM-DD, got {meta[field]!r}")
+
+    # The <aside> is the "My take" section. Exactly one, and last, so the
+    # data a post reports and the opinion it offers never interleave.
+    opens = re.findall(r"^<aside>\s*$", body, re.M)
+    closes = re.findall(r"^</aside>\s*$", body, re.M)
+    if len(opens) != 1 or len(closes) != 1:
+        raise BuildError(f"{name}: needs exactly one <aside> ... </aside> block for My take")
+    data_md, _, rest = re.split(r"^(<aside>)\s*$", body, maxsplit=1, flags=re.M)
+    take_md, _, after = re.split(r"^(</aside>)\s*$", rest, maxsplit=1, flags=re.M)
+    if after.strip():
+        raise BuildError(f"{name}: nothing may follow </aside>")
+    if not data_md.strip() or not take_md.strip():
+        raise BuildError(f"{name}: both the data section and the <aside> need content")
+
+    slug = os.path.splitext(os.path.basename(path))[0]
+    if not re.fullmatch(r"[a-z0-9]+(-[a-z0-9]+)*", slug):
+        raise BuildError(f"{name}: filename must be a lowercase-hyphenated slug")
+
+    return {
+        "slug": slug,
+        "source": name,
+        "title": meta["title"],
+        "date": meta["date"],
+        "updated": meta.get("updated", meta["date"]),
+        "summary": meta["summary"],
+        "companies": [c.strip() for c in meta["companies"].split(",") if c.strip()],
+        "draft": meta.get("draft", "false").lower() == "true",
+        "data_md": data_md,
+        "take_md": take_md,
+    }
+
+
+# ── Markdown subset ─────────────────────────────────────────
+# Deliberately small: headings (## and ###), paragraphs, "- " lists,
+# "> " blockquotes, **bold**, *italic*, [links](url). Anything else is an
+# error rather than a guess, so a post can't drift into syntax that renders
+# differently from how it reads in the source.
+
+UNSUPPORTED_BLOCK = re.compile(r"^(#(?!#)|#{4,}|\* |\+ |\d+[.)] |\||!\[|```|<)")
+
+
+def render_inline(text, where):
+    out = html.escape(text, quote=False)
+    out = re.sub(r"\[([^\]]+)\]\(([^)\s]+)\)", r'<a href="\2">\1</a>', out)
+    out = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", out)
+    out = re.sub(r"(?<!\w)\*(?=\S)(.+?)(?<=\S)\*(?!\w)", r"<em>\1</em>", out)
+    if "*" in out or "](" in out:
+        raise BuildError(f"{where}: unsupported inline syntax in {text!r}")
+    return out
+
+
+def render_blocks(markdown, where):
+    lines = markdown.splitlines()
+    out = []
+    i = 0
+
+    def starts_block(line):
+        return line.startswith(("## ", "### ", "- ", ">"))
+
+    while i < len(lines):
+        line = lines[i].rstrip()
+        if not line.strip():
+            i += 1
+            continue
+        if line.startswith("### "):
+            out.append(f"<h3>{render_inline(line[4:], where)}</h3>")
+            i += 1
+        elif line.startswith("## "):
+            out.append(f"<h2>{render_inline(line[3:], where)}</h2>")
+            i += 1
+        elif line.startswith("- "):
+            items = []
+            while i < len(lines) and lines[i].startswith("- "):
+                items.append(f"  <li>{render_inline(lines[i][2:].strip(), where)}</li>")
+                i += 1
+            out.append("<ul>\n" + "\n".join(items) + "\n</ul>")
+        elif line.startswith(">"):
+            quoted = []
+            while i < len(lines) and lines[i].startswith(">"):
+                quoted.append(lines[i][1:].strip())
+                i += 1
+            text = " ".join(q for q in quoted if q)
+            out.append(f"<blockquote><p>{render_inline(text, where)}</p></blockquote>")
+        elif UNSUPPORTED_BLOCK.match(line):
+            raise BuildError(f"{where}: unsupported syntax: {line!r}")
+        else:
+            para = []
+            while i < len(lines) and lines[i].strip() and not starts_block(lines[i]):
+                if UNSUPPORTED_BLOCK.match(lines[i]):
+                    raise BuildError(f"{where}: unsupported syntax: {lines[i]!r}")
+                para.append(lines[i].strip())
+                i += 1
+            out.append(f"<p>{render_inline(' '.join(para), where)}</p>")
+    return "\n".join(out)
+
+
+# ── Quote check ─────────────────────────────────────────────
+# Every quotation in a post's data section must appear in jd-source/, under
+# the same three normalizations the Quote field allows (CLAUDE.md): a
+# capitalized first letter, spaces around an em dash, a terminal period.
+# Straight and curly quote marks are treated as the same character.
+
+def normalize(text):
+    text = text.replace("’", "'").replace("‘", "'")
+    text = text.replace("“", '"').replace("”", '"')
+    text = re.sub(r"\s*—\s*", "—", text)
+    return re.sub(r"\s+", " ", text).strip().lower()
+
+
+def load_corpus():
+    chunks = []
+    for name in sorted(os.listdir(JD_SOURCE_DIR)):
+        if name.endswith(".md") and name != "README.md":
+            with open(os.path.join(JD_SOURCE_DIR, name), encoding="utf-8") as fh:
+                chunks.append(normalize(fh.read()))
+    return "\n".join(chunks)
+
+
+def quotations(markdown):
+    found = re.findall(r'"([^"\n]+)"|“([^”\n]+)”', markdown)
+    spans = [a or b for a, b in found]
+    spans += re.findall(r"^>\s?(.+)$", markdown, re.M)
+    return spans
+
+
+def unmatched_quotes(markdown, corpus):
+    missing = []
+    for span in quotations(markdown):
+        needle = normalize(span).rstrip(".,;:")
+        if needle and needle not in corpus:
+            missing.append(span)
+    return missing
+
+
+# ── Output ──────────────────────────────────────────────────
+
+def styles_version():
+    with open(INDEX_HTML, encoding="utf-8") as fh:
+        match = re.search(r"css/styles\.css\?v=(\d+)", fh.read())
+    if not match:
+        raise BuildError("docs/index.html: no styles.css?v= version string found")
+    return match.group(1)
+
+
+def post_url(post):
+    return f"{SITE}/findings/{post['slug']}/"
+
+
+def indent(block, spaces):
+    pad = " " * spaces
+    return "\n".join(pad + line if line else line for line in block.splitlines())
+
+
+def render_page(post, css_version):
+    e = lambda s: html.escape(s, quote=True)
+    url = post_url(post)
+    where = post["source"]
+    ld = {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": post["title"],
+        "description": post["summary"],
+        "url": url,
+        "mainEntityOfPage": url,
+        "image": OG_IMAGE,
+        "datePublished": post["date"],
+        "dateModified": post["updated"],
+        "author": {"@type": "Person", "@id": "https://bertino.co/#joe",
+                   "name": "Joe Bertino", "url": "https://bertino.co"},
+        "publisher": {"@type": "Organization", "@id": "https://bertino.co/#org",
+                      "name": "Bertino Consulting", "url": "https://bertino.co"},
+        "isPartOf": {"@id": SITE + "/#website"},
+        "about": {"@id": SITE + "/#dataset"},
+    }
+    ld_json = json.dumps(ld, indent=2, ensure_ascii=False).replace("</", "<\\/")
+    companies = "\n".join(f"<li>{e(c)}</li>" for c in post["companies"])
+
+    return f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- GENERATED FILE — do not edit by hand.
+       Source: {where}. Regenerate with: python3 scripts/build-findings.py -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{e(post['title'])} — Signals</title>
+  <meta name="description" content="{e(post['summary'])}">
+  <link rel="canonical" href="{url}">
+
+  <!-- Privacy-friendly analytics by Plausible -->
+  <script async src="https://plausible.io/js/pa-WoV37_cSYerP-bLuBDf5L.js"></script>
+  <script>
+    window.plausible=window.plausible||function(){{(plausible.q=plausible.q||[]).push(arguments)}},plausible.init=plausible.init||function(i){{plausible.o=i||{{}}}};
+    plausible.init()
+  </script>
+
+  <!-- Favicon -->
+  <link rel="icon" href="/images/circle-icon-b.png" type="image/png">
+  <link rel="apple-touch-icon" href="/images/circle-icon-b.png">
+
+  <!-- OpenGraph -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="{url}">
+  <meta property="og:title" content="{e(post['title'])}">
+  <meta property="og:description" content="{e(post['summary'])}">
+  <meta property="og:image" content="{OG_IMAGE}">
+  <meta property="article:published_time" content="{post['date']}">
+
+  <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0D0D0D" media="(prefers-color-scheme: dark)">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css?v={css_version}">
+
+  <script type="application/ld+json">
+{indent(ld_json, 2)}
+  </script>
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="post-header">
+    <div class="container">
+      <a class="hero-wordmark" href="/">
+        <img class="hero-mark" src="/images/wordmark-white.svg" alt="Signals" width="104" height="16">
+      </a>
+    </div>
+  </header>
+
+  <div class="container">
+    <main id="main">
+      <article class="post">
+        <a class="post-back" href="/#findings"><span aria-hidden="true">← </span>All findings</a>
+        <time class="post-date" datetime="{post['date']}">{post['date']}</time>
+        <h1 class="post-title">{e(post['title'])}</h1>
+        <div class="post-body">
+{indent(render_blocks(post['data_md'], where), 10)}
+        </div>
+        <aside class="post-take" aria-labelledby="post-take-label">
+          <p class="post-label" id="post-take-label">My take</p>
+{indent(render_blocks(post['take_md'], where), 10)}
+        </aside>
+        <section class="post-companies" aria-labelledby="post-companies-label">
+          <h2 class="post-label" id="post-companies-label">Companies cited</h2>
+          <ul>
+{indent(companies, 12)}
+          </ul>
+        </section>
+      </article>
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">A project by <a href="https://bertino.co">Bertino Consulting</a>, with help from Claude &amp; Freddie Gibbs.</div>
+        <div class="footer-meta">Published <time datetime="{post['date']}">{post['date']}</time></div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
+"""
+
+
+def render_findings_json(posts):
+    data = {"findings": [{
+        "id": p["slug"],
+        "title": p["title"],
+        "date": p["date"],
+        "summary": p["summary"],
+        "url": f"findings/{p['slug']}/",
+        "companies": p["companies"],
+    } for p in posts]}
+    return json.dumps(data, indent=2, ensure_ascii=False) + "\n"
+
+
+def render_sitemap(current, posts):
+    kept = re.sub(r"\s*<url>\s*<loc>[^<]*/findings/[^<]*</loc>.*?</url>", "", current, flags=re.S)
+    entries = "".join(
+        f"\n  <url>\n    <loc>{post_url(p)}</loc>\n    <lastmod>{p['updated']}</lastmod>\n"
+        f"    <changefreq>yearly</changefreq>\n    <priority>0.7</priority>\n  </url>"
+        for p in posts
+    )
+    if "</urlset>" not in kept:
+        raise BuildError("docs/sitemap.xml: no </urlset> found")
+    return kept.replace("\n</urlset>", entries + "\n</urlset>", 1)
+
+
+def render_llms(current, posts):
+    lines = [
+        "## Findings",
+        "",
+        "Written posts drawn from the dataset. Each separates what the postings say from a "
+        "section labeled \"My take,\" which is Joe Bertino's personal view and not a claim "
+        "the dataset backs.",
+        "",
+    ]
+    lines += [f"- [{p['title']}]({post_url(p)}) ({p['date']}): {p['summary']}" for p in posts]
+    section = "\n".join(lines) + "\n\n"
+
+    without = re.sub(r"## Findings\n.*?(?=^## )", "", current, flags=re.S | re.M)
+    anchor = "## How to cite this work"
+    if anchor not in without:
+        raise BuildError(f"docs/llms.txt: no '{anchor}' section to place Findings before")
+    if not posts:
+        return without
+    return without.replace(anchor, section + anchor, 1)
+
+
+def read(path):
+    if not os.path.exists(path):
+        return None
+    with open(path, encoding="utf-8") as fh:
+        return fh.read()
+
+
+def main():
+    check = "--check" in sys.argv[1:]
+
+    sources = sorted(
+        os.path.join(SOURCE_DIR, n) for n in os.listdir(SOURCE_DIR)
+        if n.endswith(".md") and n != "README.md"
+    )
+    parsed = [parse_post(p) for p in sources]
+    posts = sorted((p for p in parsed if not p["draft"]),
+                   key=lambda p: (p["date"], p["slug"]), reverse=True)
+
+    corpus = load_corpus()
+    for post in parsed:
+        missing = unmatched_quotes(post["data_md"], corpus)
+        if missing:
+            raise BuildError(
+                f"{post['source']}: quoted text not found in jd-source/:\n"
+                + "\n".join(f"    {m!r}" for m in missing)
+            )
+        for span in unmatched_quotes(post["take_md"], corpus):
+            print(f"note: {post['source']}: My take quotes text not in jd-source/: {span!r}")
+
+    css_version = styles_version()
+    outputs = {os.path.join(OUT_DIR, p["slug"], "index.html"): render_page(p, css_version)
+               for p in posts}
+    outputs[FINDINGS_JSON] = render_findings_json(posts)
+    outputs[SITEMAP] = render_sitemap(read(SITEMAP), posts)
+    outputs[LLMS] = render_llms(read(LLMS), posts)
+
+    published = {p["slug"] for p in posts}
+    orphans = [os.path.join(OUT_DIR, d) for d in sorted(os.listdir(OUT_DIR))
+               if d not in published] if os.path.isdir(OUT_DIR) else []
+
+    stale = [path for path, content in outputs.items() if read(path) != content]
+    rel = lambda p: os.path.relpath(p, ROOT)
+
+    if check:
+        if stale or orphans:
+            for path in stale:
+                print(f"out of date: {rel(path)}")
+            for path in orphans:
+                print(f"no matching post: {rel(path)}")
+            print("Run: python3 scripts/build-findings.py")
+            sys.exit(1)
+        print(f"OK: {len(posts)} finding(s) up to date")
+        return
+
+    for path in stale:
+        os.makedirs(os.path.dirname(path), exist_ok=True)
+        with open(path, "w", encoding="utf-8") as fh:
+            fh.write(outputs[path])
+        print(f"wrote {rel(path)}")
+    for path in orphans:
+        shutil.rmtree(path)
+        print(f"removed {rel(path)}")
+    if not stale and not orphans:
+        print(f"{len(posts)} finding(s) already up to date")
+
+
+if __name__ == "__main__":
+    try:
+        main()
+    except BuildError as err:
+        print(f"error: {err}", file=sys.stderr)
+        sys.exit(1)
