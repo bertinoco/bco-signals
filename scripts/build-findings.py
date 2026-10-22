@@ -99,10 +99,10 @@ def parse_post(path):
     return {
         "slug": slug,
         "source": name,
-        "title": meta["title"],
+        "title": smart_quotes(meta["title"]),
         "date": meta["date"],
         "updated": meta.get("updated", meta["date"]),
-        "summary": meta["summary"],
+        "summary": smart_quotes(meta["summary"]),
         "companies": [c.strip() for c in meta["companies"].split(",") if c.strip()],
         "draft": meta.get("draft", "false").lower() == "true",
         "data_md": data_md,
@@ -119,8 +119,18 @@ def parse_post(path):
 UNSUPPORTED_BLOCK = re.compile(r"^(#(?!#)|#{4,}|\* |\+ |\d+[.)] |\||!\[|```|<)")
 
 
+def smart_quotes(text):
+    """Straight quotes to curly. A quote opens at the start of the text or
+    after whitespace or an opening bracket/dash; anything else closes it, so
+    apostrophes become ’."""
+    text = re.sub(r'(^|[\s(\[—])"', "\\1“", text)
+    text = text.replace('"', "”")
+    text = re.sub(r"(^|[\s(\[—])'", "\\1‘", text)
+    return text.replace("'", "’")
+
+
 def render_inline(text, where):
-    out = html.escape(text, quote=False)
+    out = html.escape(smart_quotes(text), quote=False)
     out = re.sub(r"\[([^\]]+)\]\(([^)\s]+)\)", r'<a href="\2">\1</a>', out)
     out = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", out)
     out = re.sub(r"(?<!\w)\*(?=\S)(.+?)(?<=\S)\*(?!\w)", r"<em>\1</em>", out)
@@ -253,7 +263,7 @@ def render_page(post, css_version):
         "about": {"@id": SITE + "/#dataset"},
     }
     ld_json = json.dumps(ld, indent=2, ensure_ascii=False).replace("</", "<\\/")
-    companies = "\n".join(f"<li>{e(c)}</li>" for c in post["companies"])
+    companies = "\n".join(f'<li class="signal-chip">{e(c)}</li>' for c in post["companies"])
 
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -319,7 +329,7 @@ def render_page(post, css_version):
 {indent(render_blocks(post['data_md'], where), 10)}
         </div>
         <aside class="post-take" aria-labelledby="post-take-label">
-          <p class="post-label" id="post-take-label">My take</p>
+          <h2 class="post-label" id="post-take-label">My take</h2>
 {indent(render_blocks(post['take_md'], where), 10)}
         </aside>
         <section class="post-companies" aria-labelledby="post-companies-label">

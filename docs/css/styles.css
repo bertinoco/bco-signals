@@ -1012,6 +1012,13 @@ body {
   text-align: left;
 }
 
+/* .hero-wordmark is display: block for the home page's flex row; in this
+   plain container that would stretch the link, and its focus ring, across
+   the full width. */
+.post-header .hero-wordmark {
+  display: inline-block;
+}
+
 .post {
   max-width: 640px;
   padding: var(--space-6) 0 var(--space-8);
@@ -1147,24 +1154,13 @@ body {
   margin-top: var(--space-6);
 }
 
+/* Chips reuse .signal-chip, set by the build. */
 .post-companies ul {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
   margin-top: var(--space-1);
-}
-
-.post-companies li {
-  font-family: var(--font-mono);
-  font-size: var(--font-xs);
-  letter-spacing: var(--tracking-label);
-  text-transform: uppercase;
-  color: hsl(var(--muted-foreground));
-  border: 1px solid hsl(var(--border));
-  border-radius: var(--radius);
-  padding: 4px 8px;
-  line-height: 1.35;
 }
 
 /* ── Emerging Skills & Patterns ───────────────────────────── */
