@@ -3,7 +3,7 @@
 
 # Quotes
 
-Every stored quote, verbatim from the posting. **82 of 83** entries carry one.
+Every stored quote, verbatim from the posting. **83 of 84** entries carry one.
 
 These are the lines that anchor each entry's cluster and signal assignments, so they are the strongest citable evidence in the dataset. Each is checked against its `jd-source` archive before commit.
 
@@ -258,6 +258,12 @@ These are the lines that anchor each entry's cluster and signal assignments, so 
 > Develop prompts, prompt patterns, reusable instructions, and workflow templates that improve content quality and production speed.
 
 `intercept-content-engineer` · added 2026-08-14
+
+### Intuit — Staff Conversation Designer - AI Design Technologist
+
+> You will play a pivotal role in designing, training and evaluating conversational AI agents for our customers.
+
+`intuit-staff-conversation-designer-ai-design-technologist` · added 2026-10-23
 
 ### JPMorgan Chase — Content Design, Vice President
 

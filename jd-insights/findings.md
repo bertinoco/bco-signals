@@ -647,8 +647,8 @@ or review process explicitly scoped to cover both human-authored and
 agent-generated content, rather than either a process for one audience or an
 artifact built for both.*
 
-**Named AI tools — 6 instances, one of them gating.** Of the entries carrying
-`ai-native-expectation`, six name a specific product rather than the
+**Named AI tools — 7 instances, one of them gating.** Of the entries carrying
+`ai-native-expectation`, seven name a specific product rather than the
 category. HelloFresh: "building rapid interactive prototypes (using tools
 like Claude Code, Gemini, or Figma AI)." Coupang's Senior Content Strategist,
 Core UX (Korean posting): "ChatGPT, Claude, Gemini 등의 다양한 생성형 AI"
@@ -661,10 +661,16 @@ Technologies' JP UX Writer (Kyarapu) (Korean posting, preferred-section):
 "Claude Code 등 AI 도구를 활용하여 번역, 검수, 패턴 추출 등으로 업무 범위를
 넓혀본 경험" ("Experience using AI tools such as Claude Code for translation,
 review, pattern extraction, and similar work"), the identical "등" (etc.)
-example framing as Coupang's instance above. All five list one or more tools
-as interchangeable examples of the category ("or similar," "or equivalent,"
+example framing as Coupang's instance above. Intuit's Staff Conversation
+Designer, AI Design Technologist names Claude Code three times — the most
+repetition of any instance so far — twice hedged ("Claude Code or similar")
+and once unhedged, alongside "NLUs, RAG" as named ML frameworks in a
+qualifications bullet ("Knowledge of language modeling and machine learning
+frameworks (NLUs, RAG, Claude Code)"). All six list one or more tools as
+interchangeable examples of the category ("or similar," "or equivalent,"
 "등의," "등"), not a required one. Claude specifically — as "Claude Code" —
-now appears by name in two of this finding's instances (HelloFresh, Wrtn).
+now appears by name in three of this finding's instances (HelloFresh, Wrtn,
+Intuit).
 
 The Ride Platform is the different case: "Jasper is core to how we work,"
 "Jasper embedded as the core engine for content creation," "with Jasper
