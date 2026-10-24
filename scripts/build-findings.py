@@ -407,7 +407,10 @@ def render_page(post, css_version, corpus, taxonomy):
   <header class="post-header">
     <div class="container">
       <a class="hero-wordmark" href="/">
-        <img class="hero-mark" src="/images/wordmark-white.svg" alt="Signals" width="104" height="16">
+        <picture>
+          <source srcset="/images/wordmark-black.svg" media="(prefers-color-scheme: light)">
+          <img class="hero-mark" src="/images/wordmark-white.svg" alt="Signals" width="104" height="16">
+        </picture>
       </a>
     </div>
   </header>
@@ -511,7 +514,10 @@ def render_findings_index(posts, css_version):
   <header class="post-header">
     <div class="container">
       <a class="hero-wordmark" href="/">
-        <img class="hero-mark" src="/images/wordmark-white.svg" alt="Signals" width="104" height="16">
+        <picture>
+          <source srcset="/images/wordmark-black.svg" media="(prefers-color-scheme: light)">
+          <img class="hero-mark" src="/images/wordmark-white.svg" alt="Signals" width="104" height="16">
+        </picture>
       </a>
     </div>
   </header>
