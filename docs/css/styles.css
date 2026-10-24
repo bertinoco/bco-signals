@@ -973,11 +973,13 @@ body {
   outline-offset: 2px;
 }
 
-/* Exempt from any reading-measure cap, same reason as .title-header: the
-   arrow needs to land at the row's true right edge. */
+/* Centered, not flex-start like .title-header's expand button — a finding
+   title is a full sentence (longer than a role title) and wraps often at
+   narrow widths, so the arrow needs to stay optically paired with the
+   whole block rather than pinned to just its first line. */
 .finding-header {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   gap: var(--space-2);
 }
@@ -1002,9 +1004,14 @@ body {
 }
 
 /* Signals "there's a full post to read" rather than "expand in place" —
-   the distinction .title-expand's plus/minus draws for an inline row. */
+   the distinction .title-expand's plus/minus draws for an inline row.
+   Sized to match .finding-title's own font-lg rather than inheriting the
+   page's base size — at the inherited size it read as a thin afterthought
+   next to a bold heading. */
 .finding-arrow {
   flex-shrink: 0;
+  font-size: var(--font-lg);
+  line-height: 1;
   color: hsl(var(--muted-foreground));
   transition: color var(--duration-fast) ease, transform var(--duration-fast) ease;
 }
@@ -1118,16 +1125,8 @@ body {
 
 /* ── Findings index page (/findings/) ─────────────────────── */
 /* Plain-HTML listing, generated alongside the post pages — same .post
-   shell, with a short intro line and the home page's own .finding-list
-   markup reused verbatim so the two stay visually identical. */
-.post-intro {
-  margin-top: var(--space-4);
-  max-width: 560px;
-  font-size: var(--font-md);
-  line-height: var(--leading-relaxed);
-  color: hsl(var(--secondary-foreground));
-}
-
+   shell, and the home page's own .finding-list markup reused verbatim so
+   the two stay visually identical. */
 .post-finding-list {
   margin-top: var(--space-6);
 }
