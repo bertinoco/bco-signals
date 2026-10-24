@@ -42,6 +42,11 @@
   --font-base: 0.9375rem;
   --font-md:   1.0625rem;
   --font-lg:   1.1875rem;
+  /* Two unrelated components (.flip-card-back-title, .post-title) had each
+     independently landed on 1.625rem as a one-off value between --font-lg
+     and --font-3xl. Tokenized once a second usage made that a real,
+     recurring step rather than a single documented exception. */
+  --font-xl:   1.625rem;
   --font-3xl:  clamp(2rem, 1.35rem + 2.7vw, 2.75rem);
 
   --weight-regular:  400;
@@ -1133,7 +1138,7 @@ body {
 
 .post-title {
   margin-top: var(--space-4);
-  font-size: clamp(1.625rem, 1.3rem + 1.4vw, 2.125rem);
+  font-size: clamp(var(--font-xl), 1.3rem + 1.4vw, 2.125rem);
   font-weight: var(--weight-semibold);
   line-height: var(--leading-tight);
   letter-spacing: var(--tracking-tight);
@@ -1481,7 +1486,7 @@ body {
 .flip-card-back-title {
   max-width: 560px;
   font-family: var(--font-sans);
-  font-size: 1.625rem;
+  font-size: var(--font-xl);
   font-weight: var(--weight-semibold);
   line-height: var(--leading-tight);
   letter-spacing: var(--tracking-tight);
