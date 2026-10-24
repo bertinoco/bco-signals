@@ -573,7 +573,6 @@ function renderFindings(data) {
     <article class="finding">
       <time class="finding-date" datetime="${f.date}">${formatDate(f.date)}</time>
       <h3 class="finding-title"><a href="${f.url}">${f.title}</a></h3>
-      <p class="finding-summary">${f.summary}</p>
     </article>
   `).join('');
 }

@@ -462,7 +462,6 @@ def render_findings_index(posts, css_version):
     items = "\n".join(f"""      <article class="finding">
         <time class="finding-date" datetime="{p['date']}">{p['date']}</time>
         <h2 class="finding-title"><a href="/findings/{p['slug']}/">{e(p['title'])}</a></h2>
-        <p class="finding-summary">{e(p['summary'])}</p>
       </article>""" for p in posts)
 
     return f"""<!DOCTYPE html>
