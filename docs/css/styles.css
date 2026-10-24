@@ -958,7 +958,6 @@ body {
   display: flex;
   flex-direction: column;
   gap: 5px;
-  max-width: 640px;
   padding: var(--space-3) 0;
   border-bottom: 1px solid hsl(var(--muted));
   color: inherit;
