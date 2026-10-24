@@ -422,11 +422,11 @@ def render_page(post, css_version, corpus, taxonomy):
         </div>
         <aside class="post-take" aria-labelledby="post-take-label">
           <h2 class="post-label" id="post-take-label">My take</h2>
+{indent(render_blocks(post['take_md'], where, corpus), 10)}
           <div class="post-byline">
             <img class="post-byline-photo" src="/images/joebertino.jpg" alt="" width="32" height="32">
             <p class="post-byline-text">By <a href="https://bertino.co">Joe Bertino</a> · <time datetime="{post['date']}">{post['date']}</time></p>
           </div>
-{indent(render_blocks(post['take_md'], where, corpus), 10)}
         </aside>
         <section class="post-signals" aria-labelledby="post-signals-label">
           <h2 class="post-label" id="post-signals-label">Signals cited</h2>

@@ -1200,12 +1200,12 @@ body {
   margin-bottom: 4px;
 }
 
-.post-companies {
+.post-signals {
   margin-top: var(--space-6);
 }
 
 /* Chips reuse .signal-chip, set by the build. */
-.post-companies ul {
+.post-signals ul {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
