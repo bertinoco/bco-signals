@@ -1133,7 +1133,7 @@ body {
 }
 
 .post-title {
-  margin-top: var(--space-1);
+  margin-top: var(--space-4);
   font-size: clamp(1.625rem, 1.3rem + 1.4vw, 2.125rem);
   font-weight: var(--weight-semibold);
   line-height: var(--leading-tight);
