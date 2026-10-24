@@ -39,7 +39,8 @@ LLMS = os.path.join(DOCS, "llms.txt")
 
 SITE = "https://signals.bertino.co"
 OG_IMAGE = SITE + "/images/og-image.png"
-REQUIRED_FIELDS = ("title", "date", "summary", "companies")
+JOBS_JSON = os.path.join(DOCS, "data", "jobs.json")
+REQUIRED_FIELDS = ("title", "date", "signals")
 OPTIONAL_FIELDS = ("updated", "draft")
 
 
@@ -102,8 +103,8 @@ def parse_post(path):
         "title": smart_quotes(meta["title"]),
         "date": meta["date"],
         "updated": meta.get("updated", meta["date"]),
-        "summary": smart_quotes(meta["summary"]),
-        "companies": [c.strip() for c in meta["companies"].split(",") if c.strip()],
+        "summary": derive_summary(data_md, name),
+        "signals": [s.strip() for s in meta["signals"].split(",") if s.strip()],
         "draft": meta.get("draft", "false").lower() == "true",
         "data_md": data_md,
         "take_md": take_md,
@@ -127,6 +128,37 @@ def smart_quotes(text):
     text = text.replace('"', "”")
     text = re.sub(r"(^|[\s(\[—])'", "\\1‘", text)
     return text.replace("'", "’")
+
+
+def derive_summary(data_md, where):
+    """The one-line summary shown on the Findings tab, the findings index,
+    and in meta/OG/JSON-LD description tags -- the post's own opening
+    sentences, not a separately hand-written field. Finds the first true
+    paragraph (skipping any leading heading), takes its first two sentences,
+    then a hard length backstop in case that's still too long."""
+    lines = data_md.splitlines()
+    i = 0
+    while i < len(lines) and (not lines[i].strip() or lines[i].startswith(("## ", "### ", "- ", ">"))):
+        i += 1
+    para = []
+    while i < len(lines) and lines[i].strip() and not lines[i].startswith(("## ", "### ", "- ", ">")):
+        para.append(lines[i].strip())
+        i += 1
+    if not para:
+        raise BuildError(f"{where}: no opening paragraph found to derive a summary from "
+                          "(the data section can't open with a heading, list, or blockquote)")
+
+    plain = " ".join(para)
+    plain = re.sub(r"\*\*(.+?)\*\*", r"\1", plain)
+    plain = re.sub(r"(?<!\w)\*(?=\S)(.+?)(?<=\S)\*(?!\w)", r"\1", plain)
+    plain = re.sub(r"\[([^\]]+)\]\([^)\s]+\)", r"\1", plain)
+    plain = smart_quotes(plain)
+
+    sentences = re.split(r"(?<=[.!?])\s+", plain)
+    summary = " ".join(sentences[:2]).strip()
+    if len(summary) > 200:
+        summary = summary[:197].rsplit(" ", 1)[0].rstrip(",;:—") + "…"
+    return summary
 
 
 def render_inline_segment(text, where):
@@ -224,6 +256,20 @@ def normalize(text):
     return re.sub(r"\s+", " ", text).strip().lower()
 
 
+def load_taxonomy():
+    """{key: label} for every cluster and signal in jobs.json, so a post's
+    front-matter `signals:` keys (which may actually be cluster keys too --
+    the post doesn't distinguish) can be rendered with their real label
+    instead of the raw key."""
+    with open(JOBS_JSON, encoding="utf-8") as fh:
+        data = json.load(fh)
+    labels = {}
+    for group in ("clusters", "signals"):
+        for key, info in data[group].items():
+            labels[key] = info["label"]
+    return labels
+
+
 def load_corpus():
     """One (jd-source id, normalized full text) pair per archived posting,
     kept separate rather than concatenated so a matched quote can be traced
@@ -287,7 +333,7 @@ def indent(block, spaces):
     return "\n".join(pad + line if line else line for line in block.splitlines())
 
 
-def render_page(post, css_version, corpus):
+def render_page(post, css_version, corpus, taxonomy):
     e = lambda s: html.escape(s, quote=True)
     url = post_url(post)
     where = post["source"]
@@ -310,7 +356,7 @@ def render_page(post, css_version, corpus):
         "about": {"@id": SITE + "/#dataset"},
     }
     ld_json = json.dumps(ld, indent=2, ensure_ascii=False).replace("</", "<\\/")
-    companies = "\n".join(f'<li class="signal-chip">{e(c)}</li>' for c in post["companies"])
+    signals = "\n".join(f'<li class="signal-chip">{e(taxonomy[s])}</li>' for s in post["signals"])
 
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -370,22 +416,22 @@ def render_page(post, css_version, corpus):
     <main id="main">
       <article class="post">
         <a class="post-back" href="/#findings"><span aria-hidden="true">← </span>All findings</a>
-        <div class="post-byline">
-          <img class="post-byline-photo" src="/images/joebertino.jpg" alt="" width="32" height="32">
-          <p class="post-byline-text">By <a href="https://bertino.co">Joe Bertino</a> · <time datetime="{post['date']}">{post['date']}</time></p>
-        </div>
         <h1 class="post-title">{e(post['title'])}</h1>
         <div class="post-body">
 {indent(render_blocks(post['data_md'], where, corpus), 10)}
         </div>
         <aside class="post-take" aria-labelledby="post-take-label">
           <h2 class="post-label" id="post-take-label">My take</h2>
+          <div class="post-byline">
+            <img class="post-byline-photo" src="/images/joebertino.jpg" alt="" width="32" height="32">
+            <p class="post-byline-text">By <a href="https://bertino.co">Joe Bertino</a> · <time datetime="{post['date']}">{post['date']}</time></p>
+          </div>
 {indent(render_blocks(post['take_md'], where, corpus), 10)}
         </aside>
-        <section class="post-companies" aria-labelledby="post-companies-label">
-          <h2 class="post-label" id="post-companies-label">Companies cited</h2>
+        <section class="post-signals" aria-labelledby="post-signals-label">
+          <h2 class="post-label" id="post-signals-label">Signals cited</h2>
           <ul>
-{indent(companies, 12)}
+{indent(signals, 12)}
           </ul>
         </section>
       </article>
@@ -473,7 +519,6 @@ def render_findings_index(posts, css_version):
       <article class="post">
         <a class="post-back" href="/#findings"><span aria-hidden="true">← </span>Back to Signals</a>
         <h1 class="post-title">Findings</h1>
-        <p class="post-intro">Written posts drawn from the dataset. Each separates what the postings say from a section labeled “My take,” which is Joe Bertino’s personal view and not a claim the dataset backs.</p>
         <div class="finding-list post-finding-list">
 {items}
         </div>
@@ -501,7 +546,7 @@ def render_findings_json(posts):
         "date": p["date"],
         "summary": p["summary"],
         "url": f"findings/{p['slug']}/",
-        "companies": p["companies"],
+        "signals": p["signals"],
     } for p in posts]}
     return json.dumps(data, indent=2, ensure_ascii=False) + "\n"
 
@@ -558,6 +603,7 @@ def main():
                    key=lambda p: (p["date"], p["slug"]), reverse=True)
 
     corpus = load_corpus()
+    taxonomy = load_taxonomy()
     for post in parsed:
         missing = unmatched_quotes(post["data_md"], corpus)
         if missing:
@@ -567,9 +613,14 @@ def main():
             )
         for span in unmatched_quotes(post["take_md"], corpus):
             print(f"note: {post['source']}: My take quotes text not in jd-source/: {span!r}")
+        unknown = [s for s in post["signals"] if s not in taxonomy]
+        if unknown:
+            raise BuildError(
+                f"{post['source']}: unknown cluster/signal key(s): {', '.join(unknown)}"
+            )
 
     css_version = styles_version()
-    outputs = {os.path.join(OUT_DIR, p["slug"], "index.html"): render_page(p, css_version, corpus)
+    outputs = {os.path.join(OUT_DIR, p["slug"], "index.html"): render_page(p, css_version, corpus, taxonomy)
                for p in posts}
     outputs[os.path.join(OUT_DIR, "index.html")] = render_findings_index(posts, css_version)
     outputs[FINDINGS_JSON] = render_findings_json(posts)

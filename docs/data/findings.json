@@ -4,18 +4,12 @@
       "id": "content-design-central-systems",
       "title": "Content design is becoming a central systems discipline",
       "date": "2026-10-22",
-      "summary": "Postings describe central owners for content standards, and several say outright that writing content is not the job.",
+      "summary": "Postings in streaming, SaaS, big tech, and e-commerce describe a central owner for content standards, each in its own words:",
       "url": "findings/content-design-central-systems/",
-      "companies": [
-        "Netflix",
-        "Wix",
-        "LinkedIn",
-        "Vinted",
-        "OpenAI",
-        "Adobe",
-        "Wealthsimple",
-        "CoLab",
-        "Ally Financial"
+      "signals": [
+        "central-standards-function",
+        "content-systems-design",
+        "enablement"
       ]
     }
   ]

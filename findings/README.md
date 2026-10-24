@@ -13,8 +13,7 @@ Findings tab promotion process). This file covers only the format.
 ---
 title: Content design is becoming a central systems discipline
 date: 2026-10-22
-summary: One reportorial sentence, shown on the Findings tab and in link previews.
-companies: Netflix, Wix, Adobe
+signals: central-standards-function, content-systems-design, enablement
 draft: true
 ---
 
@@ -33,10 +32,18 @@ My take. Everything inside the aside renders under the "My take" label.
 </aside>
 ```
 
-**Front matter.** `title`, `date` (YYYY-MM-DD), `summary`, and `companies`
-(comma-separated) are required. `updated` (YYYY-MM-DD) is optional and sets the
-sitemap date after an edit. `draft: true` keeps a post out of the build until
-it is approved for publishing.
+**Front matter.** `title`, `date` (YYYY-MM-DD), and `signals` (comma-separated
+cluster and/or signal keys from `docs/data/jobs.json`) are required. The build
+fails if a key doesn't exist in either taxonomy. `updated` (YYYY-MM-DD) is
+optional and sets the sitemap date after an edit. `draft: true` keeps a post
+out of the build until it is approved for publishing.
+
+There is no `summary` field to write. The one-line summary shown on the
+Findings tab, the findings index, and in meta/OG/JSON-LD description tags is
+derived automatically from the post's own opening sentences — the first one
+or two sentences of the data section's opening paragraph, truncated if that's
+still too long. Write that opening paragraph with the summary in mind, since
+it does double duty.
 
 **Body.** Everything before `<aside>` is the data section; everything inside it
 is "My take". Exactly one `<aside>`, and nothing after it.

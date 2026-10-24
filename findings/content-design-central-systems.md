@@ -1,8 +1,7 @@
 ---
 title: Content design is becoming a central systems discipline
 date: 2026-10-22
-summary: Postings describe central owners for content standards, and several say outright that writing content is not the job.
-companies: Netflix, Wix, LinkedIn, Vinted, OpenAI, Adobe, Wealthsimple, CoLab, Ally Financial
+signals: central-standards-function, content-systems-design, enablement
 ---
 
 ## Content standards are being pulled into central functions

@@ -789,12 +789,15 @@ visibly disagrees with the post's own text once clicked.
   exception covers — personal, experience-informed, not required to cite back
   to the dataset the way the data section does. It comes last, after all of
   the data section; the build rejects a post that interleaves the two.
-- `title` and `summary` follow the data section's rules. The summary is the
-  one line shown on the Findings tab and in link previews.
-- `companies` lists every company the finding cites, so a reader can check
-  the claim against the archive. The list can grow later if another posting
-  says the same thing — that's an addition, not a correction, since nothing
-  it already claimed becomes false.
+- `title` follows the data section's rules. `summary` is not a hand-written
+  front-matter field — it's derived automatically from the opening sentences
+  of the data section's first paragraph, which is why that paragraph does
+  double duty as the one line shown on the Findings tab and in link previews.
+- `signals` lists the cluster and/or signal keys (from `docs/data/jobs.json`)
+  the finding is grounded in, so a reader can check the claim against the
+  taxonomy. The list can grow later if another posting shows the same
+  pattern — that's an addition, not a correction, since nothing it already
+  claimed becomes false.
 
 ### Keeping findings.md's own figures current
 

@@ -41,7 +41,7 @@ Each entry is assessed against a fixed taxonomy of clusters and signals derived 
 
 Written posts drawn from the dataset. Each separates what the postings say from a section labeled "My take," which is Joe Bertino's personal view and not a claim the dataset backs.
 
-- [Content design is becoming a central systems discipline](https://signals.bertino.co/findings/content-design-central-systems/) (2026-10-22): Postings describe central owners for content standards, and several say outright that writing content is not the job.
+- [Content design is becoming a central systems discipline](https://signals.bertino.co/findings/content-design-central-systems/) (2026-10-22): Postings in streaming, SaaS, big tech, and e-commerce describe a central owner for content standards, each in its own words:
 
 ## How to cite this work
 
