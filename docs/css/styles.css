@@ -951,35 +951,45 @@ body {
   text-align: left;
 }
 
+/* The whole row is the link — a finding has no inline expansion the way a
+   role card does, it only ever goes to its own page — so .finding is an
+   <a>, not an .title-entry-style click handler on a wrapping block. */
 .finding {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
   max-width: 640px;
-  padding: var(--space-4) 0;
+  padding: var(--space-3) 0;
   border-bottom: 1px solid hsl(var(--muted));
+  color: inherit;
+  text-decoration: none;
 }
 
 .finding:last-child {
   border-bottom: none;
 }
 
-.finding-date {
-  font-family: var(--font-mono);
-  font-size: var(--font-xs);
-  letter-spacing: var(--tracking-wide);
-  font-variant-numeric: tabular-nums;
-  color: hsl(var(--muted-foreground));
+.finding:focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
+}
+
+/* Exempt from any reading-measure cap, same reason as .title-header: the
+   arrow needs to land at the row's true right edge. */
+.finding-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-2);
 }
 
 .finding-title {
-  margin-top: var(--space-1);
   font-family: var(--font-sans);
   font-size: var(--font-lg);
   font-weight: var(--weight-semibold);
   line-height: var(--leading-snug);
   letter-spacing: var(--tracking-snug);
   text-wrap: balance;
-}
-
-.finding-title a {
   color: hsl(var(--foreground));
   text-decoration: underline;
   text-underline-offset: 4px;
@@ -988,13 +998,29 @@ body {
   transition: text-decoration-color var(--duration-base) var(--ease-out);
 }
 
-.finding-title a:hover {
+.finding:hover .finding-title {
   text-decoration-color: hsl(var(--foreground));
 }
 
-.finding-title a:focus-visible {
-  outline: 2px solid hsl(var(--ring));
-  outline-offset: 2px;
+/* Signals "there's a full post to read" rather than "expand in place" —
+   the distinction .title-expand's plus/minus draws for an inline row. */
+.finding-arrow {
+  flex-shrink: 0;
+  color: hsl(var(--muted-foreground));
+  transition: color var(--duration-fast) ease, transform var(--duration-fast) ease;
+}
+
+.finding:hover .finding-arrow {
+  color: hsl(var(--foreground));
+  transform: translateX(2px);
+}
+
+.finding-date {
+  font-family: var(--font-mono);
+  font-size: var(--font-xs);
+  letter-spacing: var(--tracking-wide);
+  font-variant-numeric: tabular-nums;
+  color: hsl(var(--muted-foreground));
 }
 
 /* ── Findings post pages ──────────────────────────────────── */
@@ -1786,7 +1812,8 @@ body {
   .title-expand,
   .show-more-btn,
   .state-action,
-  .finding-title a,
+  .finding-title,
+  .finding-arrow,
   .post-back,
   .flip-card-front,
   .flip-card-back,

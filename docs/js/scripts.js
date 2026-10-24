@@ -570,10 +570,13 @@ function renderFindings(data) {
   const sorted = [...findings].sort((a, b) => new Date(b.date) - new Date(a.date));
 
   list.innerHTML = sorted.map(f => `
-    <article class="finding">
+    <a class="finding" href="${f.url}">
+      <div class="finding-header">
+        <h3 class="finding-title">${f.title}</h3>
+        <span class="finding-arrow" aria-hidden="true">→</span>
+      </div>
       <time class="finding-date" datetime="${f.date}">${formatDate(f.date)}</time>
-      <h3 class="finding-title"><a href="${f.url}">${f.title}</a></h3>
-    </article>
+    </a>
   `).join('');
 }
 

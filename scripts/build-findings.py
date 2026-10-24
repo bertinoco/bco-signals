@@ -459,10 +459,13 @@ def render_findings_index(posts, css_version):
     findings.json."""
     e = lambda s: html.escape(s, quote=True)
     url = SITE + "/findings/"
-    items = "\n".join(f"""      <article class="finding">
+    items = "\n".join(f"""      <a class="finding" href="/findings/{p['slug']}/">
+        <div class="finding-header">
+          <h2 class="finding-title">{e(p['title'])}</h2>
+          <span class="finding-arrow" aria-hidden="true">→</span>
+        </div>
         <time class="finding-date" datetime="{p['date']}">{p['date']}</time>
-        <h2 class="finding-title"><a href="/findings/{p['slug']}/">{e(p['title'])}</a></h2>
-      </article>""" for p in posts)
+      </a>""" for p in posts)
 
     return f"""<!DOCTYPE html>
 <html lang="en">
