@@ -113,11 +113,38 @@ def parse_post(path):
 
 # ── Markdown subset ─────────────────────────────────────────
 # Deliberately small: headings (## and ###), paragraphs, "- " lists,
-# "> " blockquotes, **bold**, *italic*, [links](url). Anything else is an
-# error rather than a guess, so a post can't drift into syntax that renders
-# differently from how it reads in the source.
+# "> " blockquotes, **bold**, *italic*, [links](url), @video <url>. Anything
+# else is an error rather than a guess, so a post can't drift into syntax
+# that renders differently from how it reads in the source.
 
-UNSUPPORTED_BLOCK = re.compile(r"^(#(?!#)|#{4,}|\* |\+ |\d+[.)] |\||!\[|```|<)")
+UNSUPPORTED_BLOCK = re.compile(r"^(#(?!#)|#{4,}|\* |\+ |\d+[.)] |\||!\[|```|<|@(?!video ))")
+
+# youtube.com/watch, youtu.be, youtube.com/embed, and vimeo.com are the only
+# recognized @video providers -- the id capture group feeds straight into a
+# known embed-URL shape, so a URL that doesn't match one of these can't
+# produce a bad iframe src by accident; it just fails the build instead.
+VIDEO_PATTERNS = [
+    (re.compile(r"^https://(?:www\.)?youtube\.com/watch\?v=([\w-]{11})(?:&\S*)?$"), "youtube"),
+    (re.compile(r"^https://youtu\.be/([\w-]{11})(?:\?\S*)?$"), "youtube"),
+    (re.compile(r"^https://(?:www\.)?youtube\.com/embed/([\w-]{11})(?:\?\S*)?$"), "youtube"),
+    (re.compile(r"^https://(?:www\.)?vimeo\.com/(\d+)$"), "vimeo"),
+]
+
+
+def render_video_embed(url, where):
+    for pattern, provider in VIDEO_PATTERNS:
+        match = pattern.match(url)
+        if match:
+            vid = match.group(1)
+            src = (f"https://www.youtube-nocookie.com/embed/{vid}" if provider == "youtube"
+                   else f"https://player.vimeo.com/video/{vid}")
+            return (f'<div class="post-video"><iframe src="{src}" title="Embedded video" '
+                    f'loading="lazy" allow="accelerometer; autoplay; clipboard-write; '
+                    f'encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>')
+    raise BuildError(
+        f"{where}: unsupported @video URL (only youtube.com, youtu.be, and vimeo.com "
+        f"links are recognized): {url!r}"
+    )
 
 
 def smart_quotes(text):
@@ -138,10 +165,10 @@ def derive_summary(data_md, where):
     then a hard length backstop in case that's still too long."""
     lines = data_md.splitlines()
     i = 0
-    while i < len(lines) and (not lines[i].strip() or lines[i].startswith(("## ", "### ", "- ", ">"))):
+    while i < len(lines) and (not lines[i].strip() or lines[i].startswith(("## ", "### ", "- ", ">", "@video "))):
         i += 1
     para = []
-    while i < len(lines) and lines[i].strip() and not lines[i].startswith(("## ", "### ", "- ", ">")):
+    while i < len(lines) and lines[i].strip() and not lines[i].startswith(("## ", "### ", "- ", ">", "@video ")):
         para.append(lines[i].strip())
         i += 1
     if not para:
@@ -197,7 +224,7 @@ def render_blocks(markdown, where, corpus=None):
     i = 0
 
     def starts_block(line):
-        return line.startswith(("## ", "### ", "- ", ">"))
+        return line.startswith(("## ", "### ", "- ", ">", "@video "))
 
     while i < len(lines):
         line = lines[i].rstrip()
@@ -230,6 +257,9 @@ def render_blocks(markdown, where, corpus=None):
             if source:
                 rendered = f'<a href="{archive_url(source)}">{rendered}</a>'
             out.append(f"<blockquote><p>{rendered}</p></blockquote>")
+        elif line.startswith("@video "):
+            out.append(render_video_embed(line[len("@video "):].strip(), where))
+            i += 1
         elif UNSUPPORTED_BLOCK.match(line):
             raise BuildError(f"{where}: unsupported syntax: {line!r}")
         else:
