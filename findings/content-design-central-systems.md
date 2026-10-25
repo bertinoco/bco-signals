@@ -30,12 +30,12 @@ Content systems design and enablement (building templates, playbooks, and guidan
 
 <aside>
 
-Content design is becoming infrastructure. The work is moving from writing content to building the systems that draft it, and ownership of those systems is moving to central functions or platform teams.
+Content design is turning into infrastructure. Less of the job is writing the words, and more of it is building the systems that write them. Those systems are increasingly owned by central or platform teams, or by some rogue content designer floating between business areas (that's been me for years now).
 
-The embedded model still exists. Wealthsimple is hiring for it at staff level, and its first listed duty is "Write the hard stuff." But it's no longer the default for senior systems work.
+Embedded roles haven't disappeared. Wealthsimple recently posted a staff content designer role, and the first thing on the list is "Write the hard stuff." But that's the exception. For senior systems work, embedded isn't the default anymore.
 
-The people who excel at writing content don't always move smoothly into designing the system that produces it. Those eager to make the jump often find little internal training or support.
+This creates a growing tension: being great at writing content doesn't automatically make you great at designing the thing that produces it. They're different skills. If you want to make that jump, you're mostly on your own — there's very little training or support for it inside companies.
 
-The track to principal content designer in a product org now branches into the unknown. Do we report to design, product, or engineering now?
+Which makes the path to principal content designer murky. Even in a product org that supports and protects the craft, the next step might not be in design at all. It might be in engineering.
 
 </aside>
