@@ -1,7 +1,10 @@
 // Data path for GitHub Pages with `docs/` at repo root
 const DATA_PATH = 'data/jobs.json';
 const SIGNAL_THRESHOLD = 2;
-const TITLES_LIMIT = 12;
+// Every home section shows 8 before its "View all" — cards, roles, and
+// findings alike (findings says "Read more"; its cap is FINDINGS_LIMIT in
+// build-findings.py).
+const SECTION_LIMIT = 8;
 // How long a cluster/signal shows a "New" chip after its earliest carrying
 // entry landed — self-expiring, so nothing has to remember to remove it.
 // Deliberately not applied to individual roles (see renderTitles): those
@@ -34,14 +37,6 @@ let globalData = null;
 // rendered (see openFlipCard/navigateFlipCard).
 let clusterOrder = [];
 let signalOrder = [];
-
-// Responsibilities/Skills truncate at 3 full rows of whatever column count
-// the grid is actually rendering at, not a flat number — read the live
-// layout instead of duplicating the grid's own breakpoints as a second,
-// driftable source of truth.
-function currentColumnCount(gridEl) {
-  return getComputedStyle(gridEl).gridTemplateColumns.split(' ').length;
-}
 
 // ── Copy ────────────────────────────────────────────────────
 // All loading, empty, and error copy lives here. See copy-patterns.md
@@ -296,14 +291,10 @@ function renderClusters(data) {
 
   const showMore = document.getElementById('clusters-show-more');
   const showMoreBtn = showMore ? showMore.querySelector('.show-more-btn') : null;
-  // Single column (mobile) shows everything, no pagination — with a dataset
-  // this small, "load more" gates a handful of items, not a real list.
-  const isSingleColumn = currentColumnCount(grid) === 1;
-  const limit = currentColumnCount(grid) * 3;
-  const keysToRender = (isSingleColumn || showAllClusters) ? clusterKeys : clusterKeys.slice(0, limit);
+  const keysToRender = showAllClusters ? clusterKeys : clusterKeys.slice(0, SECTION_LIMIT);
 
   if (showMore) {
-    if (!isSingleColumn && !showAllClusters && clusterKeys.length > limit) {
+    if (!showAllClusters && clusterKeys.length > SECTION_LIMIT) {
       showMore.style.display = 'block';
       showMoreBtn.textContent = 'View all';
     } else {
@@ -364,10 +355,10 @@ function renderTitles(data) {
   }
 
   const sorted = [...data.entries].sort((a, b) => new Date(b.dateAdded) - new Date(a.dateAdded));
-  const entries = showAllTitles ? sorted : sorted.slice(0, TITLES_LIMIT);
+  const entries = showAllTitles ? sorted : sorted.slice(0, SECTION_LIMIT);
 
   if (showMore) {
-    if (!showAllTitles && data.entries.length > TITLES_LIMIT) {
+    if (!showAllTitles && data.entries.length > SECTION_LIMIT) {
       showMore.style.display = 'block';
       showMoreBtn.textContent = 'View all';
     } else {
@@ -495,14 +486,10 @@ function renderSignals(data) {
 
   const showMore = document.getElementById('signals-show-more');
   const showMoreBtn = showMore ? showMore.querySelector('.show-more-btn') : null;
-  // Single column (mobile) shows everything, no pagination — with a dataset
-  // this small, "load more" gates a handful of items, not a real list.
-  const isSingleColumn = currentColumnCount(list) === 1;
-  const limit = currentColumnCount(list) * 3;
-  const keysToRender = (isSingleColumn || showAllSignals) ? relevantSignals : relevantSignals.slice(0, limit);
+  const keysToRender = showAllSignals ? relevantSignals : relevantSignals.slice(0, SECTION_LIMIT);
 
   if (showMore) {
-    if (!isSingleColumn && !showAllSignals && relevantSignals.length > limit) {
+    if (!showAllSignals && relevantSignals.length > SECTION_LIMIT) {
       showMore.style.display = 'block';
       showMoreBtn.textContent = 'View all';
     } else {
@@ -607,65 +594,6 @@ if (findingsShowMore) {
     findingsShowMore.hidden = true;
   });
 }
-
-// ── AI disclosure tooltip ────────────────────────────────────
-// Click-to-toggle rather than hover-only: hover doesn't exist on touch, and
-// a single trigger mechanism that works everywhere beats hover-plus-a-
-// separate-touch-fallback for a control this minor.
-const aiInfoBtn = document.getElementById('ai-info-btn');
-const aiInfoTooltip = document.getElementById('ai-info-tooltip');
-
-// Below 480px the toggletip spans the full section-heading-row instead of
-// anchoring to the icon (see the CSS comment on that media query), so the
-// caret can't just sit at a fixed spot — it has to track wherever the icon
-// actually renders, which shifts with the heading text's rendered width.
-// Harmless to compute above 480px too: the desktop caret is positioned via
-// `right`, not `left`, so --caret-left has no effect there.
-function positionAiCaret() {
-  const row = aiInfoBtn.closest('.section-heading-row');
-  if (!row) return;
-  const rowRect = row.getBoundingClientRect();
-  const btnRect = aiInfoBtn.getBoundingClientRect();
-  const center = btnRect.left + btnRect.width / 2 - rowRect.left;
-  const clamped = Math.max(16, Math.min(center, rowRect.width - 16));
-  aiInfoTooltip.style.setProperty('--caret-left', `${clamped}px`);
-}
-
-function closeAiInfo() {
-  aiInfoTooltip.hidden = true;
-  aiInfoBtn.setAttribute('aria-expanded', 'false');
-}
-
-function openAiInfo() {
-  positionAiCaret();
-  aiInfoTooltip.hidden = false;
-  aiInfoBtn.setAttribute('aria-expanded', 'true');
-}
-
-aiInfoBtn.addEventListener('click', (e) => {
-  e.stopPropagation();
-  if (aiInfoTooltip.hidden) openAiInfo();
-  else closeAiInfo();
-});
-
-document.addEventListener('click', (e) => {
-  if (!aiInfoTooltip.hidden && e.target !== aiInfoBtn && !aiInfoTooltip.contains(e.target)) {
-    closeAiInfo();
-  }
-});
-
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape' && !aiInfoTooltip.hidden) {
-    closeAiInfo();
-    aiInfoBtn.focus();
-  }
-});
-
-// Rotating a device or resizing the window while the toggletip is open
-// shifts the row's width and the icon's position within it.
-window.addEventListener('resize', () => {
-  if (!aiInfoTooltip.hidden) positionAiCaret();
-});
 
 // ── Flip-card overlay ───────────────────────────────────────
 // Clicking a cluster/signal card flips it and grows it to fill the

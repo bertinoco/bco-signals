@@ -42,10 +42,9 @@
   --font-base: 0.9375rem;
   --font-md:   1.0625rem;
   --font-lg:   1.1875rem;
-  /* Two unrelated components (.flip-card-back-title, .post-title) had each
-     independently landed on 1.625rem as a one-off value between --font-lg
-     and --font-3xl. Tokenized once a second usage made that a real,
-     recurring step rather than a single documented exception. */
+  /* The step between --font-lg and --font-3xl: .flip-card-back-title,
+     .post-title's floor, and the home page's .section-heading. Tokenized
+     once a second usage made it a real step rather than a one-off. */
   --font-xl:   1.625rem;
   --font-3xl:  clamp(2rem, 1.35rem + 2.7vw, 2.75rem);
 
@@ -568,200 +567,45 @@ body {
 
 /* ── Home sections ────────────────────────────────────────── */
 /* The home page is one scroll of three sections — Explore the data,
-   Read our findings, All roles — each opening with the same heading and
-   one-line description. The site menu links to them as plain anchors.
-   Left-aligned, overriding body's centered text-align. */
+   Read our findings, View job descriptions — each opening with the same
+   heading and one-line description. The site menu links to them as plain
+   anchors. A hairline between sections, with room on both sides of it, is
+   what separates them. Left-aligned, overriding body's centered text-align. */
 #main {
   padding-top: var(--space-6);
 }
 
 .home-section {
-  padding-bottom: var(--space-12);
+  padding-bottom: var(--space-8);
   text-align: left;
+}
+
+.home-section + .home-section {
+  padding-top: var(--space-8);
+  border-top: 1px solid hsl(var(--border));
+}
+
+/* The last section's bottom room is the gap before the footer's own rule. */
+.home-section:last-child {
+  padding-bottom: var(--space-12);
 }
 
 .section-head {
   margin-bottom: var(--space-3);
 }
 
-/* One page-level h1 lives in the hero; these are section headings, not a
-   second h1. Modest size — they orient the section without competing with
-   the content below. */
-
-/* position: relative is unused on desktop (.ai-info-wrap, being closer in
-   the ancestor chain, is what the toggletip positions against there) but
-   becomes the toggletip's positioning context at <=480px, once that media
-   query turns .ai-info-wrap itself back to static. */
-.section-heading-row {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: var(--space-1);
-}
-
+/* One page-level h1 lives in the hero; these are the section titles. Sized
+   on --font-xl, a clear step below the hero's --font-3xl and well above the
+   card and row titles under them, so each reads as the start of a section
+   rather than one more label. */
 .section-heading {
   font-family: var(--font-sans);
-  font-size: var(--font-md);
+  font-size: var(--font-xl);
   font-weight: var(--weight-semibold);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  text-wrap: balance;
   color: hsl(var(--foreground));
-}
-
-/* Positioning context for the toggletip — right of the icon specifically,
-   not the row, so it never depends on the heading text's own width. */
-.ai-info-wrap {
-  position: relative;
-  display: flex;
-}
-
-.ai-info-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 24px;
-  height: 24px;
-  color: hsl(var(--muted-foreground));
-  background: none;
-  border: none;
-  border-radius: var(--radius-sm);
-  cursor: pointer;
-  transition: color var(--duration-fast) ease, background var(--duration-fast) ease;
-}
-
-.ai-info-btn:hover {
-  color: hsl(var(--foreground));
-  background: hsl(var(--muted));
-}
-
-.ai-info-btn:focus-visible {
-  outline: 2px solid hsl(var(--ring));
-  outline-offset: 2px;
-}
-
-/* Sits to the right of the icon, vertically centered on it, with a caret
-   pointing back at the trigger — a toggletip, not a tooltip (it opens on
-   click, not hover), but the caret is what visually ties it to its
-   trigger regardless of which one it is. Toggled via [hidden] in JS, not
-   a CSS class — no transition needed for a plain show/hide this small and
-   infrequently used. Positioned right rather than below so it never
-   covers the Signals/Clusters toggle directly under the heading.
-
-   bottom: 0 (not vertically centered) is deliberate: .ai-info-wrap's own
-   height is exactly the 24px icon, so this anchors the box's bottom edge
-   to the icon's bottom edge and it grows upward from there. Centering it
-   on the icon instead let roughly half its height sag below the icon —
-   which, at 2-3 lines of text, was enough to overlap the row directly
-   underneath, the exact thing this placement was meant to avoid. */
-.ai-info-tooltip {
-  position: absolute;
-  bottom: 0;
-  left: 100%;
-  margin-left: var(--space-2);
-  z-index: 20;
-  /* Explicit width, not just max-width: an absolutely-positioned child of
-     a flex container (.ai-info-wrap) gets sized by flex-basis rules in
-     some browsers instead of shrinking to fit its content, which made
-     this render at a fraction of max-width with the sentence wrapping
-     almost one word per line. width: max-content forces content-based
-     sizing again; max-width still caps it. */
-  width: max-content;
-  max-width: 320px;
-  padding: var(--space-2) var(--space-3);
-  background: hsl(var(--card));
-  border: 1px solid hsl(var(--border));
-  border-radius: var(--radius);
-  box-shadow: 0 8px 24px hsl(var(--foreground) / 0.12);
-  font-size: var(--font-sm);
-  color: hsl(var(--secondary-foreground));
-  text-align: left;
-}
-
-/* Two stacked triangles — border-colored, then a slightly smaller
-   card-colored one on top — is the standard way to fake a bordered
-   callout caret with no extra markup. Positioned near the box's bottom
-   (roughly the icon's own vertical center, since the box now grows
-   upward from the icon's bottom edge) rather than the box's true
-   center, which no longer corresponds to where the icon actually is. */
-.ai-info-tooltip::before,
-.ai-info-tooltip::after {
-  content: '';
-  position: absolute;
-  bottom: 8px;
-  right: 100%;
-  width: 0;
-  height: 0;
-  border-top: 6px solid transparent;
-  border-bottom: 6px solid transparent;
-}
-
-.ai-info-tooltip::before {
-  border-right: 6px solid hsl(var(--border));
-}
-
-.ai-info-tooltip::after {
-  margin-right: -1px;
-  border-top-width: 5px;
-  border-bottom-width: 5px;
-  border-right: 5px solid hsl(var(--card));
-}
-
-@media (max-width: 480px) {
-  /* Not enough horizontal room to the right of the icon at these widths —
-     falls back to the original below-the-row placement instead, same as
-     before the caret was added.
-
-     Anchoring this to the icon (.ai-info-wrap) the way desktop does was
-     the first attempt, but the icon sits well left-of-center on a narrow
-     screen — a fixed-width box anchored to it and extending in either
-     direction ran off whichever edge was closer (confirmed: right-aligned
-     at 240px put its left edge 51px past the left of a 375px viewport,
-     permanently off-screen, not just requiring a scroll). Repositioning
-     against the full row instead, spanning left:0 to right:0, makes its
-     width follow the row's own (container-padding-safe) width
-     automatically — it can't overflow either edge at any viewport size. */
-  .ai-info-wrap {
-    position: static;
-  }
-
-  .ai-info-tooltip {
-    position: absolute;
-    top: 100%;
-    bottom: auto;
-    left: 0;
-    right: 0;
-    margin-left: 0;
-    margin-top: var(--space-2);
-    width: auto;
-    max-width: none;
-  }
-
-  /* Caret still points at the icon, just vertically now — the box grows
-     downward from the row here instead of upward from the icon, so the
-     desktop caret's sideways triangle is rotated to point up instead of
-     hidden outright. --caret-left comes from JS (positionAiCaret in
-     scripts.js): the icon's x offset shifts with the heading text's
-     rendered width, which CSS alone can't express, so it's measured from
-     the actual layout each time the toggletip opens. */
-  .ai-info-tooltip::before,
-  .ai-info-tooltip::after {
-    top: -6px;
-    bottom: auto;
-    right: auto;
-    left: var(--caret-left, 50%);
-    transform: translateX(-50%);
-    border-top: none;
-    border-left: 6px solid transparent;
-    border-right: 6px solid transparent;
-    border-bottom: 6px solid hsl(var(--border));
-  }
-
-  .ai-info-tooltip::after {
-    top: -5px;
-    margin-right: 0;
-    border-left-width: 5px;
-    border-right-width: 5px;
-    border-bottom-width: 5px;
-    border-bottom-color: hsl(var(--card));
-  }
 }
 
 /* Signals and Clusters, the two views under "Explore the data." A small
@@ -808,12 +652,17 @@ body {
   outline-offset: -2px;
 }
 
-/* What the section contains, in one line, right under its heading. In
-   Explore the data it swaps with the toggle (see activateView). */
+/* What the section contains, in one line, under its heading. In Explore
+   the data it sits under the toggle instead and swaps with it (see
+   activateView), so it reads as belonging to the option that's selected. */
 .section-desc {
   margin-top: var(--space-1);
   font-size: var(--font-sm);
   color: hsl(var(--muted-foreground));
+}
+
+.explore-toggle + .section-desc {
+  margin-top: var(--space-2);
 }
 
 /* Same link treatment as .state-body a. */
