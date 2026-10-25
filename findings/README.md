@@ -58,13 +58,16 @@ unpredictably. No `#` heading, since the title comes from front matter.
 **Embedding video.** A line of the form:
 
 ```markdown
-@video https://www.youtube.com/watch?v=dQw4w9WgXcQ
+@video https://www.youtube.com/watch?v=dQw4w9WgXcQ "A short conversation about content systems"
 ```
 
 on its own (blank line before and after, same as a blockquote or a list)
-embeds a responsive 16:9 player. Works in either section — the data section
-for supporting external material, or inside `<aside>` for something the
-"My take" is reacting to. Only `youtube.com/watch?v=…`, `youtu.be/…`,
+embeds a responsive 16:9 player. The quoted title is optional but worth
+including — it's the iframe's accessible name, so a screen reader hears
+something more useful than "Embedded video" (the fallback if you leave it
+off). Works in either section — the data section for supporting external
+material, or inside `<aside>` for something the "My take" is reacting to.
+Only `youtube.com/watch?v=…`, `youtu.be/…`,
 `youtube.com/embed/…`, and `vimeo.com/<id>` URLs are recognized; anything
 else fails the build rather than embedding an unverified URL. A plain
 `[link](url)` still works anywhere inline, for anything that isn't video —

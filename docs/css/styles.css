@@ -1186,6 +1186,7 @@ body {
   position: relative;
   aspect-ratio: 16 / 9;
   background: hsl(var(--muted));
+  border: 1px solid hsl(var(--border));
   border-radius: var(--radius);
   overflow: hidden;
 }

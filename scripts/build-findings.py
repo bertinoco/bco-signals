@@ -131,14 +131,15 @@ VIDEO_PATTERNS = [
 ]
 
 
-def render_video_embed(url, where):
+def render_video_embed(url, title, where):
     for pattern, provider in VIDEO_PATTERNS:
         match = pattern.match(url)
         if match:
             vid = match.group(1)
             src = (f"https://www.youtube-nocookie.com/embed/{vid}" if provider == "youtube"
                    else f"https://player.vimeo.com/video/{vid}")
-            return (f'<div class="post-video"><iframe src="{src}" title="Embedded video" '
+            iframe_title = html.escape(title or "Embedded video", quote=True)
+            return (f'<div class="post-video"><iframe src="{src}" title="{iframe_title}" '
                     f'loading="lazy" allow="accelerometer; autoplay; clipboard-write; '
                     f'encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>')
     raise BuildError(
@@ -258,7 +259,10 @@ def render_blocks(markdown, where, corpus=None):
                 rendered = f'<a href="{archive_url(source)}">{rendered}</a>'
             out.append(f"<blockquote><p>{rendered}</p></blockquote>")
         elif line.startswith("@video "):
-            out.append(render_video_embed(line[len("@video "):].strip(), where))
+            match = re.match(r'^@video (\S+)(?:\s+"([^"]+)")?$', line)
+            if not match:
+                raise BuildError(f"{where}: malformed @video line: {line!r}")
+            out.append(render_video_embed(match.group(1), match.group(2), where))
             i += 1
         elif UNSUPPORTED_BLOCK.match(line):
             raise BuildError(f"{where}: unsupported syntax: {line!r}")
