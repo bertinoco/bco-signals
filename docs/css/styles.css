@@ -1172,8 +1172,31 @@ body {
 .post-body p,
 .post-body ul,
 .post-body blockquote,
-.post-take p + p {
+.post-body .post-video,
+.post-take p + p,
+.post-take .post-video {
   margin-top: var(--space-2);
+}
+
+/* An embedded YouTube/Vimeo video from @video in the source Markdown (see
+   findings/README.md) -- "outside opinion or support" alongside the
+   dataset's own quotes. aspect-ratio keeps it 16:9 at any width without the
+   old padding-bottom-percentage hack. */
+.post-video {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: hsl(var(--muted));
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.post-video iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
 
 .post-body ul {
