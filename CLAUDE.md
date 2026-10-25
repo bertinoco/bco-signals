@@ -486,18 +486,25 @@ exception touches `quote` only, never the archive.
 
     <link rel="stylesheet" href="css/styles.css?v=N">
     <script src="js/scripts.js?v=N"></script>
+    <script src="js/menu.js?v=N"></script>
 
 Read `index.html` for the current numbers. They are not reproduced here,
 because a version written into this file goes stale the next time an asset
 changes and then reads as the value to restore.
 
-Browsers cache those files against that string. A change to `scripts.js` or
-`styles.css` that does not bump the matching `?v=` number ships to nobody —
-visitors keep running the previously cached version, and the deployed site
-silently disagrees with the repo.
+Browsers cache those files against that string. A change to `scripts.js`,
+`menu.js`, or `styles.css` that does not bump the matching `?v=` number
+ships to nobody — visitors keep running the previously cached version, and
+the deployed site silently disagrees with the repo.
 
 Bump the version in the same commit as the change. Never bump one asset's
-version to publish a change to the other; they are cached independently.
+version to publish a change to another; they are cached independently.
+`scripts/check-asset-versions.sh` enforces this for all three in CI.
+
+`menu.js` is the site menu, loaded on every page including the findings
+posts. `scripts.js` is the home page only — it assumes the home page's
+grids and lists exist, so never load it on a findings page or put anything
+there the findings pages need.
 
 `index.html` carries no version string of its own, so a change to it is not
 gated behind a bump the way the assets are. Some state copy exists twice — as
@@ -756,9 +763,12 @@ is never built, so a post can be reviewed in the repo before it goes live.
 `findings/`, and commit what it writes: the post pages in `docs/findings/`,
 `docs/data/findings.json`, the post URLs in `docs/sitemap.xml`, and the
 Findings section of `docs/llms.txt`. Never hand-edit those outputs; the next
-run overwrites them. The build also embeds the current `styles.css?v=`
-number from `docs/index.html` into each post page, so rerun it whenever that
-version is bumped. CI runs `--check` and fails if anything is out of date.
+run overwrites them. The build also reads three things out of
+`docs/index.html` and embeds them in each post page: the `styles.css?v=`
+and `menu.js?v=` numbers, and the site menu's markup itself (the button and
+the drawer). `index.html` is the only copy of the menu — edit it there, then
+rerun the build. Rerun it whenever either version is bumped or the menu
+changes. CI runs `--check` and fails if anything is out of date.
 
 The build checks every quotation in a post's data section against
 `jd-source/` under the Quote field's three normalizations, and fails on a

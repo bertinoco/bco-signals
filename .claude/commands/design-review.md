@@ -3,10 +3,10 @@ Review the current state of `docs/index.html` and `docs/css/styles.css` against 
 ## What to check
 
 **Layout & proportion**
-- The hero (`.site-header`) and sticky nav (`.nav-bar`) are deliberately left-aligned, not centered — that's an intentional departure from `body`'s global `text-align: center`, not an inconsistency to flag. The pull-quote band, tab content, and card grids stay centered/left-aligned per their own existing rules. Check that each area matches its *own* intended alignment, not that everything matches each other.
+- The hero (`.site-header`) and the section headings (`.explore-head`, `.section`) are deliberately left-aligned, not centered — that's an intentional departure from `body`'s global `text-align: center`, not an inconsistency to flag. The pull-quote band and card grids stay centered/left-aligned per their own existing rules. Check that each area matches its *own* intended alignment, not that everything matches each other.
 - Do cluster and signal card grids feel balanced at 3-column desktop / 2-column tablet / 1-column mobile?
 - Is the Roles tab ("All roles") list readable and well-proportioned at all breakpoints?
-- Is vertical rhythm consistent? Sections should breathe but not feel disconnected. (This has needed real, iterated tuning around `.nav-bar` specifically — check it isn't drifting back toward feeling too tight against the pull-quote above or too disconnected from the cards below.)
+- Is vertical rhythm consistent? Sections should breathe but not feel disconnected. (The gap between the pull-quote band and the "Explore the data" heading has needed real, iterated tuning — check it isn't too tight against the quote above or too disconnected from the cards below.)
 
 **Typography**
 - Are `--font-sans` (Inter, for prose/headings) and `--font-mono` (IBM Plex Mono, for metadata, stats, labels, dates, comp figures) applied to the right content — mono never for body prose, sans never for tabular/label data?
@@ -24,17 +24,18 @@ Review the current state of `docs/index.html` and `docs/css/styles.css` against 
 
 **Component consistency**
 - Do cluster cards and signal cards look identical in structure and feel (title top-left, stat bottom-right, same back-panel layout)?
-- Do tab styles (default, hover, active) feel intentional and consistent? (Active state is plain text — color + weight change — not a filled pill; don't flag the absence of a pill as missing affordance.)
+- Does the site menu work cleanly — hamburger button in the header on every page (`.menu-toggle`), off-canvas drawer (`.site-menu`) that closes on Escape, backdrop click, and link click, with focus moving into the drawer on open and back to the button on close? Navigation is the menu; there is no tab bar.
+- Does the Signals/Clusters toggle (`.explore-toggle`) feel intentional? Its active state is a filled inversion using `--primary`/`--primary-foreground` — that pair exists for active nav state, so don't flag the fill as off-system.
 - Does the expandable title row in the Roles tab (reveals the quote and signal chips) work cleanly — click-anywhere-on-the-row to expand, not just the icon, with a real ≥24px hit area?
 
 **Responsive behavior**
-- Breakpoints in actual use: `480px` (nav wrap to a second row), `599px` (card overlay switches to a full-screen mobile sheet), `600px`/`900px` (grid column counts), `768px`/`1024px` (`.container` padding steps — not grid columns). Confirm these are complete and don't conflict.
+- Breakpoints in actual use: `480px` (AI-info toggletip drops below its heading row), `599px` (card overlay switches to a full-screen mobile sheet), `600px`/`900px` (grid column counts), `768px`/`1024px` (`.container` padding steps — not grid columns). Confirm these are complete and don't conflict.
 - Does anything clip, overlap, or force horizontal scroll at **320px** viewport width — the actual WCAG reflow checkpoint, not just 375px. (375px alone previously missed a real nav-overflow bug that only appeared at 320-340px; always include 320px explicitly.)
 
 **Semantic HTML & accessibility**
-- Are landmark elements (`<header>`, `<nav>`, `<main>`, `<footer>`) used correctly, and does the nav carry `role="tablist"`/`role="tab"` correctly?
+- Are landmark elements (`<header>`, `<nav>`, `<main>`, `<footer>`) used correctly? The drawer is the `<nav>`; the Signals/Clusters toggle is the only `role="tablist"`, with `role="tab"`/`role="tabpanel"` on its two buttons and sections. Findings and All roles are plain sections labelled by their own headings.
 - Do `aria-labelledby`, `aria-selected`, `aria-controls`, `aria-expanded`, and `role` attributes point to valid ids and values?
-- Do interactive elements (tabs, expand buttons, cards) have visible focus states, and does each card's accessible name (`aria-label`) reflect everything meaningful shown on its face — including the front-facing percentage stat, not just the title?
+- Do interactive elements (menu button and links, the Signals/Clusters toggle, expand buttons, cards) have visible focus states, and does each card's accessible name (`aria-label`) reflect everything meaningful shown on its face — including the front-facing percentage stat, not just the title?
 
 **Design system adherence**
 - Are `--radius`/`--radius-sm` (small controls), `--radius-lg` (panel-scale surfaces, e.g. the card overlay), `--max-width`, and the spacing scale applied consistently? A new panel-scale rounded surface should reuse `--radius-lg`, not introduce a raw value.

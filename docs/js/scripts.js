@@ -580,92 +580,71 @@ function renderFindings(data) {
   `).join('');
 }
 
-// A page load carrying a tab's id in the URL (#findings, #clusters, …)
-// opens that tab instead of the default one. Post pages link back to
-// /#findings, so a reader returns to the list they came from.
-function openTabFromHash() {
-  const section = window.location.hash.slice(1);
-  const badge = badges.find(b => b.dataset.section === section);
-  if (!badge) return;
+// ── Sections ────────────────────────────────────────────────
+// The site menu (menu.js) links to these by hash: /#signals, /#titles.
+// Post pages link back to /#findings. Clusters has no menu item of its own;
+// it's reached through the Signals/Clusters toggle under "Explore the data".
+const SECTIONS = ['signals', 'clusters', 'findings', 'titles'];
+const exploreHead = document.getElementById('explore-head');
+const exploreTabs = Array.from(document.querySelectorAll('.explore-toggle-btn'));
+const exploreToggle = document.querySelector('.explore-toggle');
 
-  activateBadge(badge);
-  document.getElementById('nav-bar').scrollIntoView({ block: 'start' });
-}
-
-// ── Badge nav (click + arrow keys) ──────────────────────────
-const badges = Array.from(document.querySelectorAll('.badge-btn'));
-const badgeNav = document.querySelector('.badge-nav');
-
-const badgeNavIndicator = document.querySelector('.badge-nav-indicator');
-
-// Slides the shared indicator under whichever tab is active. top is
-// included, not just left/width, because the nav wraps to a second row
-// at narrow widths (see the <=480px media query) — the active tab isn't
-// always on the same row. skipTransition suppresses the CSS transition
-// for the very first call, so the indicator doesn't animate in from
-// (0,0) on page load — see the "Skip Animation on Page Load" pattern
-// used elsewhere on the site.
-function positionNavIndicator(skipTransition) {
-  const activeBadge = document.querySelector('.badge-btn.active');
-  if (!activeBadge || !badgeNavIndicator) return;
-  if (skipTransition) badgeNavIndicator.style.transition = 'none';
-  badgeNavIndicator.style.top = `${activeBadge.offsetTop + activeBadge.offsetHeight}px`;
-  badgeNavIndicator.style.left = `${activeBadge.offsetLeft}px`;
-  badgeNavIndicator.style.width = `${activeBadge.offsetWidth}px`;
-  if (skipTransition) {
-    void badgeNavIndicator.offsetWidth; // force reflow before restoring the transition
-    badgeNavIndicator.style.transition = '';
-  }
-}
-
-const tabCaptionText = document.getElementById('tab-caption-text');
-const tabCaptionLink = document.getElementById('tab-caption-link');
-
-function activateBadge(badge) {
-  badges.forEach(b => {
-    b.classList.remove('active');
-    b.setAttribute('aria-selected', 'false');
+function activateSection(key) {
+  document.querySelectorAll('.section').forEach(s => s.classList.toggle('active', s.id === key));
+  const isExplore = key === 'signals' || key === 'clusters';
+  exploreHead.hidden = !isExplore;
+  if (!isExplore) return;
+  exploreTabs.forEach(tab => {
+    const active = tab.dataset.section === key;
+    tab.classList.toggle('active', active);
+    tab.setAttribute('aria-selected', String(active));
   });
-  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-  badge.classList.add('active');
-  badge.setAttribute('aria-selected', 'true');
-  document.getElementById(badge.dataset.section).classList.add('active');
-  if (tabCaptionText) tabCaptionText.textContent = badge.dataset.caption;
-  // Only the Roles tab links out to jd-source — the raw archive only makes
-  // sense to browse once you're looking at individual postings.
-  if (tabCaptionLink) tabCaptionLink.hidden = badge.dataset.section !== 'titles';
-  positionNavIndicator();
 }
 
-badges.forEach(badge => {
-  badge.addEventListener('click', () => {
-    activateBadge(badge);
-    // Blur only here, not inside activateBadge: the arrow-key handler below
-    // also calls activateBadge after moving focus with .focus(), and a
-    // shared blur() there stripped focus again immediately — the keydown
-    // listener is on .badge-nav, and relies on a focused descendant for
-    // events to bubble through, so after one arrow press focus (and with
-    // it, all further arrow presses) went dead.
-    badge.blur();
+function sectionFromHash() {
+  const key = window.location.hash.slice(1);
+  return SECTIONS.includes(key) ? key : null;
+}
+
+// A menu link to the page you're already on (/#titles from /) doesn't
+// reload, so the switch has to happen on hashchange, not just on load.
+// Other hashes (the skip link's #main) are ignored; an empty one is the
+// back button returning to the default view.
+window.addEventListener('hashchange', () => {
+  if (window.location.hash === '') {
+    activateSection('signals');
+    return;
+  }
+  const key = sectionFromHash();
+  if (!key) return;
+  activateSection(key);
+  document.getElementById('main').scrollIntoView({ block: 'start' });
+});
+
+exploreTabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    activateSection(tab.dataset.section);
+    // Keeps the URL on the view you're looking at, so "Explore the data"
+    // (/#signals) still fires hashchange from Clusters. replaceState
+    // doesn't fire hashchange itself, so this doesn't loop.
+    history.replaceState(null, '', `#${tab.dataset.section}`);
+    // Blur only on click: the arrow-key handler below moves focus with
+    // .focus() and needs it to stay put for further presses to land.
+    tab.blur();
   });
 });
 
-badgeNav.addEventListener('keydown', (e) => {
+exploreToggle.addEventListener('keydown', (e) => {
   if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
   e.preventDefault();
-  const idx = badges.indexOf(document.activeElement);
+  const idx = exploreTabs.indexOf(document.activeElement);
   const next = e.key === 'ArrowRight'
-    ? (idx + 1) % badges.length
-    : (idx - 1 + badges.length) % badges.length;
-  badges[next].focus();
-  activateBadge(badges[next]);
+    ? (idx + 1) % exploreTabs.length
+    : (idx - 1 + exploreTabs.length) % exploreTabs.length;
+  exploreTabs[next].focus();
+  activateSection(exploreTabs[next].dataset.section);
+  history.replaceState(null, '', `#${exploreTabs[next].dataset.section}`);
 });
-
-positionNavIndicator(true);
-// Column count and text wrapping don't change on resize, but which row a
-// tab wraps to (<=480px) or the container's own available width can —
-// both shift a button's offsetLeft/offsetTop.
-window.addEventListener('resize', () => positionNavIndicator(true));
 
 // ── AI disclosure tooltip ────────────────────────────────────
 // Click-to-toggle rather than hover-only: hover doesn't exist on touch, and
@@ -674,14 +653,14 @@ window.addEventListener('resize', () => positionNavIndicator(true));
 const aiInfoBtn = document.getElementById('ai-info-btn');
 const aiInfoTooltip = document.getElementById('ai-info-tooltip');
 
-// Below 480px the toggletip spans the full nav-heading-row instead of
+// Below 480px the toggletip spans the full section-heading-row instead of
 // anchoring to the icon (see the CSS comment on that media query), so the
 // caret can't just sit at a fixed spot — it has to track wherever the icon
 // actually renders, which shifts with the heading text's rendered width.
 // Harmless to compute above 480px too: the desktop caret is positioned via
 // `right`, not `left`, so --caret-left has no effect there.
 function positionAiCaret() {
-  const row = aiInfoBtn.closest('.nav-heading-row');
+  const row = aiInfoBtn.closest('.section-heading-row');
   if (!row) return;
   const rowRect = row.getBoundingClientRect();
   const btnRect = aiInfoBtn.getBoundingClientRect();
@@ -751,7 +730,7 @@ const CONTENT_REVEAL_DELAY_MS = 160;
 // from the accessibility tree, inert additionally blocks focus and pointer
 // interaction — aria-hidden alone still leaves a focusable descendant
 // reachable by Tab, which is exactly what it isn't supposed to be.
-const BACKGROUND_SELECTOR = '.site-header, .nav-bar, main, .site-footer';
+const BACKGROUND_SELECTOR = '.site-header, .hero-quote, main, .site-footer';
 
 function reducedMotion() {
   return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -1138,7 +1117,12 @@ async function init({ fromRetry = false } = {}) {
 
   const findingsData = await loadFindings();
   renderFindings(findingsData);
-  openTabFromHash();
+
+  const initial = sectionFromHash();
+  if (initial) {
+    activateSection(initial);
+    document.getElementById('main').scrollIntoView({ block: 'start' });
+  }
 
   announce(`Dataset loaded. ${globalData.entries.length} roles.`);
 

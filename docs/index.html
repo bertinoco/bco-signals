@@ -30,7 +30,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=111">
+  <link rel="stylesheet" href="css/styles.css?v=112">
 
   <script type="application/ld+json">
   [
@@ -126,12 +126,17 @@
         <a class="hero-wordmark" href="/">
           <img class="hero-mark" src="images/wordmark-white.svg" alt="Signals" width="104" height="16">
         </a>
+        <button type="button" class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="site-menu" aria-label="Menu">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M3 6h14M3 10h14M3 14h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+        </button>
       </div>
       <div class="hero-main">
         <h1>What content design jobs are telling us</h1>
         <p>A structured dataset of <span id="hero-role-count">40</span> senior content design, UX writing, and content systems roles — and the signals they send.</p>
         <div class="hero-actions">
-          <a class="hero-data-cta" href="#nav-bar">
+          <a class="hero-data-cta" href="#signals">
             Explore the data
           </a>
           <a class="hero-cta" href="https://github.com/bertinoco/bco-signals" target="_blank" rel="noopener noreferrer">
@@ -153,38 +158,30 @@
     </div>
   </section>
 
-  <div class="nav-bar" id="nav-bar">
-    <div class="container">
-      <div class="nav-heading-row">
-        <h2 class="nav-heading">Explore the data</h2>
-        <div class="ai-info-wrap">
-          <button type="button" class="ai-info-btn" id="ai-info-btn" aria-expanded="false" aria-controls="ai-info-tooltip" aria-label="About AI-drafted content">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <circle cx="8" cy="8" r="6.25" stroke="currentColor" stroke-width="1.4"/>
-              <path d="M8 7.25V11.25" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
-              <circle cx="8" cy="5.25" r="0.75" fill="currentColor"/>
-            </svg>
-          </button>
-          <p class="ai-info-tooltip" id="ai-info-tooltip" hidden>All descriptions are drafted by Claude and reviewed before publishing.</p>
-        </div>
-      </div>
-      <nav class="badge-nav" role="tablist" aria-label="Content sections">
-        <button class="badge-btn active" id="tab-signals" role="tab" data-section="signals" data-caption="Emerging patterns and themes" aria-selected="true" aria-controls="signals">Signals</button>
-        <button class="badge-btn" id="tab-clusters" role="tab" data-section="clusters" data-caption="Core responsibilities and workload" aria-selected="false" aria-controls="clusters">Clusters</button>
-        <button class="badge-btn" id="tab-findings" role="tab" data-section="findings" data-caption="Key takeaways and reflections" aria-selected="false" aria-controls="findings">Findings</button>
-        <button class="badge-btn" id="tab-titles" role="tab" data-section="titles" data-caption="All roles in the dataset." aria-selected="false" aria-controls="titles">All roles</button>
-        <span class="badge-nav-indicator" aria-hidden="true"></span>
-      </nav>
-      <p class="tab-caption">
-        <span id="tab-caption-text">Emerging patterns and themes</span>
-        <a class="tab-caption-link" id="tab-caption-link" href="https://github.com/bertinoco/bco-signals/tree/main/jd-source" target="_blank" rel="noopener noreferrer" hidden>View full job descriptions on GitHub<span class="visually-hidden"> (opens in a new tab)</span></a>
-      </p>
-    </div>
-  </div>
-
   <div class="container">
     <main id="main">
+      <div class="explore-head" id="explore-head">
+        <div class="section-heading-row">
+          <h2 class="section-heading">Explore the data</h2>
+          <div class="ai-info-wrap">
+            <button type="button" class="ai-info-btn" id="ai-info-btn" aria-expanded="false" aria-controls="ai-info-tooltip" aria-label="About AI-drafted content">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle cx="8" cy="8" r="6.25" stroke="currentColor" stroke-width="1.4"/>
+                <path d="M8 7.25V11.25" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+                <circle cx="8" cy="5.25" r="0.75" fill="currentColor"/>
+              </svg>
+            </button>
+            <p class="ai-info-tooltip" id="ai-info-tooltip" hidden>All descriptions are drafted by Claude and reviewed before publishing.</p>
+          </div>
+        </div>
+        <div class="explore-toggle" role="tablist" aria-label="Data view">
+          <button type="button" class="explore-toggle-btn active" id="tab-signals" role="tab" data-section="signals" aria-selected="true" aria-controls="signals">Signals</button>
+          <button type="button" class="explore-toggle-btn" id="tab-clusters" role="tab" data-section="clusters" aria-selected="false" aria-controls="clusters">Clusters</button>
+        </div>
+      </div>
+
       <section class="section active" id="signals" role="tabpanel" tabindex="-1" aria-labelledby="tab-signals">
+        <p class="section-caption">Emerging patterns and themes</p>
         <div class="signal-list" id="signal-list">
           <div class="state state--loading">
             <p class="state-title">Loading…</p>
@@ -196,6 +193,7 @@
       </section>
 
       <section class="section" id="clusters" role="tabpanel" tabindex="-1" aria-labelledby="tab-clusters">
+        <p class="section-caption">Core responsibilities and workload</p>
         <div class="cluster-grid" id="cluster-grid">
           <div class="state state--loading">
             <p class="state-title">Loading…</p>
@@ -206,7 +204,9 @@
         </div>
       </section>
 
-      <section class="section" id="findings" role="tabpanel" tabindex="-1" aria-labelledby="tab-findings">
+      <section class="section" id="findings" tabindex="-1" aria-labelledby="findings-heading">
+        <h2 class="section-heading" id="findings-heading">Findings</h2>
+        <p class="section-caption">Key takeaways and reflections</p>
         <div class="finding-list" id="finding-list">
           <div class="state state--loading">
             <p class="state-title">Loading…</p>
@@ -214,7 +214,9 @@
         </div>
       </section>
 
-      <section class="section" id="titles" role="tabpanel" tabindex="-1" aria-labelledby="tab-titles">
+      <section class="section" id="titles" tabindex="-1" aria-labelledby="titles-heading">
+        <h2 class="section-heading" id="titles-heading">All roles</h2>
+        <p class="section-caption">All roles in the dataset. <a class="section-caption-link" href="https://github.com/bertinoco/bco-signals/tree/main/jd-source" target="_blank" rel="noopener noreferrer">View full job descriptions on GitHub<span class="visually-hidden"> (opens in a new tab)</span></a></p>
         <div class="title-list" id="title-list">
           <div class="state state--loading">
             <p class="state-title">Loading…</p>
@@ -252,6 +254,40 @@
     </span>
   </button>
 
-  <script src="js/scripts.js?v=54"></script>
+  <div class="site-menu-backdrop" id="site-menu-backdrop" hidden></div>
+  <nav class="site-menu" id="site-menu" aria-label="Main" hidden>
+    <div class="site-menu-head">
+      <a class="site-menu-wordmark" href="/">
+        <picture>
+          <source srcset="/images/wordmark-black.svg" media="(prefers-color-scheme: light)">
+          <img src="/images/wordmark-white.svg" alt="Signals" width="104" height="16">
+        </picture>
+      </a>
+      <button type="button" class="site-menu-close" id="site-menu-close" aria-label="Close menu">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M4 4l10 10M14 4L4 14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+    <ul class="site-menu-links">
+      <li><a href="/"><picture><source srcset="/images/circle-icon-b.png" media="(prefers-color-scheme: light)"><img class="site-menu-icon" src="/images/circle-icon-w.png" alt="" width="20" height="20"></picture>Home</a></li>
+      <li><a href="/#signals"><picture><source srcset="/images/signals.png" media="(prefers-color-scheme: light)"><img class="site-menu-icon" src="/images/signals-w.png" alt="" width="20" height="20"></picture>Explore the data</a></li>
+      <li><a href="/findings/"><picture><source srcset="/images/findings.png" media="(prefers-color-scheme: light)"><img class="site-menu-icon" src="/images/findings-w.png" alt="" width="20" height="20"></picture>Read our findings</a></li>
+      <li><a href="/#titles"><picture><source srcset="/images/clusters.png" media="(prefers-color-scheme: light)"><img class="site-menu-icon" src="/images/clusters-w.png" alt="" width="20" height="20"></picture>View all roles</a></li>
+    </ul>
+    <div class="site-menu-foot">
+      <a class="site-menu-github" href="https://github.com/bertinoco/bco-signals" target="_blank" rel="noopener noreferrer">
+        View on GitHub
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M5 3H3v8h8V9" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M8 3h3v3M11 3 6 8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="visually-hidden"> (opens in a new tab)</span>
+      </a>
+    </div>
+  </nav>
+
+  <script src="js/scripts.js?v=55"></script>
+  <script src="js/menu.js?v=1"></script>
 </body>
 </html>

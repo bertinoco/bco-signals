@@ -25,6 +25,7 @@ import os
 import re
 import shutil
 import sys
+import textwrap
 from datetime import date
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -350,12 +351,33 @@ def archive_url(source_id):
 
 # ── Output ──────────────────────────────────────────────────
 
-def styles_version():
+def site_assets():
+    """Everything the post pages share with the home page, read out of
+    docs/index.html so it's the one source: the styles.css and menu.js
+    cache-bust versions, and the menu button and drawer markup itself. A
+    change to the menu in index.html shows up here on the next build, and
+    --check fails until it does."""
     with open(INDEX_HTML, encoding="utf-8") as fh:
-        match = re.search(r"css/styles\.css\?v=(\d+)", fh.read())
-    if not match:
-        raise BuildError("docs/index.html: no styles.css?v= version string found")
-    return match.group(1)
+        text = fh.read()
+
+    def version(asset):
+        match = re.search(rf"{re.escape(asset)}\?v=(\d+)", text)
+        if not match:
+            raise BuildError(f"docs/index.html: no {asset}?v= version string found")
+        return match.group(1)
+
+    def block(start, end, label):
+        match = re.search(rf"^( *){re.escape(start)}.*?{re.escape(end)}", text, re.S | re.M)
+        if not match:
+            raise BuildError(f"docs/index.html: {label} markup not found")
+        return textwrap.dedent(match.group(0))
+
+    return {
+        "css": version("css/styles.css"),
+        "menu": version("js/menu.js"),
+        "toggle": block('<button type="button" class="menu-toggle"', "</button>", "menu button"),
+        "drawer": block('<div class="site-menu-backdrop"', "</nav>", "site menu"),
+    }
 
 
 def post_url(post):
@@ -367,7 +389,7 @@ def indent(block, spaces):
     return "\n".join(pad + line if line else line for line in block.splitlines())
 
 
-def render_page(post, css_version, corpus, taxonomy):
+def render_page(post, assets, corpus, taxonomy):
     e = lambda s: html.escape(s, quote=True)
     url = post_url(post)
     where = post["source"]
@@ -428,7 +450,7 @@ def render_page(post, css_version, corpus, taxonomy):
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/styles.css?v={css_version}">
+  <link rel="stylesheet" href="/css/styles.css?v={assets['css']}">
 
   <script type="application/ld+json">
 {indent(ld_json, 2)}
@@ -446,6 +468,7 @@ def render_page(post, css_version, corpus, taxonomy):
           <img class="hero-mark" src="/images/wordmark-white.svg" alt="Signals" width="104" height="16">
         </picture>
       </a>
+{indent(assets['toggle'], 6)}
     </div>
   </header>
 
@@ -484,12 +507,15 @@ def render_page(post, css_version, corpus, taxonomy):
     </div>
   </footer>
 
+{indent(assets['drawer'], 2)}
+
+  <script src="/js/menu.js?v={assets['menu']}"></script>
 </body>
 </html>
 """
 
 
-def render_findings_index(posts, css_version):
+def render_findings_index(posts, assets):
     """A plain-HTML list of every published post at /findings/, so crawlers
     that don't run JavaScript can still find them -- the home page's
     Findings tab renders the same list, but only after scripts.js fetches
@@ -539,7 +565,7 @@ def render_findings_index(posts, css_version):
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/styles.css?v={css_version}">
+  <link rel="stylesheet" href="/css/styles.css?v={assets['css']}">
 </head>
 <body>
 
@@ -553,6 +579,7 @@ def render_findings_index(posts, css_version):
           <img class="hero-mark" src="/images/wordmark-white.svg" alt="Signals" width="104" height="16">
         </picture>
       </a>
+{indent(assets['toggle'], 6)}
     </div>
   </header>
 
@@ -576,6 +603,9 @@ def render_findings_index(posts, css_version):
     </div>
   </footer>
 
+{indent(assets['drawer'], 2)}
+
+  <script src="/js/menu.js?v={assets['menu']}"></script>
 </body>
 </html>
 """
@@ -661,10 +691,10 @@ def main():
                 f"{post['source']}: unknown cluster/signal key(s): {', '.join(unknown)}"
             )
 
-    css_version = styles_version()
-    outputs = {os.path.join(OUT_DIR, p["slug"], "index.html"): render_page(p, css_version, corpus, taxonomy)
+    assets = site_assets()
+    outputs = {os.path.join(OUT_DIR, p["slug"], "index.html"): render_page(p, assets, corpus, taxonomy)
                for p in posts}
-    outputs[os.path.join(OUT_DIR, "index.html")] = render_findings_index(posts, css_version)
+    outputs[os.path.join(OUT_DIR, "index.html")] = render_findings_index(posts, assets)
     outputs[FINDINGS_JSON] = render_findings_json(posts)
     outputs[SITEMAP] = render_sitemap(read(SITEMAP), posts)
     outputs[LLMS] = render_llms(read(LLMS), posts)
