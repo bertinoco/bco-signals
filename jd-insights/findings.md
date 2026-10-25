@@ -1,8 +1,12 @@
 # Findings
 
-**This is the only editorialized file in the repository.** Everything else —
-`jobs.json`, the site, `jd-source/`, `stats.md`, `quotes.md` — reports what
-postings say and nothing more. Here, the reading is allowed.
+**This is the only editorialized file in `jd-insights/`.** Everything else in
+this directory — `jobs.json`, `jd-source/`, `stats.md`, `quotes.md` — reports
+what postings say and nothing more. Here, the reading is allowed. (A findings
+post's `<aside>`, under `findings/*.md`, is the other editorialized content in
+the repository, published to the site under the label "My take" with a
+broader license than this file's own rules below — see CLAUDE.md's Findings
+tab exception.)
 
 Two rules keep that contained.
 

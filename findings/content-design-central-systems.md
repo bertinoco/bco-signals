@@ -1,0 +1,41 @@
+---
+title: Content design is becoming a central systems discipline
+date: 2026-10-22
+signals: central-standards-function, content-systems-design, enablement
+---
+
+## Content standards are being pulled into central functions
+
+Postings in streaming, SaaS, big tech, and e-commerce describe a central owner for content standards, each in its own words:
+
+- Netflix: "centralized authority for language standards" across "a decentralized content design community"
+- Wix: "This is a central role that shapes the content across our product"
+- LinkedIn: "single accountable owner"
+- Vinted: "enables a distributed team to do their best work"
+- OpenAI: "domain playbooks that scale across teams"
+
+Adobe spells out what the central role leaves behind.
+
+> Not product-level content decisions or UI copy (that lives with embedded product and domain content teams)
+
+The embedded model is still being hired for. Wealthsimple: "You’ll be embedded on product teams."
+
+## The work has moved from producing content to producing systems
+
+Content systems design and enablement (building templates, playbooks, and guidance so other people can write) are the two most common responsibilities in the dataset, ahead of every craft responsibility. Several postings say outright that writing is not the job:
+
+- Netflix: "Rather than creating Netflix’s voice and tone guidelines, this role will own how those standards are structurally encoded into the design system."
+- CoLab: "not by writing content yourself, but by building AI-powered systems"
+- Ally: "focused less on creating content and more on making content work"
+
+<aside>
+
+Content design is turning into infrastructure. Less of the job is writing the words, and more of it is building the systems that write them. Those systems are increasingly owned by central or platform teams, or by some rogue content designer floating between business areas (that's been me for years now).
+
+Embedded roles haven't disappeared. Wealthsimple recently posted a staff content designer role, and the first thing on the list is "Write the hard stuff." But that's the exception. For senior systems work, embedded isn't the default anymore.
+
+This creates a growing tension: being great at writing content doesn't automatically make you great at designing the thing that produces it. They're different skills. If you want to make that jump, you're mostly on your own — there's very little training or support for it inside companies.
+
+Which makes the path to principal content designer murky. Even in a product org that supports and protects the craft, the next step might not be in design at all. It might be in engineering.
+
+</aside>

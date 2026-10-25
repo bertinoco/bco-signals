@@ -42,6 +42,11 @@
   --font-base: 0.9375rem;
   --font-md:   1.0625rem;
   --font-lg:   1.1875rem;
+  /* Two unrelated components (.flip-card-back-title, .post-title) had each
+     independently landed on 1.625rem as a one-off value between --font-lg
+     and --font-3xl. Tokenized once a second usage made that a real,
+     recurring step rather than a single documented exception. */
+  --font-xl:   1.625rem;
   --font-3xl:  clamp(2rem, 1.35rem + 2.7vw, 2.75rem);
 
   --weight-regular:  400;
@@ -942,60 +947,49 @@ body {
 }
 
 /* ── Findings ─────────────────────────────────────────────── */
-/* Long-form entries, not cards — reading measure and vertical rhythm follow
-   .title-entry's pattern (border-separated rows, 640px prose width) rather
-   than the flip-card grid, since a finding runs several sentences of prose
-   per section instead of a label and a stat. */
+/* The tab lists posts; each post has its own page (see Findings post pages
+   below). Border-separated rows at a 640px reading measure, following
+   .title-entry's pattern rather than the flip-card grid. */
 .finding-list {
   display: flex;
   flex-direction: column;
   text-align: left;
 }
 
+/* The whole row is the link — a finding has no inline expansion the way a
+   role card does, it only ever goes to its own page — so .finding is an
+   <a>, not an .title-entry-style click handler on a wrapping block. */
 .finding {
-  max-width: 640px;
-  padding: var(--space-4) 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: var(--space-3) 0;
   border-bottom: 1px solid hsl(var(--muted));
-  border-radius: var(--radius);
-  transition: background-color 1.2s ease;
+  color: inherit;
+  text-decoration: none;
 }
 
 .finding:last-child {
   border-bottom: none;
 }
 
-/* Brief highlight on arrival via a #finding-<id> permalink — see
-   openFindingFromHash in scripts.js. Fades via the transition on .finding
-   itself rather than its own, so removing the class after the timeout
-   animates back to transparent instead of snapping. */
-.finding.is-highlighted {
-  background: hsl(var(--muted));
-}
-
-.finding-permalink {
-  display: inline-block;
-  font-family: var(--font-mono);
-  font-size: var(--font-xs);
-  letter-spacing: var(--tracking-wide);
-  font-variant-numeric: tabular-nums;
-  color: hsl(var(--muted-foreground));
-  text-decoration: none;
-  transition: color var(--duration-fast) ease;
-}
-
-.finding-permalink:hover {
-  color: hsl(var(--foreground));
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
-
-.finding-permalink:focus-visible {
+.finding:focus-visible {
   outline: 2px solid hsl(var(--ring));
   outline-offset: 2px;
 }
 
+/* Centered, not flex-start like .title-header's expand button — a finding
+   title is a full sentence (longer than a role title) and wraps often at
+   narrow widths, so the arrow needs to stay optically paired with the
+   whole block rather than pinned to just its first line. */
+.finding-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+
 .finding-title {
-  margin-top: var(--space-1);
   font-family: var(--font-sans);
   font-size: var(--font-lg);
   font-weight: var(--weight-semibold);
@@ -1003,56 +997,246 @@ body {
   letter-spacing: var(--tracking-snug);
   text-wrap: balance;
   color: hsl(var(--foreground));
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+  text-decoration-color: hsl(var(--rule));
+  transition: text-decoration-color var(--duration-base) var(--ease-out);
 }
 
-.finding-data {
-  margin-top: var(--space-2);
-  line-height: var(--leading-relaxed);
+.finding:hover .finding-title {
+  text-decoration-color: hsl(var(--foreground));
+}
+
+/* Signals "there's a full post to read" rather than "expand in place" —
+   the distinction .title-expand's plus/minus draws for an inline row.
+   Sized to match .finding-title's own font-lg rather than inheriting the
+   page's base size — at the inherited size it read as a thin afterthought
+   next to a bold heading. */
+.finding-arrow {
+  flex-shrink: 0;
+  font-size: var(--font-lg);
+  line-height: 1;
+  color: hsl(var(--muted-foreground));
+  transition: color var(--duration-fast) ease, transform var(--duration-fast) ease;
+}
+
+.finding:hover .finding-arrow {
   color: hsl(var(--foreground));
+  transform: translateX(2px);
 }
 
-/* Set apart from the factual statement above it — same device as
-   .title-detail blockquote (left rule, not a filled panel), reused here to
-   mark "this is a read, not a fact" rather than to mark a quotation. */
-.finding-take {
-  margin-top: var(--space-3);
-  padding-left: var(--space-2);
-  border-left: 2px solid hsl(var(--foreground));
-}
-
-.finding-take-label {
+.finding-date {
   font-family: var(--font-mono);
   font-size: var(--font-xs);
+  letter-spacing: var(--tracking-wide);
+  font-variant-numeric: tabular-nums;
+  color: hsl(var(--muted-foreground));
+}
+
+/* ── Findings post pages ──────────────────────────────────── */
+/* Generated by scripts/build-findings.py into docs/findings/<slug>/. These
+   pages have no hero image to justify a fixed-black band the way the home
+   page does, so the header sits on the page's own themed background
+   instead -- a hairline rule is the only separation, so arriving from the
+   home page's Findings tab doesn't read as landing on a different site. */
+.post-header {
+  padding: var(--space-3) 0;
+  border-bottom: 1px solid hsl(var(--border));
+  text-align: left;
+}
+
+/* .hero-wordmark is display: block for the home page's flex row; in this
+   plain container that would stretch the link, and its focus ring, across
+   the full width. */
+.post-header .hero-wordmark {
+  display: inline-block;
+}
+
+.post {
+  max-width: 640px;
+  padding: var(--space-6) 0 var(--space-8);
+  text-align: left;
+}
+
+.post-back {
+  display: inline-block;
+  /* Same 24px hit-area padding reasoning as .hero-cta. */
+  padding: 2px 0;
+  font-size: var(--font-sm);
+  color: hsl(var(--secondary-foreground));
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  text-decoration-color: hsl(var(--rule));
+  transition: color var(--duration-base) var(--ease-out),
+              text-decoration-color var(--duration-base) var(--ease-out);
+}
+
+.post-back:hover {
+  color: hsl(var(--foreground));
+  text-decoration-color: hsl(var(--foreground));
+}
+
+.post-back:focus-visible,
+.post-body a:focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
+}
+
+.post-byline {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  margin-top: var(--space-4);
+}
+
+.post-byline-photo {
+  display: block;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.post-byline-text {
+  font-family: var(--font-mono);
+  font-size: var(--font-xs);
+  letter-spacing: var(--tracking-wide);
+  font-variant-numeric: tabular-nums;
+  color: hsl(var(--muted-foreground));
+}
+
+.post-byline-text a {
+  color: hsl(var(--muted-foreground));
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  text-decoration-color: hsl(var(--rule));
+  transition: color var(--duration-base) var(--ease-out),
+              text-decoration-color var(--duration-base) var(--ease-out);
+}
+
+.post-byline-text a:hover {
+  color: hsl(var(--foreground));
+  text-decoration-color: hsl(var(--foreground));
+}
+
+.post-byline-text a:focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
+}
+
+/* ── Findings index page (/findings/) ─────────────────────── */
+/* Plain-HTML listing, generated alongside the post pages — same .post
+   shell, and the home page's own .finding-list markup reused verbatim so
+   the two stay visually identical. */
+.post-finding-list {
+  margin-top: var(--space-6);
+}
+
+.post-title {
+  margin-top: var(--space-4);
+  font-size: clamp(var(--font-xl), 1.3rem + 1.4vw, 2.125rem);
+  font-weight: var(--weight-semibold);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  text-wrap: balance;
+}
+
+/* Long-form reading size: --font-md rather than the site's --font-base,
+   which is tuned for cards and metadata rather than paragraphs of prose. */
+.post-body,
+.post-take {
+  font-size: var(--font-md);
+  line-height: var(--leading-relaxed);
+}
+
+.post-body h2 {
+  margin-top: var(--space-6);
+  font-size: var(--font-lg);
+  font-weight: var(--weight-semibold);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-snug);
+  text-wrap: balance;
+}
+
+.post-body h3 {
+  margin-top: var(--space-4);
+  font-size: var(--font-md);
+  font-weight: var(--weight-semibold);
+  line-height: var(--leading-snug);
+}
+
+.post-body p,
+.post-body ul,
+.post-body blockquote,
+.post-take p + p {
+  margin-top: var(--space-2);
+}
+
+.post-body ul {
+  padding-left: var(--space-3);
+}
+
+.post-body li + li {
+  margin-top: var(--space-1);
+}
+
+.post-body li::marker {
+  color: hsl(var(--muted-foreground));
+}
+
+/* A quotation gets the lighter --rule; the foreground-weight rule is kept
+   for .post-take, so a quoted posting and an opinion never look alike. */
+.post-body blockquote {
+  padding-left: var(--space-2);
+  border-left: 2px solid hsl(var(--rule));
+  color: hsl(var(--secondary-foreground));
+}
+
+.post-body a {
+  color: hsl(var(--foreground));
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  text-decoration-color: hsl(var(--rule));
+}
+
+.post-body a:hover {
+  text-decoration-color: hsl(var(--foreground));
+}
+
+.post-take {
+  margin-top: var(--space-6);
+  padding-left: var(--space-2);
+  border-left: 2px solid hsl(var(--foreground));
+  color: hsl(var(--secondary-foreground));
+}
+
+.post-label {
+  font-family: var(--font-mono);
+  font-size: var(--font-xs);
+  font-weight: var(--weight-regular);
   letter-spacing: var(--tracking-label);
+  line-height: var(--leading-normal);
   text-transform: uppercase;
   color: hsl(var(--muted-foreground));
   margin-bottom: 4px;
 }
 
-.finding-take p {
-  line-height: var(--leading-relaxed);
-  color: hsl(var(--secondary-foreground));
+.post-signals {
+  margin-top: var(--space-6);
 }
 
-.finding-companies {
+/* Chips reuse .signal-chip, set by the build. */
+.post-signals ul {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
-  margin-top: var(--space-3);
-}
-
-.finding-companies li {
-  font-family: var(--font-mono);
-  font-size: var(--font-xs);
-  letter-spacing: var(--tracking-label);
-  text-transform: uppercase;
-  color: hsl(var(--muted-foreground));
-  background: none;
-  border: 1px solid hsl(var(--border));
-  border-radius: var(--radius);
-  padding: 4px 8px;
-  line-height: 1.35;
+  margin-top: var(--space-1);
 }
 
 /* ── Emerging Skills & Patterns ───────────────────────────── */
@@ -1302,7 +1486,7 @@ body {
 .flip-card-back-title {
   max-width: 560px;
   font-family: var(--font-sans);
-  font-size: 1.625rem;
+  font-size: var(--font-xl);
   font-weight: var(--weight-semibold);
   line-height: var(--leading-tight);
   letter-spacing: var(--tracking-tight);
@@ -1634,8 +1818,9 @@ body {
   .title-expand,
   .show-more-btn,
   .state-action,
-  .finding,
-  .finding-permalink,
+  .finding-title,
+  .finding-arrow,
+  .post-back,
   .flip-card-front,
   .flip-card-back,
   .flip-card--overlay,

@@ -37,6 +37,12 @@ As of 2026-10-23, the dataset includes 84 entries. All entries are senior indivi
 
 Each entry is assessed against a fixed taxonomy of clusters and signals derived from stated JD responsibilities — not inferred. Clusters represent responsibility areas; signals represent skills and observable patterns. A signal must appear in multiple entries before it is added to the taxonomy. New cluster and signal keys require evidence across multiple JDs. This is a structured, audited dataset, not editorial commentary.
 
+## Findings
+
+Written posts drawn from the dataset. Each separates what the postings say from a section labeled "My take," which is Joe Bertino's personal view and not a claim the dataset backs.
+
+- [Content design is becoming a central systems discipline](https://signals.bertino.co/findings/content-design-central-systems/) (2026-10-22): Postings in streaming, SaaS, big tech, and e-commerce describe a central owner for content standards, each in its own words:
+
 ## How to cite this work
 
 Joe Bertino / Bertino Consulting, "Signals," signals.bertino.co, updated 2026-10-23.

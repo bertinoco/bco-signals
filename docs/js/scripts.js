@@ -554,10 +554,10 @@ function renderSignals(data) {
   }).join('');
 }
 
-// Each finding is deep-linkable (#finding-<id>) — a blog entry, not a scroll
-// position, so it can be shared and cited on its own. Renders every finding,
-// most recent first; no pagination, since a hand-curated list stays short by
-// design (see CLAUDE.md's Findings tab promotion process).
+// Each finding is a post with its own page, generated from findings/*.md by
+// scripts/build-findings.py — this tab only lists them, most recent first.
+// No pagination, since a hand-curated list stays short by design (see
+// CLAUDE.md's Findings tab promotion process).
 function renderFindings(data) {
   const list = document.getElementById('finding-list');
   const findings = (data && Array.isArray(data.findings)) ? data.findings : [];
@@ -569,44 +569,27 @@ function renderFindings(data) {
 
   const sorted = [...findings].sort((a, b) => new Date(b.date) - new Date(a.date));
 
-  list.innerHTML = sorted.map(f => {
-    const companiesHtml = (f.companies || []).length
-      ? `<ul class="finding-companies">`
-        + f.companies.map(c => `<li>${c}</li>`).join('')
-        + `</ul>`
-      : '';
-    return `
-      <article class="finding" id="finding-${f.id}">
-        <a class="finding-permalink" href="#finding-${f.id}" aria-label="Permalink to this finding">
-          <time datetime="${f.date}">${formatDate(f.date)}</time>
-        </a>
+  list.innerHTML = sorted.map(f => `
+    <a class="finding" href="${f.url}">
+      <div class="finding-header">
         <h3 class="finding-title">${f.title}</h3>
-        <p class="finding-data">${f.dataStatement}</p>
-        <div class="finding-take">
-          <p class="finding-take-label">My take</p>
-          <p>${f.interpretation}</p>
-        </div>
-        ${companiesHtml}
-      </article>
-    `;
-  }).join('');
+        <span class="finding-arrow" aria-hidden="true">→</span>
+      </div>
+      <time class="finding-date" datetime="${f.date}">${formatDate(f.date)}</time>
+    </a>
+  `).join('');
 }
 
-// A page load carrying #finding-<id> in the URL should land on that entry
-// directly, not on whichever tab is active by default — switches to the
-// Findings tab, scrolls the entry into view, and briefly highlights it so a
-// reader arriving from a shared link can see what they were sent to.
-function openFindingFromHash() {
-  const hash = window.location.hash;
-  if (!hash.startsWith('#finding-')) return;
-  const target = document.querySelector(hash);
-  const findingsBadge = document.getElementById('tab-findings');
-  if (!target || !findingsBadge) return;
+// A page load carrying a tab's id in the URL (#findings, #clusters, …)
+// opens that tab instead of the default one. Post pages link back to
+// /#findings, so a reader returns to the list they came from.
+function openTabFromHash() {
+  const section = window.location.hash.slice(1);
+  const badge = badges.find(b => b.dataset.section === section);
+  if (!badge) return;
 
-  activateBadge(findingsBadge);
-  target.scrollIntoView({ block: 'start' });
-  target.classList.add('is-highlighted');
-  setTimeout(() => target.classList.remove('is-highlighted'), 2000);
+  activateBadge(badge);
+  document.getElementById('nav-bar').scrollIntoView({ block: 'start' });
 }
 
 // ── Badge nav (click + arrow keys) ──────────────────────────
@@ -1155,7 +1138,7 @@ async function init({ fromRetry = false } = {}) {
 
   const findingsData = await loadFindings();
   renderFindings(findingsData);
-  openFindingFromHash();
+  openTabFromHash();
 
   announce(`Dataset loaded. ${globalData.entries.length} roles.`);
 

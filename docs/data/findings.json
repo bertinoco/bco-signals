@@ -1,3 +1,16 @@
 {
-  "findings": []
+  "findings": [
+    {
+      "id": "content-design-central-systems",
+      "title": "Content design is becoming a central systems discipline",
+      "date": "2026-10-22",
+      "summary": "Postings in streaming, SaaS, big tech, and e-commerce describe a central owner for content standards, each in its own words:",
+      "url": "findings/content-design-central-systems/",
+      "signals": [
+        "central-standards-function",
+        "content-systems-design",
+        "enablement"
+      ]
+    }
+  ]
 }

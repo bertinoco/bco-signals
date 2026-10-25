@@ -228,21 +228,26 @@ Signal + implication. State what the data shows, then note what it means for the
 - Projections: don't predict where the market is heading beyond what the data shows
 
 **Reporting vs. editorializing**
-Card descriptions are the one place on most of the site we editorialize lightly — stating an implication based on evidence. The Findings tab's `interpretation` field, rendered under the label "My take," goes considerably further, under the exception below. Everywhere else (cluster/signal assignments, JD entries, quotes, `dataStatement` in `docs/data/findings.json`) stays neutral and reportorial.
+Card descriptions are the one place on most of the site we editorialize lightly — stating an implication based on evidence. A findings post's `<aside>`, rendered under the label "My take," is a full exception to the rules on this page, covered below. Everywhere else (cluster/signal assignments, JD entries, quotes, and a post's title, summary, and data section) stays neutral and reportorial.
 
 **Findings tab exception**
-`docs/data/findings.json`'s `interpretation` field is rendered on the site
+The `<aside>` in a findings post (`findings/*.md`) is rendered on the site
 under the label "My take" — explicitly marked as Joe's personal reaction,
-not a claim the dataset backs number-for-number. Like the Brand copy
-exception below, it may state an industry-level view, draw on experience
-outside this dataset, and go beyond what the cited postings alone prove —
-the no-projections and no-overpromising rules don't apply to it. This is a
-deliberate requirement, not just a nice-to-have: the point of "My take" is
-a personal, experience-informed reaction, and that requires room to draw on
-things the dataset itself can't cite.
+not a claim the dataset backs number-for-number. Joe has complete creative
+freedom to editorialize inside it: none of the rules above — no-projections,
+no-overpromising, no value judgments, hedging/consulting-tone/generic-copy
+avoidance, any of it — apply inside the `<aside>`. It may rank, predict,
+generalize past what the cited postings alone prove, draw on experience
+outside this dataset, or take a harder line than the evidence licenses on
+its own. This is a deliberate requirement, not just a nice-to-have: the
+point of "My take" is a genuine, unhedged personal reaction, not data
+reporting wearing a different label. The label "My take" is what carries
+the weight of marking that shift for the reader — it has to stay accurate
+and present precisely because everything inside it is now unconstrained.
 
-The `dataStatement` field carries no extra license — it stays as reportorial
-and citable as a card description's first sentence, exactly as before. The
+A post's data section — everything outside the `<aside>` — carries no extra
+license, and neither do its `title` and `summary`. They stay as reportorial
+and citable as a card description's first sentence. The
 label "My take" is what keeps the two apart for the reader: everything
 above it is what the postings say, everything under it is Joe's own.
 
@@ -257,7 +262,7 @@ what a single dataset can prove on its own.
 Keep this exception narrow. It covers only that headline/pull-quote and
 that pitch — nowhere else. Section intros, card descriptions (beyond the
 light editorializing already permitted above), cluster/signal text, JD
-entries, quotes, and `dataStatement` in `docs/data/findings.json` all stay
+entries, quotes, and a findings post's title, summary, and data section all stay
 reportorial and grounded, no exceptions besides the two named above (Brand
 copy and the Findings tab's "My take").
 
@@ -702,9 +707,12 @@ them. It sits outside `docs/` so it is not published.
 never be hand-edited; the next run overwrites anything typed into them.
 `patterns.md` and `findings.md` are hand-written.
 
-**`findings.md` is the only editorialized file in this repository.** It is the
-one place a claim may go beyond what a posting literally states. Two rules keep
-that contained:
+**`findings.md` is the only editorialized file in `jd-insights/`.** It is the
+one place within this directory a claim may go beyond what a posting
+literally states. (A findings post's `<aside>` is the other editorialized
+content in the repository — see the Findings tab exception above, which
+carries a broader license than findings.md's own rules below.) Two rules
+keep findings.md itself contained:
 
 - Every finding separates what the data shows from what it is taken to mean.
   The first is defensible by citation; the second is opinion and is marked as
@@ -722,9 +730,11 @@ site is the Findings tab promotion process below.
 
 ### Findings tab promotion process
 
-`docs/data/findings.json` is a small, hand-curated subset of `findings.md`,
-published to the live Findings tab (see the Findings tab exception in Voice
-& copy decisions for what license that field carries). Promoting an entry is
+Findings posts are a small, hand-curated subset of `findings.md`, published
+as pages under `/findings/` and listed on the Findings tab (see the Findings
+tab exception in Voice & copy decisions for what license the "My take"
+section carries). Each post is a Markdown file in `findings/`; the format is
+in `findings/README.md`. Promoting an entry is
 a separate step from writing it to `findings.md` in the first place — nothing
 moves to the public tab straight from a single JD. A finding has to have
 already cleared `findings.md`'s own bar (Step 4: recurring across multiple
@@ -737,13 +747,37 @@ necessary but not sufficient for promotion — not everything that belongs
 there is written for a general reader or interesting enough to lead with on
 the site.
 
-**Promotion is a joint decision.** Draft the `dataStatement` and
-`interpretation`, then wait for confirmation before writing to
-`findings.json` — the same pattern Step 5 uses for a new cluster or signal
-key.
+**Promotion is a joint decision.** Draft the post with `draft: true` in its
+front matter, then wait for confirmation before removing it and publishing —
+the same pattern Step 5 uses for a new cluster or signal key. A merged draft
+is never built, so a post can be reviewed in the repo before it goes live.
+
+**Publishing.** Run `python3 scripts/build-findings.py` after any change to
+`findings/`, and commit what it writes: the post pages in `docs/findings/`,
+`docs/data/findings.json`, the post URLs in `docs/sitemap.xml`, and the
+Findings section of `docs/llms.txt`. Never hand-edit those outputs; the next
+run overwrites them. The build also embeds the current `styles.css?v=`
+number from `docs/index.html` into each post page, so rerun it whenever that
+version is bumped. CI runs `--check` and fails if anything is out of date.
+
+The build checks every quotation in a post's data section against
+`jd-source/` under the Quote field's three normalizations, and fails on a
+mismatch. A quotation in "My take" that isn't found is only reported, since
+the take may quote things that aren't postings. Passing the check means the
+words exist in some archived JD, not that they belong to the company the post
+names — confirm attribution by hand.
+
+When a quotation matches exactly one archived posting, the build also links
+it to that posting on GitHub (in both the data section and "My take") — see
+`findings/README.md`. A quotation that matches more than one posting stays
+unlinked rather than risk linking to the wrong one. This is a second,
+automatic check on attribution, not a replacement for confirming it by
+hand: the link goes to whichever single posting the words happen to be
+unique to, so a mislabeled company name would show up as a link that
+visibly disagrees with the post's own text once clicked.
 
 **Field rules.**
-- `dataStatement` stays reportorial, but carries no counts, fractions, or
+- The data section stays reportorial, but carries no counts, fractions, or
   percentages of the dataset ("15 of 52 roles," "29%") — those assume a
   fixed denominator, and the corpus keeps growing after a finding is
   published, so a stated count goes stale the moment the total moves without
@@ -751,17 +785,23 @@ key.
   companies instead: what postings actually say, not what share of the
   dataset says it. A citation to a named company doesn't expire the way a
   tally does.
-- `interpretation` ("My take") is the one field the Findings tab exception
-  covers — personal, experience-informed, not required to cite back to the
-  dataset the way `dataStatement` does.
-- `companies` lists every company the finding cites, so a reader can check
-  the claim against the archive. The list can grow later if another posting
-  says the same thing — that's an addition, not a correction, since nothing
-  it already claimed becomes false.
+- The `<aside>` ("My take") is the one part of a post the Findings tab
+  exception covers — personal, experience-informed, not required to cite back
+  to the dataset the way the data section does. It comes last, after all of
+  the data section; the build rejects a post that interleaves the two.
+- `title` follows the data section's rules. `summary` is not a hand-written
+  front-matter field — it's derived automatically from the opening sentences
+  of the data section's first paragraph, which is why that paragraph does
+  double duty as the one line shown on the Findings tab and in link previews.
+- `signals` lists the cluster and/or signal keys (from `docs/data/jobs.json`)
+  the finding is grounded in, so a reader can check the claim against the
+  taxonomy. The list can grow later if another posting shows the same
+  pattern — that's an addition, not a correction, since nothing it already
+  claimed becomes false.
 
 ### Keeping findings.md's own figures current
 
-Unlike `findings.json`'s `dataStatement` (which avoids dataset-wide counts
+Unlike a findings post's data section (which avoids dataset-wide counts
 precisely so it never goes stale), `findings.md`'s "What the data shows"
 sections are the internal, pre-publication analysis file — citing precise
 counts, fractions, and percentages here is expected and useful. That means

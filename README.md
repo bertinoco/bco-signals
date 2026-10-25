@@ -25,6 +25,10 @@ jd-insights/          — Big picture archive
   findings.md         — Notes on what Claude and I find interesting (based on dictation, then editorialized) 
   refresh.py          — How we generate stats.md and quotes.md from jobs.json + jd-source/
   README.md           — What each file is for and our editorial boundaries
+
+findings/             — Findings posts, one Markdown file each
+  README.md           — Post format and how to build
+                          - Built by scripts/build-findings.py into docs/findings/
 ```
 
 ## Data schema

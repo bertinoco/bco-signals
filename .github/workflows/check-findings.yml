@@ -1,0 +1,32 @@
+name: Check findings build
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'findings/**'
+      - 'docs/findings/**'
+      - 'docs/data/findings.json'
+      - 'docs/sitemap.xml'
+      - 'docs/llms.txt'
+      - 'docs/index.html'
+      - 'jd-source/**'
+      - 'scripts/build-findings.py'
+  pull_request:
+    paths:
+      - 'findings/**'
+      - 'docs/findings/**'
+      - 'docs/data/findings.json'
+      - 'docs/sitemap.xml'
+      - 'docs/llms.txt'
+      - 'docs/index.html'
+      - 'jd-source/**'
+      - 'scripts/build-findings.py'
+
+jobs:
+  check-findings:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify generated findings pages are current
+        run: python3 scripts/build-findings.py --check
