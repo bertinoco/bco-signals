@@ -42,7 +42,7 @@
     closeBtn.focus();
   }
 
-  function closeMenu() {
+  function closeMenu({ restoreFocus = true } = {}) {
     if (menu.hidden) return;
     menu.classList.remove('is-open');
     backdrop.classList.remove('is-open');
@@ -60,7 +60,7 @@
     if (reducedMotion()) finish();
     else menu.addEventListener('transitionend', finish, { once: true });
 
-    if (lastFocused && typeof lastFocused.focus === 'function') lastFocused.focus();
+    if (restoreFocus && lastFocused && typeof lastFocused.focus === 'function') lastFocused.focus();
   }
 
   function onKeydown(e) {
@@ -71,13 +71,16 @@
     if (menu.hidden) openMenu();
     else closeMenu();
   });
-  closeBtn.addEventListener('click', closeMenu);
-  backdrop.addEventListener('click', closeMenu);
+  closeBtn.addEventListener('click', () => closeMenu());
+  backdrop.addEventListener('click', () => closeMenu());
 
-  // A same-page link (/#signals while already on /) doesn't reload, so the
+  // The section links (/#findings while already on /) don't reload, so the
   // drawer has to close itself or it would sit open over the section it
-  // just switched to.
+  // just scrolled to. Focus isn't sent back to the hamburger here: that
+  // would scroll the page back up to it, fighting the jump to the section.
+  // Following the link moves the browser's focus starting point to the
+  // section, so the next Tab lands there anyway.
   menu.addEventListener('click', (e) => {
-    if (e.target.closest('a')) closeMenu();
+    if (e.target.closest('a')) closeMenu({ restoreFocus: false });
   });
 })();

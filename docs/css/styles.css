@@ -566,18 +566,27 @@ body {
   text-decoration-color: hsl(var(--foreground));
 }
 
-/* ── Section headings ─────────────────────────────────────── */
-/* One page-level h1 lives in the hero; these are section headings, not a
-   second h1. Modest size — they orient the section without competing with
-   the content below. Left-aligned, overriding body's centered text-align. */
-.explore-head,
-.section {
+/* ── Home sections ────────────────────────────────────────── */
+/* The home page is one scroll of three sections — Explore the data,
+   Read our findings, All roles — each opening with the same heading and
+   one-line description. The site menu links to them as plain anchors.
+   Left-aligned, overriding body's centered text-align. */
+#main {
+  padding-top: var(--space-6);
+}
+
+.home-section {
+  padding-bottom: var(--space-12);
   text-align: left;
 }
 
-.explore-head {
-  margin-bottom: var(--space-2);
+.section-head {
+  margin-bottom: var(--space-3);
 }
+
+/* One page-level h1 lives in the hero; these are section headings, not a
+   second h1. Modest size — they orient the section without competing with
+   the content below. */
 
 /* position: relative is unused on desktop (.ai-info-wrap, being closer in
    the ancestor chain, is what the toggletip positions against there) but
@@ -799,17 +808,16 @@ body {
   outline-offset: -2px;
 }
 
-/* What each section contains, in one line. Lives inside the section, so
-   it shows and hides with it rather than being swapped by script. */
-.section-caption {
+/* What the section contains, in one line, right under its heading. In
+   Explore the data it swaps with the toggle (see activateView). */
+.section-desc {
   margin-top: var(--space-1);
-  margin-bottom: var(--space-3);
   font-size: var(--font-sm);
   color: hsl(var(--muted-foreground));
 }
 
 /* Same link treatment as .state-body a. */
-.section-caption-link {
+.section-desc-link {
   color: hsl(var(--foreground));
   text-decoration: underline;
   text-underline-offset: 3px;
@@ -818,26 +826,21 @@ body {
   transition: text-decoration-color var(--duration-fast) ease;
 }
 
-.section-caption-link:hover {
+.section-desc-link:hover {
   text-decoration-color: hsl(var(--foreground));
 }
 
-.section-caption-link:focus-visible {
+.section-desc-link:focus-visible {
   outline: 2px solid hsl(var(--ring));
   outline-offset: 2px;
 }
 
-/* ── Sections ─────────────────────────────────────────────── */
-#main {
-  padding-top: var(--space-6);
-}
-
-.section {
+/* Signals and Clusters, one showing at a time. */
+.explore-panel {
   display: none;
-  padding-bottom: var(--space-12);
 }
 
-.section.active {
+.explore-panel.active {
   display: block;
 }
 
@@ -1075,7 +1078,8 @@ body {
 
 #titles-show-more,
 #clusters-show-more,
-#signals-show-more {
+#signals-show-more,
+#findings-show-more {
   text-align: center;
   margin-top: var(--space-4);
 }
@@ -1105,8 +1109,9 @@ body {
 }
 
 /* ── Findings ─────────────────────────────────────────────── */
-/* The tab lists posts; each post has its own page (see Findings post pages
-   below). Border-separated rows at a 640px reading measure, following
+/* The home page's Read our findings section lists posts; each post has its
+   own page (see Findings post pages below). The list itself is written into
+   index.html by build-findings.py. Border-separated rows following
    .title-entry's pattern rather than the flip-card grid. */
 .finding-list {
   display: flex;
@@ -1125,6 +1130,12 @@ body {
   border-bottom: 1px solid hsl(var(--muted));
   color: inherit;
   text-decoration: none;
+}
+
+/* Posts past the cap until "Read more" (see FINDINGS_LIMIT in
+   build-findings.py). display: flex above would otherwise beat [hidden]. */
+.finding[hidden] {
+  display: none;
 }
 
 .finding:last-child {
@@ -1291,14 +1302,6 @@ body {
 .post-byline-text a:focus-visible {
   outline: 2px solid hsl(var(--ring));
   outline-offset: 2px;
-}
-
-/* ── Findings index page (/findings/) ─────────────────────── */
-/* Plain-HTML listing, generated alongside the post pages — same .post
-   shell, and the home page's own .finding-list markup reused verbatim so
-   the two stay visually identical. */
-.post-finding-list {
-  margin-top: var(--space-6);
 }
 
 .post-title {
@@ -1957,7 +1960,7 @@ body {
 }
 
 /* Panels take programmatic focus after a retry; no visible ring for that. */
-.section:focus {
+.explore-panel:focus {
   outline: none;
 }
 
@@ -2006,7 +2009,7 @@ body {
   .site-menu-links a,
   .site-menu-github,
   .explore-toggle-btn,
-  .section-caption-link,
+  .section-desc-link,
   .cluster-card,
   .signal-card,
   .title-detail,

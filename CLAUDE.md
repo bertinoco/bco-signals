@@ -761,9 +761,15 @@ is never built, so a post can be reviewed in the repo before it goes live.
 
 **Publishing.** Run `python3 scripts/build-findings.py` after any change to
 `findings/`, and commit what it writes: the post pages in `docs/findings/`,
-`docs/data/findings.json`, the post URLs in `docs/sitemap.xml`, and the
-Findings section of `docs/llms.txt`. Never hand-edit those outputs; the next
-run overwrites them. The build also reads three things out of
+the home page's Read our findings list in `docs/index.html` (only what sits
+between the `findings:start` / `findings:end` markers — the rest of
+`index.html` stays hand-written), `docs/data/findings.json`, the post URLs in
+`docs/sitemap.xml`, and the Findings section of `docs/llms.txt`. Never
+hand-edit those outputs; the next run overwrites them. The list is written
+into the page rather than fetched so the post links are there for crawlers
+and the section shows without waiting on JavaScript. It shows 8 posts, then
+"Read more" (`FINDINGS_LIMIT` in the build script). `docs/findings/index.html`
+is now only a redirect to `/#findings`, kept so old links still land. The build also reads three things out of
 `docs/index.html` and embeds them in each post page: the `styles.css?v=`
 and `menu.js?v=` numbers, and the site menu's markup itself (the button and
 the drawer). `index.html` is the only copy of the menu — edit it there, then

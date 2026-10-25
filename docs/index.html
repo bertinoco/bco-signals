@@ -30,7 +30,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=112">
+  <link rel="stylesheet" href="css/styles.css?v=113">
 
   <script type="application/ld+json">
   [
@@ -136,7 +136,7 @@
         <h1>What content design jobs are telling us</h1>
         <p>A structured dataset of <span id="hero-role-count">40</span> senior content design, UX writing, and content systems roles — and the signals they send.</p>
         <div class="hero-actions">
-          <a class="hero-data-cta" href="#signals">
+          <a class="hero-data-cta" href="#explore">
             Explore the data
           </a>
           <a class="hero-cta" href="https://github.com/bertinoco/bco-signals" target="_blank" rel="noopener noreferrer">
@@ -160,63 +160,74 @@
 
   <div class="container">
     <main id="main">
-      <div class="explore-head" id="explore-head">
-        <div class="section-heading-row">
-          <h2 class="section-heading">Explore the data</h2>
-          <div class="ai-info-wrap">
-            <button type="button" class="ai-info-btn" id="ai-info-btn" aria-expanded="false" aria-controls="ai-info-tooltip" aria-label="About AI-drafted content">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <circle cx="8" cy="8" r="6.25" stroke="currentColor" stroke-width="1.4"/>
-                <path d="M8 7.25V11.25" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
-                <circle cx="8" cy="5.25" r="0.75" fill="currentColor"/>
-              </svg>
-            </button>
-            <p class="ai-info-tooltip" id="ai-info-tooltip" hidden>All descriptions are drafted by Claude and reviewed before publishing.</p>
+      <section class="home-section" id="explore" aria-labelledby="explore-heading">
+        <div class="section-head">
+          <div class="section-heading-row">
+            <h2 class="section-heading" id="explore-heading">Explore the data</h2>
+            <div class="ai-info-wrap">
+              <button type="button" class="ai-info-btn" id="ai-info-btn" aria-expanded="false" aria-controls="ai-info-tooltip" aria-label="About AI-drafted content">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <circle cx="8" cy="8" r="6.25" stroke="currentColor" stroke-width="1.4"/>
+                  <path d="M8 7.25V11.25" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+                  <circle cx="8" cy="5.25" r="0.75" fill="currentColor"/>
+                </svg>
+              </button>
+              <p class="ai-info-tooltip" id="ai-info-tooltip" hidden>All descriptions are drafted by Claude and reviewed before publishing.</p>
+            </div>
+          </div>
+          <p class="section-desc" id="explore-desc">Emerging patterns and themes</p>
+          <div class="explore-toggle" role="tablist" aria-label="Data view">
+            <button type="button" class="explore-toggle-btn active" id="tab-signals" role="tab" data-section="signals" data-desc="Emerging patterns and themes" aria-selected="true" aria-controls="signals">Signals</button>
+            <button type="button" class="explore-toggle-btn" id="tab-clusters" role="tab" data-section="clusters" data-desc="Core responsibilities and workload" aria-selected="false" aria-controls="clusters">Clusters</button>
           </div>
         </div>
-        <div class="explore-toggle" role="tablist" aria-label="Data view">
-          <button type="button" class="explore-toggle-btn active" id="tab-signals" role="tab" data-section="signals" aria-selected="true" aria-controls="signals">Signals</button>
-          <button type="button" class="explore-toggle-btn" id="tab-clusters" role="tab" data-section="clusters" aria-selected="false" aria-controls="clusters">Clusters</button>
-        </div>
-      </div>
 
-      <section class="section active" id="signals" role="tabpanel" tabindex="-1" aria-labelledby="tab-signals">
-        <p class="section-caption">Emerging patterns and themes</p>
-        <div class="signal-list" id="signal-list">
-          <div class="state state--loading">
-            <p class="state-title">Loading…</p>
+        <div class="explore-panel active" id="signals" role="tabpanel" tabindex="-1" aria-labelledby="tab-signals">
+          <div class="signal-list" id="signal-list">
+            <div class="state state--loading">
+              <p class="state-title">Loading…</p>
+            </div>
+          </div>
+          <div id="signals-show-more" style="display:none;">
+            <button class="show-more-btn"></button>
           </div>
         </div>
-        <div id="signals-show-more" style="display:none;">
-          <button class="show-more-btn"></button>
+
+        <div class="explore-panel" id="clusters" role="tabpanel" tabindex="-1" aria-labelledby="tab-clusters">
+          <div class="cluster-grid" id="cluster-grid">
+            <div class="state state--loading">
+              <p class="state-title">Loading…</p>
+            </div>
+          </div>
+          <div id="clusters-show-more" style="display:none;">
+            <button class="show-more-btn"></button>
+          </div>
         </div>
       </section>
 
-      <section class="section" id="clusters" role="tabpanel" tabindex="-1" aria-labelledby="tab-clusters">
-        <p class="section-caption">Core responsibilities and workload</p>
-        <div class="cluster-grid" id="cluster-grid">
-          <div class="state state--loading">
-            <p class="state-title">Loading…</p>
-          </div>
+      <section class="home-section" id="findings" aria-labelledby="findings-heading">
+        <div class="section-head">
+          <h2 class="section-heading" id="findings-heading">Read our findings</h2>
+          <p class="section-desc">Key takeaways and reflections</p>
         </div>
-        <div id="clusters-show-more" style="display:none;">
-          <button class="show-more-btn"></button>
-        </div>
-      </section>
-
-      <section class="section" id="findings" tabindex="-1" aria-labelledby="findings-heading">
-        <h2 class="section-heading" id="findings-heading">Findings</h2>
-        <p class="section-caption">Key takeaways and reflections</p>
+        <!-- findings:start — generated by scripts/build-findings.py from findings/*.md; edit those, not this -->
         <div class="finding-list" id="finding-list">
-          <div class="state state--loading">
-            <p class="state-title">Loading…</p>
-          </div>
+          <a class="finding" href="/findings/content-design-central-systems/">
+            <div class="finding-header">
+              <h3 class="finding-title">Content design is becoming a central systems discipline</h3>
+              <span class="finding-arrow" aria-hidden="true">→</span>
+            </div>
+            <time class="finding-date" datetime="2026-10-22">2026-10-22</time>
+          </a>
         </div>
+        <!-- findings:end -->
       </section>
 
-      <section class="section" id="titles" tabindex="-1" aria-labelledby="titles-heading">
-        <h2 class="section-heading" id="titles-heading">All roles</h2>
-        <p class="section-caption">All roles in the dataset. <a class="section-caption-link" href="https://github.com/bertinoco/bco-signals/tree/main/jd-source" target="_blank" rel="noopener noreferrer">View full job descriptions on GitHub<span class="visually-hidden"> (opens in a new tab)</span></a></p>
+      <section class="home-section" id="titles" aria-labelledby="titles-heading">
+        <div class="section-head">
+          <h2 class="section-heading" id="titles-heading">All roles</h2>
+          <p class="section-desc">All roles in the dataset. <a class="section-desc-link" href="https://github.com/bertinoco/bco-signals/tree/main/jd-source" target="_blank" rel="noopener noreferrer">View full job descriptions on GitHub<span class="visually-hidden"> (opens in a new tab)</span></a></p>
+        </div>
         <div class="title-list" id="title-list">
           <div class="state state--loading">
             <p class="state-title">Loading…</p>
@@ -270,9 +281,9 @@
       </button>
     </div>
     <ul class="site-menu-links">
-      <li><a href="/"><picture><source srcset="/images/circle-icon-b.png" media="(prefers-color-scheme: light)"><img class="site-menu-icon" src="/images/circle-icon-w.png" alt="" width="20" height="20"></picture>Home</a></li>
-      <li><a href="/#signals"><picture><source srcset="/images/signals.png" media="(prefers-color-scheme: light)"><img class="site-menu-icon" src="/images/signals-w.png" alt="" width="20" height="20"></picture>Explore the data</a></li>
-      <li><a href="/findings/"><picture><source srcset="/images/findings.png" media="(prefers-color-scheme: light)"><img class="site-menu-icon" src="/images/findings-w.png" alt="" width="20" height="20"></picture>Read our findings</a></li>
+      <li><a href="/#top"><picture><source srcset="/images/circle-icon-b.png" media="(prefers-color-scheme: light)"><img class="site-menu-icon" src="/images/circle-icon-w.png" alt="" width="20" height="20"></picture>Home</a></li>
+      <li><a href="/#explore"><picture><source srcset="/images/signals.png" media="(prefers-color-scheme: light)"><img class="site-menu-icon" src="/images/signals-w.png" alt="" width="20" height="20"></picture>Explore the data</a></li>
+      <li><a href="/#findings"><picture><source srcset="/images/findings.png" media="(prefers-color-scheme: light)"><img class="site-menu-icon" src="/images/findings-w.png" alt="" width="20" height="20"></picture>Read our findings</a></li>
       <li><a href="/#titles"><picture><source srcset="/images/clusters.png" media="(prefers-color-scheme: light)"><img class="site-menu-icon" src="/images/clusters-w.png" alt="" width="20" height="20"></picture>View all roles</a></li>
     </ul>
     <div class="site-menu-foot">
@@ -287,7 +298,7 @@
     </div>
   </nav>
 
-  <script src="js/scripts.js?v=55"></script>
-  <script src="js/menu.js?v=1"></script>
+  <script src="js/scripts.js?v=56"></script>
+  <script src="js/menu.js?v=2"></script>
 </body>
 </html>

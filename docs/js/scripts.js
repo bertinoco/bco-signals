@@ -1,10 +1,5 @@
 // Data path for GitHub Pages with `docs/` at repo root
 const DATA_PATH = 'data/jobs.json';
-// Findings are hand-curated and load separately from the dataset proper —
-// see CLAUDE.md's Findings tab promotion process. A fetch failure here
-// degrades to the empty state rather than blocking the rest of the page
-// (see loadFindings).
-const FINDINGS_PATH = 'data/findings.json';
 const SIGNAL_THRESHOLD = 2;
 const TITLES_LIMIT = 12;
 // How long a cluster/signal shows a "New" chip after its earliest carrying
@@ -15,7 +10,10 @@ const TITLES_LIMIT = 12;
 // additions (see CLAUDE.md Step 4).
 const NEW_KEY_WINDOW_DAYS = 30;
 const FETCH_TIMEOUT_MS = 10000;
-const SECTION_CONTAINERS = ['cluster-grid', 'signal-list', 'title-list', 'finding-list'];
+// The findings list isn't here: build-findings.py writes it into
+// index.html, so it doesn't depend on jobs.json loading and mustn't be
+// overwritten by its loading or error states.
+const SECTION_CONTAINERS = ['cluster-grid', 'signal-list', 'title-list'];
 // Symbol only — the ISO code is always shown alongside it (see fmt below),
 // since a bare symbol is ambiguous (USD/CAD/AUD/HKD all use "$"). A currency
 // missing here still renders correctly: no symbol, just the number and code.
@@ -65,10 +63,7 @@ const COPY = {
       title: 'No roles yet',
       body: 'Roles appear here as job descriptions are added to the dataset.',
     },
-    findings: {
-      title: 'No findings yet',
-      body: 'Findings will appear here once confirmed across multiple job descriptions.',
-    },
+    // The findings empty state is written by build-findings.py, not here.
   },
   error: {
     offline: {
@@ -162,24 +157,6 @@ async function loadData() {
     return { error: navigator.onLine === false ? 'offline' : 'network' };
   } finally {
     clearTimeout(timer);
-  }
-}
-
-// Findings are a small, separately-curated file (see CLAUDE.md's Findings
-// tab promotion process) — a fetch failure or malformed payload here
-// degrades to the "no findings yet" empty state instead of the
-// offline/network/timeout error treatment loadData uses, since the rest of
-// the page still works without them.
-async function loadFindings() {
-  try {
-    const res = await fetch(FINDINGS_PATH);
-    if (!res.ok) return { findings: [] };
-    const data = await res.json();
-    if (!data || !Array.isArray(data.findings)) return { findings: [] };
-    return data;
-  } catch (err) {
-    console.error(err);
-    return { findings: [] };
   }
 }
 
@@ -554,80 +531,28 @@ function renderSignals(data) {
   }).join('');
 }
 
-// Each finding is a post with its own page, generated from findings/*.md by
-// scripts/build-findings.py — this tab only lists them, most recent first.
-// No pagination, since a hand-curated list stays short by design (see
-// CLAUDE.md's Findings tab promotion process).
-function renderFindings(data) {
-  const list = document.getElementById('finding-list');
-  const findings = (data && Array.isArray(data.findings)) ? data.findings : [];
-
-  if (findings.length === 0) {
-    renderState('finding-list', { variant: 'empty', ...COPY.empty.findings });
-    return;
-  }
-
-  const sorted = [...findings].sort((a, b) => new Date(b.date) - new Date(a.date));
-
-  list.innerHTML = sorted.map(f => `
-    <a class="finding" href="${f.url}">
-      <div class="finding-header">
-        <h3 class="finding-title">${f.title}</h3>
-        <span class="finding-arrow" aria-hidden="true">→</span>
-      </div>
-      <time class="finding-date" datetime="${f.date}">${formatDate(f.date)}</time>
-    </a>
-  `).join('');
-}
-
-// ── Sections ────────────────────────────────────────────────
-// The site menu (menu.js) links to these by hash: /#signals, /#titles.
-// Post pages link back to /#findings. Clusters has no menu item of its own;
-// it's reached through the Signals/Clusters toggle under "Explore the data".
-const SECTIONS = ['signals', 'clusters', 'findings', 'titles'];
-const exploreHead = document.getElementById('explore-head');
+// ── Explore the data: Signals / Clusters ────────────────────
+// The home page is one scroll of three sections — #explore, #findings,
+// #titles — and the site menu links straight to them as plain anchors.
+// The only thing that swaps is the view inside #explore, and its one-line
+// description with it.
 const exploreTabs = Array.from(document.querySelectorAll('.explore-toggle-btn'));
 const exploreToggle = document.querySelector('.explore-toggle');
+const exploreDesc = document.getElementById('explore-desc');
 
-function activateSection(key) {
-  document.querySelectorAll('.section').forEach(s => s.classList.toggle('active', s.id === key));
-  const isExplore = key === 'signals' || key === 'clusters';
-  exploreHead.hidden = !isExplore;
-  if (!isExplore) return;
+function activateView(key) {
+  document.querySelectorAll('.explore-panel').forEach(p => p.classList.toggle('active', p.id === key));
   exploreTabs.forEach(tab => {
     const active = tab.dataset.section === key;
     tab.classList.toggle('active', active);
     tab.setAttribute('aria-selected', String(active));
+    if (active) exploreDesc.textContent = tab.dataset.desc;
   });
 }
 
-function sectionFromHash() {
-  const key = window.location.hash.slice(1);
-  return SECTIONS.includes(key) ? key : null;
-}
-
-// A menu link to the page you're already on (/#titles from /) doesn't
-// reload, so the switch has to happen on hashchange, not just on load.
-// Other hashes (the skip link's #main) are ignored; an empty one is the
-// back button returning to the default view.
-window.addEventListener('hashchange', () => {
-  if (window.location.hash === '') {
-    activateSection('signals');
-    return;
-  }
-  const key = sectionFromHash();
-  if (!key) return;
-  activateSection(key);
-  document.getElementById('main').scrollIntoView({ block: 'start' });
-});
-
 exploreTabs.forEach(tab => {
   tab.addEventListener('click', () => {
-    activateSection(tab.dataset.section);
-    // Keeps the URL on the view you're looking at, so "Explore the data"
-    // (/#signals) still fires hashchange from Clusters. replaceState
-    // doesn't fire hashchange itself, so this doesn't loop.
-    history.replaceState(null, '', `#${tab.dataset.section}`);
+    activateView(tab.dataset.section);
     // Blur only on click: the arrow-key handler below moves focus with
     // .focus() and needs it to stay put for further presses to land.
     tab.blur();
@@ -642,9 +567,46 @@ exploreToggle.addEventListener('keydown', (e) => {
     ? (idx + 1) % exploreTabs.length
     : (idx - 1 + exploreTabs.length) % exploreTabs.length;
   exploreTabs[next].focus();
-  activateSection(exploreTabs[next].dataset.section);
-  history.replaceState(null, '', `#${exploreTabs[next].dataset.section}`);
+  activateView(exploreTabs[next].dataset.section);
 });
+
+// #signals and #clusters are older deep links that predate the single
+// scroll. They pick the view and land on the section heading — the bare
+// anchor would land on the panel and hide the toggle above it.
+function openViewFromHash() {
+  const key = window.location.hash.slice(1);
+  if (key !== 'signals' && key !== 'clusters') return;
+  activateView(key);
+  document.getElementById('explore').scrollIntoView({ block: 'start' });
+}
+
+window.addEventListener('hashchange', openViewFromHash);
+
+// Arriving from another page (/#titles from a findings post), the browser
+// jumps to the anchor before the data loads — then the cards render above
+// it and push it down the page. Re-land once everything is in place.
+function scrollToHashTarget() {
+  const key = window.location.hash.slice(1);
+  if (key === 'signals' || key === 'clusters') {
+    openViewFromHash();
+    return;
+  }
+  if (key === 'explore' || key === 'findings' || key === 'titles') {
+    document.getElementById(key).scrollIntoView({ block: 'start' });
+  }
+}
+
+// ── Findings "Read more" ────────────────────────────────────
+// build-findings.py renders every post but hides those past the cap, and
+// only renders this button when there are any — so the full list is in the
+// HTML for crawlers either way.
+const findingsShowMore = document.getElementById('findings-show-more');
+if (findingsShowMore) {
+  findingsShowMore.querySelector('.show-more-btn').addEventListener('click', () => {
+    document.querySelectorAll('#finding-list .finding[hidden]').forEach(el => { el.hidden = false; });
+    findingsShowMore.hidden = true;
+  });
+}
 
 // ── AI disclosure tooltip ────────────────────────────────────
 // Click-to-toggle rather than hover-only: hover doesn't exist on touch, and
@@ -1115,21 +1077,14 @@ async function init({ fromRetry = false } = {}) {
   renderTitles(globalData);
   renderSignals(globalData);
 
-  const findingsData = await loadFindings();
-  renderFindings(findingsData);
-
-  const initial = sectionFromHash();
-  if (initial) {
-    activateSection(initial);
-    document.getElementById('main').scrollIntoView({ block: 'start' });
-  }
+  scrollToHashTarget();
 
   announce(`Dataset loaded. ${globalData.entries.length} roles.`);
 
   // Retry destroys the button that had focus. Move focus to the panel the
   // reader was already looking at rather than dropping them back at the top.
   if (fromRetry) {
-    const panel = document.querySelector('.section.active');
+    const panel = document.querySelector('.explore-panel.active');
     if (panel) panel.focus();
   }
 }

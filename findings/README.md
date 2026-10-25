@@ -1,6 +1,7 @@
 # Findings posts
 
-Each Markdown file here is one post on the site's Findings tab. The filename is
+Each Markdown file here is one post, listed in the home page's Read our
+findings section. The filename is
 the post's URL slug: `content-design-central-systems.md` publishes to
 `signals.bertino.co/findings/content-design-central-systems/`.
 
@@ -42,8 +43,8 @@ There is no `summary` field to write. A one-line summary is still derived
 automatically from the post's own opening sentences — the first one or two
 sentences of the data section's opening paragraph, truncated if that's still
 too long — and used in meta/OG/JSON-LD description tags and `llms.txt`.
-Neither the Findings tab nor the `/findings/` index display it anymore (that
-was dropped — a post's title was doing that job on its own), but it's still
+The home page's findings list doesn't display it (a post's title does that
+job on its own), but it's still
 worth writing that opening paragraph with the summary in mind, since it's
 what search results and link previews show.
 

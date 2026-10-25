@@ -6,7 +6,12 @@ turns every published post into a static page and keeps the files that list
 the posts in step with them:
 
     docs/findings/<slug>/index.html   one page per post
-    docs/data/findings.json           the list the Findings tab renders
+    docs/index.html                   the Read our findings list, between the
+                                      findings:start/end markers only
+    docs/findings/index.html          a redirect to /#findings (the list used
+                                      to live here)
+    docs/data/findings.json           the post list as JSON (no longer read
+                                      by the site itself)
     docs/sitemap.xml                  the post URLs (the root entry is untouched)
     docs/llms.txt                     the "Findings" section
 
@@ -43,6 +48,13 @@ OG_IMAGE = SITE + "/images/og-image.png"
 JOBS_JSON = os.path.join(DOCS, "data", "jobs.json")
 REQUIRED_FIELDS = ("title", "date", "signals")
 OPTIONAL_FIELDS = ("updated", "draft")
+
+# Posts shown in the home page's Read our findings section before "Read
+# more". The rest are still rendered, just hidden, so crawlers see them all.
+FINDINGS_LIMIT = 8
+FINDINGS_MARKERS = re.compile(
+    r"(<!-- findings:start[^>]*-->\n)(.*?)(^ *<!-- findings:end -->)", re.S | re.M
+)
 
 
 class BuildError(Exception):
@@ -515,97 +527,63 @@ def render_page(post, assets, corpus, taxonomy):
 """
 
 
-def render_findings_index(posts, assets):
-    """A plain-HTML list of every published post at /findings/, so crawlers
-    that don't run JavaScript can still find them -- the home page's
-    Findings tab renders the same list, but only after scripts.js fetches
-    findings.json."""
+def render_home_findings(posts):
+    """The Read our findings list, written into docs/index.html between the
+    findings:start/end markers. Static rather than fetched, so the post
+    links are in the page for crawlers and the list shows without waiting
+    on JavaScript. Posts past FINDINGS_LIMIT are rendered hidden, with a
+    "Read more" button that scripts.js wires up to reveal them."""
     e = lambda s: html.escape(s, quote=True)
-    url = SITE + "/findings/"
-    items = "\n".join(f"""      <a class="finding" href="/findings/{p['slug']}/">
-        <div class="finding-header">
-          <h2 class="finding-title">{e(p['title'])}</h2>
-          <span class="finding-arrow" aria-hidden="true">→</span>
-        </div>
-        <time class="finding-date" datetime="{p['date']}">{p['date']}</time>
-      </a>""" for p in posts)
+    pad = " " * 8
 
+    if not posts:
+        # Moved here from scripts.js's COPY object, since the list is no
+        # longer rendered by script. The other empty states still live there.
+        return textwrap.indent(textwrap.dedent("""\
+            <div class="finding-list" id="finding-list">
+              <div class="state state--empty">
+                <p class="state-title">No findings yet</p>
+                <p class="state-body">Findings will appear here once confirmed across multiple job descriptions.</p>
+              </div>
+            </div>
+            """), pad)
+
+    items = "".join(textwrap.dedent(f"""\
+          <a class="finding" href="/findings/{p['slug']}/"{' hidden' if i >= FINDINGS_LIMIT else ''}>
+            <div class="finding-header">
+              <h3 class="finding-title">{e(p['title'])}</h3>
+              <span class="finding-arrow" aria-hidden="true">→</span>
+            </div>
+            <time class="finding-date" datetime="{p['date']}">{p['date']}</time>
+          </a>
+        """) for i, p in enumerate(posts))
+    block = '<div class="finding-list" id="finding-list">\n' + textwrap.indent(items, "  ") + "</div>\n"
+    if len(posts) > FINDINGS_LIMIT:
+        block += textwrap.dedent("""\
+            <div id="findings-show-more">
+              <button type="button" class="show-more-btn">Read more</button>
+            </div>
+            """)
+    return textwrap.indent(block, pad)
+
+
+def render_findings_redirect():
+    """/findings/ listed every post until the home page took the list over.
+    It stays as a redirect so links and bookmarks to it still land on the
+    list; noindex and the canonical point search engines at the home page."""
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
   <!-- GENERATED FILE — do not edit by hand.
        Regenerate with: python3 scripts/build-findings.py -->
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Findings — Signals</title>
-  <meta name="description" content="Written posts drawn from the content design hiring dataset, each separating what the postings say from Joe Bertino's own take.">
-  <link rel="canonical" href="{url}">
-
-  <!-- Privacy-friendly analytics by Plausible -->
-  <script async src="https://plausible.io/js/pa-WoV37_cSYerP-bLuBDf5L.js"></script>
-  <script>
-    window.plausible=window.plausible||function(){{(plausible.q=plausible.q||[]).push(arguments)}},plausible.init=plausible.init||function(i){{plausible.o=i||{{}}}};
-    plausible.init()
-  </script>
-
-  <!-- Favicon -->
-  <link rel="icon" href="/images/circle-icon-b.png" type="image/png">
-  <link rel="apple-touch-icon" href="/images/circle-icon-b.png">
-
-  <!-- OpenGraph -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="{url}">
-  <meta property="og:title" content="Findings — Signals">
-  <meta property="og:description" content="Written posts drawn from the content design hiring dataset, each separating what the postings say from Joe Bertino's own take.">
-  <meta property="og:image" content="{OG_IMAGE}">
-
-  <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#0D0D0D" media="(prefers-color-scheme: dark)">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/styles.css?v={assets['css']}">
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="{SITE}/">
+  <meta http-equiv="refresh" content="0; url=/#findings">
 </head>
 <body>
-
-  <a class="skip-link" href="#main">Skip to content</a>
-
-  <header class="post-header">
-    <div class="container">
-      <a class="hero-wordmark" href="/">
-        <picture>
-          <source srcset="/images/wordmark-black.svg" media="(prefers-color-scheme: light)">
-          <img class="hero-mark" src="/images/wordmark-white.svg" alt="Signals" width="104" height="16">
-        </picture>
-      </a>
-{indent(assets['toggle'], 6)}
-    </div>
-  </header>
-
-  <div class="container">
-    <main id="main">
-      <article class="post">
-        <a class="post-back" href="/#findings"><span aria-hidden="true">← </span>Back to Signals</a>
-        <h1 class="post-title">Findings</h1>
-        <div class="finding-list post-finding-list">
-{items}
-        </div>
-      </article>
-    </main>
-  </div>
-
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-inner">
-        <div class="footer-brand">A project by <a href="https://bertino.co">Bertino Consulting</a>, with help from Claude &amp; Freddie Gibbs.</div>
-      </div>
-    </div>
-  </footer>
-
-{indent(assets['drawer'], 2)}
-
-  <script src="/js/menu.js?v={assets['menu']}"></script>
+  <p>Findings are on the <a href="/#findings">home page</a> now.</p>
 </body>
 </html>
 """
@@ -694,8 +672,14 @@ def main():
     assets = site_assets()
     outputs = {os.path.join(OUT_DIR, p["slug"], "index.html"): render_page(p, assets, corpus, taxonomy)
                for p in posts}
-    outputs[os.path.join(OUT_DIR, "index.html")] = render_findings_index(posts, assets)
+    outputs[os.path.join(OUT_DIR, "index.html")] = render_findings_redirect()
     outputs[FINDINGS_JSON] = render_findings_json(posts)
+
+    index_text = read(INDEX_HTML)
+    match = FINDINGS_MARKERS.search(index_text)
+    if not match:
+        raise BuildError("docs/index.html: findings:start / findings:end markers not found")
+    outputs[INDEX_HTML] = index_text[:match.start(2)] + render_home_findings(posts) + index_text[match.end(2):]
     outputs[SITEMAP] = render_sitemap(read(SITEMAP), posts)
     outputs[LLMS] = render_llms(read(LLMS), posts)
 
