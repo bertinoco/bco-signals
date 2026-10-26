@@ -128,10 +128,22 @@ class Dataset:
         return js_round(n / self.total * 100) if self.total else 0
 
     def is_new(self, key, field):
-        dates = [date.fromisoformat(x["dateAdded"]) for x in self.entries_for(key, field)]
-        if not dates:
-            return False
-        return (self.as_of - min(dates)).days < self.c["NEW_KEY_WINDOW_DAYS"]
+        # Mirrors keyIntroducedDate in scripts.js: an explicit `introduced`
+        # date on the key wins over its earliest holder's dateAdded.
+        explicit = self.data[field][key].get("introduced")
+        if explicit:
+            introduced = date.fromisoformat(explicit)
+        else:
+            dates = [date.fromisoformat(x["dateAdded"]) for x in self.entries_for(key, field)]
+            if not dates:
+                return False
+            introduced = min(dates)
+        return (self.as_of - introduced).days < self.c["NEW_KEY_WINDOW_DAYS"]
+
+    def new_first(self, keys, field):
+        # Mirrors newFirst in scripts.js: new keys lead, rank order otherwise.
+        return ([k for k in keys if self.is_new(k, field)]
+                + [k for k in keys if not self.is_new(k, field)])
 
     def signal_counts(self):
         counts = {k: 0 for k in self.data["signals"]}
@@ -170,7 +182,8 @@ class Dataset:
             f'{indent(CLOSE_SVG, 6)}\n'
             f'    </button>\n'
             f'    <div class="flip-card-back-content">\n'
-            f'      <h3 class="flip-card-back-title">{e(item["label"])}</h3>\n'
+            + ('      <span class="new-chip new-chip--back">New</span>\n' if new else '')
+            + f'      <h3 class="flip-card-back-title">{e(item["label"])}</h3>\n'
             f'{indent(roles, 6)}' + ('\n' if roles else '')
             + f'      <p class="flip-card-back-desc">{e(item["description"])}</p>\n'
             f'    </div>\n'
@@ -183,8 +196,8 @@ class Dataset:
         counts = self.signal_counts()
         # Most-attested first; sorted() is stable, like Array.prototype.sort,
         # so ties keep jobs.json's own order in both.
-        keys = [k for k, n in sorted(counts.items(), key=lambda kv: -kv[1])
-                if n >= self.c["SIGNAL_THRESHOLD"]]
+        keys = self.new_first([k for k, n in sorted(counts.items(), key=lambda kv: -kv[1])
+                               if n >= self.c["SIGNAL_THRESHOLD"]], "signals")
         if not keys:
             title, body = EMPTY["signals"]
             inner = state("empty", title, body.format(threshold=self.c["SIGNAL_THRESHOLD"]))
@@ -202,6 +215,7 @@ class Dataset:
         # entries; that's what this counts.
         tally = {k: sum((x.get("clusters") or []).count(k) for x in self.entries) for k in keys}
         keys.sort(key=lambda k: -tally[k])
+        keys = self.new_first(keys, "clusters")
         cards = "\n".join(self.card(k, "clusters", "h3") for k in keys[:limit])
         return self.panel("cluster-grid", "cluster-grid", cards, "clusters-show-more", len(keys) > limit)
 

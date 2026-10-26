@@ -139,6 +139,16 @@ does not reopen or gate keys already created.
 **Step 5 — Report the audit**
 Before writing the entry, summarize: which clusters and signals were assigned and why, and whether anything was flagged as a potential new addition. Wait for confirmation if a new key is being proposed.
 
+When a new cluster or signal key is confirmed, give it an `"introduced"`
+date (YYYY-MM-DD, the day it's created) alongside its `label` and
+`description`. The site shows a "New" chip on a key for 30 days. Without
+this field, that window counts from the key's earliest holder, so a key
+built from postings that are already months old would never show as new.
+While a key is new, its card also leads its grid (Signals or Clusters),
+ahead of rank order, so the chip is seen rather than sitting behind "View
+all". `human-in-the-loop` is the first key created this way. The validator
+checks the date's format.
+
 Report the title too, quoted exactly as the posting words it. If it carries a
 separator, say which one and what it will render as under the Title field rule —
 `Content Strategist | Agentic Commerce` stored, `Content Strategist, Agentic

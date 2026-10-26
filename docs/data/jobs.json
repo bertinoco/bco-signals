@@ -474,7 +474,8 @@
       "signals": [
         "governance-as-value-prop",
         "content-adjacent",
-        "agent-retrieval"
+        "agent-retrieval",
+        "human-in-the-loop"
       ],
       "compRange": {
         "min": 136000,
@@ -1258,7 +1259,8 @@
         "ai-native-expectation",
         "enabler-not-bottleneck",
         "governance-as-value-prop",
-        "accessibility-as-constraint"
+        "accessibility-as-constraint",
+        "human-in-the-loop"
       ],
       "compRange": null,
       "sourceUrl": null,
@@ -1967,7 +1969,8 @@
       ],
       "signals": [
         "ai-native-expectation",
-        "model-behavior-design"
+        "model-behavior-design",
+        "human-in-the-loop"
       ],
       "sourceUrl": null,
       "dateAdded": "2026-09-21",
@@ -2110,7 +2113,8 @@
         "governance-as-value-prop",
         "model-behavior-design",
         "eval-infrastructure",
-        "classification-for-ml"
+        "classification-for-ml",
+        "human-in-the-loop"
       ],
       "compRange": {
         "min": 160000,
@@ -2292,7 +2296,8 @@
       "signals": [
         "model-behavior-design",
         "eval-infrastructure",
-        "ai-native-expectation"
+        "ai-native-expectation",
+        "human-in-the-loop"
       ],
       "sourceUrl": null,
       "dateAdded": "2026-10-14",
@@ -2365,7 +2370,8 @@
         "governance-as-value-prop",
         "central-standards-function",
         "agent-retrieval",
-        "classification-for-ml"
+        "classification-for-ml",
+        "human-in-the-loop"
       ],
       "sourceUrl": null,
       "dateAdded": "2026-10-17",
@@ -2471,7 +2477,8 @@
       "signals": [
         "model-behavior-design",
         "eval-infrastructure",
-        "ai-native-expectation"
+        "ai-native-expectation",
+        "human-in-the-loop"
       ],
       "compRange": {
         "min": 173000,
@@ -2635,6 +2642,11 @@
     "eval-infrastructure": {
       "label": "Evaluation infrastructure",
       "description": "Building the harnesses, graders, and automated eval pipelines that test whether prompts or model behavior meet a quality bar. Distinct from authoring the behavior (model-behavior-design) or setting governance standards for it (ai-content-governance) — this is the validation system itself, an engineering-heavy expression of generative content work at the frontier."
+    },
+    "human-in-the-loop": {
+      "label": "Human in the loop",
+      "introduced": "2026-10-26",
+      "description": "Roles that specify where a person reviews AI output, whether in a content pipeline, an eval, or an authoring workflow. Designing that checkpoint is part of the job, alongside the standards and evals around it."
     }
   }
 }

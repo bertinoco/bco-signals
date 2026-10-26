@@ -212,12 +212,26 @@ function entriesForKey(data, key, field) {
     .sort((a, b) => new Date(b.dateAdded) - new Date(a.dateAdded));
 }
 
-// entriesForKey sorts most-recent-first, so the last element is the
-// earliest — the date this key was first introduced to the dataset.
+// When the key joined the taxonomy. An explicit `introduced` date on the
+// cluster/signal wins: a key created from older postings (its holders
+// predate it) still deserves its "New" chip. Otherwise, entriesForKey sorts
+// most-recent-first, so the last element is the earliest holder.
+// build-home.py's Dataset.is_new mirrors this.
 function keyIntroducedDate(data, key, field) {
+  const explicit = data[field] && data[field][key] && data[field][key].introduced;
+  if (explicit) return new Date(explicit);
   const entries = entriesForKey(data, key, field);
   if (!entries.length) return null;
   return new Date(entries[entries.length - 1].dateAdded);
+}
+
+// New keys lead their grid while they're new, so the "New" chip is seen
+// rather than parked behind "View all"; everything else keeps rank order.
+// Stable, so rank order holds within each group. build-home.py's
+// new_first mirrors this.
+function newFirst(keys, data, field) {
+  const fresh = keys.filter(k => isRecentlyIntroduced(data, k, field));
+  return fresh.concat(keys.filter(k => !isRecentlyIntroduced(data, k, field)));
 }
 
 function isRecentlyIntroduced(data, key, field) {
@@ -250,7 +264,13 @@ function flipCardContentHtml(key, field, label, description, data) {
         <p class="flip-card-roles-label">Appears in ${entries.length} of ${total} roles</p>
       </div>`
     : '';
+  // The front's "New" chip carries over, above the title — the front's
+  // top-right corner is the close button's on this side.
+  const newChipHtml = isRecentlyIntroduced(data, key, field)
+    ? '<span class="new-chip new-chip--back">New</span>'
+    : '';
   return `
+    ${newChipHtml}
     <h3 class="flip-card-back-title">${label}</h3>
     ${rolesHtml}
     <p class="flip-card-back-desc">${description}</p>
@@ -291,11 +311,12 @@ function renderClusters(data) {
 
   // Sort by number of companies, descending
   clusterKeys.sort((a, b) => clusterMap[b].length - clusterMap[a].length);
-  clusterOrder = clusterKeys.slice();
+  const orderedClusters = newFirst(clusterKeys, data, 'clusters');
+  clusterOrder = orderedClusters.slice();
 
   const showMore = document.getElementById('clusters-show-more');
   const showMoreBtn = showMore ? showMore.querySelector('.show-more-btn') : null;
-  const keysToRender = showAllClusters ? clusterKeys : clusterKeys.slice(0, SECTION_LIMIT);
+  const keysToRender = showAllClusters ? orderedClusters : orderedClusters.slice(0, SECTION_LIMIT);
 
   if (showMore) {
     if (!showAllClusters && clusterKeys.length > SECTION_LIMIT) {
@@ -475,11 +496,11 @@ function renderTitles(data) {
 function renderSignals(data) {
   const list = document.getElementById('signal-list');
 
-  // Most-attested first.
-  const relevantSignals = [...signalEntryCounts(data)]
+  // Most-attested first, with new keys pulled to the front (see newFirst).
+  const relevantSignals = newFirst([...signalEntryCounts(data)]
     .filter(([, n]) => n >= SIGNAL_THRESHOLD)
     .sort((a, b) => b[1] - a[1])
-    .map(([key]) => key);
+    .map(([key]) => key), data, 'signals');
 
   if (relevantSignals.length === 0) {
     renderState('signal-list', { variant: 'empty', ...COPY.empty.signals });
@@ -753,6 +774,7 @@ function openFlipCard(card) {
   const key = card.dataset.key;
   const item = globalData[type][key];
   const pct = keyPercentage(globalData, key, type);
+  const newSuffix = isRecentlyIntroduced(globalData, key, type) ? ', newly added' : '';
 
   const clone = card.cloneNode(true);
   card.style.visibility = 'hidden';
@@ -760,7 +782,7 @@ function openFlipCard(card) {
   clone.removeAttribute('tabindex');
   clone.setAttribute('role', 'dialog');
   clone.setAttribute('aria-modal', 'true');
-  clone.setAttribute('aria-label', `${item.label}, ${pct}% of roles`);
+  clone.setAttribute('aria-label', `${item.label}, ${pct}% of roles${newSuffix}`);
   clone.style.position = 'fixed';
   clone.style.margin = '0';
   clone.style.top = `${rect.top}px`;
@@ -868,7 +890,8 @@ function navigateFlipCard(direction) {
     const item = globalData[type][nextKey];
     const pct = keyPercentage(globalData, nextKey, type);
     contentEl.innerHTML = flipCardContentHtml(nextKey, type, item.label, item.description, globalData);
-    clone.setAttribute('aria-label', `${item.label}, ${pct}% of roles`);
+    const newSuffix = isRecentlyIntroduced(globalData, nextKey, type) ? ', newly added' : '';
+    clone.setAttribute('aria-label', `${item.label}, ${pct}% of roles${newSuffix}`);
 
     const target = computeOverlayTarget(clone);
     clone.style.top = `${target.top}px`;
