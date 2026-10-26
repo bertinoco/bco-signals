@@ -3,7 +3,7 @@
 
 # Quotes
 
-Every stored quote, verbatim from the posting. **84 of 85** entries carry one.
+Every stored quote, verbatim from the posting. **85 of 86** entries carry one.
 
 These are the lines that anchor each entry's cluster and signal assignments, so they are the strongest citable evidence in the dataset. Each is checked against its `jd-source` archive before commit.
 
@@ -498,6 +498,12 @@ These are the lines that anchor each entry's cluster and signal assignments, so 
 > You'll be central to defining how content governance works across both human and agentic workflows, while also educating writers and non-writers on these systems and best practices.
 
 `wix-content-designer-language-systems` · added 2026-08-15
+
+### WPP Enterprise Solutions — Senior Content Designer UK
+
+> Define and document reusable content components, patterns, and copy standards within our design system to ensure long-term consistency across digital products.
+
+`wpp-enterprise-solutions-senior-content-designer-uk` · added 2026-10-26
 
 ### Wrtn Technologies — JP UX Writer (캬라푸)
 

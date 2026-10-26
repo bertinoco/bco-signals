@@ -831,3 +831,25 @@ One instance of the literal word, so nothing yet to compare it against on
 that specific point; noted alongside Etsy's because together they're two
 different ways an employer has now handed back the dataset's own organizing
 vocabulary rather than requiring us to infer it.
+
+## AI disclosed for interview note-taking only, not evaluation
+
+**WPP Enterprise Solutions**'s Senior Content Designer UK carries a
+dedicated "How we use AI in the recruitment process" section: "we leverage
+AI in our recruitment process exclusively for secure, objective
+note-taking, never for evaluative judgments... You are always welcome to
+request a transcript of these notes or opt out of this feature at any
+time. Opting out will not impact the outcome of the interview process."
+
+Distinct from the AI-mentioned-with-no-tool-or-object pattern tracked
+elsewhere — that pattern is about AI referenced as part of the *job itself*,
+with nothing named for it to act on. This is AI disclosed as part of the
+*hiring process*, and it's also a different shape from the hiring-process AI
+disclosures already in `findings.md`, which describe AI tools used to screen
+or evaluate applications and resumes (with a human-makes-the-final-call
+assurance attached). WPP's disclosure runs the other way: the stated use is
+transcription only, with evaluation explicitly ruled out, and an opt-out
+that the posting states carries no consequence for the outcome. One
+instance, so nothing yet to compare it against — not yet a recurring pattern,
+worth watching for a second posting that draws the same note-taking/no-
+evaluation line.
