@@ -12,7 +12,7 @@ Postings in healthcare, e-commerce, and finance expect AI to already be part of 
 
 - HelloFresh: "Active usage of AI as a core part of your daily workflow"
 - Evinova: "Content designer with AI fluency, not necessarily a technical expert"
-- Wealthsimple: "you’ll use AI to increase your impact in every part of the product lifecycle"
+- Wealthsimple: "From shipping your own code changes to prototyping and research"
 
 None of them treat it as something to grow into on the job. It sits in the requirements, next to craft and portfolio.
 
