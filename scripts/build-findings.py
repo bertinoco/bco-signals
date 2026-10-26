@@ -421,8 +421,8 @@ def render_page(post, assets, corpus, taxonomy):
   </script>
 
   <!-- Favicon -->
-  <link rel="icon" href="/images/circle-icon-b.png" type="image/png">
-  <link rel="apple-touch-icon" href="/images/circle-icon-b.png">
+  <link rel="icon" href="/images/mark-black.png" type="image/png">
+  <link rel="apple-touch-icon" href="/images/mark-black.png">
 
   <!-- OpenGraph -->
   <meta property="og:type" content="article">
