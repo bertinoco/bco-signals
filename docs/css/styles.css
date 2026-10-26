@@ -679,7 +679,7 @@ body {
    --primary inversion pair, which exists for exactly this. */
 .explore-toggle {
   display: inline-flex;
-  margin-top: var(--space-2);
+  flex-shrink: 0;
   border: 1px solid hsl(var(--border));
   border-radius: var(--radius);
   overflow: hidden;
@@ -718,16 +718,28 @@ body {
 }
 
 /* What the section contains, in one line, under its heading. In Explore
-   the data it sits under the toggle instead and swaps with it (see
-   activateView), so it reads as belonging to the option that's selected. */
+   the data it swaps with the toggle (see activateView). */
 .section-desc {
   margin-top: var(--space-1);
   font-size: var(--font-sm);
   color: hsl(var(--muted-foreground));
 }
 
-.explore-toggle + .section-desc {
-  margin-top: var(--space-2);
+/* Explore the data keeps the same heading-then-description stack as the
+   other sections, with the toggle at the right end of the description's
+   row, lined up with the grid's right edge. It wraps under the description
+   when the row runs out of room. */
+.explore-head-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  margin-top: var(--space-1);
+}
+
+.explore-head-row .section-desc {
+  margin-top: 0;
 }
 
 /* Same link treatment as .state-body a. */

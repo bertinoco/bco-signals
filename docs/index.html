@@ -30,7 +30,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=115">
+  <link rel="stylesheet" href="css/styles.css?v=116">
 
   <script type="application/ld+json">
   [
@@ -175,11 +175,13 @@
       <section class="home-section" id="explore" aria-labelledby="explore-heading">
         <div class="section-head">
           <h2 class="section-heading" id="explore-heading">Explore the data</h2>
-          <div class="explore-toggle" role="tablist" aria-label="Data view">
-            <button type="button" class="explore-toggle-btn active" id="tab-signals" role="tab" data-section="signals" data-desc="Emerging patterns and themes" aria-selected="true" aria-controls="signals">Signals</button>
-            <button type="button" class="explore-toggle-btn" id="tab-clusters" role="tab" data-section="clusters" data-desc="Core responsibilities and workload" aria-selected="false" aria-controls="clusters">Clusters</button>
+          <div class="explore-head-row">
+            <p class="section-desc" id="explore-desc">Emerging patterns and themes</p>
+            <div class="explore-toggle" role="tablist" aria-label="Data view">
+              <button type="button" class="explore-toggle-btn active" id="tab-signals" role="tab" data-section="signals" data-desc="Emerging patterns and themes" aria-selected="true" aria-controls="signals">Signals</button>
+              <button type="button" class="explore-toggle-btn" id="tab-clusters" role="tab" data-section="clusters" data-desc="Core responsibilities and workload" aria-selected="false" aria-controls="clusters">Clusters</button>
+            </div>
           </div>
-          <p class="section-desc" id="explore-desc">Emerging patterns and themes</p>
         </div>
 
         <div class="explore-panel active" id="signals" role="tabpanel" tabindex="-1" aria-labelledby="tab-signals">
