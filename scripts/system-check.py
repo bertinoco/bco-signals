@@ -212,7 +212,8 @@ def check_doc_drift():
     docs = ["CLAUDE.md", "findings/README.md"] + [
         f for f in tracked_files() if f.startswith(".claude/commands/") and f.endswith(".md")]
     for f in docs:
-        for name in sorted(set(re.findall(r"`\.([a-z][\w-]*)", read(f)))):
+        # (?![\w/-]) skips paths like `.claude/commands`, which aren't classes.
+        for name in sorted(set(re.findall(r"`\.([a-z][\w-]*)(?![\w/-])", read(f)))):
             if not re.search(rf"\.{re.escape(name)}(?![\w-])", css):
                 add("WARN", f"{f} mentions `.{name}`, which isn't in styles.css anymore")
 

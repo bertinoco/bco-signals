@@ -15,6 +15,10 @@ on:
       - 'docs/js/scripts.js'
       - 'scripts/build-home.py'
 
+# These checks only read the repository.
+permissions:
+  contents: read
+
 jobs:
   check-structure:
     runs-on: ubuntu-latest
