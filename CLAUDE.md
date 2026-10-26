@@ -237,6 +237,7 @@ Signal + implication. State what the data shows, then note what it means for the
 - Overpromising: don't imply the site offers career advice or preparation guidance it doesn't provide
 - Value judgments: don't rank roles or label responsibilities as basic or advanced
 - Projections: don't predict where the market is heading beyond what the data shows
+- The "not X, but Y" construction: setting up something nobody claimed, then knocking it down to land the real point. Two-sentence versions ("The postings that go furthest don't just ask for judgment. They decide where it sits.") and one-line ones ("assumed, not taught"; "the floor, not the ceiling") are the same move. It performs insight rather than stating it, reads as strategic theater, and is one of the most recognizable tells of machine-written prose. State the point directly. This applies to anything Claude drafts in Joe's voice too, including a findings post's "My take". The Findings tab exception frees what Joe writes, not this habit in Claude's drafts of it.
 
 **Reporting vs. editorializing**
 Card descriptions are the one place on most of the site we editorialize lightly — stating an implication based on evidence. A findings post's `<aside>`, rendered under the label "My take," is a full exception to the rules on this page, covered below. Everywhere else (cluster/signal assignments, JD entries, quotes, and a post's title, summary, and data section) stays neutral and reportorial.
