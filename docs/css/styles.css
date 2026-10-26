@@ -143,8 +143,8 @@
 }
 
 /* ── Fixed brand tokens ───────────────────────────────────── */
-/* The hero is a brand mark, not a themed surface — it stays black in both
-   color schemes (a custom hero image is coming later), so these live
+/* The hero and the top bar are brand surfaces, not themed ones — black in
+   both color schemes (the hero adds wave-static.png over it), so these live
    outside the dark-mode block on purpose rather than beside --background
    and --foreground above. 21:1 against each other. */
 :root {
@@ -305,9 +305,8 @@ body {
    off those two tokens, never --foreground/--background, so light/dark
    toggling can't touch it. The headline block centers in a band that, with
    the top bar above it, comes to 90vh rather than 100vh, so the pull-quote
-   band peeks in as a scroll hint.
-   PREVIEW: wave-static.png as a background image, on a branch for local
-   review only — solid --hero-bg stays as the base color underneath it. */
+   band peeks in as a scroll hint. wave-static.png sits over a solid
+   --hero-bg, which shows while it loads or if it fails to. */
 .site-header {
   background: hsl(var(--hero-bg)) url('../images/wave-static.png') center / cover no-repeat;
   padding: var(--space-6) 0 var(--space-8);

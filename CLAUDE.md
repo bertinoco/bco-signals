@@ -357,7 +357,7 @@ posting itself: `"New York, NY"`, `"Illinois"`, `"Toronto, ON"`. Use `null`
 when the range applies to the whole posting. A country-wide qualifier like
 "US locations" is not a scope.
 
-Recorded always; never displayed on the Roles tab. Location strings wrap and
+Recorded always; never displayed in the roles list. Location strings wrap and
 extend the card at narrow widths, so `scope` stays in `jobs.json` as data only.
 
 **`extras`** — what sits on top of the range: `"bonus + equity"`,
@@ -767,9 +767,10 @@ site is the Findings tab promotion process below.
 ### Findings tab promotion process
 
 Findings posts are a small, hand-curated subset of `findings.md`, published
-as pages under `/findings/` and listed on the Findings tab (see the Findings
-tab exception in Voice & copy decisions for what license the "My take"
-section carries). Each post is a Markdown file in `findings/`; the format is
+as pages under `/findings/` and listed in the home page's Read our findings
+section (see the Findings tab exception in Voice & copy decisions for what
+license the "My take" section carries). Each post is a Markdown file in
+`findings/`; the format is
 in `findings/README.md`. Promoting an entry is
 a separate step from writing it to `findings.md` in the first place — nothing
 moves to the public tab straight from a single JD. A finding has to have
