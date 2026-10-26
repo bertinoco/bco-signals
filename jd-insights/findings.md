@@ -803,9 +803,32 @@ context, they split three ways:
 The Spotify/Evinova split flagged above resolves this way: the qualification
 is the outlier, and every stated-responsibility instance names a review step
 on AI output. eDreams' "Define 'human-in-the-loop' workflows" is the closest
-excluded match to the first group. A `human-in-the-loop` signal scoped to the
-first group (seven holders) is proposed, pending confirmation; until it is
-confirmed, this entry stays here.
+excluded match to the first group. The `human-in-the-loop` signal ("Human review, by design") was created on
+2026-10-26 for the first group, with seven holders across six domains.
+Scoped by meaning rather than the literal phrase, so Glean's, Red Bull's,
+and Notion's "human review" count alongside the four postings that use
+"human-in-the-loop." It overlaps `ai-content-governance` and
+`eval-infrastructure` by design: it marks the named review step, not the
+standards or the eval suite around it. Resolved; kept here for the
+backcheck record.
+
+**End-user oversight of AI as a design responsibility — 2 instances, 1
+domain.** Split out of the human-in-the-loop backcheck above. UKG (SaaS):
+"Design for complex scenarios involving trust, compliance, and
+human-in-the-loop decision making," alongside its autonomy-spectrum framing
+("Define how agents operate across a spectrum of autonomy from suggesting,
+confirming to acting on the user's behalf"). Docebo (SaaS): "how to review,
+edit, regenerate, approve, reverse, or recover," from its "Design
+Trustworthy AI Moments" bullet. In both, the person reviewing the AI is the
+product's user, not someone on the content team, which is what separates
+this from `human-in-the-loop`. Excluded Fin's "Define the role of the human
+in the loop: where users guide, review, or override" is existence evidence
+of the same kind. Two instances clears Step 4's floor, but both are SaaS, so
+this is domain-clustered, and the autonomy-spectrum and control-UI entries
+below already track each half separately. No key proposed. *Trigger to
+revisit: a third included posting, from a domain outside SaaS, that makes
+the end user's review, approval, or override of AI actions a stated design
+responsibility.*
 
 **Regulatory or compliance framing bounding the content work — three
 instances.** Wise's Staff AI Content Designer, FinCrime states the role must

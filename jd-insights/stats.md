@@ -41,6 +41,7 @@ Every figure here is counted from `docs/data/jobs.json`. If you quote one in som
 | Accessibility as structural constraint | 8 | 9% |
 | GEO & SEO | 7 | 8% |
 | Structured data | 7 | 8% |
+| Human review, by design | 7 | 8% |
 | Classification for ML | 6 | 7% |
 | Content work under new titles | 5 | 6% |
 | Work outpaces the title | 3 | 3% |
@@ -65,6 +66,7 @@ USD entries only (45 of 53 stated ranges). Signals carried by at least 3 of them
 | Content work under new titles | 4 | $154,100 | $213,350 | +$26,950 |
 | Model behavior design | 15 | $153,000 | $209,000 | +$22,600 |
 | Enabler, not bottleneck | 14 | $146,650 | $203,000 | +$16,600 |
+| Human review, by design | 3 | $160,000 | $200,000 | +$13,600 |
 | Governance emphasized | 21 | $136,000 | $190,000 | +$3,600 |
 | Central standards function | 16 | $139,050 | $190,000 | +$3,600 |
 | AI fluency expected | 27 | $146,300 | $190,000 | +$3,600 |
