@@ -21,16 +21,16 @@ alone — that is Step 2 of the audit process and this file does not amend it. I
 a finding here seems to justify an assignment, the finding has drifted from its
 evidence.
 
-Figures below are as of **79 entries, 2026-10-16**. They move. Regenerate
+Figures below are as of **86 entries, 2026-10-26**. They move. Regenerate
 `stats.md` before quoting any of them.
 
 ---
 
 ## Content standards are being pulled into central functions
 
-**What the data shows.** The `central-standards-function` signal now has 22
-holders across 8 domains — Big Tech, Finance, Media, SaaS, Cybersecurity,
-Government, E-commerce, Retail — up from 8 holders in 7 companies when this
+**What the data shows.** The `central-standards-function` signal now has 26
+holders across 9 domains — Big Tech, Finance, Media, SaaS, Cybersecurity,
+Government, E-commerce, Retail, Consumer Goods — up from 8 holders in 7 companies when this
 finding was first written. They describe it in their own words rather than a
 shared vocabulary — Netflix's "centralized authority" over "a decentralized
 content design community", Ally's "sits above channels and formats",
@@ -55,9 +55,9 @@ and the other branch ends somewhere closer to platform engineering.
 
 ## The work has moved from producing content to producing systems
 
-**What the data shows.** Content systems design appears in 73 of 79 postings
+**What the data shows.** Content systems design appears in 79 of 86 postings
 (92%). Enablement — building templates, playbooks, and guidance so other people
-can write — appears in 63 (80%). Both are more common than any craft
+can write — appears in 69 (80%). Both are more common than any craft
 responsibility.
 
 Several postings say outright that writing is not the job. CoLab: "not by
@@ -74,13 +74,13 @@ people who are excellent at the mechanism.
 
 ## AI fluency is a baseline, not a differentiator
 
-**What the data shows.** 53 of 79 postings (67%) expect the candidate to
+**What the data shows.** 59 of 86 postings (69%) expect the candidate to
 already be working with AI tools — not curious about them. HelloFresh names the
 tools: "Active usage of AI as a core part of your daily workflow… building
 rapid interactive prototypes (using tools like Claude Code, Gemini, or Figma
 AI)." Wealthsimple asks for "shipping your own code changes" via AI.
 
-The 26 postings that omit it are not the ones you would guess. Whether a
+The 27 postings that omit it are not the ones you would guess. Whether a
 content role involves AI does not track whether the employer builds AI. Two
 excluded records are AI companies posting content roles with no AI in the work
 at all: Google's YouTube Staff UX Content Designer, rejected because the JD
@@ -110,7 +110,7 @@ describe building mechanisms or producing pages.
 
 ## Judgment and taste are what's asked for once AI does more of the drafting
 
-**What the data shows.** Nine included postings across five domains name
+**What the data shows.** Ten included postings across five domains name
 judgment or taste explicitly as the thing the human still provides, once AI
 is doing more of the execution — not as a soft-skill throwaway, but paired
 directly against AI-generated or AI-assisted output. CoLab (SaaS): "you'll
@@ -143,9 +143,14 @@ about where human judgment and real customer evidence still have to do the
 work." Sequence (Finance, a second instance in this domain alongside Sanna):
 "You already use AI to produce good work, you know how to fix weak output,
 and you can turn a process that worked once into one that works every
-time."
+time." Intuit (Finance, a third instance in this domain) states it in a
+company-level paragraph rather than the role's own responsibilities, which
+may recur across Intuit's design postings: "We look for designers who are
+excited to bring AI into their workflow — using it to move faster, explore
+further, and save their energy for the decisions that only human judgment
+and creativity can make."
 
-A tenth instance sits in an excluded record, cited here as existence
+An eleventh instance sits in an excluded record, cited here as existence
 evidence only, not corpus grounding: DeepMind's Senior Manager, UX Content
 Design (Gemini) — excluded on required criterion 3, management dominance —
 states "This role requires high taste, creativity, and the ability to
@@ -157,7 +162,10 @@ Checked and excluded from the count: Wealthsimple's one "judgment" hit is
 about AI screening job applicants during hiring ("These tools assist our
 team but don't replace human judgment — all final hiring decisions are made
 by people"), not about the content role's own work — a false positive for
-this pattern, not an instance of it.
+this pattern, not an instance of it. Deliveroo's two "human judgement" hits
+are likewise excluded: both describe when the AI system should hand off to
+a person ("seek human judgement"), a product behavior rather than what the
+content role itself provides.
 
 **What I think it means.** This is a sharper version of the AI-fluency
 finding above, not a restatement of it. That finding says AI use is now a
@@ -167,16 +175,16 @@ taste against AI output are drawing a line between what the tool produces
 and what a person is still accountable for deciding is good. Five domains
 with no repeated employer or shared industry (SaaS, Agency, Big Tech,
 Finance, Retail) is real spread, not one company's house style borrowed by
-a competitor — SaaS still accounts for four of the nine included instances
-(CoLab, Docebo, Fin, Soda). Finance is now the second domain to repeat,
-with Sanna and Sequence. Gap is the first Retail-domain instance.
+a competitor — SaaS still accounts for four of the ten included instances
+(CoLab, Docebo, Fin, Soda). Finance repeats three times, with Sanna,
+Sequence, and Intuit. Gap is the first Retail-domain instance.
 
 ## Nobody agrees what this work is worth
 
 **What the data shows.** Stated ranges run from **$65,000** (Insurify, Editor,
 AI Content Systems) to **$710,000** (Netflix, Staff Systems Designer,
-Language). Both have "Systems" in the title. 51 of 79 postings state a range —
-down from 22 of 29 (76%) when this was first written to 65% now, a real shift
+Language). Both have "Systems" in the title. 53 of 86 postings state a range —
+down from 22 of 29 (76%) when this was first written to 62% now, a real shift
 toward fewer postings disclosing comp, not just a bigger sample.
 
 **What I think it means.** An order of magnitude between two roles whose titles
@@ -212,17 +220,18 @@ design-system-compliant content patterns) carry more systems scope than a
 generic "Content Designer" title signals on its own. Separately,
 `jd-insights/patterns.md`'s "Roles defined by
 what they are not" device — a posting stating explicitly what its own role
-does *not* cover — is now at six instances (Adobe, Sanna, Wealthsimple,
-HelloFresh, Meta, UKG), up from the five recorded when that pattern note was
-last written, and has grown a second form: UKG states a matched "is / is not"
-pair rather than an exclusion sentence alone.
+does *not* cover — is now at eight instances (Adobe, Sanna, Wealthsimple,
+HelloFresh, Meta, UKG, Docebo, Fin's Brand Voice Lead, Systems), up from the
+five recorded when that pattern note was first written, and has grown a
+second form: UKG states a matched "is / is not" pair rather than an
+exclusion sentence alone.
 
 **What I think it means.** This is the same underlying claim as "Nobody
 agrees what this work is worth" above, from a different angle: that finding
 showed compensation ranges spanning an order of magnitude under nearly
 identical "Systems" titles; this one shows titles failing in both
 directions — overclaiming and underclaiming — at the same time, on the same
-small scale. Six employers have now judged their own titles insufficiently
+small scale. Eight employers have now judged their own titles insufficiently
 self-explanatory and appended a disclaimer, an unusual thing for a title to
 need. Read together, both findings point at the same mechanism rather than
 two separate ones: titles have stopped reliably carrying scope information,
@@ -230,7 +239,7 @@ and employers are compensating for it in the two places that show up in a
 posting — the number, and the paragraph right under the title.
 
 This is thinner evidence than the compensation finding — four included
-signal/pattern holders, one excluded existence-evidence instance, plus six
+signal/pattern holders, one excluded existence-evidence instance, plus eight
 disclaimer instances, no time dimension, and no claim here should be read as
 the problem worsening rather than simply being visible once enough postings
 are collected to notice it.
@@ -263,8 +272,14 @@ benchmark quality and ensure safe, consistent outputs" alongside its AI
 content pipeline work. Deepgram's Staff Product Designer, Conversational AI
 is a seventh: "Establish conversational-quality evals and a transcript
 review practice that turns production failures into a repeatable design
-loop" — a third SaaS-domain instance alongside Soda and Glean. Seven
-companies, five domains (Media, Big Tech, SaaS ×3, Agency, E-commerce) — the
+loop" — a third SaaS-domain instance alongside Soda and Glean. Intuit's
+Staff Conversation Designer, AI Design Technologist is an eighth, and the
+first in Finance: "Perform offline and online AI answer evaluations at scale
+with LLM-as-a-judge models and human-in-the-loop." Deliveroo's Staff
+Conversation Designer (Support) is a ninth, a second E-commerce instance
+alongside Etsy: "Create evaluation datasets, testing plans and scoring
+rubrics to test conversation flows and model behaviour." Nine companies, six
+domains (Media, Big Tech, SaaS ×3, Agency, E-commerce ×2, Finance) — the
 `eval-infrastructure` signal this finding grounds.
 
 Two structurally similar postings were checked and stay excluded, for
@@ -291,16 +306,16 @@ being validated is language. A hiring filter built around "does the
 candidate's background show content craft" will systematically undercount
 this work. Expect this signal to be thin for a while — it names a real
 pattern, not yet a common one, and future JDs should be left to fill it out
-rather than backfilling every past posting with a passing mention. Three more
+rather than backfilling every past posting with a passing mention. Five more
 instances have landed since this was first written — Etsy (E-commerce), Huge
-(Agency), and Deepgram (SaaS) — bringing this to seven companies across five
-domains, past the point where it reads as two adjacent sectors' shared house
+(Agency), Deepgram (SaaS), Intuit (Finance), and Deliveroo (E-commerce) —
+bringing this to nine companies across six domains, past the point where it reads as two adjacent sectors' shared house
 style, though still worth a fresh read before calling it a settled
 discipline-wide pattern rather than a signal still filling out.
 
 ## Taxonomy work is starting to get its own title, and its own org
 
-**What the data shows.** 28 entries carry the `taxonomy` cluster. In 26, it's
+**What the data shows.** 30 entries carry the `taxonomy` cluster. In 28, it's
 one responsibility folded into a broader content-design, architecture, or
 strategy title: Wellhub's "Senior Global UX Writer, Content Systems",
 LinkedIn's "Staff Content Architect", Ally's "Content Architect." Still only
@@ -362,8 +377,9 @@ within either one.
 
 ## Content roles are appearing outside design orgs
 
-**What the data shows.** 57 of 79 postings state where the role sits (up from
-23 of 29 when this was first written), and the placements still do not
+**What the data shows.** 69 of 86 postings state where the role sits (up from
+23 of 29 when this was first written; counted from the non-null
+`orgPlacement` fields in `jd-source/`), and the placements still do not
 cluster in design. HelloFresh files its Staff AI Content Designer under
 "Category: Software Engineering". Ally's Content Architect sits in "Career
 area: Marketing". Notion's is in Customer Experience; LinkedIn's in a
@@ -377,7 +393,7 @@ Insurify, The Ride Platform, Ally, Meta's AI Content Strategy Lead) originally
 named here. Note this signal isn't a perfect proxy for "sits in marketing":
 Insurify itself doesn't carry it (it's tagged `title-dilution` instead), so
 the two counts were never counting exactly the same thing. Worth a full
-re-read of org placement across the current 79 rather than treating 12 as a
+re-read of org placement across the current 86 rather than treating 12 as a
 direct update of "five."
 
 **What I think it means.** The discipline is being claimed by several
@@ -404,7 +420,7 @@ of 6 comparable postings claim any content-design lineage at all. Note: Fin
 has a second, later, *included* posting (Brand Voice Lead - Systems) that is
 not part of this lineage — the exclusion applies to the Staff AI Designer
 posting specifically, not to Fin as a company. This "2 of 6" count itself has
-not been re-checked against the current 79-entry corpus for new
+not been re-checked against the current 86-entry corpus for new
 conversation/model-design instances since this was written; treat it as
 dated pending that recheck.
 
@@ -754,6 +770,42 @@ and a count crossing a floor is not the same read as a second reader
 independently noticing a recurring pattern. *Trigger to revisit: a fourth
 instance, or a deliberate re-read of whether these three already clear the
 bar for a signal.*
+
+**Update, 2026-10-26: trigger met, backcheck run, key proposed.** A search
+of `jd-source/` for "human-in-the-loop" and "human review" finds the literal
+phrase in six included postings and two excluded ones, plus three more
+included postings that name "human review" as the same checkpoint. Read in
+context, they split three ways:
+
+- *A person reviews AI output inside the content workflow, as a stated
+  responsibility.* Evinova and Bank of America (above), plus Huge (Agency):
+  "Create AI content pipelines, including frameworks for governance, training
+  data readiness, and human-in-the-loop review." Intuit (Finance): "Perform
+  offline and online AI answer evaluations at scale with LLM-as-a-judge
+  models and human-in-the-loop." Glean (SaaS): "Design reusable AI workflows
+  that combine appropriate models, tools, product context, instructions, and
+  human review." Red Bull (Consumer Goods): "standards and guardrails for
+  AI-assisted authoring, including approved use cases, guidance, prompt
+  patterns, human review, source traceability, and quality controls."
+  Notion's CX Knowledge Architect (SaaS): "use AI to improve quality and
+  coverage (AI-assisted content QA, gap detection, and draft suggestions
+  with human review)." Seven postings,
+  six domains.
+- *The end user oversees the AI in the product.* UKG (SaaS): "Design for
+  complex scenarios involving trust, compliance, and human-in-the-loop
+  decision making." A different object from the group above, and closer to
+  the autonomy-spectrum entry and Docebo's control-UI entry further down
+  this section. Excluded Fin's "Define the role of the human in the loop:
+  where users guide, review, or override" is the same kind.
+- *A qualification, not a responsibility.* Spotify's "familiar with LLM or
+  AI-driven annotation workflows and human-in-the-loop systems."
+
+The Spotify/Evinova split flagged above resolves this way: the qualification
+is the outlier, and every stated-responsibility instance names a review step
+on AI output. eDreams' "Define 'human-in-the-loop' workflows" is the closest
+excluded match to the first group. A `human-in-the-loop` signal scoped to the
+first group (seven holders) is proposed, pending confirmation; until it is
+confirmed, this entry stays here.
 
 **Regulatory or compliance framing bounding the content work — three
 instances.** Wise's Staff AI Content Designer, FinCrime states the role must
@@ -1551,7 +1603,7 @@ positioning. The dataset is filtered *toward* forward-leaning roles by
 construction. It shows what ambitious employers are asking for. It says nothing
 about the median content design job.
 
-**n = 79, over about 21 weeks (2026-05-24 to 2026-10-15).** Enough to notice a
+**n = 86, over about 22 weeks (2026-05-24 to 2026-10-26).** Enough to notice a
 pattern across companies. Not enough for a trend over time, and the entries
 are unevenly distributed — 15 landed in May (nine of them on a single day),
 25 in August alone.
