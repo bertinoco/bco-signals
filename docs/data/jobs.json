@@ -3,7 +3,7 @@
     "title": "BCO Content Skills Tracker",
     "description": "A curated skills tracker for the content design community.",
     "lastUpdated": "2026-10-26",
-    "totalEntries": 85
+    "totalEntries": 86
   },
   "entries": [
     {
@@ -2511,6 +2511,30 @@
       "sourceUrl": null,
       "dateAdded": "2026-10-26",
       "quote": "Create evaluation datasets, testing plans and scoring rubrics to test conversation flows and model behaviour."
+    },
+    {
+      "id": "wpp-enterprise-solutions-senior-content-designer-uk",
+      "company": "WPP Enterprise Solutions",
+      "title": "Senior Content Designer UK",
+      "domain": "Agency",
+      "engagement": "Permanent",
+      "location": "London, United Kingdom",
+      "remote": null,
+      "coreFrame": "Owns end-to-end content design for flagship launches and multi-step customer journeys on a client's website. Partners early with product and UX in the concept phase to shape product intent and information hierarchy. Designs and structures multi-step content architecture, taxonomy, and navigation paths. Defines and documents reusable content components, patterns, and copy standards within the design system. Establishes content governance models, review processes, and quality frameworks. Uses quantitative and qualitative data to inform and test content decisions. Ensures accessibility compliance (WCAG, plain language, assistive technology) across all flows and launch content.",
+      "clusters": [
+        "content-systems-design",
+        "taxonomy",
+        "enablement"
+      ],
+      "signals": [
+        "accessibility-as-constraint",
+        "governance-as-value-prop",
+        "ai-native-expectation"
+      ],
+      "compRange": null,
+      "sourceUrl": null,
+      "dateAdded": "2026-10-26",
+      "quote": "Define and document reusable content components, patterns, and copy standards within our design system to ensure long-term consistency across digital products."
     }
   ],
   "clusters": {
