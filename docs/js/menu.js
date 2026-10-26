@@ -11,7 +11,7 @@
   // Everything outside the drawer. Both attributes, same reasoning as the
   // flip-card overlay in scripts.js: aria-hidden alone leaves focusable
   // descendants reachable by Tab.
-  const BACKGROUND_SELECTOR = '.site-header, .post-header, .hero-quote, main, .site-footer';
+  const BACKGROUND_SELECTOR = '.site-bar, .site-header, .hero-quote, main, .site-footer';
   let lastFocused = null;
 
   function reducedMotion() {

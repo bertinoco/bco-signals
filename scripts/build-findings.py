@@ -366,9 +366,9 @@ def archive_url(source_id):
 def site_assets():
     """Everything the post pages share with the home page, read out of
     docs/index.html so it's the one source: the styles.css and menu.js
-    cache-bust versions, and the menu button and drawer markup itself. A
-    change to the menu in index.html shows up here on the next build, and
-    --check fails until it does."""
+    cache-bust versions, and the top bar and drawer markup itself. A change
+    to either in index.html shows up here on the next build, and --check
+    fails until it does."""
     with open(INDEX_HTML, encoding="utf-8") as fh:
         text = fh.read()
 
@@ -387,7 +387,7 @@ def site_assets():
     return {
         "css": version("css/styles.css"),
         "menu": version("js/menu.js"),
-        "toggle": block('<button type="button" class="menu-toggle"', "</button>", "menu button"),
+        "bar": block('<header class="site-bar">', "</header>", "top bar"),
         "drawer": block('<div class="site-menu-backdrop"', "</nav>", "site menu"),
     }
 
@@ -472,17 +472,7 @@ def render_page(post, assets, corpus, taxonomy):
 
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <header class="post-header">
-    <div class="container">
-      <a class="hero-wordmark" href="/">
-        <picture>
-          <source srcset="/images/wordmark-black.svg" media="(prefers-color-scheme: light)">
-          <img class="hero-mark" src="/images/wordmark-white.svg" alt="Signals" width="104" height="16">
-        </picture>
-      </a>
-{indent(assets['toggle'], 6)}
-    </div>
-  </header>
+{indent(assets['bar'], 2)}
 
   <div class="container">
     <main id="main">

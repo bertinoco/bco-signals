@@ -84,6 +84,9 @@
 
   /* Layout */
   --max-width: 960px;
+  /* The sticky top bar's height, border excluded. Section anchors offset
+     by it (scroll-margin-top) so a jump doesn't land under the bar. */
+  --bar-height: 56px;
 }
 
 /* ── Semantic tokens: light ───────────────────────────────── */
@@ -190,12 +193,109 @@ body {
   .container { padding: 0; }
 }
 
-/* ── Header ───────────────────────────────────────────────── */
+/* ── Top bar ──────────────────────────────────────────────── */
+/* The site's navigation, pinned to the top of every page — home and
+   findings posts alike, so moving between them never feels like a
+   different site. Themed like the page, not the hero: the wordmark and
+   icons swap black/white by <picture>, the same way they do in the drawer.
+   At phone width the four links don't fit beside the wordmark, so they give
+   way to the hamburger and the drawer (see .site-menu). */
+.site-bar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: hsl(var(--background));
+  border-bottom: 1px solid hsl(var(--border));
+  text-align: left;
+}
+
+.site-bar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  height: var(--bar-height);
+}
+
+.site-bar-wordmark {
+  display: inline-block;
+}
+
+.site-bar-wordmark img {
+  display: block;
+  height: 16px;
+  width: auto;
+}
+
+.site-bar-nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+/* Icon and label together are the link; padding takes the hit area past
+   the 24px floor without changing how it looks. */
+.site-bar-nav a {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: 4px 0;
+  font-size: var(--font-sm);
+  font-weight: var(--weight-medium);
+  color: hsl(var(--secondary-foreground));
+  text-decoration: none;
+  transition: color var(--duration-fast) ease;
+}
+
+.site-bar-nav a:hover {
+  color: hsl(var(--foreground));
+}
+
+.site-bar-wordmark:focus-visible,
+.site-bar-nav a:focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
+}
+
+.site-bar-nav picture {
+  display: block;
+}
+
+/* The PNGs are solid black or white; dimmed at rest to sit at the same
+   weight as the --secondary-foreground label beside them, full strength on
+   hover along with the label. */
+.site-bar-icon {
+  display: block;
+  width: 16px;
+  height: 16px;
+  opacity: 0.65;
+  transition: opacity var(--duration-fast) ease;
+}
+
+.site-bar-nav a:hover .site-bar-icon {
+  opacity: 1;
+}
+
+.site-bar .menu-toggle {
+  display: none;
+}
+
+@media (max-width: 599px) {
+  .site-bar-nav {
+    display: none;
+  }
+
+  .site-bar .menu-toggle {
+    display: flex;
+  }
+}
+
+/* ── Hero ─────────────────────────────────────────────────── */
 /* Fixed black band — see --hero-bg/--hero-fg above. Every color here reads
    off those two tokens, never --foreground/--background, so light/dark
-   toggling can't touch it. Near-full-screen height: the top row pins near
-   the top, the headline block centers in whatever space is left below it.
-   90vh rather than 100vh so the pull-quote band peeks in as a scroll hint.
+   toggling can't touch it. The headline block centers in a band that, with
+   the top bar above it, comes to 90vh rather than 100vh, so the pull-quote
+   band peeks in as a scroll hint.
    PREVIEW: wave-static.png as a background image, on a branch for local
    review only — solid --hero-bg stays as the base color underneath it. */
 .site-header {
@@ -207,15 +307,7 @@ body {
 .hero-container {
   display: flex;
   flex-direction: column;
-  min-height: 90vh;
-}
-
-.hero-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--space-2);
-  text-align: left;
+  min-height: calc(90vh - var(--bar-height));
 }
 
 .hero-main {
@@ -225,29 +317,6 @@ body {
   justify-content: center;
   align-items: flex-start;
   text-align: left;
-}
-
-/* Links home (the site's own root). Just the wordmark SVG now — no separate
-   text node, so alt="Signals" on the image itself carries the link's
-   accessible name. */
-.hero-wordmark {
-  display: block;
-}
-
-.hero-wordmark:focus-visible {
-  outline: 2px solid hsl(var(--hero-fg));
-  outline-offset: 2px;
-}
-
-/* wordmark-white.svg is already white-fill, so no filter is needed against
-   this fixed black band — same reasoning the old circle-icon-w.png had.
-   The favicon/apple-touch-icon keep the separate black variant
-   (circle-icon-b.png): apple-touch-icon gets composited onto an opaque tile
-   that iOS fills white behind transparent pixels, so a white mark there
-   would vanish. */
-.hero-mark {
-  height: 16px;
-  width: auto;
 }
 
 /* Both CTAs sit under the body copy now: "Explore the data" as the primary
@@ -368,9 +437,8 @@ body {
 }
 
 /* ── Site menu ────────────────────────────────────────────── */
-/* The hamburger and its off-canvas drawer are the site's only navigation,
-   on every page (see menu.js). The drawer is themed like the page; the
-   button inherits whichever header it sits in. */
+/* The hamburger and its off-canvas drawer: navigation at phone width,
+   where the top bar's links don't fit (see .site-bar and menu.js). */
 .menu-toggle {
   display: flex;
   align-items: center;
@@ -393,21 +461,6 @@ body {
 .menu-toggle:focus-visible {
   outline: 2px solid hsl(var(--ring));
   outline-offset: 2px;
-}
-
-/* On the home page's fixed-black hero: the same --hero-fg exception
-   .hero-cta makes, since --ring and --muted are theme-adaptive and vanish
-   against the band in light mode. */
-.site-header .menu-toggle {
-  color: hsl(var(--hero-fg));
-}
-
-.site-header .menu-toggle:hover {
-  background: hsl(var(--hero-fg) / 0.1);
-}
-
-.site-header .menu-toggle:focus-visible {
-  outline-color: hsl(var(--hero-fg));
 }
 
 /* Above the flip-card overlay's 1000-1002, so the menu always wins. */
@@ -583,6 +636,18 @@ body {
 .home-section + .home-section {
   padding-top: var(--space-8);
   border-top: 1px solid hsl(var(--border));
+}
+
+/* Anchor jumps (/#findings, the hero CTA) land just under the sticky bar.
+   For the second and third sections that puts their divider exactly on the
+   bar's own bottom border, so the two read as one line. The first section
+   has no divider, so it gets #main's top padding back as breathing room. */
+.home-section {
+  scroll-margin-top: var(--bar-height);
+}
+
+.home-section:first-child {
+  scroll-margin-top: calc(var(--bar-height) + var(--space-6));
 }
 
 /* The last section's bottom room is the gap before the footer's own rule. */
@@ -1053,31 +1118,8 @@ body {
 }
 
 /* ── Findings post pages ──────────────────────────────────── */
-/* Generated by scripts/build-findings.py into docs/findings/<slug>/. These
-   pages have no hero image to justify a fixed-black band the way the home
-   page does, so the header sits on the page's own themed background
-   instead -- a hairline rule is the only separation, so arriving from the
-   home page's Findings tab doesn't read as landing on a different site. */
-.post-header {
-  padding: var(--space-3) 0;
-  border-bottom: 1px solid hsl(var(--border));
-  text-align: left;
-}
-
-/* Wordmark left, menu button right — the same row the home page's
-   .hero-top lays out. */
-.post-header .container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-/* .hero-wordmark is display: block for the home page's flex row; kept
-   inline-block here so the link and its focus ring hug the mark. */
-.post-header .hero-wordmark {
-  display: inline-block;
-}
-
+/* Generated by scripts/build-findings.py into docs/findings/<slug>/, under
+   the same .site-bar the home page has. */
 .post {
   max-width: 640px;
   padding: var(--space-6) 0 var(--space-8);
@@ -1851,6 +1893,8 @@ body {
   }
 
   .footer-brand a,
+  .site-bar-nav a,
+  .site-bar-icon,
   .menu-toggle,
   .site-menu,
   .site-menu-backdrop,

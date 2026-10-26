@@ -771,8 +771,8 @@ and the section shows without waiting on JavaScript. It shows 8 posts, then
 "Read more" (`FINDINGS_LIMIT` in the build script). `docs/findings/index.html`
 is now only a redirect to `/#findings`, kept so old links still land. The build also reads three things out of
 `docs/index.html` and embeds them in each post page: the `styles.css?v=`
-and `menu.js?v=` numbers, and the site menu's markup itself (the button and
-the drawer). `index.html` is the only copy of the menu — edit it there, then
+and `menu.js?v=` numbers, and the navigation markup itself (the sticky top
+bar and the drawer). `index.html` is the only copy of both — edit it there, then
 rerun the build. Rerun it whenever either version is bumped or the menu
 changes. CI runs `--check` and fails if anything is out of date.
 
