@@ -39,10 +39,10 @@ A narrower set writes the human review step into the job itself:
 
 AI fluency used to be the thing that got you noticed. Now it's the floor. Postings list it next to Figma, and nobody gets hired for knowing Figma.
 
-What's left is the part that was always the job: deciding what's good. Gap's line is the one I keep coming back to. When a tool can write plausible copy all day, knowing what's worth saying is the skill.
+What's left is the part that was always the job — deciding what's good. Gap's line keeps pulling me back. When a tool can write copy all day, knowing what's worth saying is the skill.
 
 The postings that go furthest don't just ask for judgment. They decide where it sits in the workflow. That's content design applied to its own process, and it's where I'd point anyone trying to grow into systems work.
 
-If you're putting a portfolio together, show the moments you overruled the model, and why.
+The real work now lives in the moments you overrule the model, and in knowing why.
 
 </aside>
