@@ -46,7 +46,10 @@ LLMS = os.path.join(DOCS, "llms.txt")
 SITE = "https://signals.bertino.co"
 OG_IMAGE = SITE + "/images/og-image.png"
 JOBS_JSON = os.path.join(DOCS, "data", "jobs.json")
-REQUIRED_FIELDS = ("title", "date", "signals")
+REQUIRED_FIELDS = ("title", "date", "summary", "signals")
+# The summary is what search results, link previews, and llms.txt show for
+# a post. One sentence, written for someone who hasn't read it.
+SUMMARY_MAX = 200
 OPTIONAL_FIELDS = ("updated", "draft")
 
 # Posts shown in the home page's Read our findings section before "Read
@@ -93,6 +96,9 @@ def parse_post(path):
                 date.fromisoformat(meta[field])
             except ValueError:
                 raise BuildError(f"{name}: {field} must be YYYY-MM-DD, got {meta[field]!r}")
+    if len(meta["summary"]) > SUMMARY_MAX:
+        raise BuildError(f"{name}: summary is {len(meta['summary'])} characters; keep it to one "
+                         f"sentence under {SUMMARY_MAX}, since previews truncate past that")
 
     # The <aside> is the "My take" section. Exactly one, and last, so the
     # data a post reports and the opinion it offers never interleave.
@@ -117,7 +123,7 @@ def parse_post(path):
         "title": smart_quotes(meta["title"]),
         "date": meta["date"],
         "updated": meta.get("updated", meta["date"]),
-        "summary": derive_summary(data_md, name),
+        "summary": smart_quotes(meta["summary"]),
         "signals": [s.strip() for s in meta["signals"].split(",") if s.strip()],
         "draft": meta.get("draft", "false").lower() == "true",
         "data_md": data_md,
@@ -170,37 +176,6 @@ def smart_quotes(text):
     text = text.replace('"', "”")
     text = re.sub(r"(^|[\s(\[—])'", "\\1‘", text)
     return text.replace("'", "’")
-
-
-def derive_summary(data_md, where):
-    """The one-line summary shown on the Findings tab, the findings index,
-    and in meta/OG/JSON-LD description tags -- the post's own opening
-    sentences, not a separately hand-written field. Finds the first true
-    paragraph (skipping any leading heading), takes its first two sentences,
-    then a hard length backstop in case that's still too long."""
-    lines = data_md.splitlines()
-    i = 0
-    while i < len(lines) and (not lines[i].strip() or lines[i].startswith(("## ", "### ", "- ", ">", "@video "))):
-        i += 1
-    para = []
-    while i < len(lines) and lines[i].strip() and not lines[i].startswith(("## ", "### ", "- ", ">", "@video ")):
-        para.append(lines[i].strip())
-        i += 1
-    if not para:
-        raise BuildError(f"{where}: no opening paragraph found to derive a summary from "
-                          "(the data section can't open with a heading, list, or blockquote)")
-
-    plain = " ".join(para)
-    plain = re.sub(r"\*\*(.+?)\*\*", r"\1", plain)
-    plain = re.sub(r"(?<!\w)\*(?=\S)(.+?)(?<=\S)\*(?!\w)", r"\1", plain)
-    plain = re.sub(r"\[([^\]]+)\]\([^)\s]+\)", r"\1", plain)
-    plain = smart_quotes(plain)
-
-    sentences = re.split(r"(?<=[.!?])\s+", plain)
-    summary = " ".join(sentences[:2]).strip()
-    if len(summary) > 200:
-        summary = summary[:197].rsplit(" ", 1)[0].rstrip(",;:—") + "…"
-    return summary
 
 
 def render_inline_segment(text, where):
@@ -556,13 +531,29 @@ def render_home_findings(posts):
               <button type="button" class="show-more-btn">Read more</button>
             </div>
             """)
+    # The same list as structured data, so a crawler reading the home page's
+    # JSON-LD knows it links to these articles, not just that links exist.
+    ld = {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "Findings",
+        "itemListElement": [
+            {"@type": "ListItem", "position": i + 1, "url": post_url(p), "name": p["title"]}
+            for i, p in enumerate(posts)
+        ],
+    }
+    ld_json = json.dumps(ld, indent=2, ensure_ascii=False).replace("</", "<\\/")
+    block += f'<script type="application/ld+json">\n{ld_json}\n</script>\n'
     return textwrap.indent(block, pad)
 
 
 def render_findings_redirect():
     """/findings/ listed every post until the home page took the list over.
     It stays as a redirect so links and bookmarks to it still land on the
-    list; noindex and the canonical point search engines at the home page."""
+    list. GitHub Pages can't send a real 301, so an immediate meta refresh
+    plus a canonical to the home page is the closest equivalent, and search
+    engines treat it as one. No noindex: alongside the canonical it would
+    send mixed signals about which page to keep."""
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -570,7 +561,6 @@ def render_findings_redirect():
        Regenerate with: python3 scripts/build-findings.py -->
   <meta charset="UTF-8">
   <title>Findings — Signals</title>
-  <meta name="robots" content="noindex, follow">
   <link rel="canonical" href="{SITE}/">
   <meta http-equiv="refresh" content="0; url=/#findings">
 </head>
@@ -612,6 +602,8 @@ def render_llms(current, posts):
         "Written posts drawn from the dataset. Each separates what the postings say from a "
         "section labeled \"My take,\" which is Joe Bertino's personal view and not a claim "
         "the dataset backs.",
+        "",
+        f"The same list as JSON: {SITE}/data/findings.json",
         "",
     ]
     lines += [f"- [{p['title']}]({post_url(p)}) ({p['date']}): {p['summary']}" for p in posts]

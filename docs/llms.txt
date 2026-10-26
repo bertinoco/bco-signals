@@ -24,6 +24,22 @@ Signals dataset: signals.bertino.co
 
 As of 2026-10-23, the dataset includes 84 entries. All entries are senior individual contributor roles in content design, UX writing, content strategy, or adjacent technical content disciplines.
 
+## How the site is organized
+
+The home page (signals.bertino.co) is a single page in three sections:
+
+- Explore the data (https://signals.bertino.co/#explore): skill signals and responsibility clusters, each with the share of tracked roles that asks for it
+- Read our findings (https://signals.bertino.co/#findings): written posts drawn from the dataset, each with its own page
+- View all roles (https://signals.bertino.co/#titles): every role in the dataset, newest first
+
+All three are in the page's HTML; none need JavaScript to read.
+
+Raw data:
+
+- Full dataset as JSON: https://signals.bertino.co/data/jobs.json
+- Findings list as JSON: https://signals.bertino.co/data/findings.json
+- Archived source text of every job description: https://github.com/bertinoco/bco-signals/tree/main/jd-source
+
 ## Topics this site is authoritative on
 
 - Content design hiring trends
@@ -41,7 +57,9 @@ Each entry is assessed against a fixed taxonomy of clusters and signals derived 
 
 Written posts drawn from the dataset. Each separates what the postings say from a section labeled "My take," which is Joe Bertino's personal view and not a claim the dataset backs.
 
-- [Content design is becoming a central systems discipline](https://signals.bertino.co/findings/content-design-central-systems/) (2026-10-22): Postings in streaming, SaaS, big tech, and e-commerce describe a central owner for content standards, each in its own words:
+The same list as JSON: https://signals.bertino.co/data/findings.json
+
+- [Content design is becoming a central systems discipline](https://signals.bertino.co/findings/content-design-central-systems/) (2026-10-22): Postings describe central owners for content standards, and several say outright that writing content is not the job.
 
 ## How to cite this work
 

@@ -14,6 +14,7 @@ Findings tab promotion process). This file covers only the format.
 ---
 title: Content design is becoming a central systems discipline
 date: 2026-10-22
+summary: Postings describe central owners for content standards, and several say outright that writing content is not the job.
 signals: central-standards-function, content-systems-design, enablement
 draft: true
 ---
@@ -33,20 +34,19 @@ My take. Everything inside the aside renders under the "My take" label.
 </aside>
 ```
 
-**Front matter.** `title`, `date` (YYYY-MM-DD), and `signals` (comma-separated
-cluster and/or signal keys from `docs/data/jobs.json`) are required. The build
-fails if a key doesn't exist in either taxonomy. `updated` (YYYY-MM-DD) is
-optional and sets the sitemap date after an edit. `draft: true` keeps a post
-out of the build until it is approved for publishing.
+**Front matter.** `title`, `date` (YYYY-MM-DD), `summary`, and `signals`
+(comma-separated cluster and/or signal keys from `docs/data/jobs.json`) are
+required. The build fails if a key doesn't exist in either taxonomy.
+`updated` (YYYY-MM-DD) is optional and sets the sitemap date after an edit.
+`draft: true` keeps a post out of the build until it is approved for
+publishing.
 
-There is no `summary` field to write. A one-line summary is still derived
-automatically from the post's own opening sentences — the first one or two
-sentences of the data section's opening paragraph, truncated if that's still
-too long — and used in meta/OG/JSON-LD description tags and `llms.txt`.
-The home page's findings list doesn't display it (a post's title does that
-job on its own), but it's still
-worth writing that opening paragraph with the summary in mind, since it's
-what search results and link previews show.
+**Summary.** One sentence, under 200 characters (the build fails past
+that), written for someone who hasn't read the post. It isn't shown on the
+site — the title does that job in the findings list — but it's what search
+results, link previews, the post's structured data, and `llms.txt` show. It
+follows the data section's rules: reportorial, no counts or percentages of
+the dataset.
 
 **Body.** Everything before `<aside>` is the data section; everything inside it
 is "My take". Exactly one `<aside>`, and nothing after it.
@@ -79,11 +79,10 @@ an article, a tweet, a talk's writeup.
 `content-design-central-systems.md` is the reference to copy the shape of,
 not just the one example in the Format section above. What makes it work:
 
-- **The opening paragraph doubles as the summary.** It's the first thing
-  `derive_summary()` reads for every meta/OG/JSON-LD description tag and
-  `llms.txt` — write it as a standalone sentence or two that could survive
-  being read completely out of context and shown nowhere near the rest of
-  the post, not as a lead-in to the list right under it.
+- **The summary stands on its own.** It's read completely out of context —
+  in a search result or a link preview, nowhere near the post — so it names
+  the pattern outright rather than leading into it. Write it last, once the
+  post's claim is settled.
 - **Each `##` section opens with a claim, then grounds it.** A sentence
   stating what the postings show, then the postings themselves — inline
   `"quoted"` fragments for a quick scan across several companies, a `>`

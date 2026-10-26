@@ -84,8 +84,9 @@
 
   /* Layout */
   --max-width: 960px;
-  /* The sticky top bar's height, border excluded. Section anchors offset
-     by it (scroll-margin-top) so a jump doesn't land under the bar. */
+  /* The sticky top bar's height, border excluded. html's
+     scroll-padding-top uses it so nothing scrolled into view lands under
+     the bar. */
   --bar-height: 56px;
 }
 
@@ -161,11 +162,15 @@
 }
 
 /* ── Base ─────────────────────────────────────────────────── */
-/* Applies to every in-page jump: the hero CTA and menu links (#signals,
-   #titles) and the skip-link (#main). Turned off under
-   prefers-reduced-motion, below. */
+/* Smooth scrolling applies to every in-page jump: the hero CTA, the bar
+   and drawer links (#explore, #findings, #titles), and the skip link
+   (#main). Turned off under prefers-reduced-motion, below.
+   scroll-padding-top keeps anything scrolled into view clear of the sticky
+   top bar — anchor jumps, the skip link, and elements keyboard focus
+   scrolls to (WCAG 2.4.11, Focus Not Obscured). */
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: var(--bar-height);
 }
 
 body {
@@ -643,16 +648,13 @@ body {
   border-top: 1px solid hsl(var(--border));
 }
 
-/* Anchor jumps (/#findings, the hero CTA) land just under the sticky bar.
+/* Anchor jumps land just under the sticky bar (html's scroll-padding-top).
    For the second and third sections that puts their divider exactly on the
    bar's own bottom border, so the two read as one line. The first section
-   has no divider, so it gets #main's top padding back as breathing room. */
-.home-section {
-  scroll-margin-top: var(--bar-height);
-}
-
+   has no divider, so it gets #main's top padding back as breathing room —
+   this adds to the scroll-padding rather than replacing it. */
 .home-section:first-child {
-  scroll-margin-top: calc(var(--bar-height) + var(--space-6));
+  scroll-margin-top: var(--space-6);
 }
 
 /* The last section's bottom room is the gap before the footer's own rule. */
@@ -1910,6 +1912,11 @@ body {
   }
 
   .footer-brand a,
+  .hero-cta,
+  .hero-data-cta,
+  .post-byline-text a,
+  .flip-card-close,
+  .state-body a,
   .site-bar-nav a,
   .site-bar-icon,
   .menu-toggle,

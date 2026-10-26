@@ -5,6 +5,9 @@ const SIGNAL_THRESHOLD = 2;
 // jobs alike. 6 fills the card grid evenly at every width (3+3, 2+2+2, 1x6)
 // and keeps the scroll short. Findings says "Read more"; its cap is
 // FINDINGS_LIMIT in build-findings.py and should match this.
+// build-home.py reads SECTION_LIMIT, SIGNAL_THRESHOLD, and
+// NEW_KEY_WINDOW_DAYS straight out of this file to pre-render the same
+// sections into index.html — keep them as plain `const NAME = number;`.
 const SECTION_LIMIT = 6;
 // How long a cluster/signal shows a "New" chip after its earliest carrying
 // entry landed — self-expiring, so nothing has to remember to remove it.
@@ -177,10 +180,10 @@ function renderMeta(data) {
 
 }
 
-// The Skills tab shows a signal only once SIGNAL_THRESHOLD postings ask for it —
-// one posting is an anecdote. Nav counts and the per-role chips read the same
-// filter from here, so a signal can never appear on a role without also being
-// findable in Skills.
+// The Signals view shows a signal only once SIGNAL_THRESHOLD postings ask for
+// it — one posting is an anecdote. The per-role chips read the same filter
+// from here, so a signal can never appear on a role without also being
+// findable in Signals. build-home.py reads SIGNAL_THRESHOLD from this file.
 function signalEntryCounts(data) {
   const counts = new Map(Object.keys(data.signals).map(k => [k, 0]));
   data.entries.forEach(entry => {
@@ -389,7 +392,7 @@ function renderTitles(data) {
         + qualifiers.map(q => ` · ${q}`).join('')
         + `</span>`
       : '';
-    // Chips are filtered to the signals the Skills tab shows, so a reader can
+    // Chips are filtered to the signals the Signals view shows, so a reader can
     // always follow one from a role to its definition. Insurify's "Title
     // dilution" and Meta's "Hybrid role" sit below the threshold and are held
     // back here; both remain assigned in jobs.json.
@@ -534,6 +537,9 @@ function activateView(key) {
     const active = tab.dataset.section === key;
     tab.classList.toggle('active', active);
     tab.setAttribute('aria-selected', String(active));
+    // Standard tablist focus: Tab reaches the selected option only, and the
+    // arrow keys move between the two.
+    tab.tabIndex = active ? 0 : -1;
     if (active) exploreDesc.textContent = tab.dataset.desc;
   });
 }
@@ -991,7 +997,10 @@ if (signalsShowMoreEl) {
 
 // ── Init ────────────────────────────────────────────────────
 async function init({ fromRetry = false } = {}) {
-  renderLoading();
+  // On first load the sections are already in the page, written by
+  // build-home.py, so a loading state would only flash over them. A retry
+  // follows an error state, where it's the honest thing to show.
+  if (fromRetry) renderLoading();
 
   const result = await loadData();
 

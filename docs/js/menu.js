@@ -57,8 +57,16 @@
       menu.hidden = true;
       backdrop.hidden = true;
     };
+    // Only the drawer's own slide counts. Transitions on the links inside
+    // it bubble up here too, and one of those (a hover fading out as the
+    // pointer leaves) would otherwise hide the drawer mid-slide.
+    const onSlideEnd = (e) => {
+      if (e.target !== menu || e.propertyName !== 'transform') return;
+      menu.removeEventListener('transitionend', onSlideEnd);
+      finish();
+    };
     if (reducedMotion()) finish();
-    else menu.addEventListener('transitionend', finish, { once: true });
+    else menu.addEventListener('transitionend', onSlideEnd);
 
     if (restoreFocus && lastFocused && typeof lastFocused.focus === 'function') lastFocused.focus();
   }
@@ -82,5 +90,18 @@
   // section, so the next Tab lands there anyway.
   menu.addEventListener('click', (e) => {
     if (e.target.closest('a')) closeMenu({ restoreFocus: false });
+  });
+
+  // The drawer only exists for phone width (the top bar shows the same
+  // links above it — see .site-bar in styles.css). Widening past that with
+  // it open would leave it over a page that no longer needs it, and hide
+  // the hamburger focus would return to, so close it and hand focus to the
+  // bar's links instead.
+  const phoneWidth = window.matchMedia('(max-width: 599px)');
+  phoneWidth.addEventListener('change', (e) => {
+    if (e.matches || menu.hidden) return;
+    closeMenu({ restoreFocus: false });
+    const firstLink = document.querySelector('.site-bar-nav a');
+    if (firstLink) firstLink.focus();
   });
 })();

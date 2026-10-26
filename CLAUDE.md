@@ -146,7 +146,7 @@ Commerce` rendered. A separator matching neither rule is the user's call, not
 something to settle by widening the rule.
 
 **Step 6 — Archive the source text and update metadata after writing**
-After writing the entry to `jobs.json`, always complete all seven of the
+After writing the entry to `jobs.json`, always complete all eight of the
 following in the same pass:
 - write the raw JD text to `jd-source/{id}.md`, following the file format in `jd-source/README.md`
 - `meta.totalEntries` in `jobs.json`
@@ -155,8 +155,9 @@ following in the same pass:
 - the entry count and date in the "What this dataset tracks" section of `docs/llms.txt`
 - the citation date in the "How to cite this work" section of `docs/llms.txt`
 - run `python3 jd-insights/refresh.py`, which regenerates `jd-insights/stats.md` and `jd-insights/quotes.md`
+- run `python3 scripts/build-home.py`, which rewrites the home page's cards, roles list, role count, and "Last updated" dates in `docs/index.html` from `jobs.json` — so the dataset is in the page for crawlers that don't run JavaScript. Run it after `meta.lastUpdated` is set, since it reads it.
 
-All seven must stay in sync. Never write an entry without completing this step.
+All eight must stay in sync. Never write an entry without completing this step.
 The same applies when an entry is removed, not only when one is added.
 
 Then check, but only update if the entry warrants it:
@@ -507,9 +508,20 @@ grids and lists exist, so never load it on a findings page or put anything
 there the findings pages need.
 
 `index.html` carries no version string of its own, so a change to it is not
-gated behind a bump the way the assets are. Some state copy exists twice — as
-static markup in `index.html` and as a string in the `COPY` object in
-`scripts.js`. Changing one is a reason to check the other, in both directions. A missed bump on a shared string is worse than a
+gated behind a bump the way the assets are. Some state copy exists twice — in
+the `COPY` object in `scripts.js` and as static markup (now written by the
+build scripts: the empty states in `scripts/build-home.py`'s `EMPTY` and in
+`render_home_findings` in `scripts/build-findings.py`). Changing one is a
+reason to check the other, in both directions.
+
+The home page's cards and roles list are pre-rendered into `index.html` by
+`scripts/build-home.py` (between `signals`/`clusters`/`roles` markers), and
+`scripts.js` re-renders the same markup on load. The two must produce the
+same output, or the page visibly shifts as the script takes over — so a
+change to `renderSignals`, `renderClusters`, or `renderTitles` needs the
+matching change in `build-home.py`, then a rebuild. `build-home.py` reads
+`SECTION_LIMIT`, `SIGNAL_THRESHOLD`, and `NEW_KEY_WINDOW_DAYS` straight out
+of `scripts.js`, so those can't drift. A missed bump on a shared string is worse than a
 missed bump elsewhere: instead of shipping nothing, the page paints the new
 copy from the HTML and the cached script replaces it with the old.
 
@@ -805,10 +817,15 @@ visibly disagrees with the post's own text once clicked.
   exception covers — personal, experience-informed, not required to cite back
   to the dataset the way the data section does. It comes last, after all of
   the data section; the build rejects a post that interleaves the two.
-- `title` follows the data section's rules. `summary` is not a hand-written
-  front-matter field — it's derived automatically from the opening sentences
-  of the data section's first paragraph, which is why that paragraph does
-  double duty as the one line shown on the Findings tab and in link previews.
+- `title` and `summary` follow the data section's rules. `summary` is a
+  required, hand-written front-matter field: one sentence, under 200
+  characters (the build enforces the length), written for someone who
+  hasn't read the post. It isn't shown on the site itself — it's the
+  description search results, link previews (meta and OpenGraph tags), the
+  post's JSON-LD, and `llms.txt` use. Write it with every new post. It
+  replaced an auto-derived summary that pulled the opening sentences and
+  produced lines like "…each in its own words:" when a paragraph led into a
+  list.
 - `signals` lists the cluster and/or signal keys (from `docs/data/jobs.json`)
   the finding is grounded in, so a reader can check the claim against the
   taxonomy. The list can grow later if another posting shows the same

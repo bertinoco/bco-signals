@@ -46,6 +46,7 @@ Once the user confirms, spawn a second `general-purpose` agent (`run_in_backgrou
 - Update `<lastmod>` in `docs/sitemap.xml`
 - Update the entry count/date in `docs/llms.txt` (both the dataset-description section and the citation line)
 - Run `python3 jd-insights/refresh.py`
+- Run `python3 scripts/build-home.py` (after `meta.lastUpdated` is set) so `docs/index.html`'s pre-rendered cards, roles, count, and dates match the new data — CI fails on a stale `index.html`
 - Verify the archived `quote` and `title` match the archive verbatim (only the three permitted normalizations), and fail loudly if they don't
 - Check whether `jd-insights/patterns.md` or `jd-insights/findings.md` warrant an update per CLAUDE.md's rules — most entries add nothing; only propose an addition if it clears Step 4's bar (evidence across multiple JDs) or is explicitly a first-instance item for the Watching section. If Step A already identified a specific existing Watching entry this JD extends, point the write agent at that exact section instead of having it search the whole file.
 - Return a short summary, `git diff --stat`, and anything it flagged for `patterns.md`/`findings.md` — added or just proposed, your call which
