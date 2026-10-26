@@ -43,6 +43,6 @@ What's left is the part that was always the job — deciding what's good. Gap's 
 
 The postings that go furthest also decide where judgment sits in the workflow. That's content design applied to its own process, and it's where I'd point anyone trying to grow into systems work.
 
-The real work now lives in the moments you overrule the model, and in knowing why.
+The work now lives in the moments you overrule the model, and in knowing why.
 
 </aside>
