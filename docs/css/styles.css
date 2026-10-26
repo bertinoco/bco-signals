@@ -1452,12 +1452,16 @@ body {
   padding: 2px 6px;
 }
 
-/* On the back of the card, above the title rather than in the corner,
-   which the close button holds there. The chip takes over the title's top
-   margin, and the title follows it closely. */
+/* On the back of the card, above the title and left-aligned with it,
+   rather than in the corner, which the close button holds there. The chip
+   takes over the title's top margin, and the title follows it closely.
+   A block with fit-content width rather than inline-block: the opened card
+   is a clone appended to <body>, which centers inline content, and that
+   pulled an inline chip off the title's left edge. */
 .new-chip--back {
   position: static;
-  display: inline-block;
+  display: block;
+  width: fit-content;
   margin-top: var(--space-6);
 }
 
