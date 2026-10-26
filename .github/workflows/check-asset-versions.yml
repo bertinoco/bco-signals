@@ -15,6 +15,10 @@ on:
       - 'docs/js/menu.js'
       - 'docs/css/styles.css'
 
+# These checks only read the repository.
+permissions:
+  contents: read
+
 jobs:
   check-versions:
     runs-on: ubuntu-latest
