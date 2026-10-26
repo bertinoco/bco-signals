@@ -51,7 +51,8 @@ OPTIONAL_FIELDS = ("updated", "draft")
 
 # Posts shown in the home page's Read our findings section before "Read
 # more". The rest are still rendered, just hidden, so crawlers see them all.
-FINDINGS_LIMIT = 8
+# Matches SECTION_LIMIT in docs/js/scripts.js, so every section stops at 6.
+FINDINGS_LIMIT = 6
 FINDINGS_MARKERS = re.compile(
     r"(<!-- findings:start[^>]*-->\n)(.*?)(^ *<!-- findings:end -->)", re.S | re.M
 )

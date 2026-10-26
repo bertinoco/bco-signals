@@ -767,7 +767,7 @@ between the `findings:start` / `findings:end` markers — the rest of
 `docs/sitemap.xml`, and the Findings section of `docs/llms.txt`. Never
 hand-edit those outputs; the next run overwrites them. The list is written
 into the page rather than fetched so the post links are there for crawlers
-and the section shows without waiting on JavaScript. It shows 8 posts, then
+and the section shows without waiting on JavaScript. It shows 6 posts, then
 "Read more" (`FINDINGS_LIMIT` in the build script). `docs/findings/index.html`
 is now only a redirect to `/#findings`, kept so old links still land. The build also reads three things out of
 `docs/index.html` and embeds them in each post page: the `styles.css?v=`

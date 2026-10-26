@@ -1,12 +1,11 @@
 // Data path for GitHub Pages with `docs/` at repo root
 const DATA_PATH = 'data/jobs.json';
 const SIGNAL_THRESHOLD = 2;
-// How many items each home section shows before its "View all". Cards stop
-// at 6, which fills the grid evenly at every width (3+3, 2+2+2, 1x6) and
-// keeps the scroll short. Lists stop at 8 — findings too, though it says
-// "Read more" and its cap is FINDINGS_LIMIT in build-findings.py.
-const CARDS_LIMIT = 6;
-const LIST_LIMIT = 8;
+// Every home section shows 6 before its "View all" — cards, findings, and
+// jobs alike. 6 fills the card grid evenly at every width (3+3, 2+2+2, 1x6)
+// and keeps the scroll short. Findings says "Read more"; its cap is
+// FINDINGS_LIMIT in build-findings.py and should match this.
+const SECTION_LIMIT = 6;
 // How long a cluster/signal shows a "New" chip after its earliest carrying
 // entry landed — self-expiring, so nothing has to remember to remove it.
 // Deliberately not applied to individual roles (see renderTitles): those
@@ -293,10 +292,10 @@ function renderClusters(data) {
 
   const showMore = document.getElementById('clusters-show-more');
   const showMoreBtn = showMore ? showMore.querySelector('.show-more-btn') : null;
-  const keysToRender = showAllClusters ? clusterKeys : clusterKeys.slice(0, CARDS_LIMIT);
+  const keysToRender = showAllClusters ? clusterKeys : clusterKeys.slice(0, SECTION_LIMIT);
 
   if (showMore) {
-    if (!showAllClusters && clusterKeys.length > CARDS_LIMIT) {
+    if (!showAllClusters && clusterKeys.length > SECTION_LIMIT) {
       showMore.style.display = 'block';
       showMoreBtn.textContent = 'View all';
     } else {
@@ -357,10 +356,10 @@ function renderTitles(data) {
   }
 
   const sorted = [...data.entries].sort((a, b) => new Date(b.dateAdded) - new Date(a.dateAdded));
-  const entries = showAllTitles ? sorted : sorted.slice(0, LIST_LIMIT);
+  const entries = showAllTitles ? sorted : sorted.slice(0, SECTION_LIMIT);
 
   if (showMore) {
-    if (!showAllTitles && data.entries.length > LIST_LIMIT) {
+    if (!showAllTitles && data.entries.length > SECTION_LIMIT) {
       showMore.style.display = 'block';
       showMoreBtn.textContent = 'View all';
     } else {
@@ -488,10 +487,10 @@ function renderSignals(data) {
 
   const showMore = document.getElementById('signals-show-more');
   const showMoreBtn = showMore ? showMore.querySelector('.show-more-btn') : null;
-  const keysToRender = showAllSignals ? relevantSignals : relevantSignals.slice(0, CARDS_LIMIT);
+  const keysToRender = showAllSignals ? relevantSignals : relevantSignals.slice(0, SECTION_LIMIT);
 
   if (showMore) {
-    if (!showAllSignals && relevantSignals.length > CARDS_LIMIT) {
+    if (!showAllSignals && relevantSignals.length > SECTION_LIMIT) {
       showMore.style.display = 'block';
       showMoreBtn.textContent = 'View all';
     } else {
