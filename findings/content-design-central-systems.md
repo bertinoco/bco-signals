@@ -1,13 +1,14 @@
 ---
 title: Content design is becoming a central systems discipline
 date: 2026-10-22
+updated: 2026-10-26
 summary: Postings describe central owners for content standards, and several say outright that writing content is not the job.
 signals: central-standards-function, content-systems-design, enablement
 ---
 
 ## Content standards are being pulled into central functions
 
-Postings in streaming, SaaS, big tech, and e-commerce describe a central owner for content standards, each in its own words:
+Postings in streaming, SaaS, big tech, and e-commerce describe a central owner for content standards:
 
 - Netflix: "centralized authority for language standards" across "a decentralized content design community"
 - Wix: "This is a central role that shapes the content across our product"
@@ -18,8 +19,6 @@ Postings in streaming, SaaS, big tech, and e-commerce describe a central owner f
 Adobe spells out what the central role leaves behind.
 
 > Not product-level content decisions or UI copy (that lives with embedded product and domain content teams)
-
-The embedded model is still being hired for. Wealthsimple: "You’ll be embedded on product teams."
 
 ## The work has moved from producing content to producing systems
 
