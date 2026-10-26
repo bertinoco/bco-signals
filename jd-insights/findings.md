@@ -377,9 +377,9 @@ within either one.
 
 ## Content roles are appearing outside design orgs
 
-**What the data shows.** 69 of 86 postings state where the role sits (up from
-23 of 29 when this was first written; counted from the non-null
-`orgPlacement` fields in `jd-source/`), and the placements still do not
+**What the data shows.** 64 of 86 postings state where the role sits (up from
+23 of 29 when this was first written; counted from the `orgPlacement` fields
+in `jd-source/`, excluding those that read "Not stated"), and the placements still do not
 cluster in design. HelloFresh files its Staff AI Content Designer under
 "Category: Software Engineering". Ally's Content Architect sits in "Career
 area: Marketing". Notion's is in Customer Experience; LinkedIn's in a
