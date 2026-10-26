@@ -264,7 +264,13 @@ function flipCardContentHtml(key, field, label, description, data) {
         <p class="flip-card-roles-label">Appears in ${entries.length} of ${total} roles</p>
       </div>`
     : '';
+  // The front's "New" chip carries over, above the title — the front's
+  // top-right corner is the close button's on this side.
+  const newChipHtml = isRecentlyIntroduced(data, key, field)
+    ? '<span class="new-chip new-chip--back">New</span>'
+    : '';
   return `
+    ${newChipHtml}
     <h3 class="flip-card-back-title">${label}</h3>
     ${rolesHtml}
     <p class="flip-card-back-desc">${description}</p>
@@ -768,6 +774,7 @@ function openFlipCard(card) {
   const key = card.dataset.key;
   const item = globalData[type][key];
   const pct = keyPercentage(globalData, key, type);
+  const newSuffix = isRecentlyIntroduced(globalData, key, type) ? ', newly added' : '';
 
   const clone = card.cloneNode(true);
   card.style.visibility = 'hidden';
@@ -775,7 +782,7 @@ function openFlipCard(card) {
   clone.removeAttribute('tabindex');
   clone.setAttribute('role', 'dialog');
   clone.setAttribute('aria-modal', 'true');
-  clone.setAttribute('aria-label', `${item.label}, ${pct}% of roles`);
+  clone.setAttribute('aria-label', `${item.label}, ${pct}% of roles${newSuffix}`);
   clone.style.position = 'fixed';
   clone.style.margin = '0';
   clone.style.top = `${rect.top}px`;
@@ -883,7 +890,8 @@ function navigateFlipCard(direction) {
     const item = globalData[type][nextKey];
     const pct = keyPercentage(globalData, nextKey, type);
     contentEl.innerHTML = flipCardContentHtml(nextKey, type, item.label, item.description, globalData);
-    clone.setAttribute('aria-label', `${item.label}, ${pct}% of roles`);
+    const newSuffix = isRecentlyIntroduced(globalData, nextKey, type) ? ', newly added' : '';
+    clone.setAttribute('aria-label', `${item.label}, ${pct}% of roles${newSuffix}`);
 
     const target = computeOverlayTarget(clone);
     clone.style.top = `${target.top}px`;

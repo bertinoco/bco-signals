@@ -182,7 +182,8 @@ class Dataset:
             f'{indent(CLOSE_SVG, 6)}\n'
             f'    </button>\n'
             f'    <div class="flip-card-back-content">\n'
-            f'      <h3 class="flip-card-back-title">{e(item["label"])}</h3>\n'
+            + ('      <span class="new-chip new-chip--back">New</span>\n' if new else '')
+            + f'      <h3 class="flip-card-back-title">{e(item["label"])}</h3>\n'
             f'{indent(roles, 6)}' + ('\n' if roles else '')
             + f'      <p class="flip-card-back-desc">{e(item["description"])}</p>\n'
             f'    </div>\n'
