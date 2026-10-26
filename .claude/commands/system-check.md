@@ -59,7 +59,7 @@ When in doubt, it's Joe's call.
 3. Rerun `python3 scripts/system-check.py`. It must have no FAIL items, and every OK it had at the start must still be OK. If a fix broke something, revert that fix and report it instead.
 4. Write the report to `system-check/reports/YYYY-MM-DD.md` (format below) and commit it with the fixes. Commit message: what was fixed and why, ending with the co-author line from the current attribution guidance.
 5. `git push -u origin system-check/YYYY-MM-DD`.
-6. **Never merge to `main`.** Joe merges by saying so. When he does, merge with `--no-ff`, rerun the checks on `main`, push, delete the branch, and confirm the live site picked it up.
+6. **Never merge to `main`.** Joe merges by saying so. When he does, merge with `--no-ff` and rerun `python3 scripts/system-check.py` on `main`. Only push if its exit status is 0. Check the real exit status: don't pipe it through `tail` or `grep`, which pass even when the check fails. Other sessions add JDs to `main` while a branch is open, so a clean branch can still merge into a failing `main`. If it fails, fix that first; regenerating stale output is a safe fix. Then push, delete the branch, and confirm the live site picked it up.
 
 If the run found nothing safe to fix, still commit and push the report on its branch, so the monthly run always leaves a record.
 
