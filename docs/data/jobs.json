@@ -2644,9 +2644,9 @@
       "description": "Building the harnesses, graders, and automated eval pipelines that test whether prompts or model behavior meet a quality bar. Distinct from authoring the behavior (model-behavior-design) or setting governance standards for it (ai-content-governance) — this is the validation system itself, an engineering-heavy expression of generative content work at the frontier."
     },
     "human-in-the-loop": {
-      "label": "Human review, by design",
+      "label": "Human in the loop",
       "introduced": "2026-10-26",
-      "description": "These roles name a specific point where a person reviews AI output, on top of the governance standards around it. The review step sits in the pipeline, the eval, or the authoring workflow, and specifying it is part of what you design."
+      "description": "Roles that specify where a person reviews AI output, whether in a content pipeline, an eval, or an authoring workflow. Designing that checkpoint is part of the job, alongside the standards and evals around it."
     }
   }
 }

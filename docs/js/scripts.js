@@ -225,6 +225,15 @@ function keyIntroducedDate(data, key, field) {
   return new Date(entries[entries.length - 1].dateAdded);
 }
 
+// New keys lead their grid while they're new, so the "New" chip is seen
+// rather than parked behind "View all"; everything else keeps rank order.
+// Stable, so rank order holds within each group. build-home.py's
+// new_first mirrors this.
+function newFirst(keys, data, field) {
+  const fresh = keys.filter(k => isRecentlyIntroduced(data, k, field));
+  return fresh.concat(keys.filter(k => !isRecentlyIntroduced(data, k, field)));
+}
+
 function isRecentlyIntroduced(data, key, field) {
   const introduced = keyIntroducedDate(data, key, field);
   if (!introduced) return false;
@@ -296,11 +305,12 @@ function renderClusters(data) {
 
   // Sort by number of companies, descending
   clusterKeys.sort((a, b) => clusterMap[b].length - clusterMap[a].length);
-  clusterOrder = clusterKeys.slice();
+  const orderedClusters = newFirst(clusterKeys, data, 'clusters');
+  clusterOrder = orderedClusters.slice();
 
   const showMore = document.getElementById('clusters-show-more');
   const showMoreBtn = showMore ? showMore.querySelector('.show-more-btn') : null;
-  const keysToRender = showAllClusters ? clusterKeys : clusterKeys.slice(0, SECTION_LIMIT);
+  const keysToRender = showAllClusters ? orderedClusters : orderedClusters.slice(0, SECTION_LIMIT);
 
   if (showMore) {
     if (!showAllClusters && clusterKeys.length > SECTION_LIMIT) {
@@ -480,11 +490,11 @@ function renderTitles(data) {
 function renderSignals(data) {
   const list = document.getElementById('signal-list');
 
-  // Most-attested first.
-  const relevantSignals = [...signalEntryCounts(data)]
+  // Most-attested first, with new keys pulled to the front (see newFirst).
+  const relevantSignals = newFirst([...signalEntryCounts(data)]
     .filter(([, n]) => n >= SIGNAL_THRESHOLD)
     .sort((a, b) => b[1] - a[1])
-    .map(([key]) => key);
+    .map(([key]) => key), data, 'signals');
 
   if (relevantSignals.length === 0) {
     renderState('signal-list', { variant: 'empty', ...COPY.empty.signals });

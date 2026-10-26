@@ -140,6 +140,11 @@ class Dataset:
             introduced = min(dates)
         return (self.as_of - introduced).days < self.c["NEW_KEY_WINDOW_DAYS"]
 
+    def new_first(self, keys, field):
+        # Mirrors newFirst in scripts.js: new keys lead, rank order otherwise.
+        return ([k for k in keys if self.is_new(k, field)]
+                + [k for k in keys if not self.is_new(k, field)])
+
     def signal_counts(self):
         counts = {k: 0 for k in self.data["signals"]}
         for x in self.entries:
@@ -190,8 +195,8 @@ class Dataset:
         counts = self.signal_counts()
         # Most-attested first; sorted() is stable, like Array.prototype.sort,
         # so ties keep jobs.json's own order in both.
-        keys = [k for k, n in sorted(counts.items(), key=lambda kv: -kv[1])
-                if n >= self.c["SIGNAL_THRESHOLD"]]
+        keys = self.new_first([k for k, n in sorted(counts.items(), key=lambda kv: -kv[1])
+                               if n >= self.c["SIGNAL_THRESHOLD"]], "signals")
         if not keys:
             title, body = EMPTY["signals"]
             inner = state("empty", title, body.format(threshold=self.c["SIGNAL_THRESHOLD"]))
@@ -209,6 +214,7 @@ class Dataset:
         # entries; that's what this counts.
         tally = {k: sum((x.get("clusters") or []).count(k) for x in self.entries) for k in keys}
         keys.sort(key=lambda k: -tally[k])
+        keys = self.new_first(keys, "clusters")
         cards = "\n".join(self.card(k, "clusters", "h3") for k in keys[:limit])
         return self.panel("cluster-grid", "cluster-grid", cards, "clusters-show-more", len(keys) > limit)
 

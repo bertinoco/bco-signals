@@ -810,7 +810,7 @@ context, they split four ways:
 The Spotify/Evinova split flagged above resolves this way: the qualification
 is the outlier, and every stated-responsibility instance names a review step
 on AI output. eDreams' "Define 'human-in-the-loop' workflows" is the closest
-excluded match to the first group. The `human-in-the-loop` signal ("Human review, by design") was created on
+excluded match to the first group. The `human-in-the-loop` signal ("Human in the loop") was created on
 2026-10-26 for the first group, with seven holders across six domains.
 Scoped by meaning rather than the literal phrase, so Glean's, Red Bull's,
 and Notion's "human review" count alongside the four postings that use
