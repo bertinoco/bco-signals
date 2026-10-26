@@ -196,16 +196,20 @@ body {
 /* ── Top bar ──────────────────────────────────────────────── */
 /* The site's navigation, pinned to the top of every page — home and
    findings posts alike, so moving between them never feels like a
-   different site. Themed like the page, not the hero: the wordmark and
-   icons swap black/white by <picture>, the same way they do in the drawer.
+   different site. Fixed black in both color schemes, like the hero it sits
+   on (--hero-bg/--hero-fg), so on the home page the two read as one band
+   instead of a white strip on a black hero. Same --hero-fg exception the
+   hero's own links make: --ring and --muted are theme-adaptive and would
+   vanish against black in light mode. The faint bottom rule separates it
+   from the page once it's riding over themed content.
    At phone width the four links don't fit beside the wordmark, so they give
    way to the hamburger and the drawer (see .site-menu). */
 .site-bar {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: hsl(var(--background));
-  border-bottom: 1px solid hsl(var(--border));
+  background: hsl(var(--hero-bg));
+  border-bottom: 1px solid hsl(var(--hero-fg) / 0.12);
   text-align: left;
 }
 
@@ -234,7 +238,7 @@ body {
 }
 
 /* Icon and label together are the link; padding takes the hit area past
-   the 24px floor without changing how it looks. */
+   the 24px floor without changing how it looks. 0.7 matches .hero-cta. */
 .site-bar-nav a {
   display: inline-flex;
   align-items: center;
@@ -242,33 +246,29 @@ body {
   padding: 4px 0;
   font-size: var(--font-sm);
   font-weight: var(--weight-medium);
-  color: hsl(var(--secondary-foreground));
+  color: hsl(var(--hero-fg) / 0.7);
   text-decoration: none;
   transition: color var(--duration-fast) ease;
 }
 
 .site-bar-nav a:hover {
-  color: hsl(var(--foreground));
+  color: hsl(var(--hero-fg));
 }
 
 .site-bar-wordmark:focus-visible,
-.site-bar-nav a:focus-visible {
-  outline: 2px solid hsl(var(--ring));
+.site-bar-nav a:focus-visible,
+.site-bar .menu-toggle:focus-visible {
+  outline: 2px solid hsl(var(--hero-fg));
   outline-offset: 2px;
 }
 
-.site-bar-nav picture {
-  display: block;
-}
-
-/* The PNGs are solid black or white; dimmed at rest to sit at the same
-   weight as the --secondary-foreground label beside them, full strength on
-   hover along with the label. */
+/* The white PNGs, dimmed at rest to the same 0.7 as the label beside them,
+   full strength on hover along with it. */
 .site-bar-icon {
   display: block;
   width: 16px;
   height: 16px;
-  opacity: 0.65;
+  opacity: 0.7;
   transition: opacity var(--duration-fast) ease;
 }
 
@@ -278,6 +278,11 @@ body {
 
 .site-bar .menu-toggle {
   display: none;
+  color: hsl(var(--hero-fg));
+}
+
+.site-bar .menu-toggle:hover {
+  background: hsl(var(--hero-fg) / 0.1);
 }
 
 @media (max-width: 599px) {

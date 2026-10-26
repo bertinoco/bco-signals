@@ -457,8 +457,9 @@ def render_page(post, assets, corpus, taxonomy):
   <meta property="og:image" content="{OG_IMAGE}">
   <meta property="article:published_time" content="{post['date']}">
 
-  <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#0D0D0D" media="(prefers-color-scheme: dark)">
+  <!-- Black in both schemes: the browser's toolbar sits directly above the
+       black top bar (--hero-bg), so it should match it. -->
+  <meta name="theme-color" content="#000000">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
