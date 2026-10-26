@@ -7,6 +7,7 @@ JSON, a cluster/signal key on an entry that doesn't exist in the taxonomy
 cluster keys at all), a duplicate entry id, or meta.totalEntries drifting
 from the actual entry count (CLAUDE.md's Step 6 keeps these in sync by hand).
 """
+import datetime
 import json
 import sys
 
@@ -52,6 +53,13 @@ for group_name, group in (("clusters", clusters), ("signals", signals)):
     for key, val in group.items():
         if not isinstance(val, dict) or not val.get("label") or not val.get("description"):
             error(f"{group_name}.{key} is missing a non-empty 'label' or 'description'")
+        # Optional: the date the key joined the taxonomy, which drives its
+        # "New" chip. A bad value would silently break the chip, so check it.
+        if isinstance(val, dict) and "introduced" in val:
+            try:
+                datetime.date.fromisoformat(val["introduced"])
+            except (TypeError, ValueError):
+                error(f"{group_name}.{key}.introduced must be YYYY-MM-DD, got {val['introduced']!r}")
 
 total_entries = data.get("meta", {}).get("totalEntries")
 if total_entries != len(entries):

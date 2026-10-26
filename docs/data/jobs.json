@@ -2645,6 +2645,7 @@
     },
     "human-in-the-loop": {
       "label": "Human review, by design",
+      "introduced": "2026-10-26",
       "description": "These roles name a specific point where a person reviews AI output, on top of the governance standards around it. The review step sits in the pipeline, the eval, or the authoring workflow, and specifying it is part of what you design."
     }
   }

@@ -128,10 +128,17 @@ class Dataset:
         return js_round(n / self.total * 100) if self.total else 0
 
     def is_new(self, key, field):
-        dates = [date.fromisoformat(x["dateAdded"]) for x in self.entries_for(key, field)]
-        if not dates:
-            return False
-        return (self.as_of - min(dates)).days < self.c["NEW_KEY_WINDOW_DAYS"]
+        # Mirrors keyIntroducedDate in scripts.js: an explicit `introduced`
+        # date on the key wins over its earliest holder's dateAdded.
+        explicit = self.data[field][key].get("introduced")
+        if explicit:
+            introduced = date.fromisoformat(explicit)
+        else:
+            dates = [date.fromisoformat(x["dateAdded"]) for x in self.entries_for(key, field)]
+            if not dates:
+                return False
+            introduced = min(dates)
+        return (self.as_of - introduced).days < self.c["NEW_KEY_WINDOW_DAYS"]
 
     def signal_counts(self):
         counts = {k: 0 for k in self.data["signals"]}

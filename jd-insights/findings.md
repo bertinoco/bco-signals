@@ -775,7 +775,7 @@ bar for a signal.*
 of `jd-source/` for "human-in-the-loop" and "human review" finds the literal
 phrase in six included postings and two excluded ones, plus three more
 included postings that name "human review" as the same checkpoint. Read in
-context, they split three ways:
+context, they split four ways:
 
 - *A person reviews AI output inside the content workflow, as a stated
   responsibility.* Evinova and Bank of America (above), plus Huge (Agency):
@@ -799,6 +799,13 @@ context, they split three ways:
   where users guide, review, or override" is the same kind.
 - *A qualification, not a responsibility.* Spotify's "familiar with LLM or
   AI-driven annotation workflows and human-in-the-loop systems."
+- *A stated responsibility, but too passive to count.* Meta's AI Content
+  Strategy Lead: "Define and drive the long-term vision for how Content
+  Strategy is operationalized through AI-powered marketing systems and
+  workflows, including the strategic requirements that preserve critical
+  human judgment and oversight." It asks the role to *preserve* oversight
+  rather than to place a review step anywhere. Excluded on Joe's read,
+  2026-10-26. If the posting named the step actively, it would count.
 
 The Spotify/Evinova split flagged above resolves this way: the qualification
 is the outlier, and every stated-responsibility instance names a review step

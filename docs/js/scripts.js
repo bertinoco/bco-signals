@@ -212,9 +212,14 @@ function entriesForKey(data, key, field) {
     .sort((a, b) => new Date(b.dateAdded) - new Date(a.dateAdded));
 }
 
-// entriesForKey sorts most-recent-first, so the last element is the
-// earliest — the date this key was first introduced to the dataset.
+// When the key joined the taxonomy. An explicit `introduced` date on the
+// cluster/signal wins: a key created from older postings (its holders
+// predate it) still deserves its "New" chip. Otherwise, entriesForKey sorts
+// most-recent-first, so the last element is the earliest holder.
+// build-home.py's Dataset.is_new mirrors this.
 function keyIntroducedDate(data, key, field) {
+  const explicit = data[field] && data[field][key] && data[field][key].introduced;
+  if (explicit) return new Date(explicit);
   const entries = entriesForKey(data, key, field);
   if (!entries.length) return null;
   return new Date(entries[entries.length - 1].dateAdded);
