@@ -546,6 +546,23 @@ This has now been missed twice.
   and the cached script re-rendered the slot as "Loading the dataset…".
   Fixed in `d7f9113`.
 
+## Codebase care
+
+Joe isn't a developer and relies on Claude to keep the codebase efficient,
+secure, and tidy. `/system-check` (`.claude/commands/system-check.md`) is the
+routine for it. It runs monthly as a scheduled cloud routine, and by hand
+whenever Joe asks or before a large merge. `scripts/system-check.py` is its
+mechanical half, and is safe to run any time: it's read-only.
+
+The skill defines what's safe to fix on autopilot: generated output, missed
+cache-bust bumps, dead code, stale comments and docs, and image files
+shrunk with no visible change. It makes those fixes on a
+`system-check/YYYY-MM-DD` branch. Everything else is Joe's call, and the
+branch is never merged to `main` without him. The same standard applies
+outside the routine. If a session notices dead code, drift between
+generated and hand-written files, or docs describing the site as it used to
+be, fix it if it's safe by that definition, and say so either way.
+
 ## Design tokens
 
 `--radius` and `--radius-sm` cover small controls — buttons, chips, inputs.
