@@ -2,8 +2,8 @@
   "meta": {
     "title": "BCO Content Skills Tracker",
     "description": "A curated skills tracker for the content design community.",
-    "lastUpdated": "2026-10-23",
-    "totalEntries": 84
+    "lastUpdated": "2026-10-26",
+    "totalEntries": 85
   },
   "entries": [
     {
@@ -2484,6 +2484,33 @@
       "sourceUrl": null,
       "dateAdded": "2026-10-23",
       "quote": "You will play a pivotal role in designing, training and evaluating conversational AI agents for our customers."
+    },
+    {
+      "id": "deliveroo-staff-conversation-designer-support",
+      "company": "Deliveroo",
+      "title": "Staff Conversation Designer (Support)",
+      "domain": "E-commerce",
+      "engagement": "Not specified",
+      "location": "London, United Kingdom",
+      "remote": null,
+      "coreFrame": "Sets support conversation strategy and design direction for AI-powered support across Deliveroo, DoorDash and Wolt. Designs and maintains multi-turn conversation flows and specs covering context, interruptions, clarification, error recovery, fallback paths and human handoffs. Writes and iterates on system prompts and persona definitions that shape model behavior. Builds evaluation datasets, testing plans and scoring rubrics, and annotates conversations for evaluation and model training. Designs conversational safeguards against hallucinations, harmful or biased responses and requests outside the service's scope. Builds reusable prompt guidance and evaluation tools adopted by other teams.",
+      "clusters": [
+        "content-systems-design",
+        "ai-tooling",
+        "ai-content-governance",
+        "enablement"
+      ],
+      "signals": [
+        "model-behavior-design",
+        "eval-infrastructure",
+        "ai-native-expectation",
+        "central-standards-function",
+        "governance-as-value-prop"
+      ],
+      "compRange": null,
+      "sourceUrl": null,
+      "dateAdded": "2026-10-26",
+      "quote": "Create evaluation datasets, testing plans and scoring rubrics to test conversation flows and model behaviour."
     }
   ],
   "clusters": {

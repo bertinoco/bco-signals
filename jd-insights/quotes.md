@@ -3,7 +3,7 @@
 
 # Quotes
 
-Every stored quote, verbatim from the posting. **83 of 84** entries carry one.
+Every stored quote, verbatim from the posting. **84 of 85** entries carry one.
 
 These are the lines that anchor each entry's cluster and signal assignments, so they are the strongest citable evidence in the dataset. Each is checked against its `jd-source` archive before commit.
 
@@ -138,6 +138,12 @@ These are the lines that anchor each entry's cluster and signal assignments, so 
 > What decides whether those agents feel human is not a screen. It is whether the agent knows when you have finished speaking, what it does when you cut it off, how it recovers from a misheard word, how it confirms something consequential before acting, and how it covers the milliseconds it cannot remove.
 
 `deepgram-staff-product-designer-conversational-ai` · added 2026-10-19
+
+### Deliveroo — Staff Conversation Designer (Support)
+
+> Create evaluation datasets, testing plans and scoring rubrics to test conversation flows and model behaviour.
+
+`deliveroo-staff-conversation-designer-support` · added 2026-10-26
 
 ### Docebo — Senior Product Designer, Content Design & Language Systems
 
