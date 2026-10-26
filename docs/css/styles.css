@@ -42,10 +42,9 @@
   --font-base: 0.9375rem;
   --font-md:   1.0625rem;
   --font-lg:   1.1875rem;
-  /* Two unrelated components (.flip-card-back-title, .post-title) had each
-     independently landed on 1.625rem as a one-off value between --font-lg
-     and --font-3xl. Tokenized once a second usage made that a real,
-     recurring step rather than a single documented exception. */
+  /* The step between --font-lg and --font-3xl: .flip-card-back-title,
+     .post-title's floor, and the home page's .section-heading. Tokenized
+     once a second usage made it a real step rather than a one-off. */
   --font-xl:   1.625rem;
   --font-3xl:  clamp(2rem, 1.35rem + 2.7vw, 2.75rem);
 
@@ -85,6 +84,10 @@
 
   /* Layout */
   --max-width: 960px;
+  /* The sticky top bar's height, border excluded. html's
+     scroll-padding-top uses it so nothing scrolled into view lands under
+     the bar. */
+  --bar-height: 56px;
 }
 
 /* ── Semantic tokens: light ───────────────────────────────── */
@@ -159,10 +162,15 @@
 }
 
 /* ── Base ─────────────────────────────────────────────────── */
-/* Applies to both in-page anchor jumps: the hero CTA (#nav-bar) and the
-   skip-link (#main). Turned off under prefers-reduced-motion, below. */
+/* Smooth scrolling applies to every in-page jump: the hero CTA, the bar
+   and drawer links (#explore, #findings, #titles), and the skip link
+   (#main). Turned off under prefers-reduced-motion, below.
+   scroll-padding-top keeps anything scrolled into view clear of the sticky
+   top bar — anchor jumps, the skip link, and elements keyboard focus
+   scrolls to (WCAG 2.4.11, Focus Not Obscured). */
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: var(--bar-height);
 }
 
 body {
@@ -190,12 +198,114 @@ body {
   .container { padding: 0; }
 }
 
-/* ── Header ───────────────────────────────────────────────── */
+/* ── Top bar ──────────────────────────────────────────────── */
+/* The site's navigation, pinned to the top of every page — home and
+   findings posts alike, so moving between them never feels like a
+   different site. Fixed black in both color schemes, like the hero it sits
+   on (--hero-bg/--hero-fg), so on the home page the two read as one band
+   instead of a white strip on a black hero. Same --hero-fg exception the
+   hero's own links make: --ring and --muted are theme-adaptive and would
+   vanish against black in light mode. The faint bottom rule separates it
+   from the page once it's riding over themed content.
+   At phone width the four links don't fit beside the wordmark, so they give
+   way to the hamburger and the drawer (see .site-menu). */
+.site-bar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: hsl(var(--hero-bg));
+  border-bottom: 1px solid hsl(var(--hero-fg) / 0.12);
+  text-align: left;
+}
+
+.site-bar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  height: var(--bar-height);
+}
+
+.site-bar-wordmark {
+  display: inline-block;
+}
+
+.site-bar-wordmark img {
+  display: block;
+  height: 16px;
+  width: auto;
+}
+
+.site-bar-nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+/* Icon and label together are the link; padding takes the hit area past
+   the 24px floor without changing how it looks. 0.7 matches .hero-cta. */
+.site-bar-nav a {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: 4px 0;
+  font-size: var(--font-sm);
+  font-weight: var(--weight-medium);
+  color: hsl(var(--hero-fg) / 0.7);
+  text-decoration: none;
+  transition: color var(--duration-fast) ease;
+}
+
+.site-bar-nav a:hover {
+  color: hsl(var(--hero-fg));
+}
+
+.site-bar-wordmark:focus-visible,
+.site-bar-nav a:focus-visible,
+.site-bar .menu-toggle:focus-visible {
+  outline: 2px solid hsl(var(--hero-fg));
+  outline-offset: 2px;
+}
+
+/* The white PNGs, dimmed at rest to the same 0.7 as the label beside them,
+   full strength on hover along with it. */
+.site-bar-icon {
+  display: block;
+  width: 16px;
+  height: 16px;
+  opacity: 0.7;
+  transition: opacity var(--duration-fast) ease;
+}
+
+.site-bar-nav a:hover .site-bar-icon {
+  opacity: 1;
+}
+
+.site-bar .menu-toggle {
+  display: none;
+  color: hsl(var(--hero-fg));
+}
+
+.site-bar .menu-toggle:hover {
+  background: hsl(var(--hero-fg) / 0.1);
+}
+
+@media (max-width: 599px) {
+  .site-bar-nav {
+    display: none;
+  }
+
+  .site-bar .menu-toggle {
+    display: flex;
+  }
+}
+
+/* ── Hero ─────────────────────────────────────────────────── */
 /* Fixed black band — see --hero-bg/--hero-fg above. Every color here reads
    off those two tokens, never --foreground/--background, so light/dark
-   toggling can't touch it. Near-full-screen height: the top row pins near
-   the top, the headline block centers in whatever space is left below it.
-   90vh rather than 100vh so the pull-quote band peeks in as a scroll hint.
+   toggling can't touch it. The headline block centers in a band that, with
+   the top bar above it, comes to 90vh rather than 100vh, so the pull-quote
+   band peeks in as a scroll hint.
    PREVIEW: wave-static.png as a background image, on a branch for local
    review only — solid --hero-bg stays as the base color underneath it. */
 .site-header {
@@ -207,14 +317,7 @@ body {
 .hero-container {
   display: flex;
   flex-direction: column;
-  min-height: 90vh;
-}
-
-.hero-top {
-  display: flex;
-  align-items: center;
-  gap: var(--space-2);
-  text-align: left;
+  min-height: calc(90vh - var(--bar-height));
 }
 
 .hero-main {
@@ -224,29 +327,6 @@ body {
   justify-content: center;
   align-items: flex-start;
   text-align: left;
-}
-
-/* Links home (the site's own root). Just the wordmark SVG now — no separate
-   text node, so alt="Signals" on the image itself carries the link's
-   accessible name. */
-.hero-wordmark {
-  display: block;
-}
-
-.hero-wordmark:focus-visible {
-  outline: 2px solid hsl(var(--hero-fg));
-  outline-offset: 2px;
-}
-
-/* wordmark-white.svg is already white-fill, so no filter is needed against
-   this fixed black band — same reasoning the old circle-icon-w.png had.
-   The favicon/apple-touch-icon keep the separate black variant
-   (circle-icon-b.png): apple-touch-icon gets composited onto an opaque tile
-   that iOS fills white behind transparent pixels, so a white mark there
-   would vanish. */
-.hero-mark {
-  height: 16px;
-  width: auto;
 }
 
 /* Both CTAs sit under the body copy now: "Explore the data" as the primary
@@ -366,69 +446,107 @@ body {
   text-wrap: balance;
 }
 
-/* ── Nav bar (sticky) ─────────────────────────────────────── */
-/* No divider — the opaque background alone is enough to separate it from
-   content scrolling underneath once it sticks. Left-aligned to match the
-   hero content's own left edge, overriding body's centered text-align.
-
-   This element is `position: sticky`, so its own padding has to work in
-   two very different contexts: sitting once right after the pull-quote
-   (static), and then pinned flush to the bare viewport top for the rest
-   of the scroll (stuck) — nearly all of the time it's actually visible.
-   Padding is kept modest and symmetric so it doesn't misbehave once
-   stuck. The static-only gap from the quote comes from margin-top
-   instead: margin before a sticky element is consumed while scrolling
-   past it and never becomes part of the pinned box, so it widens the
-   static separation from the quote without reintroducing a stray floating
-   gap in the stuck state. */
-.nav-bar {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  background: hsl(var(--background));
-  margin-top: var(--space-6);
-  padding: var(--space-3) 0;
-  text-align: left;
-}
-
-/* ── Segmented nav ────────────────────────────────────────── */
-/* Plain-text tabs, no surrounding pill/border chrome — active state is a
-   colour + weight change rather than an inversion. */
-/* One page-level h1 lives in the hero; this is a section heading, not a
-   second h1. Modest size — it orients the section without competing with
-   the tab labels directly below it. */
-/* position: relative is unused on desktop (.ai-info-wrap, being closer in
-   the ancestor chain, is what the toggletip positions against there) but
-   becomes the toggletip's positioning context at <=480px, once that media
-   query turns .ai-info-wrap itself back to static. */
-.nav-heading-row {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: var(--space-1);
-  margin-bottom: var(--space-3);
-}
-
-.nav-heading {
-  font-family: var(--font-sans);
-  font-size: var(--font-md);
-  font-weight: var(--weight-semibold);
-  color: hsl(var(--foreground));
-}
-
-/* Positioning context for the toggletip — right of the icon specifically,
-   not the row, so it never depends on the heading text's own width. */
-.ai-info-wrap {
-  position: relative;
-  display: flex;
-}
-
-.ai-info-btn {
+/* ── Site menu ────────────────────────────────────────────── */
+/* The hamburger and its off-canvas drawer: navigation at phone width,
+   where the top bar's links don't fit (see .site-bar and menu.js). */
+.menu-toggle {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 24px;
-  height: 24px;
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  color: hsl(var(--foreground));
+  background: none;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background var(--duration-fast) ease;
+}
+
+.menu-toggle:hover {
+  background: hsl(var(--muted));
+}
+
+.menu-toggle:focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
+}
+
+/* Above the flip-card overlay's 1000-1002, so the menu always wins. */
+.site-menu-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1100;
+  background: hsl(var(--background) / 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  opacity: 0;
+  transition: opacity var(--duration-base) var(--ease-out);
+}
+
+.site-menu-backdrop.is-open {
+  opacity: 1;
+}
+
+.site-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1101;
+  width: min(86vw, 320px);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  background: hsl(var(--background));
+  border-left: 1px solid hsl(var(--border));
+  text-align: left;
+  transform: translateX(100%);
+  transition: transform var(--duration-base) var(--ease-out);
+}
+
+/* display: flex above would otherwise beat the UA's [hidden] rule — same
+   fix as .flip-card-nav[hidden]. */
+.site-menu[hidden] {
+  display: none;
+}
+
+.site-menu.is-open {
+  transform: translateX(0);
+}
+
+.site-menu-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-3);
+  border-bottom: 1px solid hsl(var(--border));
+}
+
+.site-menu-wordmark {
+  display: inline-block;
+}
+
+.site-menu-wordmark img {
+  display: block;
+  height: 16px;
+  width: auto;
+}
+
+.site-menu-wordmark:focus-visible,
+.site-menu-close:focus-visible,
+.site-menu-github:focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
+}
+
+.site-menu-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
   color: hsl(var(--muted-foreground));
   background: none;
   border: none;
@@ -437,221 +555,202 @@ body {
   transition: color var(--duration-fast) ease, background var(--duration-fast) ease;
 }
 
-.ai-info-btn:hover {
+.site-menu-close:hover {
   color: hsl(var(--foreground));
   background: hsl(var(--muted));
 }
 
-.ai-info-btn:focus-visible {
-  outline: 2px solid hsl(var(--ring));
-  outline-offset: 2px;
+.site-menu-links {
+  list-style: none;
+  padding: var(--space-2) 0;
 }
 
-/* Sits to the right of the icon, vertically centered on it, with a caret
-   pointing back at the trigger — a toggletip, not a tooltip (it opens on
-   click, not hover), but the caret is what visually ties it to its
-   trigger regardless of which one it is. Toggled via [hidden] in JS, not
-   a CSS class — no transition needed for a plain show/hide this small and
-   infrequently used. Positioned right rather than below so it never
-   covers the tabs directly under the heading.
-
-   bottom: 0 (not vertically centered) is deliberate: .ai-info-wrap's own
-   height is exactly the 24px icon, so this anchors the box's bottom edge
-   to the icon's bottom edge and it grows upward from there. Centering it
-   on the icon instead let roughly half its height sag below the icon —
-   which, at 2-3 lines of text, was enough to overlap the tab row directly
-   underneath, the exact thing this placement was meant to avoid. */
-.ai-info-tooltip {
-  position: absolute;
-  bottom: 0;
-  left: 100%;
-  margin-left: var(--space-2);
-  z-index: 20;
-  /* Explicit width, not just max-width: an absolutely-positioned child of
-     a flex container (.ai-info-wrap) gets sized by flex-basis rules in
-     some browsers instead of shrinking to fit its content, which made
-     this render at a fraction of max-width with the sentence wrapping
-     almost one word per line. width: max-content forces content-based
-     sizing again; max-width still caps it. */
-  width: max-content;
-  max-width: 320px;
+.site-menu-links a {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
   padding: var(--space-2) var(--space-3);
-  background: hsl(var(--card));
-  border: 1px solid hsl(var(--border));
-  border-radius: var(--radius);
-  box-shadow: 0 8px 24px hsl(var(--foreground) / 0.12);
+  font-size: var(--font-base);
+  font-weight: var(--weight-regular);
+  color: hsl(var(--foreground));
+  text-decoration: none;
+  border-left: 2px solid transparent;
+  transition: background var(--duration-fast) ease, border-color var(--duration-fast) ease;
+}
+
+/* The fill and the left rule are the focus state, standing in for the
+   outline — a ring inside a full-bleed row reads as clipped. */
+.site-menu-links a:hover,
+.site-menu-links a:focus-visible {
+  background: hsl(var(--muted));
+  border-left-color: hsl(var(--foreground));
+  outline: none;
+}
+
+.site-menu-links picture {
+  display: block;
+  flex-shrink: 0;
+}
+
+/* Black PNG in light mode, white in dark, swapped by <picture> — the same
+   pattern the wordmark uses. */
+.site-menu-icon {
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+
+.site-menu-foot {
+  margin-top: auto;
+  padding: var(--space-3);
+  border-top: 1px solid hsl(var(--border));
+}
+
+/* The hero's secondary "View on GitHub" link, retinted from --hero-fg to
+   the drawer's themed tokens. */
+.site-menu-github {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 0;
   font-size: var(--font-sm);
   color: hsl(var(--secondary-foreground));
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  text-decoration-color: hsl(var(--rule));
+  transition: color var(--duration-base) var(--ease-out),
+              text-decoration-color var(--duration-base) var(--ease-out);
+}
+
+.site-menu-github:hover {
+  color: hsl(var(--foreground));
+  text-decoration-color: hsl(var(--foreground));
+}
+
+/* ── Home sections ────────────────────────────────────────── */
+/* The home page is one scroll of three sections — Explore the data,
+   Read our findings, View all roles — each opening with the same
+   heading and one-line description. The site menu links to them as plain
+   anchors. A hairline between sections, with room on both sides of it, is
+   what separates them. Left-aligned, overriding body's centered text-align. */
+#main {
+  padding-top: var(--space-6);
+}
+
+.home-section {
+  padding-bottom: var(--space-8);
   text-align: left;
 }
 
-/* Two stacked triangles — border-colored, then a slightly smaller
-   card-colored one on top — is the standard way to fake a bordered
-   callout caret with no extra markup. Positioned near the box's bottom
-   (roughly the icon's own vertical center, since the box now grows
-   upward from the icon's bottom edge) rather than the box's true
-   center, which no longer corresponds to where the icon actually is. */
-.ai-info-tooltip::before,
-.ai-info-tooltip::after {
-  content: '';
-  position: absolute;
-  bottom: 8px;
-  right: 100%;
-  width: 0;
-  height: 0;
-  border-top: 6px solid transparent;
-  border-bottom: 6px solid transparent;
+.home-section + .home-section {
+  padding-top: var(--space-8);
+  border-top: 1px solid hsl(var(--border));
 }
 
-.ai-info-tooltip::before {
-  border-right: 6px solid hsl(var(--border));
+/* Anchor jumps land just under the sticky bar (html's scroll-padding-top).
+   For the second and third sections that puts their divider exactly on the
+   bar's own bottom border, so the two read as one line. The first section
+   has no divider, so it gets #main's top padding back as breathing room —
+   this adds to the scroll-padding rather than replacing it. */
+.home-section:first-child {
+  scroll-margin-top: var(--space-6);
 }
 
-.ai-info-tooltip::after {
-  margin-right: -1px;
-  border-top-width: 5px;
-  border-bottom-width: 5px;
-  border-right: 5px solid hsl(var(--card));
+/* The last section's bottom room is the gap before the footer's own rule. */
+.home-section:last-child {
+  padding-bottom: var(--space-12);
 }
 
-@media (max-width: 480px) {
-  /* Not enough horizontal room to the right of the icon at these widths —
-     falls back to the original below-the-row placement instead, same as
-     before the caret was added.
-
-     Anchoring this to the icon (.ai-info-wrap) the way desktop does was
-     the first attempt, but the icon sits well left-of-center on a narrow
-     screen — a fixed-width box anchored to it and extending in either
-     direction ran off whichever edge was closer (confirmed: right-aligned
-     at 240px put its left edge 51px past the left of a 375px viewport,
-     permanently off-screen, not just requiring a scroll). Repositioning
-     against the full row instead, spanning left:0 to right:0, makes its
-     width follow the row's own (container-padding-safe) width
-     automatically — it can't overflow either edge at any viewport size. */
-  .ai-info-wrap {
-    position: static;
-  }
-
-  .ai-info-tooltip {
-    position: absolute;
-    top: 100%;
-    bottom: auto;
-    left: 0;
-    right: 0;
-    margin-left: 0;
-    margin-top: var(--space-2);
-    width: auto;
-    max-width: none;
-  }
-
-  /* Caret still points at the icon, just vertically now — the box grows
-     downward from the row here instead of upward from the icon, so the
-     desktop caret's sideways triangle is rotated to point up instead of
-     hidden outright. --caret-left comes from JS (positionAiCaret in
-     scripts.js): the icon's x offset shifts with the heading text's
-     rendered width, which CSS alone can't express, so it's measured from
-     the actual layout each time the toggletip opens. */
-  .ai-info-tooltip::before,
-  .ai-info-tooltip::after {
-    top: -6px;
-    bottom: auto;
-    right: auto;
-    left: var(--caret-left, 50%);
-    transform: translateX(-50%);
-    border-top: none;
-    border-left: 6px solid transparent;
-    border-right: 6px solid transparent;
-    border-bottom: 6px solid hsl(var(--border));
-  }
-
-  .ai-info-tooltip::after {
-    top: -5px;
-    margin-right: 0;
-    border-left-width: 5px;
-    border-right-width: 5px;
-    border-bottom-width: 5px;
-    border-bottom-color: hsl(var(--card));
-  }
+.section-head {
+  margin-bottom: var(--space-3);
 }
 
-/* position: relative so the sliding indicator (absolute) measures against
-   this element, not the page. */
-.badge-nav {
-  position: relative;
-  display: inline-flex;
-  gap: var(--space-4);
-}
-
-/* Slides between tabs on selection (see positionNavIndicator in
-   scripts.js) rather than each tab carrying its own static underline —
-   the motion itself is what reads as "these snap between one another,"
-   not just a color change. top/left/width are set inline per active tab;
-   only the transition lives here. */
-.badge-nav-indicator {
-  position: absolute;
-  height: 2px;
-  background: hsl(var(--foreground));
-  transition: top var(--duration-base) var(--ease-out),
-              left var(--duration-base) var(--ease-out),
-              width var(--duration-base) var(--ease-out);
-  pointer-events: none;
-}
-
-.badge-btn {
+/* One page-level h1 lives in the hero; these are the section titles. Sized
+   on --font-xl, a clear step below the hero's --font-3xl and well above the
+   card and row titles under them, so each reads as the start of a section
+   rather than one more label. */
+.section-heading {
   font-family: var(--font-sans);
-  font-size: var(--font-sm);
-  font-weight: var(--weight-medium);
-  color: hsl(var(--muted-foreground));
-  background: transparent;
-  border: none;
-  padding: var(--space-1) 0;
-  cursor: pointer;
-  transition: color var(--duration-fast) ease;
-  outline: none;
-  white-space: nowrap;
-}
-
-.badge-btn:hover {
-  color: hsl(var(--foreground));
-}
-
-.badge-btn.active {
-  color: hsl(var(--foreground));
+  font-size: var(--font-xl);
   font-weight: var(--weight-semibold);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  text-wrap: balance;
+  color: hsl(var(--foreground));
 }
 
-.badge-btn:focus-visible {
+/* Signals and Clusters, the two views under "Explore the data." A small
+   segmented control rather than top-level tabs: the menu chooses the
+   section, this only switches the view inside it. Active state uses the
+   --primary inversion pair, which exists for exactly this. */
+.explore-toggle {
+  display: inline-flex;
+  flex-shrink: 0;
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.explore-toggle-btn {
+  font-family: var(--font-mono);
+  font-size: var(--font-xs);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: hsl(var(--muted-foreground));
+  background: none;
+  border: none;
+  padding: 6px var(--space-2);
+  cursor: pointer;
+  transition: color var(--duration-fast) ease, background var(--duration-fast) ease;
+}
+
+.explore-toggle-btn + .explore-toggle-btn {
+  border-left: 1px solid hsl(var(--border));
+}
+
+.explore-toggle-btn:hover {
+  color: hsl(var(--foreground));
+}
+
+.explore-toggle-btn.active {
+  color: hsl(var(--primary-foreground));
+  background: hsl(var(--primary));
+}
+
+/* Inset, since the container's overflow: hidden would clip an outer ring. */
+.explore-toggle-btn:focus-visible {
   outline: 2px solid hsl(var(--ring));
-  outline-offset: 2px;
+  outline-offset: -2px;
 }
 
-@media (max-width: 480px) {
-  /* The three relabeled tabs (Phase B) no longer reliably fit on one row
-     at the narrowest supported widths even with the reduced gap — verified
-     overflow at 320-340px viewport width. Wrapping the row (rather than
-     shrinking text further or letting a single label wrap mid-phrase)
-     keeps every label on one line and never clips content off-screen. */
-  .badge-nav { gap: var(--space-2); flex-wrap: wrap; }
-}
-
-/* One line, always visible, updated on tab switch rather than per-tab or
-   on hover — sits inside the sticky .nav-bar so it never scrolls out of
-   sync with which tab is actually active, regardless of scroll position
-   when a tab is switched. PREVIEW: trying this as the answer to "what does
-   each tab contain," after a per-panel icon+description attempt read as
-   disconnected floating text and a hover-only tooltip would have excluded
-   touch visitors entirely. */
-.tab-caption {
-  margin-top: var(--space-2);
+/* What the section contains, in one line, under its heading. In Explore
+   the data it swaps with the toggle (see activateView). */
+.section-desc {
+  margin-top: var(--space-1);
   font-size: var(--font-sm);
   color: hsl(var(--muted-foreground));
 }
 
-/* Only the Roles tab's caption carries this — see activateBadge in
-   scripts.js, which toggles its `hidden` attribute per tab rather than
-   building it into the data-caption string. Same link treatment as
-   .state-body a for consistency. */
-.tab-caption-link {
+/* Explore the data keeps the same heading-then-description stack as the
+   other sections, with the toggle at the right end of the description's
+   row, lined up with the grid's right edge. It wraps under the description
+   when the row runs out of room. */
+.explore-head-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  margin-top: var(--space-1);
+}
+
+.explore-head-row .section-desc {
+  margin-top: 0;
+}
+
+/* Same link treatment as .state-body a. */
+.section-desc-link {
   color: hsl(var(--foreground));
   text-decoration: underline;
   text-underline-offset: 3px;
@@ -660,26 +759,21 @@ body {
   transition: text-decoration-color var(--duration-fast) ease;
 }
 
-.tab-caption-link:hover {
+.section-desc-link:hover {
   text-decoration-color: hsl(var(--foreground));
 }
 
-.tab-caption-link:focus-visible {
+.section-desc-link:focus-visible {
   outline: 2px solid hsl(var(--ring));
   outline-offset: 2px;
 }
 
-/* ── Sections ─────────────────────────────────────────────── */
-#main {
-  padding-top: var(--space-6);
-}
-
-.section {
+/* Signals and Clusters, one showing at a time. */
+.explore-panel {
   display: none;
-  padding-bottom: var(--space-12);
 }
 
-.section.active {
+.explore-panel.active {
   display: block;
 }
 
@@ -917,7 +1011,8 @@ body {
 
 #titles-show-more,
 #clusters-show-more,
-#signals-show-more {
+#signals-show-more,
+#findings-show-more {
   text-align: center;
   margin-top: var(--space-4);
 }
@@ -947,8 +1042,9 @@ body {
 }
 
 /* ── Findings ─────────────────────────────────────────────── */
-/* The tab lists posts; each post has its own page (see Findings post pages
-   below). Border-separated rows at a 640px reading measure, following
+/* The home page's Read our findings section lists posts; each post has its
+   own page (see Findings post pages below). The list itself is written into
+   index.html by build-findings.py. Border-separated rows following
    .title-entry's pattern rather than the flip-card grid. */
 .finding-list {
   display: flex;
@@ -967,6 +1063,12 @@ body {
   border-bottom: 1px solid hsl(var(--muted));
   color: inherit;
   text-decoration: none;
+}
+
+/* Posts past the cap until "Read more" (see FINDINGS_LIMIT in
+   build-findings.py). display: flex above would otherwise beat [hidden]. */
+.finding[hidden] {
+  display: none;
 }
 
 .finding:last-child {
@@ -1035,24 +1137,8 @@ body {
 }
 
 /* ── Findings post pages ──────────────────────────────────── */
-/* Generated by scripts/build-findings.py into docs/findings/<slug>/. These
-   pages have no hero image to justify a fixed-black band the way the home
-   page does, so the header sits on the page's own themed background
-   instead -- a hairline rule is the only separation, so arriving from the
-   home page's Findings tab doesn't read as landing on a different site. */
-.post-header {
-  padding: var(--space-3) 0;
-  border-bottom: 1px solid hsl(var(--border));
-  text-align: left;
-}
-
-/* .hero-wordmark is display: block for the home page's flex row; in this
-   plain container that would stretch the link, and its focus ring, across
-   the full width. */
-.post-header .hero-wordmark {
-  display: inline-block;
-}
-
+/* Generated by scripts/build-findings.py into docs/findings/<slug>/, under
+   the same .site-bar the home page has. */
 .post {
   max-width: 640px;
   padding: var(--space-6) 0 var(--space-8);
@@ -1126,14 +1212,6 @@ body {
 .post-byline-text a:focus-visible {
   outline: 2px solid hsl(var(--ring));
   outline-offset: 2px;
-}
-
-/* ── Findings index page (/findings/) ─────────────────────── */
-/* Plain-HTML listing, generated alongside the post pages — same .post
-   shell, and the home page's own .finding-list markup reused verbatim so
-   the two stay visually identical. */
-.post-finding-list {
-  margin-top: var(--space-6);
 }
 
 .post-title {
@@ -1792,7 +1870,7 @@ body {
 }
 
 /* Panels take programmatic focus after a retry; no visible ring for that. */
-.section:focus {
+.explore-panel:focus {
   outline: none;
 }
 
@@ -1834,7 +1912,21 @@ body {
   }
 
   .footer-brand a,
-  .badge-btn,
+  .hero-cta,
+  .hero-data-cta,
+  .post-byline-text a,
+  .flip-card-close,
+  .state-body a,
+  .site-bar-nav a,
+  .site-bar-icon,
+  .menu-toggle,
+  .site-menu,
+  .site-menu-backdrop,
+  .site-menu-close,
+  .site-menu-links a,
+  .site-menu-github,
+  .explore-toggle-btn,
+  .section-desc-link,
   .cluster-card,
   .signal-card,
   .title-detail,
@@ -1849,8 +1941,7 @@ body {
   .flip-card--overlay,
   .flip-card-back-content,
   .flip-card-nav,
-  .card-overlay-backdrop,
-  .badge-nav-indicator {
+  .card-overlay-backdrop {
     transition: none;
   }
 

@@ -146,7 +146,7 @@ Commerce` rendered. A separator matching neither rule is the user's call, not
 something to settle by widening the rule.
 
 **Step 6 — Archive the source text and update metadata after writing**
-After writing the entry to `jobs.json`, always complete all seven of the
+After writing the entry to `jobs.json`, always complete all eight of the
 following in the same pass:
 - write the raw JD text to `jd-source/{id}.md`, following the file format in `jd-source/README.md`
 - `meta.totalEntries` in `jobs.json`
@@ -155,8 +155,9 @@ following in the same pass:
 - the entry count and date in the "What this dataset tracks" section of `docs/llms.txt`
 - the citation date in the "How to cite this work" section of `docs/llms.txt`
 - run `python3 jd-insights/refresh.py`, which regenerates `jd-insights/stats.md` and `jd-insights/quotes.md`
+- run `python3 scripts/build-home.py`, which rewrites the home page's cards, roles list, role count, and "Last updated" dates in `docs/index.html` from `jobs.json` — so the dataset is in the page for crawlers that don't run JavaScript. Run it after `meta.lastUpdated` is set, since it reads it.
 
-All seven must stay in sync. Never write an entry without completing this step.
+All eight must stay in sync. Never write an entry without completing this step.
 The same applies when an entry is removed, not only when one is added.
 
 Then check, but only update if the entry warrants it:
@@ -486,23 +487,41 @@ exception touches `quote` only, never the archive.
 
     <link rel="stylesheet" href="css/styles.css?v=N">
     <script src="js/scripts.js?v=N"></script>
+    <script src="js/menu.js?v=N"></script>
 
 Read `index.html` for the current numbers. They are not reproduced here,
 because a version written into this file goes stale the next time an asset
 changes and then reads as the value to restore.
 
-Browsers cache those files against that string. A change to `scripts.js` or
-`styles.css` that does not bump the matching `?v=` number ships to nobody —
-visitors keep running the previously cached version, and the deployed site
-silently disagrees with the repo.
+Browsers cache those files against that string. A change to `scripts.js`,
+`menu.js`, or `styles.css` that does not bump the matching `?v=` number
+ships to nobody — visitors keep running the previously cached version, and
+the deployed site silently disagrees with the repo.
 
 Bump the version in the same commit as the change. Never bump one asset's
-version to publish a change to the other; they are cached independently.
+version to publish a change to another; they are cached independently.
+`scripts/check-asset-versions.sh` enforces this for all three in CI.
+
+`menu.js` is the site menu, loaded on every page including the findings
+posts. `scripts.js` is the home page only — it assumes the home page's
+grids and lists exist, so never load it on a findings page or put anything
+there the findings pages need.
 
 `index.html` carries no version string of its own, so a change to it is not
-gated behind a bump the way the assets are. Some state copy exists twice — as
-static markup in `index.html` and as a string in the `COPY` object in
-`scripts.js`. Changing one is a reason to check the other, in both directions. A missed bump on a shared string is worse than a
+gated behind a bump the way the assets are. Some state copy exists twice — in
+the `COPY` object in `scripts.js` and as static markup (now written by the
+build scripts: the empty states in `scripts/build-home.py`'s `EMPTY` and in
+`render_home_findings` in `scripts/build-findings.py`). Changing one is a
+reason to check the other, in both directions.
+
+The home page's cards and roles list are pre-rendered into `index.html` by
+`scripts/build-home.py` (between `signals`/`clusters`/`roles` markers), and
+`scripts.js` re-renders the same markup on load. The two must produce the
+same output, or the page visibly shifts as the script takes over — so a
+change to `renderSignals`, `renderClusters`, or `renderTitles` needs the
+matching change in `build-home.py`, then a rebuild. `build-home.py` reads
+`SECTION_LIMIT`, `SIGNAL_THRESHOLD`, and `NEW_KEY_WINDOW_DAYS` straight out
+of `scripts.js`, so those can't drift. A missed bump on a shared string is worse than a
 missed bump elsewhere: instead of shipping nothing, the page paints the new
 copy from the HTML and the cached script replaces it with the old.
 
@@ -754,11 +773,20 @@ is never built, so a post can be reviewed in the repo before it goes live.
 
 **Publishing.** Run `python3 scripts/build-findings.py` after any change to
 `findings/`, and commit what it writes: the post pages in `docs/findings/`,
-`docs/data/findings.json`, the post URLs in `docs/sitemap.xml`, and the
-Findings section of `docs/llms.txt`. Never hand-edit those outputs; the next
-run overwrites them. The build also embeds the current `styles.css?v=`
-number from `docs/index.html` into each post page, so rerun it whenever that
-version is bumped. CI runs `--check` and fails if anything is out of date.
+the home page's Read our findings list in `docs/index.html` (only what sits
+between the `findings:start` / `findings:end` markers — the rest of
+`index.html` stays hand-written), `docs/data/findings.json`, the post URLs in
+`docs/sitemap.xml`, and the Findings section of `docs/llms.txt`. Never
+hand-edit those outputs; the next run overwrites them. The list is written
+into the page rather than fetched so the post links are there for crawlers
+and the section shows without waiting on JavaScript. It shows 6 posts, then
+"Read more" (`FINDINGS_LIMIT` in the build script). `docs/findings/index.html`
+is now only a redirect to `/#findings`, kept so old links still land. The build also reads three things out of
+`docs/index.html` and embeds them in each post page: the `styles.css?v=`
+and `menu.js?v=` numbers, and the navigation markup itself (the sticky top
+bar and the drawer). `index.html` is the only copy of both — edit it there, then
+rerun the build. Rerun it whenever either version is bumped or the menu
+changes. CI runs `--check` and fails if anything is out of date.
 
 The build checks every quotation in a post's data section against
 `jd-source/` under the Quote field's three normalizations, and fails on a
@@ -789,10 +817,15 @@ visibly disagrees with the post's own text once clicked.
   exception covers — personal, experience-informed, not required to cite back
   to the dataset the way the data section does. It comes last, after all of
   the data section; the build rejects a post that interleaves the two.
-- `title` follows the data section's rules. `summary` is not a hand-written
-  front-matter field — it's derived automatically from the opening sentences
-  of the data section's first paragraph, which is why that paragraph does
-  double duty as the one line shown on the Findings tab and in link previews.
+- `title` and `summary` follow the data section's rules. `summary` is a
+  required, hand-written front-matter field: one sentence, under 200
+  characters (the build enforces the length), written for someone who
+  hasn't read the post. It isn't shown on the site itself — it's the
+  description search results, link previews (meta and OpenGraph tags), the
+  post's JSON-LD, and `llms.txt` use. Write it with every new post. It
+  replaced an auto-derived summary that pulled the opening sentences and
+  produced lines like "…each in its own words:" when a paragraph led into a
+  list.
 - `signals` lists the cluster and/or signal keys (from `docs/data/jobs.json`)
   the finding is grounded in, so a reader can check the claim against the
   taxonomy. The list can grow later if another posting shows the same

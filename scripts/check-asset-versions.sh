@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
-# Fails if docs/js/scripts.js or docs/css/styles.css changed more recently
-# than the matching ?v= cache-bust string was last bumped in docs/index.html.
+# Fails if docs/js/scripts.js, docs/js/menu.js, or docs/css/styles.css changed
+# more recently than the matching ?v= cache-bust string was last bumped in
+# docs/index.html.
 # See the "Site code" section of CLAUDE.md for why this exists — it has
 # already shipped silently-stale assets twice.
 set -euo pipefail
@@ -35,4 +36,5 @@ check() {
 }
 
 check docs/js/scripts.js 'scripts\.js\?v=' 'scripts.js'
+check docs/js/menu.js 'menu\.js\?v=' 'menu.js'
 check docs/css/styles.css 'styles\.css\?v=' 'styles.css'

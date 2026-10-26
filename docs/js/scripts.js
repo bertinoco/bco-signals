@@ -1,12 +1,14 @@
 // Data path for GitHub Pages with `docs/` at repo root
 const DATA_PATH = 'data/jobs.json';
-// Findings are hand-curated and load separately from the dataset proper —
-// see CLAUDE.md's Findings tab promotion process. A fetch failure here
-// degrades to the empty state rather than blocking the rest of the page
-// (see loadFindings).
-const FINDINGS_PATH = 'data/findings.json';
 const SIGNAL_THRESHOLD = 2;
-const TITLES_LIMIT = 12;
+// Every home section shows 6 before its "View all" — cards, findings, and
+// jobs alike. 6 fills the card grid evenly at every width (3+3, 2+2+2, 1x6)
+// and keeps the scroll short. Findings says "Read more"; its cap is
+// FINDINGS_LIMIT in build-findings.py and should match this.
+// build-home.py reads SECTION_LIMIT, SIGNAL_THRESHOLD, and
+// NEW_KEY_WINDOW_DAYS straight out of this file to pre-render the same
+// sections into index.html — keep them as plain `const NAME = number;`.
+const SECTION_LIMIT = 6;
 // How long a cluster/signal shows a "New" chip after its earliest carrying
 // entry landed — self-expiring, so nothing has to remember to remove it.
 // Deliberately not applied to individual roles (see renderTitles): those
@@ -15,7 +17,10 @@ const TITLES_LIMIT = 12;
 // additions (see CLAUDE.md Step 4).
 const NEW_KEY_WINDOW_DAYS = 30;
 const FETCH_TIMEOUT_MS = 10000;
-const SECTION_CONTAINERS = ['cluster-grid', 'signal-list', 'title-list', 'finding-list'];
+// The findings list isn't here: build-findings.py writes it into
+// index.html, so it doesn't depend on jobs.json loading and mustn't be
+// overwritten by its loading or error states.
+const SECTION_CONTAINERS = ['cluster-grid', 'signal-list', 'title-list'];
 // Symbol only — the ISO code is always shown alongside it (see fmt below),
 // since a bare symbol is ambiguous (USD/CAD/AUD/HKD all use "$"). A currency
 // missing here still renders correctly: no symbol, just the number and code.
@@ -37,14 +42,6 @@ let globalData = null;
 let clusterOrder = [];
 let signalOrder = [];
 
-// Responsibilities/Skills truncate at 3 full rows of whatever column count
-// the grid is actually rendering at, not a flat number — read the live
-// layout instead of duplicating the grid's own breakpoints as a second,
-// driftable source of truth.
-function currentColumnCount(gridEl) {
-  return getComputedStyle(gridEl).gridTemplateColumns.split(' ').length;
-}
-
 // ── Copy ────────────────────────────────────────────────────
 // All loading, empty, and error copy lives here. See copy-patterns.md
 // for the rules these strings follow and why each one is worded this way.
@@ -65,10 +62,7 @@ const COPY = {
       title: 'No roles yet',
       body: 'Roles appear here as job descriptions are added to the dataset.',
     },
-    findings: {
-      title: 'No findings yet',
-      body: 'Findings will appear here once confirmed across multiple job descriptions.',
-    },
+    // The findings empty state is written by build-findings.py, not here.
   },
   error: {
     offline: {
@@ -165,24 +159,6 @@ async function loadData() {
   }
 }
 
-// Findings are a small, separately-curated file (see CLAUDE.md's Findings
-// tab promotion process) — a fetch failure or malformed payload here
-// degrades to the "no findings yet" empty state instead of the
-// offline/network/timeout error treatment loadData uses, since the rest of
-// the page still works without them.
-async function loadFindings() {
-  try {
-    const res = await fetch(FINDINGS_PATH);
-    if (!res.ok) return { findings: [] };
-    const data = await res.json();
-    if (!data || !Array.isArray(data.findings)) return { findings: [] };
-    return data;
-  } catch (err) {
-    console.error(err);
-    return { findings: [] };
-  }
-}
-
 // ── Render ──────────────────────────────────────────────────
 function renderMeta(data) {
   const dateEl = document.getElementById('footer-date');
@@ -204,10 +180,10 @@ function renderMeta(data) {
 
 }
 
-// The Skills tab shows a signal only once SIGNAL_THRESHOLD postings ask for it —
-// one posting is an anecdote. Nav counts and the per-role chips read the same
-// filter from here, so a signal can never appear on a role without also being
-// findable in Skills.
+// The Signals view shows a signal only once SIGNAL_THRESHOLD postings ask for
+// it — one posting is an anecdote. The per-role chips read the same filter
+// from here, so a signal can never appear on a role without also being
+// findable in Signals. build-home.py reads SIGNAL_THRESHOLD from this file.
 function signalEntryCounts(data) {
   const counts = new Map(Object.keys(data.signals).map(k => [k, 0]));
   data.entries.forEach(entry => {
@@ -319,14 +295,10 @@ function renderClusters(data) {
 
   const showMore = document.getElementById('clusters-show-more');
   const showMoreBtn = showMore ? showMore.querySelector('.show-more-btn') : null;
-  // Single column (mobile) shows everything, no pagination — with a dataset
-  // this small, "load more" gates a handful of items, not a real list.
-  const isSingleColumn = currentColumnCount(grid) === 1;
-  const limit = currentColumnCount(grid) * 3;
-  const keysToRender = (isSingleColumn || showAllClusters) ? clusterKeys : clusterKeys.slice(0, limit);
+  const keysToRender = showAllClusters ? clusterKeys : clusterKeys.slice(0, SECTION_LIMIT);
 
   if (showMore) {
-    if (!isSingleColumn && !showAllClusters && clusterKeys.length > limit) {
+    if (!showAllClusters && clusterKeys.length > SECTION_LIMIT) {
       showMore.style.display = 'block';
       showMoreBtn.textContent = 'View all';
     } else {
@@ -387,10 +359,10 @@ function renderTitles(data) {
   }
 
   const sorted = [...data.entries].sort((a, b) => new Date(b.dateAdded) - new Date(a.dateAdded));
-  const entries = showAllTitles ? sorted : sorted.slice(0, TITLES_LIMIT);
+  const entries = showAllTitles ? sorted : sorted.slice(0, SECTION_LIMIT);
 
   if (showMore) {
-    if (!showAllTitles && data.entries.length > TITLES_LIMIT) {
+    if (!showAllTitles && data.entries.length > SECTION_LIMIT) {
       showMore.style.display = 'block';
       showMoreBtn.textContent = 'View all';
     } else {
@@ -420,7 +392,7 @@ function renderTitles(data) {
         + qualifiers.map(q => ` · ${q}`).join('')
         + `</span>`
       : '';
-    // Chips are filtered to the signals the Skills tab shows, so a reader can
+    // Chips are filtered to the signals the Signals view shows, so a reader can
     // always follow one from a role to its definition. Insurify's "Title
     // dilution" and Meta's "Hybrid role" sit below the threshold and are held
     // back here; both remain assigned in jobs.json.
@@ -518,14 +490,10 @@ function renderSignals(data) {
 
   const showMore = document.getElementById('signals-show-more');
   const showMoreBtn = showMore ? showMore.querySelector('.show-more-btn') : null;
-  // Single column (mobile) shows everything, no pagination — with a dataset
-  // this small, "load more" gates a handful of items, not a real list.
-  const isSingleColumn = currentColumnCount(list) === 1;
-  const limit = currentColumnCount(list) * 3;
-  const keysToRender = (isSingleColumn || showAllSignals) ? relevantSignals : relevantSignals.slice(0, limit);
+  const keysToRender = showAllSignals ? relevantSignals : relevantSignals.slice(0, SECTION_LIMIT);
 
   if (showMore) {
-    if (!isSingleColumn && !showAllSignals && relevantSignals.length > limit) {
+    if (!showAllSignals && relevantSignals.length > SECTION_LIMIT) {
       showMore.style.display = 'block';
       showMoreBtn.textContent = 'View all';
     } else {
@@ -554,177 +522,85 @@ function renderSignals(data) {
   }).join('');
 }
 
-// Each finding is a post with its own page, generated from findings/*.md by
-// scripts/build-findings.py — this tab only lists them, most recent first.
-// No pagination, since a hand-curated list stays short by design (see
-// CLAUDE.md's Findings tab promotion process).
-function renderFindings(data) {
-  const list = document.getElementById('finding-list');
-  const findings = (data && Array.isArray(data.findings)) ? data.findings : [];
+// ── Explore the data: Signals / Clusters ────────────────────
+// The home page is one scroll of three sections — #explore, #findings,
+// #titles — and the site menu links straight to them as plain anchors.
+// The only thing that swaps is the view inside #explore, and its one-line
+// description with it.
+const exploreTabs = Array.from(document.querySelectorAll('.explore-toggle-btn'));
+const exploreToggle = document.querySelector('.explore-toggle');
+const exploreDesc = document.getElementById('explore-desc');
 
-  if (findings.length === 0) {
-    renderState('finding-list', { variant: 'empty', ...COPY.empty.findings });
-    return;
-  }
-
-  const sorted = [...findings].sort((a, b) => new Date(b.date) - new Date(a.date));
-
-  list.innerHTML = sorted.map(f => `
-    <a class="finding" href="${f.url}">
-      <div class="finding-header">
-        <h3 class="finding-title">${f.title}</h3>
-        <span class="finding-arrow" aria-hidden="true">→</span>
-      </div>
-      <time class="finding-date" datetime="${f.date}">${formatDate(f.date)}</time>
-    </a>
-  `).join('');
-}
-
-// A page load carrying a tab's id in the URL (#findings, #clusters, …)
-// opens that tab instead of the default one. Post pages link back to
-// /#findings, so a reader returns to the list they came from.
-function openTabFromHash() {
-  const section = window.location.hash.slice(1);
-  const badge = badges.find(b => b.dataset.section === section);
-  if (!badge) return;
-
-  activateBadge(badge);
-  document.getElementById('nav-bar').scrollIntoView({ block: 'start' });
-}
-
-// ── Badge nav (click + arrow keys) ──────────────────────────
-const badges = Array.from(document.querySelectorAll('.badge-btn'));
-const badgeNav = document.querySelector('.badge-nav');
-
-const badgeNavIndicator = document.querySelector('.badge-nav-indicator');
-
-// Slides the shared indicator under whichever tab is active. top is
-// included, not just left/width, because the nav wraps to a second row
-// at narrow widths (see the <=480px media query) — the active tab isn't
-// always on the same row. skipTransition suppresses the CSS transition
-// for the very first call, so the indicator doesn't animate in from
-// (0,0) on page load — see the "Skip Animation on Page Load" pattern
-// used elsewhere on the site.
-function positionNavIndicator(skipTransition) {
-  const activeBadge = document.querySelector('.badge-btn.active');
-  if (!activeBadge || !badgeNavIndicator) return;
-  if (skipTransition) badgeNavIndicator.style.transition = 'none';
-  badgeNavIndicator.style.top = `${activeBadge.offsetTop + activeBadge.offsetHeight}px`;
-  badgeNavIndicator.style.left = `${activeBadge.offsetLeft}px`;
-  badgeNavIndicator.style.width = `${activeBadge.offsetWidth}px`;
-  if (skipTransition) {
-    void badgeNavIndicator.offsetWidth; // force reflow before restoring the transition
-    badgeNavIndicator.style.transition = '';
-  }
-}
-
-const tabCaptionText = document.getElementById('tab-caption-text');
-const tabCaptionLink = document.getElementById('tab-caption-link');
-
-function activateBadge(badge) {
-  badges.forEach(b => {
-    b.classList.remove('active');
-    b.setAttribute('aria-selected', 'false');
+function activateView(key) {
+  document.querySelectorAll('.explore-panel').forEach(p => p.classList.toggle('active', p.id === key));
+  exploreTabs.forEach(tab => {
+    const active = tab.dataset.section === key;
+    tab.classList.toggle('active', active);
+    tab.setAttribute('aria-selected', String(active));
+    // Standard tablist focus: Tab reaches the selected option only, and the
+    // arrow keys move between the two.
+    tab.tabIndex = active ? 0 : -1;
+    if (active) exploreDesc.textContent = tab.dataset.desc;
   });
-  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-  badge.classList.add('active');
-  badge.setAttribute('aria-selected', 'true');
-  document.getElementById(badge.dataset.section).classList.add('active');
-  if (tabCaptionText) tabCaptionText.textContent = badge.dataset.caption;
-  // Only the Roles tab links out to jd-source — the raw archive only makes
-  // sense to browse once you're looking at individual postings.
-  if (tabCaptionLink) tabCaptionLink.hidden = badge.dataset.section !== 'titles';
-  positionNavIndicator();
 }
 
-badges.forEach(badge => {
-  badge.addEventListener('click', () => {
-    activateBadge(badge);
-    // Blur only here, not inside activateBadge: the arrow-key handler below
-    // also calls activateBadge after moving focus with .focus(), and a
-    // shared blur() there stripped focus again immediately — the keydown
-    // listener is on .badge-nav, and relies on a focused descendant for
-    // events to bubble through, so after one arrow press focus (and with
-    // it, all further arrow presses) went dead.
-    badge.blur();
+exploreTabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    activateView(tab.dataset.section);
+    // Blur only on click: the arrow-key handler below moves focus with
+    // .focus() and needs it to stay put for further presses to land.
+    tab.blur();
   });
 });
 
-badgeNav.addEventListener('keydown', (e) => {
+exploreToggle.addEventListener('keydown', (e) => {
   if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
   e.preventDefault();
-  const idx = badges.indexOf(document.activeElement);
+  const idx = exploreTabs.indexOf(document.activeElement);
   const next = e.key === 'ArrowRight'
-    ? (idx + 1) % badges.length
-    : (idx - 1 + badges.length) % badges.length;
-  badges[next].focus();
-  activateBadge(badges[next]);
+    ? (idx + 1) % exploreTabs.length
+    : (idx - 1 + exploreTabs.length) % exploreTabs.length;
+  exploreTabs[next].focus();
+  activateView(exploreTabs[next].dataset.section);
 });
 
-positionNavIndicator(true);
-// Column count and text wrapping don't change on resize, but which row a
-// tab wraps to (<=480px) or the container's own available width can —
-// both shift a button's offsetLeft/offsetTop.
-window.addEventListener('resize', () => positionNavIndicator(true));
-
-// ── AI disclosure tooltip ────────────────────────────────────
-// Click-to-toggle rather than hover-only: hover doesn't exist on touch, and
-// a single trigger mechanism that works everywhere beats hover-plus-a-
-// separate-touch-fallback for a control this minor.
-const aiInfoBtn = document.getElementById('ai-info-btn');
-const aiInfoTooltip = document.getElementById('ai-info-tooltip');
-
-// Below 480px the toggletip spans the full nav-heading-row instead of
-// anchoring to the icon (see the CSS comment on that media query), so the
-// caret can't just sit at a fixed spot — it has to track wherever the icon
-// actually renders, which shifts with the heading text's rendered width.
-// Harmless to compute above 480px too: the desktop caret is positioned via
-// `right`, not `left`, so --caret-left has no effect there.
-function positionAiCaret() {
-  const row = aiInfoBtn.closest('.nav-heading-row');
-  if (!row) return;
-  const rowRect = row.getBoundingClientRect();
-  const btnRect = aiInfoBtn.getBoundingClientRect();
-  const center = btnRect.left + btnRect.width / 2 - rowRect.left;
-  const clamped = Math.max(16, Math.min(center, rowRect.width - 16));
-  aiInfoTooltip.style.setProperty('--caret-left', `${clamped}px`);
+// #signals and #clusters are older deep links that predate the single
+// scroll. They pick the view and land on the section heading — the bare
+// anchor would land on the panel and hide the toggle above it.
+function openViewFromHash() {
+  const key = window.location.hash.slice(1);
+  if (key !== 'signals' && key !== 'clusters') return;
+  activateView(key);
+  document.getElementById('explore').scrollIntoView({ block: 'start' });
 }
 
-function closeAiInfo() {
-  aiInfoTooltip.hidden = true;
-  aiInfoBtn.setAttribute('aria-expanded', 'false');
-}
+window.addEventListener('hashchange', openViewFromHash);
 
-function openAiInfo() {
-  positionAiCaret();
-  aiInfoTooltip.hidden = false;
-  aiInfoBtn.setAttribute('aria-expanded', 'true');
-}
-
-aiInfoBtn.addEventListener('click', (e) => {
-  e.stopPropagation();
-  if (aiInfoTooltip.hidden) openAiInfo();
-  else closeAiInfo();
-});
-
-document.addEventListener('click', (e) => {
-  if (!aiInfoTooltip.hidden && e.target !== aiInfoBtn && !aiInfoTooltip.contains(e.target)) {
-    closeAiInfo();
+// Arriving from another page (/#titles from a findings post), the browser
+// jumps to the anchor before the data loads — then the cards render above
+// it and push it down the page. Re-land once everything is in place.
+function scrollToHashTarget() {
+  const key = window.location.hash.slice(1);
+  if (key === 'signals' || key === 'clusters') {
+    openViewFromHash();
+    return;
   }
-});
-
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape' && !aiInfoTooltip.hidden) {
-    closeAiInfo();
-    aiInfoBtn.focus();
+  if (key === 'explore' || key === 'findings' || key === 'titles') {
+    document.getElementById(key).scrollIntoView({ block: 'start' });
   }
-});
+}
 
-// Rotating a device or resizing the window while the toggletip is open
-// shifts the row's width and the icon's position within it.
-window.addEventListener('resize', () => {
-  if (!aiInfoTooltip.hidden) positionAiCaret();
-});
+// ── Findings "Read more" ────────────────────────────────────
+// build-findings.py renders every post but hides those past the cap, and
+// only renders this button when there are any — so the full list is in the
+// HTML for crawlers either way.
+const findingsShowMore = document.getElementById('findings-show-more');
+if (findingsShowMore) {
+  findingsShowMore.querySelector('.show-more-btn').addEventListener('click', () => {
+    document.querySelectorAll('#finding-list .finding[hidden]').forEach(el => { el.hidden = false; });
+    findingsShowMore.hidden = true;
+  });
+}
 
 // ── Flip-card overlay ───────────────────────────────────────
 // Clicking a cluster/signal card flips it and grows it to fill the
@@ -751,7 +627,7 @@ const CONTENT_REVEAL_DELAY_MS = 160;
 // from the accessibility tree, inert additionally blocks focus and pointer
 // interaction — aria-hidden alone still leaves a focusable descendant
 // reachable by Tab, which is exactly what it isn't supposed to be.
-const BACKGROUND_SELECTOR = '.site-header, .nav-bar, main, .site-footer';
+const BACKGROUND_SELECTOR = '.site-bar, .site-header, .hero-quote, main, .site-footer';
 
 function reducedMotion() {
   return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -1121,7 +997,10 @@ if (signalsShowMoreEl) {
 
 // ── Init ────────────────────────────────────────────────────
 async function init({ fromRetry = false } = {}) {
-  renderLoading();
+  // On first load the sections are already in the page, written by
+  // build-home.py, so a loading state would only flash over them. A retry
+  // follows an error state, where it's the honest thing to show.
+  if (fromRetry) renderLoading();
 
   const result = await loadData();
 
@@ -1136,16 +1015,14 @@ async function init({ fromRetry = false } = {}) {
   renderTitles(globalData);
   renderSignals(globalData);
 
-  const findingsData = await loadFindings();
-  renderFindings(findingsData);
-  openTabFromHash();
+  scrollToHashTarget();
 
   announce(`Dataset loaded. ${globalData.entries.length} roles.`);
 
   // Retry destroys the button that had focus. Move focus to the panel the
   // reader was already looking at rather than dropping them back at the top.
   if (fromRetry) {
-    const panel = document.querySelector('.section.active');
+    const panel = document.querySelector('.explore-panel.active');
     if (panel) panel.focus();
   }
 }

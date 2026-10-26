@@ -1,6 +1,7 @@
 ---
 title: Content design is becoming a central systems discipline
 date: 2026-10-22
+summary: Postings describe central owners for content standards, and several say outright that writing content is not the job.
 signals: central-standards-function, content-systems-design, enablement
 ---
 

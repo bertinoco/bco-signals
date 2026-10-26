@@ -6,7 +6,12 @@ turns every published post into a static page and keeps the files that list
 the posts in step with them:
 
     docs/findings/<slug>/index.html   one page per post
-    docs/data/findings.json           the list the Findings tab renders
+    docs/index.html                   the Read our findings list, between the
+                                      findings:start/end markers only
+    docs/findings/index.html          a redirect to /#findings (the list used
+                                      to live here)
+    docs/data/findings.json           the post list as JSON (no longer read
+                                      by the site itself)
     docs/sitemap.xml                  the post URLs (the root entry is untouched)
     docs/llms.txt                     the "Findings" section
 
@@ -25,6 +30,7 @@ import os
 import re
 import shutil
 import sys
+import textwrap
 from datetime import date
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -40,8 +46,19 @@ LLMS = os.path.join(DOCS, "llms.txt")
 SITE = "https://signals.bertino.co"
 OG_IMAGE = SITE + "/images/og-image.png"
 JOBS_JSON = os.path.join(DOCS, "data", "jobs.json")
-REQUIRED_FIELDS = ("title", "date", "signals")
+REQUIRED_FIELDS = ("title", "date", "summary", "signals")
+# The summary is what search results, link previews, and llms.txt show for
+# a post. One sentence, written for someone who hasn't read it.
+SUMMARY_MAX = 200
 OPTIONAL_FIELDS = ("updated", "draft")
+
+# Posts shown in the home page's Read our findings section before "Read
+# more". The rest are still rendered, just hidden, so crawlers see them all.
+# Matches SECTION_LIMIT in docs/js/scripts.js, so every section stops at 6.
+FINDINGS_LIMIT = 6
+FINDINGS_MARKERS = re.compile(
+    r"(<!-- findings:start[^>]*-->\n)(.*?)(^ *<!-- findings:end -->)", re.S | re.M
+)
 
 
 class BuildError(Exception):
@@ -79,6 +96,9 @@ def parse_post(path):
                 date.fromisoformat(meta[field])
             except ValueError:
                 raise BuildError(f"{name}: {field} must be YYYY-MM-DD, got {meta[field]!r}")
+    if len(meta["summary"]) > SUMMARY_MAX:
+        raise BuildError(f"{name}: summary is {len(meta['summary'])} characters; keep it to one "
+                         f"sentence under {SUMMARY_MAX}, since previews truncate past that")
 
     # The <aside> is the "My take" section. Exactly one, and last, so the
     # data a post reports and the opinion it offers never interleave.
@@ -103,7 +123,7 @@ def parse_post(path):
         "title": smart_quotes(meta["title"]),
         "date": meta["date"],
         "updated": meta.get("updated", meta["date"]),
-        "summary": derive_summary(data_md, name),
+        "summary": smart_quotes(meta["summary"]),
         "signals": [s.strip() for s in meta["signals"].split(",") if s.strip()],
         "draft": meta.get("draft", "false").lower() == "true",
         "data_md": data_md,
@@ -156,37 +176,6 @@ def smart_quotes(text):
     text = text.replace('"', "”")
     text = re.sub(r"(^|[\s(\[—])'", "\\1‘", text)
     return text.replace("'", "’")
-
-
-def derive_summary(data_md, where):
-    """The one-line summary shown on the Findings tab, the findings index,
-    and in meta/OG/JSON-LD description tags -- the post's own opening
-    sentences, not a separately hand-written field. Finds the first true
-    paragraph (skipping any leading heading), takes its first two sentences,
-    then a hard length backstop in case that's still too long."""
-    lines = data_md.splitlines()
-    i = 0
-    while i < len(lines) and (not lines[i].strip() or lines[i].startswith(("## ", "### ", "- ", ">", "@video "))):
-        i += 1
-    para = []
-    while i < len(lines) and lines[i].strip() and not lines[i].startswith(("## ", "### ", "- ", ">", "@video ")):
-        para.append(lines[i].strip())
-        i += 1
-    if not para:
-        raise BuildError(f"{where}: no opening paragraph found to derive a summary from "
-                          "(the data section can't open with a heading, list, or blockquote)")
-
-    plain = " ".join(para)
-    plain = re.sub(r"\*\*(.+?)\*\*", r"\1", plain)
-    plain = re.sub(r"(?<!\w)\*(?=\S)(.+?)(?<=\S)\*(?!\w)", r"\1", plain)
-    plain = re.sub(r"\[([^\]]+)\]\([^)\s]+\)", r"\1", plain)
-    plain = smart_quotes(plain)
-
-    sentences = re.split(r"(?<=[.!?])\s+", plain)
-    summary = " ".join(sentences[:2]).strip()
-    if len(summary) > 200:
-        summary = summary[:197].rsplit(" ", 1)[0].rstrip(",;:—") + "…"
-    return summary
 
 
 def render_inline_segment(text, where):
@@ -350,12 +339,33 @@ def archive_url(source_id):
 
 # ── Output ──────────────────────────────────────────────────
 
-def styles_version():
+def site_assets():
+    """Everything the post pages share with the home page, read out of
+    docs/index.html so it's the one source: the styles.css and menu.js
+    cache-bust versions, and the top bar and drawer markup itself. A change
+    to either in index.html shows up here on the next build, and --check
+    fails until it does."""
     with open(INDEX_HTML, encoding="utf-8") as fh:
-        match = re.search(r"css/styles\.css\?v=(\d+)", fh.read())
-    if not match:
-        raise BuildError("docs/index.html: no styles.css?v= version string found")
-    return match.group(1)
+        text = fh.read()
+
+    def version(asset):
+        match = re.search(rf"{re.escape(asset)}\?v=(\d+)", text)
+        if not match:
+            raise BuildError(f"docs/index.html: no {asset}?v= version string found")
+        return match.group(1)
+
+    def block(start, end, label):
+        match = re.search(rf"^( *){re.escape(start)}.*?{re.escape(end)}", text, re.S | re.M)
+        if not match:
+            raise BuildError(f"docs/index.html: {label} markup not found")
+        return textwrap.dedent(match.group(0))
+
+    return {
+        "css": version("css/styles.css"),
+        "menu": version("js/menu.js"),
+        "bar": block('<header class="site-bar">', "</header>", "top bar"),
+        "drawer": block('<div class="site-menu-backdrop"', "</nav>", "site menu"),
+    }
 
 
 def post_url(post):
@@ -367,7 +377,7 @@ def indent(block, spaces):
     return "\n".join(pad + line if line else line for line in block.splitlines())
 
 
-def render_page(post, css_version, corpus, taxonomy):
+def render_page(post, assets, corpus, taxonomy):
     e = lambda s: html.escape(s, quote=True)
     url = post_url(post)
     where = post["source"]
@@ -422,13 +432,14 @@ def render_page(post, css_version, corpus, taxonomy):
   <meta property="og:image" content="{OG_IMAGE}">
   <meta property="article:published_time" content="{post['date']}">
 
-  <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#0D0D0D" media="(prefers-color-scheme: dark)">
+  <!-- Black in both schemes: the browser's toolbar sits directly above the
+       black top bar (--hero-bg), so it should match it. -->
+  <meta name="theme-color" content="#000000">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/styles.css?v={css_version}">
+  <link rel="stylesheet" href="/css/styles.css?v={assets['css']}">
 
   <script type="application/ld+json">
 {indent(ld_json, 2)}
@@ -438,16 +449,7 @@ def render_page(post, css_version, corpus, taxonomy):
 
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <header class="post-header">
-    <div class="container">
-      <a class="hero-wordmark" href="/">
-        <picture>
-          <source srcset="/images/wordmark-black.svg" media="(prefers-color-scheme: light)">
-          <img class="hero-mark" src="/images/wordmark-white.svg" alt="Signals" width="104" height="16">
-        </picture>
-      </a>
-    </div>
-  </header>
+{indent(assets['bar'], 2)}
 
   <div class="container">
     <main id="main">
@@ -484,98 +486,86 @@ def render_page(post, css_version, corpus, taxonomy):
     </div>
   </footer>
 
+{indent(assets['drawer'], 2)}
+
+  <script src="/js/menu.js?v={assets['menu']}"></script>
 </body>
 </html>
 """
 
 
-def render_findings_index(posts, css_version):
-    """A plain-HTML list of every published post at /findings/, so crawlers
-    that don't run JavaScript can still find them -- the home page's
-    Findings tab renders the same list, but only after scripts.js fetches
-    findings.json."""
+def render_home_findings(posts):
+    """The Read our findings list, written into docs/index.html between the
+    findings:start/end markers. Static rather than fetched, so the post
+    links are in the page for crawlers and the list shows without waiting
+    on JavaScript. Posts past FINDINGS_LIMIT are rendered hidden, with a
+    "Read more" button that scripts.js wires up to reveal them."""
     e = lambda s: html.escape(s, quote=True)
-    url = SITE + "/findings/"
-    items = "\n".join(f"""      <a class="finding" href="/findings/{p['slug']}/">
-        <div class="finding-header">
-          <h2 class="finding-title">{e(p['title'])}</h2>
-          <span class="finding-arrow" aria-hidden="true">→</span>
-        </div>
-        <time class="finding-date" datetime="{p['date']}">{p['date']}</time>
-      </a>""" for p in posts)
+    pad = " " * 8
 
+    if not posts:
+        # Moved here from scripts.js's COPY object, since the list is no
+        # longer rendered by script. The other empty states still live there.
+        return textwrap.indent(textwrap.dedent("""\
+            <div class="finding-list" id="finding-list">
+              <div class="state state--empty">
+                <p class="state-title">No findings yet</p>
+                <p class="state-body">Findings will appear here once confirmed across multiple job descriptions.</p>
+              </div>
+            </div>
+            """), pad)
+
+    items = "".join(textwrap.dedent(f"""\
+          <a class="finding" href="/findings/{p['slug']}/"{' hidden' if i >= FINDINGS_LIMIT else ''}>
+            <div class="finding-header">
+              <h3 class="finding-title">{e(p['title'])}</h3>
+              <span class="finding-arrow" aria-hidden="true">→</span>
+            </div>
+            <time class="finding-date" datetime="{p['date']}">{p['date']}</time>
+          </a>
+        """) for i, p in enumerate(posts))
+    block = '<div class="finding-list" id="finding-list">\n' + textwrap.indent(items, "  ") + "</div>\n"
+    if len(posts) > FINDINGS_LIMIT:
+        block += textwrap.dedent("""\
+            <div id="findings-show-more">
+              <button type="button" class="show-more-btn">Read more</button>
+            </div>
+            """)
+    # The same list as structured data, so a crawler reading the home page's
+    # JSON-LD knows it links to these articles, not just that links exist.
+    ld = {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "Findings",
+        "itemListElement": [
+            {"@type": "ListItem", "position": i + 1, "url": post_url(p), "name": p["title"]}
+            for i, p in enumerate(posts)
+        ],
+    }
+    ld_json = json.dumps(ld, indent=2, ensure_ascii=False).replace("</", "<\\/")
+    block += f'<script type="application/ld+json">\n{ld_json}\n</script>\n'
+    return textwrap.indent(block, pad)
+
+
+def render_findings_redirect():
+    """/findings/ listed every post until the home page took the list over.
+    It stays as a redirect so links and bookmarks to it still land on the
+    list. GitHub Pages can't send a real 301, so an immediate meta refresh
+    plus a canonical to the home page is the closest equivalent, and search
+    engines treat it as one. No noindex: alongside the canonical it would
+    send mixed signals about which page to keep."""
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
   <!-- GENERATED FILE — do not edit by hand.
        Regenerate with: python3 scripts/build-findings.py -->
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Findings — Signals</title>
-  <meta name="description" content="Written posts drawn from the content design hiring dataset, each separating what the postings say from Joe Bertino's own take.">
-  <link rel="canonical" href="{url}">
-
-  <!-- Privacy-friendly analytics by Plausible -->
-  <script async src="https://plausible.io/js/pa-WoV37_cSYerP-bLuBDf5L.js"></script>
-  <script>
-    window.plausible=window.plausible||function(){{(plausible.q=plausible.q||[]).push(arguments)}},plausible.init=plausible.init||function(i){{plausible.o=i||{{}}}};
-    plausible.init()
-  </script>
-
-  <!-- Favicon -->
-  <link rel="icon" href="/images/circle-icon-b.png" type="image/png">
-  <link rel="apple-touch-icon" href="/images/circle-icon-b.png">
-
-  <!-- OpenGraph -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="{url}">
-  <meta property="og:title" content="Findings — Signals">
-  <meta property="og:description" content="Written posts drawn from the content design hiring dataset, each separating what the postings say from Joe Bertino's own take.">
-  <meta property="og:image" content="{OG_IMAGE}">
-
-  <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#0D0D0D" media="(prefers-color-scheme: dark)">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/styles.css?v={css_version}">
+  <link rel="canonical" href="{SITE}/">
+  <meta http-equiv="refresh" content="0; url=/#findings">
 </head>
 <body>
-
-  <a class="skip-link" href="#main">Skip to content</a>
-
-  <header class="post-header">
-    <div class="container">
-      <a class="hero-wordmark" href="/">
-        <picture>
-          <source srcset="/images/wordmark-black.svg" media="(prefers-color-scheme: light)">
-          <img class="hero-mark" src="/images/wordmark-white.svg" alt="Signals" width="104" height="16">
-        </picture>
-      </a>
-    </div>
-  </header>
-
-  <div class="container">
-    <main id="main">
-      <article class="post">
-        <a class="post-back" href="/#findings"><span aria-hidden="true">← </span>Back to Signals</a>
-        <h1 class="post-title">Findings</h1>
-        <div class="finding-list post-finding-list">
-{items}
-        </div>
-      </article>
-    </main>
-  </div>
-
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-inner">
-        <div class="footer-brand">A project by <a href="https://bertino.co">Bertino Consulting</a>, with help from Claude &amp; Freddie Gibbs.</div>
-      </div>
-    </div>
-  </footer>
-
+  <p>Findings are on the <a href="/#findings">home page</a> now.</p>
 </body>
 </html>
 """
@@ -612,6 +602,8 @@ def render_llms(current, posts):
         "Written posts drawn from the dataset. Each separates what the postings say from a "
         "section labeled \"My take,\" which is Joe Bertino's personal view and not a claim "
         "the dataset backs.",
+        "",
+        f"The same list as JSON: {SITE}/data/findings.json",
         "",
     ]
     lines += [f"- [{p['title']}]({post_url(p)}) ({p['date']}): {p['summary']}" for p in posts]
@@ -661,11 +653,17 @@ def main():
                 f"{post['source']}: unknown cluster/signal key(s): {', '.join(unknown)}"
             )
 
-    css_version = styles_version()
-    outputs = {os.path.join(OUT_DIR, p["slug"], "index.html"): render_page(p, css_version, corpus, taxonomy)
+    assets = site_assets()
+    outputs = {os.path.join(OUT_DIR, p["slug"], "index.html"): render_page(p, assets, corpus, taxonomy)
                for p in posts}
-    outputs[os.path.join(OUT_DIR, "index.html")] = render_findings_index(posts, css_version)
+    outputs[os.path.join(OUT_DIR, "index.html")] = render_findings_redirect()
     outputs[FINDINGS_JSON] = render_findings_json(posts)
+
+    index_text = read(INDEX_HTML)
+    match = FINDINGS_MARKERS.search(index_text)
+    if not match:
+        raise BuildError("docs/index.html: findings:start / findings:end markers not found")
+    outputs[INDEX_HTML] = index_text[:match.start(2)] + render_home_findings(posts) + index_text[match.end(2):]
     outputs[SITEMAP] = render_sitemap(read(SITEMAP), posts)
     outputs[LLMS] = render_llms(read(LLMS), posts)
 

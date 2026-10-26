@@ -5,9 +5,15 @@ on:
     branches: [main]
     paths:
       - 'docs/data/jobs.json'
+      - 'docs/index.html'
+      - 'docs/js/scripts.js'
+      - 'scripts/build-home.py'
   pull_request:
     paths:
       - 'docs/data/jobs.json'
+      - 'docs/index.html'
+      - 'docs/js/scripts.js'
+      - 'scripts/build-home.py'
 
 jobs:
   check-structure:
@@ -16,3 +22,5 @@ jobs:
       - uses: actions/checkout@v4
       - name: Validate jobs.json structure
         run: python3 scripts/check-jobs-json.py
+      - name: Verify index.html's pre-rendered home sections match jobs.json
+        run: python3 scripts/build-home.py --check
