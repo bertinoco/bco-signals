@@ -2,8 +2,8 @@
   "meta": {
     "title": "BCO Content Skills Tracker",
     "description": "A curated skills tracker for the content design community.",
-    "lastUpdated": "2026-10-26",
-    "totalEntries": 86
+    "lastUpdated": "2026-10-28",
+    "totalEntries": 87
   },
   "entries": [
     {
@@ -2542,6 +2542,31 @@
       "sourceUrl": null,
       "dateAdded": "2026-10-26",
       "quote": "Define and document reusable content components, patterns, and copy standards within our design system to ensure long-term consistency across digital products."
+    },
+    {
+      "id": "maven-clinic-conversational-ai-ux-product-copywriter",
+      "company": "Maven Clinic",
+      "title": "Conversational AI & UX/Product Copywriter (Contract)",
+      "domain": "Healthcare",
+      "engagement": "Part-time contract (20 hrs/week, 3 months)",
+      "location": "Remote (US)",
+      "remote": true,
+      "coreFrame": "Reviews real AI agent conversations and gives expert feedback on tone, emotional register, and word choice. Defines language principles for what AI at Maven sounds like, translating brand voice into guidance that works within the realities and limits of LLM-generated responses. Synthesizes voice and language feedback from Clinical, Product, Engineering, Brand, and coaches into a prioritized set of themes, and acts as the decision-maker on voice. Advises on the anatomy of agent responses for Engineering and Clinical to implement. Shapes how AI is positioned and disclosed to members, including education, disclaimers, and expectation-setting language. Writes and refines UX copy for in-product experiences including care plan screens, AI agent onboarding, navigation, CTAs, and empty and error states. Documents voice and tone principles, language patterns, and naming frameworks for the team to build on.",
+      "clusters": [
+        "ai-content-governance",
+        "content-systems-design",
+        "enablement"
+      ],
+      "signals": [
+        "model-behavior-design",
+        "governance-as-value-prop",
+        "central-standards-function",
+        "human-in-the-loop"
+      ],
+      "compRange": null,
+      "sourceUrl": null,
+      "dateAdded": "2026-10-28",
+      "quote": "Define and champion what AI at Maven sounds like, translating our brand voice into clear language principles that work within the realities and limits of LLM-generated responses."
     }
   ],
   "clusters": {
