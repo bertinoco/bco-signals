@@ -3,7 +3,7 @@
 
 # Quotes
 
-Every stored quote, verbatim from the posting. **85 of 86** entries carry one.
+Every stored quote, verbatim from the posting. **86 of 87** entries carry one.
 
 These are the lines that anchor each entry's cluster and signal assignments, so they are the strongest citable evidence in the dataset. Each is checked against its `jd-source` archive before commit.
 
@@ -282,6 +282,12 @@ These are the lines that anchor each entry's cluster and signal assignments, so 
 > Establish and enforce governance frameworks, review mechanisms, and escalation paths to prevent structural drift, duplication, and deviation from defined standards across internal and external contributors.
 
 `linkedin-staff-content-architect` · added 2026-07-20
+
+### Maven Clinic — Conversational AI & UX/Product Copywriter (Contract)
+
+> Define and champion what AI at Maven sounds like, translating our brand voice into clear language principles that work within the realities and limits of LLM-generated responses.
+
+`maven-clinic-conversational-ai-ux-product-copywriter` · added 2026-10-28
 
 ### Meta — Product Content Engineer
 
