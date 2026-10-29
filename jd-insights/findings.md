@@ -687,14 +687,15 @@ repetition of any instance so far — twice hedged ("Claude Code or similar")
 and once unhedged, alongside "NLUs, RAG" as named ML frameworks in a
 qualifications bullet ("Knowledge of language modeling and machine learning
 frameworks (NLUs, RAG, Claude Code)"). Rocket's Lead Content Designer,
-Storefronts and Growth names Claude a fourth way, alongside two other
-named products, as a required qualification: "hands-on experience using AI
-within the content design workflow, including tools such as Figma Make,
-Claude, ChatGPT, or similar platforms." All seven list one or more tools as
-interchangeable examples of the category ("or similar," "or equivalent,"
-"등의," "등"), not a required one. Claude specifically — as "Claude" or
-"Claude Code" — now appears by name in four of this finding's instances
-(HelloFresh, Wrtn, Intuit, Rocket).
+Storefronts and Growth names it as a required qualification, alongside two
+other named products: "hands-on experience using AI within the content
+design workflow, including tools such as Figma Make, Claude, ChatGPT, or
+similar platforms." All seven list one or more tools as interchangeable
+examples of the category ("or similar," "or equivalent," "등의," "등"), not
+a required one. Claude specifically — as "Claude" or "Claude Code" — is
+named in all seven of these non-gating instances (HelloFresh, Coupang,
+Intercept, Function Health, Wrtn, Intuit, Rocket), the only AI product
+named in every one of them.
 
 The Ride Platform is the different case: "Jasper is core to how we work,"
 "Jasper embedded as the core engine for content creation," "with Jasper
