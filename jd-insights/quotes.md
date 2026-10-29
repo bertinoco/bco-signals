@@ -3,7 +3,7 @@
 
 # Quotes
 
-Every stored quote, verbatim from the posting. **87 of 88** entries carry one.
+Every stored quote, verbatim from the posting. **88 of 89** entries carry one.
 
 These are the lines that anchor each entry's cluster and signal assignments, so they are the strongest citable evidence in the dataset. Each is checked against its `jd-source` archive before commit.
 
@@ -378,6 +378,12 @@ These are the lines that anchor each entry's cluster and signal assignments, so 
 > Develop and maintain structured, machine-readable technical content ready for use in generative AI platforms (e.g., RAG architectures).
 
 `roche-content-design-ai-readiness-specialist` · added 2026-09-26
+
+### Rocket — Lead Content Designer, Storefronts and Growth
+
+> Create playbooks, guidance, reusable tools, and AI-enabled workflows that help teams consistently apply high-performing content patterns.
+
+`rocket-lead-content-designer-storefronts-growth` · added 2026-10-29
 
 ### Salesforce — Experience Design Lead
 

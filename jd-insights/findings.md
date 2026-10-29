@@ -667,8 +667,8 @@ or review process explicitly scoped to cover both human-authored and
 agent-generated content, rather than either a process for one audience or an
 artifact built for both.*
 
-**Named AI tools — 7 instances, one of them gating.** Of the entries carrying
-`ai-native-expectation`, seven name a specific product rather than the
+**Named AI tools — 8 instances, one of them gating.** Of the entries carrying
+`ai-native-expectation`, eight name a specific product rather than the
 category. HelloFresh: "building rapid interactive prototypes (using tools
 like Claude Code, Gemini, or Figma AI)." Coupang's Senior Content Strategist,
 Core UX (Korean posting): "ChatGPT, Claude, Gemini 등의 다양한 생성형 AI"
@@ -686,11 +686,15 @@ Designer, AI Design Technologist names Claude Code three times — the most
 repetition of any instance so far — twice hedged ("Claude Code or similar")
 and once unhedged, alongside "NLUs, RAG" as named ML frameworks in a
 qualifications bullet ("Knowledge of language modeling and machine learning
-frameworks (NLUs, RAG, Claude Code)"). All six list one or more tools as
+frameworks (NLUs, RAG, Claude Code)"). Rocket's Lead Content Designer,
+Storefronts and Growth names Claude a fourth way, alongside two other
+named products, as a required qualification: "hands-on experience using AI
+within the content design workflow, including tools such as Figma Make,
+Claude, ChatGPT, or similar platforms." All seven list one or more tools as
 interchangeable examples of the category ("or similar," "or equivalent,"
-"등의," "등"), not a required one. Claude specifically — as "Claude Code" —
-now appears by name in three of this finding's instances (HelloFresh, Wrtn,
-Intuit).
+"등의," "등"), not a required one. Claude specifically — as "Claude" or
+"Claude Code" — now appears by name in four of this finding's instances
+(HelloFresh, Wrtn, Intuit, Rocket).
 
 The Ride Platform is the different case: "Jasper is core to how we work,"
 "Jasper embedded as the core engine for content creation," "with Jasper
