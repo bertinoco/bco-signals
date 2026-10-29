@@ -3,7 +3,7 @@
 
 # Quotes
 
-Every stored quote, verbatim from the posting. **86 of 87** entries carry one.
+Every stored quote, verbatim from the posting. **87 of 88** entries carry one.
 
 These are the lines that anchor each entry's cluster and signal assignments, so they are the strongest citable evidence in the dataset. Each is checked against its `jd-source` archive before commit.
 
@@ -42,6 +42,12 @@ These are the lines that anchor each entry's cluster and signal assignments, so 
 > You'll also be involved in building AI and Large Language Models (LLMs), creating writing guidelines to raise the bar, and share our expertise with our product and tech partners.
 
 `amazon-senior-ux-conversation-designer-customer-service` · added 2026-08-13
+
+### American Express — Senior Content Designer
+
+> Develop scalable content models, information architectures, taxonomies, terminology, and reusable patterns that support connected, context-aware AI experiences.
+
+`american-express-senior-content-designer` · added 2026-10-29
 
 ### Anthropic — Technical Documentation and Content Engineer, Claude Docs
 

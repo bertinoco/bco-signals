@@ -2,8 +2,8 @@
   "meta": {
     "title": "BCO Content Skills Tracker",
     "description": "A curated skills tracker for the content design community.",
-    "lastUpdated": "2026-10-28",
-    "totalEntries": 87
+    "lastUpdated": "2026-10-29",
+    "totalEntries": 88
   },
   "entries": [
     {
@@ -2567,6 +2567,36 @@
       "sourceUrl": null,
       "dateAdded": "2026-10-28",
       "quote": "Define and champion what AI at Maven sounds like, translating our brand voice into clear language principles that work within the realities and limits of LLM-generated responses."
+    },
+    {
+      "id": "american-express-senior-content-designer",
+      "company": "American Express",
+      "title": "Senior Content Designer",
+      "domain": "Finance",
+      "engagement": "Full-time",
+      "location": "New York, NY",
+      "remote": "hybrid",
+      "coreFrame": "Defines content strategies for conversational, adaptive, and agentic experiences. Develops scalable content models, information architectures, taxonomies, terminology, and reusable patterns that support connected, context-aware AI experiences. Explores dialogue architecture, prompt structures, and multi-turn interactions. Establishes strategies for communicating AI capabilities, uncertainty, and recommendations to build customer trust. Contributes to the enterprise Content Design System and a Content Design Context Layer for governed content use in AI-powered tools. Partners with Research, Product, and Analytics to establish content-quality evaluation methods. Experiments with AI-enabled content workflows and generative content approaches.",
+      "clusters": [
+        "content-systems-design",
+        "taxonomy",
+        "ai-content-governance"
+      ],
+      "signals": [
+        "model-behavior-design",
+        "ai-native-expectation"
+      ],
+      "compRange": {
+        "min": 123000,
+        "max": 215250,
+        "currency": "USD",
+        "covers": null,
+        "scope": null,
+        "extras": "bonus"
+      },
+      "sourceUrl": null,
+      "dateAdded": "2026-10-29",
+      "quote": "Develop scalable content models, information architectures, taxonomies, terminology, and reusable patterns that support connected, context-aware AI experiences."
     }
   ],
   "clusters": {
