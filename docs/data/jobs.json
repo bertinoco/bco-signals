@@ -3,7 +3,7 @@
     "title": "BCO Content Skills Tracker",
     "description": "A curated skills tracker for the content design community.",
     "lastUpdated": "2026-10-29",
-    "totalEntries": 88
+    "totalEntries": 89
   },
   "entries": [
     {
@@ -2597,6 +2597,38 @@
       "sourceUrl": null,
       "dateAdded": "2026-10-29",
       "quote": "Develop scalable content models, information architectures, taxonomies, terminology, and reusable patterns that support connected, context-aware AI experiences."
+    },
+    {
+      "id": "rocket-lead-content-designer-storefronts-growth",
+      "company": "Rocket",
+      "title": "Lead Content Designer, Storefronts and Growth",
+      "domain": "Finance",
+      "engagement": "Full-time",
+      "location": "Seattle, WA",
+      "remote": null,
+      "coreFrame": "Leads end-to-end content design for storefront and growth-journey initiatives, from discovery through launch and optimization. Defines and scales high-performing content styles, messaging strategies, and narrative patterns. Partners with Product, Design, Marketing, SEO, and Brand to shape product positioning and launch-ready narratives. Leads the application and evolution of voice and tone across storefront and growth experiences. Creates playbooks, guidance, and reusable tools that help teams apply high-performing content patterns consistently. Uses and evaluates AI throughout the content design process—research synthesis, prototyping, and testing—paired with editorial judgment. Partners with the horizontal enablement content team to extend voice, tone, and narrative approaches across Client, Pro, and Enterprise.",
+      "clusters": [
+        "content-systems-design",
+        "enablement",
+        "ai-tooling"
+      ],
+      "signals": [
+        "content-marketing-adjacent",
+        "ai-native-expectation",
+        "enabler-not-bottleneck",
+        "central-standards-function"
+      ],
+      "compRange": {
+        "min": 117500,
+        "max": 249500,
+        "currency": "USD",
+        "covers": null,
+        "scope": null,
+        "extras": "annual bonus + incentives"
+      },
+      "sourceUrl": null,
+      "dateAdded": "2026-10-29",
+      "quote": "Create playbooks, guidance, reusable tools, and AI-enabled workflows that help teams consistently apply high-performing content patterns."
     }
   ],
   "clusters": {
