@@ -3,7 +3,7 @@
 
 # Quotes
 
-Every stored quote, verbatim from the posting. **88 of 89** entries carry one.
+Every stored quote, verbatim from the posting. **89 of 90** entries carry one.
 
 These are the lines that anchor each entry's cluster and signal assignments, so they are the strongest citable evidence in the dataset. Each is checked against its `jd-source` archive before commit.
 
@@ -180,6 +180,12 @@ These are the lines that anchor each entry's cluster and signal assignments, so 
 > Champion AI-first ways of working, including identifying and embedding opportunities to use AI to expedite the content design process while simultaneously raising quality, from drafting and editing to consistency checks and content operations, while ensuring that AI processes retain a human-in-the-loop approach.
 
 `evinova-content-design-lead` · added 2026-08-17
+
+### Felix — Sr. Content Designer
+
+> Develop practical guidelines, tools, and processes – including AI-powered approaches – that help teams produce high-quality, on-brand content independently and at scale.
+
+`felix-senior-content-designer` · added 2026-11-01
 
 ### Figma — UX Writer, AI
 
