@@ -2,8 +2,8 @@
   "meta": {
     "title": "BCO Content Skills Tracker",
     "description": "A curated skills tracker for the content design community.",
-    "lastUpdated": "2026-10-29",
-    "totalEntries": 89
+    "lastUpdated": "2026-11-01",
+    "totalEntries": 90
   },
   "entries": [
     {
@@ -2629,6 +2629,37 @@
       "sourceUrl": null,
       "dateAdded": "2026-10-29",
       "quote": "Create playbooks, guidance, reusable tools, and AI-enabled workflows that help teams consistently apply high-performing content patterns."
+    },
+    {
+      "id": "felix-senior-content-designer",
+      "company": "Felix",
+      "title": "Sr. Content Designer",
+      "domain": "Healthcare",
+      "engagement": "Full-time",
+      "location": "Canada",
+      "remote": true,
+      "coreFrame": "Shapes how Felix communicates with patients throughout their healthcare journey, as the company's first content design hire. Develops and tests messaging and positioning concepts, using data and patient feedback to refine the approach. Writes copy for product experiences, emails, push notifications, and other patient-facing channels. Collaborates with product managers, designers, and lifecycle marketers to connect product experiences with patient communications into a consistent story. Turns complex healthcare information into approachable language, partnering with clinical and marketing teams for accuracy and consistency. Applies and evolves the Felix voice across contexts. Develops practical guidelines, tools, and processes, including AI-powered approaches, that help teams produce high-quality, on-brand content independently and at scale. Strengthens writing across the company through feedback, coaching, and critique.",
+      "clusters": [
+        "content-systems-design",
+        "enablement",
+        "ai-tooling"
+      ],
+      "signals": [
+        "ai-native-expectation",
+        "enabler-not-bottleneck",
+        "central-standards-function"
+      ],
+      "compRange": {
+        "min": 110000,
+        "max": 140000,
+        "currency": "CAD",
+        "covers": null,
+        "scope": null,
+        "extras": null
+      },
+      "sourceUrl": null,
+      "dateAdded": "2026-11-01",
+      "quote": "Develop practical guidelines, tools, and processes – including AI-powered approaches – that help teams produce high-quality, on-brand content independently and at scale."
     }
   ],
   "clusters": {
