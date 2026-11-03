@@ -2,8 +2,8 @@
   "meta": {
     "title": "BCO Content Skills Tracker",
     "description": "A curated skills tracker for the content design community.",
-    "lastUpdated": "2026-11-01",
-    "totalEntries": 90
+    "lastUpdated": "2026-11-03",
+    "totalEntries": 91
   },
   "entries": [
     {
@@ -2660,6 +2660,37 @@
       "sourceUrl": null,
       "dateAdded": "2026-11-01",
       "quote": "Develop practical guidelines, tools, and processes – including AI-powered approaches – that help teams produce high-quality, on-brand content independently and at scale."
+    },
+    {
+      "id": "legora-staff-content-designer",
+      "company": "Legora",
+      "title": "Staff Content Designer",
+      "domain": "Legal",
+      "engagement": "Full-time",
+      "location": "Stockholm, NYC, or London",
+      "remote": false,
+      "coreFrame": "As Legora's first Content Designer, owns the verbal layer of the product, setting standards and encoding them into the design system and the judgment tools designers and agents draw on. Defines the product voice and the principles behind it. Designs conversational and agentic experiences end to end — instructions, confirmations, progress updates, interruptions, handoffs, and how agents communicate results, sources, and uncertainty. Owns naming and terminology across the product. Writes and shapes in-product content with product designers on the highest-stakes surfaces. Builds content standards into design system guidelines, rules automated PR checks can enforce, and guidance designers and agents can use on demand. Turns judgment into instructions, examples, and evals that coding and design agents follow, so on-voice copy is produced automatically. Partners with Brand and Product Marketing so the product sounds like the company that makes it. Audits existing experiences using customer feedback and product data to find where language is failing users.",
+      "clusters": [
+        "terminology-governance",
+        "content-systems-design",
+        "enablement",
+        "ai-tooling",
+        "ai-content-governance"
+      ],
+      "signals": [
+        "model-behavior-design",
+        "eval-infrastructure",
+        "central-standards-function",
+        "enabler-not-bottleneck",
+        "ai-native-expectation",
+        "language-infrastructure",
+        "governance-as-value-prop",
+        "human-in-the-loop"
+      ],
+      "compRange": null,
+      "sourceUrl": null,
+      "dateAdded": "2026-11-03",
+      "quote": "As our first Content Designer, you will own the verbal layer of Legora. You will set the standards and encode them into our design system and the judgment tools our designers and agents draw on."
     }
   ],
   "clusters": {

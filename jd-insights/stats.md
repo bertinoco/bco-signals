@@ -3,24 +3,24 @@
 
 # Stats
 
-Dataset state: **90 entries**, `meta.lastUpdated` 2026-11-01. Generated 2026-11-01.
+Dataset state: **91 entries**, `meta.lastUpdated` 2026-11-03. Generated 2026-11-03.
 
 Every figure here is counted from `docs/data/jobs.json`. If you quote one in something published, quote the entry count with it — these move.
 
 ## Headline
 
-- **90** entries across **81** companies and **14** domains
-- Date range: 2026-05-24 to 2026-11-01
+- **91** entries across **82** companies and **15** domains
+- Date range: 2026-05-24 to 2026-11-03
 
 ## Responsibility clusters
 
 | | Entries | Share |
 |---|---:|---:|
-| Content systems design | 83 | 92% |
-| Enablement & team upskilling | 72 | 80% |
-| AI tooling & automation | 65 | 72% |
-| AI-generated content governance | 41 | 46% |
-| Terminology & language governance | 32 | 36% |
+| Content systems design | 84 | 92% |
+| Enablement & team upskilling | 73 | 80% |
+| AI tooling & automation | 66 | 73% |
+| AI-generated content governance | 42 | 46% |
+| Terminology & language governance | 33 | 36% |
 | Taxonomy & information architecture | 31 | 34% |
 | Technical writing & documentation | 19 | 21% |
 | Localization & internationalization | 17 | 19% |
@@ -29,27 +29,27 @@ Every figure here is counted from `docs/data/jobs.json`. If you quote one in som
 
 | | Entries | Share |
 |---|---:|---:|
-| AI fluency expected | 62 | 69% |
-| Governance emphasized | 35 | 39% |
-| Enabler, not bottleneck | 32 | 36% |
-| Central standards function | 29 | 32% |
-| Model behavior design | 29 | 32% |
+| AI fluency expected | 63 | 69% |
+| Governance emphasized | 36 | 40% |
+| Enabler, not bottleneck | 33 | 36% |
+| Central standards function | 30 | 33% |
+| Model behavior design | 30 | 33% |
 | Content systems for marketers | 13 | 14% |
-| Language as infrastructure | 11 | 12% |
+| Language as infrastructure | 12 | 13% |
+| Evaluation infrastructure | 10 | 11% |
 | Structured for agent retrieval | 9 | 10% |
-| Evaluation infrastructure | 9 | 10% |
+| Human in the loop | 9 | 10% |
 | Accessibility as structural constraint | 8 | 9% |
-| Human in the loop | 8 | 9% |
 | GEO & SEO | 7 | 8% |
 | Structured data | 7 | 8% |
 | Classification for ML | 6 | 7% |
-| Content work under new titles | 5 | 6% |
+| Content work under new titles | 5 | 5% |
 | Work outpaces the title | 3 | 3% |
 | Title outpaces the work | 2 | 2% |
 
 ## Compensation
 
-- Stated in **56 of 90** entries (47 USD, 4 CAD, 4 GBP, 1 EUR)
+- Stated in **56 of 91** entries (47 USD, 4 CAD, 4 GBP, 1 EUR)
 - Full spread: **$62,120** to **$710,000**
 - USD medians: **$137,800** low, **$188,600** high
 - `covers`: 35 base, 19 unstated, 2 total
@@ -80,16 +80,16 @@ Read the n column before quoting any of these. A median over fewer than roughly 
 
 ## Title vocabulary
 
-Words appearing in 3 or more of the 90 stored titles. Counted from `title`, which is stored verbatim — so this reflects what employers wrote, not what the site renders.
+Words appearing in 3 or more of the 91 stored titles. Counted from `title`, which is stored verbatim — so this reflects what employers wrote, not what the site renders.
 
 | Word | Titles | Share |
 |---|---:|---:|
-| Content | 61 | 68% |
-| Designer | 39 | 43% |
+| Content | 62 | 68% |
+| Designer | 40 | 44% |
 | Senior | 21 | 23% |
 | AI | 20 | 22% |
 | UX | 17 | 19% |
-| Staff | 15 | 17% |
+| Staff | 16 | 18% |
 | Systems | 12 | 13% |
 | Design | 11 | 12% |
 | Writer | 10 | 11% |
@@ -99,8 +99,8 @@ Words appearing in 3 or more of the 90 stored titles. Counted from `title`, whic
 | Strategist | 8 | 9% |
 | Conversation | 7 | 8% |
 | Product | 6 | 7% |
-| Manager | 5 | 6% |
-| Conversational | 5 | 6% |
+| Manager | 5 | 5% |
+| Conversational | 5 | 5% |
 | Language | 4 | 4% |
 | Experience | 4 | 4% |
 | Principal | 4 | 4% |
@@ -126,10 +126,11 @@ Words appearing in 3 or more of the 90 stored titles. Counted from `title`, whic
 | Logistics | 1 | Relay |
 | Travel | 1 | Booking.com |
 | Consumer Goods | 1 | Red Bull |
+| Legal | 1 | Legora |
 
 ## Stated org placement
 
-Recorded in `jd-source` front matter. **73 of 90** postings say where the role sits; the rest do not, which is itself a fact about the posting.
+Recorded in `jd-source` front matter. **74 of 91** postings say where the role sits; the rest do not, which is itself a fact about the posting.
 
 | Company | Placement as stated |
 |---|---|
@@ -171,6 +172,7 @@ Recorded in `jd-source` front matter. **73 of 90** postings say where the role s
 | Intercept | Content department |
 | Intuit | QuickBooks Digital Experiences team, within Design & User Experience |
 | JPMorgan Chase | Business Unit: Consumer & Community Banking; Job Category: User Experience Design |
+| Legora | Product / Product Design |
 | LinkedIn | Department: GBO; Knowledge Management Solutions (KMS) team |
 | Maven Clinic | Member Copy, Comms & Content team |
 | Meta | Product Content Engineering, a horizontal function supporting initiatives across Instagram |
@@ -209,7 +211,7 @@ Recorded in `jd-source` front matter. **73 of 90** postings say where the role s
 
 ## Stated posting dates
 
-**14 of 90** postings state a date. Where both exist, the gap to `dateAdded` varies enough that one is not a proxy for the other.
+**14 of 91** postings state a date. Where both exist, the gap to `dateAdded` varies enough that one is not a proxy for the other.
 
 | Company | Posted | Added |
 |---|---|---|
