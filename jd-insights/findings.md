@@ -491,6 +491,50 @@ not published for public search or reduced to schema markup. Three companies
 now carry the key — Notion, Meta, and Alibaba. The key is comfortably past
 Step 4's floor, not merely at it.
 
+**Content governance authored as a lateral layer, not a system you write
+content inside — 2 instances.** Legora and American Express both name an
+authored layer that sits alongside or over a design system, rather than
+inside a single surface, and tie it explicitly to governing what AI tools or
+agents do with content, not what a person ships: Legora's "As our first
+Content Designer, you will own the verbal layer of Legora... You will set
+the standards and encode them into our design system and the judgment tools
+our designers and agents draw on," and American Express's "a Content Design
+Context Layer that enables reliable, governed content use in AI-powered
+tools and experiences."
+
+Neither instance has a clean home in the existing taxonomy, which is the
+interesting part. American Express's own audit considered and declined
+`enablement` for this exact quote, on the reasoning that "the Context Layer
+enables AI systems' governed use of content, not other human teams'
+independent content work" — `enablement`'s bar is scaling other human teams,
+and this doesn't fit that shape. It also declined `central-standards-function`
+and `governance-as-value-prop` there (embedded contributor, not a horizontal
+standards function). Legora's equivalent line was folded into
+`central-standards-function` instead, by a different route (the "first
+Content Designer" discipline-founding framing, not the layer-as-AI-interface
+framing specifically). The pattern has been present across both postings
+without ever being its own grounded thing.
+
+Two companies, two industries (Legal, Finance) — the cross-domain recurrence
+Step 4 treats as stronger evidence than repetition within one domain — but
+still exactly at the 2-instance floor, the same stage "Content built for
+machine consumption" (above) was at before its third instance arrived. Held
+here rather than keyed.
+
+*Trigger to revisit: a third instance, ideally in a different domain, where
+content or governance material is explicitly authored to sit across or above
+a design system and govern AI/agent output specifically, rather than inside
+one product surface or scale one team's independent work.*
+
+*Source note.* Joe's own work at Minecraft — building a repo that functions
+the same way, authoring content that influences design, product, and content
+design agents and sets the expected output and rubric they work against —
+matches this shape directly, and was the reason to go looking for it in the
+dataset rather than wait for it to surface unprompted. It grounds no cluster
+or signal assignment; it is outside experience, not posting evidence,
+recorded here per the same convention the entry below uses for practitioner
+testimony.
+
 **Deterministic and generative content work are separating — and only one
 side is visible here.**
 
