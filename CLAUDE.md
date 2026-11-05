@@ -633,6 +633,23 @@ otherwise breaks the no-value-judgments rule under Data integrity rules, and
 outruns the evidence besides — the corpus contains almost no postings that
 ask for the generative side by name.
 
+**Hillclimbing** — iteratively improving a model's output quality against an
+eval signal, one incremental change at a time: run the eval, see where it
+falls short, make a targeted change, re-run, repeat. Borrowed from the
+optimization-algorithm term of the same name — incremental movement toward a
+local optimum, guided by a fitness signal at each step.
+
+It names what evals are *for*, not the evals themselves — distinct from
+`eval-infrastructure`, which tracks building the harness, graders, or
+pipeline. A posting can describe hillclimbing without clearing
+`eval-infrastructure`'s bar, and did: DeepMind's Senior UX Model Designer,
+Trust and Safety entry states "applying mastery of the eval process to
+develop strategies for continuous quality hillclimbing to improve
+experiences across product areas," which grounded `model-behavior-design`
+and `ai-tooling` but not `eval-infrastructure` — the posting applies and
+strategizes against an existing eval signal rather than stating it builds
+the harness that produces one.
+
 ### Words that mark the edge of scope
 
 Terms from Redpine's Senior Knowledge Graph Engineer posting — excluded, but
