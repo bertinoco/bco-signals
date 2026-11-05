@@ -2,8 +2,8 @@
   "meta": {
     "title": "BCO Content Skills Tracker",
     "description": "A curated skills tracker for the content design community.",
-    "lastUpdated": "2026-11-03",
-    "totalEntries": 91
+    "lastUpdated": "2026-11-05",
+    "totalEntries": 92
   },
   "entries": [
     {
@@ -2691,6 +2691,35 @@
       "sourceUrl": null,
       "dateAdded": "2026-11-03",
       "quote": "As our first Content Designer, you will own the verbal layer of Legora. You will set the standards and encode them into our design system and the judgment tools our designers and agents draw on."
+    },
+    {
+      "id": "deepmind-senior-ux-model-designer-trust-safety-gemini",
+      "company": "DeepMind",
+      "title": "Senior UX Model Designer, Trust and Safety, GeminiApp, DeepMind",
+      "domain": "Big Tech",
+      "engagement": "Not specified",
+      "location": "Mountain View, CA; New York, NY; Seattle, WA; or San Francisco, CA",
+      "remote": null,
+      "coreFrame": "Focused on the quality and safety of Gemini's model output. Applies understanding of model capabilities to develop system instructions and prototyping strategies for consistently high-quality, safe, and helpful model outputs. Diagnoses content quality issues and runs qualitative assessments of model performance, applying the eval process to develop strategies for continuous quality improvement across product areas. Develops strategies for improving model response quality and writes instructions, guidelines, and standards to guide the work of reviewers and engineers. Partners with AI product designers so model responses and UI components work together. Stays current on design trends in generative AI and natural language processing.",
+      "clusters": [
+        "ai-content-governance",
+        "enablement",
+        "ai-tooling"
+      ],
+      "signals": [
+        "model-behavior-design"
+      ],
+      "compRange": {
+        "min": 160000,
+        "max": 231000,
+        "currency": "USD",
+        "covers": null,
+        "scope": null,
+        "extras": "15% bonus target + equity"
+      },
+      "sourceUrl": null,
+      "dateAdded": "2026-11-05",
+      "quote": "Develop strategies for improving model response quality, write instructions, guidelines, and standards to guide the work of reviewers and engineers."
     }
   ],
   "clusters": {
