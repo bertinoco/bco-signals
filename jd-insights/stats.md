@@ -3,93 +3,93 @@
 
 # Stats
 
-Dataset state: **89 entries**, `meta.lastUpdated` 2026-10-29. Generated 2026-11-01.
+Dataset state: **92 entries**, `meta.lastUpdated` 2026-11-05. Generated 2026-11-06.
 
 Every figure here is counted from `docs/data/jobs.json`. If you quote one in something published, quote the entry count with it — these move.
 
 ## Headline
 
-- **89** entries across **80** companies and **14** domains
-- Date range: 2026-05-24 to 2026-10-29
+- **92** entries across **83** companies and **15** domains
+- Date range: 2026-05-24 to 2026-11-05
 
 ## Responsibility clusters
 
 | | Entries | Share |
 |---|---:|---:|
-| Content systems design | 82 | 92% |
-| Enablement & team upskilling | 71 | 80% |
-| AI tooling & automation | 64 | 72% |
-| AI-generated content governance | 41 | 46% |
-| Terminology & language governance | 32 | 36% |
-| Taxonomy & information architecture | 31 | 35% |
+| Content systems design | 84 | 91% |
+| Enablement & team upskilling | 74 | 80% |
+| AI tooling & automation | 67 | 73% |
+| AI-generated content governance | 43 | 47% |
+| Terminology & language governance | 33 | 36% |
+| Taxonomy & information architecture | 31 | 34% |
 | Technical writing & documentation | 19 | 21% |
-| Localization & internationalization | 17 | 19% |
+| Localization & internationalization | 17 | 18% |
 
 ## Skill signals
 
 | | Entries | Share |
 |---|---:|---:|
-| AI fluency expected | 61 | 69% |
-| Governance emphasized | 35 | 39% |
-| Enabler, not bottleneck | 31 | 35% |
-| Model behavior design | 29 | 33% |
-| Central standards function | 28 | 31% |
-| Content systems for marketers | 13 | 15% |
-| Language as infrastructure | 11 | 12% |
+| AI fluency expected | 63 | 68% |
+| Governance emphasized | 36 | 39% |
+| Enabler, not bottleneck | 33 | 36% |
+| Model behavior design | 31 | 34% |
+| Central standards function | 30 | 33% |
+| Content systems for marketers | 13 | 14% |
+| Language as infrastructure | 12 | 13% |
+| Evaluation infrastructure | 10 | 11% |
 | Structured for agent retrieval | 9 | 10% |
-| Evaluation infrastructure | 9 | 10% |
+| Human in the loop | 9 | 10% |
 | Accessibility as structural constraint | 8 | 9% |
-| Human in the loop | 8 | 9% |
 | GEO & SEO | 7 | 8% |
 | Structured data | 7 | 8% |
 | Classification for ML | 6 | 7% |
-| Content work under new titles | 5 | 6% |
+| Content work under new titles | 5 | 5% |
 | Work outpaces the title | 3 | 3% |
 | Title outpaces the work | 2 | 2% |
 
 ## Compensation
 
-- Stated in **55 of 89** entries (47 USD, 4 GBP, 3 CAD, 1 EUR)
+- Stated in **57 of 92** entries (48 USD, 4 CAD, 4 GBP, 1 EUR)
 - Full spread: **$62,120** to **$710,000**
-- USD medians: **$137,800** low, **$188,600** high
-- `covers`: 35 base, 18 unstated, 2 total
+- USD medians: **$138,900** low, **$189,300** high
+- `covers`: 35 base, 20 unstated, 2 total
 
 ## Compensation by signal
 
-USD entries only (47 of 55 stated ranges). Signals carried by at least 3 of them.
+USD entries only (48 of 57 stated ranges). Signals carried by at least 3 of them.
 
 | Signal | n | Median low | Median high | vs. all USD |
 |---|---:|---:|---:|---:|
-| **All USD entries** | 47 | $137,800 | $188,600 | — |
-| Language as infrastructure | 7 | $153,000 | $250,000 | +$61,400 |
-| Evaluation infrastructure | 6 | $166,500 | $225,000 | +$36,400 |
-| Enabler, not bottleneck | 15 | $146,300 | $216,000 | +$27,400 |
-| Content work under new titles | 4 | $154,100 | $213,350 | +$24,750 |
-| Model behavior design | 16 | $148,500 | $209,000 | +$20,400 |
-| Human in the loop | 3 | $160,000 | $200,000 | +$11,400 |
-| AI fluency expected | 29 | $145,100 | $200,000 | +$11,400 |
-| Governance emphasized | 21 | $136,000 | $190,000 | +$1,400 |
-| Central standards function | 17 | $133,000 | $190,000 | +$1,400 |
-| Accessibility as structural constraint | 5 | $145,100 | $188,600 | — |
-| Structured for agent retrieval | 5 | $140,000 | $160,000 | −$28,600 |
-| Content systems for marketers | 7 | $117,500 | $160,000 | −$28,600 |
-| Structured data | 6 | $112,500 | $153,900 | −$34,700 |
-| GEO & SEO | 6 | $100,000 | $153,900 | −$34,700 |
+| **All USD entries** | 48 | $138,900 | $189,300 | — |
+| Language as infrastructure | 7 | $153,000 | $250,000 | +$60,700 |
+| Evaluation infrastructure | 6 | $166,500 | $225,000 | +$35,700 |
+| Enabler, not bottleneck | 15 | $146,300 | $216,000 | +$26,700 |
+| Content work under new titles | 4 | $154,100 | $213,350 | +$24,050 |
+| Model behavior design | 17 | $153,000 | $209,000 | +$19,700 |
+| Human in the loop | 3 | $160,000 | $200,000 | +$10,700 |
+| AI fluency expected | 29 | $145,100 | $200,000 | +$10,700 |
+| Governance emphasized | 21 | $136,000 | $190,000 | +$700 |
+| Central standards function | 17 | $133,000 | $190,000 | +$700 |
+| Accessibility as structural constraint | 5 | $145,100 | $188,600 | −$700 |
+| Structured for agent retrieval | 5 | $140,000 | $160,000 | −$29,300 |
+| Content systems for marketers | 7 | $117,500 | $160,000 | −$29,300 |
+| Structured data | 6 | $112,500 | $153,900 | −$35,400 |
+| GEO & SEO | 6 | $100,000 | $153,900 | −$35,400 |
 
 Read the n column before quoting any of these. A median over fewer than roughly eight entries moves substantially when one more lands, so the smaller groups are indicative rather than conclusive.
 
 ## Title vocabulary
 
-Words appearing in 3 or more of the 89 stored titles. Counted from `title`, which is stored verbatim — so this reflects what employers wrote, not what the site renders.
+Words appearing in 3 or more of the 92 stored titles. Counted from `title`, which is stored verbatim — so this reflects what employers wrote, not what the site renders.
 
 | Word | Titles | Share |
 |---|---:|---:|
-| Content | 60 | 67% |
-| Designer | 38 | 43% |
-| Senior | 21 | 24% |
+| Content | 62 | 67% |
+| Designer | 41 | 45% |
+| Senior | 22 | 24% |
 | AI | 20 | 22% |
-| UX | 17 | 19% |
-| Staff | 15 | 17% |
+| UX | 18 | 20% |
+| Staff | 16 | 17% |
 | Systems | 12 | 13% |
 | Design | 11 | 12% |
 | Writer | 10 | 11% |
@@ -99,13 +99,14 @@ Words appearing in 3 or more of the 89 stored titles. Counted from `title`, whic
 | Strategist | 8 | 9% |
 | Conversation | 7 | 8% |
 | Product | 6 | 7% |
-| Manager | 5 | 6% |
-| Conversational | 5 | 6% |
+| Manager | 5 | 5% |
+| Conversational | 5 | 5% |
 | Language | 4 | 4% |
 | Experience | 4 | 4% |
 | Principal | 4 | 4% |
 | Knowledge | 3 | 3% |
 | Specialist | 3 | 3% |
+| Sr | 3 | 3% |
 
 ## Domains
 
@@ -113,9 +114,9 @@ Words appearing in 3 or more of the 89 stored titles. Counted from `title`, whic
 |---|---:|---|
 | Finance | 21 | Ally Financial, American Express, Bank of America, Capital One, Chime, Citizens, Cleo, Ethos, Insurify, Intuit, JPMorgan Chase, Nedbank, Robinhood, Rocket, Sanna, Sequence, Taxfix, Trustly, Wealthsimple, Wise |
 | SaaS | 21 | Adobe, Autodesk, Bolt.new, CoLab, Deepgram, Docebo, Engrain, Figma, Fin, Glean, HoneyBook, Notion, Personio, Salesforce, Slang AI, Smartly, Soda, Splunk, UKG, Wix, Zoom |
-| Big Tech | 13 | Alibaba, Amazon, Anthropic, Apple, Google, LinkedIn, Meta, OpenAI |
+| Big Tech | 14 | Alibaba, Amazon, Anthropic, Apple, DeepMind, Google, LinkedIn, Meta, OpenAI |
 | E-commerce | 9 | Airbnb, Coupang, Deliveroo, Etsy, HelloFresh, The Ride Platform, Vinted, Wellhub |
-| Healthcare | 7 | Atria, Evinova, Function Health, Maven Clinic, Roche, Teladoc Health, UnitedHealth Group |
+| Healthcare | 8 | Atria, Evinova, Felix, Function Health, Maven Clinic, Roche, Teladoc Health, UnitedHealth Group |
 | Agency | 5 | Accenture, Huge, Intercept, Phase2, WPP Enterprise Solutions |
 | Media | 5 | Netflix, Spotify, Wrtn Technologies |
 | Retail | 2 | Adidas, Gap Inc. |
@@ -125,10 +126,11 @@ Words appearing in 3 or more of the 89 stored titles. Counted from `title`, whic
 | Logistics | 1 | Relay |
 | Travel | 1 | Booking.com |
 | Consumer Goods | 1 | Red Bull |
+| Legal | 1 | Legora |
 
 ## Stated org placement
 
-Recorded in `jd-source` front matter. **72 of 89** postings say where the role sits; the rest do not, which is itself a fact about the posting.
+Recorded in `jd-source` front matter. **75 of 92** postings say where the role sits; the rest do not, which is itself a fact about the posting.
 
 | Company | Placement as stated |
 |---|---|
@@ -150,12 +152,14 @@ Recorded in `jd-source` front matter. **72 of 89** postings say where the role s
 | Citizens | Digital Content Experience Strategy team, reporting to Head of Web Experience; department listed as Marketing, Digital Experience, and Communications |
 | Cleo | > |
 | CoLab | Not stated as a department; the role works closely with the CMO |
+| DeepMind | Trust and Safety, GeminiApp, DeepMind |
 | Deepgram | Product (reports to the Director of Product Design, Staff IC) |
 | Deliveroo | Product team (Design & Engineering), supporting AI-powered support across Deliveroo, DoorDash and Wolt |
 | Docebo | Product department |
 | Engrain | Experience Design team, reporting to VP, Experience Design |
 | Etsy | UX Platform team, reporting to the Director of Content Design |
 | Evinova | A separate business within the AstraZeneca group |
+| Felix | R&D organization (Department: Product Design) |
 | Figma | UX Writing team |
 | Fin | > |
 | Function Health | Product Design |
@@ -169,6 +173,7 @@ Recorded in `jd-source` front matter. **72 of 89** postings say where the role s
 | Intercept | Content department |
 | Intuit | QuickBooks Digital Experiences team, within Design & User Experience |
 | JPMorgan Chase | Business Unit: Consumer & Community Banking; Job Category: User Experience Design |
+| Legora | Product / Product Design |
 | LinkedIn | Department: GBO; Knowledge Management Solutions (KMS) team |
 | Maven Clinic | Member Copy, Comms & Content team |
 | Meta | Product Content Engineering, a horizontal function supporting initiatives across Instagram |
@@ -207,7 +212,7 @@ Recorded in `jd-source` front matter. **72 of 89** postings say where the role s
 
 ## Stated posting dates
 
-**14 of 89** postings state a date. Where both exist, the gap to `dateAdded` varies enough that one is not a proxy for the other.
+**14 of 92** postings state a date. Where both exist, the gap to `dateAdded` varies enough that one is not a proxy for the other.
 
 | Company | Posted | Added |
 |---|---|---|

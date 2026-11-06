@@ -3,7 +3,7 @@
 
 # Quotes
 
-Every stored quote, verbatim from the posting. **88 of 89** entries carry one.
+Every stored quote, verbatim from the posting. **91 of 92** entries carry one.
 
 These are the lines that anchor each entry's cluster and signal assignments, so they are the strongest citable evidence in the dataset. Each is checked against its `jd-source` archive before commit.
 
@@ -145,6 +145,12 @@ These are the lines that anchor each entry's cluster and signal assignments, so 
 
 `deepgram-staff-product-designer-conversational-ai` · added 2026-10-19
 
+### DeepMind — Senior UX Model Designer, Trust and Safety, GeminiApp, DeepMind
+
+> Develop strategies for improving model response quality, write instructions, guidelines, and standards to guide the work of reviewers and engineers.
+
+`deepmind-senior-ux-model-designer-trust-safety-gemini` · added 2026-11-05
+
 ### Deliveroo — Staff Conversation Designer (Support)
 
 > Create evaluation datasets, testing plans and scoring rubrics to test conversation flows and model behaviour.
@@ -180,6 +186,12 @@ These are the lines that anchor each entry's cluster and signal assignments, so 
 > Champion AI-first ways of working, including identifying and embedding opportunities to use AI to expedite the content design process while simultaneously raising quality, from drafting and editing to consistency checks and content operations, while ensuring that AI processes retain a human-in-the-loop approach.
 
 `evinova-content-design-lead` · added 2026-08-17
+
+### Felix — Sr. Content Designer
+
+> Develop practical guidelines, tools, and processes – including AI-powered approaches – that help teams produce high-quality, on-brand content independently and at scale.
+
+`felix-senior-content-designer` · added 2026-11-01
 
 ### Figma — UX Writer, AI
 
@@ -282,6 +294,12 @@ These are the lines that anchor each entry's cluster and signal assignments, so 
 > You will architect and deliver modular, scalable content systems for the Co-Brand portfolio — creating reusable frameworks, templates, and governance that scale across multiple partners and cards while tailoring variants to each partner’s brand, legal requirements, and customer needs.
 
 `jpmc-content-design-vp` · added 2026-05-25
+
+### Legora — Staff Content Designer
+
+> As our first Content Designer, you will own the verbal layer of Legora. You will set the standards and encode them into our design system and the judgment tools our designers and agents draw on.
+
+`legora-staff-content-designer` · added 2026-11-03
 
 ### LinkedIn — Staff Content Architect
 

@@ -2,8 +2,8 @@
   "meta": {
     "title": "BCO Content Skills Tracker",
     "description": "A curated skills tracker for the content design community.",
-    "lastUpdated": "2026-10-29",
-    "totalEntries": 89
+    "lastUpdated": "2026-11-05",
+    "totalEntries": 92
   },
   "entries": [
     {
@@ -2629,6 +2629,97 @@
       "sourceUrl": null,
       "dateAdded": "2026-10-29",
       "quote": "Create playbooks, guidance, reusable tools, and AI-enabled workflows that help teams consistently apply high-performing content patterns."
+    },
+    {
+      "id": "felix-senior-content-designer",
+      "company": "Felix",
+      "title": "Sr. Content Designer",
+      "domain": "Healthcare",
+      "engagement": "Full-time",
+      "location": "Canada",
+      "remote": true,
+      "coreFrame": "Shapes how Felix communicates with patients throughout their healthcare journey, as the company's first content design hire. Develops and tests messaging and positioning concepts, using data and patient feedback to refine the approach. Writes copy for product experiences, emails, push notifications, and other patient-facing channels. Collaborates with product managers, designers, and lifecycle marketers to connect product experiences with patient communications into a consistent story. Turns complex healthcare information into approachable language, partnering with clinical and marketing teams for accuracy and consistency. Applies and evolves the Felix voice across contexts. Develops practical guidelines, tools, and processes, including AI-powered approaches, that help teams produce high-quality, on-brand content independently and at scale. Strengthens writing across the company through feedback, coaching, and critique.",
+      "clusters": [
+        "content-systems-design",
+        "enablement",
+        "ai-tooling"
+      ],
+      "signals": [
+        "ai-native-expectation",
+        "enabler-not-bottleneck",
+        "central-standards-function"
+      ],
+      "compRange": {
+        "min": 110000,
+        "max": 140000,
+        "currency": "CAD",
+        "covers": null,
+        "scope": null,
+        "extras": null
+      },
+      "sourceUrl": null,
+      "dateAdded": "2026-11-01",
+      "quote": "Develop practical guidelines, tools, and processes – including AI-powered approaches – that help teams produce high-quality, on-brand content independently and at scale."
+    },
+    {
+      "id": "legora-staff-content-designer",
+      "company": "Legora",
+      "title": "Staff Content Designer",
+      "domain": "Legal",
+      "engagement": "Full-time",
+      "location": "Stockholm, NYC, or London",
+      "remote": false,
+      "coreFrame": "As Legora's first Content Designer, owns the verbal layer of the product, setting standards and encoding them into the design system and the judgment tools designers and agents draw on. Defines the product voice and the principles behind it. Designs conversational and agentic experiences end to end — instructions, confirmations, progress updates, interruptions, handoffs, and how agents communicate results, sources, and uncertainty. Owns naming and terminology across the product. Writes and shapes in-product content with product designers on the highest-stakes surfaces. Builds content standards into design system guidelines, rules automated PR checks can enforce, and guidance designers and agents can use on demand. Turns judgment into instructions, examples, and evals that coding and design agents follow, so on-voice copy is produced automatically. Partners with Brand and Product Marketing so the product sounds like the company that makes it. Audits existing experiences using customer feedback and product data to find where language is failing users.",
+      "clusters": [
+        "terminology-governance",
+        "content-systems-design",
+        "enablement",
+        "ai-tooling",
+        "ai-content-governance"
+      ],
+      "signals": [
+        "model-behavior-design",
+        "eval-infrastructure",
+        "central-standards-function",
+        "enabler-not-bottleneck",
+        "ai-native-expectation",
+        "language-infrastructure",
+        "governance-as-value-prop",
+        "human-in-the-loop"
+      ],
+      "compRange": null,
+      "sourceUrl": null,
+      "dateAdded": "2026-11-03",
+      "quote": "As our first Content Designer, you will own the verbal layer of Legora. You will set the standards and encode them into our design system and the judgment tools our designers and agents draw on."
+    },
+    {
+      "id": "deepmind-senior-ux-model-designer-trust-safety-gemini",
+      "company": "DeepMind",
+      "title": "Senior UX Model Designer, Trust and Safety, GeminiApp, DeepMind",
+      "domain": "Big Tech",
+      "engagement": "Not specified",
+      "location": "Mountain View, CA; New York, NY; Seattle, WA; or San Francisco, CA",
+      "remote": null,
+      "coreFrame": "Focused on the quality and safety of Gemini's model output. Applies understanding of model capabilities to develop system instructions and prototyping strategies for consistently high-quality, safe, and helpful model outputs. Diagnoses content quality issues and runs qualitative assessments of model performance, applying the eval process to develop strategies for continuous quality improvement across product areas. Develops strategies for improving model response quality and writes instructions, guidelines, and standards to guide the work of reviewers and engineers. Partners with AI product designers so model responses and UI components work together. Stays current on design trends in generative AI and natural language processing.",
+      "clusters": [
+        "ai-content-governance",
+        "enablement",
+        "ai-tooling"
+      ],
+      "signals": [
+        "model-behavior-design"
+      ],
+      "compRange": {
+        "min": 160000,
+        "max": 231000,
+        "currency": "USD",
+        "covers": null,
+        "scope": null,
+        "extras": "15% bonus target + equity"
+      },
+      "sourceUrl": null,
+      "dateAdded": "2026-11-05",
+      "quote": "Develop strategies for improving model response quality, write instructions, guidelines, and standards to guide the work of reviewers and engineers."
     }
   ],
   "clusters": {
