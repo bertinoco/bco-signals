@@ -494,6 +494,13 @@ exception touches `quote` only, never the archive.
 
 ## Site code
 
+**Hosting.** Netlify serves the site. It publishes `docs/` from `main` as-is,
+with no build command, which is why every build script's output gets
+committed. GitHub Pages was retired in the move on 2026-10-30. Netlify holds
+the custom domain, so `docs/CNAME` was deleted on purpose (`1207b0a`).
+Don't restore it or re-enable Pages. DNS stays at iwantmyname, where the
+domain's email records live, so leave the nameservers there.
+
 `docs/index.html` loads its assets with a query-string cache-buster:
 
     <link rel="stylesheet" href="css/styles.css?v=N">

@@ -26,6 +26,10 @@ Read the code for what a script can't decide. In this repo, look especially at:
 - **Security.** Third-party scripts, workflow permissions, anything taking input. The site is static, so the surface is small — say so rather than inventing risk.
 - **Design-system adherence** where it's cheap to check: hard-coded colors or sizes where a token exists.
 
+Before reasoning about hosting, domains, or deploys, read the Hosting note in `CLAUDE.md`'s Site code section. Netlify serves the site.
+
+If a previous report in `system-check/reports/` lists open items, re-check each one against the repository as it is now before carrying it forward. Items get resolved between runs, and repeating a stale item as still open is worse than leaving it out.
+
 Then rotate one deeper review, by month: January, April, July, October → `/design-review`; February, May, August, November → `/llm-visibility`; March, June, September, December → `/security-review`. If the scheduled environment doesn't have that skill, say so in the report and skip it.
 
 ## Step 4 — Sort every finding
