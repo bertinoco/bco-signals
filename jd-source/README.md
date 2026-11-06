@@ -49,7 +49,7 @@ archived here. `captureMethod` records provenance — `pasted-from-claude-chat`,
 internal reference only. It is never rendered on the published site: job
 postings expire quickly, so a URL captured today is likely dead within
 weeks, and a broken link on a live entry is worse than no link at all.
-`docs/index.html`'s Roles tab omits source URLs entirely for this reason.
+`docs/index.html`'s roles list omits source URLs entirely for this reason.
 
 `sourcePlatform` (optional) records where the text was captured from, e.g.
 `linkedin` or `company-site`. Worth setting when the capture includes platform

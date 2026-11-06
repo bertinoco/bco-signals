@@ -3,7 +3,7 @@
 
 # Quotes
 
-Every stored quote, verbatim from the posting. **85 of 86** entries carry one.
+Every stored quote, verbatim from the posting. **91 of 92** entries carry one.
 
 These are the lines that anchor each entry's cluster and signal assignments, so they are the strongest citable evidence in the dataset. Each is checked against its `jd-source` archive before commit.
 
@@ -42,6 +42,12 @@ These are the lines that anchor each entry's cluster and signal assignments, so 
 > You'll also be involved in building AI and Large Language Models (LLMs), creating writing guidelines to raise the bar, and share our expertise with our product and tech partners.
 
 `amazon-senior-ux-conversation-designer-customer-service` · added 2026-08-13
+
+### American Express — Senior Content Designer
+
+> Develop scalable content models, information architectures, taxonomies, terminology, and reusable patterns that support connected, context-aware AI experiences.
+
+`american-express-senior-content-designer` · added 2026-10-29
 
 ### Anthropic — Technical Documentation and Content Engineer, Claude Docs
 
@@ -139,6 +145,12 @@ These are the lines that anchor each entry's cluster and signal assignments, so 
 
 `deepgram-staff-product-designer-conversational-ai` · added 2026-10-19
 
+### DeepMind — Senior UX Model Designer, Trust and Safety, GeminiApp, DeepMind
+
+> Develop strategies for improving model response quality, write instructions, guidelines, and standards to guide the work of reviewers and engineers.
+
+`deepmind-senior-ux-model-designer-trust-safety-gemini` · added 2026-11-05
+
 ### Deliveroo — Staff Conversation Designer (Support)
 
 > Create evaluation datasets, testing plans and scoring rubrics to test conversation flows and model behaviour.
@@ -174,6 +186,12 @@ These are the lines that anchor each entry's cluster and signal assignments, so 
 > Champion AI-first ways of working, including identifying and embedding opportunities to use AI to expedite the content design process while simultaneously raising quality, from drafting and editing to consistency checks and content operations, while ensuring that AI processes retain a human-in-the-loop approach.
 
 `evinova-content-design-lead` · added 2026-08-17
+
+### Felix — Sr. Content Designer
+
+> Develop practical guidelines, tools, and processes – including AI-powered approaches – that help teams produce high-quality, on-brand content independently and at scale.
+
+`felix-senior-content-designer` · added 2026-11-01
 
 ### Figma — UX Writer, AI
 
@@ -277,11 +295,23 @@ These are the lines that anchor each entry's cluster and signal assignments, so 
 
 `jpmc-content-design-vp` · added 2026-05-25
 
+### Legora — Staff Content Designer
+
+> As our first Content Designer, you will own the verbal layer of Legora. You will set the standards and encode them into our design system and the judgment tools our designers and agents draw on.
+
+`legora-staff-content-designer` · added 2026-11-03
+
 ### LinkedIn — Staff Content Architect
 
 > Establish and enforce governance frameworks, review mechanisms, and escalation paths to prevent structural drift, duplication, and deviation from defined standards across internal and external contributors.
 
 `linkedin-staff-content-architect` · added 2026-07-20
+
+### Maven Clinic — Conversational AI & UX/Product Copywriter (Contract)
+
+> Define and champion what AI at Maven sounds like, translating our brand voice into clear language principles that work within the realities and limits of LLM-generated responses.
+
+`maven-clinic-conversational-ai-ux-product-copywriter` · added 2026-10-28
 
 ### Meta — Product Content Engineer
 
@@ -366,6 +396,12 @@ These are the lines that anchor each entry's cluster and signal assignments, so 
 > Develop and maintain structured, machine-readable technical content ready for use in generative AI platforms (e.g., RAG architectures).
 
 `roche-content-design-ai-readiness-specialist` · added 2026-09-26
+
+### Rocket — Lead Content Designer, Storefronts and Growth
+
+> Create playbooks, guidance, reusable tools, and AI-enabled workflows that help teams consistently apply high-performing content patterns.
+
+`rocket-lead-content-designer-storefronts-growth` · added 2026-10-29
 
 ### Salesforce — Experience Design Lead
 

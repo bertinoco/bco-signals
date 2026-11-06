@@ -300,7 +300,14 @@ Retained deliberately in `jd-source`, since they are facts about the posting:
   where the page renders icons — "corporate_fare", "place", "info_outline".
   The scrape took the icon font's text content rather than the glyph. A reader
   who does not recognise them may mistake them for field labels; they are
-  neither labels nor posting text.
+  neither labels nor posting text. A second DeepMind posting (Senior UX Model
+  Designer, Trust and Safety, GeminiApp — the IC counterpart to the excluded
+  Senior Manager posting) carries the identical four ligature names in the
+  identical order, plus the same "Artificial intelligence will be one of
+  humanity's most transformative inventions. At Google DeepMind, we are a
+  pioneering AI lab..." company-boilerplate paragraph verbatim. Two instances
+  now: this is templated DeepMind posting infrastructure, not one posting's
+  one-off scrape artifact.
 - **DeepMind** also leaves a preferred qualification unfinished: "emerging
   interaction modalities such as voice-driven or platform." The sentence does
   not complete in the source.

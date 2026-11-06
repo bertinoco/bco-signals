@@ -491,6 +491,50 @@ not published for public search or reduced to schema markup. Three companies
 now carry the key — Notion, Meta, and Alibaba. The key is comfortably past
 Step 4's floor, not merely at it.
 
+**Content governance authored as a lateral layer, not a system you write
+content inside — 2 instances.** Legora and American Express both name an
+authored layer that sits alongside or over a design system, rather than
+inside a single surface, and tie it explicitly to governing what AI tools or
+agents do with content, not what a person ships: Legora's "As our first
+Content Designer, you will own the verbal layer of Legora... You will set
+the standards and encode them into our design system and the judgment tools
+our designers and agents draw on," and American Express's "a Content Design
+Context Layer that enables reliable, governed content use in AI-powered
+tools and experiences."
+
+Neither instance has a clean home in the existing taxonomy, which is the
+interesting part. American Express's own audit considered and declined
+`enablement` for this exact quote, on the reasoning that "the Context Layer
+enables AI systems' governed use of content, not other human teams'
+independent content work" — `enablement`'s bar is scaling other human teams,
+and this doesn't fit that shape. It also declined `central-standards-function`
+and `governance-as-value-prop` there (embedded contributor, not a horizontal
+standards function). Legora's equivalent line was folded into
+`central-standards-function` instead, by a different route (the "first
+Content Designer" discipline-founding framing, not the layer-as-AI-interface
+framing specifically). The pattern has been present across both postings
+without ever being its own grounded thing.
+
+Two companies, two industries (Legal, Finance) — the cross-domain recurrence
+Step 4 treats as stronger evidence than repetition within one domain — but
+still exactly at the 2-instance floor, the same stage "Content built for
+machine consumption" (above) was at before its third instance arrived. Held
+here rather than keyed.
+
+*Trigger to revisit: a third instance, ideally in a different domain, where
+content or governance material is explicitly authored to sit across or above
+a design system and govern AI/agent output specifically, rather than inside
+one product surface or scale one team's independent work.*
+
+*Source note.* Joe's own work at Minecraft — building a repo that functions
+the same way, authoring content that influences design, product, and content
+design agents and sets the expected output and rubric they work against —
+matches this shape directly, and was the reason to go looking for it in the
+dataset rather than wait for it to surface unprompted. It grounds no cluster
+or signal assignment; it is outside experience, not posting evidence,
+recorded here per the same convention the entry below uses for practitioner
+testimony.
+
 **Deterministic and generative content work are separating — and only one
 side is visible here.**
 
@@ -667,8 +711,8 @@ or review process explicitly scoped to cover both human-authored and
 agent-generated content, rather than either a process for one audience or an
 artifact built for both.*
 
-**Named AI tools — 7 instances, one of them gating.** Of the entries carrying
-`ai-native-expectation`, seven name a specific product rather than the
+**Named AI tools — 8 instances, one of them gating.** Of the entries carrying
+`ai-native-expectation`, eight name a specific product rather than the
 category. HelloFresh: "building rapid interactive prototypes (using tools
 like Claude Code, Gemini, or Figma AI)." Coupang's Senior Content Strategist,
 Core UX (Korean posting): "ChatGPT, Claude, Gemini 등의 다양한 생성형 AI"
@@ -686,11 +730,16 @@ Designer, AI Design Technologist names Claude Code three times — the most
 repetition of any instance so far — twice hedged ("Claude Code or similar")
 and once unhedged, alongside "NLUs, RAG" as named ML frameworks in a
 qualifications bullet ("Knowledge of language modeling and machine learning
-frameworks (NLUs, RAG, Claude Code)"). All six list one or more tools as
-interchangeable examples of the category ("or similar," "or equivalent,"
-"등의," "등"), not a required one. Claude specifically — as "Claude Code" —
-now appears by name in three of this finding's instances (HelloFresh, Wrtn,
-Intuit).
+frameworks (NLUs, RAG, Claude Code)"). Rocket's Lead Content Designer,
+Storefronts and Growth names it as a required qualification, alongside two
+other named products: "hands-on experience using AI within the content
+design workflow, including tools such as Figma Make, Claude, ChatGPT, or
+similar platforms." All seven list one or more tools as interchangeable
+examples of the category ("or similar," "or equivalent," "등의," "등"), not
+a required one. Claude specifically — as "Claude" or "Claude Code" — is
+named in all seven of these non-gating instances (HelloFresh, Coupang,
+Intercept, Function Health, Wrtn, Intuit, Rocket), the only AI product
+named in every one of them.
 
 The Ride Platform is the different case: "Jasper is core to how we work,"
 "Jasper embedded as the core engine for content creation," "with Jasper
