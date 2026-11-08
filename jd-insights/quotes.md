@@ -3,7 +3,7 @@
 
 # Quotes
 
-Every stored quote, verbatim from the posting. **92 of 93** entries carry one.
+Every stored quote, verbatim from the posting. **93 of 94** entries carry one.
 
 These are the lines that anchor each entry's cluster and signal assignments, so they are the strongest citable evidence in the dataset. Each is checked against its `jd-source` archive before commit.
 
@@ -360,6 +360,12 @@ These are the lines that anchor each entry's cluster and signal assignments, so 
 > Contribute to product language infrastructure, including glossaries, pattern libraries, review pathways, evaluation rubrics, prompt libraries, and quality guidance.
 
 `openai-content-designer` · added 2026-05-24
+
+### Perplexity — Content Designer
+
+> Shape how AI-generated content reads by writing and refining prompts and system instructions, and help define voice and response style for our models in product.
+
+`perplexity-content-designer` · added 2026-11-08
 
 ### Personio — Content Designer (d/f/m)
 
