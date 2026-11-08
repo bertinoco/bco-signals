@@ -3,7 +3,7 @@
     "title": "BCO Content Skills Tracker",
     "description": "A curated skills tracker for the content design community.",
     "lastUpdated": "2026-11-08",
-    "totalEntries": 93
+    "totalEntries": 94
   },
   "entries": [
     {
@@ -2748,6 +2748,44 @@
       "sourceUrl": null,
       "dateAdded": "2026-11-08",
       "quote": "Own decisions that impact terminology, content patterns, and design interactions."
+    },
+    {
+      "id": "perplexity-content-designer",
+      "company": "Perplexity",
+      "title": "Content Designer",
+      "domain": "Big Tech",
+      "engagement": "Full-time",
+      "location": "San Francisco; New York City",
+      "remote": null,
+      "coreFrame": "Designs and writes in-product language across web, mobile, desktop, and voice, including UI copy, flows, onboarding, notifications, empty states, errors, and in-product education. Partners with product designers on flows, structure, and information architecture. Names features and products and owns terminology, navigation labels, and taxonomies. Makes AI and agent behavior understandable, including what the product is doing, why, what it can't do, and when it needs a person's input. Writes and refines prompts and system instructions that shape how AI-generated content reads, and helps define voice and response style for the company's models in product. Defines content quality standards and helps build evaluation criteria, datasets, and reviewer guidance for AI-generated content. Builds and maintains voice and tone guidelines and content patterns in the design system. Uses research, data, and experiments to test language and improve comprehension, activation, and task completion. Partners with brand and marketing on product and external voice, and with internationalization partners on localization. Reviews copy in code and ships small language changes directly when it's the fastest path.",
+      "clusters": [
+        "content-systems-design",
+        "terminology-governance",
+        "taxonomy",
+        "ai-content-governance",
+        "ai-tooling",
+        "enablement",
+        "localization"
+      ],
+      "signals": [
+        "model-behavior-design",
+        "eval-infrastructure",
+        "ai-native-expectation",
+        "enabler-not-bottleneck",
+        "central-standards-function",
+        "governance-as-value-prop"
+      ],
+      "compRange": {
+        "min": 240000,
+        "max": 300000,
+        "currency": "USD",
+        "covers": null,
+        "scope": null,
+        "extras": null
+      },
+      "sourceUrl": null,
+      "dateAdded": "2026-11-08",
+      "quote": "Shape how AI-generated content reads by writing and refining prompts and system instructions, and help define voice and response style for our models in product."
     }
   ],
   "clusters": {
