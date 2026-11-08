@@ -2,8 +2,8 @@
   "meta": {
     "title": "BCO Content Skills Tracker",
     "description": "A curated skills tracker for the content design community.",
-    "lastUpdated": "2026-11-05",
-    "totalEntries": 92
+    "lastUpdated": "2026-11-08",
+    "totalEntries": 93
   },
   "entries": [
     {
@@ -2720,6 +2720,34 @@
       "sourceUrl": null,
       "dateAdded": "2026-11-05",
       "quote": "Develop strategies for improving model response quality, write instructions, guidelines, and standards to guide the work of reviewers and engineers."
+    },
+    {
+      "id": "robinhood-senior-content-designer-national-impact",
+      "company": "Robinhood",
+      "title": "Senior Content Designer, National Impact",
+      "domain": "Finance",
+      "engagement": "Not specified",
+      "location": "Menlo Park, CA; New York, NY",
+      "remote": "hybrid",
+      "coreFrame": "Shapes work from early concept through national launch for one of Robinhood's product lines, partnering with senior leadership, engineering, legal, research, data science, and marketing. Crafts and refines UI content across new product experiences and owns decisions that affect terminology, content patterns, and design interactions. Builds and maintains scalable systems that support large-scale initiatives. Influences product and design direction at the leadership level, including presenting to executives and external stakeholders, under tight timelines. Contributes to raising standards for the broader content and design community through mentorship, reviews, or setting standards. Uses AI tools to prototype and pressure-test content patterns and speed up iteration, applying personal judgment to maintain quality.",
+      "clusters": [
+        "content-systems-design",
+        "terminology-governance"
+      ],
+      "signals": [
+        "ai-native-expectation"
+      ],
+      "compRange": {
+        "min": 145000,
+        "max": 170000,
+        "currency": "USD",
+        "covers": "base",
+        "scope": null,
+        "extras": "bonus + equity"
+      },
+      "sourceUrl": null,
+      "dateAdded": "2026-11-08",
+      "quote": "Own decisions that impact terminology, content patterns, and design interactions."
     }
   ],
   "clusters": {
