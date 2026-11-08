@@ -3,7 +3,7 @@
     "title": "BCO Content Skills Tracker",
     "description": "A curated skills tracker for the content design community.",
     "lastUpdated": "2026-11-08",
-    "totalEntries": 94
+    "totalEntries": 95
   },
   "entries": [
     {
@@ -2786,6 +2786,39 @@
       "sourceUrl": null,
       "dateAdded": "2026-11-08",
       "quote": "Shape how AI-generated content reads by writing and refining prompts and system instructions, and help define voice and response style for our models in product."
+    },
+    {
+      "id": "harvey-staff-content-designer",
+      "company": "Harvey",
+      "title": "Staff Content Designer",
+      "domain": "Legal",
+      "engagement": "Full-time",
+      "location": "New York",
+      "remote": "hybrid",
+      "coreFrame": "Shapes how people understand, interact with, and trust the product. Leads content design across interfaces and AI responses, defining Harvey's voice, tone, and content principles, as well as terminology and interaction patterns. Leads content design of key experiences from initial concept through polished execution. Develops AI-assisted tools and guidance that help teams apply content standards as they build and ship. Works closely with product designers, engineers, PMs, and AI researchers to bring clarity and consistency across the Harvey ecosystem, and lays the foundations for the company's content practice.",
+      "clusters": [
+        "terminology-governance",
+        "content-systems-design",
+        "ai-tooling",
+        "enablement"
+      ],
+      "signals": [
+        "ai-native-expectation",
+        "enabler-not-bottleneck",
+        "central-standards-function",
+        "governance-as-value-prop"
+      ],
+      "compRange": {
+        "min": 195500,
+        "max": 264500,
+        "currency": "USD",
+        "covers": null,
+        "scope": null,
+        "extras": "equity + bonus"
+      },
+      "sourceUrl": null,
+      "dateAdded": "2026-11-08",
+      "quote": "As Harvey's first Content Designer, you'll shape how people understand, interact with, and trust our product. You'll lead content design across interfaces and AI responses, defining everything from terminology and interaction patterns to how Harvey expresses itself."
     }
   ],
   "clusters": {

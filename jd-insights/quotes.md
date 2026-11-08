@@ -3,7 +3,7 @@
 
 # Quotes
 
-Every stored quote, verbatim from the posting. **93 of 94** entries carry one.
+Every stored quote, verbatim from the posting. **94 of 95** entries carry one.
 
 These are the lines that anchor each entry's cluster and signal assignments, so they are the strongest citable evidence in the dataset. Each is checked against its `jd-source` archive before commit.
 
@@ -252,6 +252,12 @@ These are the lines that anchor each entry's cluster and signal assignments, so 
 > help establish conversation design as a discipline at GDS, contributing to a community of practice, sharing knowledge across teams, and helping others develop their skills in this emerging area
 
 `gds-senior-interaction-designer-conversation` · added 2026-08-21
+
+### Harvey — Staff Content Designer
+
+> As Harvey's first Content Designer, you'll shape how people understand, interact with, and trust our product. You'll lead content design across interfaces and AI responses, defining everything from terminology and interaction patterns to how Harvey expresses itself.
+
+`harvey-staff-content-designer` · added 2026-11-08
 
 ### HelloFresh — Staff AI Content Designer
 
