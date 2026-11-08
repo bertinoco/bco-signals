@@ -662,17 +662,18 @@ implying it through guild placement alone.
 **`content-marketing-adjacent` description versus use.** The description reads
 "systems and architecture language is being used to describe what is
 fundamentally content marketing work… the core responsibilities haven't
-shifted." All six holders contradict it — CoLab, Insurify, Ride Platform, Ally,
-Meta, and Booking.com were each admitted *because* their systems
-responsibilities were substantive, and CLAUDE.md's marketing-sited note
-instructs assigning the key on placement rather than on hollowness. The key is
-doing one job and its description claims another. Noted rather than rewritten,
-because the description is user-facing card copy.
+shifted." All 13 holders contradict it — CoLab, The Ride Platform, Ally,
+Meta, Intercept, Alibaba, Engrain, Booking.com, Fin, Soda, Taxfix, Sequence,
+and Rocket were each admitted *because* their systems responsibilities were
+substantive, and CLAUDE.md's marketing-sited note instructs assigning the key
+on placement rather than on hollowness. The key is doing one job and its
+description claims another. Noted rather than rewritten, because the
+description is user-facing card copy.
 
 **`ai-native-expectation` label versus description.** The label reads "AI
 fluency expected", broad enough to cover roles that optimize content *for* AI
 consumption. The description narrows it to "actively working with AI tools",
-and all 18 assignments follow the narrow reading. Ally was declined on that
+and all 64 assignments follow the narrow reading. Ally was declined on that
 basis. Left alone deliberately; noted because the gap makes the call look
 arbitrary from the label alone.
 
