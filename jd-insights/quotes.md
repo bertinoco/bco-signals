@@ -3,7 +3,7 @@
 
 # Quotes
 
-Every stored quote, verbatim from the posting. **91 of 92** entries carry one.
+Every stored quote, verbatim from the posting. **92 of 93** entries carry one.
 
 These are the lines that anchor each entry's cluster and signal assignments, so they are the strongest citable evidence in the dataset. Each is checked against its `jd-source` archive before commit.
 
@@ -390,6 +390,12 @@ These are the lines that anchor each entry's cluster and signal assignments, so 
 > Establish the strategic governance and prompt-design frameworks for AI-native trading assistants and LLM-generated market insights, ensuring machine-generated content adheres to strict financial disclosure standards and algorithmic transparency requirements.
 
 `robinhood-senior-content-designer` · added 2026-09-23
+
+### Robinhood — Senior Content Designer, National Impact
+
+> Own decisions that impact terminology, content patterns, and design interactions.
+
+`robinhood-senior-content-designer-national-impact` · added 2026-11-08
 
 ### Roche — Content Design & AI Readiness Specialist
 
