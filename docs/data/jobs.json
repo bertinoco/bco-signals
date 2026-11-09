@@ -2,8 +2,8 @@
   "meta": {
     "title": "BCO Content Skills Tracker",
     "description": "A curated skills tracker for the content design community.",
-    "lastUpdated": "2026-11-08",
-    "totalEntries": 95
+    "lastUpdated": "2026-11-09",
+    "totalEntries": 96
   },
   "entries": [
     {
@@ -2819,6 +2819,26 @@
       "sourceUrl": null,
       "dateAdded": "2026-11-08",
       "quote": "As Harvey's first Content Designer, you'll shape how people understand, interact with, and trust our product. You'll lead content design across interfaces and AI responses, defining everything from terminology and interaction patterns to how Harvey expresses itself."
+    },
+    {
+      "id": "natural-cycles-staff-product-ux-writer",
+      "company": "Natural Cycles",
+      "title": "Staff Product UX Writer",
+      "domain": "Healthcare",
+      "engagement": "Full-time",
+      "location": "Sweden",
+      "remote": "hybrid",
+      "coreFrame": "Writes product content across the app, including onboarding, fertility status and results, device setup, educational experiences, and subscription journeys. Works with product designers, product managers, and engineers from early concepts through launch, turning complex scientific and clinical information into content users can understand and trust. Works on information architecture and content structure to make complex experiences easier to navigate. Uses user research, usability testing, and data to evaluate and improve content for comprehension, engagement, and conversion. Contributes to and evolves voice and tone, terminology, and UX writing guidelines. Collaborates with regulatory and legal teams on content accuracy and compliance.",
+      "clusters": [
+        "terminology-governance",
+        "taxonomy"
+      ],
+      "signals": [
+        "ai-native-expectation"
+      ],
+      "sourceUrl": null,
+      "dateAdded": "2026-11-09",
+      "quote": "Contribute to and evolve our voice and tone, terminology, and UX writing guidelines to create a consistent experience across the product."
     }
   ],
   "clusters": {

@@ -3,7 +3,7 @@
 
 # Quotes
 
-Every stored quote, verbatim from the posting. **94 of 95** entries carry one.
+Every stored quote, verbatim from the posting. **95 of 96** entries carry one.
 
 These are the lines that anchor each entry's cluster and signal assignments, so they are the strongest citable evidence in the dataset. Each is checked against its `jd-source` archive before commit.
 
@@ -336,6 +336,12 @@ These are the lines that anchor each entry's cluster and signal assignments, so 
 > Design, build, and maintain taxonomies, ontologies, and controlled vocabularies that support content organization and navigation across Meta products and platforms.
 
 `meta-taxonomist-content-design` · added 2026-08-07
+
+### Natural Cycles — Staff Product UX Writer
+
+> Contribute to and evolve our voice and tone, terminology, and UX writing guidelines to create a consistent experience across the product.
+
+`natural-cycles-staff-product-ux-writer` · added 2026-11-09
 
 ### Nedbank — Principal UX Writer
 
