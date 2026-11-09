@@ -3,25 +3,25 @@
 
 # Stats
 
-Dataset state: **95 entries**, `meta.lastUpdated` 2026-11-08. Generated 2026-11-08.
+Dataset state: **96 entries**, `meta.lastUpdated` 2026-11-09. Generated 2026-11-09.
 
 Every figure here is counted from `docs/data/jobs.json`. If you quote one in something published, quote the entry count with it — these move.
 
 ## Headline
 
-- **95** entries across **85** companies and **15** domains
-- Date range: 2026-05-24 to 2026-11-08
+- **96** entries across **86** companies and **15** domains
+- Date range: 2026-05-24 to 2026-11-09
 
 ## Responsibility clusters
 
 | | Entries | Share |
 |---|---:|---:|
-| Content systems design | 87 | 92% |
-| Enablement & team upskilling | 76 | 80% |
-| AI tooling & automation | 69 | 73% |
+| Content systems design | 87 | 91% |
+| Enablement & team upskilling | 76 | 79% |
+| AI tooling & automation | 69 | 72% |
 | AI-generated content governance | 44 | 46% |
-| Terminology & language governance | 36 | 38% |
-| Taxonomy & information architecture | 32 | 34% |
+| Terminology & language governance | 37 | 39% |
+| Taxonomy & information architecture | 33 | 34% |
 | Technical writing & documentation | 19 | 20% |
 | Localization & internationalization | 18 | 19% |
 
@@ -29,14 +29,14 @@ Every figure here is counted from `docs/data/jobs.json`. If you quote one in som
 
 | | Entries | Share |
 |---|---:|---:|
-| AI fluency expected | 66 | 69% |
+| AI fluency expected | 67 | 70% |
 | Governance emphasized | 38 | 40% |
-| Enabler, not bottleneck | 35 | 37% |
-| Central standards function | 32 | 34% |
-| Model behavior design | 32 | 34% |
+| Enabler, not bottleneck | 35 | 36% |
+| Central standards function | 32 | 33% |
+| Model behavior design | 32 | 33% |
 | Content systems for marketers | 13 | 14% |
-| Language as infrastructure | 12 | 13% |
-| Evaluation infrastructure | 11 | 12% |
+| Language as infrastructure | 12 | 12% |
+| Evaluation infrastructure | 11 | 11% |
 | Structured for agent retrieval | 9 | 9% |
 | Human in the loop | 9 | 9% |
 | Accessibility as structural constraint | 8 | 8% |
@@ -49,7 +49,7 @@ Every figure here is counted from `docs/data/jobs.json`. If you quote one in som
 
 ## Compensation
 
-- Stated in **60 of 95** entries (51 USD, 4 CAD, 4 GBP, 1 EUR)
+- Stated in **60 of 96** entries (51 USD, 4 CAD, 4 GBP, 1 EUR)
 - Full spread: **$62,120** to **$710,000**
 - USD medians: **$144,000** low, **$190,000** high
 - `covers`: 36 base, 22 unstated, 2 total
@@ -80,7 +80,7 @@ Read the n column before quoting any of these. A median over fewer than roughly 
 
 ## Title vocabulary
 
-Words appearing in 3 or more of the 95 stored titles. Counted from `title`, which is stored verbatim — so this reflects what employers wrote, not what the site renders.
+Words appearing in 3 or more of the 96 stored titles. Counted from `title`, which is stored verbatim — so this reflects what employers wrote, not what the site renders.
 
 | Word | Titles | Share |
 |---|---:|---:|
@@ -88,17 +88,17 @@ Words appearing in 3 or more of the 95 stored titles. Counted from `title`, whic
 | Designer | 44 | 46% |
 | Senior | 23 | 24% |
 | AI | 20 | 21% |
-| UX | 18 | 19% |
-| Staff | 17 | 18% |
-| Systems | 12 | 13% |
-| Design | 11 | 12% |
-| Writer | 10 | 11% |
-| Lead | 10 | 11% |
+| UX | 19 | 20% |
+| Staff | 18 | 19% |
+| Systems | 12 | 12% |
+| Writer | 11 | 11% |
+| Design | 11 | 11% |
+| Lead | 10 | 10% |
 | Engineer | 8 | 8% |
 | Architect | 8 | 8% |
 | Strategist | 8 | 8% |
+| Product | 7 | 7% |
 | Conversation | 7 | 7% |
-| Product | 6 | 6% |
 | Manager | 5 | 5% |
 | Conversational | 5 | 5% |
 | Language | 4 | 4% |
@@ -116,7 +116,7 @@ Words appearing in 3 or more of the 95 stored titles. Counted from `title`, whic
 | SaaS | 21 | Adobe, Autodesk, Bolt.new, CoLab, Deepgram, Docebo, Engrain, Figma, Fin, Glean, HoneyBook, Notion, Personio, Salesforce, Slang AI, Smartly, Soda, Splunk, UKG, Wix, Zoom |
 | Big Tech | 15 | Alibaba, Amazon, Anthropic, Apple, DeepMind, Google, LinkedIn, Meta, OpenAI, Perplexity |
 | E-commerce | 9 | Airbnb, Coupang, Deliveroo, Etsy, HelloFresh, The Ride Platform, Vinted, Wellhub |
-| Healthcare | 8 | Atria, Evinova, Felix, Function Health, Maven Clinic, Roche, Teladoc Health, UnitedHealth Group |
+| Healthcare | 9 | Atria, Evinova, Felix, Function Health, Maven Clinic, Natural Cycles, Roche, Teladoc Health, UnitedHealth Group |
 | Agency | 5 | Accenture, Huge, Intercept, Phase2, WPP Enterprise Solutions |
 | Media | 5 | Netflix, Spotify, Wrtn Technologies |
 | Retail | 2 | Adidas, Gap Inc. |
@@ -130,7 +130,7 @@ Words appearing in 3 or more of the 95 stored titles. Counted from `title`, whic
 
 ## Stated org placement
 
-Recorded in `jd-source` front matter. **77 of 95** postings say where the role sits; the rest do not, which is itself a fact about the posting.
+Recorded in `jd-source` front matter. **77 of 96** postings say where the role sits; the rest do not, which is itself a fact about the posting.
 
 | Company | Placement as stated |
 |---|---|
@@ -214,7 +214,7 @@ Recorded in `jd-source` front matter. **77 of 95** postings say where the role s
 
 ## Stated posting dates
 
-**14 of 95** postings state a date. Where both exist, the gap to `dateAdded` varies enough that one is not a proxy for the other.
+**14 of 96** postings state a date. Where both exist, the gap to `dateAdded` varies enough that one is not a proxy for the other.
 
 | Company | Posted | Added |
 |---|---|---|
