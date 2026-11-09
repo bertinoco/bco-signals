@@ -1082,10 +1082,10 @@ vocabulary landed on the content side of the line rather than collapsing
 it. No new trigger to set here; the open question the Redpine note raised
 now has an answer, on the strength of one clean test.
 
-**Explicit discipline-founding framing — one clear instance.** GDS's Senior
-Interaction Designer (Conversation) states plainly: "This is the first
-permanent conversation design role at GDS, and you'll help establish the
-discipline here," and separately asks the hire to "help establish
+**Explicit discipline-founding framing — five instances, three domains.**
+GDS's Senior Interaction Designer (Conversation) states plainly: "This is the
+first permanent conversation design role at GDS, and you'll help establish
+the discipline here," and separately asks the hire to "help establish
 conversation design as a discipline at GDS, contributing to a community of
 practice, sharing knowledge across teams, and helping others develop their
 skills in this emerging area." This is more explicit than anything
@@ -1102,6 +1102,27 @@ as domain-clustered pending a wider spread. No key proposed; this stays a
 Watching entry. *Trigger to revisit: a second posting using comparably
 explicit "first/founding a discipline" language, ideally in a domain other
 than Finance or Government.*
+
+**Update, 2026-11-08: the trigger has resolved, with a caveat.** Legora ("As
+our first Content Designer, you will own the verbal layer of Legora... You
+will build the content design practice") and Harvey ("As Harvey's first
+Content Designer... you'll lay the foundations for our content practice")
+are a fourth and fifth instance, both in Legal — the first non-Finance,
+non-Government domain, exactly what the trigger above called for. But
+Legora and Harvey are direct competitors posted within a week of each other
+(see `patterns.md`), so this isn't two independent sightings the way GDS was
+against Sanna/Wise — it's one new domain carrying two instances that may
+share a single cause (competitive mimicry) rather than two. Three domains
+now (Finance×2, Government×1, Legal×2), which is a wider spread than the two
+domains this entry closed with in August, but the Legal pair's shared
+competitive context means the evidence is better described as "three
+domains, one of them thin" than as a confirmed cross-industry pattern. No
+key proposed — `central-standards-function` already captures the structural
+signal for three of these five (GDS, Legora, Harvey); this entry tracks the
+explicit *language* of founding a discipline, which Sanna and Wise use
+without the signal being assigned. *Trigger to revisit: a sixth instance in
+a fourth domain, or a second Legal-domain instance from a company that isn't
+competing directly with Legora or Harvey.*
 
 **Excluded on eligibility, but the closest call in the model-design lineage
 yet — Basis's "Intelligence Architect" fails on writing-craft density, not
