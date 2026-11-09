@@ -860,3 +860,14 @@ that the posting states carries no consequence for the outcome. One
 instance, so nothing yet to compare it against — not yet a recurring pattern,
 worth watching for a second posting that draws the same note-taking/no-
 evaluation line.
+
+## Two direct competitors post an identical "first Content Designer" framing within a week
+
+**Legora** (2026-11-03) and **Harvey** (2026-11-08), both AI-native
+legal-tech startups, each describe the hire as the company's first content
+designer tasked with building the practice from scratch. Recorded as
+domain-clustered evidence rather than a cross-industry signal, per
+CLAUDE.md's Step 4 caution that recurrence confined to one domain is weaker
+evidence of a discipline-wide shift than recurrence across domains — this
+could as easily reflect two companies watching the same hiring market as two
+independent discoveries of the same need.
