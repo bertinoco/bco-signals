@@ -3,38 +3,38 @@
 
 # Stats
 
-Dataset state: **96 entries**, `meta.lastUpdated` 2026-11-09. Generated 2026-11-09.
+Dataset state: **97 entries**, `meta.lastUpdated` 2026-11-12. Generated 2026-11-12.
 
 Every figure here is counted from `docs/data/jobs.json`. If you quote one in something published, quote the entry count with it — these move.
 
 ## Headline
 
-- **96** entries across **86** companies and **15** domains
-- Date range: 2026-05-24 to 2026-11-09
+- **97** entries across **87** companies and **15** domains
+- Date range: 2026-05-24 to 2026-11-12
 
 ## Responsibility clusters
 
 | | Entries | Share |
 |---|---:|---:|
-| Content systems design | 87 | 91% |
-| Enablement & team upskilling | 76 | 79% |
-| AI tooling & automation | 69 | 72% |
-| AI-generated content governance | 44 | 46% |
-| Terminology & language governance | 37 | 39% |
+| Content systems design | 87 | 90% |
+| Enablement & team upskilling | 76 | 78% |
+| AI tooling & automation | 70 | 72% |
+| AI-generated content governance | 44 | 45% |
+| Terminology & language governance | 38 | 39% |
 | Taxonomy & information architecture | 33 | 34% |
+| Localization & internationalization | 19 | 20% |
 | Technical writing & documentation | 19 | 20% |
-| Localization & internationalization | 18 | 19% |
 
 ## Skill signals
 
 | | Entries | Share |
 |---|---:|---:|
-| AI fluency expected | 67 | 70% |
-| Governance emphasized | 38 | 40% |
+| AI fluency expected | 68 | 70% |
+| Governance emphasized | 38 | 39% |
 | Enabler, not bottleneck | 35 | 36% |
 | Central standards function | 32 | 33% |
 | Model behavior design | 32 | 33% |
-| Content systems for marketers | 13 | 14% |
+| Content systems for marketers | 13 | 13% |
 | Language as infrastructure | 12 | 12% |
 | Evaluation infrastructure | 11 | 11% |
 | Structured for agent retrieval | 9 | 9% |
@@ -49,7 +49,7 @@ Every figure here is counted from `docs/data/jobs.json`. If you quote one in som
 
 ## Compensation
 
-- Stated in **60 of 96** entries (51 USD, 4 CAD, 4 GBP, 1 EUR)
+- Stated in **60 of 97** entries (51 USD, 4 CAD, 4 GBP, 1 EUR)
 - Full spread: **$62,120** to **$710,000**
 - USD medians: **$144,000** low, **$190,000** high
 - `covers`: 36 base, 22 unstated, 2 total
@@ -80,18 +80,18 @@ Read the n column before quoting any of these. A median over fewer than roughly 
 
 ## Title vocabulary
 
-Words appearing in 3 or more of the 96 stored titles. Counted from `title`, which is stored verbatim — so this reflects what employers wrote, not what the site renders.
+Words appearing in 3 or more of the 97 stored titles. Counted from `title`, which is stored verbatim — so this reflects what employers wrote, not what the site renders.
 
 | Word | Titles | Share |
 |---|---:|---:|
-| Content | 65 | 68% |
-| Designer | 44 | 46% |
+| Content | 66 | 68% |
+| Designer | 45 | 46% |
 | Senior | 23 | 24% |
+| UX | 20 | 21% |
 | AI | 20 | 21% |
-| UX | 19 | 20% |
 | Staff | 18 | 19% |
 | Systems | 12 | 12% |
-| Writer | 11 | 11% |
+| Writer | 12 | 12% |
 | Design | 11 | 11% |
 | Lead | 10 | 10% |
 | Engineer | 8 | 8% |
@@ -112,7 +112,7 @@ Words appearing in 3 or more of the 96 stored titles. Counted from `title`, whic
 
 | | Entries | Companies |
 |---|---:|---|
-| Finance | 22 | Ally Financial, American Express, Bank of America, Capital One, Chime, Citizens, Cleo, Ethos, Insurify, Intuit, JPMorgan Chase, Nedbank, Robinhood, Rocket, Sanna, Sequence, Taxfix, Trustly, Wealthsimple, Wise |
+| Finance | 23 | Ally Financial, American Express, Bank of America, Capital One, Chime, Citizens, Cleo, Ethos, Insurify, Intuit, JPMorgan Chase, Nedbank, Robinhood, Rocket, Sanna, Sequence, Taxfix, Trustly, Wealthsimple, Wise, ZEN.COM |
 | SaaS | 21 | Adobe, Autodesk, Bolt.new, CoLab, Deepgram, Docebo, Engrain, Figma, Fin, Glean, HoneyBook, Notion, Personio, Salesforce, Slang AI, Smartly, Soda, Splunk, UKG, Wix, Zoom |
 | Big Tech | 15 | Alibaba, Amazon, Anthropic, Apple, DeepMind, Google, LinkedIn, Meta, OpenAI, Perplexity |
 | E-commerce | 9 | Airbnb, Coupang, Deliveroo, Etsy, HelloFresh, The Ride Platform, Vinted, Wellhub |
@@ -130,7 +130,7 @@ Words appearing in 3 or more of the 96 stored titles. Counted from `title`, whic
 
 ## Stated org placement
 
-Recorded in `jd-source` front matter. **77 of 96** postings say where the role sits; the rest do not, which is itself a fact about the posting.
+Recorded in `jd-source` front matter. **77 of 97** postings say where the role sits; the rest do not, which is itself a fact about the posting.
 
 | Company | Placement as stated |
 |---|---|
@@ -214,7 +214,7 @@ Recorded in `jd-source` front matter. **77 of 96** postings say where the role s
 
 ## Stated posting dates
 
-**14 of 96** postings state a date. Where both exist, the gap to `dateAdded` varies enough that one is not a proxy for the other.
+**14 of 97** postings state a date. Where both exist, the gap to `dateAdded` varies enough that one is not a proxy for the other.
 
 | Company | Posted | Added |
 |---|---|---|

@@ -3,7 +3,7 @@
 
 # Quotes
 
-Every stored quote, verbatim from the posting. **95 of 96** entries carry one.
+Every stored quote, verbatim from the posting. **96 of 97** entries carry one.
 
 These are the lines that anchor each entry's cluster and signal assignments, so they are the strongest citable evidence in the dataset. Each is checked against its `jd-source` archive before commit.
 
@@ -570,6 +570,12 @@ These are the lines that anchor each entry's cluster and signal assignments, so 
 > We define Kyarapu's own Japanese voice & tone guideline and glossary.
 
 `wrtn-jp-ux-writer-kyarapu` · added 2026-10-21
+
+### ZEN.COM — UX Writer and Content Designer (Poland / Remote)
+
+> Own the Polish experience end to end. Transcreate rather than translate, so the copy reads as natural, gender-neutral Polish in ZEN's friendly voice.
+
+`zen-com-ux-writer-content-designer` · added 2026-11-12
 
 ### Zoom — AI Information Architect / Content Strategist
 

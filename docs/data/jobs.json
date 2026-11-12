@@ -2,8 +2,8 @@
   "meta": {
     "title": "BCO Content Skills Tracker",
     "description": "A curated skills tracker for the content design community.",
-    "lastUpdated": "2026-11-09",
-    "totalEntries": 96
+    "lastUpdated": "2026-11-12",
+    "totalEntries": 97
   },
   "entries": [
     {
@@ -2839,6 +2839,27 @@
       "sourceUrl": null,
       "dateAdded": "2026-11-09",
       "quote": "Contribute to and evolve our voice and tone, terminology, and UX writing guidelines to create a consistent experience across the product."
+    },
+    {
+      "id": "zen-com-ux-writer-content-designer",
+      "company": "ZEN.COM",
+      "title": "UX Writer and Content Designer (Poland / Remote)",
+      "domain": "Finance",
+      "engagement": "Full-time",
+      "location": "Warsaw, Poland",
+      "remote": "hybrid",
+      "coreFrame": "Writes and refines UX copy across the ZEN app, business portal, and website, covering onboarding, payments and transfers, verification, cards, plans, and rewards. Owns the Polish experience end to end, transcreating rather than translating so the copy reads as natural, gender-neutral Polish in ZEN's voice. Works in Figma with UX designers from early flows through final screens, and partners with product owners, engineers, and compliance to keep copy clear, accurate, and on-brand. Prepares localisation handoffs — string tables for Lokalise, plus briefs and glossaries for vendors working in other languages — and maintains the glossary, translation memory, and content guidelines so terminology stays consistent. Supports product and feature naming, launch campaigns, and marketing pages when needed. The role covers for a Content Designer's maternity leave.",
+      "clusters": [
+        "localization",
+        "terminology-governance",
+        "ai-tooling"
+      ],
+      "signals": [
+        "ai-native-expectation"
+      ],
+      "sourceUrl": null,
+      "dateAdded": "2026-11-12",
+      "quote": "Own the Polish experience end to end. Transcreate rather than translate, so the copy reads as natural, gender-neutral Polish in ZEN's friendly voice."
     }
   ],
   "clusters": {
